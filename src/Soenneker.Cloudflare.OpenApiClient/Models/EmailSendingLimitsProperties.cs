@@ -17,10 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The resolved daily sending quota for the account. Null when the quota is not yet available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsProperties_quota? Quota { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota? Quota { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsProperties_quota Quota { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota Quota { get; private set; }
+#endif
+        /// <summary>The account&apos;s current daily sending usage. Null when there is no resolved quota or usage is temporarily unavailable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesUsage? Usage { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesUsage Usage { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsProperties"/> and sets the default values.
@@ -47,7 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "quota", n => { Quota = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsProperties_quota>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsProperties_quota.CreateFromDiscriminatorValue); } },
+                { "quota", n => { Quota = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesQuota.CreateFromDiscriminatorValue); } },
+                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesUsage>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingLimitsPropertiesUsage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

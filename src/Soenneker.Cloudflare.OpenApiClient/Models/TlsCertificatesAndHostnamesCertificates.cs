@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Hostnames { get; set; }
 #endif
-        /// <summary>Identifier.</summary>
+        /// <summary>The x509 serial number of the Origin CA certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -64,6 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public TlsCertificatesAndHostnamesCertificates()
         {
             AdditionalData = new Dictionary<string, object>();
+            RequestedValidity = 5475;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

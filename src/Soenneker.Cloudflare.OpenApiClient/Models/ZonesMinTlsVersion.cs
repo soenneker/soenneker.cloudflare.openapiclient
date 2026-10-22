@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesMinTlsVersion()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMinTlsVersionValue.OneZero;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

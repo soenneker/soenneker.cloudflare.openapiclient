@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\durable_objects\namespaces\{id}\objects
+    /// Builds and executes requests for operations under \accounts\{account-id}\workers\durable_objects\namespaces\{id}\objects
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ObjectsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/durable_objects/namespaces/{id}/objects{?cursor*,limit*}", pathParameters)
+        public ObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/durable_objects/namespaces/{id}/objects{?cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,34 +30,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/durable_objects/namespaces/{id}/objects{?cursor*,limit*}", rawUrl)
+        public ObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/durable_objects/namespaces/{id}/objects{?cursor*,limit*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns the Durable Objects in a given namespace.
+        /// Returns the Durable Objects in a given Durable Object namespace.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectsNamespaceListObjects200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the Durable Objects in a given namespace.
+        /// Returns the Durable Objects in a given Durable Object namespace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,22 +85,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objec
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the Durable Objects in a given namespace.
+        /// Returns the Durable Objects in a given Durable Object namespace.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ObjectsRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string? Cursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

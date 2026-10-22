@@ -31,14 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OpenApi { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScanType { get; set; }
-#nullable restore
-#else
-        public string ScanType { get; set; }
-#endif
+        /// <summary>The scan_type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? ScanType { get; set; }
         /// <summary>The target environment to scan.</summary>
         public Guid? TargetEnvironmentId { get; set; }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "credential_sets", n => { CredentialSets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets.CreateFromDiscriminatorValue); } },
                 { "open_api", n => { OpenApi = n.GetStringValue(); } },
-                { "scan_type", n => { ScanType = n.GetStringValue(); } },
+                { "scan_type", n => { ScanType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>(); } },
                 { "target_environment_id", n => { TargetEnvironmentId = n.GetGuidValue(); } },
             };
         }
@@ -81,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaCredentialSets>("credential_sets", CredentialSets);
             writer.WriteStringValue("open_api", OpenApi);
-            writer.WriteStringValue("scan_type", ScanType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>("scan_type", ScanType);
             writer.WriteGuidValue("target_environment_id", TargetEnvironmentId);
             writer.WriteAdditionalData(AdditionalData);
         }

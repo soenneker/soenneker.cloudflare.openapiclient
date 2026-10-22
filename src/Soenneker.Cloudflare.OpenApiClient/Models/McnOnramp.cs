@@ -117,10 +117,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The post_apply_resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_post_apply_resources? PostApplyResources { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampPostApplyResourcesProperty? PostApplyResources { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_post_apply_resources PostApplyResources { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampPostApplyResourcesProperty PostApplyResources { get; set; }
 #endif
         /// <summary>The post_apply_resources_unavailable property</summary>
         public bool? PostApplyResourcesUnavailable { get; set; }
@@ -155,10 +155,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The vpcs_by_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_vpcs_by_id? VpcsById { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampVpcsByIdProperty? VpcsById { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_vpcs_by_id VpcsById { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampVpcsByIdProperty VpcsById { get; set; }
 #endif
         /// <summary>The list of vpc IDs for which resource details failed to generate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -213,14 +213,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "planned_resources", n => { PlannedResources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourceDiff>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourceDiff.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "planned_resources_unavailable", n => { PlannedResourcesUnavailable = n.GetBoolValue(); } },
                 { "post_apply_monthly_cost_estimate", n => { PostApplyMonthlyCostEstimate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCost>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnCost.CreateFromDiscriminatorValue); } },
-                { "post_apply_resources", n => { PostApplyResources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_post_apply_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_post_apply_resources.CreateFromDiscriminatorValue); } },
+                { "post_apply_resources", n => { PostApplyResources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampPostApplyResourcesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampPostApplyResourcesProperty.CreateFromDiscriminatorValue); } },
                 { "post_apply_resources_unavailable", n => { PostApplyResourcesUnavailable = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "vpc", n => { Vpc = n.GetGuidValue(); } },
-                { "vpcs_by_id", n => { VpcsById = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_vpcs_by_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_vpcs_by_id.CreateFromDiscriminatorValue); } },
+                { "vpcs_by_id", n => { VpcsById = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampVpcsByIdProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampVpcsByIdProperty.CreateFromDiscriminatorValue); } },
                 { "vpcs_by_id_unavailable", n => { VpcsByIdUnavailable = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
         }
@@ -251,14 +251,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourceDiff>("planned_resources", PlannedResources);
             writer.WriteBoolValue("planned_resources_unavailable", PlannedResourcesUnavailable);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCost>("post_apply_monthly_cost_estimate", PostApplyMonthlyCostEstimate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_post_apply_resources>("post_apply_resources", PostApplyResources);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampPostApplyResourcesProperty>("post_apply_resources", PostApplyResources);
             writer.WriteBoolValue("post_apply_resources_unavailable", PostApplyResourcesUnavailable);
             writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampType>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("vpc", Vpc);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnramp_vpcs_by_id>("vpcs_by_id", VpcsById);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampVpcsByIdProperty>("vpcs_by_id", VpcsById);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("vpcs_by_id_unavailable", VpcsByIdUnavailable);
             writer.WriteAdditionalData(AdditionalData);
         }

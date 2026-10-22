@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsCollectionResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsApiResponseCommonResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsCollectionResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsApiResponseCommonResult Result { get; set; }
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsCollectionResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsCollectionResponse_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsApiResponseCommonResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsApiResponseCommonResult.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsMessagesItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsPcapsCollectionResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsApiResponseCommonResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcapsResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

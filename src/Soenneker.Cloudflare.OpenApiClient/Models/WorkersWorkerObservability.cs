@@ -19,6 +19,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>The sampling rate for observability. From 0 to 1 (1 = 100%, 0.1 = 10%).</summary>
         public double? HeadSamplingRate { get; set; }
+        /// <summary>Real-time Issues settings for the Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues? Issues { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues Issues { get; set; }
+#endif
         /// <summary>Log settings for the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +35,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityLogs Logs { get; set; }
 #endif
+        /// <summary>Whether query strings are removed from request URLs in logs and traces.</summary>
+        public bool? RedactQueryString { get; set; }
         /// <summary>Trace settings for the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersWorkerObservability()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            HeadSamplingRate = 1;
+            RedactQueryString = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
+                { "issues", n => { Issues = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues.CreateFromDiscriminatorValue); } },
                 { "logs", n => { Logs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityLogs>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityLogs.CreateFromDiscriminatorValue); } },
+                { "redact_query_string", n => { RedactQueryString = n.GetBoolValue(); } },
                 { "traces", n => { Traces = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTraces>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTraces.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,7 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityIssues>("issues", Issues);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityLogs>("logs", Logs);
+            writer.WriteBoolValue("redact_query_string", RedactQueryString);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTraces>("traces", Traces);
             writer.WriteAdditionalData(AdditionalData);
         }

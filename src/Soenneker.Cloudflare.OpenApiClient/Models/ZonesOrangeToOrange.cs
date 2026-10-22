@@ -10,6 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// <summary>
     /// Orange to Orange (O2O) allows zones on Cloudflare to CNAME to other zones also on Cloudflare.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesOrangeToOrange : IAdditionalDataHolder, IParsable
     {
@@ -28,6 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting.</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOrangeToOrangeValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOrangeToOrange"/> and sets the default values.
@@ -35,7 +37,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesOrangeToOrange()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOrangeToOrangeValue.On;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

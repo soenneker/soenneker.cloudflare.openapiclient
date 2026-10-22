@@ -18,28 +18,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_errors? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem>? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_errors Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_messages? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_messages Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailureResultProperty? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailureResultProperty Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -68,9 +76,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailureResultProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailureResultProperty.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -81,9 +90,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailure_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem>("errors", Errors);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvMessagesItem>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvApiResponseCommonFailureResultProperty>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

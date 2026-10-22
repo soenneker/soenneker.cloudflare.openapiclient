@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\logs\scim\updates
+    /// Builds and executes requests for operations under \accounts\{account-id}\access\logs\scim\updates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdatesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", pathParameters)
+        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/scim/updates{?cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*,idp_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", rawUrl)
+        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/scim/updates{?cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*,idp_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,109 +92,132 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cf_resource_id")]
             public string[]? CfResourceId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cf_resource_id")]
             public string[] CfResourceId { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDirection? Direction { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idp_id")]
             public string[]? IdpId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idp_id")]
             public string[] IdpId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("idp_resource_id")]
             public string[]? IdpResourceId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("idp_resource_id")]
             public string[] IdpResourceId { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
-            public string? Limit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("limit")]
-            public string Limit { get; set; }
-#endif
+            public int? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("request_method")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetRequest_methodQueryParameterType[]? RequestMethod { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRequestMethodItem[]? RequestMethod { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("request_method")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetRequest_methodQueryParameterType[] RequestMethod { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRequestMethodItem[] RequestMethod { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_group_name")]
             public string[]? ResourceGroupName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_group_name")]
             public string[] ResourceGroupName { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetResource_typeQueryParameterType[]? ResourceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResourceTypeItem[]? ResourceType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetResource_typeQueryParameterType[] ResourceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessResourceTypeItem[] ResourceType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_user_email")]
             public string[]? ResourceUserEmail { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_user_email")]
             public string[] ResourceUserEmail { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("since")]
-            public string? Since { get; set; }
-#nullable restore
-#else
-            [QueryParameter("since")]
-            public string Since { get; set; }
-#endif
+            public DateTimeOffset? Since { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetStatusQueryParameterType[]? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessStatus2Item[]? Status { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetStatusQueryParameterType[] Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessStatus2Item[] Status { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("until")]
-            public string? Until { get; set; }
-#nullable restore
-#else
-            [QueryParameter("until")]
-            public string Until { get; set; }
-#endif
+            public DateTimeOffset? Until { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

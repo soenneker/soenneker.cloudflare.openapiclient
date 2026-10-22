@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class RulesetsRequestRule : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Union discriminator</summary>
+        /// <summary>The action to perform when the rule matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action { get; set; }
@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The parameters configuring the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_action_parameters? ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRuleActionParameters? ActionParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_action_parameters ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRuleActionParameters ActionParameters { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -46,14 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_enabled Enabled { get; set; }
-#endif
+        /// <summary>Whether the rule should be executed.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>Configuration for exposed credential checking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -264,6 +258,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule RulesetsSkipRule { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule? RulesetsTransformResponseHtmlRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule RulesetsTransformResponseHtmlRule { get; set; }
+#endif
         /// <summary>The version of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,27 +291,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("action")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ActionParameters = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_action_parameters();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Enabled = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_enabled();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ExposedCredentialCheck = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Logging = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleLogging();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Ratelimit = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRatelimit();
-            }
-            else if("block".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("block".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsBlockRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRule();
             }
@@ -389,6 +371,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.RulesetsSkipRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule();
             }
+            else if("RulesetsTransformResponseHtmlRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RulesetsTransformResponseHtmlRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule();
+            }
             else if(parseNode.GetStringValue() is string actionValue)
             {
                 result.Action = actionValue;
@@ -396,6 +382,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(parseNode.GetStringValue() is string descriptionValue)
             {
                 result.Description = descriptionValue;
+            }
+            else if(parseNode.GetBoolValue() is bool enabledValue)
+            {
+                result.Enabled = enabledValue;
             }
             else if(parseNode.GetStringValue() is string expressionValue)
             {
@@ -432,10 +422,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ActionParameters != null)
             {
                 return ActionParameters.GetFieldDeserializers();
-            }
-            else if(Enabled != null)
-            {
-                return Enabled.GetFieldDeserializers();
             }
             else if(ExposedCredentialCheck != null)
             {
@@ -529,6 +515,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return RulesetsSkipRule.GetFieldDeserializers();
             }
+            else if(RulesetsTransformResponseHtmlRule != null)
+            {
+                return RulesetsTransformResponseHtmlRule.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -540,11 +530,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ActionParameters != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_action_parameters>(null, ActionParameters);
-            }
-            else if(Enabled != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule_enabled>(null, Enabled);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsBlockRuleActionParameters>(null, ActionParameters);
             }
             else if(ExposedCredentialCheck != null)
             {
@@ -638,6 +624,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule>(null, RulesetsSkipRule);
             }
+            else if(RulesetsTransformResponseHtmlRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule>(null, RulesetsTransformResponseHtmlRule);
+            }
             else if(Action != null)
             {
                 writer.WriteStringValue(null, Action);
@@ -645,6 +635,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(Description != null)
             {
                 writer.WriteStringValue(null, Description);
+            }
+            else if(Enabled != null)
+            {
+                writer.WriteBoolValue(null, Enabled);
             }
             else if(Expression != null)
             {

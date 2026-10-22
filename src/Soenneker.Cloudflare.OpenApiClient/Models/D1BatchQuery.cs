@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1SingleQuery"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMultipleQueries"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1SingleQuery"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class D1BatchQuery : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMultipleQueries"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMember1? D1BatchQueryMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMultipleQueries? D1BatchQueryMultipleQueries { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMember1 D1BatchQueryMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMultipleQueries D1BatchQueryMultipleQueries { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1SingleQuery"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,11 +37,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQuery();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("D1BatchQueryMultipleQueries".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.D1BatchQueryMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMember1();
+                result.D1BatchQueryMultipleQueries = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMultipleQueries();
             }
             else if("D1SingleQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -55,9 +55,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(D1BatchQueryMember1 != null)
+            if(D1BatchQueryMultipleQueries != null)
             {
-                return D1BatchQueryMember1.GetFieldDeserializers();
+                return D1BatchQueryMultipleQueries.GetFieldDeserializers();
             }
             else if(D1SingleQuery != null)
             {
@@ -72,9 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(D1BatchQueryMember1 != null)
+            if(D1BatchQueryMultipleQueries != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMember1>(null, D1BatchQueryMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1BatchQueryMultipleQueries>(null, D1BatchQueryMultipleQueries);
             }
             else if(D1SingleQuery != null)
             {

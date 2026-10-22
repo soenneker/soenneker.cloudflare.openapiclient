@@ -7,6 +7,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum StreamLiveInputStatus
     {
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
+        #pragma warning restore CS1591
         [EnumMember(Value = "connected")]
         #pragma warning disable CS1591
         Connected,
@@ -21,23 +25,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "client_disconnect")]
         #pragma warning disable CS1591
-        Client_disconnect,
+        ClientDisconnect,
         #pragma warning restore CS1591
         [EnumMember(Value = "ttl_exceeded")]
         #pragma warning disable CS1591
-        Ttl_exceeded,
+        TtlExceeded,
         #pragma warning restore CS1591
         [EnumMember(Value = "failed_to_connect")]
         #pragma warning disable CS1591
-        Failed_to_connect,
+        FailedToConnect,
         #pragma warning restore CS1591
         [EnumMember(Value = "failed_to_reconnect")]
         #pragma warning disable CS1591
-        Failed_to_reconnect,
+        FailedToReconnect,
         #pragma warning restore CS1591
         [EnumMember(Value = "new_configuration_accepted")]
         #pragma warning disable CS1591
-        New_configuration_accepted,
+        NewConfigurationAccepted,
         #pragma warning restore CS1591
     }
 }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserver_sets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -13,11 +14,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dns_settings
+    /// Builds and executes requests for operations under \accounts\{account-id}\dns_settings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dns_settingsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The nameserver_sets property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserver_sets.Nameserver_setsRequestBuilder Nameserver_sets
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Nameserver_sets.Nameserver_setsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The views property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views.ViewsRequestBuilder Views
         {
@@ -28,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_settingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dns_settings", pathParameters)
+        public Dns_settingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dns_settings", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_settingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dns_settings", rawUrl)
+        public Dns_settingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dns_settings", rawUrl)
         {
         }
         /// <summary>
@@ -45,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountListDnsSettings4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountListDnsSettings4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountListDnsSettings4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountListDnsSettings4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -69,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountUpdateDnsSettings4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountUpdateDnsSettings4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsAccountSettingsPatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -83,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountUpdateDnsSettings4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsForAnAccountUpdateDnsSettings4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string MailtoSubject { get; set; }
 #endif
         /// <summary>Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings_mode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettingsMode? Mode { get; set; }
         /// <summary>Specify the block page title when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "logo_path", n => { LogoPath = n.GetStringValue(); } },
                 { "mailto_address", n => { MailtoAddress = n.GetStringValue(); } },
                 { "mailto_subject", n => { MailtoSubject = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings_mode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettingsMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
                 { "source_account", n => { SourceAccount = n.GetStringValue(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("logo_path", LogoPath);
             writer.WriteStringValue("mailto_address", MailtoAddress);
             writer.WriteStringValue("mailto_subject", MailtoSubject);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettings_mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayBlockPageSettingsMode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("suppress_footer", SuppressFooter);
             writer.WriteStringValue("target_uri", TargetUri);

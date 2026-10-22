@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>This setting controls how long DNS Firewall should cache negativeresponses (e.g., NXDOMAIN) from the upstream servers.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
         public double? NegativeCacheTtl { get; set; }
-        /// <summary>Ratelimit in queries per second per datacenter (applies to DNS queries sent to the upstream nameservers configured on the cluster)</summary>
+        /// <summary>Maximum number of DNS queries per second that will be forwarded to your upstream nameservers. The limit is enforced per server, where each server receives a fraction of the configured value. The actual aggregate rate for a data center may vary depending on how many servers are present. Responses served from cache do not count toward this limit. Set to null to disable rate limiting.</summary>
         public double? Ratelimit { get; set; }
         /// <summary>Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt)</summary>
         public double? Retries { get; set; }

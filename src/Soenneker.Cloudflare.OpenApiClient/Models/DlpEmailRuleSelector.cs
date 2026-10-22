@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "DLPProfiles")]
         #pragma warning disable CS1591
-        DLPProfiles,
+        DlpProfiles,
         #pragma warning restore CS1591
     }
 }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Cursor-based pagination metadata. Used by list endpoints that supportcursor pagination. Pass the `cursor` value as a query parameter in thenext request to fetch the next page. An empty string indicates thereare no more pages.
+    /// Provides cursor-based pagination metadata. List endpoints use thismetadata for cursor pagination. Pass the `cursor` value as a queryparameter in the next request to fetch the next page. An empty stringindicates the end of pagination.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrarApiCursorResultInfo : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of items in the current result set.</summary>
         public int? Count { get; set; }
-        /// <summary>Opaque cursor for fetching the next page. Pass this value as the`cursor` query parameter in a subsequent request. An empty stringindicates there are no more pages.</summary>
+        /// <summary>Opaque cursor for fetching the next page. Pass this value as the`cursor` query parameter in a subsequent request. An empty stringindicates the end of pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cursor { get; set; }

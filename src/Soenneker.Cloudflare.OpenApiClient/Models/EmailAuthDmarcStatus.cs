@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>DMARC configuration status</summary>
+    /// <summary>DMARC configuration status. The API omits this field when DMARC is correctly configured. If the zone lacks a DMARC TXT record of its own, the API resolves _dmarc.{zone} recursively and evaluates whatever that lookup returns. A CNAME at _dmarc.{zone} that points to a valid DMARC record is therefore healthy; the cname-on-dmarc-record value means the CNAME resolves to no DMARC record at all.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailAuthDmarcStatus
     {
@@ -22,6 +22,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "cname-on-dmarc-record")]
         #pragma warning disable CS1591
         CnameOnDmarcRecord,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unauthorized-reporting-domain")]
+        #pragma warning disable CS1591
+        UnauthorizedReportingDomain,
         #pragma warning restore CS1591
     }
 }

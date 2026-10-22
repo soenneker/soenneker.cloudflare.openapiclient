@@ -9,39 +9,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "PHISH")]
         #pragma warning disable CS1591
-        PHISH,
+        Phish,
         #pragma warning restore CS1591
         [EnumMember(Value = "GEN")]
         #pragma warning disable CS1591
-        GEN,
+        Gen,
         #pragma warning restore CS1591
         [EnumMember(Value = "THREAT")]
         #pragma warning disable CS1591
-        THREAT,
+        Threat,
         #pragma warning restore CS1591
         [EnumMember(Value = "DMCA")]
         #pragma warning disable CS1591
-        DMCA,
+        Dmca,
         #pragma warning restore CS1591
         [EnumMember(Value = "EMER")]
         #pragma warning disable CS1591
-        EMER,
+        Emer,
         #pragma warning restore CS1591
         [EnumMember(Value = "TM")]
         #pragma warning disable CS1591
-        TM,
+        Tm,
         #pragma warning restore CS1591
         [EnumMember(Value = "REG_WHO")]
         #pragma warning disable CS1591
-        REG_WHO,
+        RegWho,
         #pragma warning restore CS1591
         [EnumMember(Value = "NCSEI")]
         #pragma warning disable CS1591
-        NCSEI,
+        Ncsei,
         #pragma warning restore CS1591
         [EnumMember(Value = "NETWORK")]
         #pragma warning disable CS1591
-        NETWORK,
+        Network,
         #pragma warning restore CS1591
     }
 }

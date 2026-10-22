@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ClientSecret { get; set; }
 #endif
         /// <summary>The authentication scheme to use when making SCIM requests to this application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationAccessServiceToken_scheme? Scheme { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenScheme? Scheme { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationAccessServiceToken"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationAccessServiceToken_scheme>(); } },
+                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenScheme>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_secret", ClientSecret);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationAccessServiceToken_scheme>("scheme", Scheme);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenScheme>("scheme", Scheme);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

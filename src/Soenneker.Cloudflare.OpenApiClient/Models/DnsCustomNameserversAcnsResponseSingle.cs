@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A single account custom nameserver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNS? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNs? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNS Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNs Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNS>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNS.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNs>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNS>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNs>("result", Result);
         }
     }
 }

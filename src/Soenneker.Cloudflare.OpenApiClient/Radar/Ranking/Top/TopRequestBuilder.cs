@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top
         /// <summary>
         /// Retrieves the top or trending domains based on their rank. Popular domains are domains of broad appeal based on how people use the Internet. Trending domains are domains that are generating a surge in interest. For more information on top domains, see https://blog.cloudflare.com/radar-domain-rankings/.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top.TopRequestBuilder.TopRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomains200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top or trending domains based on their rank. Popular domains are domains of broad appeal based on how people use the Internet. Trending domains are domains that are generating a surge in interest. For more information on top domains, see https://blog.cloudflare.com/radar-domain-rankings/.
@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomainsFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -138,7 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top
 #endif
             /// <summary>The ranking type.</summary>
             [QueryParameter("rankingType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Top.GetRankingTypeQueryParameterType? RankingType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRankingTopDomainsRankingTypeParameter? RankingType { get; set; }
         }
     }
 }

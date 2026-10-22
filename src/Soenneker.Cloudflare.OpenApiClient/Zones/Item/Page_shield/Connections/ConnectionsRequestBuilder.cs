@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\page_shield\connections
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\page_shield\connections
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.page_shield.connections.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.Item.WithConnection_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.Item.WithConnection_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.Item.WithConnectionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.Item.WithConnectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("connection_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.Item.WithConnection_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("connectionId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.Item.WithConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/page_shield/connections{?direction*,exclude_cdn_cgi*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", pathParameters)
+        public ConnectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/page_shield/connections{?direction*,exclude_cdn_cgi*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,34 +43,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/page_shield/connections{?direction*,exclude_cdn_cgi*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", rawUrl)
+        public ConnectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/page_shield/connections{?direction*,exclude_cdn_cgi*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists all connections detected by Page Shield.
+        /// Lists outbound connections made by webpages in the zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneConnectionsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneConnectionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneConnectionsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneConnectionsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneConnectionsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneConnectionsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneConnectionsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneConnectionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneConnectionsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneConnectionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all connections detected by Page Shield.
+        /// Lists outbound connections made by webpages in the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,76 +98,112 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all connections detected by Page Shield.
+        /// Lists outbound connections made by webpages in the zone.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConnectionsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListConnectionsDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("exclude_cdn_cgi")]
             public bool? ExcludeCdnCgi { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("exclude_urls")]
             public string? ExcludeUrls { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("exclude_urls")]
             public string ExcludeUrls { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("export")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.GetExportQueryParameterType? Export { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CsvExport? Export { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("hosts")]
             public string? Hosts { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("hosts")]
             public string Hosts { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.GetOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListConnectionsOrderByParameter? OrderBy { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public string? Page { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public string Page { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("page_url")]
             public string? PageUrl { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("page_url")]
             public string PageUrl { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("prioritize_malicious")]
             public bool? PrioritizeMalicious { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public string? Status { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public string Status { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("urls")]
             public string? Urls { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("urls")]
             public string Urls { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

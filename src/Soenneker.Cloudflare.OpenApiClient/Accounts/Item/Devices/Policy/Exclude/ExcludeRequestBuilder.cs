@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\devices\policy\exclude
+    /// Builds and executes requests for operations under \accounts\{account-id}\devices\policy\exclude
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExcludeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExcludeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices/policy/exclude", pathParameters)
+        public ExcludeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/policy/exclude{?reset_defaults*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,8 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExcludeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices/policy/exclude", rawUrl)
+        public ExcludeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/policy/exclude{?reset_defaults*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Resets the Split Tunnel exclude list to the default value.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure">When receiving a 4XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude.ExcludeRequestBuilder.ExcludeRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude.ExcludeRequestBuilder.ExcludeRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches the list of routes excluded from the WARP client&apos;s tunnel.
@@ -39,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesGetSplitTunnelExcludeList4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesGetSplitTunnelExcludeList4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -63,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesSetSplitTunnelExcludeList4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnel> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,9 +100,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DevicesSetSplitTunnelExcludeList4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSplitTunnelResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Resets the Split Tunnel exclude list to the default value.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude.ExcludeRequestBuilder.ExcludeRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude.ExcludeRequestBuilder.ExcludeRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Fetches the list of routes excluded from the WARP client&apos;s tunnel.
@@ -130,6 +172,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclud
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude.ExcludeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Exclude.ExcludeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Resets the Split Tunnel exclude list to the default value.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ExcludeRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>Deprecated and ignored. Deleting the list always restores the defaults.</summary>
+            [Obsolete("")]
+            [QueryParameter("reset_defaults")]
+            public bool? ResetDefaults { get; set; }
         }
     }
 }

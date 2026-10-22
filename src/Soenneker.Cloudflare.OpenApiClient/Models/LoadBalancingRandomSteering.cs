@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Configures pool weights.- `steering_policy=\&quot;random\&quot;`: A random pool is selected with probability proportional to pool weights.- `steering_policy=\&quot;least_outstanding_requests\&quot;`: Use pool weights to scale each pool&apos;s outstanding requests.- `steering_policy=\&quot;least_connections\&quot;`: Use pool weights to scale each pool&apos;s open connections.&quot;
+    /// Configures pool weights.- `steering_policy=&quot;random&quot;`: A random pool is selected with probability proportional to pool weights.- `steering_policy=&quot;least_outstanding_requests&quot;`: Use pool weights to scale each pool&apos;s outstanding requests.- `steering_policy=&quot;least_connections&quot;`: Use pool weights to scale each pool&apos;s open connections.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoadBalancingRandomSteering : IAdditionalDataHolder, IParsable
@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A mapping of pool IDs to custom weights. The weight is relative to other pools in the load balancer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering_pool_weights? PoolWeights { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty? PoolWeights { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering_pool_weights PoolWeights { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty PoolWeights { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering"/> and sets the default values.
@@ -31,6 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingRandomSteering()
         {
             AdditionalData = new Dictionary<string, object>();
+            DefaultWeight = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "default_weight", n => { DefaultWeight = n.GetDoubleValue(); } },
-                { "pool_weights", n => { PoolWeights = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering_pool_weights>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering_pool_weights.CreateFromDiscriminatorValue); } },
+                { "pool_weights", n => { PoolWeights = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("default_weight", DefaultWeight);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteering_pool_weights>("pool_weights", PoolWeights);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRandomSteeringPoolWeightsProperty>("pool_weights", PoolWeights);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

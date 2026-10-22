@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\rulesets\phases\{ruleset_phase}\entrypoint
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\rulesets\phases\{rulesetPhase}\entrypoint
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntrypointRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Ent
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntrypointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint", pathParameters)
+        public EntrypointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/rulesets/phases/{rulesetPhase}/entrypoint{?dry_run*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,56 +36,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Ent
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntrypointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint", rawUrl)
+        public EntrypointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/rulesets/phases/{rulesetPhase}/entrypoint{?dry_run*}", rawUrl)
         {
         }
         /// <summary>
         /// Fetches the latest version of the zone entry point ruleset for a given phase.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Entrypoint4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsFailureResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Entrypoint4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsFailureResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a zone entry point ruleset, creating a new version.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetOrDryRunResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Entrypoint4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsFailureResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetOrDryRunResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUpdateEntrypointRulesetRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointRequestBuilder.EntrypointRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetOrDryRunResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUpdateEntrypointRulesetRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointRequestBuilder.EntrypointRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Entrypoint4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsFailureResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetOrDryRunResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetOrDryRunResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches the latest version of the zone entry point ruleset for a given phase.
@@ -114,11 +114,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Ent
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUpdateEntrypointRulesetRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointRequestBuilder.EntrypointRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUpdateEntrypointRulesetRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointRequestBuilder.EntrypointRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -136,6 +136,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Ent
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Updates a zone entry point ruleset, creating a new version.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class EntrypointRequestBuilderPutQueryParameters 
+        {
+            /// <summary>Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204.</summary>
+            [QueryParameter("dry_run")]
+            public bool? DryRun { get; set; }
         }
     }
 }

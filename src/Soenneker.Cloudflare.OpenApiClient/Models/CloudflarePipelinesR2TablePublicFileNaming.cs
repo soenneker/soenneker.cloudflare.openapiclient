@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Prefix { get; set; }
 #endif
         /// <summary>Filename generation strategy.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2TablePublicFileNaming_strategy? Strategy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2TablePublicFileNamingStrategy? Strategy { get; set; }
         /// <summary>This will overwrite the default file suffix. i.e .parquet, use with caution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
-                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2TablePublicFileNaming_strategy>(); } },
+                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2TablePublicFileNamingStrategy>(); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("prefix", Prefix);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2TablePublicFileNaming_strategy>("strategy", Strategy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesR2TablePublicFileNamingStrategy>("strategy", Strategy);
             writer.WriteStringValue("suffix", Suffix);
         }
     }

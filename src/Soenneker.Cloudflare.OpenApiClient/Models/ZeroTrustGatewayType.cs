@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "gateway_managed")]
         #pragma warning disable CS1591
-        Gateway_managed,
+        GatewayManaged,
         #pragma warning restore CS1591
     }
 }

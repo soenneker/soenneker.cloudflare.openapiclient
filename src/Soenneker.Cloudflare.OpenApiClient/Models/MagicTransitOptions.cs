@@ -30,7 +30,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicTransitOptions()
         {
             AdditionalData = new Dictionary<string, object>();
-            PacketType = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitPacketType.Icmp;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

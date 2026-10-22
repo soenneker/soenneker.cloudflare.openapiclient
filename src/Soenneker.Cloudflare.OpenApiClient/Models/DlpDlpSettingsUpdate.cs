@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Request model for updating DLP account-level settings.All fields are optional. Missing fields behave differently for PUT vs PATCH:- PUT: missing fields reset to initial (unconfigured) values.- PATCH: missing fields keep existing values.&quot;
+    /// Request model for updating DLP account-level settings.All fields are optional. Missing fields behave differently for PUT vs PATCH:- PUT: missing fields reset to initial (unconfigured) values.- PATCH: missing fields keep existing values.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpDlpSettingsUpdate : IAdditionalDataHolder, IParsable
@@ -22,10 +22,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The payload_logging property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate_payload_logging? PayloadLogging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging? PayloadLogging { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate_payload_logging PayloadLogging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging PayloadLogging { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate"/> and sets the default values.
@@ -33,6 +33,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DlpDlpSettingsUpdate()
         {
             AdditionalData = new Dictionary<string, object>();
+            AiContextAnalysis = false;
+            Ocr = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "ai_context_analysis", n => { AiContextAnalysis = n.GetBoolValue(); } },
                 { "ocr", n => { Ocr = n.GetBoolValue(); } },
-                { "payload_logging", n => { PayloadLogging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate_payload_logging>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate_payload_logging.CreateFromDiscriminatorValue); } },
+                { "payload_logging", n => { PayloadLogging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("ai_context_analysis", AiContextAnalysis);
             writer.WriteBoolValue("ocr", Ocr);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdate_payload_logging>("payload_logging", PayloadLogging);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpDlpSettingsUpdatePayloadLogging>("payload_logging", PayloadLogging);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

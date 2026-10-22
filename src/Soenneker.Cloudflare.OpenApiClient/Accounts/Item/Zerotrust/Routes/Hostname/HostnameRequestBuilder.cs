@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zerotrust\routes\hostname
+    /// Builds and executes requests for operations under \accounts\{account-id}\zerotrust\routes\hostname
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HostnameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.zerotrust.routes.hostname.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.Item.WithHostname_route_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.Item.WithHostname_route_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.Item.WithHostnameRouteItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.Item.WithHostnameRouteItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("hostname_route_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.Item.WithHostname_route_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("hostnameRouteId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.Item.WithHostnameRouteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostnameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", pathParameters)
+        public HostnameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostnameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", rawUrl)
+        public HostnameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameList4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameList4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname.HostnameRequestBuilder.HostnameRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameList4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameList4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,21 +76,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRouteResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -121,11 +121,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksRouteHostnameCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -152,21 +152,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment")]
             public string? Comment { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment")]
             public string Comment { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("existed_at")]
             public string? ExistedAt { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("existed_at")]
             public string ExistedAt { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>If set, only list hostname routes that contain a substring of the given value, the filter is case-insensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,45 +186,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
             [QueryParameter("hostname")]
             public string Hostname { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("id")]
-            public string? Id { get; set; }
-#nullable restore
-#else
-            [QueryParameter("id")]
-            public string Id { get; set; }
-#endif
+            public Guid? Id { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("is_deleted")]
             public bool? IsDeleted { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
+            #pragma warning restore CS1591
             /// <summary>If set, only list hostname routes that point to a specific tunnel.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("tunnel_id")]
-            public string? TunnelId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tunnel_id")]
-            public string TunnelId { get; set; }
-#endif
+            public Guid? TunnelId { get; set; }
         }
     }
 }

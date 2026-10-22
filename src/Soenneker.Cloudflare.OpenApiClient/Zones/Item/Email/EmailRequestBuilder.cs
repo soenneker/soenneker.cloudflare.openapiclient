@@ -2,8 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Auth;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Security;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending;
 using System.Collections.Generic;
 using System.IO;
@@ -12,20 +12,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\email
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\email
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The auth property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Auth.AuthRequestBuilder Auth
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Auth.AuthRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The routing property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder Routing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The security property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Security.SecurityRequestBuilder Security
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sending property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.SendingRequestBuilder Sending
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/email", pathParameters)
+        public EmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/email", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/email", rawUrl)
+        public EmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/email", rawUrl)
         {
         }
     }

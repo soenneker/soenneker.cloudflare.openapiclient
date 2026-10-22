@@ -9,15 +9,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "@cf/baai/bge-small-en-v1.5")]
         #pragma warning disable CS1591
-        CfBaaiBgeSmallEnV15,
+        AtCfBaaiBgeSmallEnV15,
         #pragma warning restore CS1591
         [EnumMember(Value = "@cf/baai/bge-base-en-v1.5")]
         #pragma warning disable CS1591
-        CfBaaiBgeBaseEnV15,
+        AtCfBaaiBgeBaseEnV15,
         #pragma warning restore CS1591
         [EnumMember(Value = "@cf/baai/bge-large-en-v1.5")]
         #pragma warning disable CS1591
-        CfBaaiBgeLargeEnV15,
+        AtCfBaaiBgeLargeEnV15,
         #pragma warning restore CS1591
         [EnumMember(Value = "openai/text-embedding-ada-002")]
         #pragma warning disable CS1591

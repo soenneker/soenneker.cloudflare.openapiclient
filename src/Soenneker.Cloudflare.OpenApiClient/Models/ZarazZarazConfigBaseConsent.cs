@@ -58,10 +58,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_consentModalIntroHTMLWithTranslations? ConsentModalIntroHTMLWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty? ConsentModalIntroHTMLWithTranslations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_consentModalIntroHTMLWithTranslations ConsentModalIntroHTMLWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty ConsentModalIntroHTMLWithTranslations { get; set; }
 #endif
         /// <summary>The cookieName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,18 +96,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Object where keys are purpose alpha-numeric IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposes? Purposes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty? Purposes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposes Purposes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty Purposes { get; set; }
 #endif
         /// <summary>Object where keys are purpose alpha-numeric IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposesWithTranslations? PurposesWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty? PurposesWithTranslations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposesWithTranslations PurposesWithTranslations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty PurposesWithTranslations { get; set; }
 #endif
         /// <summary>The tcfCompliant property</summary>
         public bool? TcfCompliant { get; set; }
@@ -141,15 +141,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "companyStreetAddress", n => { CompanyStreetAddress = n.GetStringValue(); } },
                 { "consentModalIntroHTML", n => { ConsentModalIntroHTML = n.GetStringValue(); } },
-                { "consentModalIntroHTMLWithTranslations", n => { ConsentModalIntroHTMLWithTranslations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_consentModalIntroHTMLWithTranslations>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_consentModalIntroHTMLWithTranslations.CreateFromDiscriminatorValue); } },
+                { "consentModalIntroHTMLWithTranslations", n => { ConsentModalIntroHTMLWithTranslations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty.CreateFromDiscriminatorValue); } },
                 { "cookieName", n => { CookieName = n.GetStringValue(); } },
                 { "customCSS", n => { CustomCSS = n.GetStringValue(); } },
                 { "customIntroDisclaimerDismissed", n => { CustomIntroDisclaimerDismissed = n.GetBoolValue(); } },
                 { "defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "hideModal", n => { HideModal = n.GetBoolValue(); } },
-                { "purposes", n => { Purposes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposes>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposes.CreateFromDiscriminatorValue); } },
-                { "purposesWithTranslations", n => { PurposesWithTranslations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposesWithTranslations>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposesWithTranslations.CreateFromDiscriminatorValue); } },
+                { "purposes", n => { Purposes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty.CreateFromDiscriminatorValue); } },
+                { "purposesWithTranslations", n => { PurposesWithTranslations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty.CreateFromDiscriminatorValue); } },
                 { "tcfCompliant", n => { TcfCompliant = n.GetBoolValue(); } },
             };
         }
@@ -165,15 +165,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("companyStreetAddress", CompanyStreetAddress);
             writer.WriteStringValue("consentModalIntroHTML", ConsentModalIntroHTML);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_consentModalIntroHTMLWithTranslations>("consentModalIntroHTMLWithTranslations", ConsentModalIntroHTMLWithTranslations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentConsentModalIntroHtmlWithTranslationsProperty>("consentModalIntroHTMLWithTranslations", ConsentModalIntroHTMLWithTranslations);
             writer.WriteStringValue("cookieName", CookieName);
             writer.WriteStringValue("customCSS", CustomCSS);
             writer.WriteBoolValue("customIntroDisclaimerDismissed", CustomIntroDisclaimerDismissed);
             writer.WriteStringValue("defaultLanguage", DefaultLanguage);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("hideModal", HideModal);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposes>("purposes", Purposes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsent_purposesWithTranslations>("purposesWithTranslations", PurposesWithTranslations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesProperty>("purposes", Purposes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentPurposesWithTranslationsProperty>("purposesWithTranslations", PurposesWithTranslations);
             writer.WriteBoolValue("tcfCompliant", TcfCompliant);
             writer.WriteAdditionalData(AdditionalData);
         }

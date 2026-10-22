@@ -4,9 +4,12 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Unlock;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,15 +18,25 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\email\routing
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\email\routing
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoutingRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The disable property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder Disable
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The dns property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder Dns
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The enable property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder Enable
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder Rules
@@ -35,12 +48,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The unlock property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Unlock.UnlockRequestBuilder Unlock
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Unlock.UnlockRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoutingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/email/routing", pathParameters)
+        public RoutingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/email/routing", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoutingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/email/routing", rawUrl)
+        public RoutingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/email/routing", rawUrl)
         {
         }
         /// <summary>
@@ -70,6 +88,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update the settings for your Email Routing zone.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Apply the provided settings to your Email Routing zone. Omitted settings retain their current values, as with PATCH.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingsResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Get information about the settings for your Email Routing zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -86,6 +144,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update the settings for your Email Routing zone.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
+        /// Apply the provided settings to your Email Routing zone. Omitted settings retain their current values, as with PATCH.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateEmailRoutingSettingsProperties body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

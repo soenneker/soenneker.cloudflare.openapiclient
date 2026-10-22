@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Freeform text describing the secret</summary>
+        /// <summary>Freeform text describing the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>The name of the secret</summary>
+        /// <summary>The name of the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -33,12 +33,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The list of services that can use this secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<string> Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?> Scopes { get; set; }
 #endif
-        /// <summary>The value of the secret. Maximum 64 KiB (65,536 bytes). Note that this is &apos;write only&apos; - no API response will provide this value, it is only used to create/modify secrets.</summary>
+        /// <summary>The value of the secret. Maximum 64 KiB (65,536 bytes). Note that this is &apos;write only&apos; - the API never returns this value; it exists only to create or modify secrets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>()?.AsList(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>("scopes", Scopes);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

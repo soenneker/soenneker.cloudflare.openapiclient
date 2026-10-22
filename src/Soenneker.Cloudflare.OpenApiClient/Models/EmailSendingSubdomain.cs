@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the destination address has been created.</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>The DKIM selector used for email signing.</summary>
+        /// <summary>The DKIM selector used for email signing. Wildcard rows publish the selector and sign with `d=&lt;base&gt;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DkimSelector { get; private set; }
@@ -24,11 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DkimSelector { get; private set; }
 #endif
+        /// <summary>Whether a send request that includes a recipient suppressed onthis subdomain drops that recipient and still delivers to therest, instead of failing the entire request.</summary>
+        public bool? DropSuppressedRecipients { get; set; }
         /// <summary>Whether Email Sending is enabled on this subdomain.</summary>
         public bool? Enabled { get; private set; }
         /// <summary>The date and time the destination address was last modified.</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The subdomain domain name.</summary>
+        /// <summary>The exact domain name or a leftmost wildcard such as `*.example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -36,7 +38,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The return-path domain used for bounce handling.</summary>
+        /// <summary>Whether sent messages from this subdomain can be previewed in the activity log.</summary>
+        public bool? PreviewEnabled { get; set; }
+        /// <summary>The return-path domain used for bounce handling. Wildcard rows use `cf-bounce.&lt;base&gt;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnPathDomain { get; private set; }
@@ -79,9 +83,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "dkim_selector", n => { DkimSelector = n.GetStringValue(); } },
+                { "drop_suppressed_recipients", n => { DropSuppressedRecipients = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "preview_enabled", n => { PreviewEnabled = n.GetBoolValue(); } },
                 { "return_path_domain", n => { ReturnPathDomain = n.GetStringValue(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
             };
@@ -94,8 +100,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteBoolValue("drop_suppressed_recipients", DropSuppressedRecipients);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("preview_enabled", PreviewEnabled);
             writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }

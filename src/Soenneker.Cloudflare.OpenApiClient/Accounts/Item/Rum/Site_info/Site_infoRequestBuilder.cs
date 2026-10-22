@@ -5,6 +5,9 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_tag;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Validate;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Zone_tag;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +17,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rum\site_info
+    /// Builds and executes requests for operations under \accounts\{account-id}\rum\site_info
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Site_infoRequestBuilder : BaseRequestBuilder
@@ -24,16 +27,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List.ListRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The site_tag property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_tag.Site_tagRequestBuilder Site_tag
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_tag.Site_tagRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The validate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Validate.ValidateRequestBuilder Validate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The zone_tag property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Zone_tag.Zone_tagRequestBuilder Zone_tag
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Zone_tag.Zone_tagRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.rum.site_info.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSiteItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSiteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("site_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("siteId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSiteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Site_infoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rum/site_info", pathParameters)
+        public Site_infoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rum/site_info", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Site_infoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rum/site_info", rawUrl)
+        public Site_infoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rum/site_info", rawUrl)
         {
         }
         /// <summary>

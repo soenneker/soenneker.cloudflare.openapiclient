@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering\scrape
+    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering\scrape
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScrapeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scra
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScrapeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/scrape{?cacheTTL*}", pathParameters)
+        public ScrapeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/scrape{?browser*,cacheTTL*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,39 +30,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scra
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScrapeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/scrape{?cacheTTL*}", rawUrl)
+        public ScrapeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/scrape{?browser*,cacheTTL*}", rawUrl)
         {
         }
         /// <summary>
         /// Get meta attributes like height, width, text and others of selected elements.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape422">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape422Response">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrapeRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrapeRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape400.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape422.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape400Response.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape422Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape429Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get meta attributes like height, width, text and others of selected elements.
@@ -72,11 +72,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scra
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrapeRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrape body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostScrapeRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder.ScrapeRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -101,6 +101,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scra
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScrapeRequestBuilderPostQueryParameters 
         {
+            /// <summary>Rendering backend. Set to `kitesurf` to use Kitesurf (beta).</summary>
+            [QueryParameter("browser")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.KitesurfBrowser? Browser { get; set; }
             /// <summary>Cache TTL default is 5s. Set to 0 to disable.</summary>
             [QueryParameter("cacheTTL")]
             public double? CacheTTL { get; set; }

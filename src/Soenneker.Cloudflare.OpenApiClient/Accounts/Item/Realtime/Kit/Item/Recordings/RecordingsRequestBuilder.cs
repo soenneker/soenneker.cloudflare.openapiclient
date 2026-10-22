@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Track;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\recordings
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{appId}\recordings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordingsRequestBuilder : BaseRequestBuilder
@@ -31,14 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.realtime.kit.item.recordings.item collection</summary>
         /// <param name="position">ID of the recording</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item.WithRecording_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item.WithRecording_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item.WithRecordingItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item.WithRecordingItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("recording_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item.WithRecording_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("recordingId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.Item.WithRecordingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -46,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", pathParameters)
+        public RecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", pathParameters)
         {
         }
         /// <summary>
@@ -54,46 +55,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", rawUrl)
+        public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", rawUrl)
         {
         }
         /// <summary>
         /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsRequestBuilder.RecordingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsRequestBuilder.RecordingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsRequestBuilder.RecordingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsRequestBuilder.RecordingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Starts recording a meeting. The meeting can be started by an App admin directly, or a participant with permissions to start a recording, based on the type of authorization used.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartRecordingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartRecordingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
@@ -122,11 +123,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartRecordingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartRecordingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -176,10 +177,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("sort_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.GetSort_byQueryParameterType? SortBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.InvokedTimeSortBy? SortBy { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSortOrder? SortOrder { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The start time range for which you want to retrieve the meetings. The time must be specified in ISO format.</summary>
             [QueryParameter("start_time")]
             public DateTimeOffset? StartTime { get; set; }
@@ -187,11 +192,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.GetStatusQueryParameterType[]? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatusItem[]? Status { get; set; }
 #nullable restore
 #else
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.GetStatusQueryParameterType[] Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatusItem[] Status { get; set; }
 #endif
         }
     }

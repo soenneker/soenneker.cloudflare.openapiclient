@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Automatically replace insecure JavaScript libraries with safer and faster alternatives provided under cdnjs and powered by Cloudflare. Currently supports the following libraries: Polyfill under polyfill.io.&quot;
+    /// Automatically replace insecure JavaScript libraries with safer and faster alternatives provided under cdnjs and powered by Cloudflare. Currently supports the following libraries: Polyfill under polyfill.io.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesReplaceInsecureJs : IAdditionalDataHolder, IParsable
@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesReplaceInsecureJs()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesReplaceInsecureJsValue.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -25,13 +25,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Enum for base zone-level resource types (those with no extra required fields).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum? ResourceType { get; set; }
-        /// <summary>Contains key-value pairs of tags.</summary>
+        /// <summary>Contains key-value pairs of tags. Keys may contain at most 256 characters. Values may contain at most 1024 characters and may be empty for key-only tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBase_tags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBaseTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBase_tags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBaseTags Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBase"/> and sets the default values.
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum>(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBase_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBase_tags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBaseTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBaseTags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum>("resource_type", ResourceType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBase_tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelBaseTags>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

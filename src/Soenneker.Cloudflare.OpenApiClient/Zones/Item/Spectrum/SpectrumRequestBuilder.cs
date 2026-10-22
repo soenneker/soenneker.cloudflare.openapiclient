@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Apps;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Protocols;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\spectrum
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\spectrum
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SpectrumRequestBuilder : BaseRequestBuilder
@@ -26,12 +27,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The protocols property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Protocols.ProtocolsRequestBuilder Protocols
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Protocols.ProtocolsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.SpectrumRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpectrumRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum", pathParameters)
+        public SpectrumRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/spectrum", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpectrumRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum", rawUrl)
+        public SpectrumRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/spectrum", rawUrl)
         {
         }
     }

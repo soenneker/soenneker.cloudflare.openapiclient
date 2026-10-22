@@ -17,28 +17,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains the ids of the approved applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ApprovedApps { get; set; }
+        public List<long?>? ApprovedApps { get; set; }
 #nullable restore
 #else
-        public List<int?> ApprovedApps { get; set; }
+        public List<long?> ApprovedApps { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Contains the ids of the applications in review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? InReviewApps { get; set; }
+        public List<long?>? InReviewApps { get; set; }
 #nullable restore
 #else
-        public List<int?> InReviewApps { get; set; }
+        public List<long?> InReviewApps { get; set; }
 #endif
         /// <summary>Contains the ids of the unapproved applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? UnapprovedApps { get; set; }
+        public List<long?>? UnapprovedApps { get; set; }
 #nullable restore
 #else
-        public List<int?> UnapprovedApps { get; set; }
+        public List<long?> UnapprovedApps { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -67,10 +67,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approved_apps", n => { ApprovedApps = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "approved_apps", n => { ApprovedApps = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "in_review_apps", n => { InReviewApps = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "unapproved_apps", n => { UnapprovedApps = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "in_review_apps", n => { InReviewApps = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
+                { "unapproved_apps", n => { UnapprovedApps = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -81,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("approved_apps", ApprovedApps);
+            writer.WriteCollectionOfPrimitiveValues<long?>("approved_apps", ApprovedApps);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfPrimitiveValues<int?>("in_review_apps", InReviewApps);
-            writer.WriteCollectionOfPrimitiveValues<int?>("unapproved_apps", UnapprovedApps);
+            writer.WriteCollectionOfPrimitiveValues<long?>("in_review_apps", InReviewApps);
+            writer.WriteCollectionOfPrimitiveValues<long?>("unapproved_apps", UnapprovedApps);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

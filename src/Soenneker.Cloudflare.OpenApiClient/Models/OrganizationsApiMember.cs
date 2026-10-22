@@ -27,13 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberMetaProperty Meta { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberStatus? Status { get; set; }
         /// <summary>The update_time property</summary>
         public DateTimeOffset? UpdateTime { get; set; }
         /// <summary>The user property</summary>
@@ -71,8 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "create_time", n => { CreateTime = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_meta.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_status>(); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberMetaProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberMetaProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberStatus>(); } },
                 { "update_time", n => { UpdateTime = n.GetDateTimeOffsetValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberSubjectUser>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberSubjectUser.CreateFromDiscriminatorValue); } },
             };
@@ -86,8 +86,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("create_time", CreateTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_meta>("meta", Meta);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMember_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberMetaProperty>("meta", Meta);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("update_time", UpdateTime);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMemberSubjectUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesChinaNetworkEnabled()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesChinaNetworkEnabledValue.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

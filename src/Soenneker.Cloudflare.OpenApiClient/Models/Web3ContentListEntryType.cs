@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "content_path")]
         #pragma warning disable CS1591
-        Content_path,
+        ContentPath,
         #pragma warning restore CS1591
     }
 }

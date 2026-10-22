@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The host of the Traceroute synthetic application test</summary>
+        /// <summary>The host of the Traceroute synthetic application test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Host { get; set; }
@@ -31,8 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Interval { get; set; }
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_kind? Kind { get; set; }
-        /// <summary>The name of the Traceroute synthetic application test</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind? Kind { get; set; }
+        /// <summary>The name of the Traceroute synthetic application test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -45,26 +45,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The target_policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_target_policies>? TargetPolicies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>? TargetPolicies { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_target_policies> TargetPolicies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem> TargetPolicies { get; set; }
 #endif
         /// <summary>The tracerouteStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStats? TracerouteStats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats? TracerouteStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStats TracerouteStats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats TracerouteStats { get; set; }
 #endif
         /// <summary>The tracerouteStatsByColo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStatsByColo>? TracerouteStatsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem>? TracerouteStatsByColo { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStatsByColo> TracerouteStatsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem> TracerouteStatsByColo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse"/> and sets the default values.
@@ -93,12 +93,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_target_policies>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_target_policies.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeted", n => { Targeted = n.GetBoolValue(); } },
-                { "tracerouteStats", n => { TracerouteStats = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStats>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStats.CreateFromDiscriminatorValue); } },
-                { "tracerouteStatsByColo", n => { TracerouteStatsByColo = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStatsByColo>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStatsByColo.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tracerouteStats", n => { TracerouteStats = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats.CreateFromDiscriminatorValue); } },
+                { "tracerouteStatsByColo", n => { TracerouteStatsByColo = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -110,12 +110,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("interval", Interval);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TracerouteKind>("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("targeted", Targeted);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_target_policies>("target_policies", TargetPolicies);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStats>("tracerouteStats", TracerouteStats);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponse_tracerouteStatsByColo>("tracerouteStatsByColo", TracerouteStatsByColo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTargetPoliciesItem>("target_policies", TargetPolicies);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStats>("tracerouteStats", TracerouteStats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteDetailsResponseTracerouteStatsByColoItem>("tracerouteStatsByColo", TracerouteStatsByColo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

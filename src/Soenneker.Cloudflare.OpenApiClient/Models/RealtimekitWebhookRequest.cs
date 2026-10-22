@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Events that this webhook will get triggered by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequest_events?>? Events { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequestEventsItem?>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequest_events?> Events { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequestEventsItem?> Events { get; set; }
 #endif
         /// <summary>Name of the webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitWebhookRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequest_events>()?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequestEventsItem>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -79,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequest_events>("events", Events);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookRequestEventsItem>("events", Events);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

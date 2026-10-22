@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "bypass_waiting_room")]
         #pragma warning disable CS1591
-        Bypass_waiting_room,
+        BypassWaitingRoom,
         #pragma warning restore CS1591
     }
 }

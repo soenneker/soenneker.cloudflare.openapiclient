@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of eligible devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponse_devices>? Devices { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponseDevicesItem>? Devices { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponse_devices> Devices { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponseDevicesItem> Devices { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponse_devices>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponse_devices.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "devices", n => { Devices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponseDevicesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponseDevicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponse_devices>("devices", Devices);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringCommandsDevicesResponseDevicesItem>("devices", Devices);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

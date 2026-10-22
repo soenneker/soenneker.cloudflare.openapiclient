@@ -44,10 +44,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponseResultProperty? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponseResultProperty Result { get; set; }
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponseResultProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponseResultProperty.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4Message>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponseResultProperty>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

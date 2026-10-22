@@ -15,9 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The border_radius property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_border_radius? BorderRadius { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius? BorderRadius { get; set; }
         /// <summary>The border_width property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_border_width? BorderWidth { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth? BorderWidth { get; set; }
         /// <summary>The colors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +25,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors Colors { get; set; }
+#endif
+        /// <summary>The font_family property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FontFamily { get; set; }
+#nullable restore
+#else
+        public string FontFamily { get; set; }
+#endif
+        /// <summary>The google_font property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GoogleFont { get; set; }
+#nullable restore
+#else
+        public string GoogleFont { get; set; }
 #endif
         /// <summary>The logo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The spacing_base property</summary>
         public double? SpacingBase { get; set; }
         /// <summary>The theme property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_theme? Theme { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme? Theme { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens"/> and sets the default values.
         /// </summary>
@@ -63,12 +79,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "border_radius", n => { BorderRadius = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_border_radius>(); } },
-                { "border_width", n => { BorderWidth = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_border_width>(); } },
+                { "border_radius", n => { BorderRadius = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius>(); } },
+                { "border_width", n => { BorderWidth = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth>(); } },
                 { "colors", n => { Colors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors.CreateFromDiscriminatorValue); } },
+                { "font_family", n => { FontFamily = n.GetStringValue(); } },
+                { "google_font", n => { GoogleFont = n.GetStringValue(); } },
                 { "logo", n => { Logo = n.GetStringValue(); } },
                 { "spacing_base", n => { SpacingBase = n.GetDoubleValue(); } },
-                { "theme", n => { Theme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_theme>(); } },
+                { "theme", n => { Theme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme>(); } },
             };
         }
         /// <summary>
@@ -78,12 +96,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_border_radius>("border_radius", BorderRadius);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_border_width>("border_width", BorderWidth);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderRadius>("border_radius", BorderRadius);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensBorderWidth>("border_width", BorderWidth);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensColors>("colors", Colors);
+            writer.WriteStringValue("font_family", FontFamily);
+            writer.WriteStringValue("google_font", GoogleFont);
             writer.WriteStringValue("logo", Logo);
             writer.WriteDoubleValue("spacing_base", SpacingBase);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokens_theme>("theme", Theme);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUiDesignTokensTheme>("theme", Theme);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

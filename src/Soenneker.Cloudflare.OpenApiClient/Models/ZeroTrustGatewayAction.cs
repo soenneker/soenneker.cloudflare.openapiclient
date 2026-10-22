@@ -49,11 +49,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "override")]
         #pragma warning disable CS1591
-        Override,
+        OverrideValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "l4_override")]
         #pragma warning disable CS1591
-        L4_override,
+        L4Override,
         #pragma warning restore CS1591
         [EnumMember(Value = "egress")]
         #pragma warning disable CS1591

@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item
         /// <summary>
         /// Retrieves an aggregated summary of origin metrics grouped by the specified dimension.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummary200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves an aggregated summary of origin metrics grouped by the specified dimension.
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -122,13 +122,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.GetFormatQueryParameterType? Format { get; set; }
-            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummaryFormatParameter? Format { get; set; }
+            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
-            /// <summary>Specifies the metric to retrieve.</summary>
+            /// <summary>Specifies the metric to retrieve. Allowed metrics depend on the selected dimension (see the `dimension` path parameter).</summary>
             [QueryParameter("metric")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.GetMetricQueryParameterType? Metric { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummaryMetricParameter? Metric { get; set; }
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,17 +139,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
-            /// <summary>Filters results by origin. Required for all dimensions except ORIGIN.</summary>
+            /// <summary>Filters results by origin. Required for every dimension except `ORIGIN`; must not be set on the `ORIGIN` dimension, which groups across all providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("origin")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.GetOriginQueryParameterType[]? Origin { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummaryOriginParameterItem[]? Origin { get; set; }
 #nullable restore
 #else
             [QueryParameter("origin")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Summary.Item.GetOriginQueryParameterType[] Origin { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetOriginsSummaryOriginParameterItem[] Origin { get; set; }
 #endif
-            /// <summary>Filters results by origin region.</summary>
+            /// <summary>Filters results by origin region. Requires `origin` to be set and is validated against it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("region")]

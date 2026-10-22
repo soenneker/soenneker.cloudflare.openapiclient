@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases
         /// <summary>
         /// Retrieves all ASes in the current global routing tables with routing statistics.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsns200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all ASes in the current global routing tables with routing statistics.
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases
         {
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsnsFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -108,10 +108,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases
 #endif
             /// <summary>Sorts results by the specified field.</summary>
             [QueryParameter("sortBy")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.GetSortByQueryParameterType? SortBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsnsSortByParameter? SortBy { get; set; }
             /// <summary>Sort order.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases.GetSortOrderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRoutesAsnsSortOrderParameter? SortOrder { get; set; }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string BucketName { get; set; }
 #endif
         /// <summary>The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket_jurisdiction? Jurisdiction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2BucketJurisdiction? Jurisdiction { get; set; }
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,8 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket_type? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket"/> and sets the default values.
         /// </summary>
@@ -60,9 +60,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket_name", n => { BucketName = n.GetStringValue(); } },
-                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket_jurisdiction>(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2BucketJurisdiction>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketType>(); } },
             };
         }
         /// <summary>
@@ -73,9 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket_name", BucketName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket_jurisdiction>("jurisdiction", Jurisdiction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2BucketJurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindR2Bucket_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

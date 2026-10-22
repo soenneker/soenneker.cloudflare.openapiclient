@@ -16,9 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the style of the summary, such as general, team meeting, or sales call.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_summary_type? SummaryType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType? SummaryType { get; set; }
         /// <summary>Determines the text format of the summary, such as plain text or markdown.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_text_format? TextFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat? TextFormat { get; set; }
         /// <summary>Sets the maximum number of words in the meeting summary.</summary>
         public int? WordLimit { get; set; }
         /// <summary>
@@ -27,8 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitSummarizationConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            SummaryType = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_summary_type.General;
-            TextFormat = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_text_format.Markdown;
+            WordLimit = 500;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "summary_type", n => { SummaryType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_summary_type>(); } },
-                { "text_format", n => { TextFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_text_format>(); } },
+                { "summary_type", n => { SummaryType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType>(); } },
+                { "text_format", n => { TextFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat>(); } },
                 { "word_limit", n => { WordLimit = n.GetIntValue(); } },
             };
         }
@@ -60,8 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_summary_type>("summary_type", SummaryType);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfig_text_format>("text_format", TextFormat);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigSummaryType>("summary_type", SummaryType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitSummarizationConfigTextFormat>("text_format", TextFormat);
             writer.WriteIntValue("word_limit", WordLimit);
             writer.WriteAdditionalData(AdditionalData);
         }

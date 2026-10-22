@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An object with download type keys. Each key is optional and only present if that download type has been created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponseAllOf2Result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponseAllOf2Result Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponse_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponseAllOf2Result>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponseAllOf2Result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMessagesItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDownloadsResponseAllOf2Result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

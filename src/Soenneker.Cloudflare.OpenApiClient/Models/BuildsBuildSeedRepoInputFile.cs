@@ -30,9 +30,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filename { get; set; }
 #endif
-        /// <summary>The isBase64 property</summary>
+        /// <summary>Whether content is Base64-encoded.</summary>
         public bool? IsBase64 { get; set; }
-        /// <summary>Text to replace in the file</summary>
+        /// <summary>Existing text in the target file to replace with content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Replace { get; set; }
@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public BuildsBuildSeedRepoInputFile()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsBase64 = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

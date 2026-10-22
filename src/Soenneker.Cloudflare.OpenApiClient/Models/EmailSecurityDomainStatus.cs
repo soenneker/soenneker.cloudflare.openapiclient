@@ -8,21 +8,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public enum EmailSecurityDomainStatus
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "pending")]
+        [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591
         Pending,
         #pragma warning restore CS1591
-        [EnumMember(Value = "active")]
+        [EnumMember(Value = "ACTIVE")]
         #pragma warning disable CS1591
         Active,
         #pragma warning restore CS1591
-        [EnumMember(Value = "failed")]
+        [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
         Failed,
         #pragma warning restore CS1591
-        [EnumMember(Value = "timeout")]
+        [EnumMember(Value = "TIMEOUT")]
         #pragma warning disable CS1591
         Timeout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

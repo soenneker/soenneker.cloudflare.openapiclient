@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Chat.Completions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-search\namespaces\{name}\chat\completions
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-search\namespaces\{namespaceValue-id}\chat\completions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompletionsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompletionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-search/namespaces/{name}/chat/completions", pathParameters)
+        public CompletionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/namespaces/{namespaceValue%2Did}/chat/completions", pathParameters)
         {
         }
         /// <summary>
@@ -30,35 +30,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompletionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-search/namespaces/{name}/chat/completions", rawUrl)
+        public CompletionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/namespaces/{namespaceValue%2Did}/chat/completions", rawUrl)
         {
         }
         /// <summary>
         /// Performs a chat completion request against multiple AI Search instances in parallel, merging retrieved content as context for generating a response.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion402Response">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion502Response">When receiving a 502 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion400Response.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion402Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion404Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion429Response.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion502Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Performs a chat completion request against multiple AI Search instances in parallel, merging retrieved content as context for generating a response.
@@ -68,11 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

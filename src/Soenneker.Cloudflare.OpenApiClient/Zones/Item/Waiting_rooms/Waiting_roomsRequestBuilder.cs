@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\waiting_rooms
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\waiting_rooms
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Waiting_roomsRequestBuilder : BaseRequestBuilder
@@ -32,14 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.waiting_rooms.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.WithWaiting_room_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.WithWaiting_room_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.WithWaitingRoomItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.WithWaitingRoomItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("waiting_room_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.WithWaiting_room_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("waitingRoomId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.WithWaitingRoomItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Waiting_roomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/waiting_rooms{?page*,per_page*}", pathParameters)
+        public Waiting_roomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/waiting_rooms{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Waiting_roomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/waiting_rooms{?page*,per_page*}", rawUrl)
+        public Waiting_roomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/waiting_rooms{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomListWaitingRooms4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomListWaitingRooms4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Waiting_roomsRequestBuilder.Waiting_roomsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomListWaitingRooms4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomListWaitingRooms4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomCreateWaitingRoom4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomCreateWaitingRoom4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomSingleResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomQueryWaitingroom body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomCreateWaitingRoom4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomCreateWaitingRoom4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

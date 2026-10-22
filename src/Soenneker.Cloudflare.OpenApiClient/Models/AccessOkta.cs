@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The configuration parameters for the identity provider. To view the required parameters for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_config? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_config Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaConfig Config { get; set; }
 #endif
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,13 +38,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Indicates that the identity provider is immutable and cannot be updated or deleted via the API.</summary>
+        public bool? ReadOnly { get; private set; }
         /// <summary>The SAML encryption certificate set details, including current and previous certificates.Only present for SAML identity providers with a certificate set assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_saml_certificate_set? SamlCertificateSet { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet? SamlCertificateSet { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_saml_certificate_set SamlCertificateSet { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet SamlCertificateSet { get; private set; }
 #endif
         /// <summary>The UID of the SAML encryption certificate set assigned to this Identity Provider.Only present for SAML identity providers with encryption configured.Create a certificate set via POST to `/identity_providers/{id}/saml_certificate`.</summary>
         public Guid? SamlCertificateSetId { get; set; }
@@ -57,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig ScimConfig { get; set; }
 #endif
         /// <summary>The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta"/> and sets the default values.
         /// </summary>
@@ -83,13 +85,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_config.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "saml_certificate_set", n => { SamlCertificateSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_saml_certificate_set>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_saml_certificate_set.CreateFromDiscriminatorValue); } },
+                { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
+                { "saml_certificate_set", n => { SamlCertificateSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet.CreateFromDiscriminatorValue); } },
                 { "saml_certificate_set_id", n => { SamlCertificateSetId = n.GetGuidValue(); } },
                 { "scim_config", n => { ScimConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdType>(); } },
             };
         }
         /// <summary>
@@ -99,12 +102,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_config>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaConfig>("config", Config);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("saml_certificate_set_id", SamlCertificateSetId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>("scim_config", ScimConfig);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOkta_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

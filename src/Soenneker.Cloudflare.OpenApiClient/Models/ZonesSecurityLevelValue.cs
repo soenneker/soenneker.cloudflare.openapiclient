@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "essentially_off")]
         #pragma warning disable CS1591
-        Essentially_off,
+        EssentiallyOff,
         #pragma warning restore CS1591
         [EnumMember(Value = "low")]
         #pragma warning disable CS1591
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "under_attack")]
         #pragma warning disable CS1591
-        Under_attack,
+        UnderAttack,
         #pragma warning restore CS1591
     }
 }

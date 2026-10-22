@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\scim\v2\ResourceTypes
+    /// Builds and executes requests for operations under \accounts\{account-id}\scim\v2\ResourceTypes
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourceTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.scim.v2.ResourceTypes.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes.Item.WithResource_type_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes.Item.WithResource_type_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes.Item.WithResourceTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes.Item.WithResourceTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("resource_type_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes.Item.WithResource_type_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("resourceTypeId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes.Item.WithResourceTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/scim/v2/ResourceTypes", pathParameters)
+        public ResourceTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/scim/v2/ResourceTypes", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.V2.ResourceTypes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/scim/v2/ResourceTypes", rawUrl)
+        public ResourceTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/scim/v2/ResourceTypes", rawUrl)
         {
         }
         /// <summary>

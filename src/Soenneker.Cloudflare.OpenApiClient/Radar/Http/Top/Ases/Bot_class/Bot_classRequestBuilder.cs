@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.bot_class.item collection</summary>
         /// <param name="position">Bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item.WithBot_classItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item.WithBot_classItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item.WithBotClassItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item.WithBotClassItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("bot_class", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item.WithBot_classItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("botClass", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Item.WithBotClassItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

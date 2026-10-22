@@ -42,13 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure_result? Result { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure_result Result { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailureResult? Result { get; set; }
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
@@ -79,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2ErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailureResult>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -93,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ErrorsItem>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteCollectionOfPrimitiveValues<string>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure_result>("result", Result);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailureResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

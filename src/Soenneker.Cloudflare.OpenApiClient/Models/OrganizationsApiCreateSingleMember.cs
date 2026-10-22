@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMember_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMemberStatus? Status { get; set; }
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMember_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMemberStatus>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMemberUser>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMemberUser.CreateFromDiscriminatorValue); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMember_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMemberStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiCreateSingleMemberUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

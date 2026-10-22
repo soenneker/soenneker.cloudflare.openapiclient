@@ -8,17 +8,17 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Time range for the query execution
+    /// Time range for the query execution. &apos;from&apos; must be earlier than &apos;to&apos;. No fractional milliseconds.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersObservabilityQueryRunTimeframe : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Start timestamp for the query timeframe (Unix timestamp in milliseconds)</summary>
-        public double? From { get; set; }
-        /// <summary>End timestamp for the query timeframe (Unix timestamp in milliseconds)</summary>
-        public double? To { get; set; }
+        /// <summary>Start timestamp for the query timeframe. Unix timestamp in milliseconds</summary>
+        public int? From { get; set; }
+        /// <summary>End timestamp for the query timeframe. Unix timestamp in milliseconds</summary>
+        public int? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunTimeframe"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "from", n => { From = n.GetDoubleValue(); } },
-                { "to", n => { To = n.GetDoubleValue(); } },
+                { "from", n => { From = n.GetIntValue(); } },
+                { "to", n => { To = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("from", From);
-            writer.WriteDoubleValue("to", To);
+            writer.WriteIntValue("from", From);
+            writer.WriteIntValue("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

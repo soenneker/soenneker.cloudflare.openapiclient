@@ -8,42 +8,42 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NscStatusInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember1? NscStatusInfoMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1? NscStatusInfoOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember1 NscStatusInfoMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1 NscStatusInfoOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember2? NscStatusInfoMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2? NscStatusInfoOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember2 NscStatusInfoMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2 NscStatusInfoOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember3? NscStatusInfoMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3? NscStatusInfoOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember3 NscStatusInfoMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3 NscStatusInfoOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember4? NscStatusInfoMember4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4? NscStatusInfoOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember4 NscStatusInfoMember4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4 NscStatusInfoOneOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,21 +55,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("state")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfo();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("NscStatusInfoOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember1();
+                result.NscStatusInfoOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NscStatusInfoOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember2();
+                result.NscStatusInfoOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NscStatusInfoOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember3();
+                result.NscStatusInfoOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NscStatusInfoOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NscStatusInfoMember4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember4();
+                result.NscStatusInfoOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4();
             }
             return result;
         }
@@ -79,21 +79,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(NscStatusInfoMember1 != null)
+            if(NscStatusInfoOneOf1 != null)
             {
-                return NscStatusInfoMember1.GetFieldDeserializers();
+                return NscStatusInfoOneOf1.GetFieldDeserializers();
             }
-            else if(NscStatusInfoMember2 != null)
+            else if(NscStatusInfoOneOf2 != null)
             {
-                return NscStatusInfoMember2.GetFieldDeserializers();
+                return NscStatusInfoOneOf2.GetFieldDeserializers();
             }
-            else if(NscStatusInfoMember3 != null)
+            else if(NscStatusInfoOneOf3 != null)
             {
-                return NscStatusInfoMember3.GetFieldDeserializers();
+                return NscStatusInfoOneOf3.GetFieldDeserializers();
             }
-            else if(NscStatusInfoMember4 != null)
+            else if(NscStatusInfoOneOf4 != null)
             {
-                return NscStatusInfoMember4.GetFieldDeserializers();
+                return NscStatusInfoOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -104,21 +104,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(NscStatusInfoMember1 != null)
+            if(NscStatusInfoOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember1>(null, NscStatusInfoMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf1>(null, NscStatusInfoOneOf1);
             }
-            else if(NscStatusInfoMember2 != null)
+            else if(NscStatusInfoOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember2>(null, NscStatusInfoMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf2>(null, NscStatusInfoOneOf2);
             }
-            else if(NscStatusInfoMember3 != null)
+            else if(NscStatusInfoOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember3>(null, NscStatusInfoMember3);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf3>(null, NscStatusInfoOneOf3);
             }
-            else if(NscStatusInfoMember4 != null)
+            else if(NscStatusInfoOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoMember4>(null, NscStatusInfoMember4);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscStatusInfoOneOf4>(null, NscStatusInfoOneOf4);
             }
         }
     }

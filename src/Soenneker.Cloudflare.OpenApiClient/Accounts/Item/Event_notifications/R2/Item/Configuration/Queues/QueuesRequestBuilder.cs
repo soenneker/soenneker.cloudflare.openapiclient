@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\event_notifications\r2\{bucket_name}\configuration\queues
+    /// Builds and executes requests for operations under \accounts\{account-id}\event_notifications\r2\{bucketName}\configuration\queues
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueuesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.event_notifications.r2.item.configuration.queues.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues.Item.WithQueue_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues.Item.WithQueue_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues.Item.WithQueueItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues.Item.WithQueueItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("queue_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues.Item.WithQueue_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("queueId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R2.Item.Configuration.Queues.Item.WithQueueItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/event_notifications/r2/{bucket_name}/configuration/queues", pathParameters)
+        public QueuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/event_notifications/r2/{bucketName}/configuration/queues", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.R
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/event_notifications/r2/{bucket_name}/configuration/queues", rawUrl)
+        public QueuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/event_notifications/r2/{bucketName}/configuration/queues", rawUrl)
         {
         }
     }

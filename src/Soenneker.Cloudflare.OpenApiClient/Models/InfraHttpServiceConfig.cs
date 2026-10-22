@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tls_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHttpServiceConfig_tls_settings? TlsSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings? TlsSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHttpServiceConfig_tls_settings TlsSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings TlsSettings { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType? Type { get; set; }
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "https_port", n => { HttpsPort = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetGuidValue(); } },
-                { "tls_settings", n => { TlsSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHttpServiceConfig_tls_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHttpServiceConfig_tls_settings.CreateFromDiscriminatorValue); } },
+                { "tls_settings", n => { TlsSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("http_port", HttpPort);
             writer.WriteIntValue("https_port", HttpsPort);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHttpServiceConfig_tls_settings>("tls_settings", TlsSettings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings>("tls_settings", TlsSettings);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

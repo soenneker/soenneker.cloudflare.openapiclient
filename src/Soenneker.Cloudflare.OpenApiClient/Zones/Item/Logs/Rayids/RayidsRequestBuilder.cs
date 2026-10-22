@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\logs\rayids
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\logs\rayids
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RayidsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.logs.rayids.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item.WithRay_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item.WithRay_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item.WithRayItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item.WithRayItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("ray_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item.WithRay_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("rayId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item.WithRayItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RayidsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/logs/rayids", pathParameters)
+        public RayidsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/logs/rayids", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RayidsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/logs/rayids", rawUrl)
+        public RayidsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/logs/rayids", rawUrl)
         {
         }
     }

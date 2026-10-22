@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ZoneIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ZoneIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("zone_identifier%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("zoneIdentifier%2Did", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ZoneIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -49,17 +49,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
         /// <summary>
         /// Lists, searches, sorts, and filters your zones. Listing zones across more than 500 accountsis currently not allowed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder.ZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder.ZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder.ZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder.ZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Zone
+        /// Creates a new zone (domain) in your Cloudflare account.The zone is created in a pending state and must be activated by updating your domain&apos;snameservers to point to Cloudflare, or by completing the verification process for partial(CNAME) setups.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists, searches, sorts, and filters your zones. Listing zones across more than 500 accountsis currently not allowed.
@@ -114,18 +114,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
             return requestInfo;
         }
         /// <summary>
-        /// Create Zone
+        /// Creates a new zone (domain) in your Cloudflare account.The zone is created in a pending state and must be activated by updating your domain&apos;snameservers to point to Cloudflare, or by completing the verification process for partial(CNAME) setups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -152,51 +152,79 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("account%2Eid")]
             public string? AccountId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("account%2Eid")]
             public string AccountId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("account%2Ename")]
             public string? AccountName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("account%2Ename")]
             public string AccountName { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGetDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.GetMatchQueryParameterType? Match { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGetMatchParameter? Match { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string? Name { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string Name { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGetOrderParameter? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGetStatusParameter? Status { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.GetTypeQueryParameterType[]? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGetTypeParameterItem[]? Type { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.GetTypeQueryParameterType[] Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesGetTypeParameterItem[] Type { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>&quot;Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)&quot;</summary>
+        /// <summary>Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 5000, Business = 200, Pro = 100, Free = 100)</summary>
         public int? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMaxUpload"/> and sets the default values.
@@ -35,6 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesMaxUpload()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = 100;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

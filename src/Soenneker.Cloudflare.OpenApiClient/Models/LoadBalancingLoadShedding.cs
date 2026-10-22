@@ -18,19 +18,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The percent of traffic to shed from the pool, according to the default policy. Applies to new sessions and traffic without session affinity.</summary>
         public double? DefaultPercent { get; set; }
         /// <summary>The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_default_policy? DefaultPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy? DefaultPolicy { get; set; }
         /// <summary>The percent of existing sessions to shed from the pool, according to the session policy.</summary>
         public double? SessionPercent { get; set; }
         /// <summary>Only the hash policy is supported for existing sessions (to avoid exponential decay).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_session_policy? SessionPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy? SessionPolicy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding"/> and sets the default values.
         /// </summary>
         public LoadBalancingLoadShedding()
         {
             AdditionalData = new Dictionary<string, object>();
-            DefaultPolicy = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_default_policy.Random;
-            SessionPolicy = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_session_policy.Hash;
+            DefaultPercent = 0;
+            SessionPercent = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,9 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "default_percent", n => { DefaultPercent = n.GetDoubleValue(); } },
-                { "default_policy", n => { DefaultPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_default_policy>(); } },
+                { "default_policy", n => { DefaultPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy>(); } },
                 { "session_percent", n => { SessionPercent = n.GetDoubleValue(); } },
-                { "session_policy", n => { SessionPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_session_policy>(); } },
+                { "session_policy", n => { SessionPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy>(); } },
             };
         }
         /// <summary>
@@ -64,9 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("default_percent", DefaultPercent);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_default_policy>("default_policy", DefaultPolicy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadSheddingDefaultPolicy>("default_policy", DefaultPolicy);
             writer.WriteDoubleValue("session_percent", SessionPercent);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding_session_policy>("session_policy", SessionPolicy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HashSessionPolicy>("session_policy", SessionPolicy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

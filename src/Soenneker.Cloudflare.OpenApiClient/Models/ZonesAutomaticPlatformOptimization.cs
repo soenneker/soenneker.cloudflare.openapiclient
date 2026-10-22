@@ -38,6 +38,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesAutomaticPlatformOptimization()
         {
             AdditionalData = new Dictionary<string, object>();
+            Cf = false;
+            Enabled = false;
+            Wordpress = false;
+            WpPlugin = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

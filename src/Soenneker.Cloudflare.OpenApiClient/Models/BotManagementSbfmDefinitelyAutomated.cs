@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "managed_challenge")]
         #pragma warning disable CS1591
-        Managed_challenge,
+        ManagedChallenge,
         #pragma warning restore CS1591
     }
 }

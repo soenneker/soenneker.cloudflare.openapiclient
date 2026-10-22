@@ -9,19 +9,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "aws_s3")]
         #pragma warning disable CS1591
-        Aws_s3,
+        AwsS3,
         #pragma warning restore CS1591
         [EnumMember(Value = "cloudflare_r2")]
         #pragma warning disable CS1591
-        Cloudflare_r2,
+        CloudflareR2,
         #pragma warning restore CS1591
         [EnumMember(Value = "gcp_storage")]
         #pragma warning disable CS1591
-        Gcp_storage,
+        GcpStorage,
         #pragma warning restore CS1591
         [EnumMember(Value = "azure_storage")]
         #pragma warning disable CS1591
-        Azure_storage,
+        AzureStorage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "oci_storage")]
+        #pragma warning disable CS1591
+        OciStorage,
         #pragma warning restore CS1591
     }
 }

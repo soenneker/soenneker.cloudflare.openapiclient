@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Retrieve mes  ges created after this time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_after? After { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_after After { get; set; }
-#endif
+        public DateTimeOffset? After { get; set; }
         /// <summary>Retrieve messages created before this time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_before? Before { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_before Before { get; set; }
-#endif
+        public DateTimeOffset? Before { get; set; }
         /// <summary>Page number of results.</summary>
         public int? Page { get; set; }
         /// <summary>Number of results per page.</summary>
@@ -43,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SortBy { get; set; }
 #endif
         /// <summary>Sort order (asc or desc).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_sort_order? SortOrder { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageListSortOrder? SortOrder { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList"/> and sets the default values.
         /// </summary>
@@ -69,12 +57,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_after>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_after.CreateFromDiscriminatorValue); } },
-                { "before", n => { Before = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_before.CreateFromDiscriminatorValue); } },
+                { "after", n => { After = n.GetDateTimeOffsetValue(); } },
+                { "before", n => { Before = n.GetDateTimeOffsetValue(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
                 { "sort_by", n => { SortBy = n.GetStringValue(); } },
-                { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_sort_order>(); } },
+                { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageListSortOrder>(); } },
             };
         }
         /// <summary>
@@ -84,12 +72,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_after>("after", After);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_before>("before", Before);
+            writer.WriteDateTimeOffsetValue("after", After);
+            writer.WriteDateTimeOffsetValue("before", Before);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteStringValue("sort_by", SortBy);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageList_sort_order>("sort_order", SortOrder);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsRequestMessageListSortOrder>("sort_order", SortOrder);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

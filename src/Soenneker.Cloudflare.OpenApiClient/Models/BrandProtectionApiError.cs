@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Errors</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiError_errors? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiErrorErrorsProperty? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiError_errors Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiErrorErrorsProperty Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetIntValue(); } },
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiError_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiError_errors.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiErrorErrorsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiErrorErrorsProperty.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiError_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiErrorErrorsProperty>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.ct.authorities.item collection</summary>
         /// <param name="position">Certificate authority SHA256 fingerprint.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.Item.WithCa_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.Item.WithCa_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.Item.WithCaSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.Item.WithCaSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("ca_slug", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.Item.WithCa_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("caSlug", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.Item.WithCaSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -49,25 +49,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities
         /// <summary>
         /// Retrieves a list of certificate authorities.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.AuthoritiesRequestBuilder.AuthoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.AuthoritiesRequestBuilder.AuthoritiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.AuthoritiesRequestBuilder.AuthoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.AuthoritiesRequestBuilder.AuthoritiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthorities200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of certificate authorities.
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities
         {
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Authorities.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCertificateAuthoritiesFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

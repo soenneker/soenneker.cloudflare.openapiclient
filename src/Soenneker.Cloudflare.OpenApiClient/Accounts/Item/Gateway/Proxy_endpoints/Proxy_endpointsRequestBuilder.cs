@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\gateway\proxy_endpoints
+    /// Builds and executes requests for operations under \accounts\{account-id}\gateway\proxy_endpoints
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Proxy_endpointsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.gateway.proxy_endpoints.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Item.WithProxy_endpoint_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Item.WithProxy_endpoint_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Item.WithProxyEndpointItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Item.WithProxyEndpointItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("proxy_endpoint_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Item.WithProxy_endpoint_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("proxyEndpointId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Item.WithProxyEndpointItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Proxy_endpointsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/gateway/proxy_endpoints", pathParameters)
+        public Proxy_endpointsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/gateway/proxy_endpoints{?direction*,filter*,order_by*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,56 +43,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Proxy_endpointsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/gateway/proxy_endpoints", rawUrl)
+        public Proxy_endpointsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/gateway/proxy_endpoints{?direction*,filter*,order_by*,search*}", rawUrl)
         {
         }
         /// <summary>
         /// List all Zero Trust Gateway proxy endpoints for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection9"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasResponseCollection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection9?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder.Proxy_endpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasResponseCollection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection9> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder.Proxy_endpointsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsListProxyEndpoints4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection9>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection9.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new Zero Trust Gateway proxy endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse5"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse5?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse5> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsComponentsSchemasSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse5>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponse5.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all Zero Trust Gateway proxy endpoints for an account.
@@ -101,11 +101,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder.Proxy_endpointsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder.Proxy_endpointsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -121,11 +121,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpoint body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -143,6 +143,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// List all Zero Trust Gateway proxy endpoints for an account.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Proxy_endpointsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Sort direction. Only takes effect when `order_by` is also provided; itis ignored otherwise. When `direction` is omitted the effectivedirection is field-specific: `created_at` and `updated_at` default todescending (newest first); `name` defaults to ascending.  * `asc` — ascending.  * `desc` — descending.</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsListProxyEndpointsDirectionParameter? Direction { get; set; }
+            /// <summary>Filter the returned proxy endpoints by one or more `field:value` pairs.Repeat the parameter to apply multiple filters; they are combined withlogical AND (an endpoint must satisfy every filter to be returned).Supported fields and their matching behaviour:  * `name` — case-insensitive substring match on the endpoint name.  * `id` — substring match on the endpoint ID (UUID), with or without dashes.  * `kind` — exact match on the endpoint kind. The value must be `ip` or `identity`; any other value returns `400`.Each entry must match one of the per-field patterns below: the fieldmust be one of `name`, `id`, or `kind`; `name`/`id` accept any value,while `kind` only accepts `ip` or `identity`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public string[]? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public string[] Filter { get; set; }
+#endif
+            /// <summary>Field to sort the returned endpoints by. When omitted, the order ofresults is unspecified. Supported values:  * `name` — sort alphabetically by endpoint name.  * `created_at` — sort by creation time; defaults to descending unless `direction` is set.  * `updated_at` — sort by last-modified time; defaults to descending unless `direction` is set.</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointsListProxyEndpointsOrderByParameter? OrderBy { get; set; }
+            /// <summary>Case-insensitive substring match on the endpoint name. When combinedwith `filter`, both must match (logical AND).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
         }
     }
 }

@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Direct_upload;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Metadata;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Sourcingkit;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\images\v2
+    /// Builds and executes requests for operations under \accounts\{account-id}\images\v2
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V2RequestBuilder : BaseRequestBuilder
@@ -23,12 +25,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Direct_upload.Direct_uploadRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The metadata property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Metadata.MetadataRequestBuilder Metadata
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Metadata.MetadataRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sourcingkit property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Sourcingkit.SourcingkitRequestBuilder Sourcingkit
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.Sourcingkit.SourcingkitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.V2RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,meta%2E%3Cfield%3E%5B%3Coperator%3E%5D*,per_page*,sort_order*}", pathParameters)
+        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/images/v2{?continuation_token*,creator*,meta%2E%3Cfield%3E%5B%3Coperator%3E%5D*,per_page*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,17 +48,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,meta%2E%3Cfield%3E%5B%3Coperator%3E%5D*,per_page*,sort_order*}", rawUrl)
+        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/images/v2{?continuation_token*,creator*,meta%2E%3Cfield%3E%5B%3Coperator%3E%5D*,per_page*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types**Examples:**```# List all images/images/v2# Filter by metadata [eq]/images/v2?meta.status[eq:string]=active# Filter by metadata [in]/images/v2?meta.status[in]=pending|deleted|flagged# Filter by metadata [in:number]/images/v2?meta.ratings[in:number]=4|5# Filter by nested metadata/images/v2?meta.region.name[eq]=eu-west# Combine metadata filters with creator/images/v2?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/images/v2?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
+        /// List up to 10000 images from CF Images, with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `gt` / `gt:number` - Greater than (number only)- `gte` / `gte:number` - Greater than or equal (number only)- `lt` / `lt:number` - Less than (number only)- `lte` / `lte:number` - Less than or equal (number only)- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types- Range operators (`gt`, `gte`, `lt`, `lte`) only accept numeric values**Filter Consistency:**Filters are combined with AND logic. The system does not validate whether filter combinations are logically consistent. For example, `meta.priority[eq:number]=5&amp;meta.priority[lte:number]=3` will return zero results because no value can satisfy both conditions simultaneously. It is the caller&apos;s responsibility to ensure filter combinations make sense.**Examples:**```# List all images/images/v2# Filter by metadata [eq]/images/v2?meta.status[eq:string]=active# Filter by metadata [in]/images/v2?meta.status[in]=pending|deleted|flagged# Filter by metadata [in:number]/images/v2?meta.ratings[in:number]=4|5# Filter by metadata range [gte:number]/images/v2?meta.priority[gte:number]=1# Filter by bounded range/images/v2?meta.priority[gte:number]=1&amp;meta.priority[lte:number]=5# Filter by nested metadata/images/v2?meta.region.name[eq]=eu-west# Combine metadata filters with creator/images/v2?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/images/v2?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagesListResponseV2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesListImagesV2400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesListImagesV24XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesApiResponseCommonFailure">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagesListResponseV2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.V2RequestBuilder.V2RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,13 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesListImagesV2400.CreateFromDiscriminatorValue },
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesListImagesV24XX.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagesListResponseV2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagesListResponseV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types**Examples:**```# List all images/images/v2# Filter by metadata [eq]/images/v2?meta.status[eq:string]=active# Filter by metadata [in]/images/v2?meta.status[in]=pending|deleted|flagged# Filter by metadata [in:number]/images/v2?meta.ratings[in:number]=4|5# Filter by nested metadata/images/v2?meta.region.name[eq]=eu-west# Combine metadata filters with creator/images/v2?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/images/v2?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
+        /// List up to 10000 images from CF Images, with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `gt` / `gt:number` - Greater than (number only)- `gte` / `gte:number` - Greater than or equal (number only)- `lt` / `lt:number` - Less than (number only)- `lte` / `lte:number` - Less than or equal (number only)- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types- Range operators (`gt`, `gte`, `lt`, `lte`) only accept numeric values**Filter Consistency:**Filters are combined with AND logic. The system does not validate whether filter combinations are logically consistent. For example, `meta.priority[eq:number]=5&amp;meta.priority[lte:number]=3` will return zero results because no value can satisfy both conditions simultaneously. It is the caller&apos;s responsibility to ensure filter combinations make sense.**Examples:**```# List all images/images/v2# Filter by metadata [eq]/images/v2?meta.status[eq:string]=active# Filter by metadata [in]/images/v2?meta.status[in]=pending|deleted|flagged# Filter by metadata [in:number]/images/v2?meta.ratings[in:number]=4|5# Filter by metadata range [gte:number]/images/v2?meta.priority[gte:number]=1# Filter by bounded range/images/v2?meta.priority[gte:number]=1&amp;meta.priority[lte:number]=5# Filter by nested metadata/images/v2?meta.region.name[eq]=eu-west# Combine metadata filters with creator/images/v2?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/images/v2?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,30 +105,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.V2RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types**Examples:**```# List all images/images/v2# Filter by metadata [eq]/images/v2?meta.status[eq:string]=active# Filter by metadata [in]/images/v2?meta.status[in]=pending|deleted|flagged# Filter by metadata [in:number]/images/v2?meta.ratings[in:number]=4|5# Filter by nested metadata/images/v2?meta.region.name[eq]=eu-west# Combine metadata filters with creator/images/v2?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/images/v2?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
+        /// List up to 10000 images from CF Images, with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `gt` / `gt:number` - Greater than (number only)- `gte` / `gte:number` - Greater than or equal (number only)- `lt` / `lt:number` - Less than (number only)- `lte` / `lte:number` - Less than or equal (number only)- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types- Range operators (`gt`, `gte`, `lt`, `lte`) only accept numeric values**Filter Consistency:**Filters are combined with AND logic. The system does not validate whether filter combinations are logically consistent. For example, `meta.priority[eq:number]=5&amp;meta.priority[lte:number]=3` will return zero results because no value can satisfy both conditions simultaneously. It is the caller&apos;s responsibility to ensure filter combinations make sense.**Examples:**```# List all images/images/v2# Filter by metadata [eq]/images/v2?meta.status[eq:string]=active# Filter by metadata [in]/images/v2?meta.status[in]=pending|deleted|flagged# Filter by metadata [in:number]/images/v2?meta.ratings[in:number]=4|5# Filter by metadata range [gte:number]/images/v2?meta.priority[gte:number]=1# Filter by bounded range/images/v2?meta.priority[gte:number]=1&amp;meta.priority[lte:number]=5# Filter by nested metadata/images/v2?meta.region.name[eq]=eu-west# Combine metadata filters with creator/images/v2?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/images/v2?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class V2RequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("continuation_token")]
             public string? ContinuationToken { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("continuation_token")]
             public string ContinuationToken { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("creator")]
             public string? Creator { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("creator")]
             public string Creator { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>Optional metadata filter(s). Multiple filters can be combined with AND logic.**Operators:**- `eq`, `eq:string`, `eq:number`, `eq:boolean` - Exact match- `in`, `in:string`, `in:number` - Match any value in pipe-separated list**Examples:**- `meta.status[eq]=active`- `meta.priority[eq:number]=5`- `meta.enabled[eq:boolean]=true`- `meta.region[in]=us-east|us-west|eu-west`</summary>
+            /// <summary>Optional metadata filter(s). Multiple filters can be combined with AND logic.**Operators:**- `eq`, `eq:string`, `eq:number`, `eq:boolean` - Exact match- `gt`, `gt:number` - Greater than (number only)- `gte`, `gte:number` - Greater than or equal (number only)- `lt`, `lt:number` - Less than (number only)- `lte`, `lte:number` - Less than or equal (number only)- `in`, `in:string`, `in:number` - Match any value in pipe-separated list**Examples:**- `meta.status[eq]=active`- `meta.priority[eq:number]=5`- `meta.enabled[eq:boolean]=true`- `meta.priority[gte:number]=1`- `meta.score[lt:number]=100`- `meta.region[in]=us-east|us-west|eu-west`**Note:** Filter consistency is not validated. Contradictory filters (e.g., `meta.priority[eq:number]=5&amp;meta.priority[lte:number]=3`) will return zero results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("meta%2E%3Cfield%3E%5B%3Coperator%3E%5D")]
@@ -126,10 +146,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
             [QueryParameter("meta%2E%3Cfield%3E%5B%3Coperator%3E%5D")]
             public string Metafieldoperator { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesListImagesV2SortOrderParameter? SortOrder { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

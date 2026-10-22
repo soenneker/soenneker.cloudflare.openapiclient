@@ -55,25 +55,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets
         /// <summary>
         /// Retrieves a list of datasets.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasets200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of datasets.
@@ -111,13 +111,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets
         {
             /// <summary>Filters results by dataset type.</summary>
             [QueryParameter("datasetType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.GetDatasetTypeQueryParameterType? DatasetType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasetsDatasetTypeParameter? DatasetType { get; set; }
             /// <summary>Filters results by the specified date.</summary>
             [QueryParameter("date")]
             public Date? Date { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetReportsDatasetsFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

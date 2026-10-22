@@ -60,11 +60,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitPresetUiDesignTokensColorsBrand()
         {
             AdditionalData = new Dictionary<string, object>();
-            FiveZeroZero = "#b56927";
-            FourZeroZero = "#9d5b22";
-            SevenZeroZero = "#d9904f";
-            SixZeroZero = "#d37c30";
-            ThreeZeroZero = "#844d1c";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

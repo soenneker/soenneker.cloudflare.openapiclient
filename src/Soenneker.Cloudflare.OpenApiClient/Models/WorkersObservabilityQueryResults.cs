@@ -15,29 +15,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Durable Object agent summaries. Present when the query view is &apos;agents&apos;. Each entry represents an agent with its event counts and status.</summary>
+        /// <summary>Agent run summaries. Present when the query view is &apos;agents&apos;. Each entry represents one trace containing at least one agent invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_agents>? Agents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>? Agents { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_agents> Agents { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem> Agents { get; set; }
 #endif
         /// <summary>Aggregated calculation results. Present when the query view is &apos;calculations&apos;. Contains computed metrics (count, avg, p99, etc.) with optional group-by breakdowns and time-series data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_calculations>? Calculations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>? Calculations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_calculations> Calculations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem> Calculations { get; set; }
 #endif
         /// <summary>Comparison calculation results from the previous time period. Present when the compare option is enabled. Same structure as calculations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_compare>? Compare { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem>? Compare { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_compare> Compare { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem> Compare { get; set; }
+#endif
+        /// <summary>Bucketed 2D histogram of a numeric field over time. Present when chartType is &apos;distribution&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult? Distribution { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult Distribution { get; set; }
 #endif
         /// <summary>Individual event results. Present when the query view is &apos;events&apos;. Contains the matching log lines and their metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,12 +58,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Events grouped by invocation (request ID). Present when the query view is &apos;invocations&apos;. Each key is a request ID mapping to all events from that invocation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_invocations? Invocations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty? Invocations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_invocations Invocations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty Invocations { get; set; }
 #endif
-        /// <summary>The query run metadata including the query definition, execution status, and timeframe.</summary>
+        /// <summary>Represents a single execution of a query against Workers Observability data, including the query definition, execution status, and performance statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun? Run { get; set; }
@@ -74,10 +82,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Trace summaries matching the query. Present when the query view is &apos;traces&apos;. Each entry represents a distributed trace with its spans, duration, and services involved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_traces>? Traces { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem>? Traces { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_traces> Traces { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem> Traces { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults"/> and sets the default values.
@@ -104,14 +112,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_agents>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_agents.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_calculations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_calculations.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "compare", n => { Compare = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_compare>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_compare.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "compare", n => { Compare = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "distribution", n => { Distribution = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult.CreateFromDiscriminatorValue); } },
                 { "events", n => { Events = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents.CreateFromDiscriminatorValue); } },
-                { "invocations", n => { Invocations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_invocations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_invocations.CreateFromDiscriminatorValue); } },
+                { "invocations", n => { Invocations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty.CreateFromDiscriminatorValue); } },
                 { "run", n => { Run = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun.CreateFromDiscriminatorValue); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation.CreateFromDiscriminatorValue); } },
-                { "traces", n => { Traces = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_traces>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_traces.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "traces", n => { Traces = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -121,14 +130,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_agents>("agents", Agents);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_calculations>("calculations", Calculations);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_compare>("compare", Compare);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsAgentsItem>("agents", Agents);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCalculationsItem>("calculations", Calculations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsCompareItem>("compare", Compare);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityDistributionResult>("distribution", Distribution);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents>("events", Events);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_invocations>("invocations", Invocations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsInvocationsProperty>("invocations", Invocations);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun>("run", Run);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityPerformanceInformation>("statistics", Statistics);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResults_traces>("traces", Traces);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsTracesItem>("traces", Traces);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether to skip the setup wizard</summary>
         public bool? SkipWizard { get; set; }
-        /// <summary>DMARC configuration status</summary>
+        /// <summary>DMARC configuration status. The API omits this field when DMARC is correctly configured. If the zone lacks a DMARC TXT record of its own, the API resolves _dmarc.{zone} recursively and evaluates whatever that lookup returns. A CNAME at _dmarc.{zone} that points to a valid DMARC record is therefore healthy; the cname-on-dmarc-record value means the CNAME resolves to no DMARC record at all.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDmarcStatus? Status { get; set; }
         /// <summary>Use `zone_id` instead</summary>
         [Obsolete("")]

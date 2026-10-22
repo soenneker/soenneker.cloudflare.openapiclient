@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdate_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdateMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdate_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdateMeta Meta { get; set; }
 #endif
         /// <summary>Public details for the video including title, share link, channel link, and logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdate_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdate_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdateMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdateMeta.CreateFromDiscriminatorValue); } },
                 { "publicDetails", n => { PublicDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdatePublicDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdatePublicDetails.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
                 { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
             writer.WriteStringValue("creator", Creator);
             writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdate_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdateMeta>("meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoUpdatePublicDetails>("publicDetails", PublicDetails);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);

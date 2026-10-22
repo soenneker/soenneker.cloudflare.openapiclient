@@ -18,14 +18,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Lists the MFA methods that users can authenticate with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig_allowed_authenticators?>? AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfigAllowedAuthenticatorsItem?>? AllowedAuthenticators { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig_allowed_authenticators?> AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfigAllowedAuthenticatorsItem?> AllowedAuthenticators { get; set; }
 #endif
         /// <summary>Indicates whether to disable MFA for this resource. This option is available at the application and policy level.</summary>
         public bool? MfaDisabled { get; set; }
-        /// <summary>&quot;Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.&quot;</summary>
+        /// <summary>Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionDuration { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_authenticators", n => { AllowedAuthenticators = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig_allowed_authenticators>()?.AsList(); } },
+                { "allowed_authenticators", n => { AllowedAuthenticators = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfigAllowedAuthenticatorsItem>()?.AsList(); } },
                 { "mfa_disabled", n => { MfaDisabled = n.GetBoolValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig_allowed_authenticators>("allowed_authenticators", AllowedAuthenticators);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfigAllowedAuthenticatorsItem>("allowed_authenticators", AllowedAuthenticators);
             writer.WriteBoolValue("mfa_disabled", MfaDisabled);
             writer.WriteStringValue("session_duration", SessionDuration);
             writer.WriteAdditionalData(AdditionalData);

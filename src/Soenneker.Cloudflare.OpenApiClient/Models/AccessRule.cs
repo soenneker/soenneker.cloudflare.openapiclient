@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAuthContextRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAuthenticationMethodRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCommonNameRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCountryRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDomainRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGithubOrganizationRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRule"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAuthContextRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAuthenticationMethodRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCommonNameRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCountryRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDevicePostureRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDomainRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailListRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEmailRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessExternalEvaluationRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGithubOrganizationRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGsuiteGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpListRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIpRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLinkedAppTokenRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginMethodRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcClaimRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOktaGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlGroupRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRule"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessRule : IComposedTypeWrapper, IParsable
@@ -60,6 +60,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule AccessCertificateRule { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRule"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRule? AccessCloudflareAccountMemberRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRule AccessCloudflareAccountMemberRule { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCommonNameRule"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -221,7 +229,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule();
             if("AccessAccessGroupRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -246,6 +254,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if("AccessCertificateRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AccessCertificateRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule();
+            }
+            else if("AccessCloudflareAccountMemberRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AccessCloudflareAccountMemberRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRule();
             }
             else if("AccessCommonNameRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -355,6 +367,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return AccessCertificateRule.GetFieldDeserializers();
             }
+            else if(AccessCloudflareAccountMemberRule != null)
+            {
+                return AccessCloudflareAccountMemberRule.GetFieldDeserializers();
+            }
             else if(AccessCommonNameRule != null)
             {
                 return AccessCommonNameRule.GetFieldDeserializers();
@@ -463,6 +479,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(AccessCertificateRule != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule>(null, AccessCertificateRule);
+            }
+            else if(AccessCloudflareAccountMemberRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareAccountMemberRule>(null, AccessCloudflareAccountMemberRule);
             }
             else if(AccessCommonNameRule != null)
             {

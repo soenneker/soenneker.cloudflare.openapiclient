@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_errors>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_errors> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_messages>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_messages> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,8 +73,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_messages.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -87,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_errors>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponse_messages>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseErrorsItem>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResponseResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);

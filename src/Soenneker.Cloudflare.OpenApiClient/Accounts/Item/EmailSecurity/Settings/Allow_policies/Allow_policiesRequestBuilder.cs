@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\settings\allow_policies
+    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\allow_policies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Allow_policiesRequestBuilder : BaseRequestBuilder
@@ -26,14 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.emailSecurity.settings.allow_policies.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Item.WithPolicy_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Item.WithPolicy_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Item.WithPolicyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Item.WithPolicyItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("policy_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Item.WithPolicy_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("policyId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Item.WithPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Allow_policiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/allow_policies{?direction*,is_acceptable_sender*,is_exempt_recipient*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", pathParameters)
+        public Allow_policiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/allow_policies{?direction*,expired*,is_acceptable_sender*,is_exempt_recipient*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,23 +49,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Allow_policiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/allow_policies{?direction*,is_acceptable_sender*,is_exempt_recipient*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", rawUrl)
+        public Allow_policiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/allow_policies{?direction*,expired*,is_acceptable_sender*,is_exempt_recipient*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of email allow policies. These policies exempt matching emails from security detection, allowing them to bypass disposition actions. Supports filtering by pattern type and policy attributes.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder.Allow_policiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder.Allow_policiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder.Allow_policiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder.Allow_policiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -73,23 +73,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPolicies200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new allow policy that exempts matching emails from security detections. Use with caution as this bypasses email security scanning. Policies can match on sender patterns and apply to specific detections or all detections.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201"/></returns>
-        /// <param name="body">Create an allow policy</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201Response"/></returns>
+        /// <param name="body">Create an allow policy.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicyBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicyBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of email allow policies. These policies exempt matching emails from security detection, allowing them to bypass disposition actions. Supports filtering by pattern type and policy attributes.
@@ -123,15 +123,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// Creates a new allow policy that exempts matching emails from security detections. Use with caution as this bypasses email security scanning. Policies can match on sender patterns and apply to specific detections or all detections.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Create an allow policy</param>
+        /// <param name="body">Create an allow policy.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicyBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityCreateAllowPolicyBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -158,7 +158,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         {
             /// <summary>The sorting direction.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDirection? Direction { get; set; }
+            /// <summary>Filter to return only expired policies (`true`) or only policies that still apply (`false`). Omit to return both.</summary>
+            [QueryParameter("expired")]
+            public bool? Expired { get; set; }
             /// <summary>Filter to show only policies where messages from the sender are exempted from Spam, Spoof, and Bulk dispositions (not Malicious or Suspicious).</summary>
             [QueryParameter("is_acceptable_sender")]
             public bool? IsAcceptableSender { get; set; }
@@ -170,10 +173,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             public bool? IsTrustedSender { get; set; }
             /// <summary>Field to sort by.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPoliciesOrderParameter? Order { get; set; }
             /// <summary>Current page within paginated list of results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
+            /// <summary>Filter by exact pattern value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pattern")]
@@ -183,15 +187,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             [QueryParameter("pattern")]
             public string Pattern { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Filter by pattern type.</summary>
             [QueryParameter("pattern_type")]
-            public string? PatternType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("pattern_type")]
-            public string PatternType { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityListAllowPoliciesPatternTypeParameter? PatternType { get; set; }
             /// <summary>The number of results per page. Maximum value is 1000.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

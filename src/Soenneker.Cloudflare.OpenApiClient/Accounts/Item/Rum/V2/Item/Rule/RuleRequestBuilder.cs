@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rum\v2\{ruleset_id}\rule
+    /// Builds and executes requests for operations under \accounts\{account-id}\rum\v2\{rulesetId}\rule
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RuleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.rum.v2.item.rule.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule.Item.WithRule_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule.Item.WithRule_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule.Item.WithRuleItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule.Item.WithRuleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("rule_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule.Item.WithRule_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ruleId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule.Item.WithRuleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rum/v2/{ruleset_id}/rule", pathParameters)
+        public RuleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rum/v2/{rulesetId}/rule", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.V2.Item.Rule
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rum/v2/{ruleset_id}/rule", rawUrl)
+        public RuleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rum/v2/{rulesetId}/rule", rawUrl)
         {
         }
         /// <summary>

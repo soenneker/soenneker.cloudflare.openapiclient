@@ -16,15 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The kind of the schema</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_kind? Kind { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OpenApiV3Kind? Kind { get; private set; }
         /// <summary>A human-readable name for the schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,14 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; private set; }
 #endif
-        /// <summary>The schema_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_schema_id? SchemaId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_schema_id SchemaId { get; set; }
-#endif
+        /// <summary>UUID.</summary>
+        public Guid? SchemaId { get; set; }
         /// <summary>The raw schema, e.g., the OpenAPI schema, either as JSON or YAML</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,10 +64,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_kind>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OpenApiV3Kind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "schema_id", n => { SchemaId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_schema_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_schema_id.CreateFromDiscriminatorValue); } },
+                { "schema_id", n => { SchemaId = n.GetGuidValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "validation_enabled", n => { ValidationEnabled = n.GetBoolValue(); } },
             };
@@ -91,8 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchema_schema_id>("schema_id", SchemaId);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteGuidValue("schema_id", SchemaId);
             writer.WriteBoolValue("validation_enabled", ValidationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

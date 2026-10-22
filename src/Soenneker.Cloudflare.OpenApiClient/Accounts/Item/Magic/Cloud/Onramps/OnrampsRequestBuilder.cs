@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\cloud\onramps
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\cloud\onramps
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OnrampsRequestBuilder : BaseRequestBuilder
@@ -26,14 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.cloud.onramps.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnrampItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnrampItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("onramp_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("onrampId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnrampItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnrampsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/cloud/onramps{?desc*,order_by*,status*,vpcs*}", pathParameters)
+        public OnrampsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/cloud/onramps{?desc*,order_by*,status*,vpcs*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnrampsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/cloud/onramps{?desc*,order_by*,status*,vpcs*}", rawUrl)
+        public OnrampsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/cloud/onramps{?desc*,order_by*,status*,vpcs*}", rawUrl)
         {
         }
         /// <summary>
@@ -172,8 +172,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OnrampsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("desc")]
             public bool? Desc { get; set; }
+            #pragma warning restore CS1591
             /// <summary>One of [&quot;updated_at&quot;, &quot;id&quot;, &quot;cloud_type&quot;, &quot;name&quot;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,10 +186,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public bool? Status { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("vpcs")]
             public bool? Vpcs { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

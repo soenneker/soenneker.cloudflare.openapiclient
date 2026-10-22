@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\hostnames\settings
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\hostnames\settings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.hostnames.settings.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.WithSetting_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.WithSetting_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.WithSettingItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.WithSettingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("setting_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.WithSetting_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("settingId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.WithSettingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/hostnames/settings", pathParameters)
+        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/hostnames/settings", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/hostnames/settings", rawUrl)
+        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/hostnames/settings", rawUrl)
         {
         }
     }

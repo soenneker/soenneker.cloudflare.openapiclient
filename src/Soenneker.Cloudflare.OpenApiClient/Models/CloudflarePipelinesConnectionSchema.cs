@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Defines the schema of the events in the data stream.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CloudflarePipelinesConnectionSchema : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -21,14 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField> Fields { get; set; }
-#endif
-        /// <summary>The format property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesConnectionSchema_format? Format { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesConnectionSchema_format Format { get; set; }
 #endif
         /// <summary>The inferred property</summary>
         public bool? Inferred { get; set; }
@@ -58,7 +51,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "format", n => { Format = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesConnectionSchema_format>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesConnectionSchema_format.CreateFromDiscriminatorValue); } },
                 { "inferred", n => { Inferred = n.GetBoolValue(); } },
             };
         }
@@ -70,7 +62,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSourceField>("fields", Fields);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesConnectionSchema_format>("format", Format);
             writer.WriteBoolValue("inferred", Inferred);
             writer.WriteAdditionalData(AdditionalData);
         }

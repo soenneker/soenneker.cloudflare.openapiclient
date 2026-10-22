@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Rollback
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\environments\{environment_id}\rollback
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\environments\{environmentId}\rollback
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RollbackRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Rollba
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RollbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/environments/{environment_id}/rollback", pathParameters)
+        public RollbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/environments/{environmentId}/rollback", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Rollba
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RollbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/environments/{environment_id}/rollback", rawUrl)
+        public RollbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/environments/{environmentId}/rollback", rawUrl)
         {
         }
         /// <summary>
-        /// Roll back zone environment
+        /// Rolls a zone environment back to its previous version.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Rollba
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Roll back zone environment
+        /// Rolls a zone environment back to its previous version.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

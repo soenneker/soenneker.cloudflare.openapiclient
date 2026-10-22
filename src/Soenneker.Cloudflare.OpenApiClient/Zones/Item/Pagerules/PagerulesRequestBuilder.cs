@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -13,21 +14,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\pagerules
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\pagerules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagerulesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.pagerules.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPagerule_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPagerule_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPageruleItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPageruleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("pagerule_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPagerule_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("pageruleId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPageruleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PagerulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/pagerules{?direction*,match*,order*,status*}", pathParameters)
+        public PagerulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/pagerules{?direction*,match*,order*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,56 +49,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PagerulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/pagerules{?direction*,match*,order*,status*}", rawUrl)
+        public PagerulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/pagerules{?direction*,match*,order*,status*}", rawUrl)
         {
         }
         /// <summary>
         /// Fetches Page Rules in a zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSchemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure2">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder.PagerulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder.PagerulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder.PagerulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder.PagerulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSchemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRules200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new Page Rule.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSchemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure2">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSchemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure2.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches Page Rules in a zone.
@@ -121,11 +127,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesCreateAPageRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -150,14 +156,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PagerulesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRulesDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.GetMatchQueryParameterType? Match { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRulesMatchParameter? Match { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRulesOrderParameter? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesListPageRulesStatusParameter? Status { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

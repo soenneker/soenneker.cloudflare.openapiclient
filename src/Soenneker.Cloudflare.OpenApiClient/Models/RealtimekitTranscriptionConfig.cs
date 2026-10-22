@@ -23,8 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Keywords { get; set; }
 #endif
-        /// <summary>Specifies the language code for transcription to ensure accurate results.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig_language? Language { get; set; }
+        /// <summary>Specifies the language code for transcription to ensure accurate results. If omitted, the language is auto-detected for post-meeting (Whisper) transcription.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfigLanguage? Language { get; set; }
         /// <summary>Control the inclusion of offensive language in transcriptions.</summary>
         public bool? ProfanityFilter { get; set; }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitTranscriptionConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            Language = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig_language.EnUS;
+            ProfanityFilter = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig_language>(); } },
+                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfigLanguage>(); } },
                 { "profanity_filter", n => { ProfanityFilter = n.GetBoolValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfig_language>("language", Language);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitTranscriptionConfigLanguage>("language", Language);
             writer.WriteBoolValue("profanity_filter", ProfanityFilter);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence Confidence { get; set; }
 #endif
+        /// <summary>Whether this entry is deprecated for new use. This is computed from the static catalog andemitted only when true.</summary>
+        public bool? Deprecated { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The id property</summary>
@@ -40,10 +42,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The variant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntry_variant? Variant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed? Variant { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntry_variant Variant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed Variant { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntry"/> and sets the default values.
@@ -71,11 +73,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "confidence", n => { Confidence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence.CreateFromDiscriminatorValue); } },
+                { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "profile_id", n => { ProfileId = n.GetGuidValue(); } },
-                { "variant", n => { Variant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntry_variant>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntry_variant.CreateFromDiscriminatorValue); } },
+                { "variant", n => { Variant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,11 +89,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence>("confidence", Confidence);
+            writer.WriteBoolValue("deprecated", Deprecated);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("profile_id", ProfileId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntry_variant>("variant", Variant);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed>("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

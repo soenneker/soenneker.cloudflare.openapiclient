@@ -41,26 +41,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Top attributes contributing to the feedback sample. Keys include topASNs, topCountries, topHosts, topIPs, topJA3Hashes, topJA4s, topPaths, topUserAgents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_attribute? RequestsByAttribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute? RequestsByAttribute { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_attribute RequestsByAttribute { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute RequestsByAttribute { get; set; }
 #endif
         /// <summary>Map of bot scores (1-99) to request counts. Sum must equal `requests`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score? RequestsByScore { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore? RequestsByScore { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score RequestsByScore { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore RequestsByScore { get; set; }
 #endif
         /// <summary>Map of score source to request counts. Sum must equal `requests`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score_src? RequestsByScoreSrc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc? RequestsByScoreSrc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score_src RequestsByScoreSrc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc RequestsByScoreSrc { get; set; }
 #endif
         /// <summary>The subtype property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,9 +103,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "first_request_seen_at", n => { FirstRequestSeenAt = n.GetDateTimeOffsetValue(); } },
                 { "last_request_seen_at", n => { LastRequestSeenAt = n.GetDateTimeOffsetValue(); } },
                 { "requests", n => { Requests = n.GetLongValue(); } },
-                { "requests_by_attribute", n => { RequestsByAttribute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_attribute>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_attribute.CreateFromDiscriminatorValue); } },
-                { "requests_by_score", n => { RequestsByScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score.CreateFromDiscriminatorValue); } },
-                { "requests_by_score_src", n => { RequestsByScoreSrc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score_src>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score_src.CreateFromDiscriminatorValue); } },
+                { "requests_by_attribute", n => { RequestsByAttribute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute.CreateFromDiscriminatorValue); } },
+                { "requests_by_score", n => { RequestsByScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore.CreateFromDiscriminatorValue); } },
+                { "requests_by_score_src", n => { RequestsByScoreSrc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc.CreateFromDiscriminatorValue); } },
                 { "subtype", n => { Subtype = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackType>(); } },
             };
@@ -122,9 +122,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("first_request_seen_at", FirstRequestSeenAt);
             writer.WriteDateTimeOffsetValue("last_request_seen_at", LastRequestSeenAt);
             writer.WriteLongValue("requests", Requests);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_attribute>("requests_by_attribute", RequestsByAttribute);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score>("requests_by_score", RequestsByScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReport_requests_by_score_src>("requests_by_score_src", RequestsByScoreSrc);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByAttribute>("requests_by_attribute", RequestsByAttribute);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScore>("requests_by_score", RequestsByScore);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackReportRequestsByScoreSrc>("requests_by_score_src", RequestsByScoreSrc);
             writer.WriteStringValue("subtype", Subtype);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementFeedbackType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

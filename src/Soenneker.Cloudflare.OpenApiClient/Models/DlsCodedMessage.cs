@@ -16,6 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
         public int? Code { get; set; }
+        /// <summary>Optional upstream error context for APIv4 errors that wrap downstream service failures.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsCodedMessage>? ErrorChain { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsCodedMessage> ErrorChain { get; set; }
+#endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetIntValue(); } },
+                { "error_chain", n => { ErrorChain = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsCodedMessage>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlsCodedMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
             };
         }
@@ -61,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("code", Code);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsCodedMessage>("error_chain", ErrorChain);
             writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

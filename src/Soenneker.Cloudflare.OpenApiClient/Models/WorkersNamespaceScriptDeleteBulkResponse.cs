@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponse_deleted>? Deleted { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponseDeletedItem>? Deleted { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponse_deleted> Deleted { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponseDeletedItem> Deleted { get; set; }
 #endif
         /// <summary>The deleted_count property</summary>
         public int? DeletedCount { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deleted", n => { Deleted = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponse_deleted>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponse_deleted.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deleted", n => { Deleted = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponseDeletedItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponseDeletedItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deleted_count", n => { DeletedCount = n.GetIntValue(); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
             };
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponse_deleted>("deleted", Deleted);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptDeleteBulkResponseDeletedItem>("deleted", Deleted);
             writer.WriteIntValue("deleted_count", DeletedCount);
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteAdditionalData(AdditionalData);

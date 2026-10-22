@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Ips { get; set; }
 #endif
         /// <summary>The proxy endpoint kind</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointIp_kind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpKind? Kind { get; set; }
         /// <summary>Specify the name of the proxy endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointIp_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpKind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "subdomain", n => { Subdomain = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayProxyEndpointIp_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpKind>("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("subdomain", Subdomain);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

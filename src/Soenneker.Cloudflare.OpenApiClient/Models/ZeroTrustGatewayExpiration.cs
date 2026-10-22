@@ -19,14 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Duration { get; set; }
         /// <summary>Indicates whether the policy is expired.</summary>
         public bool? Expired { get; private set; }
-        /// <summary>The expires_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration_expires_at? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration_expires_at ExpiresAt { get; set; }
-#endif
+        /// <summary>Show the timestamp when the policy expires and stops applying.  The value must follow RFC 3339 and include a UTC offset.  The system accepts non-zero offsets but converts them to the equivalent UTC+00:00  value and returns timestamps with a trailing Z. Expiration policies ignore client  timezones and expire globally at the specified expires_at time.</summary>
+        public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration"/> and sets the default values.
         /// </summary>
@@ -54,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration_expires_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration_expires_at.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("duration", Duration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration_expires_at>("expires_at", ExpiresAt);
+            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

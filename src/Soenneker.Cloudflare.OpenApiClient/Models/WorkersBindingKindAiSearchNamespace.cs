@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Namespace { get; set; }
 #endif
-        /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindAiSearchNamespace_type? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindAiSearchNamespace"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindAiSearchNamespace_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace", Namespace);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindAiSearchNamespace_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -10,231 +10,231 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "aws_customer_gateway")]
         #pragma warning disable CS1591
-        Aws_customer_gateway,
+        AwsCustomerGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_egress_only_internet_gateway")]
         #pragma warning disable CS1591
-        Aws_egress_only_internet_gateway,
+        AwsEgressOnlyInternetGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_internet_gateway")]
         #pragma warning disable CS1591
-        Aws_internet_gateway,
+        AwsInternetGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_instance")]
         #pragma warning disable CS1591
-        Aws_instance,
+        AwsInstance,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_network_interface")]
         #pragma warning disable CS1591
-        Aws_network_interface,
+        AwsNetworkInterface,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_route")]
         #pragma warning disable CS1591
-        Aws_route,
+        AwsRoute,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_route_table")]
         #pragma warning disable CS1591
-        Aws_route_table,
+        AwsRouteTable,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_route_table_association")]
         #pragma warning disable CS1591
-        Aws_route_table_association,
+        AwsRouteTableAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_subnet")]
         #pragma warning disable CS1591
-        Aws_subnet,
+        AwsSubnet,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpc")]
         #pragma warning disable CS1591
-        Aws_vpc,
+        AwsVpc,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpc_ipv4_cidr_block_association")]
         #pragma warning disable CS1591
-        Aws_vpc_ipv4_cidr_block_association,
+        AwsVpcIpv4CidrBlockAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpn_connection")]
         #pragma warning disable CS1591
-        Aws_vpn_connection,
+        AwsVpnConnection,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpn_connection_route")]
         #pragma warning disable CS1591
-        Aws_vpn_connection_route,
+        AwsVpnConnectionRoute,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpn_gateway")]
         #pragma warning disable CS1591
-        Aws_vpn_gateway,
+        AwsVpnGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_security_group")]
         #pragma warning disable CS1591
-        Aws_security_group,
+        AwsSecurityGroup,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpc_security_group_ingress_rule")]
         #pragma warning disable CS1591
-        Aws_vpc_security_group_ingress_rule,
+        AwsVpcSecurityGroupIngressRule,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_vpc_security_group_egress_rule")]
         #pragma warning disable CS1591
-        Aws_vpc_security_group_egress_rule,
+        AwsVpcSecurityGroupEgressRule,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_ec2_managed_prefix_list")]
         #pragma warning disable CS1591
-        Aws_ec2_managed_prefix_list,
+        AwsEc2ManagedPrefixList,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_ec2_transit_gateway")]
         #pragma warning disable CS1591
-        Aws_ec2_transit_gateway,
+        AwsEc2TransitGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_ec2_transit_gateway_prefix_list_reference")]
         #pragma warning disable CS1591
-        Aws_ec2_transit_gateway_prefix_list_reference,
+        AwsEc2TransitGatewayPrefixListReference,
         #pragma warning restore CS1591
         [EnumMember(Value = "aws_ec2_transit_gateway_vpc_attachment")]
         #pragma warning disable CS1591
-        Aws_ec2_transit_gateway_vpc_attachment,
+        AwsEc2TransitGatewayVpcAttachment,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_application_security_group")]
         #pragma warning disable CS1591
-        Azurerm_application_security_group,
+        AzurermApplicationSecurityGroup,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_lb")]
         #pragma warning disable CS1591
-        Azurerm_lb,
+        AzurermLb,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_lb_backend_address_pool")]
         #pragma warning disable CS1591
-        Azurerm_lb_backend_address_pool,
+        AzurermLbBackendAddressPool,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_lb_nat_pool")]
         #pragma warning disable CS1591
-        Azurerm_lb_nat_pool,
+        AzurermLbNatPool,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_lb_nat_rule")]
         #pragma warning disable CS1591
-        Azurerm_lb_nat_rule,
+        AzurermLbNatRule,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_lb_rule")]
         #pragma warning disable CS1591
-        Azurerm_lb_rule,
+        AzurermLbRule,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_local_network_gateway")]
         #pragma warning disable CS1591
-        Azurerm_local_network_gateway,
+        AzurermLocalNetworkGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_network_interface")]
         #pragma warning disable CS1591
-        Azurerm_network_interface,
+        AzurermNetworkInterface,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_network_interface_application_security_group_association")]
         #pragma warning disable CS1591
-        Azurerm_network_interface_application_security_group_association,
+        AzurermNetworkInterfaceApplicationSecurityGroupAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_network_interface_backend_address_pool_association")]
         #pragma warning disable CS1591
-        Azurerm_network_interface_backend_address_pool_association,
+        AzurermNetworkInterfaceBackendAddressPoolAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_network_interface_security_group_association")]
         #pragma warning disable CS1591
-        Azurerm_network_interface_security_group_association,
+        AzurermNetworkInterfaceSecurityGroupAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_network_security_group")]
         #pragma warning disable CS1591
-        Azurerm_network_security_group,
+        AzurermNetworkSecurityGroup,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_public_ip")]
         #pragma warning disable CS1591
-        Azurerm_public_ip,
+        AzurermPublicIp,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_route")]
         #pragma warning disable CS1591
-        Azurerm_route,
+        AzurermRoute,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_route_table")]
         #pragma warning disable CS1591
-        Azurerm_route_table,
+        AzurermRouteTable,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_subnet")]
         #pragma warning disable CS1591
-        Azurerm_subnet,
+        AzurermSubnet,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_subnet_route_table_association")]
         #pragma warning disable CS1591
-        Azurerm_subnet_route_table_association,
+        AzurermSubnetRouteTableAssociation,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_virtual_machine")]
         #pragma warning disable CS1591
-        Azurerm_virtual_machine,
+        AzurermVirtualMachine,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_virtual_network_gateway_connection")]
         #pragma warning disable CS1591
-        Azurerm_virtual_network_gateway_connection,
+        AzurermVirtualNetworkGatewayConnection,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_virtual_network")]
         #pragma warning disable CS1591
-        Azurerm_virtual_network,
+        AzurermVirtualNetwork,
         #pragma warning restore CS1591
         [EnumMember(Value = "azurerm_virtual_network_gateway")]
         #pragma warning disable CS1591
-        Azurerm_virtual_network_gateway,
+        AzurermVirtualNetworkGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_network")]
         #pragma warning disable CS1591
-        Google_compute_network,
+        GoogleComputeNetwork,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_subnetwork")]
         #pragma warning disable CS1591
-        Google_compute_subnetwork,
+        GoogleComputeSubnetwork,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_vpn_gateway")]
         #pragma warning disable CS1591
-        Google_compute_vpn_gateway,
+        GoogleComputeVpnGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_vpn_tunnel")]
         #pragma warning disable CS1591
-        Google_compute_vpn_tunnel,
+        GoogleComputeVpnTunnel,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_route")]
         #pragma warning disable CS1591
-        Google_compute_route,
+        GoogleComputeRoute,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_address")]
         #pragma warning disable CS1591
-        Google_compute_address,
+        GoogleComputeAddress,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_global_address")]
         #pragma warning disable CS1591
-        Google_compute_global_address,
+        GoogleComputeGlobalAddress,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_router")]
         #pragma warning disable CS1591
-        Google_compute_router,
+        GoogleComputeRouter,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_interconnect_attachment")]
         #pragma warning disable CS1591
-        Google_compute_interconnect_attachment,
+        GoogleComputeInterconnectAttachment,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_ha_vpn_gateway")]
         #pragma warning disable CS1591
-        Google_compute_ha_vpn_gateway,
+        GoogleComputeHaVpnGateway,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_forwarding_rule")]
         #pragma warning disable CS1591
-        Google_compute_forwarding_rule,
+        GoogleComputeForwardingRule,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_network_firewall_policy")]
         #pragma warning disable CS1591
-        Google_compute_network_firewall_policy,
+        GoogleComputeNetworkFirewallPolicy,
         #pragma warning restore CS1591
         [EnumMember(Value = "google_compute_network_firewall_policy_rule")]
         #pragma warning disable CS1591
-        Google_compute_network_firewall_policy_rule,
+        GoogleComputeNetworkFirewallPolicyRule,
         #pragma warning restore CS1591
         [EnumMember(Value = "cloudflare_static_route")]
         #pragma warning disable CS1591
-        Cloudflare_static_route,
+        CloudflareStaticRoute,
         #pragma warning restore CS1591
         [EnumMember(Value = "cloudflare_ipsec_tunnel")]
         #pragma warning disable CS1591
-        Cloudflare_ipsec_tunnel,
+        CloudflareIpsecTunnel,
         #pragma warning restore CS1591
     }
 }

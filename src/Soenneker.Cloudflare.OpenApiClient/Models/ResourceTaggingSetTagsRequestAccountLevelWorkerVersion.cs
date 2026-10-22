@@ -23,15 +23,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ResourceId { get; set; }
 #endif
-        /// <summary>Enum for base account-level resource types (those with no extra required fields).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingAccountResourceTypeBaseEnum? ResourceType { get; set; }
-        /// <summary>Contains key-value pairs of tags.</summary>
+        /// <summary>Enum for worker_version resource type.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingAccountResourceTypeWorkerVersionEnum? ResourceType { get; set; }
+        /// <summary>Contains key-value pairs of tags. Keys may contain at most 256 characters. Values may contain at most 1024 characters and may be empty for key-only tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion_tags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersionTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion_tags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersionTags Tags { get; set; }
 #endif
         /// <summary>Worker ID is required only for worker_version resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingAccountResourceTypeBaseEnum>(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion_tags.CreateFromDiscriminatorValue); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingAccountResourceTypeWorkerVersionEnum>(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersionTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersionTags.CreateFromDiscriminatorValue); } },
                 { "worker_id", n => { WorkerId = n.GetStringValue(); } },
             };
         }
@@ -80,8 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingAccountResourceTypeBaseEnum>("resource_type", ResourceType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion_tags>("tags", Tags);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingAccountResourceTypeWorkerVersionEnum>("resource_type", ResourceType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersionTags>("tags", Tags);
             writer.WriteStringValue("worker_id", WorkerId);
             writer.WriteAdditionalData(AdditionalData);
         }

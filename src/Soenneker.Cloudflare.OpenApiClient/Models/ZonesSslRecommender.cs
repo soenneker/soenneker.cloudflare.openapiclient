@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ssl-recommender enrollment setting.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Enrollment value for SSL/TLS Recommender.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSslRecommender_id? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SslRecommenderId? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSslRecommender"/> and sets the default values.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSslRecommender_id>(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SslRecommenderId>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSslRecommender_id>("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SslRecommenderId>("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

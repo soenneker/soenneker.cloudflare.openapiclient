@@ -39,6 +39,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>For a CNAME record, the TXT content(s) found by following the CNAME chain to its target. An empty array means the chain was resolved but nothing usable was found there; omitted/null means resolution was not attempted for this record (always the case for non-CNAME entries). A CNAME chain that terminates in more than one TXT value at the target yields multiple entries. Populated on entries in cname_dmarc_records, cname_spf_records, and cname_dkim_records.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Resolved { get; set; }
+#nullable restore
+#else
+        public List<string> Resolved { get; set; }
+#endif
         /// <summary>Time to live in seconds</summary>
         public int? Ttl { get; set; }
         /// <summary>Record type</summary>
@@ -77,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "resolved", n => { Resolved = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -91,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("resolved", Resolved);
             writer.WriteIntValue("ttl", Ttl);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

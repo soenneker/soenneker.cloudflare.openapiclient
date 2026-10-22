@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ccr_device_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CcrDeviceName { get; set; }
+#nullable restore
+#else
+        public string CcrDeviceName { get; set; }
+#endif
         /// <summary>The facility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>The virtual_port_reservation_id property</summary>
+        public Guid? VirtualPortReservationId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnectPhysicalBody"/> and sets the default values.
         /// </summary>
@@ -98,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
+                { "ccr_device_name", n => { CcrDeviceName = n.GetStringValue(); } },
                 { "facility", n => { Facility = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
@@ -105,6 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "slot_id", n => { SlotId = n.GetGuidValue(); } },
                 { "speed", n => { Speed = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+                { "virtual_port_reservation_id", n => { VirtualPortReservationId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -115,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
+            writer.WriteStringValue("ccr_device_name", CcrDeviceName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo>("facility", Facility);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
@@ -122,6 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("slot_id", SlotId);
             writer.WriteStringValue("speed", Speed);
             writer.WriteStringValue("type", Type);
+            writer.WriteGuidValue("virtual_port_reservation_id", VirtualPortReservationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

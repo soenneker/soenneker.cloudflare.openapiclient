@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> BimiRecords { get; set; }
 #endif
-        /// <summary>CNAME records for DKIM</summary>
+        /// <summary>CNAME records for DKIM selectors. Each selector is resolved independently; when a selector&apos;s CNAME resolves to a DKIM TXT record, the API returns that record&apos;s content in the `resolved` field of the corresponding entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameDkimRecords { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameDkimRecords { get; set; }
 #endif
-        /// <summary>CNAME records at _dmarc (problematic)</summary>
+        /// <summary>CNAME records at _dmarc. When such a CNAME resolves to a DMARC TXT record, the API returns that record&apos;s content in the `resolved` field of the corresponding entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameDmarcRecords { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> CnameDmarcRecords { get; set; }
 #endif
-        /// <summary>CNAME records for SPF</summary>
+        /// <summary>CNAME records at the zone apex. When such a CNAME resolves to an SPF TXT record, the API returns that record&apos;s content in the `resolved` field of the corresponding entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>? CnameSpfRecords { get; set; }
@@ -62,6 +62,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo> DmarcRecords { get; set; }
+#endif
+        /// <summary>DMARC records that a recursive lookup of _dmarc.{zone} returned. The API populates this only when the zone lacks a DMARC TXT record of its own, which usually means a CNAME delegates DMARC to another zone.</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord>? ResolvedDmarcRecords { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord> ResolvedDmarcRecords { get; set; }
 #endif
         /// <summary>SPF TXT records</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cname_spf_records", n => { CnameSpfRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dkim_records", n => { DkimRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dmarc_records", n => { DmarcRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resolved_dmarc_records", n => { ResolvedDmarcRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "spf_records", n => { SpfRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -118,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>("cname_spf_records", CnameSpfRecords);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>("dkim_records", DkimRecords);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>("dmarc_records", DmarcRecords);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthResolvedDmarcRecord>("resolved_dmarc_records", ResolvedDmarcRecords);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthDnsRecordInfo>("spf_records", SpfRecords);
             writer.WriteAdditionalData(AdditionalData);
         }

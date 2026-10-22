@@ -34,18 +34,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>HTTP request that was made, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_request? Request { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest? Request { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_request Request { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest Request { get; set; }
 #endif
         /// <summary>HTTP response that was received, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_response? Response { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepResponse? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_response Response { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepResponse Response { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep"/> and sets the default values.
@@ -74,8 +74,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "assertions", n => { Assertions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertion>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_request.CreateFromDiscriminatorValue); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_response.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepResponse.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertion>("assertions", Assertions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_request>("request", Request);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep_response>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequest>("request", Request);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepResponse>("response", Response);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

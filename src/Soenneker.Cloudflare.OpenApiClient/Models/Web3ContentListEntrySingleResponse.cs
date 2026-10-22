@@ -33,18 +33,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provides the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseCommonResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseCommonResult Result { get; set; }
 #endif
         /// <summary>Provides the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result_info? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseSingleAllOf2ResultInfo? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result_info ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseSingleAllOf2ResultInfo ResultInfo { get; set; }
 #endif
         /// <summary>Specifies whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -75,8 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3MessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3MessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3MessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3MessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result.CreateFromDiscriminatorValue); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result_info.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseCommonResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseCommonResult.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseSingleAllOf2ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseSingleAllOf2ResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -89,8 +89,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3MessagesItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3MessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse_result_info>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseCommonResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ApiResponseSingleAllOf2ResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

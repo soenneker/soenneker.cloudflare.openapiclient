@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-search\namespaces\{name}\instances\{id}\items
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-search\namespaces\{namespaceValue-id}\instances\{id}\items
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.aiSearch.namespaces.item.instances.item.items.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.Item.WithItem_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.Item.WithItem_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.Item.WithItemItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.Item.WithItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("item_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.Item.WithItem_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("itemId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-search/namespaces/{name}/instances/{id}/items{?item_id*,metadata_filter*,page*,per_page*,search*,sort_by*,source*,status*}", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/namespaces/{namespaceValue%2Did}/instances/{id}/items{?item_id*,key*,metadata_filter*,page*,per_page*,search*,sort_by*,source*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,91 +43,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-search/namespaces/{name}/instances/{id}/items{?item_id*,metadata_filter*,page*,per_page*,search*,sort_by*,source*,status*}", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/namespaces/{namespaceValue%2Did}/instances/{id}/items{?item_id*,key*,metadata_filter*,page*,per_page*,search*,sort_by*,source*,status*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists indexed items in an AI Search instance.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems503Response">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems404.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems503.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems404Response.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems503Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItems200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads a file to a managed AI Search instance via multipart/form-data (max 4MB).
+        /// Uploads a file to a managed AI Search instance via multipart/form-data.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem409Response">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem413Response">When receiving a 413 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem499Response">When receiving a 499 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200Response?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200Response> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem404.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem404Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem409Response.CreateFromDiscriminatorValue },
+                { "413", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem413Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429Response.CreateFromDiscriminatorValue },
+                { "499", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem499Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates or updates an indexed item in an AI Search instance.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem409Response">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem503Response">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200Response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItemRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200Response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItemRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem404.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem503.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem404Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem409Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem429Response.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem503Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists indexed items in an AI Search instance.
@@ -149,7 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
             return requestInfo;
         }
         /// <summary>
-        /// Uploads a file to a managed AI Search instance via multipart/form-data (max 4MB).
+        /// Uploads a file to a managed AI Search instance via multipart/form-data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,11 +190,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItemRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceCreateOrUpdateItemRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -207,7 +219,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter items by their unique ID. Returns at most one item.</summary>
+            /// <summary>Return only the item with this unique ID. Returns at most one item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("item_id")]
@@ -217,7 +229,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
             [QueryParameter("item_id")]
             public string ItemId { get; set; }
 #endif
-            /// <summary>&quot;JSON-encoded metadata filter using Vectorize filter syntax. Examples: {\&quot;folder\&quot;:\&quot;reports/\&quot;}, {\&quot;timestamp\&quot;:{\&quot;$gte\&quot;:1700000000000}}, {\&quot;folder\&quot;:{\&quot;$in\&quot;:[\&quot;docs/\&quot;,\&quot;reports/\&quot;]}}&quot;</summary>
+            /// <summary>Return only items with this exact key (object key / filename). Each key is unique within a source, so combine with `source` to disambiguate across data sources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("key")]
+            public string? Key { get; set; }
+#nullable restore
+#else
+            [QueryParameter("key")]
+            public string Key { get; set; }
+#endif
+            /// <summary>JSON-encoded metadata filter using Vectorize filter syntax. Examples: {&quot;folder&quot;:&quot;reports/&quot;}, {&quot;timestamp&quot;:{&quot;$gte&quot;:1700000000000}}, {&quot;folder&quot;:{&quot;$in&quot;:[&quot;docs/&quot;,&quot;reports/&quot;]}}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("metadata_filter")]
@@ -227,23 +249,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
             [QueryParameter("metadata_filter")]
             public string MetadataFilter { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string? Search { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>Sort order for items. &quot;status&quot; (default) sorts by status priority then last_seen_at. &quot;modified_at&quot; sorts by file modification time (most recent first), falling back to created_at.</summary>
+            /// <summary>Sort order for items. &quot;status&quot; (default) sorts items according to status priority, then last_seen_at. &quot;modified_at&quot; sorts items according to file modification time (most recent first), falling back to created_at.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.GetSort_byQueryParameterType? SortBy { get; set; }
-            /// <summary>Filter items by source_id. Use &quot;builtin&quot; for uploaded files, or a source identifier like &quot;web-crawler:https://example.com&quot;.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemsSortByParameter? SortBy { get; set; }
+            /// <summary>Return only items with this source_id. Use &quot;builtin&quot; for uploaded files, or a source identifier like &quot;web-crawler:https://example.com&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("source")]
@@ -253,8 +283,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.I
             [QueryParameter("source")]
             public string Source { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Namespaces.Item.Instances.Item.Items.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemsStatusParameter? Status { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

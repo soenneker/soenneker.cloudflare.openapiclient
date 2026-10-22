@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_errors>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_errors> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_messages>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_messages> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,8 +73,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_messages.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -87,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_errors>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponse_messages>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseErrorsItem>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResponseResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);

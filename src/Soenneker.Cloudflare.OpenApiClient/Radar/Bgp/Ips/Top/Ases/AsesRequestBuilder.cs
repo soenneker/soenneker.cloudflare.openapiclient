@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases
         /// <summary>
         /// Returns the top-N autonomous systems by announced IP space at the nearest 8-hour RIB boundary at or before the requested date. The snapped boundary is returned as `anchor_ts`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the top-N autonomous systems by announced IP space at the nearest 8-hour RIB boundary at or before the requested date. The snapped boundary is returned as `anchor_ts`.
@@ -105,13 +105,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases
             public DateTimeOffset? Date { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAsesFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>&quot;Ranking metric: IPv4 /24 count or IPv6 /48 count.&quot;</summary>
+            /// <summary>Ranking metric: IPv4 /24 count or IPv6 /48 count.</summary>
             [QueryParameter("metric")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.Ases.GetMetricQueryParameterType? Metric { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpIpsTopAsesMetricParameter? Metric { get; set; }
         }
     }
 }

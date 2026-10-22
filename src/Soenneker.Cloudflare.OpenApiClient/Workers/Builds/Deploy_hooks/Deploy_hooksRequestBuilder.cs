@@ -16,15 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks
     public partial class Deploy_hooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.workers.builds.deploy_hooks.item collection</summary>
-        /// <param name="position">Deploy hook UUID</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks.Item.WithDeploy_hook_uuItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks.Item.WithDeploy_hook_uuItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("deploy_hook_uuid", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks.Item.WithDeploy_hook_uuItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deployHookUuid", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Workers.Builds.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.Query
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\observability\telemetry\query
+    /// Builds and executes requests for operations under \accounts\{account-id}\workers\observability\telemetry\query
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/observability/telemetry/query", pathParameters)
+        public QueryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/observability/telemetry/query", pathParameters)
         {
         }
         /// <summary>
@@ -30,37 +30,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/observability/telemetry/query", rawUrl)
+        public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/observability/telemetry/query", rawUrl)
         {
         }
         /// <summary>
         /// Run a temporary or saved query.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.Query.QueryPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery401Response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery500Response">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery504Response">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.Query.QueryPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.Query.QueryPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery401.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery400Response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery401Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery403Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery429Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery500Response.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery504Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.Query.QueryPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.Query.QueryPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Run a temporary or saved query.
@@ -70,11 +76,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryQueryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>JSON data to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_json? Json { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJsonJsonProperty? Json { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_json Json { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJsonJsonProperty Json { get; set; }
 #endif
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_type? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson"/> and sets the default values.
         /// </summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "json", n => { Json = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_json>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_json.CreateFromDiscriminatorValue); } },
+                { "json", n => { Json = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJsonJsonProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJsonJsonProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType>(); } },
             };
         }
         /// <summary>
@@ -69,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_json>("json", Json);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJsonJsonProperty>("json", Json);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindJson_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.JsonType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

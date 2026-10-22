@@ -16,15 +16,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Frame rate of participants&apos; video</summary>
-        public int? FrameRate { get; set; }
+        public double? FrameRate { get; set; }
         /// <summary>Video quality of participants</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideo_quality? Quality { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideoQuality? Quality { get; set; }
+        /// <summary>Enable simulcast for participant videos.</summary>
+        public bool? Simulcast { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideo"/> and sets the default values.
         /// </summary>
         public RealtimekitPresetConfigMediaVideo()
         {
             AdditionalData = new Dictionary<string, object>();
+            Simulcast = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,8 +47,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frame_rate", n => { FrameRate = n.GetIntValue(); } },
-                { "quality", n => { Quality = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideo_quality>(); } },
+                { "frame_rate", n => { FrameRate = n.GetDoubleValue(); } },
+                { "quality", n => { Quality = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideoQuality>(); } },
+                { "simulcast", n => { Simulcast = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("frame_rate", FrameRate);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideo_quality>("quality", Quality);
+            writer.WriteDoubleValue("frame_rate", FrameRate);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaVideoQuality>("quality", Quality);
+            writer.WriteBoolValue("simulcast", Simulcast);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGatewayGatewayAccountLoggingSettings()
         {
             AdditionalData = new Dictionary<string, object>();
+            RedactPii = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

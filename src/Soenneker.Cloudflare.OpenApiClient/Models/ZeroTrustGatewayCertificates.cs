@@ -62,6 +62,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string IssuerRaw { get; private set; }
 #endif
+        /// <summary>Indicate the read-only region the certificate authority&apos;s key material is pinned to. Omitted for certificates that were created without a region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
         /// <summary>Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayType? Type { get; private set; }
         /// <summary>The updated_at property</summary>
@@ -102,6 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "in_use", n => { InUse = n.GetBoolValue(); } },
                 { "issuer_org", n => { IssuerOrg = n.GetStringValue(); } },
                 { "issuer_raw", n => { IssuerRaw = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
@@ -117,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("region", Region);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);

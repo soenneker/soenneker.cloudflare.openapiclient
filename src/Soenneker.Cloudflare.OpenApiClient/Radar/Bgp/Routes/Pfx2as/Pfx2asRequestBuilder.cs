@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as
         /// <summary>
         /// Retrieves the prefix-to-ASN mapping from global routing tables.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.Pfx2asRequestBuilder.Pfx2asRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.Pfx2asRequestBuilder.Pfx2asRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.Pfx2asRequestBuilder.Pfx2asRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.Pfx2asRequestBuilder.Pfx2asRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2as200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2As200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the prefix-to-ASN mapping from global routing tables.
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as
         {
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2AsFormatParameter? Format { get; set; }
             /// <summary>Return only results with the longest prefix match for the given prefix. For example, specify a /32 prefix to lookup the origin ASN for an IPv4 address.</summary>
             [QueryParameter("longestPrefixMatch")]
             public bool? LongestPrefixMatch { get; set; }
@@ -101,16 +101,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as
             public int? Origin { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("prefix")]
             public string? Prefix { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("prefix")]
             public string Prefix { get; set; }
+            #pragma warning restore CS1591
 #endif
-            /// <summary>&quot;Return only results with matching rpki status: valid, invalid or unknown.&quot;</summary>
+            /// <summary>Return only results with matching rpki status: valid, invalid or unknown.</summary>
             [QueryParameter("rpkiStatus")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.GetRpkiStatusQueryParameterType? RpkiStatus { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpPfx2AsRpkiStatusParameter? RpkiStatus { get; set; }
         }
     }
 }

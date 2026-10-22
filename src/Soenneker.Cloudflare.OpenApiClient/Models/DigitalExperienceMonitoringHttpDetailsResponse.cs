@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The url of the HTTP synthetic application test</summary>
+        /// <summary>The url of the HTTP synthetic application test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Host { get; set; }
@@ -25,18 +25,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The httpStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStats? HttpStats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStats? HttpStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStats HttpStats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStats HttpStats { get; set; }
 #endif
         /// <summary>The httpStatsByColo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStatsByColo>? HttpStatsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItem>? HttpStatsByColo { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStatsByColo> HttpStatsByColo { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItem> HttpStatsByColo { get; set; }
 #endif
         /// <summary>The interval at which the HTTP synthetic application test is set to run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Interval { get; set; }
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_kind? Kind { get; set; }
-        /// <summary>The HTTP method to use when running the test</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpKind? Kind { get; set; }
+        /// <summary>The HTTP method to use when running the test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Method { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Method { get; set; }
 #endif
-        /// <summary>The name of the HTTP synthetic application test</summary>
+        /// <summary>The name of the HTTP synthetic application test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -69,10 +69,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The target_policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_target_policies>? TargetPolicies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesItem>? TargetPolicies { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_target_policies> TargetPolicies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesItem> TargetPolicies { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse"/> and sets the default values.
@@ -100,13 +100,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "httpStats", n => { HttpStats = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStats>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStats.CreateFromDiscriminatorValue); } },
-                { "httpStatsByColo", n => { HttpStatsByColo = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStatsByColo>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStatsByColo.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "httpStats", n => { HttpStats = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStats>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStats.CreateFromDiscriminatorValue); } },
+                { "httpStatsByColo", n => { HttpStatsByColo = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_kind>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpKind>(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_target_policies>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_target_policies.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeted", n => { Targeted = n.GetBoolValue(); } },
             };
         }
@@ -118,14 +118,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStats>("httpStats", HttpStats);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_httpStatsByColo>("httpStatsByColo", HttpStatsByColo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStats>("httpStats", HttpStats);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoItem>("httpStatsByColo", HttpStatsByColo);
             writer.WriteStringValue("interval", Interval);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpKind>("kind", Kind);
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("targeted", Targeted);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponse_target_policies>("target_policies", TargetPolicies);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringHttpDetailsResponseTargetPoliciesItem>("target_policies", TargetPolicies);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

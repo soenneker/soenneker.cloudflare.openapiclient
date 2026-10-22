@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Audit_logs
         /// <summary>
         /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection_1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsGetUserAuditLogs4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsGetUserAuditLogs4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection_1?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder.Audit_logsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder.Audit_logsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection_1> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder.Audit_logsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder.Audit_logsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsGetUserAuditLogs4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsGetUserAuditLogs4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection_1>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
@@ -92,76 +92,114 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Audit_logs
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("action%2Etype")]
             public string? ActionType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("action%2Etype")]
             public string ActionType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor%2Eemail")]
             public string? ActorEmail { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor%2Eemail")]
             public string ActorEmail { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor%2Eip")]
             public string? ActorIp { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor%2Eip")]
             public string ActorIp { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("before")]
             public string? Before { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("before")]
             public string Before { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsGetUserAuditLogsDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("export")]
             public bool? Export { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("hide_user_logs")]
             public bool? HideUserLogs { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string? Id { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string Id { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("since")]
             public string? Since { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("since")]
             public string Since { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("zone%2Ename")]
             public string? ZoneName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("zone%2Ename")]
             public string ZoneName { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

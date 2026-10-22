@@ -28,21 +28,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationHttpBasic AccessScimConfigAuthenticationHttpBasic { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauth2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuth2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauth2? AccessScimConfigAuthenticationOauth2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuth2? AccessScimConfigAuthenticationOAuth2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauth2 AccessScimConfigAuthenticationOauth2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuth2 AccessScimConfigAuthenticationOAuth2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauthBearerToken"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuthBearerToken"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauthBearerToken? AccessScimConfigAuthenticationOauthBearerToken { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuthBearerToken? AccessScimConfigAuthenticationOAuthBearerToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauthBearerToken AccessScimConfigAuthenticationOauthBearerToken { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuthBearerToken AccessScimConfigAuthenticationOAuthBearerToken { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Password { get; set; }
 #endif
         /// <summary>The authentication scheme to use when making SCIM requests to this application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication_scheme? Scheme { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme? Scheme { get; set; }
         /// <summary>The authorization scopes to request when generating the token used to authenticate with the remove SCIM service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,14 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TokenUrl { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>User name used to authenticate with the remote SCIM service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication();
             if("AccessScimConfigAuthenticationAccessServiceToken".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -145,15 +137,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.AccessScimConfigAuthenticationHttpBasic = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationHttpBasic();
             }
-            else if("AccessScimConfigAuthenticationOauth2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AccessScimConfigAuthenticationOAuth2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AccessScimConfigAuthenticationOauth2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauth2();
+                result.AccessScimConfigAuthenticationOAuth2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuth2();
             }
-            else if("AccessScimConfigAuthenticationOauthBearerToken".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AccessScimConfigAuthenticationOAuthBearerToken".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AccessScimConfigAuthenticationOauthBearerToken = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauthBearerToken();
+                result.AccessScimConfigAuthenticationOAuthBearerToken = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuthBearerToken();
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication_scheme>() is global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication_scheme schemeValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme>() is global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme schemeValue)
             {
                 result.Scheme = schemeValue;
             }
@@ -181,10 +173,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.TokenUrl = tokenUrlValue;
             }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
-            }
             else if(parseNode.GetStringValue() is string userValue)
             {
                 result.User = userValue;
@@ -209,13 +197,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return AccessScimConfigAuthenticationHttpBasic.GetFieldDeserializers();
             }
-            else if(AccessScimConfigAuthenticationOauth2 != null)
+            else if(AccessScimConfigAuthenticationOAuth2 != null)
             {
-                return AccessScimConfigAuthenticationOauth2.GetFieldDeserializers();
+                return AccessScimConfigAuthenticationOAuth2.GetFieldDeserializers();
             }
-            else if(AccessScimConfigAuthenticationOauthBearerToken != null)
+            else if(AccessScimConfigAuthenticationOAuthBearerToken != null)
             {
-                return AccessScimConfigAuthenticationOauthBearerToken.GetFieldDeserializers();
+                return AccessScimConfigAuthenticationOAuthBearerToken.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -234,17 +222,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationHttpBasic>(null, AccessScimConfigAuthenticationHttpBasic);
             }
-            else if(AccessScimConfigAuthenticationOauth2 != null)
+            else if(AccessScimConfigAuthenticationOAuth2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauth2>(null, AccessScimConfigAuthenticationOauth2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuth2>(null, AccessScimConfigAuthenticationOAuth2);
             }
-            else if(AccessScimConfigAuthenticationOauthBearerToken != null)
+            else if(AccessScimConfigAuthenticationOAuthBearerToken != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOauthBearerToken>(null, AccessScimConfigAuthenticationOauthBearerToken);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationOAuthBearerToken>(null, AccessScimConfigAuthenticationOAuthBearerToken);
             }
             else if(Scheme != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication_scheme>(null, Scheme);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme>(null, Scheme);
             }
             else if(AuthorizationUrl != null)
             {
@@ -269,10 +257,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(TokenUrl != null)
             {
                 writer.WriteStringValue(null, TokenUrl);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
             }
             else if(User != null)
             {

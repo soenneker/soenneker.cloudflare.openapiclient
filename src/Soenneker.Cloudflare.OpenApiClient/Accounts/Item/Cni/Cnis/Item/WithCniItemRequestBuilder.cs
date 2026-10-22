@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cni\cnis\{cni}
+    /// Builds and executes requests for operations under \accounts\{account-id}\cni\cnis\{cni}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithCniItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCniItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis/{cni}", pathParameters)
+        public WithCniItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/cnis/{cni}", pathParameters)
         {
         }
         /// <summary>
@@ -30,28 +30,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCniItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis/{cni}", rawUrl)
+        public WithCniItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/cnis/{cni}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete a specified CNI object
+        /// Permanently removes a Cloud Network Interconnect (CNI) configuration. The private networkconnection will be terminated.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get information about a CNI object
+        /// Retrieves configuration details for a specific Cloud Network Interconnect (CNI), includingconnection status and parameters.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Modify stored information about a CNI object
+        /// Updates the configuration of an existing Cloud Network Interconnect (CNI), includingconnection parameters and routing settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specified CNI object
+        /// Permanently removes a Cloud Network Interconnect (CNI) configuration. The private networkconnection will be terminated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,11 +105,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get information about a CNI object
+        /// Retrieves configuration details for a specific Cloud Network Interconnect (CNI), includingconnection status and parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.Item
             return requestInfo;
         }
         /// <summary>
-        /// Modify stored information about a CNI object
+        /// Updates the configuration of an existing Cloud Network Interconnect (CNI), includingconnection parameters and routing settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

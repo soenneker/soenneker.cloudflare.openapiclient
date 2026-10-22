@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\dns_records\batch
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\dns_records\batch
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BatchRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/dns_records/batch", pathParameters)
+        public BatchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/dns_records/batch{?include_shadow_metadata*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/dns_records/batch", rawUrl)
+        public BatchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/dns_records/batch{?include_shadow_metadata*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,21 +40,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneBatchDnsRecords4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneBatchDnsRecords4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseBatch?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseBatch?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseBatch> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseBatch> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneBatchDnsRecords4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneBatchDnsRecords4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseBatch>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseBatch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -88,6 +88,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Send a Batch of DNS Record API calls to be executed together.Notes:- Although Cloudflare will execute the batched operations in a single database transaction, Cloudflare&apos;s distributed KV store must treat each record change as a single key-value pair. This means that the propagation of changes is not atomic. See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/batch-record-changes/ &quot;Batch DNS records&quot;) for more information.- The operations you specify within the /batch request body are always executed in the following order:    - Deletes    - Patches    - Puts    - Posts
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class BatchRequestBuilderPostQueryParameters 
+        {
+            #pragma warning disable CS1591
+            [QueryParameter("include_shadow_metadata")]
+            public bool? IncludeShadowMetadata { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

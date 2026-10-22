@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\brand-protection\logos
+    /// Builds and executes requests for operations under \accounts\{account-id}\brand-protection\logos
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogosRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.brandProtection.logos.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.Item.WithLogo_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.Item.WithLogo_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.Item.WithLogoItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.Item.WithLogoItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("logo_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.Item.WithLogo_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("logoId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.Item.WithLogoItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/brand-protection/logos{?match_type*,tag*,threshold*}", pathParameters)
+        public LogosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/brand-protection/logos{?match_type*,tag*,threshold*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/brand-protection/logos{?match_type*,tag*,threshold*}", rawUrl)
+        public LogosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/brand-protection/logos{?match_type*,tag*,threshold*}", rawUrl)
         {
         }
         /// <summary>
@@ -154,24 +154,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("match_type")]
             public string? MatchType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("match_type")]
             public string MatchType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag")]
             public string? Tag { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag")]
             public string Tag { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("threshold")]
             public double? Threshold { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

@@ -18,7 +18,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\dns_records
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\dns_records
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dns_recordsRequestBuilder : BaseRequestBuilder
@@ -50,14 +50,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.dns_records.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDnsRecordItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDnsRecordItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dns_record_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dnsRecordId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDnsRecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", pathParameters)
+        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,include_shadow_metadata*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,shadowed_by_name*,shadowing_name*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", rawUrl)
+        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,include_shadow_metadata*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,shadowed_by_name*,shadowing_name*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneListDnsRecords4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneListDnsRecords4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,21 +106,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneCreateDnsRecord4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsForAZoneCreateDnsRecord4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -151,11 +151,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordPost body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -182,266 +182,402 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment")]
             public string? Comment { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment")]
             public string Comment { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Eabsent")]
             public string? CommentAbsent { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Eabsent")]
             public string CommentAbsent { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Econtains")]
             public string? CommentContains { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Econtains")]
             public string CommentContains { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Eendswith")]
             public string? CommentEndswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Eendswith")]
             public string CommentEndswith { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Eexact")]
             public string? CommentExact { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Eexact")]
             public string CommentExact { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Epresent")]
             public string? CommentPresent { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Epresent")]
             public string CommentPresent { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Estartswith")]
             public string? CommentStartswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment%2Estartswith")]
             public string CommentStartswith { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("content")]
             public string? Content { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("content")]
             public string Content { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("content%2Econtains")]
             public string? ContentContains { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("content%2Econtains")]
             public string ContentContains { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("content%2Eendswith")]
             public string? ContentEndswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("content%2Eendswith")]
             public string ContentEndswith { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("content%2Eexact")]
             public string? ContentExact { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("content%2Eexact")]
             public string ContentExact { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("content%2Estartswith")]
             public string? ContentStartswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("content%2Estartswith")]
             public string ContentStartswith { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDirection? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("include_shadow_metadata")]
+            public bool? IncludeShadowMetadata { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("match")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsMatch? Match { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string? Name { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string Name { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name%2Econtains")]
             public string? NameContains { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name%2Econtains")]
             public string NameContains { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name%2Eendswith")]
             public string? NameEndswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name%2Eendswith")]
             public string NameEndswith { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name%2Eexact")]
             public string? NameExact { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name%2Eexact")]
             public string NameExact { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name%2Estartswith")]
             public string? NameStartswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name%2Estartswith")]
             public string NameStartswith { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsOrder? Order { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("proxied")]
+            public bool? Proxied { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("proxied")]
-            public string? Proxied { get; set; }
-#nullable restore
-#else
-            [QueryParameter("proxied")]
-            public string Proxied { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string? Search { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("shadowed_by_name")]
+            public string? ShadowedByName { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("shadowed_by_name")]
+            public string ShadowedByName { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("shadowing_name")]
+            public string? ShadowingName { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("shadowing_name")]
+            public string ShadowingName { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag")]
             public string? Tag { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag")]
             public string Tag { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Eabsent")]
             public string? TagAbsent { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Eabsent")]
             public string TagAbsent { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Econtains")]
             public string? TagContains { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Econtains")]
             public string TagContains { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Eendswith")]
             public string? TagEndswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Eendswith")]
             public string TagEndswith { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Eexact")]
             public string? TagExact { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Eexact")]
             public string TagExact { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("tag_match")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTagMatch? TagMatch { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Epresent")]
             public string? TagPresent { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Epresent")]
             public string TagPresent { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Estartswith")]
             public string? TagStartswith { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("tag%2Estartswith")]
             public string TagStartswith { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsType? Type { get; set; }
+            #pragma warning restore CS1591
+        }
+        /// <summary>
+        /// Create a new DNS record for a zone.Notes:- A/AAAA records cannot exist on the same name as CNAME records.- NS records cannot exist on the same name as any other record type.- Domain names are always represented in Punycode, even if Unicode  characters were used when creating the record.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Dns_recordsRequestBuilderPostQueryParameters 
+        {
+            #pragma warning disable CS1591
+            [QueryParameter("include_shadow_metadata")]
+            public bool? IncludeShadowMetadata { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

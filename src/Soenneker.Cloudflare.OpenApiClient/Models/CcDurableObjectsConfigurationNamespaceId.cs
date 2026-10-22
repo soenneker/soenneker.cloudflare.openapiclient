@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Durable object configuration using a namespace ID
+    /// Durable object configuration using a namespace ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcDurableObjectsConfigurationNamespaceId : IAdditionalDataHolder, IParsable

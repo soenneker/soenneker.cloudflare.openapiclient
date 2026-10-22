@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\environments
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\environments
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvironmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.environments.item collection</summary>
-        /// <param name="position">Reference identifier for the environment.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.WithEnvironment_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.WithEnvironment_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.WithEnvironmentItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.WithEnvironmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("environment_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.WithEnvironment_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("environmentId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.WithEnvironmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/environments", pathParameters)
+        public EnvironmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/environments", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/environments", rawUrl)
+        public EnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/environments", rawUrl)
         {
         }
         /// <summary>
-        /// List zone environments
+        /// Lists configured environments for a zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Partially update zone environments
+        /// Applies partial updates to zone environments.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create zone environments
+        /// Creates environments for a zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upsert zone environments
+        /// Replaces the full environment configuration for a zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List zone environments
+        /// Lists configured environments for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return requestInfo;
         }
         /// <summary>
-        /// Partially update zone environments
+        /// Applies partial updates to zone environments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +186,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return requestInfo;
         }
         /// <summary>
-        /// Create zone environments
+        /// Creates environments for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -208,7 +208,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments
             return requestInfo;
         }
         /// <summary>
-        /// Upsert zone environments
+        /// Replaces the full environment configuration for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -12,19 +12,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class RegistrarApiRegistrationCreateRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Provides user acknowledgements for a specific extension or premiumregistration flow. The extension registration schema from theextension discovery endpoint identifies the required keys.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty? Acknowledgements { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty Acknowledgements { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable or disable automatic renewal. Defaults to `false` if omitted.Setting this field to `true` is an explicit opt-in authorizingCloudflare to charge the account&apos;s default payment method up to 30days before domain expiry to renew the domain automatically.Renewal pricing may change over time based on registry pricing.</summary>
         public bool? AutoRenew { get; set; }
-        /// <summary>Contact data for the registration request.If the `contacts` object is omitted entirely from the request, or if`contacts.registrant` is not provided, the system will use the account&apos;sdefault address book entry as the registrant contact. This default must bepre-configured by the account owner at`https://dash.cloudflare.com/{account_id}/domains/registrations`, wherethey can create or update the address book entry and accept the requiredagreement. No API exists for managing address book entries at this time.If no default address book entry exists and no registrant contact isprovided, the registration request will fail with a validation error.</summary>
+        /// <summary>Provides registry-specific contact extension values for the registrant.`GET /accounts/{account_id}/registrar/extensions/{extension}` identifiesthe required keys and allowed values for each extension in the`registration_schema.properties.contact_extensions` object.Examples include `.us` nexus fields, `.uk` registrant type fields,and `.ca` legal type fields. Omit this object when the extension&apos;sregistration schema excludes `contact_extensions`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationContacts? Contacts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty? ContactExtensions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationContacts Contacts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty ContactExtensions { get; set; }
 #endif
-        /// <summary>Fully qualified domain name (FQDN) including the extension(e.g., `example.com`, `mybrand.app`). The domain name uniquelyidentifies a registration — the same domain cannot be registeredtwice, making it a natural idempotency key for registration requests.</summary>
+        /// <summary>The contacts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts? Contacts { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts Contacts { get; set; }
+#endif
+        /// <summary>Provides a fully qualified domain name (FQDN), including the extension(e.g., `example.com`, `mybrand.app`). The domain name uniquely identifiesa registration. Cloudflare permits only one registration per domain, makingthe domain name a natural idempotency key for registration requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName { get; set; }
@@ -32,9 +48,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DomainName { get; set; }
 #endif
-        /// <summary>&quot;WHOIS privacy mode for the registration. Defaults to `redaction`.- `off`: Do not request WHOIS privacy.- `redaction`: Request WHOIS redaction where supported by the extension.  Some extensions do not support privacy/redaction.&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest_privacy_mode? PrivacyMode { get; set; }
-        /// <summary>Number of years to register (1–10). If omitted, defaults to theminimum registration period required by the registry for thisextension. For most extensions this is 1 year, but some extensionsrequire longer minimum terms (e.g., `.ai` requires a minimum of2 years).The registry for each extension may also enforce its own maximumregistration term. If the requested value exceeds the registry&apos;smaximum, the registration will be rejected. When in doubt, use thedefault by omitting this field.</summary>
+        /// <summary>Sets the WHOIS privacy mode for the registration. Defaults to `redaction`.- `off`: Disables WHOIS privacy.- `redaction`: Requests WHOIS redaction where the extension supports it.  Some extensions exclude privacy and redaction.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode? PrivacyMode { get; set; }
+        /// <summary>Sets the registration term from 1 to 10 years. When omitted, thisfield defaults to the registry&apos;s minimum registration period for theextension. Most extensions require 1 year, while some require longerminimum terms (e.g., `.ai` requires 2 years).Each registry may also enforce its own maximum registration term. Arequest above that maximum fails. When uncertain, omit this field touse the default.</summary>
         public int? Years { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest"/> and sets the default values.
@@ -42,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RegistrarApiRegistrationCreateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            PrivacyMode = global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest_privacy_mode.Redaction;
+            AutoRenew = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,10 +78,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "acknowledgements", n => { Acknowledgements = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty.CreateFromDiscriminatorValue); } },
                 { "auto_renew", n => { AutoRenew = n.GetBoolValue(); } },
-                { "contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationContacts>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationContacts.CreateFromDiscriminatorValue); } },
+                { "contact_extensions", n => { ContactExtensions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty.CreateFromDiscriminatorValue); } },
+                { "contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts.CreateFromDiscriminatorValue); } },
                 { "domain_name", n => { DomainName = n.GetStringValue(); } },
-                { "privacy_mode", n => { PrivacyMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest_privacy_mode>(); } },
+                { "privacy_mode", n => { PrivacyMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode>(); } },
                 { "years", n => { Years = n.GetIntValue(); } },
             };
         }
@@ -76,10 +94,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestAcknowledgementsProperty>("acknowledgements", Acknowledgements);
             writer.WriteBoolValue("auto_renew", AutoRenew);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationContacts>("contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContactExtensionsProperty>("contact_extensions", ContactExtensions);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestContacts>("contacts", Contacts);
             writer.WriteStringValue("domain_name", DomainName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequest_privacy_mode>("privacy_mode", PrivacyMode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationCreateRequestPrivacyMode>("privacy_mode", PrivacyMode);
             writer.WriteIntValue("years", Years);
             writer.WriteAdditionalData(AdditionalData);
         }

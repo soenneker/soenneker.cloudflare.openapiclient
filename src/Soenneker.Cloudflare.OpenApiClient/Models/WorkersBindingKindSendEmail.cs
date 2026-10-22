@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSendEmail_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSendEmail"/> and sets the default values.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_sender_addresses", n => { AllowedSenderAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "destination_address", n => { DestinationAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSendEmail_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType>(); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_sender_addresses", AllowedSenderAddresses);
             writer.WriteStringValue("destination_address", DestinationAddress);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSendEmail_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SendEmailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

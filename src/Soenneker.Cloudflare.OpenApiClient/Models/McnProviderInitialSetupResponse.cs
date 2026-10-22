@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponseAllOf2Result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponseAllOf2Result Result { get; set; }
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnError>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnError>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnError.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponseAllOf2Result>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponseAllOf2Result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -80,104 +80,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnError>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnError>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponseAllOf2Result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnAwsTrustPolicy"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnAzureSetup"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnGcpSetup"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class McnProviderInitialSetupResponse_result : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnAwsTrustPolicy"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnAwsTrustPolicy? McnAwsTrustPolicy { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnAwsTrustPolicy McnAwsTrustPolicy { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnAzureSetup"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnAzureSetup? McnAzureSetup { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnAzureSetup McnAzureSetup { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnGcpSetup"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnGcpSetup? McnGcpSetup { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnGcpSetup McnGcpSetup { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("item_type")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnProviderInitialSetupResponse.McnProviderInitialSetupResponse_result();
-                if("McnAwsTrustPolicy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.McnAwsTrustPolicy = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnAwsTrustPolicy();
-                }
-                else if("McnAzureSetup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.McnAzureSetup = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnAzureSetup();
-                }
-                else if("McnGcpSetup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.McnGcpSetup = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnGcpSetup();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(McnAwsTrustPolicy != null)
-                {
-                    return McnAwsTrustPolicy.GetFieldDeserializers();
-                }
-                else if(McnAzureSetup != null)
-                {
-                    return McnAzureSetup.GetFieldDeserializers();
-                }
-                else if(McnGcpSetup != null)
-                {
-                    return McnGcpSetup.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(McnAwsTrustPolicy != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnAwsTrustPolicy>(null, McnAwsTrustPolicy);
-                }
-                else if(McnAzureSetup != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnAzureSetup>(null, McnAzureSetup);
-                }
-                else if(McnGcpSetup != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnGcpSetup>(null, McnGcpSetup);
-                }
-            }
         }
     }
 }

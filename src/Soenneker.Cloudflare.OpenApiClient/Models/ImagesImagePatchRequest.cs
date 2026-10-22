@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>User modifiable key-value store. Can be used for keeping references to another system of record for managing images. No change if not specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequest_metadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequestMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequest_metadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequestMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>Indicates whether the image can be accessed using only its UID. If set to `true`, a signed token needs to be generated with a signing key to view the image. Returns a new UID on a change. No change if not specified.</summary>
         public bool? RequireSignedURLs { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "creator", n => { Creator = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequest_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequest_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequestMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("creator", Creator);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequest_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImagePatchRequestMetadataProperty>("metadata", Metadata);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteAdditionalData(AdditionalData);
         }

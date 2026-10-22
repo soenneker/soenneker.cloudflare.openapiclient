@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Maximum number of results on this page.</summary>
         public double? PerPage { get; set; }
+        /// <summary>Total number of active buckets in the requested jurisdiction. This count is not affected by filtering or pagination and is eventually consistent for accounts with elevated bucket limits.</summary>
+        public int? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2ResultInfo"/> and sets the default values.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "cursor", n => { Cursor = n.GetStringValue(); } },
                 { "per_page", n => { PerPage = n.GetDoubleValue(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cursor", Cursor);
             writer.WriteDoubleValue("per_page", PerPage);
+            writer.WriteIntValue("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

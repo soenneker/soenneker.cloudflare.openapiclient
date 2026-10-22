@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Freeform text describing the secret</summary>
+        /// <summary>Freeform text describing the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>Whenthe secret was created.</summary>
+        /// <summary>When the secret was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>Secret identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the secret was modified.</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The name of the secret</summary>
+        /// <summary>The name of the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -45,14 +45,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The list of services that can use this secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<string> Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?> Scopes { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretStatus? Status { get; set; }
-        /// <summary>Store Identifier</summary>
+        /// <summary>Store Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StoreId { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretStatus>(); } },
                 { "store_id", n => { StoreId = n.GetStringValue(); } },
             };
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>("scopes", Scopes);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretStatus>("status", Status);
             writer.WriteStringValue("store_id", StoreId);
             writer.WriteAdditionalData(AdditionalData);

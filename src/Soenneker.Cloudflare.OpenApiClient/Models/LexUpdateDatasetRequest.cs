@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Set to `false` to allow deletion of this dataset.</summary>
+        public bool? DeletionProtection { get; set; }
         /// <summary>Whether to enable or disable log ingest for this dataset.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Controls which fields the API ingests after the update. Defaultsto all available fields when absent.</summary>
@@ -24,6 +26,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField> Fields { get; set; }
 #endif
+        /// <summary>Optional Logpush filter predicate to restrict which events areingested. If omitted, the existing filter is left unchanged. Setto an empty string (`&quot;&quot;`) to clear the filter. Otherwise,replaces the dataset&apos;s filter entirely.See [Logpush filters](https://developers.cloudflare.com/logs/reference/filters/)for syntax and examples.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Filter { get; set; }
+#nullable restore
+#else
+        public string Filter { get; set; }
+#endif
+        /// <summary>Whether to filter attack traffic from the Logpush job. If omitted,the existing setting is left unchanged. Supported datasets are`http_requests`, `firewall_events`, and `network_analytics_logs`.</summary>
+        public bool? FilterAttackTraffic { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexUpdateDatasetRequest"/> and sets the default values.
         /// </summary>
@@ -49,8 +61,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "deletion_protection", n => { DeletionProtection = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "filter_attack_traffic", n => { FilterAttackTraffic = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("deletion_protection", DeletionProtection);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField>("fields", Fields);
+            writer.WriteStringValue("filter", Filter);
+            writer.WriteBoolValue("filter_attack_traffic", FilterAttackTraffic);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

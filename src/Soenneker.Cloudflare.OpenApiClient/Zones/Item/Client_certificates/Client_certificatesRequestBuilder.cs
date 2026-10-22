@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\client_certificates
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\client_certificates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Client_certificatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.client_certificates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Item.WithClient_certificate_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Item.WithClient_certificate_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Item.WithClientCertificateItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Item.WithClientCertificateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("client_certificate_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Item.WithClient_certificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("clientCertificateId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Item.WithClientCertificateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Client_certificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/client_certificates{?limit*,offset*,page*,per_page*,status*}", pathParameters)
+        public Client_certificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/client_certificates{?limit*,offset*,page*,per_page*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Client_certificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/client_certificates{?limit*,offset*,page*,per_page*,status*}", rawUrl)
+        public Client_certificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/client_certificates{?limit*,offset*,page*,per_page*,status*}", rawUrl)
         {
         }
         /// <summary>
-        /// List all of your Zone&apos;s API Shield mTLS Client Certificates by Status and/or using Pagination
+        /// List all of your Zone&apos;s API Shield mTLS Client Certificates by Status and/or using Pagination.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneListClientCertificates4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneListClientCertificates4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Client_certificatesRequestBuilder.Client_certificatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,37 +65,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneListClientCertificates4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneListClientCertificates4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new API Shield mTLS Client Certificate
+        /// Create a new API Shield mTLS Client Certificate.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificateResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all of your Zone&apos;s API Shield mTLS Client Certificates by Status and/or using Pagination
+        /// List all of your Zone&apos;s API Shield mTLS Client Certificates by Status and/or using Pagination.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,18 +114,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates
             return requestInfo;
         }
         /// <summary>
-        /// Create a new API Shield mTLS Client Certificate
+        /// Create a new API Shield mTLS Client Certificate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneCreateClientCertificateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -145,21 +145,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Client_certificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all of your Zone&apos;s API Shield mTLS Client Certificates by Status and/or using Pagination
+        /// List all of your Zone&apos;s API Shield mTLS Client Certificates by Status and/or using Pagination.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Client_certificatesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientCertificateForAZoneListClientCertificatesStatusParameter? Status { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

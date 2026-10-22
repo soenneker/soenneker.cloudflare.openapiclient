@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Resource Metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequestMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequestMeta Meta { get; set; }
 #endif
         /// <summary>Account identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequestMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequestMeta.CreateFromDiscriminatorValue); } },
                 { "resource_account_id", n => { ResourceAccountId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResourceType>(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequestMeta>("meta", Meta);
             writer.WriteStringValue("resource_account_id", ResourceAccountId);
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResourceType>("resource_type", ResourceType);

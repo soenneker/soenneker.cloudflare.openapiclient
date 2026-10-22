@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ScriptName { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindWorkflow_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkflowType? Type { get; set; }
         /// <summary>Name of the Workflow to bind to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindWorkflow_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkflowType>(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("script_name", ScriptName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindWorkflow_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkflowType>("type", Type);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);
         }

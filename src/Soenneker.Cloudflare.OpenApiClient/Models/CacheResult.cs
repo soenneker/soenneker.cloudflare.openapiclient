@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Next time this zone will be scanned by the Automatic SSL/TLS.</summary>
         public DateTimeOffset? NextScheduledScan { get; private set; }
         /// <summary>The value property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResult_value? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResultValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResult"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "next_scheduled_scan", n => { NextScheduledScan = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResult_value>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResultValue>(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResult_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResultValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

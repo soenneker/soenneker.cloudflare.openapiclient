@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;List of fully qualified domain names (FQDNs) to check for availability. Each domain must include the extension.- Minimum: 1 domain- Maximum: 20 domains per request- Domains on unsupported extensions are returned with `registrable: false` and a `reason` field- Malformed domain names (e.g., missing extension) may be omitted from the response&quot;</summary>
+        /// <summary>List of fully qualified domain names (FQDNs) to check for availability. Each domain must include the extension.- Minimum: 1 domain.- Maximum: 20 domains per request.- The response returns domains on unsupported extensions with `registrable: false` and a `reason` field.- The response may omit malformed domain names (e.g., names missing an extension).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Domains { get; set; }

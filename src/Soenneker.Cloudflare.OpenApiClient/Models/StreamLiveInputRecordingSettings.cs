@@ -37,7 +37,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public StreamLiveInputRecordingSettings()
         {
             AdditionalData = new Dictionary<string, object>();
-            Mode = global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingMode.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

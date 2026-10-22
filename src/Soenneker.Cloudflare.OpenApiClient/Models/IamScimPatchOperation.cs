@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The operation to perform. Only `replace` is currently supported; `add` and `remove` are accepted without error but have no effect. Matched case-insensitively.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_op? Op { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationOp? Op { get; set; }
         /// <summary>Attribute path targeted by this operation. When absent, `value` must be a singular complex attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,10 +28,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value(s) for the operation. For `replace` without a path, this should be an object of attribute name/value pairs. For member path operations, this should be an array of member value objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_value? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_value Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation"/> and sets the default values.
@@ -58,9 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_op>(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationOp>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_op>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationOp>("op", Op);
             writer.WriteStringValue("path", Path);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperation_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimPatchOperationValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,51 +9,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "50M")]
         #pragma warning disable CS1591
-        FiveZeroM,
+        Value50M,
         #pragma warning restore CS1591
         [EnumMember(Value = "100M")]
         #pragma warning disable CS1591
-        OneZeroZeroM,
+        Value100M,
         #pragma warning restore CS1591
         [EnumMember(Value = "200M")]
         #pragma warning disable CS1591
-        TwoZeroZeroM,
+        Value200M,
         #pragma warning restore CS1591
         [EnumMember(Value = "300M")]
         #pragma warning disable CS1591
-        ThreeZeroZeroM,
+        Value300M,
         #pragma warning restore CS1591
         [EnumMember(Value = "400M")]
         #pragma warning disable CS1591
-        FourZeroZeroM,
+        Value400M,
         #pragma warning restore CS1591
         [EnumMember(Value = "500M")]
         #pragma warning disable CS1591
-        FiveZeroZeroM,
+        Value500M,
         #pragma warning restore CS1591
         [EnumMember(Value = "1G")]
         #pragma warning disable CS1591
-        OneG,
+        Value1G,
         #pragma warning restore CS1591
         [EnumMember(Value = "2G")]
         #pragma warning disable CS1591
-        TwoG,
+        Value2G,
         #pragma warning restore CS1591
         [EnumMember(Value = "5G")]
         #pragma warning disable CS1591
-        FiveG,
+        Value5G,
         #pragma warning restore CS1591
         [EnumMember(Value = "10G")]
         #pragma warning disable CS1591
-        OneZeroG,
+        Value10G,
         #pragma warning restore CS1591
         [EnumMember(Value = "20G")]
         #pragma warning disable CS1591
-        TwoZeroG,
+        Value20G,
         #pragma warning restore CS1591
         [EnumMember(Value = "50G")]
         #pragma warning disable CS1591
-        FiveZeroG,
+        Value50G,
         #pragma warning restore CS1591
     }
 }

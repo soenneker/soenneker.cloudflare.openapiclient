@@ -10,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Keys;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StorageUsage;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Usage;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Watermarks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Webhook;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -21,7 +22,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\stream
+    /// Builds and executes requests for operations under \accounts\{account-id}\stream
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreamRequestBuilder : BaseRequestBuilder
@@ -56,6 +57,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StorageUsage.StorageUsageRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The usage property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Usage.UsageRequestBuilder Usage
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The watermarks property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Watermarks.WatermarksRequestBuilder Watermarks
         {
@@ -83,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream{?after*,asc*,before*,creator*,direct_user*,end*,id*,include_counts*,limit*,live_input_id*,name*,search*,start*,status*,type*,video_name*}", pathParameters)
+        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream{?after*,asc*,before*,creator*,direct_user*,end*,id*,include_counts*,limit*,live_input_id*,name*,search*,start*,status*,type*,video_name*}", pathParameters)
         {
         }
         /// <summary>
@@ -91,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream{?after*,asc*,before*,creator*,direct_user*,end*,id*,include_counts*,limit*,live_input_id*,name*,search*,start*,status*,type*,video_name*}", rawUrl)
+        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream{?after*,asc*,before*,creator*,direct_user*,end*,id*,include_counts*,limit*,live_input_id*,name*,search*,start*,status*,type*,video_name*}", rawUrl)
         {
         }
         /// <summary>
@@ -120,17 +126,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// <summary>
         /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -138,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.StreamApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.
@@ -196,36 +201,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             /// <summary>Alias for &apos;start&apos;. Returns videos created after this date/time (RFC 3339 format).</summary>
             [QueryParameter("after")]
             public DateTimeOffset? After { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("asc")]
-            public string? Asc { get; set; }
-#nullable restore
-#else
-            [QueryParameter("asc")]
-            public string Asc { get; set; }
-#endif
+            public bool? Asc { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Alias for &apos;end&apos;. Returns videos created before this date/time (RFC 3339 format).</summary>
             [QueryParameter("before")]
             public DateTimeOffset? Before { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("creator")]
             public string? Creator { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("creator")]
             public string Creator { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("end")]
-            public string? End { get; set; }
-#nullable restore
-#else
-            [QueryParameter("end")]
-            public string End { get; set; }
-#endif
+            public DateTimeOffset? End { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter by video ID(s). Can be a single ID or a comma-separated list of IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -236,15 +235,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             [QueryParameter("id")]
             public string Id { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("include_counts")]
-            public string? IncludeCounts { get; set; }
-#nullable restore
-#else
-            [QueryParameter("include_counts")]
-            public string IncludeCounts { get; set; }
-#endif
+            public bool? IncludeCounts { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Maximum number of videos to return (default 1000, max 1000).</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -270,41 +264,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string? Search { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("start")]
-            public string? Start { get; set; }
-#nullable restore
-#else
-            [QueryParameter("start")]
-            public string Start { get; set; }
-#endif
+            public DateTimeOffset? Start { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamMediaState? Status { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string? Type { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public string Type { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("video_name")]
             public string? VideoName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("video_name")]
             public string VideoName { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>
@@ -313,15 +316,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderPostQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("direct_user")]
-            public string? DirectUser { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direct_user")]
-            public string DirectUser { get; set; }
-#endif
+            public bool? DirectUser { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

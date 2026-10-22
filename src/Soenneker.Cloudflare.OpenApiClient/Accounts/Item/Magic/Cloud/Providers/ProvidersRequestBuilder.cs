@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\cloud\providers
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\cloud\providers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProvidersRequestBuilder : BaseRequestBuilder
@@ -26,14 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.cloud.providers.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.Item.WithProvider_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.Item.WithProvider_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.Item.WithProviderItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.Item.WithProviderItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("provider_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.Item.WithProvider_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("providerId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.Item.WithProviderItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/cloud/providers{?cloudflare*,desc*,order_by*,status*}", pathParameters)
+        public ProvidersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/cloud/providers{?cloudflare*,desc*,order_by*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/cloud/providers{?cloudflare*,desc*,order_by*,status*}", rawUrl)
+        public ProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/cloud/providers{?cloudflare*,desc*,order_by*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -172,10 +172,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProvidersRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("cloudflare")]
             public bool? Cloudflare { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("desc")]
             public bool? Desc { get; set; }
+            #pragma warning restore CS1591
             /// <summary>One of [&quot;updated_at&quot;, &quot;id&quot;, &quot;cloud_type&quot;, &quot;name&quot;].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,8 +190,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public bool? Status { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

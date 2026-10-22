@@ -13,83 +13,83 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "AAAA")]
         #pragma warning disable CS1591
-        AAAA,
+        Aaaa,
         #pragma warning restore CS1591
         [EnumMember(Value = "CAA")]
         #pragma warning disable CS1591
-        CAA,
+        Caa,
         #pragma warning restore CS1591
         [EnumMember(Value = "CERT")]
         #pragma warning disable CS1591
-        CERT,
+        Cert,
         #pragma warning restore CS1591
         [EnumMember(Value = "CNAME")]
         #pragma warning disable CS1591
-        CNAME,
+        Cname,
         #pragma warning restore CS1591
         [EnumMember(Value = "DNSKEY")]
         #pragma warning disable CS1591
-        DNSKEY,
+        Dnskey,
         #pragma warning restore CS1591
         [EnumMember(Value = "DS")]
         #pragma warning disable CS1591
-        DS,
+        Ds,
         #pragma warning restore CS1591
         [EnumMember(Value = "HTTPS")]
         #pragma warning disable CS1591
-        HTTPS,
+        Https,
         #pragma warning restore CS1591
         [EnumMember(Value = "LOC")]
         #pragma warning disable CS1591
-        LOC,
+        Loc,
         #pragma warning restore CS1591
         [EnumMember(Value = "MX")]
         #pragma warning disable CS1591
-        MX,
+        Mx,
         #pragma warning restore CS1591
         [EnumMember(Value = "NAPTR")]
         #pragma warning disable CS1591
-        NAPTR,
+        Naptr,
         #pragma warning restore CS1591
         [EnumMember(Value = "NS")]
         #pragma warning disable CS1591
-        NS,
+        Ns,
         #pragma warning restore CS1591
         [EnumMember(Value = "OPENPGPKEY")]
         #pragma warning disable CS1591
-        OPENPGPKEY,
+        Openpgpkey,
         #pragma warning restore CS1591
         [EnumMember(Value = "PTR")]
         #pragma warning disable CS1591
-        PTR,
+        Ptr,
         #pragma warning restore CS1591
         [EnumMember(Value = "SMIMEA")]
         #pragma warning disable CS1591
-        SMIMEA,
+        Smimea,
         #pragma warning restore CS1591
         [EnumMember(Value = "SRV")]
         #pragma warning disable CS1591
-        SRV,
+        Srv,
         #pragma warning restore CS1591
         [EnumMember(Value = "SSHFP")]
         #pragma warning disable CS1591
-        SSHFP,
+        Sshfp,
         #pragma warning restore CS1591
         [EnumMember(Value = "SVCB")]
         #pragma warning disable CS1591
-        SVCB,
+        Svcb,
         #pragma warning restore CS1591
         [EnumMember(Value = "TLSA")]
         #pragma warning disable CS1591
-        TLSA,
+        Tlsa,
         #pragma warning restore CS1591
         [EnumMember(Value = "TXT")]
         #pragma warning disable CS1591
-        TXT,
+        Txt,
         #pragma warning restore CS1591
         [EnumMember(Value = "URI")]
         #pragma warning disable CS1591
-        URI,
+        Uri,
         #pragma warning restore CS1591
     }
 }

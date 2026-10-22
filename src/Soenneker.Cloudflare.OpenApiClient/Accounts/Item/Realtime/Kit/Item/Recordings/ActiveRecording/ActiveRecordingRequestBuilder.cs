@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\recordings\active-recording
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{appId}\recordings\active-recording
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActiveRecordingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.realtime.kit.item.recordings.activeRecording.item collection</summary>
         /// <param name="position">ID of the meeting</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording.Item.WithMeeting_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording.Item.WithMeeting_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording.Item.WithMeetingItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording.Item.WithMeetingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("meeting_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording.Item.WithMeeting_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("meetingId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.ActiveRecording.Item.WithMeetingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveRecordingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/recordings/active-recording", pathParameters)
+        public ActiveRecordingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/recordings/active-recording", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveRecordingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/recordings/active-recording", rawUrl)
+        public ActiveRecordingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/recordings/active-recording", rawUrl)
         {
         }
     }

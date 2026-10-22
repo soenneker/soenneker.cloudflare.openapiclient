@@ -9,11 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "workspace_one")]
         #pragma warning disable CS1591
-        Workspace_one,
+        WorkspaceOne,
         #pragma warning restore CS1591
         [EnumMember(Value = "crowdstrike_s2s")]
         #pragma warning disable CS1591
-        Crowdstrike_s2s,
+        CrowdstrikeS2S,
         #pragma warning restore CS1591
         [EnumMember(Value = "uptycs")]
         #pragma warning disable CS1591
@@ -29,15 +29,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "tanium_s2s")]
         #pragma warning disable CS1591
-        Tanium_s2s,
+        TaniumS2S,
         #pragma warning restore CS1591
         [EnumMember(Value = "sentinelone_s2s")]
         #pragma warning disable CS1591
-        Sentinelone_s2s,
+        SentineloneS2S,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_s2s")]
         #pragma warning disable CS1591
-        Custom_s2s,
+        CustomS2S,
         #pragma warning restore CS1591
     }
 }

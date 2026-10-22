@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of regions from which to run health checks. Null means every Cloudflare data center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Pools?>? CheckRegions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?>? CheckRegions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Pools?> CheckRegions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?> CheckRegions { get; set; }
 #endif
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; set; }
@@ -36,6 +36,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? DisabledAt { get; set; }
         /// <summary>Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).</summary>
         public bool? Enabled { get; set; }
+        /// <summary>A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array [&quot;regional&quot;, &quot;global&quot;]; any other combination is rejected. Null (the default) behaves like [&quot;local&quot;, &quot;global&quot;]. [&quot;regional&quot;, &quot;global&quot;] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem?>? HealthSources { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem?> HealthSources { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,11 +157,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "check_regions", n => { CheckRegions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Pools>()?.AsList(); } },
+                { "check_regions", n => { CheckRegions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem>()?.AsList(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disabled_at", n => { DisabledAt = n.GetDateTimeOffsetValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "health_sources", n => { HealthSources = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "load_shedding", n => { LoadShedding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding.CreateFromDiscriminatorValue); } },
@@ -177,11 +186,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Pools>("check_regions", CheckRegions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem>("check_regions", CheckRegions);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("disabled_at", DisabledAt);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem>("health_sources", HealthSources);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding>("load_shedding", LoadShedding);

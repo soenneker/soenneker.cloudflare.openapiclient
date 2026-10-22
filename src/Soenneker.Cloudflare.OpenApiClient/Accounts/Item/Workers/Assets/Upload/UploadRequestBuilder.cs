@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\assets\upload
+    /// Builds and executes requests for operations under \accounts\{account-id}\workers\assets\upload
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UploadRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UploadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/assets/upload?base64={base64}", pathParameters)
+        public UploadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/assets/upload?base64={base64}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UploadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/assets/upload?base64={base64}", rawUrl)
+        public UploadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/assets/upload?base64={base64}", rawUrl)
         {
         }
         /// <summary>
-        /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
+        /// Upload Worker assets ahead of creating a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAssetsUploadFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAssetsUploadFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -59,18 +59,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCompletedUploadAssetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
+        /// Upload Worker assets ahead of creating a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAssetsUploadFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerAssetsUploadFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder.UploadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -90,13 +90,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.Upload.UploadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
+        /// Upload Worker assets ahead of creating a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UploadRequestBuilderPostQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("base64")]
             public bool? Base64 { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

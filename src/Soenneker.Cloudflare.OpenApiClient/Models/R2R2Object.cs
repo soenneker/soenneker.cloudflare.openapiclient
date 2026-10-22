@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Custom metadata key-value pairs associated with the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2Object_custom_metadata? CustomMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectCustomMetadataProperty? CustomMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2Object_custom_metadata CustomMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectCustomMetadataProperty CustomMetadata { get; set; }
 #endif
         /// <summary>The entity tag for the object. In JSON list/get responses this is the rawhex digest (without surrounding quotes). The HTTP `ETag` response header onGet Object follows RFC 7232 and IS wrapped in surrounding double-quotes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public R2R2Object()
         {
             AdditionalData = new Dictionary<string, object>();
-            StorageClass = global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_metadata", n => { CustomMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2Object_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2Object_custom_metadata.CreateFromDiscriminatorValue); } },
+                { "custom_metadata", n => { CustomMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectCustomMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectCustomMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "etag", n => { Etag = n.GetStringValue(); } },
                 { "http_metadata", n => { HttpMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
@@ -98,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2Object_custom_metadata>("custom_metadata", CustomMetadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectCustomMetadataProperty>("custom_metadata", CustomMetadata);
             writer.WriteStringValue("etag", Etag);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2R2ObjectHttpMetadata>("http_metadata", HttpMetadata);
             writer.WriteStringValue("key", Key);

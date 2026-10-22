@@ -14,54 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigCreated? CreatedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigCreated CreatedOn { get; set; }
-#endif
-        /// <summary>The name and type of DNS record for the Spectrum application.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigDns? Dns { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigDns Dns { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigAppIdentifier? Id { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigAppIdentifier Id { get; set; }
-#endif
-        /// <summary>The modified_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigModified? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigModified ModifiedOn { get; set; }
-#endif
-        /// <summary>List of origin IP addresses. Array may contain multiple IP addresses for load balancing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? OriginDirect { get; set; }
-#nullable restore
-#else
-        public List<string> OriginDirect { get; set; }
-#endif
-        /// <summary>The port configuration at Cloudflare&apos;s edge. May specify a single port, for example `&quot;tcp/1000&quot;`, or a range of ports, for example `&quot;tcp/1000-2000&quot;`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Protocol { get; set; }
-#nullable restore
-#else
-        public string Protocol { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigPaygoAppConfig"/> and sets the default values.
         /// </summary>
@@ -87,12 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigCreated>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigCreated.CreateFromDiscriminatorValue); } },
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigDns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigDns.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigAppIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigAppIdentifier.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigModified>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigModified.CreateFromDiscriminatorValue); } },
-                { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "protocol", n => { Protocol = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigCreated>("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigDns>("dns", Dns);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigAppIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfigModified>("modified_on", ModifiedOn);
-            writer.WriteCollectionOfPrimitiveValues<string>("origin_direct", OriginDirect);
-            writer.WriteStringValue("protocol", Protocol);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

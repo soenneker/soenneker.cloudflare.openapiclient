@@ -17,35 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_errors? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_errors Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_messages? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_messages Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponseResult Result { get; set; }
 #endif
         /// <summary>The success property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_success? Success { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_success Success { get; set; }
-#endif
+        public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse"/> and sets the default values.
         /// </summary>
@@ -71,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_result.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_success>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_success.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponseResult.CreateFromDiscriminatorValue); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_result>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponse_success>("success", Success);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomEventDetailsResponseResult>("result", Result);
+            writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

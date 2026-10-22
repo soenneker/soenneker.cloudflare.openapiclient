@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_properties? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchemaPropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_properties Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchemaPropertiesProperty Properties { get; set; }
 #endif
         /// <summary>The required property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Required { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ObjectValueType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema"/> and sets the default values.
         /// </summary>
@@ -58,9 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_properties>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchemaPropertiesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchemaPropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "required", n => { Required = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObjectValueType>(); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchemaPropertiesProperty>("properties", Properties);
             writer.WriteCollectionOfPrimitiveValues<string>("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ObjectValueType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

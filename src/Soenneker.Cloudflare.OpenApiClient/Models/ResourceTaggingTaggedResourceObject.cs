@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplication"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessGroup"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccount"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiGateway"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAlertingPolicy"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAlertingWebhook"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectApiGatewayOperation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCloudflaredTunnel"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomCertificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomHostname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectD1Database"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDnsRecord"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDurableObjectNamespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayList"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectImage"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectKvNamespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectManagedClientCertificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectQueue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectR2Bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectResourceShare"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamLiveInput"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamVideo"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerVersion"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZone"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplication"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessGroup"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessServiceToken"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccount"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccountRuleset"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiGateway"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchInstance"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchNamespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAlertingPolicy"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAlertingWebhook"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectApiGatewayOperation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCloudflaredTunnel"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomCertificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomHostname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsDeployment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicy"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicySet"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsWorkload"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectD1Database"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDevice"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDnsRecord"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDurableObjectNamespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayList"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayRule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectHealthcheck"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectImage"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectInfrastructureTarget"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectKvNamespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerPool"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectManagedClientCertificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectNamespaceWorker"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectPagesProject"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectQueue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectR2Bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectResourceShare"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamLiveInput"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamVideo"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerVersion"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZone"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourceTaggingTaggedResourceObject : IComposedTypeWrapper, IParsable
@@ -37,6 +37,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessGroup ResourceTaggingTaggedResourceObjectAccessGroup { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessServiceToken"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessServiceToken? ResourceTaggingTaggedResourceObjectAccessServiceToken { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessServiceToken ResourceTaggingTaggedResourceObjectAccessServiceToken { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccount"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +53,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccount ResourceTaggingTaggedResourceObjectAccount { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccountRuleset"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccountRuleset? ResourceTaggingTaggedResourceObjectAccountRuleset { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccountRuleset ResourceTaggingTaggedResourceObjectAccountRuleset { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiGateway"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +68,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiGateway ResourceTaggingTaggedResourceObjectAiGateway { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchInstance"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchInstance? ResourceTaggingTaggedResourceObjectAiSearchInstance { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchInstance ResourceTaggingTaggedResourceObjectAiSearchInstance { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchNamespace"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchNamespace? ResourceTaggingTaggedResourceObjectAiSearchNamespace { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchNamespace ResourceTaggingTaggedResourceObjectAiSearchNamespace { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAlertingPolicy"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,6 +133,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomHostname ResourceTaggingTaggedResourceObjectCustomHostname { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsDeployment"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsDeployment? ResourceTaggingTaggedResourceObjectCwsDeployment { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsDeployment ResourceTaggingTaggedResourceObjectCwsDeployment { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicy"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicy? ResourceTaggingTaggedResourceObjectCwsPolicy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicy ResourceTaggingTaggedResourceObjectCwsPolicy { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicySet"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicySet? ResourceTaggingTaggedResourceObjectCwsPolicySet { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicySet ResourceTaggingTaggedResourceObjectCwsPolicySet { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsWorkload"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsWorkload? ResourceTaggingTaggedResourceObjectCwsWorkload { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsWorkload ResourceTaggingTaggedResourceObjectCwsWorkload { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectD1Database"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +172,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectD1Database ResourceTaggingTaggedResourceObjectD1Database { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDevice"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDevice? ResourceTaggingTaggedResourceObjectDevice { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDevice ResourceTaggingTaggedResourceObjectDevice { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDnsRecord"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,6 +213,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayRule ResourceTaggingTaggedResourceObjectGatewayRule { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectHealthcheck"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectHealthcheck? ResourceTaggingTaggedResourceObjectHealthcheck { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectHealthcheck ResourceTaggingTaggedResourceObjectHealthcheck { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectImage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +228,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectImage ResourceTaggingTaggedResourceObjectImage { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectInfrastructureTarget"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectInfrastructureTarget? ResourceTaggingTaggedResourceObjectInfrastructureTarget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectInfrastructureTarget ResourceTaggingTaggedResourceObjectInfrastructureTarget { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectKvNamespace"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,6 +245,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectKvNamespace ResourceTaggingTaggedResourceObjectKvNamespace { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancer"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancer? ResourceTaggingTaggedResourceObjectLoadBalancer { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancer ResourceTaggingTaggedResourceObjectLoadBalancer { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor? ResourceTaggingTaggedResourceObjectLoadBalancerMonitor { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor ResourceTaggingTaggedResourceObjectLoadBalancerMonitor { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerPool"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerPool? ResourceTaggingTaggedResourceObjectLoadBalancerPool { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerPool ResourceTaggingTaggedResourceObjectLoadBalancerPool { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectManagedClientCertificate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +276,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectManagedClientCertificate ResourceTaggingTaggedResourceObjectManagedClientCertificate { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectNamespaceWorker"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectNamespaceWorker? ResourceTaggingTaggedResourceObjectNamespaceWorker { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectNamespaceWorker ResourceTaggingTaggedResourceObjectNamespaceWorker { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectPagesProject"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectPagesProject? ResourceTaggingTaggedResourceObjectPagesProject { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectPagesProject ResourceTaggingTaggedResourceObjectPagesProject { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectQueue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -205,6 +333,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamVideo ResourceTaggingTaggedResourceObjectStreamVideo { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex? ResourceTaggingTaggedResourceObjectVectorizeIndex { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex ResourceTaggingTaggedResourceObjectVectorizeIndex { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,6 +348,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker ResourceTaggingTaggedResourceObjectWorker { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute? ResourceTaggingTaggedResourceObjectWorkerRoute { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute ResourceTaggingTaggedResourceObjectWorkerRoute { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerVersion"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -228,6 +372,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZone ResourceTaggingTaggedResourceObjectZone { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset? ResourceTaggingTaggedResourceObjectZoneRuleset { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset ResourceTaggingTaggedResourceObjectZoneRuleset { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -251,13 +403,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingTaggedResourceObjectAccessGroup = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessGroup();
             }
+            else if("access_service_token".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectAccessServiceToken = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessServiceToken();
+            }
             else if("account".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectAccount = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccount();
             }
+            else if("account_ruleset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectAccountRuleset = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccountRuleset();
+            }
             else if("ai_gateway".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectAiGateway = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiGateway();
+            }
+            else if("ai_search_instance".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectAiSearchInstance = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchInstance();
+            }
+            else if("ai_search_namespace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectAiSearchNamespace = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchNamespace();
             }
             else if("alerting_policy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -283,9 +451,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingTaggedResourceObjectCustomHostname = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomHostname();
             }
+            else if("cws_deployment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectCwsDeployment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsDeployment();
+            }
+            else if("cws_policy".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectCwsPolicy = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicy();
+            }
+            else if("cws_policy_set".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectCwsPolicySet = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicySet();
+            }
+            else if("cws_workload".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectCwsWorkload = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsWorkload();
+            }
             else if("d1_database".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectD1Database = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectD1Database();
+            }
+            else if("device".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectDevice = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDevice();
             }
             else if("dns_record".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -303,17 +491,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingTaggedResourceObjectGatewayRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayRule();
             }
+            else if("healthcheck".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectHealthcheck = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectHealthcheck();
+            }
             else if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectImage = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectImage();
+            }
+            else if("infrastructure_target".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectInfrastructureTarget = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectInfrastructureTarget();
             }
             else if("kv_namespace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectKvNamespace = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectKvNamespace();
             }
+            else if("load_balancer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectLoadBalancer = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancer();
+            }
+            else if("load_balancer_monitor".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor();
+            }
+            else if("load_balancer_pool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectLoadBalancerPool = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerPool();
+            }
             else if("managed_client_certificate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectManagedClientCertificate = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectManagedClientCertificate();
+            }
+            else if("namespace_worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectNamespaceWorker = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectNamespaceWorker();
+            }
+            else if("pages_project".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectPagesProject = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectPagesProject();
             }
             else if("queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -335,9 +551,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingTaggedResourceObjectStreamVideo = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamVideo();
             }
+            else if("ResourceTaggingTaggedResourceObjectVectorizeIndex".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectVectorizeIndex = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex();
+            }
             else if("ResourceTaggingTaggedResourceObjectWorker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectWorker = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker();
+            }
+            else if("ResourceTaggingTaggedResourceObjectWorkerRoute".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectWorkerRoute = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute();
             }
             else if("ResourceTaggingTaggedResourceObjectWorkerVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -346,6 +570,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if("ResourceTaggingTaggedResourceObjectZone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectZone = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZone();
+            }
+            else if("ResourceTaggingTaggedResourceObjectZoneRuleset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceTaggingTaggedResourceObjectZoneRuleset = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset();
             }
             return result;
         }
@@ -367,13 +595,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return ResourceTaggingTaggedResourceObjectAccessGroup.GetFieldDeserializers();
             }
+            else if(ResourceTaggingTaggedResourceObjectAccessServiceToken != null)
+            {
+                return ResourceTaggingTaggedResourceObjectAccessServiceToken.GetFieldDeserializers();
+            }
             else if(ResourceTaggingTaggedResourceObjectAccount != null)
             {
                 return ResourceTaggingTaggedResourceObjectAccount.GetFieldDeserializers();
             }
+            else if(ResourceTaggingTaggedResourceObjectAccountRuleset != null)
+            {
+                return ResourceTaggingTaggedResourceObjectAccountRuleset.GetFieldDeserializers();
+            }
             else if(ResourceTaggingTaggedResourceObjectAiGateway != null)
             {
                 return ResourceTaggingTaggedResourceObjectAiGateway.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectAiSearchInstance != null)
+            {
+                return ResourceTaggingTaggedResourceObjectAiSearchInstance.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectAiSearchNamespace != null)
+            {
+                return ResourceTaggingTaggedResourceObjectAiSearchNamespace.GetFieldDeserializers();
             }
             else if(ResourceTaggingTaggedResourceObjectAlertingPolicy != null)
             {
@@ -399,9 +643,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return ResourceTaggingTaggedResourceObjectCustomHostname.GetFieldDeserializers();
             }
+            else if(ResourceTaggingTaggedResourceObjectCwsDeployment != null)
+            {
+                return ResourceTaggingTaggedResourceObjectCwsDeployment.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectCwsPolicy != null)
+            {
+                return ResourceTaggingTaggedResourceObjectCwsPolicy.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectCwsPolicySet != null)
+            {
+                return ResourceTaggingTaggedResourceObjectCwsPolicySet.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectCwsWorkload != null)
+            {
+                return ResourceTaggingTaggedResourceObjectCwsWorkload.GetFieldDeserializers();
+            }
             else if(ResourceTaggingTaggedResourceObjectD1Database != null)
             {
                 return ResourceTaggingTaggedResourceObjectD1Database.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectDevice != null)
+            {
+                return ResourceTaggingTaggedResourceObjectDevice.GetFieldDeserializers();
             }
             else if(ResourceTaggingTaggedResourceObjectDnsRecord != null)
             {
@@ -419,17 +683,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return ResourceTaggingTaggedResourceObjectGatewayRule.GetFieldDeserializers();
             }
+            else if(ResourceTaggingTaggedResourceObjectHealthcheck != null)
+            {
+                return ResourceTaggingTaggedResourceObjectHealthcheck.GetFieldDeserializers();
+            }
             else if(ResourceTaggingTaggedResourceObjectImage != null)
             {
                 return ResourceTaggingTaggedResourceObjectImage.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectInfrastructureTarget != null)
+            {
+                return ResourceTaggingTaggedResourceObjectInfrastructureTarget.GetFieldDeserializers();
             }
             else if(ResourceTaggingTaggedResourceObjectKvNamespace != null)
             {
                 return ResourceTaggingTaggedResourceObjectKvNamespace.GetFieldDeserializers();
             }
+            else if(ResourceTaggingTaggedResourceObjectLoadBalancer != null)
+            {
+                return ResourceTaggingTaggedResourceObjectLoadBalancer.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectLoadBalancerMonitor != null)
+            {
+                return ResourceTaggingTaggedResourceObjectLoadBalancerMonitor.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectLoadBalancerPool != null)
+            {
+                return ResourceTaggingTaggedResourceObjectLoadBalancerPool.GetFieldDeserializers();
+            }
             else if(ResourceTaggingTaggedResourceObjectManagedClientCertificate != null)
             {
                 return ResourceTaggingTaggedResourceObjectManagedClientCertificate.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectNamespaceWorker != null)
+            {
+                return ResourceTaggingTaggedResourceObjectNamespaceWorker.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectPagesProject != null)
+            {
+                return ResourceTaggingTaggedResourceObjectPagesProject.GetFieldDeserializers();
             }
             else if(ResourceTaggingTaggedResourceObjectQueue != null)
             {
@@ -451,9 +743,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return ResourceTaggingTaggedResourceObjectStreamVideo.GetFieldDeserializers();
             }
+            else if(ResourceTaggingTaggedResourceObjectVectorizeIndex != null)
+            {
+                return ResourceTaggingTaggedResourceObjectVectorizeIndex.GetFieldDeserializers();
+            }
             else if(ResourceTaggingTaggedResourceObjectWorker != null)
             {
                 return ResourceTaggingTaggedResourceObjectWorker.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectWorkerRoute != null)
+            {
+                return ResourceTaggingTaggedResourceObjectWorkerRoute.GetFieldDeserializers();
             }
             else if(ResourceTaggingTaggedResourceObjectWorkerVersion != null)
             {
@@ -462,6 +762,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(ResourceTaggingTaggedResourceObjectZone != null)
             {
                 return ResourceTaggingTaggedResourceObjectZone.GetFieldDeserializers();
+            }
+            else if(ResourceTaggingTaggedResourceObjectZoneRuleset != null)
+            {
+                return ResourceTaggingTaggedResourceObjectZoneRuleset.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -484,13 +788,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessGroup>(null, ResourceTaggingTaggedResourceObjectAccessGroup);
             }
+            else if(ResourceTaggingTaggedResourceObjectAccessServiceToken != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessServiceToken>(null, ResourceTaggingTaggedResourceObjectAccessServiceToken);
+            }
             else if(ResourceTaggingTaggedResourceObjectAccount != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccount>(null, ResourceTaggingTaggedResourceObjectAccount);
             }
+            else if(ResourceTaggingTaggedResourceObjectAccountRuleset != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccountRuleset>(null, ResourceTaggingTaggedResourceObjectAccountRuleset);
+            }
             else if(ResourceTaggingTaggedResourceObjectAiGateway != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiGateway>(null, ResourceTaggingTaggedResourceObjectAiGateway);
+            }
+            else if(ResourceTaggingTaggedResourceObjectAiSearchInstance != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchInstance>(null, ResourceTaggingTaggedResourceObjectAiSearchInstance);
+            }
+            else if(ResourceTaggingTaggedResourceObjectAiSearchNamespace != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAiSearchNamespace>(null, ResourceTaggingTaggedResourceObjectAiSearchNamespace);
             }
             else if(ResourceTaggingTaggedResourceObjectAlertingPolicy != null)
             {
@@ -516,9 +836,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCustomHostname>(null, ResourceTaggingTaggedResourceObjectCustomHostname);
             }
+            else if(ResourceTaggingTaggedResourceObjectCwsDeployment != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsDeployment>(null, ResourceTaggingTaggedResourceObjectCwsDeployment);
+            }
+            else if(ResourceTaggingTaggedResourceObjectCwsPolicy != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicy>(null, ResourceTaggingTaggedResourceObjectCwsPolicy);
+            }
+            else if(ResourceTaggingTaggedResourceObjectCwsPolicySet != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsPolicySet>(null, ResourceTaggingTaggedResourceObjectCwsPolicySet);
+            }
+            else if(ResourceTaggingTaggedResourceObjectCwsWorkload != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectCwsWorkload>(null, ResourceTaggingTaggedResourceObjectCwsWorkload);
+            }
             else if(ResourceTaggingTaggedResourceObjectD1Database != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectD1Database>(null, ResourceTaggingTaggedResourceObjectD1Database);
+            }
+            else if(ResourceTaggingTaggedResourceObjectDevice != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectDevice>(null, ResourceTaggingTaggedResourceObjectDevice);
             }
             else if(ResourceTaggingTaggedResourceObjectDnsRecord != null)
             {
@@ -536,17 +876,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectGatewayRule>(null, ResourceTaggingTaggedResourceObjectGatewayRule);
             }
+            else if(ResourceTaggingTaggedResourceObjectHealthcheck != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectHealthcheck>(null, ResourceTaggingTaggedResourceObjectHealthcheck);
+            }
             else if(ResourceTaggingTaggedResourceObjectImage != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectImage>(null, ResourceTaggingTaggedResourceObjectImage);
+            }
+            else if(ResourceTaggingTaggedResourceObjectInfrastructureTarget != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectInfrastructureTarget>(null, ResourceTaggingTaggedResourceObjectInfrastructureTarget);
             }
             else if(ResourceTaggingTaggedResourceObjectKvNamespace != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectKvNamespace>(null, ResourceTaggingTaggedResourceObjectKvNamespace);
             }
+            else if(ResourceTaggingTaggedResourceObjectLoadBalancer != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancer>(null, ResourceTaggingTaggedResourceObjectLoadBalancer);
+            }
+            else if(ResourceTaggingTaggedResourceObjectLoadBalancerMonitor != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerMonitor>(null, ResourceTaggingTaggedResourceObjectLoadBalancerMonitor);
+            }
+            else if(ResourceTaggingTaggedResourceObjectLoadBalancerPool != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectLoadBalancerPool>(null, ResourceTaggingTaggedResourceObjectLoadBalancerPool);
+            }
             else if(ResourceTaggingTaggedResourceObjectManagedClientCertificate != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectManagedClientCertificate>(null, ResourceTaggingTaggedResourceObjectManagedClientCertificate);
+            }
+            else if(ResourceTaggingTaggedResourceObjectNamespaceWorker != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectNamespaceWorker>(null, ResourceTaggingTaggedResourceObjectNamespaceWorker);
+            }
+            else if(ResourceTaggingTaggedResourceObjectPagesProject != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectPagesProject>(null, ResourceTaggingTaggedResourceObjectPagesProject);
             }
             else if(ResourceTaggingTaggedResourceObjectQueue != null)
             {
@@ -568,9 +936,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamVideo>(null, ResourceTaggingTaggedResourceObjectStreamVideo);
             }
+            else if(ResourceTaggingTaggedResourceObjectVectorizeIndex != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex>(null, ResourceTaggingTaggedResourceObjectVectorizeIndex);
+            }
             else if(ResourceTaggingTaggedResourceObjectWorker != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker>(null, ResourceTaggingTaggedResourceObjectWorker);
+            }
+            else if(ResourceTaggingTaggedResourceObjectWorkerRoute != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute>(null, ResourceTaggingTaggedResourceObjectWorkerRoute);
             }
             else if(ResourceTaggingTaggedResourceObjectWorkerVersion != null)
             {
@@ -579,6 +955,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(ResourceTaggingTaggedResourceObjectZone != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZone>(null, ResourceTaggingTaggedResourceObjectZone);
+            }
+            else if(ResourceTaggingTaggedResourceObjectZoneRuleset != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset>(null, ResourceTaggingTaggedResourceObjectZoneRuleset);
             }
         }
     }

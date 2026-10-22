@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatch_matches>? Matches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatchMatchesItemProperty>? Matches { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatch_matches> Matches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatchMatchesItemProperty> Matches { get; set; }
 #endif
         /// <summary>The total property</summary>
         public int? Total { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "matches", n => { Matches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatch_matches>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatch_matches.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "matches", n => { Matches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatchMatchesItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatchMatchesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatch_matches>("matches", Matches);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiLogoMatchMatchesItemProperty>("matches", Matches);
             writer.WriteIntValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }

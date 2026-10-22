@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\analytics\livestreams\overall
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{appId}\analytics\livestreams\overall
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OverallRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ana
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverallRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/analytics/livestreams/overall{?end_time*,start_time*}", pathParameters)
+        public OverallRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/analytics/livestreams/overall{?end_time*,filters*,start_time*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ana
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/analytics/livestreams/overall{?end_time*,start_time*}", rawUrl)
+        public OverallRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/analytics/livestreams/overall{?end_time*,filters*,start_time*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns livestream analytics for the specified time range.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall.OverallRequestBuilder.OverallRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall.OverallRequestBuilder.OverallRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall.OverallRequestBuilder.OverallRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall.OverallRequestBuilder.OverallRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetLivestreamAnalyticsComplete200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns livestream analytics for the specified time range.
@@ -85,12 +85,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ana
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverallRequestBuilderGetQueryParameters 
         {
-            /// <summary>Specify the end time range in ISO format to access the livestream analytics.</summary>
+            /// <summary>Specify the end time as a Unix timestamp in seconds to access the livestream analytics.</summary>
             [QueryParameter("end_time")]
-            public DateTimeOffset? EndTime { get; set; }
-            /// <summary>Specify the start time range in ISO format to access the livestream analytics.</summary>
+            public long? EndTime { get; set; }
+            /// <summary>Optional filters for livestream analytics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filters")]
+            public string? Filters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filters")]
+            public string Filters { get; set; }
+#endif
+            /// <summary>Specify the start time as a Unix timestamp in seconds to access the livestream analytics.</summary>
             [QueryParameter("start_time")]
-            public DateTimeOffset? StartTime { get; set; }
+            public long? StartTime { get; set; }
         }
     }
 }

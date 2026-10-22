@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.Can_be_enabled;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.Configuration;
 using System.Collections.Generic;
 using System.IO;
@@ -10,11 +11,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\pay-per-crawl
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\pay-per-crawl
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayPerCrawlRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The can_be_enabled property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.Can_be_enabled.Can_be_enabledRequestBuilder Can_be_enabled
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.Can_be_enabled.Can_be_enabledRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The configuration property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.Configuration.ConfigurationRequestBuilder Configuration
         {
@@ -25,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayPerCrawlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/pay-per-crawl", pathParameters)
+        public PayPerCrawlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/pay-per-crawl", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayPerCrawlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/pay-per-crawl", rawUrl)
+        public PayPerCrawlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/pay-per-crawl", rawUrl)
         {
         }
     }

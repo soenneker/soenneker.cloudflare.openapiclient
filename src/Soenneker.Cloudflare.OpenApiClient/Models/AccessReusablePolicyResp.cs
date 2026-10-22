@@ -12,6 +12,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class AccessReusablePolicyResp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountId { get; set; }
+#nullable restore
+#else
+        public string AccountId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of access applications currently using this policy.</summary>
@@ -100,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The reusable property</summary>
         public bool? Reusable { get; set; }
-        /// <summary>&quot;The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.&quot;</summary>
+        /// <summary>The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionDuration { get; set; }
@@ -135,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "app_count", n => { AppCount = n.GetIntValue(); } },
                 { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
@@ -162,6 +171,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account_id", AccountId);
             writer.WriteIntValue("app_count", AppCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>("approval_groups", ApprovalGroups);
             writer.WriteBoolValue("approval_required", ApprovalRequired);

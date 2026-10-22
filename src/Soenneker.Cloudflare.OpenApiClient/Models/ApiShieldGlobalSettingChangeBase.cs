@@ -15,9 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default mitigation action usedMitigation actions are as follows:  - `&quot;log&quot;` - log request when request does not conform to schema  - `&quot;block&quot;` - deny access to the site when request does not conform to schema  - `&quot;none&quot;` - skip running schema validation</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase_validation_default_mitigation_action? ValidationDefaultMitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBaseValidationDefaultMitigationAction? ValidationDefaultMitigationAction { get; set; }
         /// <summary>When set, this overrides both zone level and operation level mitigation actions.  - `&quot;none&quot;` - skip running schema validation entirely for the request  - `null` - clears any existing override</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase_validation_override_mitigation_action? ValidationOverrideMitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBaseValidationOverrideMitigationAction? ValidationOverrideMitigationAction { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "validation_default_mitigation_action", n => { ValidationDefaultMitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase_validation_default_mitigation_action>(); } },
-                { "validation_override_mitigation_action", n => { ValidationOverrideMitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase_validation_override_mitigation_action>(); } },
+                { "validation_default_mitigation_action", n => { ValidationDefaultMitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBaseValidationDefaultMitigationAction>(); } },
+                { "validation_override_mitigation_action", n => { ValidationOverrideMitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBaseValidationOverrideMitigationAction>(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase_validation_default_mitigation_action>("validation_default_mitigation_action", ValidationDefaultMitigationAction);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBase_validation_override_mitigation_action>("validation_override_mitigation_action", ValidationOverrideMitigationAction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBaseValidationDefaultMitigationAction>("validation_default_mitigation_action", ValidationDefaultMitigationAction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldGlobalSettingChangeBaseValidationOverrideMitigationAction>("validation_override_mitigation_action", ValidationOverrideMitigationAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

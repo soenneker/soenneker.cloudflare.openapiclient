@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Saml_certificate
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\identity_providers\{identity_provider_id}\saml_certificate
+    /// Builds and executes requests for operations under \accounts\{account-id}\access\identity_providers\{identityProviderId}\saml_certificate
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Saml_certificateRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_provi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Saml_certificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/identity_providers/{identity_provider_id}/saml_certificate", pathParameters)
+        public Saml_certificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/identity_providers/{identityProviderId}/saml_certificate", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_provi
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Saml_certificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/identity_providers/{identity_provider_id}/saml_certificate", rawUrl)
+        public Saml_certificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/identity_providers/{identityProviderId}/saml_certificate", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Creates a new SAML encryption certificate set and assigns it to the specified SAML Identity Provider. This endpoint is idempotent - if the IdP already has a certificate set assigned, the existing certificate set is returned with a 200 status.**Workflow for enabling SAML encryption:**1. Call this endpoint to create and assign a certificate set to the IdP2. Update the IdP configuration (PUT `/identity_providers/{id}`) with:   - `config.enable_encryption: true`   - `saml_certificate_set_id: &lt;uid from step 1&gt;`3. Configure the certificate&apos;s public key in your external SAML Identity Provider&quot;
+        /// Creates a new SAML encryption certificate set and assigns it to the specified SAML Identity Provider. This endpoint is idempotent - if the IdP already has a certificate set assigned, the existing certificate set is returned with a 200 status.**Workflow for enabling SAML encryption:**1. Call this endpoint to create and assign a certificate set to the IdP2. Update the IdP configuration (PUT `/identity_providers/{id}`) with:   - `config.enable_encryption: true`   - `saml_certificate_set_id: &lt;uid from step 1&gt;`3. Configure the certificate&apos;s public key in your external SAML Identity Provider
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_provi
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new SAML encryption certificate set and assigns it to the specified SAML Identity Provider. This endpoint is idempotent - if the IdP already has a certificate set assigned, the existing certificate set is returned with a 200 status.**Workflow for enabling SAML encryption:**1. Call this endpoint to create and assign a certificate set to the IdP2. Update the IdP configuration (PUT `/identity_providers/{id}`) with:   - `config.enable_encryption: true`   - `saml_certificate_set_id: &lt;uid from step 1&gt;`3. Configure the certificate&apos;s public key in your external SAML Identity Provider&quot;
+        /// Creates a new SAML encryption certificate set and assigns it to the specified SAML Identity Provider. This endpoint is idempotent - if the IdP already has a certificate set assigned, the existing certificate set is returned with a 200 status.**Workflow for enabling SAML encryption:**1. Call this endpoint to create and assign a certificate set to the IdP2. Update the IdP configuration (PUT `/identity_providers/{id}`) with:   - `config.enable_encryption: true`   - `saml_certificate_set_id: &lt;uid from step 1&gt;`3. Configure the certificate&apos;s public key in your external SAML Identity Provider
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

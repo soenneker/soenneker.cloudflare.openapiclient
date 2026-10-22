@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
         /// <summary>
         /// Retrieves the top autonomous systems by DNS queries made to 1.1.1.1 DNS resolver.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top autonomous systems by DNS queries made to 1.1.1.1 DNS resolver.
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("continent")]
             public string[] Continent { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -154,21 +154,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dnssec")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecQueryParameterType[]? Dnssec { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesDnssecParameterItem[]? Dnssec { get; set; }
 #nullable restore
 #else
             [QueryParameter("dnssec")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecQueryParameterType[] Dnssec { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesDnssecParameterItem[] Dnssec { get; set; }
 #endif
             /// <summary>Filters results based on DNSSEC (DNS Security Extensions) client awareness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dnssecAware")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecAwareQueryParameterType[]? DnssecAware { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesDnssecAwareParameterItem[]? DnssecAware { get; set; }
 #nullable restore
 #else
             [QueryParameter("dnssecAware")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecAwareQueryParameterType[] DnssecAware { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesDnssecAwareParameterItem[] DnssecAware { get; set; }
 #endif
             /// <summary>Filters results based on DNSSEC-validated answers by end-to-end security status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,7 +180,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("dnssecE2e")]
             public bool?[] DnssecE2e { get; set; }
 #endif
-            /// <summary>Filters results by domain name.</summary>
+            /// <summary>Filters results by domain name. When set, no other DNS filter may be used — only date filtering (`dateRange`, or `dateStart`/`dateEnd`) is allowed — and the date range cannot exceed 31 days.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("domain")]
@@ -192,16 +192,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesFormatParameter? Format { get; set; }
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesIpVersionParameterItem[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetIpVersionQueryParameterType[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesIpVersionParameterItem[] IpVersion { get; set; }
 #endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
@@ -250,41 +250,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetProtocolQueryParameterType[]? Protocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesProtocolParameterItem[]? Protocol { get; set; }
 #nullable restore
 #else
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetProtocolQueryParameterType[] Protocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesProtocolParameterItem[] Protocol { get; set; }
 #endif
             /// <summary>Filters results by DNS query type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetQueryTypeQueryParameterType[]? QueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesQueryTypeParameterItem[]? QueryType { get; set; }
 #nullable restore
 #else
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetQueryTypeQueryParameterType[] QueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesQueryTypeParameterItem[] QueryType { get; set; }
 #endif
             /// <summary>Filters results by DNS response code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseCodeQueryParameterType[]? ResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesResponseCodeParameterItem[]? ResponseCode { get; set; }
 #nullable restore
 #else
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseCodeQueryParameterType[] ResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesResponseCodeParameterItem[] ResponseCode { get; set; }
 #endif
             /// <summary>Filters results by DNS response TTL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("responseTtl")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseTtlQueryParameterType[]? ResponseTtl { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesResponseTtlParameterItem[]? ResponseTtl { get; set; }
 #nullable restore
 #else
             [QueryParameter("responseTtl")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseTtlQueryParameterType[] ResponseTtl { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTopAsesResponseTtlParameterItem[] ResponseTtl { get; set; }
 #endif
         }
     }

@@ -29,10 +29,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSync_errors? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncErrorsProperty? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSync_errors Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncErrorsProperty Errors { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "destination_id", n => { DestinationId = n.GetGuidValue(); } },
                 { "destination_type", n => { DestinationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncDestinationType>(); } },
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSync_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSync_errors.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncErrorsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncErrorsProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "includes_discoveries_until", n => { IncludesDiscoveriesUntil = n.GetStringValue(); } },
                 { "last_attempted_update_at", n => { LastAttemptedUpdateAt = n.GetStringValue(); } },
@@ -135,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("destination_id", DestinationId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncDestinationType>("destination_type", DestinationType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSync_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCatalogSyncErrorsProperty>("errors", Errors);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("includes_discoveries_until", IncludesDiscoveriesUntil);
             writer.WriteStringValue("last_attempted_update_at", LastAttemptedUpdateAt);

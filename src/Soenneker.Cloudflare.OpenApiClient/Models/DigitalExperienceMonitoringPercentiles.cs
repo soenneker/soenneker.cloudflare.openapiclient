@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>p50 observed in the time period</summary>
+        /// <summary>p50 observed in the time period.</summary>
         public double? P50 { get; set; }
-        /// <summary>p90 observed in the time period</summary>
+        /// <summary>p90 observed in the time period.</summary>
         public double? P90 { get; set; }
-        /// <summary>p95 observed in the time period</summary>
+        /// <summary>p95 observed in the time period.</summary>
         public double? P95 { get; set; }
-        /// <summary>p99 observed in the time period</summary>
+        /// <summary>p99 observed in the time period.</summary>
         public double? P99 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringPercentiles"/> and sets the default values.

@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<int?> ContentRemoves { get; set; }
 #endif
         /// <summary>The indicator_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization_indicator_type? IndicatorType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType? IndicatorType { get; set; }
         /// <summary>Provide only if indicator_type is `ipv4` or `ipv6`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<int?> SecurityRemoves { get; set; }
 #endif
-        /// <summary>&quot;Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.&quot;</summary>
+        /// <summary>Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "content_adds", n => { ContentAdds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "content_removes", n => { ContentRemoves = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "indicator_type", n => { IndicatorType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization_indicator_type>(); } },
+                { "indicator_type", n => { IndicatorType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType>(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "security_adds", n => { SecurityAdds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "security_removes", n => { SecurityRemoves = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("content_adds", ContentAdds);
             writer.WriteCollectionOfPrimitiveValues<int?>("content_removes", ContentRemoves);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorization_indicator_type>("indicator_type", IndicatorType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMiscategorizationIndicatorType>("indicator_type", IndicatorType);
             writer.WriteStringValue("ip", Ip);
             writer.WriteCollectionOfPrimitiveValues<int?>("security_adds", SecurityAdds);
             writer.WriteCollectionOfPrimitiveValues<int?>("security_removes", SecurityRemoves);

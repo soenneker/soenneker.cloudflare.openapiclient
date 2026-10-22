@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email\sending\send
+    /// Builds and executes requests for operations under \accounts\{account-id}\email\sending\send
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SendRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/sending/send", pathParameters)
+        public SendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending/send", pathParameters)
         {
         }
         /// <summary>
@@ -30,42 +30,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/sending/send", rawUrl)
+        public SendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending/send", rawUrl)
         {
         }
         /// <summary>
-        /// Send an email
+        /// Send an email for the specified account using the structured builder. Provide the sender, recipients, subject, and at least one of text or html; attachments are optional.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder403Response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder409Response">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder400.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder403.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder400Response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder403Response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder409Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder429Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingAccountSendBuilder200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send an email
+        /// Send an email for the specified account using the structured builder. Provide the sender, recipients, subject, and at least one of text or html; attachments are optional.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

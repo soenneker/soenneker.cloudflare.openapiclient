@@ -16,9 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum number of video streams visible on desktop devices</summary>
-        public int? Desktop { get; set; }
+        public double? Desktop { get; set; }
         /// <summary>Maximum number of streams visible on mobile devices</summary>
-        public int? Mobile { get; set; }
+        public double? Mobile { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "desktop", n => { Desktop = n.GetIntValue(); } },
-                { "mobile", n => { Mobile = n.GetIntValue(); } },
+                { "desktop", n => { Desktop = n.GetDoubleValue(); } },
+                { "mobile", n => { Mobile = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("desktop", Desktop);
-            writer.WriteIntValue("mobile", Mobile);
+            writer.WriteDoubleValue("desktop", Desktop);
+            writer.WriteDoubleValue("mobile", Mobile);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

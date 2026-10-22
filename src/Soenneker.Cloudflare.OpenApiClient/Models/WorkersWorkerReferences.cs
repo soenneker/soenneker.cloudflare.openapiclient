@@ -18,42 +18,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Other Workers that reference the Worker as an outbound for a dispatch namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_dispatch_namespace_outbounds>? DispatchNamespaceOutbounds { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>? DispatchNamespaceOutbounds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_dispatch_namespace_outbounds> DispatchNamespaceOutbounds { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem> DispatchNamespaceOutbounds { get; set; }
 #endif
         /// <summary>Custom domains connected to the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_domains>? Domains { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>? Domains { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_domains> Domains { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem> Domains { get; set; }
 #endif
         /// <summary>Other Workers that reference Durable Object classes implemented by the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_durable_objects>? DurableObjects { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem>? DurableObjects { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_durable_objects> DurableObjects { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem> DurableObjects { get; set; }
 #endif
         /// <summary>Queues that send messages to the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_queues>? Queues { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem>? Queues { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_queues> Queues { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem> Queues { get; set; }
 #endif
         /// <summary>Other Workers that reference the Worker using [service bindings](https://developers.cloudflare.com/workers/runtime-apis/bindings/service-bindings/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_workers>? Workers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem>? Workers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_workers> Workers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem> Workers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences"/> and sets the default values.
@@ -80,11 +80,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dispatch_namespace_outbounds", n => { DispatchNamespaceOutbounds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_dispatch_namespace_outbounds>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_dispatch_namespace_outbounds.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "domains", n => { Domains = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_domains>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_domains.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "durable_objects", n => { DurableObjects = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_durable_objects>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_durable_objects.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "queues", n => { Queues = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_queues>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_queues.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "workers", n => { Workers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_workers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_workers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dispatch_namespace_outbounds", n => { DispatchNamespaceOutbounds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "domains", n => { Domains = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "durable_objects", n => { DurableObjects = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "queues", n => { Queues = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workers", n => { Workers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -94,11 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_dispatch_namespace_outbounds>("dispatch_namespace_outbounds", DispatchNamespaceOutbounds);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_domains>("domains", Domains);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_durable_objects>("durable_objects", DurableObjects);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_queues>("queues", Queues);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences_workers>("workers", Workers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDispatchNamespaceOutboundsItem>("dispatch_namespace_outbounds", DispatchNamespaceOutbounds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDomainsItem>("domains", Domains);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesDurableObjectsItem>("durable_objects", DurableObjects);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesQueuesItem>("queues", Queues);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferencesWorkersItem>("workers", Workers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

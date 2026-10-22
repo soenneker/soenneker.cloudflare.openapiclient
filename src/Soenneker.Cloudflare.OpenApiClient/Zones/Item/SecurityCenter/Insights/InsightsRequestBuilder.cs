@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.AuditLog;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Class;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.PartnerCount;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Scans;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Severity;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.TypeNamespace;
@@ -18,7 +19,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\security-center\insights
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\security-center\insights
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InsightsRequestBuilder : BaseRequestBuilder
@@ -32,6 +33,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Class.ClassRequestBuilder Class
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Class.ClassRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The partnerCount property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.PartnerCount.PartnerCountRequestBuilder PartnerCount
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.PartnerCount.PartnerCountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scans property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Scans.ScansRequestBuilder Scans
@@ -50,14 +56,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.securityCenter.insights.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.WithIssue_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.WithIssue_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.WithIssueItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.WithIssueItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("issue_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.WithIssue_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("issueId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.WithIssueItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -65,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
+        public InsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,source*,subject*,subject%7Eneq*}", pathParameters)
         {
         }
         /// <summary>
@@ -73,23 +79,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
+        public InsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,source*,subject*,subject%7Eneq*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists Security Center insights for a specific zone, showing zone-level security findings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -97,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetZoneSecurityCenterInsights200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists Security Center insights for a specific zone, showing zone-level security findings.
@@ -133,122 +139,160 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InsightsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
+            [QueryParameter("dismissed")]
+            public bool? Dismissed { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("dismissed")]
-            public string? Dismissed { get; set; }
-#nullable restore
-#else
-            [QueryParameter("dismissed")]
-            public string Dismissed { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("issue_class")]
             public string[]? IssueClass { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("issue_class")]
             public string[] IssueClass { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("issue_class%7Eneq")]
             public string[]? IssueClassNeq { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("issue_class%7Eneq")]
             public string[] IssueClassNeq { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("issue_type")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[]? IssueType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("issue_type")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[] IssueType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("issue_type%7Eneq")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[]? IssueTypeNeq { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("issue_type%7Eneq")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[] IssueTypeNeq { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("product")]
             public string[]? Product { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("product")]
             public string[] Product { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("product%7Eneq")]
             public string[]? ProductNeq { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("product%7Eneq")]
             public string[] ProductNeq { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("severity")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.GetSeverityQueryParameterType[]? Severity { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[]? Severity { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("severity")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.GetSeverityQueryParameterType[] Severity { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[] Severity { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("severity%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.GetSeverityNeqQueryParameterType[]? SeverityNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[]? SeverityNeq { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("severity%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.GetSeverityNeqQueryParameterType[] SeverityNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[] SeverityNeq { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("source")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource[]? Source { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("source")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource[] Source { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("subject")]
             public string[]? Subject { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("subject")]
             public string[] Subject { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("subject%7Eneq")]
             public string[]? SubjectNeq { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("subject%7Eneq")]
             public string[] SubjectNeq { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

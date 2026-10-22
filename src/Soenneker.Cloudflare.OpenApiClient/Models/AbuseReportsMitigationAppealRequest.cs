@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Submit an appeal for a report. Provide either a list of mitigations to appeal, or an appeal type with its supporting details, but not both. When type is &quot;counter_notice&quot;, the counter-notice details are required.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AbuseReportsMitigationAppealRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -22,6 +23,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal> Appeals { get; set; }
 #endif
+        /// <summary>Counter-notice details supporting an appeal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice? Data { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice Data { get; set; }
+#endif
+        /// <summary>The type of appeal being submitted.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppealRequest"/> and sets the default values.
         /// </summary>
@@ -48,6 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appeals", n => { Appeals = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType>(); } },
             };
         }
         /// <summary>
@@ -58,6 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationAppeal>("appeals", Appeals);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaCounterNotice>("data", Data);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsAppealType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

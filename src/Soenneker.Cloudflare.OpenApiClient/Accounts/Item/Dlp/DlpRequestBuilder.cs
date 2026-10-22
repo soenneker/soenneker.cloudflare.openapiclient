@@ -3,6 +3,9 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Custom_prompt_topics;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_classes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_tag_categories;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_tag_category_templates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerprints;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email;
@@ -11,7 +14,9 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_groups;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Validators;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,7 +24,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpRequestBuilder : BaseRequestBuilder
@@ -28,6 +33,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Custom_prompt_topics.Custom_prompt_topicsRequestBuilder Custom_prompt_topics
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Custom_prompt_topics.Custom_prompt_topicsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The data_classes property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_classes.Data_classesRequestBuilder Data_classes
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_classes.Data_classesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The data_tag_categories property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_tag_categories.Data_tag_categoriesRequestBuilder Data_tag_categories
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_tag_categories.Data_tag_categoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The data_tag_category_templates property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_tag_category_templates.Data_tag_category_templatesRequestBuilder Data_tag_category_templates
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Data_tag_category_templates.Data_tag_category_templatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The datasets property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder Datasets
@@ -69,17 +89,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The sensitivity_groups property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_groups.Sensitivity_groupsRequestBuilder Sensitivity_groups
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_groups.Sensitivity_groupsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The settings property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The validators property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Validators.ValidatorsRequestBuilder Validators
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Validators.ValidatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.DlpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DlpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp", pathParameters)
+        public DlpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp", pathParameters)
         {
         }
         /// <summary>
@@ -87,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DlpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp", rawUrl)
+        public DlpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp", rawUrl)
         {
         }
     }

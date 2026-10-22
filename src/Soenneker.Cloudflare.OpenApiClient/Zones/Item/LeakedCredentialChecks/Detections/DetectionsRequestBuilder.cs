@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\leaked-credential-checks\detections
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\leaked-credential-checks\detections
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.leakedCredentialChecks.detections.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetectionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("detection_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("detectionId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/leaked-credential-checks/detections", pathParameters)
+        public DetectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/leaked-credential-checks/detections", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/leaked-credential-checks/detections", rawUrl)
+        public DetectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/leaked-credential-checks/detections", rawUrl)
         {
         }
         /// <summary>
-        /// List user-defined detection patterns for Leaked Credential Checks.
+        /// List the user-defined detection locations configured for Leaked Credential Checks, each with its own identifier. A custom detection location tells the WAF where to find the username and password in requests to your application.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetectionCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsListDetections4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsListDetections4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetectionCollection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,18 +65,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsListDetections4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsListDetections4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetectionCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetectionCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create user-defined detection pattern for Leaked Credential Checks.
+        /// Create a detection location for credentials that the default scan locations do not cover, using Rules language expressions such as `lookup_json_string(http.request.body.raw, &quot;user&quot;)`. Only the username expression is required, and Leaked Credential Checks must be enabled on the zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetection"/></returns>
         /// <param name="body">Defines a custom set of username/password expressions to match Leaked Credential Checks on.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsCreateDetection4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsCreateDetection4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetection?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleCustomDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,12 +90,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsCreateDetection4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiLeakedCredentialsCreateDetection4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List user-defined detection patterns for Leaked Credential Checks.
+        /// List the user-defined detection locations configured for Leaked Credential Checks, each with its own identifier. A custom detection location tells the WAF where to find the username and password in requests to your application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
             return requestInfo;
         }
         /// <summary>
-        /// Create user-defined detection pattern for Leaked Credential Checks.
+        /// Create a detection location for credentials that the default scan locations do not cover, using Rules language expressions such as `lookup_json_string(http.request.body.raw, &quot;user&quot;)`. Only the username expression is required, and Leaked Credential Checks must be enabled on the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Defines a custom set of username/password expressions to match Leaked Credential Checks on.</param>

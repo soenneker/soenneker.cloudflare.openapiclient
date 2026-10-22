@@ -22,13 +22,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig BuildConfig { get; set; }
 #endif
-        /// <summary>The canonical_deployment property</summary>
+        /// <summary>Present when the project is set to a retired build image major version and its builds have been moved to a newer one. `build_image_major_version` in `deployment_configs` then reports the version the builds run on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_canonical_deployment? CanonicalDeployment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectBuildImageAutoUpgrade? BuildImageAutoUpgrade { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_canonical_deployment CanonicalDeployment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectBuildImageAutoUpgrade BuildImageAutoUpgrade { get; private set; }
+#endif
+        /// <summary>Most recent production deployment of the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCanonicalDeployment? CanonicalDeployment { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCanonicalDeployment CanonicalDeployment { get; private set; }
 #endif
         /// <summary>When the project was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
@@ -72,15 +80,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>The latest_deployment property</summary>
+        /// <summary>Most recent deployment of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_latest_deployment? LatestDeployment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment? LatestDeployment { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_latest_deployment LatestDeployment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment LatestDeployment { get; private set; }
 #endif
-        /// <summary>Name of the project.</summary>
+        /// <summary>Name of the Pages project. Must begin with a lowercase letter or digit and contain only lowercase letters, digits, and hyphens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -156,14 +164,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "build_config", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig.CreateFromDiscriminatorValue); } },
-                { "canonical_deployment", n => { CanonicalDeployment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_canonical_deployment>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_canonical_deployment.CreateFromDiscriminatorValue); } },
+                { "build_image_auto_upgrade", n => { BuildImageAutoUpgrade = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectBuildImageAutoUpgrade>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectBuildImageAutoUpgrade.CreateFromDiscriminatorValue); } },
+                { "canonical_deployment", n => { CanonicalDeployment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCanonicalDeployment>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectCanonicalDeployment.CreateFromDiscriminatorValue); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "deployment_configs", n => { DeploymentConfigs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs.CreateFromDiscriminatorValue); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "framework", n => { Framework = n.GetStringValue(); } },
                 { "framework_version", n => { FrameworkVersion = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "latest_deployment", n => { LatestDeployment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_latest_deployment>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_latest_deployment.CreateFromDiscriminatorValue); } },
+                { "latest_deployment", n => { LatestDeployment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectLatestDeployment.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "preview_script_name", n => { PreviewScriptName = n.GetStringValue(); } },
                 { "production_branch", n => { ProductionBranch = n.GetStringValue(); } },
@@ -181,9 +190,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig>("build_config", BuildConfig);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_canonical_deployment>("canonical_deployment", CanonicalDeployment);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs>("deployment_configs", DeploymentConfigs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProject_latest_deployment>("latest_deployment", LatestDeployment);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("production_branch", ProductionBranch);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource>("source", Source);

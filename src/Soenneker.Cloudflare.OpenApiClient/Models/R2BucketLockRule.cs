@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition? Condition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition? Condition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition Condition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition Condition { get; set; }
 #endif
         /// <summary>Whether or not this rule is in effect.</summary>
         public bool? Enabled { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition.CreateFromDiscriminatorValue); } },
+                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
@@ -78,106 +78,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition>("condition", Condition);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition>("condition", Condition);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("prefix", Prefix);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class R2BucketLockRule_condition : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition? R2LockRuleAgeCondition { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition R2LockRuleAgeCondition { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition? R2LockRuleDateCondition { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition R2LockRuleDateCondition { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition? R2LockRuleIndefiniteCondition { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition R2LockRuleIndefiniteCondition { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRule.R2BucketLockRule_condition();
-                if("R2LockRuleAgeCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.R2LockRuleAgeCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition();
-                }
-                else if("R2LockRuleDateCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.R2LockRuleDateCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition();
-                }
-                else if("R2LockRuleIndefiniteCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.R2LockRuleIndefiniteCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(R2LockRuleAgeCondition != null)
-                {
-                    return R2LockRuleAgeCondition.GetFieldDeserializers();
-                }
-                else if(R2LockRuleDateCondition != null)
-                {
-                    return R2LockRuleDateCondition.GetFieldDeserializers();
-                }
-                else if(R2LockRuleIndefiniteCondition != null)
-                {
-                    return R2LockRuleIndefiniteCondition.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(R2LockRuleAgeCondition != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition>(null, R2LockRuleAgeCondition);
-                }
-                else if(R2LockRuleDateCondition != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition>(null, R2LockRuleDateCondition);
-                }
-                else if(R2LockRuleIndefiniteCondition != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition>(null, R2LockRuleIndefiniteCondition);
-                }
-            }
         }
     }
 }

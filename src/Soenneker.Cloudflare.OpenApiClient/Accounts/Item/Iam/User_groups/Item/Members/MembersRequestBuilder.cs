@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\iam\user_groups\{user_group_id}\members
+    /// Builds and executes requests for operations under \accounts\{account-id}\iam\user_groups\{userGroupId}\members
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.iam.user_groups.item.members.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Item.WithMember_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Item.WithMember_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Item.WithMemberItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Item.WithMemberItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("member_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Item.WithMember_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("memberId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Item.WithMemberItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/iam/user_groups/{user_group_id}/members{?direction*,fuzzyEmail*,page*,per_page*}", pathParameters)
+        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/iam/user_groups/{userGroupId}/members{?direction*,fuzzyEmail*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/iam/user_groups/{user_group_id}/members{?direction*,fuzzyEmail*,page*,per_page*}", rawUrl)
+        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/iam/user_groups/{userGroupId}/members{?direction*,fuzzyEmail*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -72,18 +72,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
         /// <summary>
         /// Add members to a User Group.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200Response?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200Response> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,23 +92,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Replace the set of members attached to a User Group.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200Response"/></returns>
         /// <param name="body">Set/Replace members to a user group.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200Response?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200Response> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all the members attached to a user group.
@@ -146,11 +146,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberCreateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.Members> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMembersUpdateRequestRequestBodyItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -197,21 +197,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.Item.Members.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountUserGroupMemberListDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("fuzzyEmail")]
             public string? FuzzyEmail { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("fuzzyEmail")]
             public string FuzzyEmail { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

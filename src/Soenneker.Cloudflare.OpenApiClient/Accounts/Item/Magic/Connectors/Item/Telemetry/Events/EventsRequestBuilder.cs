@@ -4,7 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.Latest;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEventTWithEventN;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\connectors\{connector_id}\telemetry\events
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\connectors\{connectorId}\telemetry\events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors/{connectorId}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -37,42 +37,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors/{connectorId}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", rawUrl)
         {
         }
         /// <summary>
-        /// List Events
+        /// Lists Magic WAN Connector Telemetry Events
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerEventsGetSuccess"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryCustomerEventsListSuccess"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerEventsGetSuccess?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryCustomerEventsListSuccess?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerEventsGetSuccess> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryCustomerEventsListSuccess> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnEnvelope.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryEnvelope.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerEventsGetSuccess>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerEventsGetSuccess.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryCustomerEventsListSuccess>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnTelemetryCustomerEventsListSuccess.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Events
+        /// Lists Magic WAN Connector Telemetry Events
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,16 +91,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\connectors\{connector_id}\telemetry\events\{event_t}.{event_n}
+        /// Builds and executes requests for operations under \accounts\{account-id}\magic\connectors\{connectorId}\telemetry\events\{eventT}.{eventN}
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder"/></returns>
-        /// <param name="event_n">The path parameter: event_n</param>
-        /// <param name="event_t">The path parameter: event_t</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder WithEvent_tWithEvent_n(double? event_n, double? event_t)
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEventTWithEventN.WithEventTWithEventNRequestBuilder"/></returns>
+        /// <param name="eventN">The path parameter: eventN</param>
+        /// <param name="eventT">The path parameter: eventT</param>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEventTWithEventN.WithEventTWithEventNRequestBuilder WithEventTWithEventN(double? eventN, double? eventT)
         {
-            if(ReferenceEquals(event_n, null)) throw new ArgumentNullException(nameof(event_n));
-            if(ReferenceEquals(event_t, null)) throw new ArgumentNullException(nameof(event_t));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder(PathParameters, RequestAdapter, event_n, event_t);
+            if(ReferenceEquals(eventN, null)) throw new ArgumentNullException(nameof(eventN));
+            if(ReferenceEquals(eventT, null)) throw new ArgumentNullException(nameof(eventT));
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEventTWithEventN.WithEventTWithEventNRequestBuilder(PathParameters, RequestAdapter, eventN, eventT);
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
@@ -112,22 +112,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List Events
+        /// Lists Magic WAN Connector Telemetry Events
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string? Cursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("from")]
             public double? From { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter by event kind</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,10 +144,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             [QueryParameter("k")]
             public string K { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("to")]
             public double? To { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

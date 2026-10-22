@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Config
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\billing\topup\config
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\billing\topup\config
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConfigRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/topup/config", pathParameters)
+        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/topup/config", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/topup/config", rawUrl)
+        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/topup/config", rawUrl)
         {
         }
         /// <summary>
-        /// Remove the auto top-up configuration for the account.
+        /// Remove the auto top-up configuration for the account. Dashboard sessions only: API token, OAuth, and service credentials are rejected with 403.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteTopupConfigResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,22 +88,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupConfigResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Configure auto top-up with a balance threshold and top-up amount.
+        /// Configure auto top-up with a balance threshold and top-up amount. Requests that add a payment method first return authentication details. The configuration is saved only after the authenticated setup is submitted. Dashboard sessions only: API token, OAuth, and service credentials are rejected with 403.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfig body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfig body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -111,13 +113,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove the auto top-up configuration for the account.
+        /// Remove the auto top-up configuration for the account. Dashboard sessions only: API token, OAuth, and service credentials are rejected with 403.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,18 +159,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             return requestInfo;
         }
         /// <summary>
-        /// Configure auto top-up with a balance threshold and top-up amount.
+        /// Configure auto top-up with a balance threshold and top-up amount. Requests that add a payment method first return authentication details. The configuration is saved only after the authenticated setup is submitted. Dashboard sessions only: API token, OAuth, and service credentials are rejected with 403.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfig body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfig body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

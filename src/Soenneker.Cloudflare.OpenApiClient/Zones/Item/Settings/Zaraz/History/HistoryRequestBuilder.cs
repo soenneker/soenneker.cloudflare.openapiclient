@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\settings\zaraz\history
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\settings\zaraz\history
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HistoryRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/settings/zaraz/history{?limit*,offset*,sortField*,sortOrder*}", pathParameters)
+        public HistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/settings/zaraz/history{?limit*,offset*,sortField*,sortOrder*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/settings/zaraz/history{?limit*,offset*,sortField*,sortOrder*}", rawUrl)
+        public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/settings/zaraz/history{?limit*,offset*,sortField*,sortOrder*}", rawUrl)
         {
         }
         /// <summary>
@@ -66,17 +66,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
         /// Restores a historical published Zaraz configuration by ID for a zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">ID of the Zaraz configuration to restore.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PutZonesZoneIdentifierZarazHistory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigResponse?> PutAsync(int? body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PutZonesZoneIdentifierZarazHistory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigResponse> PutAsync(int? body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -110,22 +110,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
         /// Restores a historical published Zaraz configuration by ID for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">ID of the Zaraz configuration to restore.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PutZonesZoneIdentifierZarazHistory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(int? body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PutZonesZoneIdentifierZarazHistory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(int? body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            requestInfo.SetContentFromScalar(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -151,10 +151,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
             public int? Offset { get; set; }
             /// <summary>The field to sort by. Default is updated_at.</summary>
             [QueryParameter("sortField")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.GetSortFieldQueryParameterType? SortField { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetZonesZoneIdentifierZarazHistorySortFieldParameter? SortField { get; set; }
             /// <summary>Sorting order. Default is DESC.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.GetSortOrderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetZonesZoneIdentifierZarazHistorySortOrderParameter? SortOrder { get; set; }
         }
     }
 }

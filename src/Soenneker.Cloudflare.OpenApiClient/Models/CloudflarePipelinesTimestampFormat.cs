@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "unix_millis")]
         #pragma warning disable CS1591
-        Unix_millis,
+        UnixMillis,
         #pragma warning restore CS1591
     }
 }

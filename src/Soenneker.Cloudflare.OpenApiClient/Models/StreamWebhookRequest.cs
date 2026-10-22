@@ -30,14 +30,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string NotificationUrl { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWebhookRequest"/> and sets the default values.
         /// </summary>
@@ -64,7 +56,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
                 { "notification_url", n => { Notification_url = n.GetStringValue(); } },
             };
         }
@@ -77,7 +68,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("notification_url", Notification_url);
             writer.WriteStringValue("notificationUrl", NotificationUrl);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

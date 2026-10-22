@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\rulesets\{ruleset_id}\versions\{ruleset_version}\by_tag
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\rulesets\{rulesetId}\versions\{rulesetVersion}\by_tag
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class By_tagRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.rulesets.item.versions.item.by_tag.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRuleTagItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRuleTagItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("rule_tag", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ruleTag", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRuleTagItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public By_tagRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag", pathParameters)
+        public By_tagRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/rulesets/{rulesetId}/versions/{rulesetVersion}/by_tag", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public By_tagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag", rawUrl)
+        public By_tagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/rulesets/{rulesetId}/versions/{rulesetVersion}/by_tag", rawUrl)
         {
         }
     }

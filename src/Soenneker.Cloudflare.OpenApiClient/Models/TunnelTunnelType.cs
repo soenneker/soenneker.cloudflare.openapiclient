@@ -9,11 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "cfd_tunnel")]
         #pragma warning disable CS1591
-        Cfd_tunnel,
+        CfdTunnel,
         #pragma warning restore CS1591
         [EnumMember(Value = "warp_connector")]
         #pragma warning disable CS1591
-        Warp_connector,
+        WarpConnector,
         #pragma warning restore CS1591
         [EnumMember(Value = "warp")]
         #pragma warning disable CS1591
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "ip_sec")]
         #pragma warning disable CS1591
-        Ip_sec,
+        IpSec,
         #pragma warning restore CS1591
         [EnumMember(Value = "gre")]
         #pragma warning disable CS1591

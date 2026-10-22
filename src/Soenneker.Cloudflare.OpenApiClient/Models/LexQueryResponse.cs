@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse_result>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponseResultItem>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse_result> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponseResultItem> Result { get; set; }
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexV4Error>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexV4Error.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse_result.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponseResultItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponseResultItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexV4Error>("errors", Errors);
             writer.WriteCollectionOfPrimitiveValues<string>("messages", Messages);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponseResultItem>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

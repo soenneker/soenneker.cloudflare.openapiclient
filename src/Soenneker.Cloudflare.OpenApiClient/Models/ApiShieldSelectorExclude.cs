@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Excluded operation IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>? OperationIds { get; set; }
+        public List<string>? OperationIds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid> OperationIds { get; set; }
+        public List<string> OperationIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelectorExclude"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operation_ids", n => { OperationIds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "operation_ids", n => { OperationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>("operation_ids", OperationIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("operation_ids", OperationIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

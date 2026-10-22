@@ -36,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download
         /// <summary>
         /// Retrieves an URL to download a single dataset.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrlRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrlRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves an URL to download a single dataset.
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrlRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrl body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrlRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.DownloadRequestBuilder.DownloadRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download
         {
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.PostFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarPostReportsDatasetDownloadUrlFormatParameter? Format { get; set; }
         }
     }
 }

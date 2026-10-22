@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether to refuse to answer queries for the ANY type</summary>
         public bool? DeprecateAnyRequests { get; set; }
+        /// <summary>Number of IPv4 addresses to assign to the DNS Firewall cluster. Only used during cluster creation and cannot be changed later.</summary>
+        public int? DnsFirewallIpCount { get; set; }
         /// <summary>Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent</summary>
         public bool? EcsFallback { get; set; }
         /// <summary>By default, Cloudflare attempts to cache responses for as long asindicated by the TTL received from upstream nameservers. This settingsets an upper bound on this duration. For caching purposes, higher TTLswill be decreased to the maximum value defined by this setting.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
@@ -40,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>This setting controls how long DNS Firewall should cache negativeresponses (e.g., NXDOMAIN) from the upstream servers.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
         public double? NegativeCacheTtl { get; set; }
-        /// <summary>Ratelimit in queries per second per datacenter (applies to DNS queries sent to the upstream nameservers configured on the cluster)</summary>
+        /// <summary>Maximum number of DNS queries per second that will be forwarded to your upstream nameservers. The limit is enforced per server, where each server receives a fraction of the configured value. The actual aggregate rate for a data center may vary depending on how many servers are present. Responses served from cache do not count toward this limit. Set to null to disable rate limiting.</summary>
         public double? Ratelimit { get; set; }
         /// <summary>Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt)</summary>
         public double? Retries { get; set; }
@@ -79,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "attack_mitigation", n => { AttackMitigation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation.CreateFromDiscriminatorValue); } },
                 { "deprecate_any_requests", n => { DeprecateAnyRequests = n.GetBoolValue(); } },
+                { "dns_firewall_ip_count", n => { DnsFirewallIpCount = n.GetIntValue(); } },
                 { "ecs_fallback", n => { EcsFallback = n.GetBoolValue(); } },
                 { "maximum_cache_ttl", n => { MaximumCacheTtl = n.GetDoubleValue(); } },
                 { "minimum_cache_ttl", n => { MinimumCacheTtl = n.GetDoubleValue(); } },
@@ -98,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallAttackMitigation>("attack_mitigation", AttackMitigation);
             writer.WriteBoolValue("deprecate_any_requests", DeprecateAnyRequests);
+            writer.WriteIntValue("dns_firewall_ip_count", DnsFirewallIpCount);
             writer.WriteBoolValue("ecs_fallback", EcsFallback);
             writer.WriteDoubleValue("maximum_cache_ttl", MaximumCacheTtl);
             writer.WriteDoubleValue("minimum_cache_ttl", MinimumCacheTtl);

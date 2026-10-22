@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? CanEditConfig { get; set; }
         /// <summary>Can start plugins</summary>
         public bool? CanStart { get; set; }
-        /// <summary>The config property</summary>
+        /// <summary>Plugin configuration keyed by plugin UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsPluginsConfig? Config { get; set; }

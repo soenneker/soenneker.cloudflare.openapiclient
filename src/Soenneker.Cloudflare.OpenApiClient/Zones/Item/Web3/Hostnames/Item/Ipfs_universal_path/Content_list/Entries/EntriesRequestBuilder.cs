@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\web3\hostnames\{identifier}\ipfs_universal_path\content_list\entries
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\web3\hostnames\{identifier}\ipfs_universal_path\content_list\entries
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.web3.hostnames.item.ipfs_universal_path.content_list.entries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContentListEntryIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContentListEntryIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("content_list_entry_identifier", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("contentListEntryIdentifier", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContentListEntryIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", pathParameters)
+        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", rawUrl)
+        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", rawUrl)
         {
         }
         /// <summary>
@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries4XxResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryCollectionResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameListIpfsUniversalPathGatewayContentListEntries5XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,8 +78,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry4XxResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,8 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3HostnameCreateIpfsUniversalPathGatewayContentListEntry5XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntrySingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

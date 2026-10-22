@@ -13,21 +13,22 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email\sending\suppression
+    /// Builds and executes requests for operations under \accounts\{account-id}\email\sending\suppression
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.email.sending.suppression.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.Item.WithSuppression_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.Item.WithSuppression_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.Item.WithSuppressionItemRequestBuilder"/></returns>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.Item.WithSuppressionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("suppression_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.Item.WithSuppression_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("suppressionId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.Item.WithSuppressionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/sending/suppression{?direction*,order*,page*,per_page*}", pathParameters)
+        public SuppressionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending/suppression{?direction*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,62 +44,65 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/sending/suppression{?direction*,order*,page*,per_page*}", rawUrl)
+        public SuppressionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending/suppression{?direction*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// List account email suppressions
+        /// Lists email suppressions for the specified account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending400Response">When receiving a 400 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder.SuppressionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder.SuppressionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder.SuppressionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder.SuppressionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSending200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create account email suppression
+        /// Creates a new email suppression for the specified account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending400Response">When receiving a 400 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSendingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSendingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List account email suppressions
+        /// Lists email suppressions for the specified account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder.SuppressionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -114,18 +118,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
             return requestInfo;
         }
         /// <summary>
-        /// Create account email suppression
+        /// Creates a new email suppression for the specified account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSendingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSending body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicNewSuppressionSendingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -140,24 +145,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List account email suppressions
+        /// Lists email suppressions for the specified account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SuppressionRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSendingDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetPublicListSuppressionSendingOrderParameter? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

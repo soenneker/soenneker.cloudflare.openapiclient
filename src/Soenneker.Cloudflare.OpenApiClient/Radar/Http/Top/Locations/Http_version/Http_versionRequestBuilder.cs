@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_versi
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.http_version.item collection</summary>
         /// <param name="position">HTTP version.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttp_versionItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttp_versionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttpVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttpVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("http_version", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttp_versionItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("httpVersion", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttpVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

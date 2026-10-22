@@ -9,39 +9,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "GET")]
         #pragma warning disable CS1591
-        GET,
+        Get,
         #pragma warning restore CS1591
         [EnumMember(Value = "POST")]
         #pragma warning disable CS1591
-        POST,
+        Post,
         #pragma warning restore CS1591
         [EnumMember(Value = "HEAD")]
         #pragma warning disable CS1591
-        HEAD,
+        Head,
         #pragma warning restore CS1591
         [EnumMember(Value = "OPTIONS")]
         #pragma warning disable CS1591
-        OPTIONS,
+        Options,
         #pragma warning restore CS1591
         [EnumMember(Value = "PUT")]
         #pragma warning disable CS1591
-        PUT,
+        Put,
         #pragma warning restore CS1591
         [EnumMember(Value = "DELETE")]
         #pragma warning disable CS1591
-        DELETE,
+        Delete,
         #pragma warning restore CS1591
         [EnumMember(Value = "CONNECT")]
         #pragma warning disable CS1591
-        CONNECT,
+        Connect,
         #pragma warning restore CS1591
         [EnumMember(Value = "PATCH")]
         #pragma warning disable CS1591
-        PATCH,
+        Patch,
         #pragma warning restore CS1591
         [EnumMember(Value = "TRACE")]
         #pragma warning disable CS1591
-        TRACE,
+        Trace,
         #pragma warning restore CS1591
     }
 }

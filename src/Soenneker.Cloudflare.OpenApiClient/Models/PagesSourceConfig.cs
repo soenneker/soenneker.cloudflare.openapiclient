@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> PreviewBranchIncludes { get; set; }
 #endif
         /// <summary>Controls whether commits to preview branches trigger a preview deployment.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig_preview_deployment_setting? PreviewDeploymentSetting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfigPreviewDeploymentSetting? PreviewDeploymentSetting { get; set; }
         /// <summary>The production branch of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "pr_comments_enabled", n => { PrCommentsEnabled = n.GetBoolValue(); } },
                 { "preview_branch_excludes", n => { PreviewBranchExcludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "preview_branch_includes", n => { PreviewBranchIncludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "preview_deployment_setting", n => { PreviewDeploymentSetting = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig_preview_deployment_setting>(); } },
+                { "preview_deployment_setting", n => { PreviewDeploymentSetting = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfigPreviewDeploymentSetting>(); } },
                 { "production_branch", n => { ProductionBranch = n.GetStringValue(); } },
                 { "production_deployments_enabled", n => { ProductionDeploymentsEnabled = n.GetBoolValue(); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
@@ -150,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("pr_comments_enabled", PrCommentsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("preview_branch_excludes", PreviewBranchExcludes);
             writer.WriteCollectionOfPrimitiveValues<string>("preview_branch_includes", PreviewBranchIncludes);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig_preview_deployment_setting>("preview_deployment_setting", PreviewDeploymentSetting);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfigPreviewDeploymentSetting>("preview_deployment_setting", PreviewDeploymentSetting);
             writer.WriteStringValue("production_branch", ProductionBranch);
             writer.WriteBoolValue("production_deployments_enabled", ProductionDeploymentsEnabled);
             writer.WriteStringValue("repo_id", RepoId);

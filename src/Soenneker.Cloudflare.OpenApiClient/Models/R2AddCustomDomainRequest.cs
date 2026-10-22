@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to enable public bucket access at the custom domain. If undefined, the domain will be enabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainRequest_minTLS? MinTLS { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainRequestMinTls? MinTLS { get; set; }
         /// <summary>Zone ID of the custom domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "minTLS", n => { MinTLS = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainRequest_minTLS>(); } },
+                { "minTLS", n => { MinTLS = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainRequestMinTls>(); } },
                 { "zoneId", n => { ZoneId = n.GetStringValue(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("ciphers", Ciphers);
             writer.WriteStringValue("domain", Domain);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainRequest_minTLS>("minTLS", MinTLS);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainRequestMinTls>("minTLS", MinTLS);
             writer.WriteStringValue("zoneId", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }

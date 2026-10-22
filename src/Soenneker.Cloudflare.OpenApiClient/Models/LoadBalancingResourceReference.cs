@@ -18,13 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of references to (referrer) or from (referral) this resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_references>? References { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferencesItemProperty>? References { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_references> References { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferencesItemProperty> References { get; set; }
 #endif
         /// <summary>When listed as a reference, the type (direction) of the reference.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_reference_type? ReferenceType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferenceType? ReferenceType { get; set; }
         /// <summary>The resource_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ResourceName { get; set; }
 #endif
         /// <summary>The type of the resource.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_resource_type? ResourceType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceResourceType? ResourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference"/> and sets the default values.
         /// </summary>
@@ -68,11 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reference_type", n => { ReferenceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_reference_type>(); } },
-                { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_references>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_references.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "reference_type", n => { ReferenceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferenceType>(); } },
+                { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferencesItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferencesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_name", n => { ResourceName = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_resource_type>(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceResourceType>(); } },
             };
         }
         /// <summary>
@@ -82,11 +82,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_references>("references", References);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_reference_type>("reference_type", ReferenceType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferencesItemProperty>("references", References);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceReferenceType>("reference_type", ReferenceType);
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteStringValue("resource_name", ResourceName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReference_resource_type>("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingResourceReferenceResourceType>("resource_type", ResourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

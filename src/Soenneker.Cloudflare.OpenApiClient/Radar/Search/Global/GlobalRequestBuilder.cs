@@ -34,30 +34,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         {
         }
         /// <summary>
-        /// &quot;Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).&quot;
+        /// Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GlobalRequestBuilder.GlobalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GlobalRequestBuilder.GlobalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GlobalRequestBuilder.GlobalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GlobalRequestBuilder.GlobalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobal200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).&quot;
+        /// Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GlobalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).&quot;
+        /// Searches for locations, autonomous systems, reports, bots, certificate logs, certificate authorities, industries and verticals. Location names can be localized by sending an `Accept-Language` HTTP header with a BCP 47 language tag (e.g., `Accept-Language: pt-PT`). The full quality-value chain is supported (e.g., `pt-PT,pt;q=0.9,en;q=0.8`).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GlobalRequestBuilderGetQueryParameters 
@@ -94,24 +94,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("exclude")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GetExcludeQueryParameterType[]? Exclude { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobalExcludeParameterItem[]? Exclude { get; set; }
 #nullable restore
 #else
             [QueryParameter("exclude")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GetExcludeQueryParameterType[] Exclude { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobalExcludeParameterItem[] Exclude { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobalFormatParameter? Format { get; set; }
             /// <summary>Search types included in results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GetIncludeQueryParameterType[]? Include { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobalIncludeParameterItem[]? Include { get; set; }
 #nullable restore
 #else
             [QueryParameter("include")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GetIncludeQueryParameterType[] Include { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetSearchGlobalIncludeParameterItem[] Include { get; set; }
 #endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]

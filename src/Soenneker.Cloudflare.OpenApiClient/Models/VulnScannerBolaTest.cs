@@ -31,8 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep> Steps { get; set; }
 #endif
-        /// <summary>A verdict. `ok` means the scan passed, `warning` means the scan detected issues, `inconclusive` means errors prevented the scanner from reaching an accurate verdict.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVerdict? Verdict { get; set; }
+        /// <summary>Verdict of this single test.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict? Verdict { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict Verdict { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTest"/> and sets the default values.
         /// </summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "preflight_errors", n => { PreflightErrors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "verdict", n => { Verdict = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVerdict>(); } },
+                { "verdict", n => { Verdict = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestError>("preflight_errors", PreflightErrors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStep>("steps", Steps);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVerdict>("verdict", Verdict);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestVerdict>("verdict", Verdict);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

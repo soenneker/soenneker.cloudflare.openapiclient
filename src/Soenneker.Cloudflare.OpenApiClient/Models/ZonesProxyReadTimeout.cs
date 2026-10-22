@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>&quot;Value of the zone setting.Notes: Value must be between 1 and 6000&quot;</summary>
+        /// <summary>Value of the zone setting.Notes: Value must be between 1 and 6000</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesProxyReadTimeout"/> and sets the default values.

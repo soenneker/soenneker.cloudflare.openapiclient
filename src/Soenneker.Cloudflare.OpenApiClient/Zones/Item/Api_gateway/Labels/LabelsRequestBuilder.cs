@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway\labels
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\labels
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LabelsRequestBuilder : BaseRequestBuilder
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/labels{?direction*,filter*,order*,page*,per_page*,source*,with_mapped_resource_counts*}", pathParameters)
+        public LabelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/labels{?direction*,filter*,order*,page*,per_page*,source*,with_mapped_resource_counts*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,23 +42,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/labels{?direction*,filter*,order*,page*,per_page*,source*,with_mapped_resource_counts*}", rawUrl)
+        public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/labels{?direction*,filter*,order*,page*,per_page*,source*,with_mapped_resource_counts*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve all labels
+        /// Returns all managed and user-defined labels available for web and API operations in the zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder.LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -66,10 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsGetLabels200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all labels
+        /// Returns all managed and user-defined labels available for web and API operations in the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,13 +97,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve all labels
+        /// Returns all managed and user-defined labels available for web and API operations in the zone.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LabelsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter for labels where the name or description matches using substring match</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,8 +116,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOrderParameter2? Order { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

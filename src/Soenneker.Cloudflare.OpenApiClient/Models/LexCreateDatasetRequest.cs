@@ -30,6 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField> Fields { get; set; }
 #endif
+        /// <summary>Optional Logpush filter predicate to restrict which events are ingested.See [Logpush filters](https://developers.cloudflare.com/logs/reference/filters/)for syntax and examples.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Filter { get; set; }
+#nullable restore
+#else
+        public string Filter { get; set; }
+#endif
+        /// <summary>Whether to filter attack traffic from the Logpush job. Defaults to`true` for supported datasets when omitted. Supported datasets are`http_requests`, `firewall_events`, and `network_analytics_logs`.</summary>
+        public bool? FilterAttackTraffic { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexCreateDatasetRequest"/> and sets the default values.
         /// </summary>
@@ -57,6 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "filter_attack_traffic", n => { FilterAttackTraffic = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LexLogField>("fields", Fields);
+            writer.WriteStringValue("filter", Filter);
+            writer.WriteBoolValue("filter_attack_traffic", FilterAttackTraffic);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

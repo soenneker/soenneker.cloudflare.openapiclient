@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_f
         /// <summary>
         /// Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.Botnet_threat_feedRequestBuilder.Botnet_threat_feedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.Botnet_threat_feedRequestBuilder.Botnet_threat_feedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.Botnet_threat_feedRequestBuilder.Botnet_threat_feedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.Botnet_threat_feedRequestBuilder.Botnet_threat_feedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeed200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a ranked list of Autonomous Systems based on their presence in the Cloudflare Botnet Threat Feed. Rankings can be sorted by offense count or number of bad IPs. Optionally compare to a previous date to see rank changes.
@@ -110,12 +110,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_f
             [QueryParameter("compareDateRange")]
             public string CompareDateRange { get; set; }
 #endif
-            /// <summary>&quot;The date to retrieve (YYYY-MM-DD format). If not specified, returns the most recent available data. Note: This is the date the report was generated. The report is generated from information collected from the previous day (e.g., the 2026-02-23 entry contains data from 2026-02-22).&quot;</summary>
+            /// <summary>The date to retrieve (YYYY-MM-DD format). If not specified, returns the most recent available data. Note: This is the date the report was generated. The report is generated from information collected from the previous day (e.g., the 2026-02-23 entry contains data from 2026-02-22).</summary>
             [QueryParameter("date")]
             public Date? Date { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeedFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -131,13 +131,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_f
 #endif
             /// <summary>Metric to rank ASNs by.</summary>
             [QueryParameter("metric")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.GetMetricQueryParameterType? Metric { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeedMetricParameter? Metric { get; set; }
             /// <summary>Skips the specified number of objects before fetching the results.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>Sort order.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.GetSortOrderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAsBotnetThreatFeedSortOrderParameter? SortOrder { get; set; }
         }
     }
 }

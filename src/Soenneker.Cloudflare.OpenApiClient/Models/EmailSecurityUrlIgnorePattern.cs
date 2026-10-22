@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A URL ignore pattern that exempts matching URLs from being rewritten by Email Security.
+    /// A URL ignore pattern that exempts matching URLs from Email Security&apos;s URL rewriting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityUrlIgnorePattern : IAdditionalDataHolder, IParsable
@@ -25,20 +25,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUrlIgnorePattern_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUrlIgnorePattern_id Id { get; private set; }
-#endif
-        /// <summary>&quot;Deprecated, use `modified_at` instead. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>URL ignore pattern identifier.</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
         public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The modified_at property</summary>
         public DateTimeOffset? ModifiedAt { get; private set; }
-        /// <summary>Regular expression matching URLs that should not be rewritten.</summary>
+        /// <summary>Regular expression identifying URLs to exempt from rewriting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Pattern { get; set; }
@@ -73,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUrlIgnorePattern_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUrlIgnorePattern_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
@@ -87,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
+            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitor_header? Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorHeader? Header { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitor_header Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorHeader Header { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>&quot;The port number to connect to for the health check. Required for TCP, UDP, and SMTP checks. HTTP and HTTPS checks should only define the port when using a non-standard port (HTTP: default 80, HTTPS: default 443).&quot;</summary>
+        /// <summary>The port number to connect to for the health check. Required for TCP, UDP, and SMTP checks. HTTP and HTTPS checks should only define the port when using a non-standard port (HTTP: default 80, HTTPS: default 443).</summary>
         public int? Port { get; set; }
         /// <summary>Assign this monitor to emulate the specified zone while probing. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingMonitor()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingType.Http;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -134,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expected_body", n => { ExpectedBody = n.GetStringValue(); } },
                 { "expected_codes", n => { ExpectedCodes = n.GetStringValue(); } },
                 { "follow_redirects", n => { FollowRedirects = n.GetBoolValue(); } },
-                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitor_header>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitor_header.CreateFromDiscriminatorValue); } },
+                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorHeader>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorHeader.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetIntValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
@@ -162,7 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expected_body", ExpectedBody);
             writer.WriteStringValue("expected_codes", ExpectedCodes);
             writer.WriteBoolValue("follow_redirects", FollowRedirects);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitor_header>("header", Header);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorHeader>("header", Header);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("interval", Interval);
             writer.WriteStringValue("method", Method);

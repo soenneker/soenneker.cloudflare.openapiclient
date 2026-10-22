@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The member&apos;s status in the account.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMember_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberStatus? Status { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMember"/> and sets the default values.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMember_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberStatus>(); } },
             };
         }
         /// <summary>

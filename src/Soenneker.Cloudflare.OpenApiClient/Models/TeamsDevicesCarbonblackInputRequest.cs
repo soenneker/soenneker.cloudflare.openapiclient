@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Operating system.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequest_operating_system? OperatingSystem { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequestOperatingSystem? OperatingSystem { get; set; }
         /// <summary>File path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequest_operating_system>(); } },
+                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequestOperatingSystem>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
                 { "thumbprint", n => { Thumbprint = n.GetStringValue(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequest_operating_system>("operating_system", OperatingSystem);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequestOperatingSystem>("operating_system", OperatingSystem);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("sha256", Sha256);
             writer.WriteStringValue("thumbprint", Thumbprint);

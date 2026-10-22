@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The keyless SSL port used to communicate between Cloudflare and the client&apos;s Keyless SSL server.</summary>
         public double? Port { get; set; }
         /// <summary>Status of the Keyless SSL.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasStatus? Status { get; private set; }
-        /// <summary>Configuration for using Keyless SSL through a Cloudflare Tunnel</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus2? Status { get; private set; }
+        /// <summary>Configuration for using Keyless SSL through a Cloudflare Tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesKeylessTunnel? Tunnel { get; set; }
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "port", n => { Port = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus2>(); } },
                 { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesKeylessTunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesKeylessTunnel.CreateFromDiscriminatorValue); } },
             };
         }

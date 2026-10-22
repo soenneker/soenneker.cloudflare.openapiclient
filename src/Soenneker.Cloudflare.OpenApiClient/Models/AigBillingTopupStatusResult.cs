@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PaymentIntentId { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResultStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "payment_intent_id", n => { PaymentIntentId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResultStatus>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("payment_intent_id", PaymentIntentId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResult_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingTopupStatusResultStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

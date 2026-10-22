@@ -30,6 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.</summary>
+        public bool? HaMode { get; set; }
         /// <summary>Location of site in latitude and longitude.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "ha_mode", n => { HaMode = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSiteLocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSiteLocation.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "secondary_connector_id", n => { SecondaryConnectorId = n.GetStringValue(); } },
@@ -95,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("ha_mode", HaMode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSiteLocation>("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("secondary_connector_id", SecondaryConnectorId);

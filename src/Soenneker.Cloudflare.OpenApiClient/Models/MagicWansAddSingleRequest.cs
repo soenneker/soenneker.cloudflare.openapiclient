@@ -14,6 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Magic WAN health check rate for tunnels created on this link. The default value is `mid`.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWansAddSingleRequestHealthCheckRate? HealthCheckRate { get; set; }
+        /// <summary>The load_balance_inner_flows property</summary>
+        public bool? LoadBalanceInnerFlows { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,13 +30,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Physport { get; set; }
         /// <summary>The priority property</summary>
         public int? Priority { get; set; }
-        /// <summary>(optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.</summary>
+        /// <summary>Provisioned download rate of the WAN circuit in kilobits per second.</summary>
+        public int? ProvisionedDownloadKbps { get; set; }
+        /// <summary>Provisioned upload rate of the WAN circuit in kilobits per second.</summary>
+        public int? ProvisionedUploadKbps { get; set; }
+        /// <summary>Static addressing configuration for a WAN. Omit to use DHCP. Submit secondary_address when the site is in high availability mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing? StaticAddressing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressingCreateRequest? StaticAddressing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing StaticAddressing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressingCreateRequest StaticAddressing { get; set; }
 #endif
         /// <summary>VLAN ID. Use zero for untagged.</summary>
         public int? VlanTag { get; set; }
@@ -42,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicWansAddSingleRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            LoadBalanceInnerFlows = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,10 +70,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "health_check_rate", n => { HealthCheckRate = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWansAddSingleRequestHealthCheckRate>(); } },
+                { "load_balance_inner_flows", n => { LoadBalanceInnerFlows = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "physport", n => { Physport = n.GetIntValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "static_addressing", n => { StaticAddressing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing.CreateFromDiscriminatorValue); } },
+                { "provisioned_download_kbps", n => { ProvisionedDownloadKbps = n.GetIntValue(); } },
+                { "provisioned_upload_kbps", n => { ProvisionedUploadKbps = n.GetIntValue(); } },
+                { "static_addressing", n => { StaticAddressing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressingCreateRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressingCreateRequest.CreateFromDiscriminatorValue); } },
                 { "vlan_tag", n => { VlanTag = n.GetIntValue(); } },
             };
         }
@@ -75,10 +88,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWansAddSingleRequestHealthCheckRate>("health_check_rate", HealthCheckRate);
+            writer.WriteBoolValue("load_balance_inner_flows", LoadBalanceInnerFlows);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("physport", Physport);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressing>("static_addressing", StaticAddressing);
+            writer.WriteIntValue("provisioned_download_kbps", ProvisionedDownloadKbps);
+            writer.WriteIntValue("provisioned_upload_kbps", ProvisionedUploadKbps);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanStaticAddressingCreateRequest>("static_addressing", StaticAddressing);
             writer.WriteIntValue("vlan_tag", VlanTag);
             writer.WriteAdditionalData(AdditionalData);
         }

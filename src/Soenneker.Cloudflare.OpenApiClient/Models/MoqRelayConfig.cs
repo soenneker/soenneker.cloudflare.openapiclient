@@ -8,28 +8,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// origin_fallback and lingering_subscribe are mutually exclusive.
+    /// Relay configuration. All sub-objects use whole-object replacement whenpresent; omitted sub-objects preserve the existing value.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MoqRelayConfig : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The lingering_subscribe property</summary>
+        /// <summary>Upstreams are external MOQT server publishers that a relay falls backto when it has no local publisher for a requested namespace/track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqLingeringSubscribeConfig? LingeringSubscribe { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstreams? Upstreams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqLingeringSubscribeConfig LingeringSubscribe { get; set; }
-#endif
-        /// <summary>The origin_fallback property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqOriginFallbackConfig? OriginFallback { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqOriginFallbackConfig OriginFallback { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstreams Upstreams { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelayConfig"/> and sets the default values.
@@ -56,8 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lingering_subscribe", n => { LingeringSubscribe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqLingeringSubscribeConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqLingeringSubscribeConfig.CreateFromDiscriminatorValue); } },
-                { "origin_fallback", n => { OriginFallback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqOriginFallbackConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqOriginFallbackConfig.CreateFromDiscriminatorValue); } },
+                { "upstreams", n => { Upstreams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstreams>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstreams.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqLingeringSubscribeConfig>("lingering_subscribe", LingeringSubscribe);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqOriginFallbackConfig>("origin_fallback", OriginFallback);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqUpstreams>("upstreams", Upstreams);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

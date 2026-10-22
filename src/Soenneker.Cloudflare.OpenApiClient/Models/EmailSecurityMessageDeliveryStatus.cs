@@ -35,5 +35,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Queued,
         #pragma warning restore CS1591
+        [EnumMember(Value = "move_failed")]
+        #pragma warning disable CS1591
+        MoveFailed,
+        #pragma warning restore CS1591
     }
 }

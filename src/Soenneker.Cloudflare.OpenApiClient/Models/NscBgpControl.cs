@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ASN used on the customer end of the BGP session</summary>
         public int? CustomerAsn { get; set; }
-        /// <summary>Extra set of static prefixes to advertise to the customer&apos;s end of the session</summary>
+        /// <summary>Extra set of static prefixes to advertise to the customer&apos;s end of the sessionPrefixes containing host bits will be normalized to contain network bits only.Duplicates are not allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExtraPrefixes { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> ExtraPrefixes { get; set; }
 #endif
-        /// <summary>&quot;MD5 key to use for session authentication.Note that *this is not a security measure*. MD5 is not a valid security mechanism, and thekey is not treated as a secret value. This is *only* supported for preventingmisconfiguration, not for defending against malicious attacks.The MD5 key, if set, must be of non-zero length and consist only of the following types ofcharacter:* ASCII alphanumerics: `[a-zA-Z0-9]`* Special characters in the set `&apos;!@#$%^&amp;*()+[]{}&lt;&gt;/.,;:_-~`= \|`In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A),quotation mark (`\&quot;`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed(0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more ofthese disallowed characters will be rejected.&quot;</summary>
+        /// <summary>MD5 key to use for session authentication.Note that *this is not a security measure*. MD5 is not a valid security mechanism, and thekey is not treated as a secret value. This is *only* supported for preventingmisconfiguration, not for defending against malicious attacks.The MD5 key, if set, must be of non-zero length and consist only of the following types ofcharacter:* ASCII alphanumerics: `[a-zA-Z0-9]`* Special characters in the set `&apos;!@#$%^&amp;*()+[]{}&lt;&gt;/.,;:_-~`= \|`In other words, MD5 keys may contain any printable ASCII character aside from newline(0x0A), quotation mark (`&quot;`), vertical tab (0x0B), carriage return (0x0D), tab (0x09),form feed (0x0C), and the question mark (`?`). Requests specifying an MD5 key with oneor more of these disallowed characters will be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Md5Key { get; set; }

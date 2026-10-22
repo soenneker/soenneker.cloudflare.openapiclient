@@ -50,16 +50,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>Combines database connection fields with exactly one supported network location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin? Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull? Origin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull Origin { get; set; }
 #endif
-        /// <summary>&quot;The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts.If not specified, defaults to 20 for free tier and 60 for paid tier.Contact Cloudflare if you need a higher limit.&quot;</summary>
+        /// <summary>The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts.If not specified, defaults to 20 for free tier and 60 for paid tier.Certain Cloudflare-managed origins may be permitted a higher limit.Contact Cloudflare if you need a higher limit.</summary>
         public int? OriginConnectionLimit { get; set; }
+        /// <summary>Defines the last time the Hyperdrive connection pool was explicitly restarted via the restart endpoint. Omitted if the pool has never been explicitly restarted.</summary>
+        public DateTimeOffset? RestartedOn { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig"/> and sets the default values.
         /// </summary>
@@ -91,8 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "mtls", n => { Mtls = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin.CreateFromDiscriminatorValue); } },
+                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull.CreateFromDiscriminatorValue); } },
                 { "origin_connection_limit", n => { OriginConnectionLimit = n.GetIntValue(); } },
+                { "restarted_on", n => { RestartedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -106,64 +109,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls>("mtls", Mtls);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin>("origin", Origin);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull>("origin", Origin);
             writer.WriteIntValue("origin_connection_limit", OriginConnectionLimit);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveDatabaseFull"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class HyperdriveHyperdriveConfig_origin : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveDatabaseFull"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveDatabaseFull? HyperdriveHyperdriveDatabaseFull { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveDatabaseFull HyperdriveHyperdriveDatabaseFull { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfig.HyperdriveHyperdriveConfig_origin();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.HyperdriveHyperdriveDatabaseFull = new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveDatabaseFull();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(HyperdriveHyperdriveDatabaseFull != null)
-                {
-                    return HyperdriveHyperdriveDatabaseFull.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(HyperdriveHyperdriveDatabaseFull != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveDatabaseFull>(null, HyperdriveHyperdriveDatabaseFull);
-                }
-            }
         }
     }
 }

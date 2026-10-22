@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation_value? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocationValueProperty? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation_value Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocationValueProperty Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocationValueProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocationValueProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocationValueProperty>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

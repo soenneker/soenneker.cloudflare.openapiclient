@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_delete;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_tags;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\infrastructure\targets
+    /// Builds and executes requests for operations under \accounts\{account-id}\infrastructure\targets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TargetsRequestBuilder : BaseRequestBuilder
@@ -30,16 +31,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_delete.Batch_deleteRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The batch_tags property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_tags.Batch_tagsRequestBuilder Batch_tags
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_tags.Batch_tagsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.infrastructure.targets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item.WithTarget_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item.WithTarget_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item.WithTargetItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item.WithTargetItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("target_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item.WithTarget_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("targetId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item.WithTargetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TargetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,target_ids*,virtual_network_id*}", pathParameters)
+        public TargetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,tag*,target_ids*,virtual_network_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,23 +61,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TargetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,target_ids*,virtual_network_id*}", rawUrl)
+        public TargetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,tag*,target_ids*,virtual_network_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists and sorts an account’s targets. Filters are optional and are ANDedtogether.
+        /// Lists and sorts an account&apos;s targets. Filters are optional and are ANDedtogether.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.TargetsRequestBuilder.TargetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.TargetsRequestBuilder.TargetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.TargetsRequestBuilder.TargetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.TargetsRequestBuilder.TargetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,23 +85,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.InfraApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new target
+        /// Creates a new infrastructure access target in the account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,10 +110,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.InfraApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists and sorts an account’s targets. Filters are optional and are ANDedtogether.
+        /// Lists and sorts an account&apos;s targets. Filters are optional and are ANDedtogether.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,18 +132,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
             return requestInfo;
         }
         /// <summary>
-        /// Create new target
+        /// Creates a new infrastructure access target in the account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -157,7 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.TargetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists and sorts an account’s targets. Filters are optional and are ANDedtogether.
+        /// Lists and sorts an account&apos;s targets. Filters are optional and are ANDedtogether.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TargetsRequestBuilderGetQueryParameters 
@@ -169,15 +175,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
             [QueryParameter("created_before")]
             public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>The sorting direction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsListDirectionParameter? Direction { get; set; }
             /// <summary>Hostname of a target</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -286,13 +285,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
             public DateTimeOffset? ModifiedBefore { get; set; }
             /// <summary>The field to sort by.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsListOrderParameter? Order { get; set; }
             /// <summary>Current page in the response</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Max amount of entries returned per page</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Filter by tag key:value pairs. Multiple `tag` params are AND&apos;d.Format: `tag=key:value` (e.g., `tag=environment:production`).Key and value must both be non-empty; `tag=:value` and `tag=key:` return 400.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag")]
+            public string[]? Tag { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag")]
+            public string[] Tag { get; set; }
+#endif
             /// <summary>Filters for targets that have any of the following UUIDs. Specify`target_ids` multiple times in query parameter to build list ofcandidates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

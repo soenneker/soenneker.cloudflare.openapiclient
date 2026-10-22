@@ -9,15 +9,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "false_positive")]
         #pragma warning disable CS1591
-        False_positive,
+        FalsePositive,
         #pragma warning restore CS1591
         [EnumMember(Value = "accept_risk")]
         #pragma warning disable CS1591
-        Accept_risk,
+        AcceptRisk,
         #pragma warning restore CS1591
         [EnumMember(Value = "other")]
         #pragma warning disable CS1591
         Other,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

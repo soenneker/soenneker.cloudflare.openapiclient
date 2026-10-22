@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The overTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates_overTime? OverTime { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregatesOverTime? OverTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates_overTime OverTime { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregatesOverTime OverTime { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "avgMs", n => { AvgMs = n.GetIntValue(); } },
                 { "history", n => { History = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringAggregateStat>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringAggregateStat.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "overTime", n => { OverTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates_overTime>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates_overTime.CreateFromDiscriminatorValue); } },
+                { "overTime", n => { OverTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregatesOverTime>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregatesOverTime.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("avgMs", AvgMs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringAggregateStat>("history", History);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregates_overTime>("overTime", OverTime);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTimingAggregatesOverTime>("overTime", OverTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.</summary>
         public bool? AutomaticReturnRouting { get; set; }
+        /// <summary>The bgp property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig? Bgp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig Bgp { get; set; }
+#endif
         /// <summary>An optional description of the interconnect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,13 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The configuration specific to GRE interconnects.</summary>
+        /// <summary>Not configurable for version 1.5 interconnects; supplying it returns an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGre? Gre { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectTunnelUpdateRequestGre? Gre { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGre Gre { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectTunnelUpdateRequestGre Gre { get; set; }
 #endif
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck HealthCheck { get; set; }
 #endif
-        /// <summary>&quot;A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.&quot;</summary>
+        /// <summary>The IPv4 interface address for the interconnect. For MPLS Interconnects,use a /30 or /31 prefix. For GRE Interconnects, a /30 or /31 prefixmay be used. Version 1.5 interconnects require a /31 prefix and mayalso use a prefix from the account&apos;s authorized prefixes; otherwise,select the subnet from RFC 1918 or the approved link-local ranges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InterfaceAddress { get; set; }
@@ -92,8 +100,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "automatic_return_routing", n => { AutomaticReturnRouting = n.GetBoolValue(); } },
+                { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "gre", n => { Gre = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGre>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGre.CreateFromDiscriminatorValue); } },
+                { "gre", n => { Gre = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectTunnelUpdateRequestGre>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectTunnelUpdateRequestGre.CreateFromDiscriminatorValue); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.CreateFromDiscriminatorValue); } },
                 { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
                 { "interface_address6", n => { InterfaceAddress6 = n.GetStringValue(); } },
@@ -109,8 +118,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("automatic_return_routing", AutomaticReturnRouting);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectBgpConfig>("bgp", Bgp);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGre>("gre", Gre);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectTunnelUpdateRequestGre>("gre", Gre);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck>("health_check", HealthCheck);
             writer.WriteStringValue("interface_address", InterfaceAddress);
             writer.WriteStringValue("interface_address6", InterfaceAddress6);

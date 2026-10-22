@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.Validate
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\patterns\validate
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\patterns\validate
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ValidateRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.Validate
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ValidateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/patterns/validate", pathParameters)
+        public ValidateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/patterns/validate", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.Validate
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/patterns/validate", rawUrl)
+        public ValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/patterns/validate", rawUrl)
         {
         }
         /// <summary>
         /// Validates whether this pattern is a valid regular expression. Rejects it ifthe regular expression is too complex or can match an unbounded-lengthstring. The regex will be rejected if it uses `*` or `+`. Bound the maximumnumber of characters that can be matched using a range, e.g. `{1,100}`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRegexValidationQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRegexValidationQuery body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRegexValidationQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRegexValidationQuery body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.Validate
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Validates whether this pattern is a valid regular expression. Rejects it ifthe regular expression is too complex or can match an unbounded-lengthstring. The regex will be rejected if it uses `*` or `+`. Bound the maximumnumber of characters that can be matched using a range, e.g. `{1,100}`.

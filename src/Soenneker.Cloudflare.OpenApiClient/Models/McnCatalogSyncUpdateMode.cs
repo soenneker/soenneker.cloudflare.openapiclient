@@ -10,11 +10,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "AUTO")]
         #pragma warning disable CS1591
-        AUTO,
+        Auto,
         #pragma warning restore CS1591
         [EnumMember(Value = "MANUAL")]
         #pragma warning disable CS1591
-        MANUAL,
+        Manual,
         #pragma warning restore CS1591
     }
 }

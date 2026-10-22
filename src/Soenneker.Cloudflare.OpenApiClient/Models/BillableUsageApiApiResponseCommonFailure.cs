@@ -45,10 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains the response payload (always null on failure).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailure_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailureResultProperty? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailure_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailureResultProperty Result { get; set; }
 #endif
         /// <summary>Indicates whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiMessage>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiMessage>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiMessage.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailureResultProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailureResultProperty.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiMessage>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiMessage>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailure_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiApiResponseCommonFailureResultProperty>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

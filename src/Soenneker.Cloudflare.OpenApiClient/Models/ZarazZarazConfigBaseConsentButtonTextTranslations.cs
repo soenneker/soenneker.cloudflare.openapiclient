@@ -15,28 +15,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_accept_all? AcceptAll { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty? AcceptAll { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_accept_all AcceptAll { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty AcceptAll { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_confirm_my_choices? ConfirmMyChoices { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty? ConfirmMyChoices { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_confirm_my_choices ConfirmMyChoices { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty ConfirmMyChoices { get; set; }
 #endif
         /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_reject_all? RejectAll { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty? RejectAll { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_reject_all RejectAll { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty RejectAll { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accept_all", n => { AcceptAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_accept_all>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_accept_all.CreateFromDiscriminatorValue); } },
-                { "confirm_my_choices", n => { ConfirmMyChoices = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_confirm_my_choices>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_confirm_my_choices.CreateFromDiscriminatorValue); } },
-                { "reject_all", n => { RejectAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_reject_all>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_reject_all.CreateFromDiscriminatorValue); } },
+                { "accept_all", n => { AcceptAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty.CreateFromDiscriminatorValue); } },
+                { "confirm_my_choices", n => { ConfirmMyChoices = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty.CreateFromDiscriminatorValue); } },
+                { "reject_all", n => { RejectAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_accept_all>("accept_all", AcceptAll);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_confirm_my_choices>("confirm_my_choices", ConfirmMyChoices);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslations_reject_all>("reject_all", RejectAll);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsAcceptAllProperty>("accept_all", AcceptAll);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsConfirmMyChoicesProperty>("confirm_my_choices", ConfirmMyChoices);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseConsentButtonTextTranslationsRejectAllProperty>("reject_all", RejectAll);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

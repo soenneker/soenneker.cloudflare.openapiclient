@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ErrorMessage { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationData_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationDataStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationData"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationData_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationDataStatus>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error_message", ErrorMessage);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationData_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationDataStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

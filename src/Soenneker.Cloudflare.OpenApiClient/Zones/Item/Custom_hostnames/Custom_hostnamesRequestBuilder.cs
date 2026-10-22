@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Quota;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\custom_hostnames
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\custom_hostnames
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Custom_hostnamesRequestBuilder : BaseRequestBuilder
@@ -24,16 +25,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The quota property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Quota.QuotaRequestBuilder Quota
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Quota.QuotaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.custom_hostnames.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustomHostnameItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustomHostnameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("custom_hostname_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("customHostnameId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustomHostnameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", pathParameters)
+        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname%2Eexact*,hostname%2EstartsWith*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", rawUrl)
+        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname%2Eexact*,hostname%2EstartsWith*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", rawUrl)
         {
         }
         /// <summary>
@@ -58,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnames4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnames4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder.Custom_hostnamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnames4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnames4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,21 +88,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostnameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostnameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomHostnameResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -127,11 +133,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostnameRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostname body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneCreateCustomHostnameRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -156,60 +162,120 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Custom_hostnamesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("certificate_authority")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetCertificate_authorityQueryParameterType? CertificateAuthority { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnamesCertificateAuthorityParameter? CertificateAuthority { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("custom_origin_server")]
             public string? CustomOriginServer { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("custom_origin_server")]
             public string CustomOriginServer { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnamesDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("hostname")]
             public string? Hostname { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("hostname")]
             public string Hostname { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("hostname%2Econtain")]
             public string? HostnameContain { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("hostname%2Econtain")]
             public string HostnameContain { get; set; }
+            #pragma warning restore CS1591
 #endif
-            [QueryParameter("hostname_status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetHostname_statusQueryParameterType? HostnameStatus { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("id")]
-            public string? Id { get; set; }
+            #pragma warning disable CS1591
+            [QueryParameter("hostname%2Eexact")]
+            public string? HostnameExact { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
+            [QueryParameter("hostname%2Eexact")]
+            public string HostnameExact { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("hostname%2EstartsWith")]
+            public string? HostnameStartsWith { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("hostname%2EstartsWith")]
+            public string HostnameStartsWith { get; set; }
+            #pragma warning restore CS1591
+#endif
+            #pragma warning disable CS1591
+            [QueryParameter("hostname_status")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnamesHostnameStatusParameter? HostnameStatus { get; set; }
+            #pragma warning restore CS1591
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("id")]
+            public string? Id { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string Id { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnamesOrderParameter? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("ssl")]
-            public double? Ssl { get; set; }
+            public int? Ssl { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("ssl_status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetSsl_statusQueryParameterType? SslStatus { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneListCustomHostnamesSslStatusParameter? SslStatus { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("wildcard")]
             public bool? Wildcard { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

@@ -9,11 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "legacy_custom")]
         #pragma warning disable CS1591
-        Legacy_custom,
+        LegacyCustom,
         #pragma warning restore CS1591
         [EnumMember(Value = "sni_custom")]
         #pragma warning disable CS1591
-        Sni_custom,
+        SniCustom,
         #pragma warning restore CS1591
     }
 }

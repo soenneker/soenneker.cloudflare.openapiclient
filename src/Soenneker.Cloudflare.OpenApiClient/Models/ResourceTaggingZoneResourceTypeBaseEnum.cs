@@ -9,27 +9,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "api_gateway_operation")]
         #pragma warning disable CS1591
-        Api_gateway_operation,
+        ApiGatewayOperation,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_certificate")]
         #pragma warning disable CS1591
-        Custom_certificate,
+        CustomCertificate,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_hostname")]
         #pragma warning disable CS1591
-        Custom_hostname,
+        CustomHostname,
         #pragma warning restore CS1591
         [EnumMember(Value = "dns_record")]
         #pragma warning disable CS1591
-        Dns_record,
+        DnsRecord,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcheck")]
+        #pragma warning disable CS1591
+        Healthcheck,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "load_balancer")]
+        #pragma warning disable CS1591
+        LoadBalancer,
         #pragma warning restore CS1591
         [EnumMember(Value = "managed_client_certificate")]
         #pragma warning disable CS1591
-        Managed_client_certificate,
+        ManagedClientCertificate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "worker_route")]
+        #pragma warning disable CS1591
+        WorkerRoute,
         #pragma warning restore CS1591
         [EnumMember(Value = "zone")]
         #pragma warning disable CS1591
         Zone,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "zone_ruleset")]
+        #pragma warning disable CS1591
+        ZoneRuleset,
         #pragma warning restore CS1591
     }
 }

@@ -26,13 +26,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
-        /// <summary>SSO Connector identifier tag.</summary>
+        /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorIdentifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorIdentifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Timestamp for the last update of the SSO connector</summary>
         public DateTimeOffset? UpdatedOn { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorIdentifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "updated_on", n => { UpdatedOn = n.GetDateTimeOffsetValue(); } },
                 { "use_fedramp_language", n => { UseFedrampLanguage = n.GetBoolValue(); } },
                 { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo.CreateFromDiscriminatorValue); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("email_domain", EmailDomain);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorIdentifier>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("updated_on", UpdatedOn);
             writer.WriteBoolValue("use_fedramp_language", UseFedrampLanguage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo>("verification", Verification);

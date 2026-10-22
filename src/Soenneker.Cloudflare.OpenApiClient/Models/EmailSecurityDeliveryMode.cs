@@ -10,23 +10,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "DIRECT")]
         #pragma warning disable CS1591
-        DIRECT,
+        Direct,
         #pragma warning restore CS1591
         [EnumMember(Value = "BCC")]
         #pragma warning disable CS1591
-        BCC,
+        Bcc,
         #pragma warning restore CS1591
         [EnumMember(Value = "JOURNAL")]
         #pragma warning disable CS1591
-        JOURNAL,
+        Journal,
         #pragma warning restore CS1591
         [EnumMember(Value = "API")]
         #pragma warning disable CS1591
-        API,
+        Api,
         #pragma warning restore CS1591
         [EnumMember(Value = "RETRO_SCAN")]
         #pragma warning disable CS1591
-        RETRO_SCAN,
+        RetroScan,
         #pragma warning restore CS1591
     }
 }

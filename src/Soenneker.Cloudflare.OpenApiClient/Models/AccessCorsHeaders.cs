@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Allowed HTTP request methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders_allowed_methods?>? AllowedMethods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAllowedMethodsItem?>? AllowedMethods { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders_allowed_methods?> AllowedMethods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAllowedMethodsItem?> AllowedMethods { get; set; }
 #endif
         /// <summary>Allowed origins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allow_all_origins", n => { AllowAllOrigins = n.GetBoolValue(); } },
                 { "allow_credentials", n => { AllowCredentials = n.GetBoolValue(); } },
                 { "allowed_headers", n => { AllowedHeaders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "allowed_methods", n => { AllowedMethods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders_allowed_methods>()?.AsList(); } },
+                { "allowed_methods", n => { AllowedMethods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAllowedMethodsItem>()?.AsList(); } },
                 { "allowed_origins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "max_age", n => { MaxAge = n.GetDoubleValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("allow_all_origins", AllowAllOrigins);
             writer.WriteBoolValue("allow_credentials", AllowCredentials);
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_headers", AllowedHeaders);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders_allowed_methods>("allowed_methods", AllowedMethods);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAllowedMethodsItem>("allowed_methods", AllowedMethods);
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_origins", AllowedOrigins);
             writer.WriteDoubleValue("max_age", MaxAge);
             writer.WriteAdditionalData(AdditionalData);

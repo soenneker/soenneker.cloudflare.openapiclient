@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.SecretsBulk
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\scripts\{script_name}\secrets-bulk
+    /// Builds and executes requests for operations under \accounts\{account-id}\workers\scripts\{scriptName}\secrets-bulk
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretsBulkRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsBulkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/scripts/{script_name}/secrets-bulk", pathParameters)
+        public SecretsBulkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/scripts/{scriptName}/secrets-bulk", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsBulkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/scripts/{script_name}/secrets-bulk", rawUrl)
+        public SecretsBulkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/scripts/{scriptName}/secrets-bulk", rawUrl)
         {
         }
         /// <summary>
-        /// Create, update, or delete multiple secrets on a script in a single operation using JSON Merge Patch (RFC 7396).Usage:- To create or update a secret, set its value to a secret object.- To delete a secret, set its value to `null`.- Secrets not included in the request are left unchanged.
+        /// Create, update, or delete multiple secrets on a Worker script in a single operation using JSON Merge Patch (RFC 7396).This operation creates a single version with all changes included.Prefer this API instead of changing many secrets individually.Usage:- To create or update a secret, set its value to a secret object.- To delete a secret, set its value to `null`.- Secrets not included in the request are left unchanged.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200Response"/></returns>
         /// <param name="body">JSON Merge Patch (RFC 7396) request body for bulk secret changes.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -58,10 +58,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
                 { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerPatchScriptSecretsBulk200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create, update, or delete multiple secrets on a script in a single operation using JSON Merge Patch (RFC 7396).Usage:- To create or update a secret, set its value to a secret object.- To delete a secret, set its value to `null`.- Secrets not included in the request are left unchanged.
+        /// Create, update, or delete multiple secrets on a Worker script in a single operation using JSON Merge Patch (RFC 7396).This operation creates a single version with all changes included.Prefer this API instead of changing many secrets individually.Usage:- To create or update a secret, set its value to a secret object.- To delete a secret, set its value to `null`.- Secrets not included in the request are left unchanged.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">JSON Merge Patch (RFC 7396) request body for bulk secret changes.</param>

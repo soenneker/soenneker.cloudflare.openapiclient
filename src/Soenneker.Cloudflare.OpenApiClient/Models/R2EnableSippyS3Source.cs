@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string BucketUrl { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyS3Source_provider? Provider { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.S3Provider? Provider { get; set; }
         /// <summary>Secret Access Key of an IAM credential (ideally scoped to a single S3 bucket).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "accessKeyId", n => { AccessKeyId = n.GetStringValue(); } },
                 { "bucketUrl", n => { BucketUrl = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyS3Source_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.S3Provider>(); } },
                 { "secretAccessKey", n => { SecretAccessKey = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessKeyId", AccessKeyId);
             writer.WriteStringValue("bucketUrl", BucketUrl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyS3Source_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.S3Provider>("provider", Provider);
             writer.WriteStringValue("secretAccessKey", SecretAccessKey);
             writer.WriteAdditionalData(AdditionalData);
         }

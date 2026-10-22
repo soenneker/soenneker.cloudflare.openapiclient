@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponseSettings Settings { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponse_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponse"/> and sets the default values.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "queue_name", n => { QueueName = n.GetStringValue(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponseSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponseSettings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerType>(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("queue_name", QueueName);
             writer.WriteStringValue("script_name", ScriptName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponseSettings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

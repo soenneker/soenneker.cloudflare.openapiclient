@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesPseudoIpv4()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPseudoIpv4Value.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

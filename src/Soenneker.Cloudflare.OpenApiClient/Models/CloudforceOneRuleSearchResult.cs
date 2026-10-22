@@ -46,6 +46,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Guid? Id { get; set; }
         /// <summary>Whether this rule is visible to other internal accounts.</summary>
         public bool? IsPublic { get; set; }
+        /// <summary>Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleMetaEntry>? Meta { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleMetaEntry> Meta { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,15 +70,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Namespaces { get; set; }
 #endif
-        /// <summary>Relevance score in [0,1]. Present only when AI Search powers the query.</summary>
-        public double? Score { get; set; }
-        /// <summary>Per-component scoring breakdown returned by AI Search hybrid retrieval.</summary>
+        /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResult_scoring_details? ScoringDetails { get; set; }
+        public string? Path { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResult_scoring_details ScoringDetails { get; set; }
+        public string Path { get; set; }
+#endif
+        /// <summary>ID of an open approval workflow targeting this rule, or null if none is pending.</summary>
+        public double? PendingApprovalId { get; set; }
+        /// <summary>Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePendingRuleChange? PendingChange { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePendingRuleChange PendingChange { get; set; }
+#endif
+        /// <summary>Relevance score in [0,1]. Present only when AI Search powers the query.</summary>
+        public double? Score { get; set; }
+        /// <summary>AI Search hybrid retrieval returns this per-component scoring breakdown.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResultAllOf2ScoringDetails? ScoringDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResultAllOf2ScoringDetails ScoringDetails { get; set; }
+#endif
+        /// <summary>Original JSON payload for rules created via the structured rules API. Null for hand-written rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StructuredSource { get; set; }
+#nullable restore
+#else
+        public string StructuredSource { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public double? UpdatedAt { get; set; }
@@ -114,10 +148,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
+                { "meta", n => { Meta = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleMetaEntry>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleMetaEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespaces", n => { Namespaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "pending_approval_id", n => { PendingApprovalId = n.GetDoubleValue(); } },
+                { "pending_change", n => { PendingChange = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePendingRuleChange>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePendingRuleChange.CreateFromDiscriminatorValue); } },
                 { "score", n => { Score = n.GetDoubleValue(); } },
-                { "scoring_details", n => { ScoringDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResult_scoring_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResult_scoring_details.CreateFromDiscriminatorValue); } },
+                { "scoring_details", n => { ScoringDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResultAllOf2ScoringDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResultAllOf2ScoringDetails.CreateFromDiscriminatorValue); } },
+                { "structured_source", n => { StructuredSource = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDoubleValue(); } },
                 { "updated_by", n => { UpdatedBy = n.GetStringValue(); } },
             };
@@ -136,10 +175,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_public", IsPublic);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleMetaEntry>("meta", Meta);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("namespaces", Namespaces);
+            writer.WriteStringValue("path", Path);
+            writer.WriteDoubleValue("pending_approval_id", PendingApprovalId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePendingRuleChange>("pending_change", PendingChange);
             writer.WriteDoubleValue("score", Score);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResult_scoring_details>("scoring_details", ScoringDetails);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleSearchResultAllOf2ScoringDetails>("scoring_details", ScoringDetails);
+            writer.WriteStringValue("structured_source", StructuredSource);
             writer.WriteDoubleValue("updated_at", UpdatedAt);
             writer.WriteStringValue("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);

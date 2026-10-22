@@ -14,27 +14,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The direction of the flow of the healthcheck. Either unidirectional, where the probe comes to you via the interconnect and the result comes back to Cloudflare via the open Internet, or bidirectional where both the probe and result come and go via the interconnect.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheckDirection? Direction { get; set; }
         /// <summary>Determines whether to run healthchecks for a tunnel.</summary>
         public bool? Enabled { get; set; }
         /// <summary>How frequent the health check is run. The default value is `mid`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_rate? Rate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseRate? Rate { get; set; }
+        /// <summary>The source IPv4 address used for bidirectional health checks. Supported only for version 1.5 interconnects. It is required when `direction` is `bidirectional` and must be omitted (and is cleared) when `direction` is `unidirectional`. The address must be within RFC1918 space, the approved link-local range 169.254.240.0/20, or the Cloudflare reserved range 198.41.199.224/27.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get; set; }
+#nullable restore
+#else
+        public string Source { get; set; }
+#endif
         /// <summary>The destination address in a request type health check. After the healthcheck is decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded to this address. This field defaults to `customer_gre_endpoint address`. This field is ignored for bidirectional healthchecks as the interface_address (not assigned to the Cloudflare side of the tunnel) is used as the target. Must be in object form if the x-magic-new-hc-target header is set to true and string form if x-magic-new-hc-target is absent or set to false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target? Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTarget? Target { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTarget Target { get; set; }
 #endif
         /// <summary>The type of healthcheck to run, reply or request. The default value is `reply`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck"/> and sets the default values.
         /// </summary>
         public MagicInterconnectHealthCheck()
         {
             AdditionalData = new Dictionary<string, object>();
-            Rate = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_rate.Mid;
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,10 +64,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheckDirection>(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "rate", n => { Rate = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_rate>(); } },
-                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_type>(); } },
+                { "rate", n => { Rate = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseRate>(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTarget>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTarget.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseType>(); } },
             };
         }
         /// <summary>
@@ -67,86 +79,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheckDirection>("direction", Direction);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_rate>("rate", Rate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target>("target", Target);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseRate>("rate", Rate);
+            writer.WriteStringValue("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTarget>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MagicInterconnectHealthCheck_target : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget? MagicHealthCheckTarget { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget MagicHealthCheckTarget { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicInterconnectHealthCheck.MagicInterconnectHealthCheck_target();
-                if("MagicHealthCheckTarget".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.MagicHealthCheckTarget = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MagicHealthCheckTarget != null)
-                {
-                    return MagicHealthCheckTarget.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(MagicHealthCheckTarget != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget>(null, MagicHealthCheckTarget);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
         }
     }
 }

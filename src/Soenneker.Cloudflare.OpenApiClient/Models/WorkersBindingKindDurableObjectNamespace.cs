@@ -46,13 +46,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The namespace_id property</summary>
+        /// <summary>Namespace identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_namespace_id? NamespaceId { get; set; }
+        public string? NamespaceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_namespace_id NamespaceId { get; set; }
+        public string NamespaceId { get; set; }
 #endif
         /// <summary>The script where the Durable Object is defined, if it is external to this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,8 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ScriptName { get; set; }
 #endif
-        /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_type? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectNamespaceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace"/> and sets the default values.
         /// </summary>
@@ -93,9 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dispatch_namespace", n => { DispatchNamespace = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace_id", n => { NamespaceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_namespace_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_namespace_id.CreateFromDiscriminatorValue); } },
+                { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectNamespaceType>(); } },
             };
         }
         /// <summary>
@@ -109,9 +109,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dispatch_namespace", DispatchNamespace);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_namespace_id>("namespace_id", NamespaceId);
+            writer.WriteStringValue("namespace_id", NamespaceId);
             writer.WriteStringValue("script_name", ScriptName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDurableObjectNamespace_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DurableObjectNamespaceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A flag to enable or disable SCIM for the identity provider.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Indicates how a SCIM event updates a user identity used for policy evaluation. Use &quot;automatic&quot; to automatically update a user&apos;s identity and augment it with fields from the SCIM user resource. Use &quot;reauth&quot; to force re-authentication on group membership updates, user identity update will only occur after successful re-authentication. With &quot;reauth&quot; identities will not contain fields from the SCIM user resource. With &quot;no_action&quot; identities will not be changed by SCIM updates in any way and users will not be prompted to reauthenticate.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig_identity_update_behavior? IdentityUpdateBehavior { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfigIdentityUpdateBehavior? IdentityUpdateBehavior { get; set; }
         /// <summary>The base URL of Cloudflare&apos;s SCIM V2.0 API endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccessIdentityProviderScimConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            IdentityUpdateBehavior = global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig_identity_update_behavior.No_action;
+            Enabled = false;
+            SeatDeprovision = false;
+            UserDeprovision = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "identity_update_behavior", n => { IdentityUpdateBehavior = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig_identity_update_behavior>(); } },
+                { "identity_update_behavior", n => { IdentityUpdateBehavior = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfigIdentityUpdateBehavior>(); } },
                 { "scim_base_url", n => { ScimBaseUrl = n.GetStringValue(); } },
                 { "seat_deprovision", n => { SeatDeprovision = n.GetBoolValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
@@ -81,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig_identity_update_behavior>("identity_update_behavior", IdentityUpdateBehavior);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfigIdentityUpdateBehavior>("identity_update_behavior", IdentityUpdateBehavior);
             writer.WriteBoolValue("seat_deprovision", SeatDeprovision);
             writer.WriteBoolValue("user_deprovision", UserDeprovision);
             writer.WriteAdditionalData(AdditionalData);

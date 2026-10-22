@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_errors>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_errors> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_messages>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_messages> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,8 +73,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_messages.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResult.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -87,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_errors>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse_messages>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseErrorsItem>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponseResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);

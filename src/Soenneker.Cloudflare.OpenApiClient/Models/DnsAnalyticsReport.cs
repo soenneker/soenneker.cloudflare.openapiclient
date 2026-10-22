@@ -27,18 +27,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Maximum results for each metric (object mapping metric names to values). Currently always an empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_max? Max { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMax? Max { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_max Max { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMax Max { get; set; }
 #endif
         /// <summary>Minimum results for each metric (object mapping metric names to values). Currently always an empty object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_min? Min { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMin? Min { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_min Min { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMin Min { get; set; }
 #endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,10 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Total results for metrics across all data (object mapping metric names to values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_totals? Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportTotals? Totals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_totals Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportTotals Totals { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport"/> and sets the default values.
@@ -85,11 +85,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsDataItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data_lag", n => { DataLag = n.GetDoubleValue(); } },
-                { "max", n => { Max = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_max>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_max.CreateFromDiscriminatorValue); } },
-                { "min", n => { Min = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_min>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_min.CreateFromDiscriminatorValue); } },
+                { "max", n => { Max = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMax>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMax.CreateFromDiscriminatorValue); } },
+                { "min", n => { Min = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMin>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMin.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsQuery>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsQuery.CreateFromDiscriminatorValue); } },
                 { "rows", n => { Rows = n.GetDoubleValue(); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_totals>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_totals.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportTotals>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportTotals.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,11 +101,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsDataItem>("data", Data);
             writer.WriteDoubleValue("data_lag", DataLag);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_max>("max", Max);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_min>("min", Min);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMax>("max", Max);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportMin>("min", Min);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsQuery>("query", Query);
             writer.WriteDoubleValue("rows", Rows);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReport_totals>("totals", Totals);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsReportTotals>("totals", Totals);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

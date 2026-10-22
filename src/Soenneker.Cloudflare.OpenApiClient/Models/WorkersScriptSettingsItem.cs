@@ -19,18 +19,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The observability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_observability? Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItemObservability? Observability { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_observability Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItemObservability Observability { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Tags associated with the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_tags? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_tags Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>List of Workers that will consume logs from the attached Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
-                { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_observability>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_observability.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_tags.CreateFromDiscriminatorValue); } },
+                { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItemObservability>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItemObservability.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -79,8 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("logpush", Logpush);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_observability>("observability", Observability);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItem_tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItemObservability>("observability", Observability);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>("tail_consumers", TailConsumers);
             writer.WriteAdditionalData(AdditionalData);
         }

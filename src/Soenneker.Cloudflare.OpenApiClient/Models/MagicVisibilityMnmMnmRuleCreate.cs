@@ -52,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicVisibilityMnmMnmRuleCreate()
         {
             AdditionalData = new Dictionary<string, object>();
-            Duration = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnmMnmRuleDuration.Onem;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

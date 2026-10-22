@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Line number in the trace log</summary>
+        /// <summary>Line number in the trace log.</summary>
         public int? Lineno { get; set; }
         /// <summary>The logged_at property</summary>
         public DateTimeOffset? LoggedAt { get; private set; }
@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>&quot;Deprecated, use `logged_at` instead. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated, use `logged_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

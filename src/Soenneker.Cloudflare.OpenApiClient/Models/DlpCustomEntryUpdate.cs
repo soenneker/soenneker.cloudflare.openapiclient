@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern Pattern { get; set; }
 #endif
+        /// <summary>Validators this entry should reference, by id, at most 10. Replaces the current set.Optional, unlike the rest of this body: omitting it leaves the current attachments alone, so aclient that predates validators cannot detach them by accident. Send `[]` to detach.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ValidatorIds { get; set; }
+#nullable restore
+#else
+        public List<Guid?> ValidatorIds { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomEntryUpdate"/> and sets the default values.
         /// </summary>
@@ -69,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pattern", n => { Pattern = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern.CreateFromDiscriminatorValue); } },
+                { "validator_ids", n => { ValidatorIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -82,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern>("pattern", Pattern);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("validator_ids", ValidatorIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

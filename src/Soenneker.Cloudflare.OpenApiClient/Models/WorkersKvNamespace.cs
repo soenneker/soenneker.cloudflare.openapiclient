@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Namespace identifier tag.</summary>
+        /// <summary>ID of the Workers KV namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,9 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Specify the jurisdiction to restrict the KV namespace to durably store data within. Can only be set at namespace creation time.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvJurisdiction? Jurisdiction { get; set; }
+        /// <summary>The mode of the Workers KV namespace. Specify `instant` when creating a namespace to create a KV Instant namespace. Omit this field when creating a namespace to create a classic namespace. Currently, `instant` is the only supported explicit value.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvNamespaceMode? Mode { get; set; }
         /// <summary>True if keys written on the URL will be URL-decoded before storing. For example, if set to &quot;true&quot;, a key written on the URL as &quot;%3F&quot; will be stored as &quot;?&quot;.</summary>
         public bool? SupportsUrlEncoding { get; private set; }
-        /// <summary>A human-readable string name for a Namespace.</summary>
+        /// <summary>Human-readable string name for a Workers KV namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -58,6 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvJurisdiction>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvNamespaceMode>(); } },
                 { "supports_url_encoding", n => { SupportsUrlEncoding = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -70,6 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvJurisdiction>("jurisdiction", Jurisdiction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvNamespaceMode>("mode", Mode);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

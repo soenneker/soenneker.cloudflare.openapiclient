@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;When enabled, Cloudflare provisions an AI Search instance for the zoneand exposes a /.well-known/ai-search endpoint that AI agents can query.Markdown responses also receive an agent: YAML capability block advertisingthe search endpoint.&quot;
+    /// When enabled, Cloudflare provisions an AI Search instance for the zoneand exposes a /.well-known/ai-search endpoint that AI agents can query.Markdown responses also receive an agent: YAML capability block advertisingthe search endpoint.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesSearchForAgents : IAdditionalDataHolder, IParsable
@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesSearchForAgents()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSearchForAgentsValue.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

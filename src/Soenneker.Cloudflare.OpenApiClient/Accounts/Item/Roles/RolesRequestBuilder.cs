@@ -13,21 +13,22 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\roles
+    /// Builds and executes requests for operations under \accounts\{account-id}\roles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RolesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.roles.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.Item.WithRole_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.Item.WithRole_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.Item.WithRoleItemRequestBuilder"/></returns>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.Item.WithRoleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("role_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.Item.WithRole_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("roleId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.Item.WithRoleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RolesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/roles{?page*,per_page*}", pathParameters)
+        public RolesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/roles{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RolesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/roles{?page*,per_page*}", rawUrl)
+        public RolesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/roles{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -53,6 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCollectionRoleResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -93,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder(rawUrl, RequestAdapter);
@@ -103,10 +107,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RolesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

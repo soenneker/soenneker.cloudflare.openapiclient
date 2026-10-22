@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings Settings { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequest_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dead_letter_queue", n => { DeadLetterQueue = n.GetStringValue(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerType>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dead_letter_queue", DeadLetterQueue);
             writer.WriteStringValue("script_name", ScriptName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequestSettings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkerType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

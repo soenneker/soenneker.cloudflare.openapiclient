@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway\configuration
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\configuration
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConfigurationRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/configuration{?normalize*}", pathParameters)
+        public ConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/configuration{?normalize*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/configuration{?normalize*}", rawUrl)
+        public ConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/configuration{?normalize*}", rawUrl)
         {
         }
         /// <summary>
-        /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
+        /// Returns the authentication identifier characteristics configured for the zone. Header, cookie, or JWT claim values identify distinct API sessions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfigurationSingleResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfigurationSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfigurationSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
+        /// Replaces the zone&apos;s authentication identifier characteristics used to identify distinct API sessions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfigurationSingleResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfigurationSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldConfigurationSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
+        /// Returns the authentication identifier characteristics configured for the zone. Header, cookie, or JWT claim values identify distinct API sessions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return requestInfo;
         }
         /// <summary>
-        /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
+        /// Replaces the zone&apos;s authentication identifier characteristics used to identify distinct API sessions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration.ConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
+        /// Returns the authentication identifier characteristics configured for the zone. Header, cookie, or JWT claim values identify distinct API sessions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationRequestBuilderGetQueryParameters 
@@ -142,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             public bool? Normalize { get; set; }
         }
         /// <summary>
-        /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
+        /// Replaces the zone&apos;s authentication identifier characteristics used to identify distinct API sessions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationRequestBuilderPutQueryParameters 

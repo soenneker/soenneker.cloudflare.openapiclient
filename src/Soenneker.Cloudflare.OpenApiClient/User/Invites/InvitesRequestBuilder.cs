@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Invites
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.user.invites.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Invites.Item.WithInvite_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Invites.Item.WithInvite_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Invites.Item.WithInviteItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Invites.Item.WithInviteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("invite_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.User.Invites.Item.WithInvite_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("inviteId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.User.Invites.Item.WithInviteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

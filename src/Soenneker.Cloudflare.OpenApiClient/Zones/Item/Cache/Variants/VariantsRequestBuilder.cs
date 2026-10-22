@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\cache\variants
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\cache\variants
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariantsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/cache/variants", pathParameters)
+        public VariantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/cache/variants", pathParameters)
         {
         }
         /// <summary>
@@ -30,82 +30,82 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/cache/variants", rawUrl)
+        public VariantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/cache/variants", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
+        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsDeleteVariantsSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
+        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetVariantsSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
+        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSettingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSettingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
+        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
+        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,18 +143,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
+        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSettingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsChangeVariantsSettingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

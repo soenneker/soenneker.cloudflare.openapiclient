@@ -16,15 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants
     public partial class TenantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.tenants.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder this[string position]
+        /// <param name="position">The ID of the tenant to retrieve.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.TenantItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.TenantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tenant_%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tenant%2Did", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.TenantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

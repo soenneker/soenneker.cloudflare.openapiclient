@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>&quot;Value of the zone setting.Notes: Defaults to on for Business+ plans&quot;</summary>
+        /// <summary>Value of the zone setting.Notes: Defaults to on for Business+ plans</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAdvancedDdosValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAdvancedDdos"/> and sets the default values.
@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesAdvancedDdos()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAdvancedDdosValue.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

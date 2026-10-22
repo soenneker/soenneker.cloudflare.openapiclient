@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tenants\{tenant_-id}\custom_ns
+    /// Builds and executes requests for operations under \tenants\{tenant-id}\custom_ns
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Custom_nsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.tenants.item.custom_ns.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item.WithCustom_ns_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item.WithCustom_ns_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item.WithCustomNsItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item.WithCustomNsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("custom_ns_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item.WithCustom_ns_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("customNsId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Item.WithCustomNsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_nsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant_%2Did}/custom_ns", pathParameters)
+        public Custom_nsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant%2Did}/custom_ns", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_nsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant_%2Did}/custom_ns", rawUrl)
+        public Custom_nsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant%2Did}/custom_ns", rawUrl)
         {
         }
         /// <summary>
-        /// List a tenant&apos;s custom nameservers.
+        /// Lists a tenant&apos;s custom nameservers.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversListTenantCustomNameservers4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversListTenantCustomNameservers4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseCollection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,37 +65,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversListTenantCustomNameservers4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversListTenantCustomNameservers4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add Tenant Custom Nameserver
+        /// Adds a custom nameserver for a tenant.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversAddTenantCustomNameserver4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversAddTenantCustomNameserver4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNSInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNSInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversAddTenantCustomNameserver4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TenantLevelCustomNameserversAddTenantCustomNameserver4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversTcnsResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List a tenant&apos;s custom nameservers.
+        /// Lists a tenant&apos;s custom nameservers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,18 +114,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns
             return requestInfo;
         }
         /// <summary>
-        /// Add Tenant Custom Nameserver
+        /// Adds a custom nameserver for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNSInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsInput body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNSInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversCustomNsInput body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

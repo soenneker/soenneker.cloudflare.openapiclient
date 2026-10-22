@@ -64,6 +64,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LeftAt { get; set; }
 #endif
+        /// <summary>Connection lifecycle events for the participant&apos;s peer. Only included when `include_peer_events` is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEvent>? PeerEvents { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEvent> PeerEvents { get; set; }
+#endif
         /// <summary>Name of the preset associated with the participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "joined_at", n => { JoinedAt = n.GetStringValue(); } },
                 { "left_at", n => { LeftAt = n.GetStringValue(); } },
+                { "peer_events", n => { PeerEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEvent>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "preset_name", n => { PresetName = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
@@ -139,6 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("joined_at", JoinedAt);
             writer.WriteStringValue("left_at", LeftAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPeerEvent>("peer_events", PeerEvents);
             writer.WriteStringValue("preset_name", PresetName);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_id", UserId);

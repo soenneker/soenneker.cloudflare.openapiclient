@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string VirtualNetworkId { get; set; }
 #endif
-        /// <summary>&quot;The weight of this origin relative to other origins in the pool. Based on the configured weight the total traffic is distributed among origins within the pool.- `origin_steering.policy=\&quot;least_outstanding_requests\&quot;`: Use weight to scale the origin&apos;s outstanding requests.- `origin_steering.policy=\&quot;least_connections\&quot;`: Use weight to scale the origin&apos;s open connections.&quot;</summary>
+        /// <summary>The weight of this origin relative to other origins in the pool. Based on the configured weight the total traffic is distributed among origins within the pool.- `origin_steering.policy=&quot;least_outstanding_requests&quot;`: Use weight to scale the origin&apos;s outstanding requests.- `origin_steering.policy=&quot;least_connections&quot;`: Use weight to scale the origin&apos;s open connections.</summary>
         public double? Weight { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOrigin"/> and sets the default values.

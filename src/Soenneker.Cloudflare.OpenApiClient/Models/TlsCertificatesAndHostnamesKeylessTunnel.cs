@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration for using Keyless SSL through a Cloudflare Tunnel
+    /// Configuration for using Keyless SSL through a Cloudflare Tunnel.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TlsCertificatesAndHostnamesKeylessTunnel : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Private IP of the Key Server Host</summary>
+        /// <summary>Private IP of the Key Server Host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateIp { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PrivateIp { get; set; }
 #endif
-        /// <summary>Cloudflare Tunnel Virtual Network ID</summary>
+        /// <summary>Cloudflare Tunnel Virtual Network ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VnetId { get; set; }

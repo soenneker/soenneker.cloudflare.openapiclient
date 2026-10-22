@@ -39,17 +39,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The invoice_lines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_invoice_lines>? InvoiceLines { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem>? InvoiceLines { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_invoice_lines> InvoiceLines { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem> InvoiceLines { get; set; }
 #endif
         /// <summary>The period_end property</summary>
         public double? PeriodEnd { get; set; }
         /// <summary>The period_start property</summary>
         public double? PeriodStart { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult"/> and sets the default values.
         /// </summary>
@@ -80,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "amount_remaining", n => { AmountRemaining = n.GetDoubleValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "invoice_lines", n => { InvoiceLines = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_invoice_lines>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_invoice_lines.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "invoice_lines", n => { InvoiceLines = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "period_end", n => { PeriodEnd = n.GetDoubleValue(); } },
                 { "period_start", n => { PeriodStart = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultStatus>(); } },
             };
         }
         /// <summary>
@@ -98,10 +98,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("amount_remaining", AmountRemaining);
             writer.WriteStringValue("currency", Currency);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_invoice_lines>("invoice_lines", InvoiceLines);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultInvoiceLinesItem>("invoice_lines", InvoiceLines);
             writer.WriteDoubleValue("period_end", PeriodEnd);
             writer.WriteDoubleValue("period_start", PeriodStart);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResult_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoicePreviewResultStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

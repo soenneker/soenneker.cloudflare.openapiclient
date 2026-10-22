@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishguard;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings;
@@ -13,11 +14,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security
+    /// Builds and executes requests for operations under \accounts\{account-id}\email-security
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The investigate property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder Investigate
         {
@@ -43,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailSecurityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security", pathParameters)
+        public EmailSecurityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security", pathParameters)
         {
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailSecurityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security", rawUrl)
+        public EmailSecurityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security", rawUrl)
         {
         }
     }

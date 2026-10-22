@@ -10,11 +10,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "default")]
         #pragma warning disable CS1591
-        Default,
+        DefaultValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "eu")]
         #pragma warning disable CS1591
         Eu,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "us")]
+        #pragma warning disable CS1591
+        Us,
         #pragma warning restore CS1591
         [EnumMember(Value = "fedramp")]
         #pragma warning disable CS1591

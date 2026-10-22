@@ -8,6 +8,8 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTempla
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,7 +17,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Api_gatewayRequestBuilder : BaseRequestBuilder
@@ -50,12 +52,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The user_schemas property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder User_schemas
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Api_gatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Api_gatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway", pathParameters)
+        public Api_gatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway", pathParameters)
         {
         }
         /// <summary>
@@ -63,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Api_gatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway", rawUrl)
+        public Api_gatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway", rawUrl)
         {
         }
     }

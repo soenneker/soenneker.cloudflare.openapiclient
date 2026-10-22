@@ -17,13 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A metadata filter expression used to limit nearest neighbor results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_filter? Filter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_filter Filter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty Filter { get; set; }
 #endif
         /// <summary>Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_returnMetadata? ReturnMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestReturnMetadata? ReturnMetadata { get; set; }
         /// <summary>Whether to return the values associated with the closest vectors.</summary>
         public bool? ReturnValues { get; set; }
         /// <summary>The number of nearest neighbors to find.</summary>
@@ -42,7 +42,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public VectorizeIndexQueryV2Request()
         {
             AdditionalData = new Dictionary<string, object>();
-            ReturnMetadata = global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_returnMetadata.None;
+            ReturnValues = false;
+            TopK = 5;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_filter>(global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_filter.CreateFromDiscriminatorValue); } },
-                { "returnMetadata", n => { ReturnMetadata = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_returnMetadata>(); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty.CreateFromDiscriminatorValue); } },
+                { "returnMetadata", n => { ReturnMetadata = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestReturnMetadata>(); } },
                 { "returnValues", n => { ReturnValues = n.GetBoolValue(); } },
                 { "topK", n => { TopK = n.GetDoubleValue(); } },
                 { "vector", n => { Vector = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
@@ -76,8 +77,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_filter>("filter", Filter);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2Request_returnMetadata>("returnMetadata", ReturnMetadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestFilterProperty>("filter", Filter);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexQueryV2RequestReturnMetadata>("returnMetadata", ReturnMetadata);
             writer.WriteBoolValue("returnValues", ReturnValues);
             writer.WriteDoubleValue("topK", TopK);
             writer.WriteCollectionOfPrimitiveValues<double?>("vector", Vector);

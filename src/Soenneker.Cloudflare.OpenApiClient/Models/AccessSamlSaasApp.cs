@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional identifier indicating the authentication protocol used for the saas app. Required for OIDC. Default if unset is &quot;saml&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_auth_type? AuthType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppAuthType? AuthType { get; set; }
         /// <summary>The service provider&apos;s endpoint that is responsible for receiving and parsing a SAML assertion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,20 +25,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ConsumerServiceUrl { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The custom_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_custom_attributes>? CustomAttributes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem>? CustomAttributes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_custom_attributes> CustomAttributes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem> CustomAttributes { get; set; }
 #endif
         /// <summary>The URL that the user will be redirected to after a successful login for IDP initiated logins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string IdpEntityId { get; set; }
 #endif
         /// <summary>The format of the name identifier sent to the SaaS application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_name_id_format? NameIdFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppNameIdFormat? NameIdFormat { get; set; }
         /// <summary>A [JSONata](https://jsonata.org/) expression that transforms an application&apos;s user identities into a NameID value for its SAML assertion. This expression should evaluate to a singular string. The output of this expression can override the `name_id_format` setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,13 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SsoEndpoint { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt UpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp"/> and sets the default values.
         /// </summary>
@@ -131,19 +119,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppAuthType>(); } },
                 { "consumer_service_url", n => { ConsumerServiceUrl = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt.CreateFromDiscriminatorValue); } },
-                { "custom_attributes", n => { CustomAttributes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_custom_attributes>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_custom_attributes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "custom_attributes", n => { CustomAttributes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "default_relay_state", n => { DefaultRelayState = n.GetStringValue(); } },
                 { "idp_entity_id", n => { IdpEntityId = n.GetStringValue(); } },
-                { "name_id_format", n => { NameIdFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_name_id_format>(); } },
+                { "name_id_format", n => { NameIdFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppNameIdFormat>(); } },
                 { "name_id_transform_jsonata", n => { NameIdTransformJsonata = n.GetStringValue(); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
                 { "saml_attribute_transform_jsonata", n => { SamlAttributeTransformJsonata = n.GetStringValue(); } },
                 { "sp_entity_id", n => { SpEntityId = n.GetStringValue(); } },
                 { "sso_endpoint", n => { SsoEndpoint = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -153,19 +141,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppAuthType>("auth_type", AuthType);
             writer.WriteStringValue("consumer_service_url", ConsumerServiceUrl);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_custom_attributes>("custom_attributes", CustomAttributes);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppCustomAttributesItem>("custom_attributes", CustomAttributes);
             writer.WriteStringValue("default_relay_state", DefaultRelayState);
             writer.WriteStringValue("idp_entity_id", IdpEntityId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasApp_name_id_format>("name_id_format", NameIdFormat);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlSaasAppNameIdFormat>("name_id_format", NameIdFormat);
             writer.WriteStringValue("name_id_transform_jsonata", NameIdTransformJsonata);
             writer.WriteStringValue("public_key", PublicKey);
             writer.WriteStringValue("saml_attribute_transform_jsonata", SamlAttributeTransformJsonata);
             writer.WriteStringValue("sp_entity_id", SpEntityId);
             writer.WriteStringValue("sso_endpoint", SsoEndpoint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>("updated_at", UpdatedAt);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

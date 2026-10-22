@@ -23,14 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ClientId { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt CreatedAt { get; set; }
-#endif
-        /// <summary>&quot;The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).&quot;</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`, or the special value `forever` for non-expiring tokens. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Duration { get; set; }
@@ -38,23 +32,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Duration { get; set; }
 #endif
+        /// <summary>Whether the service token is enabled. A disabled service token cannot be used to authenticate; both its current and previous `client_secret` stop being accepted, but the token itself is preserved and can be re-enabled. A service token reported as leaked is disabled automatically and cannot be re-enabled until its secret is rotated; attempting to do so returns a 409. Defaults to enabled when omitted on create.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The expires_at property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the service token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The last_seen_at property</summary>
+        public DateTimeOffset? LastSeenAt { get; set; }
+        /// <summary>When a secret scanning partner reported this service token&apos;s `client_secret` as leaked. A leaked service token is disabled and must be rotated before it can be re-enabled. Cleared once the secret is rotated. Omitted if the token has not been reported as leaked.</summary>
+        public DateTimeOffset? LeakReportedAt { get; set; }
+        /// <summary>The secret scanning partner that reported the leak. Omitted if the token has not been reported as leaked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_last_seen_at? LastSeenAt { get; set; }
+        public string? LeakReporter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_last_seen_at LastSeenAt { get; set; }
+        public string LeakReporter { get; set; }
+#endif
+        /// <summary>Where the leaked `client_secret` was found, if provided by the reporter. Omitted if the token has not been reported as leaked.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LeakReportUrl { get; set; }
+#nullable restore
+#else
+        public string LeakReportUrl { get; set; }
 #endif
         /// <summary>The name of the service token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,13 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt UpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens"/> and sets the default values.
         /// </summary>
@@ -98,13 +100,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "duration", n => { Duration = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_id.CreateFromDiscriminatorValue); } },
-                { "last_seen_at", n => { LastSeenAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_last_seen_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_last_seen_at.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
+                { "leak_report_url", n => { LeakReportUrl = n.GetStringValue(); } },
+                { "leak_reported_at", n => { LeakReportedAt = n.GetDateTimeOffsetValue(); } },
+                { "leak_reporter", n => { LeakReporter = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -115,13 +121,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("duration", Duration);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokens_last_seen_at>("last_seen_at", LastSeenAt);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
+            writer.WriteDateTimeOffsetValue("leak_reported_at", LeakReportedAt);
+            writer.WriteStringValue("leak_reporter", LeakReporter);
+            writer.WriteStringValue("leak_report_url", LeakReportUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>("updated_at", UpdatedAt);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

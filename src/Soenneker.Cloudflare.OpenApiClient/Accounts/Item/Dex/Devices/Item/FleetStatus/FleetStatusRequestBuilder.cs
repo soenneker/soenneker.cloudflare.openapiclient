@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.Live;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.OverTime;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\devices\{device_id}\fleet-status
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\devices\{deviceId}\fleet-status
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FleetStatusRequestBuilder : BaseRequestBuilder
@@ -20,12 +21,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.Live.LiveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The overTime property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.OverTime.OverTimeRequestBuilder OverTime
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.OverTime.OverTimeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.FleetStatusRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FleetStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/devices/{device_id}/fleet-status", pathParameters)
+        public FleetStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/{deviceId}/fleet-status", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FleetStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/devices/{device_id}/fleet-status", rawUrl)
+        public FleetStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/{deviceId}/fleet-status", rawUrl)
         {
         }
     }

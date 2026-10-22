@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Brand { get; set; }
 #endif
-        /// <summary>Stripe PaymentIntent client secret.</summary>
+        /// <summary>Client secret used to complete payment authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether the user was already onboarded.</summary>
         public bool? Onboarding { get; set; }
-        /// <summary>Stripe invoice ID.</summary>
+        /// <summary>Top-up payment identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PaymentIntentId { get; set; }

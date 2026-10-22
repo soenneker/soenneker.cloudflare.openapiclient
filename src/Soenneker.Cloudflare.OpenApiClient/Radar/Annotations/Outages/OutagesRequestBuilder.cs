@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations/outages{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*}", pathParameters)
+        public OutagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations/outages{?asn*,bot*,ca*,dataSource*,dateEnd*,dateRange*,dateStart*,format*,geoId*,limit*,location*,log*,offset*,origin*,outageCause*,outageType*,query*,tags*,tld*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,31 +36,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations/outages{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*}", rawUrl)
+        public OutagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations/outages{?asn*,bot*,ca*,dataSource*,dateEnd*,dateRange*,dateStart*,format*,geoId*,limit*,location*,log*,offset*,origin*,outageCause*,outageType*,query*,tags*,tld*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the latest Internet outages and anomalies.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.OutagesRequestBuilder.OutagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.OutagesRequestBuilder.OutagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.OutagesRequestBuilder.OutagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.OutagesRequestBuilder.OutagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutages200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the latest Internet outages and anomalies.
@@ -99,10 +99,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages
             /// <summary>Filters results by Autonomous System. Specify a single Autonomous System Number (ASN) as integer.</summary>
             [QueryParameter("asn")]
             public int? Asn { get; set; }
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>Filters results by bot.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("bot")]
+            public string? Bot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("bot")]
+            public string Bot { get; set; }
+#endif
+            /// <summary>Filters results by certificate authority.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ca")]
+            public string? Ca { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ca")]
+            public string Ca { get; set; }
+#endif
+            /// <summary>Filters results by data source.</summary>
+            [QueryParameter("dataSource")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutagesDataSourceParameter? DataSource { get; set; }
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.</summary>
             [QueryParameter("dateEnd")]
             public DateTimeOffset? DateEnd { get; set; }
-            /// <summary>Filters results by date range.</summary>
+            /// <summary>Filters results by a relative date range ending at the current time. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`), e.g. `7d`. Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `3dcontrol` covers days -10 to -7, `7dcontrol` covers days -14 to -7, `28dcontrol` covers days -56 to -28, and `10dcontrol` covers days -24 to -14). Mutually exclusive with `dateStart`/`dateEnd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -112,12 +135,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages
             [QueryParameter("dateRange")]
             public string DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range (inclusive).</summary>
+            /// <summary>Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.</summary>
             [QueryParameter("dateStart")]
             public DateTimeOffset? DateStart { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutagesFormatParameter? Format { get; set; }
+            /// <summary>Filters results by geolocation. Refer to [GeoNames](https://download.geonames.org/export/dump/readme.txt).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("geoId")]
+            public string? GeoId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("geoId")]
+            public string GeoId { get; set; }
+#endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -131,6 +164,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages
             [QueryParameter("location")]
             public string Location { get; set; }
 #endif
+            /// <summary>Filters results by certificate log.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("log")]
+            public string? Log { get; set; }
+#nullable restore
+#else
+            [QueryParameter("log")]
+            public string Log { get; set; }
+#endif
             /// <summary>Skips the specified number of objects before fetching the results.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
@@ -143,6 +186,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages
 #else
             [QueryParameter("origin")]
             public string Origin { get; set; }
+#endif
+            /// <summary>Filters results by outage cause.</summary>
+            [QueryParameter("outageCause")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutagesOutageCauseParameter? OutageCause { get; set; }
+            /// <summary>Filters results by outage type.</summary>
+            [QueryParameter("outageType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutagesOutageTypeParameter? OutageType { get; set; }
+            /// <summary>Filters results by a free-text match on the annotation description, id, or linked entities (location, ASN, origin).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("query")]
+            public string? Query { get; set; }
+#nullable restore
+#else
+            [QueryParameter("query")]
+            public string Query { get; set; }
+#endif
+            /// <summary>Filters results by annotation tag. Matches annotations carrying at least one of the given tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tags")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutagesTagsParameterItem[]? Tags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tags")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAnnotationsOutagesTagsParameterItem[] Tags { get; set; }
+#endif
+            /// <summary>Filters results by top-level domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tld")]
+            public string? Tld { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tld")]
+            public string Tld { get; set; }
 #endif
         }
     }

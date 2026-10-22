@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersPlacementTarget : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember1? WorkersPlacementTargetMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf1? WorkersPlacementTargetOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember1 WorkersPlacementTargetMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf1 WorkersPlacementTargetOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember2? WorkersPlacementTargetMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf2? WorkersPlacementTargetOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember2 WorkersPlacementTargetMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf2 WorkersPlacementTargetOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember3? WorkersPlacementTargetMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf3? WorkersPlacementTargetOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember3 WorkersPlacementTargetMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf3 WorkersPlacementTargetOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,19 +45,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WorkersPlacementTargetOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementTargetMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember1();
+                result.WorkersPlacementTargetOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementTargetOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementTargetMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember2();
+                result.WorkersPlacementTargetOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf2();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementTargetOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementTargetMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember3();
+                result.WorkersPlacementTargetOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf3();
             }
             return result;
         }
@@ -67,17 +67,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkersPlacementTargetMember1 != null)
+            if(WorkersPlacementTargetOneOf1 != null)
             {
-                return WorkersPlacementTargetMember1.GetFieldDeserializers();
+                return WorkersPlacementTargetOneOf1.GetFieldDeserializers();
             }
-            else if(WorkersPlacementTargetMember2 != null)
+            else if(WorkersPlacementTargetOneOf2 != null)
             {
-                return WorkersPlacementTargetMember2.GetFieldDeserializers();
+                return WorkersPlacementTargetOneOf2.GetFieldDeserializers();
             }
-            else if(WorkersPlacementTargetMember3 != null)
+            else if(WorkersPlacementTargetOneOf3 != null)
             {
-                return WorkersPlacementTargetMember3.GetFieldDeserializers();
+                return WorkersPlacementTargetOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,17 +88,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WorkersPlacementTargetMember1 != null)
+            if(WorkersPlacementTargetOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember1>(null, WorkersPlacementTargetMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf1>(null, WorkersPlacementTargetOneOf1);
             }
-            else if(WorkersPlacementTargetMember2 != null)
+            else if(WorkersPlacementTargetOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember2>(null, WorkersPlacementTargetMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf2>(null, WorkersPlacementTargetOneOf2);
             }
-            else if(WorkersPlacementTargetMember3 != null)
+            else if(WorkersPlacementTargetOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetMember3>(null, WorkersPlacementTargetMember3);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTargetOneOf3>(null, WorkersPlacementTargetOneOf3);
             }
         }
     }

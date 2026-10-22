@@ -76,18 +76,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The last seen registration for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_registration? LastSeenRegistration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenRegistration? LastSeenRegistration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_registration LastSeenRegistration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenRegistration LastSeenRegistration { get; set; }
 #endif
         /// <summary>The last user to use the WARP device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_user? LastSeenUser { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenUser? LastSeenUser { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_user LastSeenUser { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenUser LastSeenUser { get; set; }
 #endif
         /// <summary>The device MAC address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OsVersionExtra { get; set; }
 #endif
-        /// <summary>&quot;**Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/&quot;</summary>
+        /// <summary>**Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +153,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string SerialNumber { get; set; }
+#endif
+        /// <summary>Tags assigned to the device. An empty object if the device has no tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceTagsProperty? Tags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceTagsProperty Tags { get; set; }
 #endif
         /// <summary>The RFC3339 timestamp when the device was last updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,8 +203,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "hardware_id", n => { HardwareId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetStringValue(); } },
-                { "last_seen_registration", n => { LastSeenRegistration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_registration>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_registration.CreateFromDiscriminatorValue); } },
-                { "last_seen_user", n => { LastSeenUser = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_user>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_user.CreateFromDiscriminatorValue); } },
+                { "last_seen_registration", n => { LastSeenRegistration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenRegistration>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenRegistration.CreateFromDiscriminatorValue); } },
+                { "last_seen_user", n => { LastSeenUser = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenUser>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenUser.CreateFromDiscriminatorValue); } },
                 { "mac_address", n => { MacAddress = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -205,6 +213,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "os_version_extra", n => { OsVersionExtra = n.GetStringValue(); } },
                 { "public_ip", n => { PublicIp = n.GetStringValue(); } },
                 { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceTagsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceTagsProperty.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -223,8 +232,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("hardware_id", HardwareId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_seen_at", LastSeenAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_registration>("last_seen_registration", LastSeenRegistration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDevice_last_seen_user>("last_seen_user", LastSeenUser);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenRegistration>("last_seen_registration", LastSeenRegistration);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceLastSeenUser>("last_seen_user", LastSeenUser);
             writer.WriteStringValue("mac_address", MacAddress);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
@@ -233,6 +242,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("os_version_extra", OsVersionExtra);
             writer.WriteStringValue("public_ip", PublicIp);
             writer.WriteStringValue("serial_number", SerialNumber);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPhysicalDeviceTagsProperty>("tags", Tags);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

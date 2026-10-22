@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Applies a partial update. Only the provided fields change; omitted fields remain unchanged.The `description` field supports three states:- **omitted**: leave unchanged- **`null`**: clear the description- **`\&quot;value\&quot;`**: set to the given string&quot;
+    /// Applies a partial update. Only the provided fields change; omitted fields remain unchanged.The `description` field supports three states:- **omitted**: leave unchanged- **`null`**: clear the description- **`&quot;value&quot;`**: set to the given string
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VulnScannerPatchTargetEnvironmentRequest : IAdditionalDataHolder, IParsable

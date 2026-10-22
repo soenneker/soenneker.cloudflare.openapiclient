@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.AuditLog
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\security-center\insights\audit-log
+    /// Builds and executes requests for operations under \accounts\{account-id}\security-center\insights\audit-log
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditLogRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditLogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights/audit-log{?before*,changed_by*,cursor*,field_changed*,order*,per_page*,since*}", pathParameters)
+        public AuditLogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights/audit-log{?before*,changed_by*,cursor*,field_changed*,order*,per_page*,since*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditLogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights/audit-log{?before*,changed_by*,cursor*,field_changed*,order*,per_page*,since*}", rawUrl)
+        public AuditLogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights/audit-log{?before*,changed_by*,cursor*,field_changed*,order*,per_page*,since*}", rawUrl)
         {
         }
         /// <summary>
@@ -115,10 +115,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
 #endif
             /// <summary>Filter by the field that was changed.</summary>
             [QueryParameter("field_changed")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.AuditLog.GetField_changedQueryParameterType? FieldChanged { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLogFieldChangedEnum? FieldChanged { get; set; }
             /// <summary>Sort order for results. Use &apos;asc&apos; for oldest first or &apos;desc&apos; for newest first.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.AuditLog.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLogOrder? Order { get; set; }
             /// <summary>Number of results per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

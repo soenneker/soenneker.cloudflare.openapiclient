@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DeviceRegistration { get; set; }
 #endif
-        /// <summary>The hostname of the machine the event is from</summary>
+        /// <summary>The hostname of the machine the event is from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hostname { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RegistrationId { get; set; }
 #endif
-        /// <summary>The serial number of the machine the event is from</summary>
+        /// <summary>The serial number of the machine the event is from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber { get; set; }
@@ -70,17 +70,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SerialNumber { get; set; }
 #endif
-        /// <summary>Timestamp in ISO format</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Timestamp { get; set; }
-#nullable restore
-#else
-        public string Timestamp { get; set; }
-#endif
+        /// <summary>Timestamp in ISO 8601 datetime format.</summary>
+        public DateTimeOffset? Timestamp { get; set; }
         /// <summary>The state of the WARP toggle.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringWarpToggleChangeEvent_toggle? Toggle { get; set; }
-        /// <summary>Email tied to the device</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringWarpToggleChangeEventToggle? Toggle { get; set; }
+        /// <summary>Email tied to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserEmail { get; set; }
@@ -120,8 +114,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "registration_id", n => { RegistrationId = n.GetStringValue(); } },
                 { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
-                { "toggle", n => { Toggle = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringWarpToggleChangeEvent_toggle>(); } },
+                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
+                { "toggle", n => { Toggle = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringWarpToggleChangeEventToggle>(); } },
                 { "user_email", n => { UserEmail = n.GetStringValue(); } },
             };
         }
@@ -139,8 +133,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("registration_id", RegistrationId);
             writer.WriteStringValue("serial_number", SerialNumber);
-            writer.WriteStringValue("timestamp", Timestamp);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringWarpToggleChangeEvent_toggle>("toggle", Toggle);
+            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringWarpToggleChangeEventToggle>("toggle", Toggle);
             writer.WriteStringValue("user_email", UserEmail);
             writer.WriteAdditionalData(AdditionalData);
         }

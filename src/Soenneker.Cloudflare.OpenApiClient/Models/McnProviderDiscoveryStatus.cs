@@ -10,23 +10,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "UNSPECIFIED")]
         #pragma warning disable CS1591
-        UNSPECIFIED,
+        Unspecified,
         #pragma warning restore CS1591
         [EnumMember(Value = "PENDING")]
         #pragma warning disable CS1591
-        PENDING,
+        Pending,
         #pragma warning restore CS1591
         [EnumMember(Value = "DISCOVERING")]
         #pragma warning disable CS1591
-        DISCOVERING,
+        Discovering,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUCCEEDED")]
         #pragma warning disable CS1591
-        SUCCEEDED,
+        Succeeded,
         #pragma warning restore CS1591
     }
 }

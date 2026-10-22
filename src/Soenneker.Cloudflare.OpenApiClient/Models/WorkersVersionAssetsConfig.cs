@@ -15,17 +15,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The public URL path prefix under which assets are served. A null request value resets it to `/`; responses represent the root as `/`. All versions in a gradual deployment must use the same canonical value. To change it, first deploy the version containing the change at 100%.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BasePath { get; set; }
+#nullable restore
+#else
+        public string BasePath { get; set; }
+#endif
         /// <summary>Determines the redirects and rewrites of requests for HTML content.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_html_handling? HtmlHandling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigHtmlHandling? HtmlHandling { get; set; }
         /// <summary>Determines the response when a request does not match a static asset, and there is no Worker script.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_not_found_handling? NotFoundHandling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigNotFoundHandling? NotFoundHandling { get; set; }
         /// <summary>The run_worker_first property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? RunWorkerFirst { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigRunWorkerFirst? RunWorkerFirst { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch RunWorkerFirst { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigRunWorkerFirst RunWorkerFirst { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig"/> and sets the default values.
@@ -33,8 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersVersionAssetsConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            HtmlHandling = global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_html_handling.AutoTrailingSlash;
-            NotFoundHandling = global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_not_found_handling.None;
+            BasePath = "/";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,9 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "html_handling", n => { HtmlHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_html_handling>(); } },
-                { "not_found_handling", n => { NotFoundHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_not_found_handling>(); } },
-                { "run_worker_first", n => { RunWorkerFirst = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "base_path", n => { BasePath = n.GetStringValue(); } },
+                { "html_handling", n => { HtmlHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigHtmlHandling>(); } },
+                { "not_found_handling", n => { NotFoundHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigNotFoundHandling>(); } },
+                { "run_worker_first", n => { RunWorkerFirst = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigRunWorkerFirst>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigRunWorkerFirst.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,9 +74,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_html_handling>("html_handling", HtmlHandling);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfig_not_found_handling>("not_found_handling", NotFoundHandling);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("run_worker_first", RunWorkerFirst);
+            writer.WriteStringValue("base_path", BasePath);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigHtmlHandling>("html_handling", HtmlHandling);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigNotFoundHandling>("not_found_handling", NotFoundHandling);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionAssetsConfigRunWorkerFirst>("run_worker_first", RunWorkerFirst);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

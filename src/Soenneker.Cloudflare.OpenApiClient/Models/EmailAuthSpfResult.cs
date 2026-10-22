@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "soft_fail")]
         #pragma warning disable CS1591
-        Soft_fail,
+        SoftFail,
         #pragma warning restore CS1591
         [EnumMember(Value = "none")]
         #pragma warning disable CS1591
@@ -29,11 +29,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "temp_error")]
         #pragma warning disable CS1591
-        Temp_error,
+        TempError,
         #pragma warning restore CS1591
         [EnumMember(Value = "perm_error")]
         #pragma warning disable CS1591
-        Perm_error,
+        PermError,
         #pragma warning restore CS1591
     }
 }

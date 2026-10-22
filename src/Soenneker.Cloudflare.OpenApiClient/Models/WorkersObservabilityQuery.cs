@@ -17,13 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If the query wasn&apos;t explcitly saved</summary>
         public bool? Adhoc { get; set; }
         /// <summary>The created property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Created { get; set; }
-#nullable restore
-#else
-        public string Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,13 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters Parameters { get; set; }
 #endif
         /// <summary>The updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Updated { get; set; }
-#nullable restore
-#else
-        public string Updated { get; set; }
-#endif
+        public DateTimeOffset? Updated { get; set; }
         /// <summary>The updatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,13 +94,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "adhoc", n => { Adhoc = n.GetBoolValue(); } },
-                { "created", n => { Created = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters.CreateFromDiscriminatorValue); } },
-                { "updated", n => { Updated = n.GetStringValue(); } },
+                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
                 { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
             };
         }
@@ -124,13 +112,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("adhoc", Adhoc);
-            writer.WriteStringValue("created", Created);
+            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters>("parameters", Parameters);
-            writer.WriteStringValue("updated", Updated);
+            writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Locations;
 using System.Collections.Generic;
 using System.IO;
@@ -23,12 +24,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.traffic_anomalies.item collection</summary>
+        /// <param name="position">Traffic anomaly UUID.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Item.WithUuItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Item.WithUuItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("uuid", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Item.WithUuItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Traffic_anomaliesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*,status*,type*}", pathParameters)
+        public Traffic_anomaliesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dataSource*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,31 +49,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Traffic_anomaliesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*,status*,type*}", rawUrl)
+        public Traffic_anomaliesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dataSource*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*,status*,type*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. These alerts are automatically detected by Radar and manually verified by our team.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder.Traffic_anomaliesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder.Traffic_anomaliesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder.Traffic_anomaliesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder.Traffic_anomaliesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomalies200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the latest Internet traffic anomalies, which are signals that might indicate an outage. These alerts are automatically detected by Radar and manually verified by our team.
@@ -99,10 +112,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
             /// <summary>Filters results by Autonomous System. Specify a single Autonomous System Number (ASN) as integer.</summary>
             [QueryParameter("asn")]
             public int? Asn { get; set; }
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>Filters results by data source.</summary>
+            [QueryParameter("dataSource")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomaliesDataSourceParameter? DataSource { get; set; }
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.</summary>
             [QueryParameter("dateEnd")]
             public DateTimeOffset? DateEnd { get; set; }
-            /// <summary>Filters results by date range.</summary>
+            /// <summary>Filters results by a relative date range ending at the current time. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`), e.g. `7d`. Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `3dcontrol` covers days -10 to -7, `7dcontrol` covers days -14 to -7, `28dcontrol` covers days -56 to -28, and `10dcontrol` covers days -24 to -14). Mutually exclusive with `dateStart`/`dateEnd`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -112,12 +128,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
             [QueryParameter("dateRange")]
             public string DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range (inclusive).</summary>
+            /// <summary>Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.</summary>
             [QueryParameter("dateStart")]
             public DateTimeOffset? DateStart { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomaliesFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -144,17 +160,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
             [QueryParameter("origin")]
             public string Origin { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomaliesStatusParameter? Status { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filters results by entity type (LOCATION, AS, or ORIGIN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetTypeQueryParameterType[]? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomaliesTypeParameterItem[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetTypeQueryParameterType[] Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetTrafficAnomaliesTypeParameterItem[] Type { get; set; }
 #endif
         }
     }

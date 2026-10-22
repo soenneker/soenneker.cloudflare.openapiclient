@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesZoneSettingsSingleRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember1? ZonesZoneSettingsSingleRequestMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf1? ZonesZoneSettingsSingleRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember1 ZonesZoneSettingsSingleRequestMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf1 ZonesZoneSettingsSingleRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember2? ZonesZoneSettingsSingleRequestMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf2? ZonesZoneSettingsSingleRequestOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember2 ZonesZoneSettingsSingleRequestMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf2 ZonesZoneSettingsSingleRequestOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequest();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ZonesZoneSettingsSingleRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ZonesZoneSettingsSingleRequestMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember1();
+                result.ZonesZoneSettingsSingleRequestOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ZonesZoneSettingsSingleRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ZonesZoneSettingsSingleRequestMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember2();
+                result.ZonesZoneSettingsSingleRequestOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ZonesZoneSettingsSingleRequestMember1 != null)
+            if(ZonesZoneSettingsSingleRequestOneOf1 != null)
             {
-                return ZonesZoneSettingsSingleRequestMember1.GetFieldDeserializers();
+                return ZonesZoneSettingsSingleRequestOneOf1.GetFieldDeserializers();
             }
-            else if(ZonesZoneSettingsSingleRequestMember2 != null)
+            else if(ZonesZoneSettingsSingleRequestOneOf2 != null)
             {
-                return ZonesZoneSettingsSingleRequestMember2.GetFieldDeserializers();
+                return ZonesZoneSettingsSingleRequestOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ZonesZoneSettingsSingleRequestMember1 != null)
+            if(ZonesZoneSettingsSingleRequestOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember1>(null, ZonesZoneSettingsSingleRequestMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf1>(null, ZonesZoneSettingsSingleRequestOneOf1);
             }
-            else if(ZonesZoneSettingsSingleRequestMember2 != null)
+            else if(ZonesZoneSettingsSingleRequestOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestMember2>(null, ZonesZoneSettingsSingleRequestMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneSettingsSingleRequestOneOf2>(null, ZonesZoneSettingsSingleRequestOneOf2);
             }
         }
     }

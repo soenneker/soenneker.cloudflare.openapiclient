@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rules\lists\bulk_operations
+    /// Builds and executes requests for operations under \accounts\{account-id}\rules\lists\bulk_operations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Bulk_operationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.rules.lists.bulk_operations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations.Item.WithOperation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations.Item.WithOperation_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations.Item.WithOperationItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations.Item.WithOperationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("operation_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations.Item.WithOperation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("operationId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_operations.Item.WithOperationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_oper
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Bulk_operationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rules/lists/bulk_operations", pathParameters)
+        public Bulk_operationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rules/lists/bulk_operations", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Bulk_oper
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Bulk_operationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rules/lists/bulk_operations", rawUrl)
+        public Bulk_operationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rules/lists/bulk_operations", rawUrl)
         {
         }
     }

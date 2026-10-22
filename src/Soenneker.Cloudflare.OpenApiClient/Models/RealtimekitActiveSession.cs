@@ -66,14 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MeetingDisplayName { get; set; }
 #endif
-        /// <summary>Any meta data about session.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_meta? Meta { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_meta Meta { get; set; }
-#endif
         /// <summary>number of minutes consumed since the session started</summary>
         public double? MinutesConsumed { get; set; }
         /// <summary>App id that hosted this session</summary>
@@ -93,9 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string StartedAt { get; set; }
 #endif
         /// <summary>current status of session</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSessionStatus? Status { get; set; }
         /// <summary>type of session</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSessionType? Type { get; set; }
         /// <summary>timestamp when session was last updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,12 +129,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "live_participants", n => { LiveParticipants = n.GetDoubleValue(); } },
                 { "max_concurrent_participants", n => { MaxConcurrentParticipants = n.GetDoubleValue(); } },
                 { "meeting_display_name", n => { MeetingDisplayName = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_meta.CreateFromDiscriminatorValue); } },
                 { "minutes_consumed", n => { MinutesConsumed = n.GetDoubleValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_status>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_type>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSessionStatus>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSessionType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -159,12 +150,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("live_participants", LiveParticipants);
             writer.WriteDoubleValue("max_concurrent_participants", MaxConcurrentParticipants);
             writer.WriteStringValue("meeting_display_name", MeetingDisplayName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_meta>("meta", Meta);
             writer.WriteDoubleValue("minutes_consumed", MinutesConsumed);
             writer.WriteStringValue("organization_id", OrganizationId);
             writer.WriteStringValue("started_at", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_status>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSessionStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSessionType>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

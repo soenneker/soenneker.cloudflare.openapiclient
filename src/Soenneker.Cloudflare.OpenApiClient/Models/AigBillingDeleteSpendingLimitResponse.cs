@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_errors>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_errors> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_messages>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_messages> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResult Result { get; set; }
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,9 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_messages.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseErrorsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResult.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -87,9 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_errors>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponse_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseErrorsItem>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseMessagesItem>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingDeleteSpendingLimitResponseResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

@@ -24,13 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the Monitor Group to use for checking the health of origins within this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroup_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroup_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>List of monitors in this group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroup_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroup_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroupMember>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroupMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
             };
@@ -82,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingMonitorGroupMember>("members", Members);
             writer.WriteAdditionalData(AdditionalData);
         }

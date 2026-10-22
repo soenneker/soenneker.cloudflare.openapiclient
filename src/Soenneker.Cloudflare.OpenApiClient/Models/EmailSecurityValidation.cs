@@ -23,11 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus? Dkim { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim? Dkim { get; set; }
         /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus? Dmarc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc? Dmarc { get; set; }
         /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus? Spf { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf? Spf { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation"/> and sets the default values.
         /// </summary>
@@ -54,9 +54,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "dkim", n => { Dkim = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus>(); } },
-                { "dmarc", n => { Dmarc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus>(); } },
-                { "spf", n => { Spf = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus>(); } },
+                { "dkim", n => { Dkim = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim>(); } },
+                { "dmarc", n => { Dmarc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc>(); } },
+                { "spf", n => { Spf = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf>(); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus>("dkim", Dkim);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus>("dmarc", Dmarc);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationStatus>("spf", Spf);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDkim>("dkim", Dkim);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationDmarc>("dmarc", Dmarc);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidationSpf>("spf", Spf);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

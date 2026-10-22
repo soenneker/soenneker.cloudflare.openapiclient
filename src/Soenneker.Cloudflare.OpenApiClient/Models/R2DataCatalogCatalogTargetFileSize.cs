@@ -9,19 +9,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "64")]
         #pragma warning disable CS1591
-        SixFour,
+        Value64,
         #pragma warning restore CS1591
         [EnumMember(Value = "128")]
         #pragma warning disable CS1591
-        OneTwoEight,
+        Value128,
         #pragma warning restore CS1591
         [EnumMember(Value = "256")]
         #pragma warning disable CS1591
-        TwoFiveSix,
+        Value256,
         #pragma warning restore CS1591
         [EnumMember(Value = "512")]
         #pragma warning disable CS1591
-        FiveOneTwo,
+        Value512,
         #pragma warning restore CS1591
     }
 }

@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The validation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern_validation? Validation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidation? Validation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern_validation Validation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidation Validation { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "regex", n => { Regex = n.GetStringValue(); } },
-                { "validation", n => { Validation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern_validation>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern_validation.CreateFromDiscriminatorValue); } },
+                { "validation", n => { Validation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidation>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("regex", Regex);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern_validation>("validation", Validation);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPatternValidation>("validation", Validation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

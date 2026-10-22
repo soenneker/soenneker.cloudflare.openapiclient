@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of secrets the account is entitlted to use</summary>
+        /// <summary>The number of secrets the account is entitled to use.</summary>
         public double? Quota { get; set; }
-        /// <summary>The number of secrets the account is currently using</summary>
+        /// <summary>The number of secrets the account is currently using.</summary>
         public double? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreUsageQuotaObject"/> and sets the default values.

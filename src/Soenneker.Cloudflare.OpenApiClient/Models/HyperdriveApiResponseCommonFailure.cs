@@ -18,29 +18,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_errors? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem>? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_errors Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_messages? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_messages Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_result? Result { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_result Result { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailureResult? Result { get; set; }
         /// <summary>Return the status of the API call success.</summary>
         public bool? Success { get; set; }
         /// <summary>
@@ -68,9 +70,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailureResult>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -81,9 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailure_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem>("errors", Errors);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveMessagesItem>("messages", Messages);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveApiResponseCommonFailureResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

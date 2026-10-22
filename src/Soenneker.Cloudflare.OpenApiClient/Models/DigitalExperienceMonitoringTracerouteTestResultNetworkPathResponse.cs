@@ -14,7 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>name of the device associated with this network path response</summary>
+        /// <summary>Cloudflare colo airport code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Colo { get; set; }
+#nullable restore
+#else
+        public string Colo { get; set; }
+#endif
+        /// <summary>Name of the device associated with this network path response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName { get; set; }
@@ -22,13 +30,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DeviceName { get; set; }
 #endif
-        /// <summary>an array of the hops taken by the device to reach the end destination</summary>
+        /// <summary>Whether the test was run inside or outside of the WARP tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse_hops>? Hops { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext? ExecutionContext { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse_hops> Hops { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext ExecutionContext { get; set; }
+#endif
+        /// <summary>An array of the hops taken by the device to reach the end destination.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem>? Hops { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem> Hops { get; set; }
 #endif
         /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,13 +62,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TestId { get; set; }
 #endif
-        /// <summary>name of the tracroute test</summary>
+        /// <summary>Name of the traceroute test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TestName { get; set; }
 #nullable restore
 #else
         public string TestName { get; set; }
+#endif
+        /// <summary>Timestamp indicating when the traceroute test execution began.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeStart { get; set; }
+#nullable restore
+#else
+        public string TimeStart { get; set; }
+#endif
+        /// <summary>The tunnel_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TunnelType { get; set; }
+#nullable restore
+#else
+        public string TunnelType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse"/> and sets the default values.
@@ -79,11 +111,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "colo", n => { Colo = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "hops", n => { Hops = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse_hops>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse_hops.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "execution_context", n => { ExecutionContext = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext.CreateFromDiscriminatorValue); } },
+                { "hops", n => { Hops = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resultId", n => { ResultId = n.GetStringValue(); } },
                 { "testId", n => { TestId = n.GetStringValue(); } },
                 { "testName", n => { TestName = n.GetStringValue(); } },
+                { "time_start", n => { TimeStart = n.GetStringValue(); } },
+                { "tunnel_type", n => { TunnelType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +129,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("colo", Colo);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse_hops>("hops", Hops);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext>("execution_context", ExecutionContext);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem>("hops", Hops);
             writer.WriteStringValue("resultId", ResultId);
             writer.WriteStringValue("testId", TestId);
             writer.WriteStringValue("testName", TestName);
+            writer.WriteStringValue("time_start", TimeStart);
+            writer.WriteStringValue("tunnel_type", TunnelType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

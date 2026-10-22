@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>&quot;Value of the zone setting.Notes: The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is false.&quot;</summary>
+        /// <summary>Value of the zone setting.Notes: The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is false.</summary>
         public double? TimeRemaining { get; private set; }
         /// <summary>Value of the zone setting.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesDevelopmentModeValue? Value { get; set; }
@@ -37,7 +37,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesDevelopmentMode()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesDevelopmentModeValue.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

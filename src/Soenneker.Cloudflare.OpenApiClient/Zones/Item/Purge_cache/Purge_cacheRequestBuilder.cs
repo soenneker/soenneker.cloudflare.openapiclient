@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\purge_cache
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\purge_cache
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Purge_cacheRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Purge_cacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/purge_cache", pathParameters)
+        public Purge_cacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/purge_cache", pathParameters)
         {
         }
         /// <summary>
@@ -30,47 +30,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Purge_cacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/purge_cache", rawUrl)
+        public Purge_cacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/purge_cache", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;### Purge All Cached ContentRemoves ALL files from Cloudflare&apos;s cache. All tiers can purge everything.```{\&quot;purge_everything\&quot;: true}```### Purge Cached Content by URLGranularly removes one or more files from Cloudflare&apos;s cache by specifying URLs. All tiers can purge by URL.To purge files with custom cache keys, include the headers used to compute the cache key as in the example. If you have a device type or geo in your cache key, you will need to include the CF-Device-Type or CF-IPCountry headers. If you have lang in your cache key, you will need to include the Accept-Language header.**NB:** When including the Origin header, be sure to include the **scheme** and **hostname**. The port number can be omitted if it is the default port (80 for http, 443 for https), but must be included otherwise.Single file purge example with files:```{\&quot;files\&quot;: [\&quot;http://www.example.com/css/styles.css\&quot;, \&quot;http://www.example.com/js/index.js\&quot;]}```Single file purge example with url and header pairs:```{\&quot;files\&quot;: [{\&quot;url\&quot;: \&quot;http://www.example.com/cat_picture.jpg\&quot;, \&quot;headers\&quot;: {\&quot;CF-IPCountry\&quot;: \&quot;US\&quot;, \&quot;CF-Device-Type\&quot;: \&quot;desktop\&quot;, \&quot;Accept-Language\&quot;: \&quot;zh-CN\&quot;}}, {\&quot;url\&quot;: \&quot;http://www.example.com/dog_picture.jpg\&quot;, \&quot;headers\&quot;: {\&quot;CF-IPCountry\&quot;: \&quot;EU\&quot;, \&quot;CF-Device-Type\&quot;: \&quot;mobile\&quot;, \&quot;Accept-Language\&quot;: \&quot;en-US\&quot;}}]}```### Purge Cached Content by Tag, Host or PrefixGranularly removes one or more files from Cloudflare&apos;s cache either by specifying the host, the associated Cache-Tag, or a Prefix.Flex purge with tags:```{\&quot;tags\&quot;: [\&quot;a-cache-tag\&quot;, \&quot;another-cache-tag\&quot;]}```Flex purge with hosts:```{\&quot;hosts\&quot;: [\&quot;www.example.com\&quot;, \&quot;images.example.com\&quot;]}```Flex purge with prefixes:```{\&quot;prefixes\&quot;: [\&quot;www.example.com/foo\&quot;, \&quot;images.example.com/bar/baz\&quot;]}```### Availability and limitsPlease refer to [purge cache availability and limits documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).&quot;
+        /// Deletes cached content in every Cloudflare data center and cache tier, including Cache Reserve. The next request for purged content is a cache `MISS`: Cloudflare fetches the full response from your origin and caches it again. Cloudflare does not serve purged content from cache again, even if your origin is unavailable.To keep content cached and have Cloudflare revalidate it with your origin instead, use `POST /zones/{zone_id}/invalidate_cache`.### Choose what to purgeSend one of these fields in the request body:- `files`: specific URLs. If your cache key includes request headers, send each URL with the header values it was cached with.- `tags`: all content whose `Cache-Tag` response header contains one of the tags.- `hosts`: all content cached for the hostnames.- `prefixes`: all content whose URL starts with one of the prefixes.- `purge_everything`: all cached content in the zone.### Check the resultA `200` response with `success: true` means Cloudflare accepted the request. It does not confirm that any content was cached or removed. To check, request a purged URL and confirm that the `CF-Cache-Status` response header is `MISS`.### Availability and limitsRate limits and the number of items you can send in one request depend on your plan. See [Purge cache: availability and limits](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeApiResponseSingleId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;### Purge All Cached ContentRemoves ALL files from Cloudflare&apos;s cache. All tiers can purge everything.```{\&quot;purge_everything\&quot;: true}```### Purge Cached Content by URLGranularly removes one or more files from Cloudflare&apos;s cache by specifying URLs. All tiers can purge by URL.To purge files with custom cache keys, include the headers used to compute the cache key as in the example. If you have a device type or geo in your cache key, you will need to include the CF-Device-Type or CF-IPCountry headers. If you have lang in your cache key, you will need to include the Accept-Language header.**NB:** When including the Origin header, be sure to include the **scheme** and **hostname**. The port number can be omitted if it is the default port (80 for http, 443 for https), but must be included otherwise.Single file purge example with files:```{\&quot;files\&quot;: [\&quot;http://www.example.com/css/styles.css\&quot;, \&quot;http://www.example.com/js/index.js\&quot;]}```Single file purge example with url and header pairs:```{\&quot;files\&quot;: [{\&quot;url\&quot;: \&quot;http://www.example.com/cat_picture.jpg\&quot;, \&quot;headers\&quot;: {\&quot;CF-IPCountry\&quot;: \&quot;US\&quot;, \&quot;CF-Device-Type\&quot;: \&quot;desktop\&quot;, \&quot;Accept-Language\&quot;: \&quot;zh-CN\&quot;}}, {\&quot;url\&quot;: \&quot;http://www.example.com/dog_picture.jpg\&quot;, \&quot;headers\&quot;: {\&quot;CF-IPCountry\&quot;: \&quot;EU\&quot;, \&quot;CF-Device-Type\&quot;: \&quot;mobile\&quot;, \&quot;Accept-Language\&quot;: \&quot;en-US\&quot;}}]}```### Purge Cached Content by Tag, Host or PrefixGranularly removes one or more files from Cloudflare&apos;s cache either by specifying the host, the associated Cache-Tag, or a Prefix.Flex purge with tags:```{\&quot;tags\&quot;: [\&quot;a-cache-tag\&quot;, \&quot;another-cache-tag\&quot;]}```Flex purge with hosts:```{\&quot;hosts\&quot;: [\&quot;www.example.com\&quot;, \&quot;images.example.com\&quot;]}```Flex purge with prefixes:```{\&quot;prefixes\&quot;: [\&quot;www.example.com/foo\&quot;, \&quot;images.example.com/bar/baz\&quot;]}```### Availability and limitsPlease refer to [purge cache availability and limits documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).&quot;
+        /// Deletes cached content in every Cloudflare data center and cache tier, including Cache Reserve. The next request for purged content is a cache `MISS`: Cloudflare fetches the full response from your origin and caches it again. Cloudflare does not serve purged content from cache again, even if your origin is unavailable.To keep content cached and have Cloudflare revalidate it with your origin instead, use `POST /zones/{zone_id}/invalidate_cache`.### Choose what to purgeSend one of these fields in the request body:- `files`: specific URLs. If your cache key includes request headers, send each URL with the header values it was cached with.- `tags`: all content whose `Cache-Tag` response header contains one of the tags.- `hosts`: all content cached for the hostnames.- `prefixes`: all content whose URL starts with one of the prefixes.- `purge_everything`: all cached content in the zone.### Check the resultA `200` response with `success: true` means Cloudflare accepted the request. It does not confirm that any content was cached or removed. To check, request a purged URL and confirm that the `CF-Cache-Status` response header is `MISS`.### Availability and limitsRate limits and the number of items you can send in one request depend on your plan. See [Purge cache: availability and limits](https://developers.cloudflare.com/cache/how-to/purge-cache/#availability-and-limits).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurge body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonePurgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

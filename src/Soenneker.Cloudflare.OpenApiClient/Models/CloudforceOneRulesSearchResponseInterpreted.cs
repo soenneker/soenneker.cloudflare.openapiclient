@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Filters applied during retrieval (account ACL plus user-supplied facets).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpreted_filters? Filters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpretedFiltersProperty? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpreted_filters Filters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpretedFiltersProperty Filters { get; set; }
 #endif
         /// <summary>The retrieval_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpreted_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpreted_filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpretedFiltersProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpretedFiltersProperty.CreateFromDiscriminatorValue); } },
                 { "retrieval_type", n => { RetrievalType = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpreted_filters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesSearchResponseInterpretedFiltersProperty>("filters", Filters);
             writer.WriteStringValue("retrieval_type", RetrievalType);
             writer.WriteAdditionalData(AdditionalData);
         }

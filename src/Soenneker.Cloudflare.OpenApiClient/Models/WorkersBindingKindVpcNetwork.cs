@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Enables Gateway identity for the binding. Requires network_id to be &quot;cf1:network&quot; and cannot be combined with tunnel_id.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RuntimeEmailAlphaIdentity? Identity { get; set; }
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string TunnelId { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork"/> and sets the default values.
         /// </summary>
@@ -65,10 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "identity", n => { Identity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RuntimeEmailAlphaIdentity>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "network_id", n => { NetworkId = n.GetStringValue(); } },
                 { "tunnel_id", n => { TunnelId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType>(); } },
             };
         }
         /// <summary>
@@ -78,10 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RuntimeEmailAlphaIdentity>("identity", Identity);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("network_id", NetworkId);
             writer.WriteStringValue("tunnel_id", TunnelId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindVpcNetwork_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VpcNetworkType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

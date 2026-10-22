@@ -9,11 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "2")]
         #pragma warning disable CS1591
-        Two,
+        Value2,
         #pragma warning restore CS1591
         [EnumMember(Value = "1")]
         #pragma warning disable CS1591
-        One,
+        Value1,
         #pragma warning restore CS1591
     }
 }

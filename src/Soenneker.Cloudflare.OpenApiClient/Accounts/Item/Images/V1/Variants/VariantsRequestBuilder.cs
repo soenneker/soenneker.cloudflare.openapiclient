@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\images\v1\variants
+    /// Builds and executes requests for operations under \accounts\{account-id}\images\v1\variants
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.images.v1.variants.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.WithVariant_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.WithVariant_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.WithVariantItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.WithVariantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("variant_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.WithVariant_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("variantId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.Item.WithVariantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v1/variants", pathParameters)
+        public VariantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/images/v1/variants", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VariantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v1/variants", rawUrl)
+        public VariantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/images/v1/variants", rawUrl)
         {
         }
         /// <summary>
-        /// Lists existing variants.
+        /// List existing CF Images variants.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesVariantsListVariants4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantListResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,20 +62,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesVariantsListVariants4XX.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specify variants that allow you to resize images for different use cases.
+        /// Create a CF Images variant that allows you to resize images for different use cases.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesVariantsCreateAVariant4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,14 +82,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareImagesVariantsCreateAVariant4XX.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ImagesImageVariantSimpleResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists existing variants.
+        /// List existing CF Images variants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants
             return requestInfo;
         }
         /// <summary>
-        /// Specify variants that allow you to resize images for different use cases.
+        /// Create a CF Images variant that allows you to resize images for different use cases.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

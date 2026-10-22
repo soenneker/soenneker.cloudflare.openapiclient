@@ -5,8 +5,11 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Ack;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Batch;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Extend;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Peek;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Purge;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +19,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\queues\{queue_id}\messages
+    /// Builds and executes requests for operations under \accounts\{account-id}\queues\{queueId}\messages
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesRequestBuilder : BaseRequestBuilder
@@ -31,6 +34,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The extend property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Extend.ExtendRequestBuilder Extend
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Extend.ExtendRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The peek property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Peek.PeekRequestBuilder Peek
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Peek.PeekRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The preview property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.PreviewRequestBuilder Preview
         {
@@ -41,12 +54,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The purge property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Purge.PurgeRequestBuilder Purge
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Purge.PurgeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.MessagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/queues/{queue_id}/messages", pathParameters)
+        public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/queues/{queueId}/messages", pathParameters)
         {
         }
         /// <summary>
@@ -54,24 +72,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/queues/{queue_id}/messages", rawUrl)
+        public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/queues/{queueId}/messages", rawUrl)
         {
         }
         /// <summary>
-        /// Push a message to a Queue
+        /// Pushes a message to a Queue.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqApiV4Failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -80,10 +98,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MqApiV4Failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesPushMessage200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Push a message to a Queue
+        /// Pushes a message to a Queue.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

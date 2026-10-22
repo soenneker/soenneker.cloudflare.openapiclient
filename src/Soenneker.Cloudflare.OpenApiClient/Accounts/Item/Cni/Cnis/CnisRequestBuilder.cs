@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cni\cnis
+    /// Builds and executes requests for operations under \accounts\{account-id}\cni\cnis
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CnisRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CnisRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis{?cursor*,limit*,slot*,tunnel_id*}", pathParameters)
+        public CnisRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/cnis{?cursor*,limit*,slot*,tunnel_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CnisRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis{?cursor*,limit*,slot*,tunnel_id*}", rawUrl)
+        public CnisRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/cnis{?cursor*,limit*,slot*,tunnel_id*}", rawUrl)
         {
         }
         /// <summary>
-        /// List existing CNI objects
+        /// Lists all Cloud Network Interconnects (CNIs) configured for the account, showing connectionstatus and parameters.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscCniList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new CNI object
+        /// Creates a new Cloud Network Interconnect (CNI) for private network connectivity betweenCloudflare and your infrastructure. CNIs enable dedicated, high-performance network links.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscCni.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List existing CNI objects
+        /// Lists all Cloud Network Interconnects (CNIs) configured for the account, showing connectionstatus and parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
             return requestInfo;
         }
         /// <summary>
-        /// Create a new CNI object
+        /// Creates a new Cloud Network Interconnect (CNI) for private network connectivity betweenCloudflare and your infrastructure. CNIs enable dedicated, high-performance network links.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,15 +135,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.CnisRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List existing CNI objects
+        /// Lists all Cloud Network Interconnects (CNIs) configured for the account, showing connectionstatus and parameters.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CnisRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public int? Cursor { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
             /// <summary>If specified, only show CNIs associated with the specified slot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

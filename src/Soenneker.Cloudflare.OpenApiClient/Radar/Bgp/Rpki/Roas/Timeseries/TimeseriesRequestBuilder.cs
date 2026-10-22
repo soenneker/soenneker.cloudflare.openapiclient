@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries
         /// <summary>
         /// Retrieves RPKI ROA (Route Origin Authorization) validation ratios over time. Returns the selected metric as a time series. Supports filtering by ASN or location (country code) — multiple values of the same filter type produce one series per value. If no ASN or location is specified, returns the global aggregate.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseries200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves RPKI ROA (Route Origin Authorization) validation ratios over time. Returns the selected metric as a time series. Supports filtering by ASN or location (country code) — multiple values of the same filter type produce one series per value. If no ASN or location is specified, returns the global aggregate.
@@ -100,15 +100,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries
             [QueryParameter("asn")]
             public string[] Asn { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.</summary>
             [QueryParameter("dateEnd")]
             public DateTimeOffset? DateEnd { get; set; }
-            /// <summary>Start of the date range (inclusive).</summary>
+            /// <summary>Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.</summary>
             [QueryParameter("dateStart")]
             public DateTimeOffset? DateStart { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseriesFormatParameter? Format { get; set; }
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 location codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries
 #endif
             /// <summary>Which RPKI ROA validation metric to return. validPfxsRatio = ratio of RPKI-valid prefixes (IPv4+IPv6 combined). validPfxsV4Ratio / validPfxsV6Ratio = same, split by IP version. validIpsRatio = ratio of RPKI-valid address space (IPv4 /24s + IPv6 /48s). validIpsV4Ratio / validIpsV6Ratio = same, split by IP version.</summary>
             [QueryParameter("metric")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.Timeseries.GetMetricQueryParameterType? Metric { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiRoasTimeseriesMetricParameter? Metric { get; set; }
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

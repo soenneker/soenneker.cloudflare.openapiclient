@@ -15,6 +15,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Earliest time when the scheduler can claim this operation. Null when disabled.</summary>
+        public DateTimeOffset? NextEligibleAt { get; private set; }
         /// <summary>Specifies the state of maintenance operations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState? State { get; set; }
         /// <summary>Sets the target file size for compaction in megabytes. Defaults to &quot;128&quot;.</summary>
@@ -44,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "next_eligible_at", n => { NextEligibleAt = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceState>(); } },
                 { "target_size_mb", n => { TargetSizeMb = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogTargetFileSize>(); } },
             };

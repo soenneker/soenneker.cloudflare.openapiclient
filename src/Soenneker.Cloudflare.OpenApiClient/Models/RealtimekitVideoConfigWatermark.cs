@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Position of the watermark</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark_position? Position { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermarkPosition? Position { get; set; }
         /// <summary>Size of the watermark</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitVideoConfigWatermark()
         {
             AdditionalData = new Dictionary<string, object>();
-            Position = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark_position.LeftTop;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "position", n => { Position = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark_position>(); } },
+                { "position", n => { Position = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermarkPosition>(); } },
                 { "size", n => { Size = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermarkSize>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermarkSize.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -71,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark_position>("position", Position);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermarkPosition>("position", Position);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermarkSize>("size", Size);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

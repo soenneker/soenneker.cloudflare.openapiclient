@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>All access permissions for the user at the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembership_permissions? Permissions { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions? Permissions { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembership_permissions Permissions { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions Permissions { get; private set; }
 #endif
         /// <summary>List of role names the membership has for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSchemasAccount>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamSchemasAccount.CreateFromDiscriminatorValue); } },
                 { "api_access_enabled", n => { ApiAccessEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembership_permissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembership_permissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamMembershipPermissions.CreateFromDiscriminatorValue); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSchemasStatus>(); } },
             };

@@ -7,76 +7,156 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasAppLauncherProps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasBisoProps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasSshProps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasVncProps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasWarpProps"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AccessApps : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class AccessApps : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember1? AccessAppsMember1 { get; set; }
+        public List<string>? AllowedIdps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember1 AccessAppsMember1 { get; set; }
+        public List<string> AllowedIdps { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember2"/></summary>
+        /// <summary>Enables loading application content in an iFrame.</summary>
+        public bool? AllowIframe { get; set; }
+        /// <summary>Displays the application in the App Launcher.</summary>
+        public bool? AppLauncherVisible { get; set; }
+        /// <summary>Audience tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember2? AccessAppsMember2 { get; set; }
+        public string? Aud { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember2 AccessAppsMember2 { get; set; }
+        public string Aud { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember3"/></summary>
+        /// <summary>When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.</summary>
+        public bool? AutoRedirectToIdentity { get; set; }
+        /// <summary>The cors_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember3? AccessAppsMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders? CorsHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember3 AccessAppsMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders CorsHeaders { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasAppLauncherProps"/></summary>
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The custom error message shown to a user when they are denied access to the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasAppLauncherProps? AccessSchemasAppLauncherProps { get; set; }
+        public string? CustomDenyMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasAppLauncherProps AccessSchemasAppLauncherProps { get; set; }
+        public string CustomDenyMessage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasBisoProps"/></summary>
+        /// <summary>The custom URL a user is redirected to when they are denied access to the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasBisoProps? AccessSchemasBisoProps { get; set; }
+        public string? CustomDenyUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasBisoProps AccessSchemasBisoProps { get; set; }
+        public string CustomDenyUrl { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasSshProps"/></summary>
+        /// <summary>The domain and path that Access will secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasSshProps? AccessSchemasSshProps { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasSshProps AccessSchemasSshProps { get; set; }
+        public string Domain { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasVncProps"/></summary>
+        /// <summary>Preemptively sets the Access session cookie on every hostname in a multi-hostname self-hosted application during the initial redirect chain, rather than setting it lazily on first visit. Defaults to true. Set to false to disable the eager redirect cookie behavior.</summary>
+        public bool? EagerRedirectCookieSetting { get; set; }
+        /// <summary>Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.</summary>
+        public bool? EnableBindingCookie { get; set; }
+        /// <summary>Enables the HttpOnly cookie attribute, which increases security against XSS attacks.</summary>
+        public bool? HttpOnlyCookieAttribute { get; set; }
+        /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasVncProps? AccessSchemasVncProps { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasVncProps AccessSchemasVncProps { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasWarpProps"/></summary>
+        /// <summary>The image URL for the logo shown in the App Launcher dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasWarpProps? AccessSchemasWarpProps { get; set; }
+        public string? LogoUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasWarpProps AccessSchemasWarpProps { get; set; }
+        public string LogoUrl { get; set; }
 #endif
+        /// <summary>The name of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.</summary>
+        public bool? OptionsPreflightBypass { get; set; }
+        /// <summary>The saas_app property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaasProps2SaasApp? SaasApp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaasProps2SaasApp SaasApp { get; set; }
+#endif
+        /// <summary>Sets the SameSite cookie setting, which provides increased security against CSRF attacks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SameSiteCookieAttribute { get; set; }
+#nullable restore
+#else
+        public string SameSiteCookieAttribute { get; set; }
+#endif
+        /// <summary>Configuration for provisioning to this application via SCIM. This is currently in closed beta.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2? ScimConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2 ScimConfig { get; set; }
+#endif
+        /// <summary>Returns a 401 status code when the request is blocked by a Service Auth policy.</summary>
+        public bool? ServiceAuth401Redirect { get; set; }
+        /// <summary>The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionDuration { get; set; }
+#nullable restore
+#else
+        public string SessionDuration { get; set; }
+#endif
+        /// <summary>Enables automatic authentication through cloudflared.</summary>
+        public bool? SkipInterstitial { get; set; }
+        /// <summary>The application type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>The updated_at property</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Determines if users can access this application via a clientless browser isolation URL.This allows users to access private domains without connecting to Gateway. The option requiresClientless Browser Isolation to be set up with policies that allow users of this application.</summary>
+        public bool? UseClientlessIsolationAppLauncherUrl { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApps"/> and sets the default values.
+        /// </summary>
+        public AccessApps()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,16 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApps CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApps();
-            result.AccessAppsMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember1();
-            result.AccessAppsMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember2();
-            result.AccessAppsMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember3();
-            result.AccessSchemasAppLauncherProps = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasAppLauncherProps();
-            result.AccessSchemasBisoProps = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasBisoProps();
-            result.AccessSchemasSshProps = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasSshProps();
-            result.AccessSchemasVncProps = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasVncProps();
-            result.AccessSchemasWarpProps = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSchemasWarpProps();
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApps();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,11 +173,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AccessAppsMember1 != null || AccessAppsMember2 != null || AccessAppsMember3 != null || AccessSchemasAppLauncherProps != null || AccessSchemasBisoProps != null || AccessSchemasSshProps != null || AccessSchemasVncProps != null || AccessSchemasWarpProps != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AccessAppsMember1, AccessAppsMember2, AccessAppsMember3, AccessSchemasAppLauncherProps, AccessSchemasBisoProps, AccessSchemasSshProps, AccessSchemasVncProps, AccessSchemasWarpProps);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "allow_iframe", n => { AllowIframe = n.GetBoolValue(); } },
+                { "allowed_idps", n => { AllowedIdps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "app_launcher_visible", n => { AppLauncherVisible = n.GetBoolValue(); } },
+                { "aud", n => { Aud = n.GetStringValue(); } },
+                { "auto_redirect_to_identity", n => { AutoRedirectToIdentity = n.GetBoolValue(); } },
+                { "cors_headers", n => { CorsHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "custom_deny_message", n => { CustomDenyMessage = n.GetStringValue(); } },
+                { "custom_deny_url", n => { CustomDenyUrl = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "eager_redirect_cookie_setting", n => { EagerRedirectCookieSetting = n.GetBoolValue(); } },
+                { "enable_binding_cookie", n => { EnableBindingCookie = n.GetBoolValue(); } },
+                { "http_only_cookie_attribute", n => { HttpOnlyCookieAttribute = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "options_preflight_bypass", n => { OptionsPreflightBypass = n.GetBoolValue(); } },
+                { "saas_app", n => { SaasApp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaasProps2SaasApp>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaasProps2SaasApp.CreateFromDiscriminatorValue); } },
+                { "same_site_cookie_attribute", n => { SameSiteCookieAttribute = n.GetStringValue(); } },
+                { "scim_config", n => { ScimConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2.CreateFromDiscriminatorValue); } },
+                { "service_auth_401_redirect", n => { ServiceAuth401Redirect = n.GetBoolValue(); } },
+                { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
+                { "skip_interstitial", n => { SkipInterstitial = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "use_clientless_isolation_app_launcher_url", n => { UseClientlessIsolationAppLauncherUrl = n.GetBoolValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -115,7 +210,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppsMember1>(null, AccessAppsMember1, AccessAppsMember2, AccessAppsMember3, AccessSchemasAppLauncherProps, AccessSchemasBisoProps, AccessSchemasSshProps, AccessSchemasVncProps, AccessSchemasWarpProps);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_idps", AllowedIdps);
+            writer.WriteBoolValue("allow_iframe", AllowIframe);
+            writer.WriteBoolValue("app_launcher_visible", AppLauncherVisible);
+            writer.WriteStringValue("aud", Aud);
+            writer.WriteBoolValue("auto_redirect_to_identity", AutoRedirectToIdentity);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCorsHeaders>("cors_headers", CorsHeaders);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("custom_deny_message", CustomDenyMessage);
+            writer.WriteStringValue("custom_deny_url", CustomDenyUrl);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteBoolValue("eager_redirect_cookie_setting", EagerRedirectCookieSetting);
+            writer.WriteBoolValue("enable_binding_cookie", EnableBindingCookie);
+            writer.WriteBoolValue("http_only_cookie_attribute", HttpOnlyCookieAttribute);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("logo_url", LogoUrl);
+            writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("options_preflight_bypass", OptionsPreflightBypass);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSaasProps2SaasApp>("saas_app", SaasApp);
+            writer.WriteStringValue("same_site_cookie_attribute", SameSiteCookieAttribute);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2>("scim_config", ScimConfig);
+            writer.WriteBoolValue("service_auth_401_redirect", ServiceAuth401Redirect);
+            writer.WriteStringValue("session_duration", SessionDuration);
+            writer.WriteBoolValue("skip_interstitial", SkipInterstitial);
+            writer.WriteStringValue("type", Type);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteBoolValue("use_clientless_isolation_app_launcher_url", UseClientlessIsolationAppLauncherUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

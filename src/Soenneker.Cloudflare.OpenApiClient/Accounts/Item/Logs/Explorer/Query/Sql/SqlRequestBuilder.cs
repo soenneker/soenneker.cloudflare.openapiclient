@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logs\explorer\query\sql
+    /// Builds and executes requests for operations under \accounts\{account-id}\logs\explorer\query\sql
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SqlRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.S
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SqlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/explorer/query/sql", pathParameters)
+        public SqlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/explorer/query/sql", pathParameters)
         {
         }
         /// <summary>
@@ -30,14 +30,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.S
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SqlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/explorer/query/sql", rawUrl)
+        public SqlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/explorer/query/sql", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Run a SQL query against account-level datasets.Timestamp fields are RFC3339 strings. Filter with:  WHERE {timestamp_field} &gt;= now() - INTERVAL &apos;30&apos; DAY  WHERE {timestamp_field} &gt;= &apos;2026-04-01T00:00:00Z&apos;  WHERE {timestamp_field} BETWEEN &apos;2026-04-01T00:00:00Z&apos; AND &apos;2026-04-30T23:59:59Z&apos;Check /accounts/{account_id}/logs/explorer/datasets to see enabled account level datasets.Zone-level datasets will not appear here.Check /accounts/{account_id}/logs/explorer/datasets/available for the schemas, and the name of the timestamp fields.For zone-level datasets use the zone-scoped endpoint: POST /zones/{zone_id}/logs/explorer/query/sqlFor more information about the datasets, and the meaning of each field, check out https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/&quot;
+        /// Run a SQL query against account-level datasets. The SQL query is passed as the `query` query parameter. Because the query appears in the URL, it is subject to gateway and proxy URL-length limits and may be recorded in access logs. This endpoint is deprecated in favour of the POST variant which sends the query in the request body.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 507 status code</exception>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+                { "507", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Run a SQL query against account-level datasets.Timestamp fields are RFC3339 strings. Filter with:  WHERE {timestamp_field} &gt;= now() - INTERVAL &apos;30&apos; DAY  WHERE {timestamp_field} &gt;= &apos;2026-04-01T00:00:00Z&apos;  WHERE {timestamp_field} BETWEEN &apos;2026-04-01T00:00:00Z&apos; AND &apos;2026-04-30T23:59:59Z&apos;List configured account datasets to see enabled account-level datasets.Zone-level datasets will not appear here.List available account datasets to inspect their schemas and timestamp fields.For more information about the datasets, and the meaning of each field, check out https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse"/></returns>
+        /// <param name="body">SQL query to execute.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 400 status code</exception>
@@ -46,11 +76,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.S
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse">When receiving a 507 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsLogsExplorerQueryPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse?> PostAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsLogsExplorerQueryPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse> PostAsync(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -65,25 +95,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.S
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LexQueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Run a SQL query against account-level datasets.Timestamp fields are RFC3339 strings. Filter with:  WHERE {timestamp_field} &gt;= now() - INTERVAL &apos;30&apos; DAY  WHERE {timestamp_field} &gt;= &apos;2026-04-01T00:00:00Z&apos;  WHERE {timestamp_field} BETWEEN &apos;2026-04-01T00:00:00Z&apos; AND &apos;2026-04-30T23:59:59Z&apos;Check /accounts/{account_id}/logs/explorer/datasets to see enabled account level datasets.Zone-level datasets will not appear here.Check /accounts/{account_id}/logs/explorer/datasets/available for the schemas, and the name of the timestamp fields.For zone-level datasets use the zone-scoped endpoint: POST /zones/{zone_id}/logs/explorer/query/sqlFor more information about the datasets, and the meaning of each field, check out https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/&quot;
+        /// Run a SQL query against account-level datasets. The SQL query is passed as the `query` query parameter. Because the query appears in the URL, it is subject to gateway and proxy URL-length limits and may be recorded in access logs. This endpoint is deprecated in favour of the POST variant which sends the query in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsLogsExplorerQueryPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsLogsExplorerQueryPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder.SqlRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/accounts/{account%2Did}/logs/explorer/query/sql?query={query}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Run a SQL query against account-level datasets.Timestamp fields are RFC3339 strings. Filter with:  WHERE {timestamp_field} &gt;= now() - INTERVAL &apos;30&apos; DAY  WHERE {timestamp_field} &gt;= &apos;2026-04-01T00:00:00Z&apos;  WHERE {timestamp_field} BETWEEN &apos;2026-04-01T00:00:00Z&apos; AND &apos;2026-04-30T23:59:59Z&apos;List configured account datasets to see enabled account-level datasets.Zone-level datasets will not appear here.List available account datasets to inspect their schemas and timestamp fields.For more information about the datasets, and the meaning of each field, check out https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">SQL query to execute.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(Stream body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "text/plain", body);
+            requestInfo.SetStreamContent(body, "text/plain");
             return requestInfo;
         }
         /// <summary>
@@ -94,6 +144,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.S
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Explorer.Query.Sql.SqlRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Run a SQL query against account-level datasets. The SQL query is passed as the `query` query parameter. Because the query appears in the URL, it is subject to gateway and proxy URL-length limits and may be recorded in access logs. This endpoint is deprecated in favour of the POST variant which sends the query in the request body.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SqlRequestBuilderGetQueryParameters 
+        {
+            /// <summary>SQL query to execute.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("query")]
+            public string? Query { get; set; }
+#nullable restore
+#else
+            [QueryParameter("query")]
+            public string Query { get; set; }
+#endif
         }
     }
 }

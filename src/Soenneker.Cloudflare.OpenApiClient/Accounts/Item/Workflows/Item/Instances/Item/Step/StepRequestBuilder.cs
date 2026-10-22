@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workflows\{workflow_name}\instances\{instance_id}\step
+    /// Builds and executes requests for operations under \accounts\{account-id}\workflows\{workflowName}\instances\{instanceId}\step
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StepRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StepRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances/{instance_id}/step?name={name}&type={type}{&attempt*}", pathParameters)
+        public StepRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflowName}/instances/{instanceId}/step?name={name}&type={type}{&attempt*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,37 +30,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StepRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances/{instance_id}/step?name={name}&type={type}{&attempt*}", rawUrl)
+        public StepRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflowName}/instances/{instanceId}/step?name={name}&type={type}{&attempt*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the full, untruncated output for a specific step on a workflow instance. Returns a flat status-shaped JSON body with step `status` (&apos;running&apos; | &apos;waiting&apos; | &apos;complete&apos; | &apos;errored&apos;), `error` (nullable), and `output` (the step value, or null while running/waiting/errored). When the step returned a ReadableStream from step.do, the response is served as &apos;application/octet-stream&apos; with the raw bytes as the body instead of JSON. A `status=&apos;running&apos;` response with non-null `error` indicates the step is currently retrying after a prior attempt failed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep404Response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep429Response">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.StepRequestBuilder.StepRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.StepRequestBuilder.StepRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.StepRequestBuilder.StepRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.StepRequestBuilder.StepRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep404.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep400Response.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep404Response.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep429Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStep200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the full, untruncated output for a specific step on a workflow instance. Returns a flat status-shaped JSON body with step `status` (&apos;running&apos; | &apos;waiting&apos; | &apos;complete&apos; | &apos;errored&apos;), `error` (nullable), and `output` (the step value, or null while running/waiting/errored). When the step returned a ReadableStream from step.do, the response is served as &apos;application/octet-stream&apos; with the raw bytes as the body instead of JSON. A `status=&apos;running&apos;` response with non-null `error` indicates the step is currently retrying after a prior attempt failed.
@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
 #endif
             /// <summary>Step type to disambiguate step.do and waitForEvent entries that share the same name.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorGetWorkflowInstanceStepTypeParameter? Type { get; set; }
         }
     }
 }

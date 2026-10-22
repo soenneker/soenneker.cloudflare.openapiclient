@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Delivered { get; set; }
 #endif
+        /// <summary>Message ID of the sent email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageId { get; set; }
+#nullable restore
+#else
+        public string MessageId { get; set; }
+#endif
         /// <summary>Email addresses that permanently bounced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +45,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> Queued { get; set; }
+#endif
+        /// <summary>Email addresses dropped because they are on the suppression list. Returned when suppressed-recipient dropping is enabled for the sending subdomain; otherwise the request fails instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SuppressedRecipients { get; set; }
+#nullable restore
+#else
+        public List<string> SuppressedRecipients { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailSendResponse"/> and sets the default values.
@@ -64,8 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "delivered", n => { Delivered = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "message_id", n => { MessageId = n.GetStringValue(); } },
                 { "permanent_bounces", n => { PermanentBounces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "queued", n => { Queued = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "suppressed_recipients", n => { SuppressedRecipients = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,8 +94,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("delivered", Delivered);
+            writer.WriteStringValue("message_id", MessageId);
             writer.WriteCollectionOfPrimitiveValues<string>("permanent_bounces", PermanentBounces);
             writer.WriteCollectionOfPrimitiveValues<string>("queued", Queued);
+            writer.WriteCollectionOfPrimitiveValues<string>("suppressed_recipients", SuppressedRecipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

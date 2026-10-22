@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A trusted email domain
+    /// A trusted email domain.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityTrustedDomain : IAdditionalDataHolder, IParsable
@@ -24,45 +24,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_created_at CreatedAt { get; private set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_id Id { get; private set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Trusted domain identifier.</summary>
+        public Guid? Id { get; set; }
         /// <summary>Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.</summary>
         public bool? IsRecent { get; set; }
-        /// <summary>The is_regex property</summary>
+        /// <summary>Whether `pattern` is a regular expression instead of a literal domain.</summary>
         public bool? IsRegex { get; set; }
         /// <summary>Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.</summary>
         public bool? IsSimilarity { get; set; }
-        /// <summary>&quot;Deprecated, use `modified_at` instead. End of life: November 1, 2026.&quot;</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_last_modified? LastModified { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_last_modified LastModified { get; private set; }
-#endif
+        /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
+        public DateTimeOffset? LastModified { get; set; }
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_modified_at? ModifiedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_modified_at ModifiedAt { get; private set; }
-#endif
-        /// <summary>The pattern property</summary>
+        public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>The domain pattern to trust, e.g. `example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Pattern { get; set; }
@@ -96,13 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_created_at.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_id.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_recent", n => { IsRecent = n.GetBoolValue(); } },
                 { "is_regex", n => { IsRegex = n.GetBoolValue(); } },
                 { "is_similarity", n => { IsSimilarity = n.GetBoolValue(); } },
-                { "last_modified", n => { LastModified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_last_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_last_modified.CreateFromDiscriminatorValue); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_modified_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityTrustedDomain_modified_at.CreateFromDiscriminatorValue); } },
+                { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
             };
         }
@@ -114,9 +89,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_recent", IsRecent);
             writer.WriteBoolValue("is_regex", IsRegex);
             writer.WriteBoolValue("is_similarity", IsSimilarity);
+            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteAdditionalData(AdditionalData);
         }

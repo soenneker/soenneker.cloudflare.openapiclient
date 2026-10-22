@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Provider account identifier.</summary>
+        /// <summary>Provider-specific identifier of the account or namespace that owns the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderAccountId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ProviderAccountId { get; set; }
 #endif
-        /// <summary>The provider_account_name property</summary>
+        /// <summary>Human-readable name of the account or namespace that owns the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderAccountName { get; set; }
@@ -30,9 +30,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ProviderAccountName { get; set; }
 #endif
-        /// <summary>The provider_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsSCMProviderType? ProviderType { get; set; }
-        /// <summary>Repository identifier.</summary>
+        /// <summary>Source control provider.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType? ProviderType { get; set; }
+        /// <summary>Provider-specific repository identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RepoId { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RepoId { get; set; }
 #endif
-        /// <summary>The repo_name property</summary>
+        /// <summary>Human-readable repository name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RepoName { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "provider_account_id", n => { ProviderAccountId = n.GetStringValue(); } },
                 { "provider_account_name", n => { ProviderAccountName = n.GetStringValue(); } },
-                { "provider_type", n => { ProviderType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsSCMProviderType>(); } },
+                { "provider_type", n => { ProviderType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType>(); } },
                 { "repo_id", n => { RepoId = n.GetStringValue(); } },
                 { "repo_name", n => { RepoName = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("provider_account_id", ProviderAccountId);
             writer.WriteStringValue("provider_account_name", ProviderAccountName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsSCMProviderType>("provider_type", ProviderType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsScmProviderType>("provider_type", ProviderType);
             writer.WriteStringValue("repo_id", RepoId);
             writer.WriteStringValue("repo_name", RepoName);
             writer.WriteAdditionalData(AdditionalData);

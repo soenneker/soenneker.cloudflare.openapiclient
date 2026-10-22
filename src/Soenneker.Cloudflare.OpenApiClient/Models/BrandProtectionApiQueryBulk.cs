@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulk_queries>? Queries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulkQueriesItemProperty>? Queries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulk_queries> Queries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulkQueriesItemProperty> Queries { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulk"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "queries", n => { Queries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulk_queries>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulk_queries.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulkQueriesItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulkQueriesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulk_queries>("queries", Queries);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApiQueryBulkQueriesItemProperty>("queries", Queries);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

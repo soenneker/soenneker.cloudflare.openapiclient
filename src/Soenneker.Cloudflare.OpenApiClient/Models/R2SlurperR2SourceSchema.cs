@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema Secret { get; set; }
 #endif
         /// <summary>The vendor property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchema_vendor? Vendor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Vendor? Vendor { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchema"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pathPrefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema.CreateFromDiscriminatorValue); } },
-                { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchema_vendor>(); } },
+                { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Vendor>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3LikeCredsSchema>("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchema_vendor>("vendor", Vendor);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Vendor>("vendor", Vendor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

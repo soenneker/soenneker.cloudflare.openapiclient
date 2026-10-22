@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provides counts of what resources are linked to this label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_mapped_resources? MappedResources { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabelMappedResources? MappedResources { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_mapped_resources MappedResources { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabelMappedResources MappedResources { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_source? Source { get; set; }
+        public string? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_source Source { get; set; }
+        public string Source { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mapped_resources", n => { MappedResources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_mapped_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_mapped_resources.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_source.CreateFromDiscriminatorValue); } },
+                { "mapped_resources", n => { MappedResources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabelMappedResources>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabelMappedResources.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_mapped_resources>("mapped_resources", MappedResources);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabel_source>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullManagedLabelMappedResources>("mapped_resources", MappedResources);
+            writer.WriteStringValue("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

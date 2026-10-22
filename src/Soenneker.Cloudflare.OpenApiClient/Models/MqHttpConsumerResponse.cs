@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings Settings { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponse_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponse"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dead_letter_queue", n => { DeadLetterQueue = n.GetStringValue(); } },
                 { "queue_name", n => { QueueName = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dead_letter_queue", DeadLetterQueue);
             writer.WriteStringValue("queue_name", QueueName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponseSettings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

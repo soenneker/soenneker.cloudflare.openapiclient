@@ -30,6 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl Bgp { get; set; }
 #endif
+        /// <summary>The BGP mode for a CNI.One of the following:* `dynamic_route_exchange`* `advertise_only`</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode? BgpMode { get; set; }
         /// <summary>Customer end of the point-to-point linkThis should always be inside the same prefix as `p2p_ip`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "account", n => { Account = n.GetStringValue(); } },
                 { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl.CreateFromDiscriminatorValue); } },
+                { "bgp_mode", n => { BgpMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode>(); } },
                 { "cust_ip", n => { CustIp = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "interconnect", n => { Interconnect = n.GetStringValue(); } },
@@ -107,6 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpControl>("bgp", Bgp);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscBgpMode>("bgp_mode", BgpMode);
             writer.WriteStringValue("cust_ip", CustIp);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("interconnect", Interconnect);

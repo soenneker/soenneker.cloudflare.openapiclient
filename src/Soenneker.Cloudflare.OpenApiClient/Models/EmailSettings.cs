@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The date and time the settings have been created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>State of the zone settings for Email Routing.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get; private set; }
         /// <summary>Email Routing settings identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,9 +37,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Flag to check if the user skipped the configuration wizard.</summary>
-        public bool? SkipWizard { get; set; }
+        public bool? SkipWizard { get; private set; }
         /// <summary>Show the state of your account, and the type or configuration error.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingStatus? Status { get; private set; }
+        /// <summary>Whether subaddressing (plus-addressing) is honored when matching incoming mail against routing rules.</summary>
+        public bool? SupportSubaddress { get; private set; }
         /// <summary>Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "skip_wizard", n => { SkipWizard = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailEmailSettingStatus>(); } },
+                { "support_subaddress", n => { SupportSubaddress = n.GetBoolValue(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
@@ -91,11 +94,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created", Created);
-            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteBoolValue("skip_wizard", SkipWizard);
             writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }

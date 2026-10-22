@@ -13,21 +13,22 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2-catalog\{bucket_name}\namespaces\{namespace}\tables
+    /// Builds and executes requests for operations under \accounts\{account-id}\r2-catalog\{bucketName}\namespaces\{namespaceValue}\tables
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TablesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.r2Catalog.item.namespaces.item.tables.item collection</summary>
-        /// <param name="position">The table name.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.WithTable_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.WithTable_nameItemRequestBuilder this[string position]
+        /// <param name="position">The table name within the given namespace.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.WithTableNameItemRequestBuilder"/></returns>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.WithTableNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("table_name", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.WithTable_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tableName", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item.WithTableNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables{?page_size*,page_token*,return_details*,return_uuids*}", pathParameters)
+        public TablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2-catalog/{bucketName}/namespaces/{namespaceValue}/tables{?page_size*,page_token*,return_details*,return_uuids*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,13 +44,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables{?page_size*,page_token*,return_details*,return_uuids*}", rawUrl)
+        public TablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2-catalog/{bucketName}/namespaces/{namespaceValue}/tables{?page_size*,page_token*,return_details*,return_uuids*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a list of tables in the specified namespace within an R2 catalog.Supports pagination for efficient traversal of large table collections.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure">When receiving a 400 status code</exception>
@@ -57,13 +58,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder.TablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder.TablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder.TablesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder.TablesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -75,13 +77,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListTables200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of tables in the specified namespace within an R2 catalog.Supports pagination for efficient traversal of large table collections.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder.TablesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -101,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.TablesRequestBuilder(rawUrl, RequestAdapter);

@@ -22,10 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>True if a Cloudflare-provided learned schema is available for this endpoint.</summary>
-        public bool? LearnedAvailable { get; set; }
         /// <summary>Action taken on requests failing validation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfo_mitigation_action? MitigationAction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? MitigationAction { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfo"/> and sets the default values.
         /// </summary>
@@ -52,8 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active_schema", n => { ActiveSchema = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.CreateFromDiscriminatorValue); } },
-                { "learned_available", n => { LearnedAvailable = n.GetBoolValue(); } },
-                { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfo_mitigation_action>(); } },
+                { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction>(); } },
             };
         }
         /// <summary>
@@ -64,8 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema>("active_schema", ActiveSchema);
-            writer.WriteBoolValue("learned_available", LearnedAvailable);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfo_mitigation_action>("mitigation_action", MitigationAction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction>("mitigation_action", MitigationAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

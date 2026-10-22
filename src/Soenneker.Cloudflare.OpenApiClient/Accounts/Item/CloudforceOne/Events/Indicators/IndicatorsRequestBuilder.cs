@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.Aggregate;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +13,22 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\events\indicators
+    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\indicators
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndicatorsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The aggregate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.Aggregate.AggregateRequestBuilder Aggregate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.Aggregate.AggregateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?cache*,createdAfter*,createdBefore*,cursor*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,34 +36,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?cache*,createdAfter*,createdBefore*,cursor*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
+        /// Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use one standalone datasetIds scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If no datasetIds are provided, uses the default dataset.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder.IndicatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
+        /// Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use one standalone datasetIds scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If no datasetIds are provided, uses the default dataset.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,18 +91,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
+        /// Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use one standalone datasetIds scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If no datasetIds are provided, uses the default dataset.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IndicatorsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Cache strategy. &apos;from-graph&apos; serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit. Cannot be combined with `cursor`.</summary>
+            [QueryParameter("cache")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.FromGraphCache? Cache { get; set; }
             /// <summary>Filter indicators created on or after this date. Must use ISO 8601 format (e.g., &apos;2024-01-15T00:00:00Z&apos;).</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
             /// <summary>Filter indicators created on or before this date. Must use ISO 8601 format (e.g., &apos;2024-12-31T23:59:59Z&apos;).</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
-            /// <summary>Dataset IDs to query indicators from (array of UUIDs), or special value &apos;all&apos; or &apos;*&apos; to query all datasets. If not provided, uses the default dataset.</summary>
+            /// <summary>Opaque cursor from a previous response&apos;s `pagination.cursor`. When provided, all filters, datasetIds, page, `pageSize`, `includeTags` and `relatedEventsLimit` come from the cursor — do not resend them. Sending any filter, `page`, `pageSize`, `includeTags`, `relatedEventsLimit`, `includeTotalCount=true`, or `cache=from-graph` alongside a cursor yields a 400 `CursorFilterConflictError`. A cursor issued for a different entity, an unsupported version, or a dataset that has since been reconfigured as analytics-only yields a 400 `InvalidCursorError`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            /// <summary>Dataset UUIDs to query, or one standalone scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If not provided, uses the default dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetIds")]
@@ -108,21 +127,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
 #endif
             /// <summary>Output format for indicator data. &apos;json&apos; returns the default format, &apos;stix2&apos; returns STIX 2.1 Indicator SDOs, &apos;taxii&apos; returns a TAXII 2.1 Envelope with Content-Type application/taxii+json;version=2.1.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorListFormatParameter? Format { get; set; }
             /// <summary>Whether to include full tag details for each indicator. Defaults to true.</summary>
             [QueryParameter("includeTags")]
             public bool? IncludeTags { get; set; }
-            /// <summary>Whether to compute accurate total count via COUNT(*). Defaults to false for performance. When false, total_count is an approximation.</summary>
+            /// <summary>Whether to compute total count via COUNT(*). Defaults to false for performance. total_count is null unless this is true and the complete fan-out succeeds.</summary>
             [QueryParameter("includeTotalCount")]
             public bool? IncludeTotalCount { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("indicatorType")]
             public string? IndicatorType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("indicatorType")]
             public string IndicatorType { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Filter indicators by value using substring match (LIKE). Legacy alternative to structured search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,10 +157,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("pageSize")]
             public double? PageSize { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter by related event IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,10 +175,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("relatedEvents")]
             public string[] RelatedEvents { get; set; }
 #endif
-            /// <summary>&quot;Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events.&quot;</summary>
+            /// <summary>Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events. For JSON responses, when the limit hides events, the indicator carries `relatedEventsHasMore: true` and the response includes an advisory message — the cap is never applied silently. STIX and TAXII representations do not include related-event data.</summary>
             [QueryParameter("relatedEventsLimit")]
             public double? RelatedEventsLimit { get; set; }
-            /// <summary>&quot;Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType. Supports operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use the &apos;in&apos; operator with an array value to bulk-check up to 100 indicators in a single request, e.g. search=[{\&quot;field\&quot;:\&quot;value\&quot;,\&quot;op\&quot;:\&quot;in\&quot;,\&quot;value\&quot;:[\&quot;evil.com\&quot;,\&quot;bad.org\&quot;]}]. Multiple conditions are AND&apos;d together. Max 10 conditions per request.&quot;</summary>
+            /// <summary>Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType, uuid. Supports operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use the &apos;in&apos; operator with an array value to bulk-check up to 100 indicators in a single request, e.g. search=[{&quot;field&quot;:&quot;value&quot;,&quot;op&quot;:&quot;in&quot;,&quot;value&quot;:[&quot;evil.com&quot;,&quot;bad.org&quot;]}]. Multiple conditions are AND&apos;d together. Max 10 conditions per request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -171,7 +198,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
 #endif
-            /// <summary>&quot;Structured tag-metadata filter as a JSON array of {field, op, value} objects. Operates against the per-dataset IndicatorTag mirror so you can find indicators by tag attributes (origin country, motive, sophistication, priority, etc.) without a separate Tags lookup. Common dashboard usage: drill from a country into indicators, e.g. tagSearch=[{\&quot;field\&quot;:\&quot;originCountryISO\&quot;,\&quot;op\&quot;:\&quot;in\&quot;,\&quot;value\&quot;:[\&quot;IR\&quot;,\&quot;CN\&quot;]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (e.g. \&quot;iran\&quot;). Operators: equals, not, gt/gte/lt/lte (numeric only), contains/like/find/startsWith/endsWith (string only), in. AND-joined across entries; combined with `tags`, a matching tag must satisfy both. Max 10 entries per request, max 100 values per &apos;in&apos;. Performance notes: `originCountryISO` uses its B-tree index for equals/not/in. `priority` uses its B-tree index for numeric comparisons. Other string columns (`actorCategory`, `motive`, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on the JSON-encoded text, so substrings can cross alias boundaries (\&quot;apt28\&quot; also matches \&quot;apt280\&quot; when both appear in the same tag&apos;s alias list).&quot;</summary>
+            /// <summary>Structured tag-metadata filter as a JSON array of {field, op, value} objects. Operates against the per-dataset IndicatorTag mirror so you can find indicators by tag attributes (origin country, motive, sophistication, priority, etc.) without a separate Tags lookup. Common dashboard usage: drill from a country into indicators, e.g. tagSearch=[{&quot;field&quot;:&quot;originCountryISO&quot;,&quot;op&quot;:&quot;in&quot;,&quot;value&quot;:[&quot;IR&quot;,&quot;CN&quot;]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (e.g. &quot;iran&quot;). Operators: equals, not, gt/gte/lt/lte (numeric only), contains/like/find/startsWith/endsWith (string only), in. AND-joined across entries; combined with `tags`, a matching tag must satisfy both. Max 10 entries per request, max 100 values per &apos;in&apos;. Performance notes: `originCountryISO` uses its B-tree index for equals/not/in. `priority` uses its B-tree index for numeric comparisons. Other string columns (`actorCategory`, `motive`, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on the JSON-encoded text, so substrings can cross alias boundaries (&quot;apt28&quot; also matches &quot;apt280&quot; when both appear in the same tag&apos;s alias list).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tagSearch")]

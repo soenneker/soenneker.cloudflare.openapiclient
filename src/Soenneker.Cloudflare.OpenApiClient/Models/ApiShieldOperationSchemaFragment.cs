@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>OpenAPI parameter objects describing path, query, header, or cookie parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_parameters>? Parameters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty>? Parameters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_parameters> Parameters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty> Parameters { get; set; }
 #endif
         /// <summary>OpenAPI request body object describing the expected request payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_requestBody? RequestBody { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty? RequestBody { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_requestBody RequestBody { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty RequestBody { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_parameters.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "requestBody", n => { RequestBody = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_requestBody>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_requestBody.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "requestBody", n => { RequestBody = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_parameters>("parameters", Parameters);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragment_requestBody>("requestBody", RequestBody);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentParametersItemProperty>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationSchemaFragmentRequestBodyProperty>("requestBody", RequestBody);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

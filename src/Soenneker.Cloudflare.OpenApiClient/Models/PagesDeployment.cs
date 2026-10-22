@@ -41,14 +41,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger DeploymentTrigger { get; private set; }
 #endif
         /// <summary>Type of deploy.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeployment_environment? Environment { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvironment? Environment { get; private set; }
         /// <summary>Environment variables used for builds and Pages Functions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesEnvVars? EnvVars { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvVars? EnvVars { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesEnvVars EnvVars { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvVars EnvVars { get; set; }
 #endif
         /// <summary>Id of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>If the deployment has been skipped.</summary>
+        /// <summary>Whether the deployment was skipped.</summary>
         public bool? IsSkipped { get; private set; }
         /// <summary>The status of the deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ProjectId { get; private set; }
 #endif
-        /// <summary>Name of the project.</summary>
+        /// <summary>Name of the Pages project. Must begin with a lowercase letter or digit and contain only lowercase letters, digits, and hyphens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectName { get; set; }
@@ -94,6 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ShortId { get; private set; }
 #endif
+        /// <summary>Why the deployment was skipped.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentSkipReason? SkipReason { get; private set; }
         /// <summary>Configs for the project source control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,8 +151,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "build_config", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig.CreateFromDiscriminatorValue); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "deployment_trigger", n => { DeploymentTrigger = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger.CreateFromDiscriminatorValue); } },
-                { "env_vars", n => { EnvVars = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesEnvVars>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesEnvVars.CreateFromDiscriminatorValue); } },
-                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeployment_environment>(); } },
+                { "env_vars", n => { EnvVars = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvVars>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvVars.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvironment>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_skipped", n => { IsSkipped = n.GetBoolValue(); } },
                 { "latest_stage", n => { LatestStage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage.CreateFromDiscriminatorValue); } },
@@ -158,6 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "project_name", n => { ProjectName = n.GetStringValue(); } },
                 { "short_id", n => { ShortId = n.GetStringValue(); } },
+                { "skip_reason", n => { SkipReason = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentSkipReason>(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource.CreateFromDiscriminatorValue); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -172,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesBuildConfig>("build_config", BuildConfig);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesEnvVars>("env_vars", EnvVars);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentEnvVars>("env_vars", EnvVars);
             writer.WriteStringValue("project_name", ProjectName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);

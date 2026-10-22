@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes
         /// <summary>
         /// Retrieves ASPA (Autonomous System Provider Authorization) changes over time. Returns daily aggregated changes including additions, removals, and modifications of ASPA objects.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes.ChangesRequestBuilder.ChangesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChanges200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves ASPA (Autonomous System Provider Authorization) changes over time. Returns daily aggregated changes including additions, removals, and modifications of ASPA objects.
@@ -93,15 +93,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes
             /// <summary>Filter changes involving this ASN (as customer or provider).</summary>
             [QueryParameter("asn")]
             public int? Asn { get; set; }
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.</summary>
             [QueryParameter("dateEnd")]
             public DateTimeOffset? DateEnd { get; set; }
-            /// <summary>Start of the date range (inclusive).</summary>
+            /// <summary>Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.</summary>
             [QueryParameter("dateStart")]
             public DateTimeOffset? DateStart { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Changes.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaChangesFormatParameter? Format { get; set; }
             /// <summary>Include ASN metadata (name, country) in response.</summary>
             [QueryParameter("includeAsnInfo")]
             public bool? IncludeAsnInfo { get; set; }

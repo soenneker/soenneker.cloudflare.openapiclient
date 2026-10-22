@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Service { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindService_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ServiceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindService"/> and sets the default values.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindService_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ServiceType>(); } },
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service", Service);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindService_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

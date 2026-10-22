@@ -25,8 +25,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ResourceId { get; set; }
 #endif
-        /// <summary>Enum for base zone-level resource types (those with no extra required fields).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum? ResourceType { get; set; }
+        /// <summary>Enum for access_application_policy resource type.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum? ResourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "access_application_id", n => { AccessApplicationId = n.GetGuidValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum>(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("access_application_id", AccessApplicationId);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum>("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum>("resource_type", ResourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

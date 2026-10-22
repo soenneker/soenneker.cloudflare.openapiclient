@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Metadata for the label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequest_metadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequestMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequest_metadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequestMetadata Metadata { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequest"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequest_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequest_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequestMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequestMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequest_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPutLabelRequestMetadata>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

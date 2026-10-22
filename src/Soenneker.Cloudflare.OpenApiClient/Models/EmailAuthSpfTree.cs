@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Recursive SPF inspection tree (spflimit-worker format).Breaking change from previous format:- `raw` renamed to `record`- `num_lookups` renamed to `total_lookups`- `mechanisms` renamed to `components` with new structure- `child` array removed; nested trees now in `components[].nested`- `errors` is now an array of error objects (was single string)
+    /// Recursive SPF inspection tree
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailAuthSpfTree : IAdditionalDataHolder, IParsable

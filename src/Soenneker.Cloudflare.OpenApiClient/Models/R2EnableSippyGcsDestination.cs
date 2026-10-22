@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The provider property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsDestination_provider? Provider { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Provider? Provider { get; set; }
         /// <summary>Value of a Cloudflare API token.This is the value labelled &quot;Secret Access Key&quot; when creating an API.token from the [R2 dashboard](https://dash.cloudflare.com/?to=/:account/r2/api-tokens).Sippy will use this token when writing objects to R2, so it isbest to scope this token to the bucket you&apos;re enabling Sippy for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accessKeyId", n => { AccessKeyId = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsDestination_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Provider>(); } },
                 { "secretAccessKey", n => { SecretAccessKey = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessKeyId", AccessKeyId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsDestination_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Provider>("provider", Provider);
             writer.WriteStringValue("secretAccessKey", SecretAccessKey);
             writer.WriteAdditionalData(AdditionalData);
         }

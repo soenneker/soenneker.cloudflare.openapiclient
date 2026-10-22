@@ -2,10 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Destinations;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Issues;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Metricsexport;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Queries;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Shared;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Usage;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -13,15 +17,30 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\observability
+    /// Builds and executes requests for operations under \accounts\{account-id}\workers\observability
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ObservabilityRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agents property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.AgentsRequestBuilder Agents
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The destinations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Destinations.DestinationsRequestBuilder Destinations
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Destinations.DestinationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The issues property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Issues.IssuesRequestBuilder Issues
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The metricsexport property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Metricsexport.MetricsexportRequestBuilder Metricsexport
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Metricsexport.MetricsexportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The queries property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Queries.QueriesRequestBuilder Queries
@@ -38,12 +57,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.TelemetryRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The usage property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Usage.UsageRequestBuilder Usage
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.ObservabilityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ObservabilityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/observability", pathParameters)
+        public ObservabilityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/observability", pathParameters)
         {
         }
         /// <summary>
@@ -51,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ObservabilityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/observability", rawUrl)
+        public ObservabilityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/observability", rawUrl)
         {
         }
     }

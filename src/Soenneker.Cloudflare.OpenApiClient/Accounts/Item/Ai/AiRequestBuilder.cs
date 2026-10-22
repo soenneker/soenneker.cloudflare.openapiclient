@@ -8,6 +8,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tasks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Websearch;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiRequestBuilder : BaseRequestBuilder
@@ -50,12 +51,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown.TomarkdownRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The websearch property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Websearch.WebsearchRequestBuilder Websearch
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Websearch.WebsearchRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.AiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai", pathParameters)
+        public AiRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai", pathParameters)
         {
         }
         /// <summary>
@@ -63,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai", rawUrl)
+        public AiRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai", rawUrl)
         {
         }
     }

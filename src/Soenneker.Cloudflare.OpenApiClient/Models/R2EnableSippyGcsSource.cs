@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PrivateKey { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsSource_provider? Provider { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GcsProvider? Provider { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsSource"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "clientEmail", n => { ClientEmail = n.GetStringValue(); } },
                 { "privateKey", n => { PrivateKey = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsSource_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GcsProvider>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteStringValue("clientEmail", ClientEmail);
             writer.WriteStringValue("privateKey", PrivateKey);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyGcsSource_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GcsProvider>("provider", Provider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

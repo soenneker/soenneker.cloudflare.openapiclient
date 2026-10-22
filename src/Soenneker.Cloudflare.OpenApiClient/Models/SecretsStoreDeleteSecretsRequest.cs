@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Request body for bulk deleting secrets
+    /// Request body for bulk deleting secrets.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretsStoreDeleteSecretsRequest : IAdditionalDataHolder, IParsable

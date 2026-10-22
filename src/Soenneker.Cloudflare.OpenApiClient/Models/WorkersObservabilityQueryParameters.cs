@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Create Calculations to compute as part of the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_calculations>? Calculations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersCalculationsItem>? Calculations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_calculations> Calculations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersCalculationsItem> Calculations { get; set; }
 #endif
         /// <summary>Set the Datasets to query. Leave it empty to query all the datasets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,8 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Datasets { get; set; }
 #endif
         /// <summary>Set a Flag to describe how to combine the filters on the query.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_filterCombination? FilterCombination { get; set; }
-        /// <summary>&quot;Configure the Filters to apply to the query. Supports nested groups via kind: &apos;group&apos;.&quot;</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersFilterCombination? FilterCombination { get; set; }
+        /// <summary>Configure the Filters to apply to the query. Supports nested groups via kind: &apos;group&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode>? Filters { get; set; }
@@ -43,18 +43,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Define how to group the results of the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_groupBys>? GroupBys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersGroupBysItem>? GroupBys { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_groupBys> GroupBys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersGroupBysItem> GroupBys { get; set; }
 #endif
         /// <summary>Configure the Having clauses that filter on calculations in the query result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_havings>? Havings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersHavingsItem>? Havings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_havings> Havings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersHavingsItem> Havings { get; set; }
 #endif
         /// <summary>Set a limit on the number of results / records returned by the query</summary>
         public int? Limit { get; set; }
@@ -99,12 +99,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_calculations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_calculations.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersCalculationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersCalculationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filterCombination", n => { FilterCombination = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_filterCombination>(); } },
+                { "filterCombination", n => { FilterCombination = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersFilterCombination>(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "groupBys", n => { GroupBys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_groupBys>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_groupBys.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "havings", n => { Havings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_havings>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_havings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "groupBys", n => { GroupBys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersGroupBysItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersGroupBysItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "havings", n => { Havings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersHavingsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersHavingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "needle", n => { Needle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersNeedle>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersNeedle.CreateFromDiscriminatorValue); } },
                 { "orderBy", n => { OrderBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersOrderBy>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersOrderBy.CreateFromDiscriminatorValue); } },
@@ -117,12 +117,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_calculations>("calculations", Calculations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersCalculationsItem>("calculations", Calculations);
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_filterCombination>("filterCombination", FilterCombination);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersFilterCombination>("filterCombination", FilterCombination);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode>("filters", Filters);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_groupBys>("groupBys", GroupBys);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParameters_havings>("havings", Havings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersGroupBysItem>("groupBys", GroupBys);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersHavingsItem>("havings", Havings);
             writer.WriteIntValue("limit", Limit);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersNeedle>("needle", Needle);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryParametersOrderBy>("orderBy", OrderBy);

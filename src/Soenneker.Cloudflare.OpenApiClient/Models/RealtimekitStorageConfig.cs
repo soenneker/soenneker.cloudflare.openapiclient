@@ -7,98 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class RealtimekitStorageConfig : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class RealtimekitStorageConfig : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Access key of the storage medium. Access key is not required for the `gcs` storage media type.Note that this field is not readable by clients, only writeable.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1? RealtimekitStorageConfigOneOf1 { get; set; }
 #nullable restore
 #else
-        public string AccessKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1 RealtimekitStorageConfigOneOf1 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Authentication method used for &quot;sftp&quot; type storage medium</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig_auth_method? AuthMethod { get; set; }
-        /// <summary>Name of the storage medium&apos;s bucket.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Bucket { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2? RealtimekitStorageConfigOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Bucket { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2 RealtimekitStorageConfigOneOf2 { get; set; }
 #endif
-        /// <summary>SSH destination server host for SFTP type storage medium</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3? RealtimekitStorageConfigOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3 RealtimekitStorageConfigOneOf3 { get; set; }
 #endif
-        /// <summary>SSH destination server password for SFTP type storage medium when auth_method is &quot;PASSWORD&quot;. If auth_method is &quot;KEY&quot;, this specifies the password for the ssh private key.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Password { get; set; }
-#nullable restore
-#else
-        public string Password { get; set; }
-#endif
-        /// <summary>Path relative to the bucket root at which the recording will be placed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Path { get; set; }
-#nullable restore
-#else
-        public string Path { get; set; }
-#endif
-        /// <summary>SSH destination server port for SFTP type storage medium</summary>
-        public double? Port { get; set; }
-        /// <summary>Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is &quot;KEY&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrivateKey { get; set; }
-#nullable restore
-#else
-        public string PrivateKey { get; set; }
-#endif
-        /// <summary>Region of the storage medium.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
-        /// <summary>Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Secret { get; set; }
-#nullable restore
-#else
-        public string Secret { get; set; }
-#endif
-        /// <summary>Type of storage media.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig_type? Type { get; set; }
-        /// <summary>SSH destination server username for SFTP type storage medium</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig"/> and sets the default values.
-        /// </summary>
-        public RealtimekitStorageConfig()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -107,7 +45,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig();
+            if("RealtimekitStorageConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RealtimekitStorageConfigOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1();
+            }
+            else if("RealtimekitStorageConfigOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RealtimekitStorageConfigOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,21 +63,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RealtimekitStorageConfigOneOf1 != null)
             {
-                { "access_key", n => { AccessKey = n.GetStringValue(); } },
-                { "auth_method", n => { AuthMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig_auth_method>(); } },
-                { "bucket", n => { Bucket = n.GetStringValue(); } },
-                { "host", n => { Host = n.GetStringValue(); } },
-                { "password", n => { Password = n.GetStringValue(); } },
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "port", n => { Port = n.GetDoubleValue(); } },
-                { "private_key", n => { PrivateKey = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "secret", n => { Secret = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig_type>(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-            };
+                return RealtimekitStorageConfigOneOf1.GetFieldDeserializers();
+            }
+            else if(RealtimekitStorageConfigOneOf2 != null)
+            {
+                return RealtimekitStorageConfigOneOf2.GetFieldDeserializers();
+            }
+            else if(RealtimekitStorageConfigOneOf3 != null)
+            {
+                return RealtimekitStorageConfigOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -138,19 +84,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("access_key", AccessKey);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig_auth_method>("auth_method", AuthMethod);
-            writer.WriteStringValue("bucket", Bucket);
-            writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("password", Password);
-            writer.WriteStringValue("path", Path);
-            writer.WriteDoubleValue("port", Port);
-            writer.WriteStringValue("private_key", PrivateKey);
-            writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig_type>("type", Type);
-            writer.WriteStringValue("username", Username);
-            writer.WriteAdditionalData(AdditionalData);
+            if(RealtimekitStorageConfigOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf1>(null, RealtimekitStorageConfigOneOf1);
+            }
+            else if(RealtimekitStorageConfigOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf2>(null, RealtimekitStorageConfigOneOf2);
+            }
+            else if(RealtimekitStorageConfigOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3>(null, RealtimekitStorageConfigOneOf3);
+            }
         }
     }
 }

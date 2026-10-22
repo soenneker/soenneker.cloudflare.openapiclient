@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The template_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMeta_template_data? TemplateData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMetaTemplateDataProperty? TemplateData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMeta_template_data TemplateData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMetaTemplateDataProperty TemplateData { get; set; }
 #endif
         /// <summary>The trace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "l10n_key", n => { L10nKey = n.GetStringValue(); } },
                 { "loggable_error", n => { LoggableError = n.GetStringValue(); } },
-                { "template_data", n => { TemplateData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMeta_template_data>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMeta_template_data.CreateFromDiscriminatorValue); } },
+                { "template_data", n => { TemplateData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMetaTemplateDataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMetaTemplateDataProperty.CreateFromDiscriminatorValue); } },
                 { "trace_id", n => { TraceId = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("l10n_key", L10nKey);
             writer.WriteStringValue("loggable_error", LoggableError);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMeta_template_data>("template_data", TemplateData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnErrorMetaTemplateDataProperty>("template_data", TemplateData);
             writer.WriteStringValue("trace_id", TraceId);
             writer.WriteAdditionalData(AdditionalData);
         }

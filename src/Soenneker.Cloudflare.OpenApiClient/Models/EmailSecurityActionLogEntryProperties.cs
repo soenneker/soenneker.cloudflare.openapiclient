@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional properties for the action
+    /// Additional properties for the action.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityActionLogEntryProperties : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Target folder for move operations</summary>
+        /// <summary>Target folder for move operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Folder { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Folder { get; set; }
 #endif
-        /// <summary>User who requested the action</summary>
+        /// <summary>User who requested the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestedBy { get; set; }

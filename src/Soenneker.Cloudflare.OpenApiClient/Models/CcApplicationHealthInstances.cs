@@ -13,11 +13,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcApplicationHealthInstances : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Number of instances with a running container.</summary>
+        /// <summary>Number of instances whose runtime reports the container as running (container_status = &quot;running&quot;). This is a subset of the placements that remain up: an instance that is already bound to a Durable Object and serving traffic is counted under &quot;assigned&quot; until its container_status catches up to &quot;running&quot;, so container_status can briefly lag Durable Object attachment under churn. To estimate running, Durable-Object-bound instances, sum &quot;active&quot; + &quot;assigned&quot; rather than reading &quot;active&quot; alone.</summary>
         public int? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of instances assigned to a container, but the container is not yet running.</summary>
+        /// <summary>Number of instances bound to a Durable Object with a running placement whose container_status remains behind &quot;running&quot;. These count as live, serving instances; &quot;active&quot; + &quot;assigned&quot; approximates the running, Durable-Object-bound count.</summary>
         public int? Assigned { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationHealthInstances"/> and sets the default values.

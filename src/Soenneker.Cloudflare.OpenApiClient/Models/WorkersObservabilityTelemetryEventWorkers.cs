@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersObservabilityTelemetryEventWorkers : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember1? WorkersObservabilityTelemetryEventWorkersMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1? WorkersObservabilityTelemetryEventWorkersAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember1 WorkersObservabilityTelemetryEventWorkersMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1 WorkersObservabilityTelemetryEventWorkersAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember2? WorkersObservabilityTelemetryEventWorkersMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2? WorkersObservabilityTelemetryEventWorkersAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember2 WorkersObservabilityTelemetryEventWorkersMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2 WorkersObservabilityTelemetryEventWorkersAnyOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkers();
-            result.WorkersObservabilityTelemetryEventWorkersMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember1();
-            result.WorkersObservabilityTelemetryEventWorkersMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember2();
+            result.WorkersObservabilityTelemetryEventWorkersAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1();
+            result.WorkersObservabilityTelemetryEventWorkersAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf2();
             return result;
         }
         /// <summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkersObservabilityTelemetryEventWorkersMember1 != null || WorkersObservabilityTelemetryEventWorkersMember2 != null)
+            if(WorkersObservabilityTelemetryEventWorkersAnyOf1 != null || WorkersObservabilityTelemetryEventWorkersAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkersObservabilityTelemetryEventWorkersMember1, WorkersObservabilityTelemetryEventWorkersMember2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkersObservabilityTelemetryEventWorkersAnyOf1, WorkersObservabilityTelemetryEventWorkersAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersMember1>(null, WorkersObservabilityTelemetryEventWorkersMember1, WorkersObservabilityTelemetryEventWorkersMember2);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkersAnyOf1>(null, WorkersObservabilityTelemetryEventWorkersAnyOf1, WorkersObservabilityTelemetryEventWorkersAnyOf2);
         }
     }
 }

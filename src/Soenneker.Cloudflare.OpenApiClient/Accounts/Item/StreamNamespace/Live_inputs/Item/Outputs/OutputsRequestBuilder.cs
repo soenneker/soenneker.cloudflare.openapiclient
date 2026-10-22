@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\stream\live_inputs\{live_input_identifier}\outputs
+    /// Builds and executes requests for operations under \accounts\{account-id}\stream\live_inputs\{liveInputIdentifier}\outputs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OutputsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.stream.live_inputs.item.outputs.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item.WithOutput_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item.WithOutput_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item.WithOutputIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item.WithOutputIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("output_identifier", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item.WithOutput_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("outputIdentifier", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item.WithOutputIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutputsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream/live_inputs/{live_input_identifier}/outputs", pathParameters)
+        public OutputsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream/live_inputs/{liveInputIdentifier}/outputs", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutputsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream/live_inputs/{live_input_identifier}/outputs", rawUrl)
+        public OutputsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream/live_inputs/{liveInputIdentifier}/outputs", rawUrl)
         {
         }
         /// <summary>

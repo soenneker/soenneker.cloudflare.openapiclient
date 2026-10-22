@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefined.Item.Config
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\profiles\predefined\{profile_id}\config
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\profiles\predefined\{profileId}\config
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConfigRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/profiles/predefined/{profile_id}/config", pathParameters)
+        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/profiles/predefined/{profileId}/config", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/profiles/predefined/{profile_id}/config", rawUrl)
+        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/profiles/predefined/{profileId}/config", rawUrl)
         {
         }
         /// <summary>
         /// This is similar to `get_predefined` but only returns entries that are enabled.This is needed for our terraform APIFetches a predefined DLP profile by id.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,23 +54,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesGetPredefinedProfileConfig200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This is similar to `update_predefined` but only returns entries that are enabled.This is needed for our terraform APICreates a DLP predefined profile. Only supports enabling/disabling entries.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -79,23 +79,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesCreatePredefinedProfileConfig200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This is similar to `update_predefined` but only returns entries that are enabled.This is needed for our terraform APIUpdates a DLP predefined profile. Only supports enabling/disabling entries.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200Response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200Response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileConfigUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesUpdatePredefinedProfileConfig200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This is similar to `get_predefined` but only returns entries that are enabled.This is needed for our terraform APIFetches a predefined DLP profile by id.

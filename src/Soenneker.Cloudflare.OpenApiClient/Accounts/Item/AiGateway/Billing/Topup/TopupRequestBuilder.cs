@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Config;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Eligibility;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Limits;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Status;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\billing\topup
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\billing\topup
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TopupRequestBuilder : BaseRequestBuilder
@@ -23,6 +25,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Config.ConfigRequestBuilder Config
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Config.ConfigRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The eligibility property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Eligibility.EligibilityRequestBuilder Eligibility
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Eligibility.EligibilityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The limits property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Limits.LimitsRequestBuilder Limits
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Limits.LimitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Topup.Status.StatusRequestBuilder Status
@@ -34,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/topup", pathParameters)
+        public TopupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/topup", pathParameters)
         {
         }
         /// <summary>
@@ -42,26 +54,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TopupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/topup", rawUrl)
+        public TopupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/topup", rawUrl)
         {
         }
         /// <summary>
-        /// Create a credit top-up via Stripe PaymentIntent for the given account.
+        /// Create a credit top-up for the given account, charged to the account&apos;s default payment method. Requires a dashboard session; API token, OAuth, and service credentials receive 403.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -69,24 +82,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Top
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a credit top-up via Stripe PaymentIntent for the given account.
+        /// Create a credit top-up for the given account, charged to the account&apos;s default payment method. Requires a dashboard session; API token, OAuth, and service credentials receive 403.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingCreateTopupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

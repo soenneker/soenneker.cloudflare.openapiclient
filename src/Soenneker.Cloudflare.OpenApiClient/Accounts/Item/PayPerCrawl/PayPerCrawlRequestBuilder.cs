@@ -3,7 +3,10 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Crawler;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Crawlers;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Publisher;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Signature_link;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Terms;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Zones_can_be_enabled;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pay-per-crawl
+    /// Builds and executes requests for operations under \accounts\{account-id}\pay-per-crawl
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayPerCrawlRequestBuilder : BaseRequestBuilder
@@ -22,10 +25,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Crawler.CrawlerRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The crawlers property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Crawlers.CrawlersRequestBuilder Crawlers
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Crawlers.CrawlersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The publisher property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Publisher.PublisherRequestBuilder Publisher
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Publisher.PublisherRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The signature_link property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Signature_link.Signature_linkRequestBuilder Signature_link
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Signature_link.Signature_linkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The terms property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Terms.TermsRequestBuilder Terms
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Terms.TermsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zones_can_be_enabled property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Zones_can_be_enabled.Zones_can_be_enabledRequestBuilder Zones_can_be_enabled
@@ -37,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayPerCrawlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pay-per-crawl", pathParameters)
+        public PayPerCrawlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pay-per-crawl", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayPerCrawlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pay-per-crawl", rawUrl)
+        public PayPerCrawlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pay-per-crawl", rawUrl)
         {
         }
     }

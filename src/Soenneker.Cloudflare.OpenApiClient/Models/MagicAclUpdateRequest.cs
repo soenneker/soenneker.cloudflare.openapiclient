@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequest_protocols?>? Protocols { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequestProtocolsItem?>? Protocols { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequest_protocols?> Protocols { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequestProtocolsItem?> Protocols { get; set; }
 #endif
         /// <summary>The desired traffic direction for this ACL policy. If set to &quot;false&quot;, the policy will allow bidirectional traffic. If set to &quot;true&quot;, the policy will only allow traffic in one direction. If not included in request, will default to false.</summary>
         public bool? Unidirectional { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "lan_1", n => { Lan1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration.CreateFromDiscriminatorValue); } },
                 { "lan_2", n => { Lan2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "protocols", n => { Protocols = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequest_protocols>()?.AsList(); } },
+                { "protocols", n => { Protocols = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequestProtocolsItem>()?.AsList(); } },
                 { "unidirectional", n => { Unidirectional = n.GetBoolValue(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration>("lan_1", Lan1);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanAclConfiguration>("lan_2", Lan2);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequest_protocols>("protocols", Protocols);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAclUpdateRequestProtocolsItem>("protocols", Protocols);
             writer.WriteBoolValue("unidirectional", Unidirectional);
             writer.WriteAdditionalData(AdditionalData);
         }

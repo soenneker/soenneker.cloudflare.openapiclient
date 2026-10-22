@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The set of Kolide device authentication states that pass the posture check. Device must match one of the specified states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_auth_state?>? AuthState { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?>? AuthState { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_auth_state?> AuthState { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem?> AuthState { get; set; }
 #endif
         /// <summary>Posture Integration ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ConnectionId { get; set; }
 #endif
         /// <summary>Count Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_countOperator? CountOperator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestCountOperator? CountOperator { get; set; }
         /// <summary>The Number of Issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_state", n => { AuthState = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_auth_state>()?.AsList(); } },
+                { "auth_state", n => { AuthState = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem>()?.AsList(); } },
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
-                { "countOperator", n => { CountOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_countOperator>(); } },
+                { "countOperator", n => { CountOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestCountOperator>(); } },
                 { "issue_count", n => { IssueCount = n.GetStringValue(); } },
             };
         }
@@ -78,9 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_auth_state>("auth_state", AuthState);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestAuthStateItem>("auth_state", AuthState);
             writer.WriteStringValue("connection_id", ConnectionId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest_countOperator>("countOperator", CountOperator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequestCountOperator>("countOperator", CountOperator);
             writer.WriteStringValue("issue_count", IssueCount);
             writer.WriteAdditionalData(AdditionalData);
         }

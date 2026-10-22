@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.InvoiceHistory
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\billing\invoice-history
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\billing\invoice-history
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InvoiceHistoryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Inv
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvoiceHistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/invoice-history{?type*}", pathParameters)
+        public InvoiceHistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/invoice-history{?type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Inv
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvoiceHistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/invoice-history{?type*}", rawUrl)
+        public InvoiceHistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/invoice-history{?type*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,8 +94,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Inv
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvoiceHistoryRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter invoice type: auto, manual, or all.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.InvoiceHistory.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryTypeParameter? Type { get; set; }
         }
     }
 }

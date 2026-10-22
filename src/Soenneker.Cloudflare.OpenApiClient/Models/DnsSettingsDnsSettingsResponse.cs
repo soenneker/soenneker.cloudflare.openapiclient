@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.</summary>
         public bool? FlattenAllCnames { get; set; }
-        /// <summary>Whether to enable Foundation DNS Advanced Nameservers on the zone.</summary>
+        /// <summary>Deprecated. Use nameservers.type to configure Advanced Nameservers.</summary>
         public bool? FoundationDns { get; set; }
         /// <summary>Settings for this internal zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

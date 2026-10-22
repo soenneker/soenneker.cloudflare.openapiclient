@@ -16,17 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configures the SameSite attribute on the waiting room cookie. Value `auto` will be translated to `lax` or `none` depending if **Always Use HTTPS** is enabled. Note that when using value `none`, the secure attribute cannot be set to `never`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_samesite? Samesite { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite? Samesite { get; set; }
         /// <summary>Configures the Secure attribute on the waiting room cookie. Value `always` indicates that the Secure attribute will be set in the Set-Cookie header, `never` indicates that the Secure attribute will not be set, and `auto` will set the Secure attribute depending if **Always Use HTTPS** is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_secure? Secure { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure? Secure { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes"/> and sets the default values.
         /// </summary>
         public WaitingroomCookieAttributes()
         {
             AdditionalData = new Dictionary<string, object>();
-            Samesite = global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_samesite.Auto;
-            Secure = global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_secure.Auto;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "samesite", n => { Samesite = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_samesite>(); } },
-                { "secure", n => { Secure = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_secure>(); } },
+                { "samesite", n => { Samesite = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite>(); } },
+                { "secure", n => { Secure = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure>(); } },
             };
         }
         /// <summary>
@@ -57,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_samesite>("samesite", Samesite);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributes_secure>("secure", Secure);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSamesite>("samesite", Samesite);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomCookieAttributesSecure>("secure", Secure);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

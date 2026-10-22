@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Specifies fleet status details source</summary>
+    /// <summary>Specifies fleet status details source.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DigitalExperienceMonitoringSource
     {
         [EnumMember(Value = "last_seen")]
         #pragma warning disable CS1591
-        Last_seen,
+        LastSeen,
         #pragma warning restore CS1591
         [EnumMember(Value = "hourly")]
         #pragma warning disable CS1591

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,17 +13,29 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\hold
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\hold
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HoldRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.hold.item collection</summary>
+        /// <param name="position">The hostname to check for a zone hold. May be a subdomain (e.g. `subdomain.example.com`)or an apex domain (e.g. `example.com`). The service checks the hostname and its ancestordomains for active holds with `include_subdomains` enabled.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item.WithZoneNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item.WithZoneNameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("zoneName", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.Item.WithZoneNameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/hold{?hold_after*,include_subdomains*}", pathParameters)
+        public HoldRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/hold{?hold_after*,include_subdomains*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,105 +43,105 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/hold{?hold_after*,include_subdomains*}", rawUrl)
+        public HoldRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/hold{?hold_after*,include_subdomains*}", rawUrl)
         {
         }
         /// <summary>
-        /// Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing thecreation and activation of zones with this zone&apos;s hostname.
+        /// Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing thecreation and activation of zones with this zone&apos;s hostname.Existing zone holds can be removed from CDN-only zones when `hold_after` is not provided.Active holds are automatically disabled when a zone transitions to CDN-only mode.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve whether the zone is subject to a zone hold, and metadata about the hold.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the `hold_after` and/or `include_subdomains` values on an existing zone hold.The hold is enabled if the `hold_after` date-time value is in the past.
+        /// Update the `hold_after` and/or `include_subdomains` values on an existing zone hold.The hold is enabled if the `hold_after` date-time value is in the past.Existing zone holds can be removed from CDN-only zones by setting `hold_after` to `null`.Other zone hold updates cannot be made on CDN-only zones.Active holds are automatically disabled when a zone transitions to CDN-only mode.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone&apos;s hostname.
+        /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone&apos;s hostname.Zone holds cannot be enabled on CDN-only zones.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder.HoldRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPost200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing thecreation and activation of zones with this zone&apos;s hostname.
+        /// Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing thecreation and activation of zones with this zone&apos;s hostname.Existing zone holds can be removed from CDN-only zones when `hold_after` is not provided.Active holds are automatically disabled when a zone transitions to CDN-only mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,18 +179,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             return requestInfo;
         }
         /// <summary>
-        /// Update the `hold_after` and/or `include_subdomains` values on an existing zone hold.The hold is enabled if the `hold_after` date-time value is in the past.
+        /// Update the `hold_after` and/or `include_subdomains` values on an existing zone hold.The hold is enabled if the `hold_after` date-time value is in the past.Existing zone holds can be removed from CDN-only zones by setting `hold_after` to `null`.Other zone hold updates cannot be made on CDN-only zones.Active holds are automatically disabled when a zone transitions to CDN-only mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0HoldPatchRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -188,7 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             return requestInfo;
         }
         /// <summary>
-        /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone&apos;s hostname.
+        /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone&apos;s hostname.Zone holds cannot be enabled on CDN-only zones.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -216,12 +229,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing thecreation and activation of zones with this zone&apos;s hostname.
+        /// Stop enforcement of a zone hold on the zone, permanently or temporarily, allowing thecreation and activation of zones with this zone&apos;s hostname.Existing zone holds can be removed from CDN-only zones when `hold_after` is not provided.Active holds are automatically disabled when a zone transitions to CDN-only mode.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HoldRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>If `hold_after` is provided, the hold will be temporarily disabled,then automatically re-enabled by the system at the time specifiedin this RFC3339-formatted timestamp. Otherwise, the hold will bedisabled indefinitely.</summary>
+            /// <summary>If `hold_after` is provided, the hold will be temporarily disabled,then automatically re-enabled by the system at the time specifiedin this RFC3339-formatted timestamp. Otherwise, the hold will bedisabled indefinitely. `hold_after` cannot be provided for CDN-only zones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("hold_after")]
@@ -233,7 +246,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold
 #endif
         }
         /// <summary>
-        /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone&apos;s hostname.
+        /// Enforce a zone hold on the zone, blocking the creation and activation of zones with this zone&apos;s hostname.Zone holds cannot be enabled on CDN-only zones.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HoldRequestBuilderPostQueryParameters 

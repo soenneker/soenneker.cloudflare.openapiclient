@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\origin\cloud_regions
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\origin\cloud_regions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cloud_regionsRequestBuilder : BaseRequestBuilder
@@ -32,14 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.origin.cloud_regions.item collection</summary>
         /// <param name="position">Origin IP address whose mapping should be deleted.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Item.WithOrigin_ipItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Item.WithOrigin_ipItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Item.WithOriginIpItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Item.WithOriginIpItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("origin_ip", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Item.WithOrigin_ipItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("originIp", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Item.WithOriginIpItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Cloud_regionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/origin/cloud_regions{?page*,per_page*}", pathParameters)
+        public Cloud_regionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/origin/cloud_regions{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,31 +55,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Cloud_regionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/origin/cloud_regions{?page*,per_page*}", rawUrl)
+        public Cloud_regionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/origin/cloud_regions{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns all IP-to-cloud-region mappings configured for the zone with pagination support. Each mapping tells Cloudflare which cloud vendor and region hosts the origin at that IP, enabling the edge to route via the nearest Tiered Cache upper-tier co-located with that cloud provider. Returns an empty array when no mappings exist.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Cloud_regionsRequestBuilder.Cloud_regionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Cloud_regionsRequestBuilder.Cloud_regionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Cloud_regionsRequestBuilder.Cloud_regionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.Cloud_regions.Cloud_regionsRequestBuilder.Cloud_regionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRulesApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OriginCloudRegionsV2List200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all IP-to-cloud-region mappings configured for the zone with pagination support. Each mapping tells Cloudflare which cloud vendor and region hosts the origin at that IP, enabling the edge to route via the nearest Tiered Cache upper-tier co-located with that cloud provider. Returns an empty array when no mappings exist.

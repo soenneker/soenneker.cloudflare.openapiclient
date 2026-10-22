@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimitSimple Simple { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimit_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RatelimitType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimit"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
                 { "simple", n => { Simple = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimitSimple>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimitSimple.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimit_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RatelimitType>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace_id", NamespaceId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimitSimple>("simple", Simple);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindRatelimit_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RatelimitType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

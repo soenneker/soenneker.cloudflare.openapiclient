@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\custom_hostnames\{custom_hostname_id}\certificate_pack\{certificate_pack_id}\certificates
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\custom_hostnames\{customHostnameId}\certificate_pack\{certificatePackId}\certificates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CertificatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.custom_hostnames.item.certificate_pack.item.certificates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.Item.WithCertificate_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.Item.WithCertificate_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.Item.WithCertificateItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.Item.WithCertificateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("certificate_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.Item.WithCertificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("certificateId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.Item.WithCertificateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates", pathParameters)
+        public CertificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/custom_hostnames/{customHostnameId}/certificate_pack/{certificatePackId}/certificates", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}/certificates", rawUrl)
+        public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/custom_hostnames/{customHostnameId}/certificate_pack/{certificatePackId}/certificates", rawUrl)
         {
         }
     }

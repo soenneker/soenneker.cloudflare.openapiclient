@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Status
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\waiting_rooms\{waiting_room_id}\status
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\waiting_rooms\{waitingRoomId}\status
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatusRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Statu
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/waiting_rooms/{waiting_room_id}/status", pathParameters)
+        public StatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/waiting_rooms/{waitingRoomId}/status", pathParameters)
         {
         }
         /// <summary>
@@ -30,16 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Statu
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/waiting_rooms/{waiting_room_id}/status", rawUrl)
+        public StatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/waiting_rooms/{waitingRoomId}/status", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Fetches the status of a configured waiting room. Response fields include:1. `status`: String indicating the status of the waiting room. The possible status are:- **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin.- **queueing** indicates that the thresholds have been met and some users are held in the waiting room.- **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts.- **suspended** indicates that the room is suspended.2. `event_id`: String of the current event&apos;s `id` if an event is active, otherwise an empty string.3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue.4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin.5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.&quot;
+        /// Fetches the status of a configured waiting room. Response fields include:1. `status`: String indicating the status of the waiting room. The possible status are:- **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin.- **queueing** indicates that the thresholds have been met and some users are held in the waiting room.- **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts.- **suspended** indicates that the room is suspended.2. `event_id`: String of the current event&apos;s `id` if an event is active, otherwise an empty string.3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue.4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin.5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatusResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomGetWaitingRoomStatus4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomGetWaitingRoomStatus4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatusResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +52,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Statu
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomGetWaitingRoomStatus4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomGetWaitingRoomStatus4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatusResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Fetches the status of a configured waiting room. Response fields include:1. `status`: String indicating the status of the waiting room. The possible status are:- **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin.- **queueing** indicates that the thresholds have been met and some users are held in the waiting room.- **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts.- **suspended** indicates that the room is suspended.2. `event_id`: String of the current event&apos;s `id` if an event is active, otherwise an empty string.3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue.4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin.5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.&quot;
+        /// Fetches the status of a configured waiting room. Response fields include:1. `status`: String indicating the status of the waiting room. The possible status are:- **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin.- **queueing** indicates that the thresholds have been met and some users are held in the waiting room.- **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts.- **suspended** indicates that the room is suspended.2. `event_id`: String of the current event&apos;s `id` if an event is active, otherwise an empty string.3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue.4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin.5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

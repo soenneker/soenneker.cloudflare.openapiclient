@@ -12,6 +12,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class DosDnsProtectionRuleUpdate : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The new value for whether to block DNS ANY queries. Optional.</summary>
+        public bool? BlockAnyQueries { get; set; }
         /// <summary>The new burst sensitivity. Optional. Must be one of &apos;low&apos;, &apos;medium&apos;, &apos;high&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "block_any_queries", n => { BlockAnyQueries = n.GetBoolValue(); } },
                 { "burst_sensitivity", n => { BurstSensitivity = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetStringValue(); } },
                 { "profile_sensitivity", n => { ProfileSensitivity = n.GetStringValue(); } },
@@ -75,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("block_any_queries", BlockAnyQueries);
             writer.WriteStringValue("burst_sensitivity", BurstSensitivity);
             writer.WriteStringValue("mode", Mode);
             writer.WriteStringValue("profile_sensitivity", ProfileSensitivity);

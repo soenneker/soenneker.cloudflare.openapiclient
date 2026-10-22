@@ -18,11 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the stage ended.</summary>
         public DateTimeOffset? EndedOn { get; private set; }
         /// <summary>The current build stage.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage_name? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStageName? Name { get; set; }
         /// <summary>When the stage started.</summary>
         public DateTimeOffset? StartedOn { get; private set; }
         /// <summary>State of the current stage.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStageStatus? Status { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage"/> and sets the default values.
         /// </summary>
@@ -49,9 +49,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ended_on", n => { EndedOn = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage_name>(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStageName>(); } },
                 { "started_on", n => { StartedOn = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStageStatus>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStage_name>("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesStageName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// IP address information for the ISP hop. Fields marked as PII-gated (`name`, `address`, `netmask`, and all `location` sub-fields) will be returned as the literal string `&quot;REDACTED&quot;` for callers that do not have the PII permission. `asn`, `aso`, and `version` are always returned regardless of PII access.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class DigitalExperienceMonitoringIpInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address property</summary>
+        /// <summary>IP address. Returned as `&quot;REDACTED&quot;` without PII permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address { get; set; }
@@ -22,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Address { get; set; }
 #endif
-        /// <summary>The asn property</summary>
+        /// <summary>Autonomous System Number.</summary>
         public int? Asn { get; set; }
-        /// <summary>The aso property</summary>
+        /// <summary>Autonomous System Organization name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Aso { get; set; }
@@ -32,15 +33,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Aso { get; set; }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>Geographic location information. All fields are returned as the literal string `&quot;REDACTED&quot;` for callers that do not have the PII permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfoLocation? Location { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpLocation? Location { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfoLocation Location { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpLocation Location { get; set; }
 #endif
-        /// <summary>The netmask property</summary>
+        /// <summary>Named IP address (reverse DNS hostname when available). Returned as `&quot;REDACTED&quot;` without PII permission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Network mask. Returned as `&quot;REDACTED&quot;` without PII permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Netmask { get; set; }
@@ -48,14 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Netmask { get; set; }
 #endif
-        /// <summary>The version property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Version { get; set; }
-#nullable restore
-#else
-        public string Version { get; set; }
-#endif
+        /// <summary>IP version (`1` for IPv4, `2` for IPv6, `0` if unknown).</summary>
+        public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfo"/> and sets the default values.
         /// </summary>
@@ -84,9 +87,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "asn", n => { Asn = n.GetIntValue(); } },
                 { "aso", n => { Aso = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfoLocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfoLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpLocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpLocation.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "netmask", n => { Netmask = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -99,9 +103,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("address", Address);
             writer.WriteIntValue("asn", Asn);
             writer.WriteStringValue("aso", Aso);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpInfoLocation>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringIpLocation>("location", Location);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("netmask", Netmask);
-            writer.WriteStringValue("version", Version);
+            writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

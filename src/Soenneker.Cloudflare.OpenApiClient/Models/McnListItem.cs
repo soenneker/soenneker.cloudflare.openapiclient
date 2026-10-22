@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The list property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list>? List { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItemListItem>? List { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list> List { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItemListItem> List { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "item_type", n => { ItemType = n.GetStringValue(); } },
-                { "list", n => { List = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "list", n => { List = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItemListItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItemListItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,83 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("item_type", ItemType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list>("list", List);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItemListItem>("list", List);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourcePreviewItem"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnStringItem"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class McnListItem_list : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourcePreviewItem"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourcePreviewItem? McnResourcePreviewItem { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourcePreviewItem McnResourcePreviewItem { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnStringItem"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnStringItem? McnStringItem { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.McnStringItem McnStringItem { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("item_type")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnListItem.McnListItem_list();
-                if("McnResourcePreviewItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.McnResourcePreviewItem = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourcePreviewItem();
-                }
-                else if("McnStringItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.McnStringItem = new global::Soenneker.Cloudflare.OpenApiClient.Models.McnStringItem();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(McnResourcePreviewItem != null)
-                {
-                    return McnResourcePreviewItem.GetFieldDeserializers();
-                }
-                else if(McnStringItem != null)
-                {
-                    return McnStringItem.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(McnResourcePreviewItem != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnResourcePreviewItem>(null, McnResourcePreviewItem);
-                }
-                else if(McnStringItem != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnStringItem>(null, McnStringItem);
-                }
-            }
         }
     }
 }

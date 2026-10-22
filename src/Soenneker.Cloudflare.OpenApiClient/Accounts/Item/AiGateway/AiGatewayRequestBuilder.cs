@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.CustomProviders;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.EvaluationTypes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.LoggingState;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiGatewayRequestBuilder : BaseRequestBuilder
@@ -38,12 +39,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.GatewaysRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The loggingState property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.LoggingState.LoggingStateRequestBuilder LoggingState
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.LoggingState.LoggingStateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.AiGatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway", pathParameters)
+        public AiGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway", pathParameters)
         {
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway", rawUrl)
+        public AiGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway", rawUrl)
         {
         }
     }

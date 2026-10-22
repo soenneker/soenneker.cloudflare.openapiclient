@@ -15,14 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation  - `&quot;log&quot;` - log request when request does not conform to schema for this operation  - `&quot;block&quot;` - deny access to the site when request does not conform to schema for this operation  - `&quot;none&quot;` - will skip mitigation for this operation</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSetting_mitigation_action? MitigationAction { get; set; }
-        /// <summary>The operation_id property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingMitigationAction? MitigationAction { get; set; }
+        /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid? OperationId { get; set; }
+        public string? OperationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid OperationId { get; set; }
+        public string OperationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSetting"/> and sets the default values.
@@ -49,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSetting_mitigation_action>(); } },
-                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid.CreateFromDiscriminatorValue); } },
+                { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingMitigationAction>(); } },
+                { "operation_id", n => { OperationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSetting_mitigation_action>("mitigation_action", MitigationAction);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>("operation_id", OperationId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingMitigationAction>("mitigation_action", MitigationAction);
+            writer.WriteStringValue("operation_id", OperationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

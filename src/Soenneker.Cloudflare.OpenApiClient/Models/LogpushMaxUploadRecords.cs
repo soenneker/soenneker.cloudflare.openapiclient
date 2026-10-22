@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Branch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecordsOneOf1"/>, <see cref="int"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogpushMaxUploadRecords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecordsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Branch2? LogpushMaxUploadRecordsBranch2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecordsOneOf1? LogpushMaxUploadRecordsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Branch2 LogpushMaxUploadRecordsBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Wrapper? LogpushMaxUploadRecordsWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Wrapper LogpushMaxUploadRecordsWrapper { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecordsOneOf1 LogpushMaxUploadRecordsOneOf1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +31,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords();
-            if("LogpushMaxUploadRecords_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetIntValue() is int integerValue)
             {
-                result.LogpushMaxUploadRecordsBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Branch2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.LogpushMaxUploadRecordsWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Wrapper();
+                result.Integer = integerValue;
             }
             return result;
         }
@@ -55,13 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LogpushMaxUploadRecordsBranch2 != null)
+            if(LogpushMaxUploadRecordsOneOf1 != null)
             {
-                return LogpushMaxUploadRecordsBranch2.GetFieldDeserializers();
-            }
-            else if(LogpushMaxUploadRecordsWrapper != null)
-            {
-                return LogpushMaxUploadRecordsWrapper.GetFieldDeserializers();
+                return LogpushMaxUploadRecordsOneOf1.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +58,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LogpushMaxUploadRecordsBranch2 != null)
+            if(LogpushMaxUploadRecordsOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Branch2>(null, LogpushMaxUploadRecordsBranch2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecordsOneOf1>(null, LogpushMaxUploadRecordsOneOf1);
             }
-            else if(LogpushMaxUploadRecordsWrapper != null)
+            else if(Integer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadRecords_Wrapper>(null, LogpushMaxUploadRecordsWrapper);
+                writer.WriteIntValue(null, Integer);
             }
         }
     }

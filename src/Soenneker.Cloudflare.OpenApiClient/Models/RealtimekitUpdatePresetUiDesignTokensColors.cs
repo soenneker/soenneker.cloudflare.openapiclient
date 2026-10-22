@@ -84,12 +84,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitUpdatePresetUiDesignTokensColors()
         {
             AdditionalData = new Dictionary<string, object>();
-            Danger = "#FF2D2D";
-            Success = "#62A504";
-            Text = "#EEEEEE";
-            TextOnBrand = "#EEEEEE";
-            VideoBg = "#191919";
-            Warning = "#FFCD07";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The jurisdiction property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction? Jurisdiction { get; set; }
         /// <summary>The vendor property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseTarget_vendor? Vendor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Vendor? Vendor { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseTarget"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction>(); } },
-                { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseTarget_vendor>(); } },
+                { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Vendor>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJurisdiction>("jurisdiction", Jurisdiction);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseTarget_vendor>("vendor", Vendor);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Vendor>("vendor", Vendor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

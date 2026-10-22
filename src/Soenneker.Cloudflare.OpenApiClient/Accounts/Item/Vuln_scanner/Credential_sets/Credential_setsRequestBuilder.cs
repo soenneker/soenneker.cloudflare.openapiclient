@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\vuln_scanner\credential_sets
+    /// Builds and executes requests for operations under \accounts\{account-id}\vuln_scanner\credential_sets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Credential_setsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.vuln_scanner.credential_sets.item collection</summary>
-        /// <param name="position">Credential set identifier.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.WithCredential_set_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.WithCredential_set_ItemRequestBuilder this[Guid position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.WithCredentialSetItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.WithCredentialSetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("credential_set_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.WithCredential_set_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("credentialSetId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.WithCredentialSetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credenti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Credential_setsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/vuln_scanner/credential_sets{?page*,per_page*}", pathParameters)
+        public Credential_setsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vuln_scanner/credential_sets{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,23 +43,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credenti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Credential_setsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/vuln_scanner/credential_sets{?page*,per_page*}", rawUrl)
+        public Credential_setsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vuln_scanner/credential_sets{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns all credential sets for the account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Credential_setsRequestBuilder.Credential_setsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Credential_setsRequestBuilder.Credential_setsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Credential_setsRequestBuilder.Credential_setsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Credential_setsRequestBuilder.Credential_setsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credenti
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListCredentialSets200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new credential set.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateCredentialSetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateCredentialSetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateCredentialSetRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerCreateCredentialSetRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credenti
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CreateCredentialSet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all credential sets for the account.

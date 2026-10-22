@@ -10,19 +10,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "AWS")]
         #pragma warning disable CS1591
-        AWS,
+        Aws,
         #pragma warning restore CS1591
         [EnumMember(Value = "AZURE")]
         #pragma warning disable CS1591
-        AZURE,
+        Azure,
         #pragma warning restore CS1591
         [EnumMember(Value = "GOOGLE")]
         #pragma warning disable CS1591
-        GOOGLE,
+        Google,
         #pragma warning restore CS1591
         [EnumMember(Value = "CLOUDFLARE")]
         #pragma warning disable CS1591
-        CLOUDFLARE,
+        Cloudflare,
         #pragma warning restore CS1591
     }
 }

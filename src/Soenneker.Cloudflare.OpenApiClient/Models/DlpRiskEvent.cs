@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The event_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent_event_details? EventDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventEventDetailsProperty? EventDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent_event_details EventDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventEventDetailsProperty EventDetails { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "event_details", n => { EventDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent_event_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent_event_details.CreateFromDiscriminatorValue); } },
+                { "event_details", n => { EventDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventEventDetailsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventEventDetailsProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskLevel>(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent_event_details>("event_details", EventDetails);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventEventDetailsProperty>("event_details", EventDetails);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskLevel>("risk_level", RiskLevel);

@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceGcsSourceResponseSchema"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceR2SourceResponseSchema"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceS3SourceResponseSchema"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2SlurperJobResponseSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceGcsSourceResponseSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember1? R2SlurperJobResponseSourceMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceGcsSourceResponseSchema? R2SlurperJobResponseSourceGcsSourceResponseSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember1 R2SlurperJobResponseSourceMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceGcsSourceResponseSchema R2SlurperJobResponseSourceGcsSourceResponseSchema { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceR2SourceResponseSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember2? R2SlurperJobResponseSourceMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceR2SourceResponseSchema? R2SlurperJobResponseSourceR2SourceResponseSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember2 R2SlurperJobResponseSourceMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceR2SourceResponseSchema R2SlurperJobResponseSourceR2SourceResponseSchema { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceS3SourceResponseSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember3? R2SlurperJobResponseSourceMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceS3SourceResponseSchema? R2SlurperJobResponseSourceS3SourceResponseSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember3 R2SlurperJobResponseSourceMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceS3SourceResponseSchema R2SlurperJobResponseSourceS3SourceResponseSchema { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,19 +45,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSource();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("R2SlurperJobResponseSourceGcsSourceResponseSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.R2SlurperJobResponseSourceMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember1();
+                result.R2SlurperJobResponseSourceGcsSourceResponseSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceGcsSourceResponseSchema();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("R2SlurperJobResponseSourceR2SourceResponseSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.R2SlurperJobResponseSourceMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember2();
+                result.R2SlurperJobResponseSourceR2SourceResponseSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceR2SourceResponseSchema();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("R2SlurperJobResponseSourceS3SourceResponseSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.R2SlurperJobResponseSourceMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember3();
+                result.R2SlurperJobResponseSourceS3SourceResponseSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceS3SourceResponseSchema();
             }
             return result;
         }
@@ -67,17 +67,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(R2SlurperJobResponseSourceMember1 != null)
+            if(R2SlurperJobResponseSourceGcsSourceResponseSchema != null)
             {
-                return R2SlurperJobResponseSourceMember1.GetFieldDeserializers();
+                return R2SlurperJobResponseSourceGcsSourceResponseSchema.GetFieldDeserializers();
             }
-            else if(R2SlurperJobResponseSourceMember2 != null)
+            else if(R2SlurperJobResponseSourceR2SourceResponseSchema != null)
             {
-                return R2SlurperJobResponseSourceMember2.GetFieldDeserializers();
+                return R2SlurperJobResponseSourceR2SourceResponseSchema.GetFieldDeserializers();
             }
-            else if(R2SlurperJobResponseSourceMember3 != null)
+            else if(R2SlurperJobResponseSourceS3SourceResponseSchema != null)
             {
-                return R2SlurperJobResponseSourceMember3.GetFieldDeserializers();
+                return R2SlurperJobResponseSourceS3SourceResponseSchema.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,17 +88,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(R2SlurperJobResponseSourceMember1 != null)
+            if(R2SlurperJobResponseSourceGcsSourceResponseSchema != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember1>(null, R2SlurperJobResponseSourceMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceGcsSourceResponseSchema>(null, R2SlurperJobResponseSourceGcsSourceResponseSchema);
             }
-            else if(R2SlurperJobResponseSourceMember2 != null)
+            else if(R2SlurperJobResponseSourceR2SourceResponseSchema != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember2>(null, R2SlurperJobResponseSourceMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceR2SourceResponseSchema>(null, R2SlurperJobResponseSourceR2SourceResponseSchema);
             }
-            else if(R2SlurperJobResponseSourceMember3 != null)
+            else if(R2SlurperJobResponseSourceS3SourceResponseSchema != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceMember3>(null, R2SlurperJobResponseSourceMember3);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobResponseSourceS3SourceResponseSchema>(null, R2SlurperJobResponseSourceS3SourceResponseSchema);
             }
         }
     }

@@ -23,6 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCompactionConfig Compaction { get; set; }
 #endif
+        /// <summary>Scheduling interval between normal table maintenance runs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Interval { get; set; }
+#nullable restore
+#else
+        public string Interval { get; set; }
+#endif
         /// <summary>Configures snapshot expiration settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "compaction", n => { Compaction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCompactionConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCompactionConfig.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetStringValue(); } },
                 { "snapshot_expiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig.CreateFromDiscriminatorValue); } },
             };
         }
@@ -68,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCompactionConfig>("compaction", Compaction);
+            writer.WriteStringValue("interval", Interval);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig>("snapshot_expiration", SnapshotExpiration);
             writer.WriteAdditionalData(AdditionalData);
         }

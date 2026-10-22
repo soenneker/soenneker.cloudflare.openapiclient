@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// An impersonation registry entry
+    /// An impersonation registry entry.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityImpersonationRegistry : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comments property</summary>
+        /// <summary>Optional note describing the entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comments { get; set; }
@@ -24,18 +24,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_created_at CreatedAt { get; private set; }
-#endif
-        /// <summary>The directory_id property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Identifier of the directory the entry was synced from, when directory-synced.</summary>
         public int? DirectoryId { get; set; }
-        /// <summary>The directory_node_id property</summary>
+        /// <summary>Identifier of the directory node the entry was synced from, when directory-synced.</summary>
         public int? DirectoryNodeId { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>Email address (or pattern) of the protected identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -43,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The external_directory_node_id property</summary>
+        /// <summary>Deprecated. External identifier of the directory node.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,34 +46,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ExternalDirectoryNodeId { get; set; }
 #endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_id Id { get; private set; }
-#endif
-        /// <summary>The is_email_regex property</summary>
+        /// <summary>Impersonation registry entry identifier.</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Whether `email` is a regular expression instead of a literal address.</summary>
         public bool? IsEmailRegex { get; set; }
-        /// <summary>&quot;Deprecated, use `modified_at` instead. End of life: November 1, 2026.&quot;</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_last_modified? LastModified { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_last_modified LastModified { get; private set; }
-#endif
+        /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
+        public DateTimeOffset? LastModified { get; set; }
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_modified_at? ModifiedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_modified_at ModifiedAt { get; private set; }
-#endif
-        /// <summary>The name property</summary>
+        public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>Display name of the protected identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -87,8 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The provenance property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityProvenance? Provenance { get; set; }
+        /// <summary>Source the entry was created from.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance? Provenance { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry"/> and sets the default values.
         /// </summary>
@@ -115,17 +90,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_created_at.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "directory_id", n => { DirectoryId = n.GetIntValue(); } },
                 { "directory_node_id", n => { DirectoryNodeId = n.GetIntValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "external_directory_node_id", n => { ExternalDirectoryNodeId = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_email_regex", n => { IsEmailRegex = n.GetBoolValue(); } },
-                { "last_modified", n => { LastModified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_last_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_last_modified.CreateFromDiscriminatorValue); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_modified_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistry_modified_at.CreateFromDiscriminatorValue); } },
+                { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "provenance", n => { Provenance = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityProvenance>(); } },
+                { "provenance", n => { Provenance = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance>(); } },
             };
         }
         /// <summary>
@@ -136,13 +111,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("directory_id", DirectoryId);
             writer.WriteIntValue("directory_node_id", DirectoryNodeId);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("external_directory_node_id", ExternalDirectoryNodeId);
+            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_email_regex", IsEmailRegex);
+            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityProvenance>("provenance", Provenance);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance>("provenance", Provenance);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

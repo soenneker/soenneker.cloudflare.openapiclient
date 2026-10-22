@@ -32,8 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Bucket { get; set; }
 #endif
         /// <summary>The provider property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyAwsSource_provider? Provider { get; set; }
-        /// <summary>Name of the AWS availability zone.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AwsProvider? Provider { get; set; }
+        /// <summary>AWS region containing the source S3 bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "accessKeyId", n => { AccessKeyId = n.GetStringValue(); } },
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyAwsSource_provider>(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AwsProvider>(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "secretAccessKey", n => { SecretAccessKey = n.GetStringValue(); } },
             };
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accessKeyId", AccessKeyId);
             writer.WriteStringValue("bucket", Bucket);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EnableSippyAwsSource_provider>("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AwsProvider>("provider", Provider);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("secretAccessKey", SecretAccessKey);
             writer.WriteAdditionalData(AdditionalData);

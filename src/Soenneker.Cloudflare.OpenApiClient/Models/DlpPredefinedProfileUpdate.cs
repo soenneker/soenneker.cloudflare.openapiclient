@@ -27,12 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ConfidenceThreshold { get; set; }
 #endif
         /// <summary>The context_awareness property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContextAwareness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness? ContextAwareness { get; set; }
 #nullable restore
 #else
-        public string ContextAwareness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness ContextAwareness { get; set; }
 #endif
         /// <summary>The entries property</summary>
         [Obsolete("")]
@@ -51,7 +52,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DlpPredefinedProfileUpdate()
         {
             AdditionalData = new Dictionary<string, object>();
+            AiContextEnabled = false;
+            AllowedMatchCount = 0;
             ConfidenceThreshold = "low";
+            OcrEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_context_enabled", n => { AiContextEnabled = n.GetBoolValue(); } },
                 { "allowed_match_count", n => { AllowedMatchCount = n.GetIntValue(); } },
                 { "confidence_threshold", n => { ConfidenceThreshold = n.GetStringValue(); } },
-                { "context_awareness", n => { ContextAwareness = n.GetStringValue(); } },
+                { "context_awareness", n => { ContextAwareness = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness.CreateFromDiscriminatorValue); } },
                 { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ocr_enabled", n => { OcrEnabled = n.GetBoolValue(); } },
             };
@@ -89,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("ai_context_enabled", AiContextEnabled);
             writer.WriteIntValue("allowed_match_count", AllowedMatchCount);
             writer.WriteStringValue("confidence_threshold", ConfidenceThreshold);
-            writer.WriteStringValue("context_awareness", ContextAwareness);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileUpdateContextAwareness>("context_awareness", ContextAwareness);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedProfileEntryUpdate>("entries", Entries);
             writer.WriteBoolValue("ocr_enabled", OcrEnabled);
             writer.WriteAdditionalData(AdditionalData);

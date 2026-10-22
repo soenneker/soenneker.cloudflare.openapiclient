@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;A manifest ([path]: {hash, size}) map of files to upload. As an example, `/blog/hello-world.html` would be a valid path key.&quot;</summary>
+        /// <summary>A manifest ([path]: {hash, size}) map of files to upload. As an example, `/blog/hello-world.html` would be a valid path key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObject_manifest? Manifest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObjectManifestProperty? Manifest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObject_manifest Manifest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObjectManifestProperty Manifest { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObject"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "manifest", n => { Manifest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObject_manifest>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObject_manifest.CreateFromDiscriminatorValue); } },
+                { "manifest", n => { Manifest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObjectManifestProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObjectManifestProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObject_manifest>("manifest", Manifest);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCreateAssetsUploadSessionObjectManifestProperty>("manifest", Manifest);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

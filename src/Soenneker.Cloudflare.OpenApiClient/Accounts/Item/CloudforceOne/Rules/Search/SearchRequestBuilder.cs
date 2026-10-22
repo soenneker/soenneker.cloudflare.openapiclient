@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Search
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\rules\search
+    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\rules\search
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/rules/search?query={query}{&is_public*,language*,limit*,mode*,namespace*,offset*,recursive*,search*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/rules/search?query={query}{&is_public*,language*,limit*,mode*,namespace*,offset*,path*,recursive*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/rules/search?query={query}{&is_public*,language*,limit*,mode*,namespace*,offset*,recursive*,search*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/rules/search?query={query}{&is_public*,language*,limit*,mode*,namespace*,offset*,path*,recursive*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,18 +92,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by public visibility.</summary>
+            /// <summary>Limits rules to the specified public visibility.</summary>
             [QueryParameter("is_public")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Search.GetIs_publicQueryParameterType? IsPublic { get; set; }
-            /// <summary>Filter results by rule language.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSearchRulesIsPublicParameter? IsPublic { get; set; }
+            /// <summary>Limits results to the specified rule language.</summary>
             [QueryParameter("language")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Search.GetLanguageQueryParameterType? Language { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSearchRulesLanguageParameter? Language { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Retrieval strategy used for the query.</summary>
             [QueryParameter("mode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Search.GetModeQueryParameterType? Mode { get; set; }
-            /// <summary>Filter by namespace. Repeat the parameter to filter by multiple namespaces (e.g. namespace=foo&amp;namespace=bar).</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSearchRulesModeParameter? Mode { get; set; }
+            /// <summary>Selects namespaces. Repeat the parameter to select multiple namespaces (for example, namespace=foo&amp;namespace=bar).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("namespace")]
@@ -113,8 +115,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
             [QueryParameter("namespace")]
             public string Namespace { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }
+            #pragma warning restore CS1591
+            /// <summary>Selects paths with exact-match semantics. Omit the parameter to return rules from all paths. Pass an empty string (path=) to return only rules with an empty or uncategorized path. Pass a value (for example, path=yara) to match that exact path. Repeat the parameter (for example, path=yara&amp;path=expr) to OR-match multiple paths with SQL `IN (...)` semantics. The `recursive` flag affects only customer-account namespace selection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("path")]
+            public string? Path { get; set; }
+#nullable restore
+#else
+            [QueryParameter("path")]
+            public string Path { get; set; }
+#endif
             /// <summary>Natural-language or keyword search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,16 +139,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.S
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
+            /// <summary>For customer accounts, true enables descendant matching for namespaces. Paths always use exact matching.</summary>
             [QueryParameter("recursive")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Search.GetRecursiveQueryParameterType? Recursive { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneSearchRulesRecursiveParameter? Recursive { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string? Search { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

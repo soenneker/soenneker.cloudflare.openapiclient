@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway\schemas
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\schemas
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SchemasRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SchemasRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/schemas{?feature*,host*}", pathParameters)
+        public SchemasRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/schemas{?feature*,host*,include_schema_kind*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SchemasRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/schemas{?feature*,host*}", rawUrl)
+        public SchemasRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/schemas{?feature*,host*,include_schema_kind*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve operations and features as OpenAPI schemas
+        /// Returns tracked web and API operations and their feature configuration rendered as OpenAPI schemas.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseWithThresholds"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseWithThresholds>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseWithThresholds.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve operations and features as OpenAPI schemas
+        /// Returns tracked web and API operations and their feature configuration rendered as OpenAPI schemas.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve operations and features as OpenAPI schemas
+        /// Returns tracked web and API operations and their feature configuration rendered as OpenAPI schemas.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SchemasRequestBuilderGetQueryParameters 
@@ -94,20 +94,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("feature")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.GetFeatureQueryParameterType[]? Feature { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterItem[]? Feature { get; set; }
 #nullable restore
 #else
             [QueryParameter("feature")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.GetFeatureQueryParameterType[] Feature { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureParameterItem[] Feature { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("host")]
             public string[]? Host { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("host")]
             public string[] Host { get; set; }
+            #pragma warning restore CS1591
+#endif
+            /// <summary>Schema kinds to include in exported OpenAPI schemas.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("include_schema_kind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.LearnedItem[]? IncludeSchemaKind { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_schema_kind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.LearnedItem[] IncludeSchemaKind { get; set; }
 #endif
         }
     }

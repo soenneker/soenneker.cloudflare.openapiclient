@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\devices\physical-devices
+    /// Builds and executes requests for operations under \accounts\{account-id}\devices\physical-devices
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhysicalDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.devices.physicalDevices.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.Item.WithDevice_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.Item.WithDevice_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.Item.WithDeviceItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.Item.WithDeviceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("device_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.Item.WithDevice_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deviceId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.Item.WithDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhysicalDevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices/physical-devices{?active_registrations,cursor,id*,include*,last_seen_user%2Eemail,per_page,search,seen_after,seen_before,sort_by,sort_order}", pathParameters)
+        public PhysicalDevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/physical-devices{?active_registrations,cursor,has_registration_type,id*,include*,last_seen_registration%2Epolicy%2Eid,last_seen_user%2Eemail,per_page,search,seen_after,seen_before,sort_by,sort_order,tag*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,26 +43,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PhysicalDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices/physical-devices{?active_registrations,cursor,id*,include*,last_seen_user%2Eemail,per_page,search,seen_after,seen_before,sort_by,sort_order}", rawUrl)
+        public PhysicalDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/physical-devices{?active_registrations,cursor,has_registration_type,id*,include*,last_seen_registration%2Epolicy%2Eid,last_seen_user%2Eemail,per_page,search,seen_after,seen_before,sort_by,sort_order,tag*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists WARP devices.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder.PhysicalDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder.PhysicalDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder.PhysicalDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder.PhysicalDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListDevices200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists WARP devices.
@@ -100,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
         {
             /// <summary>Include or exclude devices with active registrations. The default is &quot;only&quot; - return only devices with active registrations.</summary>
             [QueryParameter("active_registrations")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.GetActive_registrationsQueryParameterType? ActiveRegistrations { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesListDevicesParamActiveRegistrations? ActiveRegistrations { get; set; }
             /// <summary>Opaque token indicating the starting position when requesting the next set of records. A cursor value can be obtained from the result_info.cursor field in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +116,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Filter by the type of active registration associated with the device.</summary>
+            [QueryParameter("has_registration_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesRegistrationType? HasRegistrationType { get; set; }
             /// <summary>Filter by a one or more device IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
-            /// <summary>&quot;Comma-separated list of additional information that should be included in the device response. Supported values are: \&quot;last_seen_registration.policy\&quot;.&quot;</summary>
+            /// <summary>Comma-separated list of additional information that should be included in the device response. Supported values are: &quot;last_seen_registration.policy&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -131,6 +139,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
             [QueryParameter("include")]
             public string Include { get; set; }
 #endif
+            /// <summary>Filter by the ID of the device settings profile assigned to the device registration.</summary>
+            [QueryParameter("last_seen_registration%2Epolicy%2Eid")]
+            public Guid? LastSeenRegistrationPolicyId { get; set; }
             /// <summary>Filter by the last seen user&apos;s email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,10 +187,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
 #endif
             /// <summary>The device field to order results by.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.GetSort_byQueryParameterType? SortBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesListDevicesParamSortBy? SortBy { get; set; }
             /// <summary>Sort direction.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesListDevicesParamSortOrder? SortOrder { get; set; }
+            /// <summary>Filter by one or more device tags in key:value format. Devices must match all provided tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag")]
+            public string[]? Tag { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag")]
+            public string[] Tag { get; set; }
+#endif
         }
     }
 }

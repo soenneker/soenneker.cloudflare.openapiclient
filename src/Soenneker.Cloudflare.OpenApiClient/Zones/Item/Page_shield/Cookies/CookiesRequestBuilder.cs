@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\page_shield\cookies
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\page_shield\cookies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CookiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.page_shield.cookies.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.Item.WithCookie_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.Item.WithCookie_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.Item.WithCookieItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.Item.WithCookieItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("cookie_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.Item.WithCookie_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("cookieId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.Item.WithCookieItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CookiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", pathParameters)
+        public CookiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,34 +43,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CookiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", rawUrl)
+        public CookiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/page_shield/cookies{?direction*,domain*,export*,hosts*,http_only*,name*,order_by*,page*,page_url*,path*,per_page*,same_site*,secure*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists all cookies collected by Page Shield.
+        /// Lists cookies detected on the zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneCookiesResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneCookiesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder.CookiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder.CookiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneCookiesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder.CookiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder.CookiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneCookiesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListZoneCookiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityListZoneCookiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all cookies collected by Page Shield.
+        /// Lists cookies detected on the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,81 +98,121 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all cookies collected by Page Shield.
+        /// Lists cookies detected on the zone.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CookiesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListCookiesDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("domain")]
             public string? Domain { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("domain")]
             public string Domain { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("export")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetExportQueryParameterType? Export { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CsvExport? Export { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("hosts")]
             public string? Hosts { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("hosts")]
             public string Hosts { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("http_only")]
             public bool? HttpOnly { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string? Name { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("name")]
             public string Name { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListCookiesOrderByParameter? OrderBy { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public string? Page { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public string Page { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("page_url")]
             public string? PageUrl { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("page_url")]
             public string PageUrl { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("path")]
             public string? Path { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("path")]
             public string Path { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("same_site")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetSame_siteQueryParameterType? SameSite { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListCookiesSameSiteParameter? SameSite { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("secure")]
             public bool? Secure { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldListCookiesTypeParameter? Type { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app_protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_app_protocol? AppProtocol { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol? AppProtocol { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The host property</summary>
@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tls_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_tls_settings? TlsSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings? TlsSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_tls_settings TlsSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings TlsSettings { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType? Type { get; set; }
@@ -75,13 +75,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app_protocol", n => { AppProtocol = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_app_protocol>(); } },
+                { "app_protocol", n => { AppProtocol = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "host", n => { Host = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetGuidValue(); } },
                 { "tcp_port", n => { TcpPort = n.GetIntValue(); } },
-                { "tls_settings", n => { TlsSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_tls_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_tls_settings.CreateFromDiscriminatorValue); } },
+                { "tls_settings", n => { TlsSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -93,11 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_app_protocol>("app_protocol", AppProtocol);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfigAppProtocol>("app_protocol", AppProtocol);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceHost>("host", Host);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("tcp_port", TcpPort);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig_tls_settings>("tls_settings", TlsSettings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceCommonTlsSettings>("tls_settings", TlsSettings);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraServiceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Specifies the maximum age for snapshots. The system deletes snapshots older than this age.Format: &lt;number&gt;&lt;unit&gt; where unit is d (days), h (hours), m (minutes), or s (seconds).Examples: \&quot;7d\&quot; (7 days), \&quot;48h\&quot; (48 hours), \&quot;2880m\&quot; (2,880 minutes).Defaults to \&quot;7d\&quot;.&quot;</summary>
+        /// <summary>Specifies the maximum age for snapshots. The system deletes snapshots older than this age.Format: &lt;number&gt;&lt;unit&gt; where unit is d (days), h (hours), m (minutes), or s (seconds).Examples: &quot;7d&quot; (7 days), &quot;48h&quot; (48 hours), &quot;2880m&quot; (2,880 minutes).Defaults to &quot;7d&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaxSnapshotAge { get; set; }

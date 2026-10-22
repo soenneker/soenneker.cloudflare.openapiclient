@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\logs\explorer\datasets
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\logs\explorer\datasets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DatasetsRequestBuilder : BaseRequestBuilder
@@ -25,15 +25,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Available.AvailableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.logs.explorer.datasets.item collection</summary>
-        /// <param name="position">Log Explorer dataset ID.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Item.WithDataset_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Item.WithDataset_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Item.WithDatasetItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Item.WithDatasetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dataset_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Item.WithDataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("datasetId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets.Item.WithDatasetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DatasetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/logs/explorer/datasets", pathParameters)
+        public DatasetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/logs/explorer/datasets", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DatasetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/logs/explorer/datasets", rawUrl)
+        public DatasetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/logs/explorer/datasets", rawUrl)
         {
         }
         /// <summary>
@@ -58,9 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummaryListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummaryListResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -73,23 +73,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummaryListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummaryListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a new Log Explorer dataset for the zone.Use the `/zones/{zone_id}/logs/explorer/datasets/available` endpointto list dataset types you can create along with their available fields.The `fields` property is optional. If not specified, all available fieldswill be enabled.For account-level datasets use the account-scoped endpoint: POST /accounts/{account_id}/logs/explorer/datasetsFor dataset field definitions, see: https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/&quot;
+        /// Create a new Log Explorer dataset for the zone.List available zone datasets to see the dataset types and fields youcan use.The `fields` property is optional. If not specified, all available fieldswill be enabled.For dataset field definitions, see: https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetDetailResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetDetailResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.LexCreateDatasetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -103,10 +103,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.LexSchemasErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.LexErrorResponse2.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetDetailResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetDetailResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.Datasets
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a new Log Explorer dataset for the zone.Use the `/zones/{zone_id}/logs/explorer/datasets/available` endpointto list dataset types you can create along with their available fields.The `fields` property is optional. If not specified, all available fieldswill be enabled.For account-level datasets use the account-scoped endpoint: POST /accounts/{account_id}/logs/explorer/datasetsFor dataset field definitions, see: https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/&quot;
+        /// Create a new Log Explorer dataset for the zone.List available zone datasets to see the dataset types and fields youcan use.The `fields` property is optional. If not specified, all available fieldswill be enabled.For dataset field definitions, see: https://developers.cloudflare.com/logs/logpush/logpush-job/datasets/
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

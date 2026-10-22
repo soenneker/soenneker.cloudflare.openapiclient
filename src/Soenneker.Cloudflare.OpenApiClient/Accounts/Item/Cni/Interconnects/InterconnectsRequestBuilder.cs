@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cni\interconnects
+    /// Builds and executes requests for operations under \accounts\{account-id}\cni\interconnects
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InterconnectsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InterconnectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/interconnects{?cursor*,limit*,site*,type*}", pathParameters)
+        public InterconnectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/interconnects{?cursor*,limit*,site*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InterconnectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/interconnects{?cursor*,limit*,site*,type*}", rawUrl)
+        public InterconnectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/interconnects{?cursor*,limit*,site*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// List existing interconnects
+        /// Lists all network interconnects configured for the account, including physical and virtualconnections.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnectList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnectList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnectList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new interconnect
+        /// Creates a new network interconnect for connecting Cloudflare&apos;s network to external networks.Interconnects provide dedicated bandwidth and reduced latency for traffic exchange.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnect"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnect>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnect.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List existing interconnects
+        /// Lists all network interconnects configured for the account, including physical and virtualconnections.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             return requestInfo;
         }
         /// <summary>
-        /// Create a new interconnect
+        /// Creates a new network interconnect for connecting Cloudflare&apos;s network to external networks.Interconnects provide dedicated bandwidth and reduced latency for traffic exchange.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,15 +135,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects.InterconnectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List existing interconnects
+        /// Lists all network interconnects configured for the account, including physical and virtualconnections.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InterconnectsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public int? Cursor { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
             /// <summary>If specified, only show interconnects located at the given site</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

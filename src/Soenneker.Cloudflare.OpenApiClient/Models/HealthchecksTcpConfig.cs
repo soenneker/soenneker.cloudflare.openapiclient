@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The TCP connection method to use for the health check.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HealthchecksTcpConfig_method? Method { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ConnectionEstablishedMethod? Method { get; set; }
         /// <summary>Port number to connect to for the health check. Defaults to 80.</summary>
         public int? Port { get; set; }
         /// <summary>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public HealthchecksTcpConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            Method = global::Soenneker.Cloudflare.OpenApiClient.Models.HealthchecksTcpConfig_method.Connection_established;
+            Port = 80;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HealthchecksTcpConfig_method>(); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ConnectionEstablishedMethod>(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
             };
         }
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HealthchecksTcpConfig_method>("method", Method);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ConnectionEstablishedMethod>("method", Method);
             writer.WriteIntValue("port", Port);
             writer.WriteAdditionalData(AdditionalData);
         }

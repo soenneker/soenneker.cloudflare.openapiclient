@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\challenges\widgets
+    /// Builds and executes requests for operations under \accounts\{account-id}\challenges\widgets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WidgetsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WidgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/challenges/widgets{?direction*,filter*,order*,page*,per_page*}", pathParameters)
+        public WidgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets{?direction*,filter*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,23 +43,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WidgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/challenges/widgets{?direction*,filter*,order*,page*,per_page*}", rawUrl)
+        public WidgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets{?direction*,filter*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists all turnstile widgets of an account.
+        /// Lists Turnstile widgets for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetsList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists challenge widgets.
+        /// Creates a Turnstile widget for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreateRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreateRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,10 +92,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all turnstile widgets of an account.
+        /// Lists Turnstile widgets for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,18 +114,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
             return requestInfo;
         }
         /// <summary>
-        /// Lists challenge widgets.
+        /// Creates a Turnstile widget for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreateRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreate body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetCreateRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -145,14 +145,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all turnstile widgets of an account.
+        /// Lists Turnstile widgets for an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WidgetsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.GetDirectionQueryParameterType? Direction { get; set; }
-            /// <summary>Filter widgets by field using case-insensitive substring matching.Format: `field:value`Supported fields:- `name` - Filter by widget name (e.g., `filter=name:login-form`)- `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`)Returns 400 Bad Request if the field is unsupported or format is invalid.An empty filter value returns all results.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsAccountIdChallengesWidgetsDirection? Direction { get; set; }
+            #pragma warning restore CS1591
+            /// <summary>Filter widgets by field. The `name` field uses case-insensitivesubstring matching; `sitekey` uses exact matching.Format: `field:value`Supported fields:- `name` - Filter by widget name (e.g., `filter=name:login-form`)- `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`)Returns 400 Bad Request if the field is unsupported or format is invalid.An empty filter value returns all results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -162,22 +164,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsAccountIdChallengesWidgetsOrder? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
-        /// Lists challenge widgets.
+        /// Creates a Turnstile widget for an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WidgetsRequestBuilderPostQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.PostDirectionQueryParameterType? Direction { get; set; }
-            /// <summary>Filter widgets by field using case-insensitive substring matching.Format: `field:value`Supported fields:- `name` - Filter by widget name (e.g., `filter=name:login-form`)- `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`)Returns 400 Bad Request if the field is unsupported or format is invalid.An empty filter value returns all results.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsAccountIdChallengesWidgetsDirection? Direction { get; set; }
+            #pragma warning restore CS1591
+            /// <summary>Filter widgets by field. The `name` field uses case-insensitivesubstring matching; `sitekey` uses exact matching.Format: `field:value`Supported fields:- `name` - Filter by widget name (e.g., `filter=name:login-form`)- `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`)Returns 400 Bad Request if the field is unsupported or format is invalid.An empty filter value returns all results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -187,12 +197,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.PostOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsAccountIdChallengesWidgetsOrder? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

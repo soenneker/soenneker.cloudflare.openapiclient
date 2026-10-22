@@ -3,10 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Approvals;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Exemptions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Managed;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Search;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Stats;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Structured;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Tree;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Validate;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -18,11 +21,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\rules
+    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The approvals property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Approvals.ApprovalsRequestBuilder Approvals
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Approvals.ApprovalsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The exemptions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Exemptions.ExemptionsRequestBuilder Exemptions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Exemptions.ExemptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The managed property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Managed.ManagedRequestBuilder Managed
         {
@@ -37,6 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Stats.StatsRequestBuilder Stats
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Stats.StatsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The structured property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Structured.StructuredRequestBuilder Structured
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Structured.StructuredRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tree property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.Tree.TreeRequestBuilder Tree
@@ -65,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/rules{?is_public*,limit*,namespace*,offset*,recursive*,search*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/rules{?is_public*,limit*,namespace*,offset*,path*,recursive*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -73,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/rules{?is_public*,limit*,namespace*,offset*,recursive*,search*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/rules{?is_public*,limit*,namespace*,offset*,path*,recursive*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -83,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteAllResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,23 +115,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteAllResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneDeleteAllResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all rules for an account with optional filtering.
+        /// Returns all rules for an account with optional filtering.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesListResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesPreviewListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesPreviewListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesPreviewListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -120,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
             {
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesPreviewListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRulesPreviewListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new detection rule.
@@ -133,11 +153,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRule?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRule?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRuleBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRule> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRule> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRuleBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -169,7 +189,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
             return requestInfo;
         }
         /// <summary>
-        /// List all rules for an account with optional filtering.
+        /// Returns all rules for an account with optional filtering.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -195,11 +215,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRuleBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneCreateRuleBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -219,17 +239,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all rules for an account with optional filtering.
+        /// Returns all rules for an account with optional filtering.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter by public visibility.</summary>
+            /// <summary>Limits rules to the specified public visibility.</summary>
             [QueryParameter("is_public")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.GetIs_publicQueryParameterType? IsPublic { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneListRulesIsPublicParameter? IsPublic { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
-            /// <summary>Filter by namespace. Repeat the parameter to filter by multiple namespaces (e.g. namespace=foo&amp;namespace=bar).</summary>
+            #pragma warning restore CS1591
+            /// <summary>Selects namespaces. Repeat the parameter to select multiple namespaces (for example, namespace=foo&amp;namespace=bar).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("namespace")]
@@ -239,18 +261,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules
             [QueryParameter("namespace")]
             public string Namespace { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("offset")]
             public double? Offset { get; set; }
-            [QueryParameter("recursive")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.GetRecursiveQueryParameterType? Recursive { get; set; }
+            #pragma warning restore CS1591
+            /// <summary>Selects paths with exact-match semantics. Omit the parameter to return rules from all paths. Pass an empty string (path=) to return only rules with an empty or uncategorized path. Pass a value (for example, path=yara) to match that exact path. Repeat the parameter (for example, path=yara&amp;path=expr) to OR-match multiple paths with SQL `IN (...)` semantics. The `recursive` flag affects only customer-account namespace selection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("search")]
-            public string? Search { get; set; }
+            [QueryParameter("path")]
+            public string? Path { get; set; }
 #nullable restore
 #else
+            [QueryParameter("path")]
+            public string Path { get; set; }
+#endif
+            /// <summary>For customer accounts, true enables descendant matching for namespaces. Paths always use exact matching.</summary>
+            [QueryParameter("recursive")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneListRulesRecursiveParameter? Recursive { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

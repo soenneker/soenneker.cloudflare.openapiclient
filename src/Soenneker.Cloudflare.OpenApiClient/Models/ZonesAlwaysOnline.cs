@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesAlwaysOnline()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAlwaysOnlineValue.On;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

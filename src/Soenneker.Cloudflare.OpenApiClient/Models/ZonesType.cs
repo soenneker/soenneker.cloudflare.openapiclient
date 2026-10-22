@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "internal")]
         #pragma warning disable CS1591
-        Internal,
+        InternalValue,
         #pragma warning restore CS1591
     }
 }

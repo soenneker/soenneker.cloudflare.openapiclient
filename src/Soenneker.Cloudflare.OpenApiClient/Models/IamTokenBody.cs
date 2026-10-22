@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition Condition { get; set; }
 #endif
+        /// <summary>The email address of the user who created the token at the time ofcreation. Only present for Account Owned API Tokens when a creator emailwas available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatorEmailAtCreation { get; set; }
+#nullable restore
+#else
+        public string CreatorEmailAtCreation { get; set; }
+#endif
         /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Token identifier tag.</summary>
@@ -56,6 +64,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources> Policies { get; set; }
 #endif
+        /// <summary>The identifier of the service that provisioned the token. For anOAuth-provisioned token, this is the OAuth client identifier. Presentwhen `provisioner_type` is present and null when the identifier isunavailable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProvisionerId { get; private set; }
+#nullable restore
+#else
+        public string ProvisionerId { get; private set; }
+#endif
+        /// <summary>The type of service that provisioned the token. Only present forprovisioned Account Owned API Tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProvisionerType { get; set; }
+#nullable restore
+#else
+        public string ProvisionerType { get; set; }
+#endif
         /// <summary>Status of the token.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus? Status { get; set; }
         /// <summary>
@@ -84,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition.CreateFromDiscriminatorValue); } },
+                { "creator_email_at_creation", n => { CreatorEmailAtCreation = n.GetStringValue(); } },
                 { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issued_on", n => { IssuedOn = n.GetDateTimeOffsetValue(); } },
@@ -92,6 +117,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "provisioner_id", n => { ProvisionerId = n.GetStringValue(); } },
+                { "provisioner_type", n => { ProvisionerType = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus>(); } },
             };
         }
@@ -103,6 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition>("condition", Condition);
+            writer.WriteStringValue("creator_email_at_creation", CreatorEmailAtCreation);
             writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("issued_on", IssuedOn);
@@ -111,6 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>("policies", Policies);
+            writer.WriteStringValue("provisioner_type", ProvisionerType);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

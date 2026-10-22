@@ -14,37 +14,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Git branch name (required if commit_hash not provided)</summary>
+        /// <summary>Git branch name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_branch? Branch { get; set; }
+        public string? Branch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_branch Branch { get; set; }
+        public string Branch { get; set; }
 #endif
-        /// <summary>Git commit hash (required if branch not provided)</summary>
+        /// <summary>Git commit hash</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_commit_hash? CommitHash { get; set; }
+        public string? CommitHash { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_commit_hash CommitHash { get; set; }
+        public string CommitHash { get; set; }
 #endif
-        /// <summary>The seed_repo property</summary>
+        /// <summary>Optional repository and file overrides used to seed this build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildSeedRepoInput? SeedRepo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequestSeedRepo? SeedRepo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildSeedRepoInput SeedRepo { get; set; }
-#endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequestSeedRepo SeedRepo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest"/> and sets the default values.
@@ -71,10 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "branch", n => { Branch = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_branch>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_branch.CreateFromDiscriminatorValue); } },
-                { "commit_hash", n => { CommitHash = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_commit_hash>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_commit_hash.CreateFromDiscriminatorValue); } },
-                { "seed_repo", n => { SeedRepo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildSeedRepoInput>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildSeedRepoInput.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "commit_hash", n => { CommitHash = n.GetStringValue(); } },
+                { "seed_repo", n => { SeedRepo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequestSeedRepo>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequestSeedRepo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_branch>("branch", Branch);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequest_commit_hash>("commit_hash", CommitHash);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildSeedRepoInput>("seed_repo", SeedRepo);
-            writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("branch", Branch);
+            writer.WriteStringValue("commit_hash", CommitHash);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateBuildRequestSeedRepo>("seed_repo", SeedRepo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

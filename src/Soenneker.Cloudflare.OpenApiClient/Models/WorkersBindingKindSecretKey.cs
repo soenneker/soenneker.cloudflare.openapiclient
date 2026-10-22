@@ -17,13 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Algorithm-specific key parameters. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#algorithm).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_algorithm? Algorithm { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty? Algorithm { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_algorithm Algorithm { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty Algorithm { get; set; }
 #endif
         /// <summary>Data format of the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#format).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_format? Format { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat? Format { get; set; }
         /// <summary>Base64-encoded key data. Required if `format` is &quot;raw&quot;, &quot;pkcs8&quot;, or &quot;spki&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Key data in [JSON Web Key](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#json_web_key) format. Required if `format` is &quot;jwk&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_key_jwk? KeyJwk { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty? KeyJwk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_key_jwk KeyJwk { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty KeyJwk { get; set; }
 #endif
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,14 +49,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType? Type { get; set; }
         /// <summary>Allowed operations with the key. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/importKey#keyUsages).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_usages?>? Usages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?>? Usages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_usages?> Usages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem?> Usages { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey"/> and sets the default values.
@@ -83,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algorithm", n => { Algorithm = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_algorithm>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_algorithm.CreateFromDiscriminatorValue); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_format>(); } },
+                { "algorithm", n => { Algorithm = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat>(); } },
                 { "key_base64", n => { KeyBase64 = n.GetStringValue(); } },
-                { "key_jwk", n => { KeyJwk = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_key_jwk>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_key_jwk.CreateFromDiscriminatorValue); } },
+                { "key_jwk", n => { KeyJwk = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_type>(); } },
-                { "usages", n => { Usages = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_usages>()?.AsList(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType>(); } },
+                { "usages", n => { Usages = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -99,13 +99,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_algorithm>("algorithm", Algorithm);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_format>("format", Format);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyAlgorithmProperty>("algorithm", Algorithm);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyFormat>("format", Format);
             writer.WriteStringValue("key_base64", KeyBase64);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_key_jwk>("key_jwk", KeyJwk);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyKeyJwkProperty>("key_jwk", KeyJwk);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_type>("type", Type);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKey_usages>("usages", Usages);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretKeyType>("type", Type);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindSecretKeyUsagesItem>("usages", Usages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

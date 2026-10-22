@@ -31,6 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IamAccountSettings()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnforceTwofactor = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

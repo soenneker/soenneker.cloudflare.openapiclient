@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Product_categories;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +14,34 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logs\audit
+    /// Builds and executes requests for operations under \accounts\{account-id}\logs\audit
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The product_categories property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Product_categories.Product_categoriesRequestBuilder Product_categories
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Product_categories.Product_categoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.logs.audit.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Item.AuditItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Item.AuditItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.Item.AuditItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
+        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,product_category*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
+        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,product_category*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
         {
         }
         /// <summary>
@@ -39,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaSchemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaApiResponseCommonFailure2">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AaaSchemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AaaApiResponseCommonFailure2.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -92,420 +111,617 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("account_name")]
             public string[]? AccountName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("account_name")]
             public string[] AccountName { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("account_name%2Enot")]
             public string[]? AccountNameNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("account_name%2Enot")]
             public string[] AccountNameNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("action_result")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[]? ActionResult { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionResultParameterItem[]? ActionResult { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("action_result")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[] ActionResult { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionResultParameterItem[] ActionResult { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("action_result%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[]? ActionResultNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionResultNotParameterItem[]? ActionResultNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("action_result%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[] ActionResultNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionResultNotParameterItem[] ActionResultNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("action_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[]? ActionType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionTypeParameterItem[]? ActionType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("action_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[] ActionType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionTypeParameterItem[] ActionType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("action_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[]? ActionTypeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionTypeNotParameterItem[]? ActionTypeNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("action_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[] ActionTypeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActionTypeNotParameterItem[] ActionTypeNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_context")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[]? ActorContext { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorContextParameterItem[]? ActorContext { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_context")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[] ActorContext { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorContextParameterItem[] ActorContext { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_context%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[]? ActorContextNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorContextNotParameterItem[]? ActorContextNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_context%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[] ActorContextNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorContextNotParameterItem[] ActorContextNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_email")]
             public string[]? ActorEmail { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_email")]
             public string[] ActorEmail { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_email%2Enot")]
             public string[]? ActorEmailNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_email%2Enot")]
             public string[] ActorEmailNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_id")]
             public string[]? ActorId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_id")]
             public string[] ActorId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_id%2Enot")]
             public string[]? ActorIdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_id%2Enot")]
             public string[] ActorIdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_ip_address")]
             public string[]? ActorIpAddress { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_ip_address")]
             public string[] ActorIpAddress { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_ip_address%2Enot")]
             public string[]? ActorIpAddressNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_ip_address%2Enot")]
             public string[] ActorIpAddressNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_id")]
             public string[]? ActorTokenId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_id")]
             public string[] ActorTokenId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_id%2Enot")]
             public string[]? ActorTokenIdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_id%2Enot")]
             public string[] ActorTokenIdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_name")]
             public string[]? ActorTokenName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_name")]
             public string[] ActorTokenName { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_name%2Enot")]
             public string[]? ActorTokenNameNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_token_name%2Enot")]
             public string[] ActorTokenNameNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[]? ActorType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorTypeParameterItem[]? ActorType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[] ActorType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorTypeParameterItem[] ActorType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("actor_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[]? ActorTypeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorTypeNotParameterItem[]? ActorTypeNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("actor_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[] ActorTypeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsActorTypeNotParameterItem[] ActorTypeNot { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("audit_log_id")]
             public string[]? AuditLogId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("audit_log_id")]
             public string[] AuditLogId { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("audit_log_id%2Enot")]
             public string[]? AuditLogIdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("audit_log_id%2Enot")]
             public string[] AuditLogIdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.</summary>
             [QueryParameter("before")]
             public Date? Before { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string? Cursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string[]? Id { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string[] Id { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("id%2Enot")]
             public string[]? IdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("id%2Enot")]
             public string[] IdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public double? Limit { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("product_category")]
+            public string[]? ProductCategory { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("product_category")]
+            public string[] ProductCategory { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_cf_ray_id")]
             public string[]? RawCfRayId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_cf_ray_id")]
             public string[] RawCfRayId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_cf_ray_id%2Enot")]
             public string[]? RawCfRayIdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_cf_ray_id%2Enot")]
             public string[] RawCfRayIdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_method")]
             public string[]? RawMethod { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_method")]
             public string[] RawMethod { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_method%2Enot")]
             public string[]? RawMethodNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_method%2Enot")]
             public string[] RawMethodNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_status_code")]
             public int?[]? RawStatusCode { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_status_code")]
             public int?[] RawStatusCode { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_status_code%2Enot")]
             public int?[]? RawStatusCodeNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_status_code%2Enot")]
             public int?[] RawStatusCodeNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_uri")]
             public string[]? RawUri { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_uri")]
             public string[] RawUri { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("raw_uri%2Enot")]
             public string[]? RawUriNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("raw_uri%2Enot")]
             public string[] RawUriNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_id")]
             public string[]? ResourceId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_id")]
             public string[] ResourceId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_id%2Enot")]
             public string[]? ResourceIdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_id%2Enot")]
             public string[] ResourceIdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_product")]
             public string[]? ResourceProduct { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_product")]
             public string[] ResourceProduct { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_product%2Enot")]
             public string[]? ResourceProductNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_product%2Enot")]
             public string[] ResourceProductNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_scope")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[]? ResourceScope { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsResourceScopeParameterItem[]? ResourceScope { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_scope")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[] ResourceScope { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsResourceScopeParameterItem[] ResourceScope { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_scope%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[]? ResourceScopeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsResourceScopeNotParameterItem[]? ResourceScopeNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_scope%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[] ResourceScopeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AuditLogsV2GetAccountAuditLogsResourceScopeNotParameterItem[] ResourceScopeNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_type")]
             public string[]? ResourceType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_type")]
             public string[] ResourceType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resource_type%2Enot")]
             public string[]? ResourceTypeNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resource_type%2Enot")]
             public string[] ResourceTypeNot { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.</summary>
             [QueryParameter("since")]
             public Date? Since { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("zone_id")]
             public string[]? ZoneId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("zone_id")]
             public string[] ZoneId { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("zone_id%2Enot")]
             public string[]? ZoneIdNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("zone_id%2Enot")]
             public string[] ZoneIdNot { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("zone_name")]
             public string[]? ZoneName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("zone_name")]
             public string[] ZoneName { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("zone_name%2Enot")]
             public string[]? ZoneNameNot { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("zone_name%2Enot")]
             public string[] ZoneNameNot { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

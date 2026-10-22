@@ -7,54 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatParquet"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CloudflarePipelinesFormat : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
-    #pragma warning restore CS1591
+    public partial class CloudflarePipelinesFormat : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember1? CloudflarePipelinesFormatMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson? CloudflarePipelinesFormatJson { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember1 CloudflarePipelinesFormatMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson CloudflarePipelinesFormatJson { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatParquet"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember2? CloudflarePipelinesFormatMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatParquet? CloudflarePipelinesFormatParquet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember2 CloudflarePipelinesFormatMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatParquet CloudflarePipelinesFormatParquet { get; set; }
 #endif
-        /// <summary>The compression property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesParquetCompression? Compression { get; set; }
-        /// <summary>The decimal_encoding property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding? DecimalEncoding { get; set; }
-        /// <summary>The row_group_bytes property</summary>
-        public long? RowGroupBytes { get; set; }
-        /// <summary>The timestamp_format property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat? TimestampFormat { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The unstructured property</summary>
-        public bool? Unstructured { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormat"/> and sets the default values.
-        /// </summary>
-        public CloudflarePipelinesFormat()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,37 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormat();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CloudflarePipelinesFormatJson".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CloudflarePipelinesFormatMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember1();
+                result.CloudflarePipelinesFormatJson = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CloudflarePipelinesFormatParquet".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CloudflarePipelinesFormatMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember2();
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesParquetCompression>() is global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesParquetCompression compressionValue)
-            {
-                result.Compression = compressionValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding>() is global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding decimalEncodingValue)
-            {
-                result.DecimalEncoding = decimalEncodingValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat>() is global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat timestampFormatValue)
-            {
-                result.TimestampFormat = timestampFormatValue;
-            }
-            else if(parseNode.GetLongValue() is long rowGroupBytesValue)
-            {
-                result.RowGroupBytes = rowGroupBytesValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
-            }
-            else if(parseNode.GetBoolValue() is bool unstructuredValue)
-            {
-                result.Unstructured = unstructuredValue;
+                result.CloudflarePipelinesFormatParquet = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatParquet();
             }
             return result;
         }
@@ -105,13 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CloudflarePipelinesFormatMember1 != null)
+            if(CloudflarePipelinesFormatJson != null)
             {
-                return CloudflarePipelinesFormatMember1.GetFieldDeserializers();
+                return CloudflarePipelinesFormatJson.GetFieldDeserializers();
             }
-            else if(CloudflarePipelinesFormatMember2 != null)
+            else if(CloudflarePipelinesFormatParquet != null)
             {
-                return CloudflarePipelinesFormatMember2.GetFieldDeserializers();
+                return CloudflarePipelinesFormatParquet.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -122,39 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CloudflarePipelinesFormatMember1 != null)
+            if(CloudflarePipelinesFormatJson != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember1>(null, CloudflarePipelinesFormatMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatJson>(null, CloudflarePipelinesFormatJson);
             }
-            else if(CloudflarePipelinesFormatMember2 != null)
+            else if(CloudflarePipelinesFormatParquet != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatMember2>(null, CloudflarePipelinesFormatMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesFormatParquet>(null, CloudflarePipelinesFormatParquet);
             }
-            else if(Compression != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesParquetCompression>(null, Compression);
-            }
-            else if(DecimalEncoding != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesDecimalEncoding>(null, DecimalEncoding);
-            }
-            else if(TimestampFormat != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesTimestampFormat>(null, TimestampFormat);
-            }
-            else if(RowGroupBytes != null)
-            {
-                writer.WriteLongValue(null, RowGroupBytes);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
-            else if(Unstructured != null)
-            {
-                writer.WriteBoolValue(null, Unstructured);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

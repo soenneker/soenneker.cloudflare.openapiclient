@@ -3,30 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The region that processes messages for this domain.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum EmailSecurityRegion
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "GLOBAL")]
         #pragma warning disable CS1591
-        GLOBAL,
+        Global,
         #pragma warning restore CS1591
         [EnumMember(Value = "AU")]
         #pragma warning disable CS1591
-        AU,
+        Au,
         #pragma warning restore CS1591
         [EnumMember(Value = "DE")]
         #pragma warning disable CS1591
-        DE,
+        De,
         #pragma warning restore CS1591
         [EnumMember(Value = "IN")]
         #pragma warning disable CS1591
-        IN,
+        InValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "US")]
         #pragma warning disable CS1591
-        US,
+        Us,
         #pragma warning restore CS1591
     }
 }

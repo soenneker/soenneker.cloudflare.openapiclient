@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig Config { get; set; }
 #endif
         /// <summary>The source control management provider.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceConfig>("config", Config);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSource_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesSourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

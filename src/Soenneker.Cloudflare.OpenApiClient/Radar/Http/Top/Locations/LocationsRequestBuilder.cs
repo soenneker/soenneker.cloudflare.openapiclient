@@ -84,25 +84,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
         /// <summary>
         /// Retrieves the top locations by HTTP requests.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequests200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top locations by HTTP requests.
@@ -152,21 +152,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("botClass")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetBotClassQueryParameterType[]? BotClass { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsBotClassParameterItem[]? BotClass { get; set; }
 #nullable restore
 #else
             [QueryParameter("botClass")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetBotClassQueryParameterType[] BotClass { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsBotClassParameterItem[] BotClass { get; set; }
 #endif
             /// <summary>Filters results by browser family.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("browserFamily")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetBrowserFamilyQueryParameterType[]? BrowserFamily { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsBrowserFamilyParameterItem[]? BrowserFamily { get; set; }
 #nullable restore
 #else
             [QueryParameter("browserFamily")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetBrowserFamilyQueryParameterType[] BrowserFamily { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsBrowserFamilyParameterItem[] BrowserFamily { get; set; }
 #endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,7 +178,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
             [QueryParameter("continent")]
             public string[] Continent { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -188,7 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -198,7 +198,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -212,15 +212,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetDeviceTypeQueryParameterType[]? DeviceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsDeviceTypeParameterItem[]? DeviceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("deviceType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetDeviceTypeQueryParameterType[] DeviceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsDeviceTypeParameterItem[] DeviceType { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsFormatParameter? Format { get; set; }
             /// <summary>Filters results by Geolocation. Specify a comma-separated list of GeoNames IDs. Prefix with `-` to exclude geoIds from results. For example, `-2267056,360689` excludes results from the 2267056 (Lisbon), but includes results from 5128638 (New York).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,31 +235,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpProtocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetHttpProtocolQueryParameterType[]? HttpProtocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsHttpProtocolParameterItem[]? HttpProtocol { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpProtocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetHttpProtocolQueryParameterType[] HttpProtocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsHttpProtocolParameterItem[] HttpProtocol { get; set; }
 #endif
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetHttpVersionQueryParameterType[]? HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsHttpVersionParameterItem[]? HttpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetHttpVersionQueryParameterType[] HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsHttpVersionParameterItem[] HttpVersion { get; set; }
 #endif
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsIpVersionParameterItem[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetIpVersionQueryParameterType[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsIpVersionParameterItem[] IpVersion { get; set; }
 #endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
@@ -288,21 +288,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("os")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetOsQueryParameterType[]? Os { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsOsParameterItem[]? Os { get; set; }
 #nullable restore
 #else
             [QueryParameter("os")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetOsQueryParameterType[] Os { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsOsParameterItem[] Os { get; set; }
 #endif
             /// <summary>Filters results by TLS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetTlsVersionQueryParameterType[]? TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsTlsVersionParameterItem[]? TlsVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.GetTlsVersionQueryParameterType[] TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpTopLocationsByHttpRequestsTlsVersionParameterItem[] TlsVersion { get; set; }
 #endif
         }
     }

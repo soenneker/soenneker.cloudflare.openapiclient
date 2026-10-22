@@ -20,18 +20,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The currently active certificate used for encrypting SAML assertions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_current_certificate? CurrentCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetCurrentCertificate? CurrentCertificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_current_certificate CurrentCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetCurrentCertificate CurrentCertificate { get; set; }
 #endif
         /// <summary>The previous certificate, maintained during rotation to ensure continuity. Null if no rotation has occurred. Mirrors the structure of `saml_certificate`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_previous_certificate? PreviousCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetPreviousCertificateProperty? PreviousCertificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_previous_certificate PreviousCertificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetPreviousCertificateProperty PreviousCertificate { get; set; }
 #endif
         /// <summary>Unique identifier for the certificate set</summary>
         public Guid? Uid { get; set; }
@@ -63,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "current_certificate", n => { CurrentCertificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_current_certificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_current_certificate.CreateFromDiscriminatorValue); } },
-                { "previous_certificate", n => { PreviousCertificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_previous_certificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_previous_certificate.CreateFromDiscriminatorValue); } },
+                { "current_certificate", n => { CurrentCertificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetCurrentCertificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetCurrentCertificate.CreateFromDiscriminatorValue); } },
+                { "previous_certificate", n => { PreviousCertificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetPreviousCertificateProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetPreviousCertificateProperty.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetGuidValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -77,8 +77,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_current_certificate>("current_certificate", CurrentCertificate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSet_previous_certificate>("previous_certificate", PreviousCertificate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetCurrentCertificate>("current_certificate", CurrentCertificate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlCertificateSetPreviousCertificateProperty>("previous_certificate", PreviousCertificate);
             writer.WriteGuidValue("uid", Uid);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

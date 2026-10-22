@@ -15,15 +15,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Lists the MFA methods that users can authenticate with.</summary>
+        /// <summary>Lists the MFA methods that users can authenticate with. The `piv_key` and `ssh_fido2_key` values are supported only for infrastructure applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig_allowed_authenticators?>? AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?>? AllowedAuthenticators { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig_allowed_authenticators?> AllowedAuthenticators { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem?> AllowedAuthenticators { get; set; }
 #endif
-        /// <summary>&quot;Allows a user to skip MFA via Authentication Method Reference (AMR) matching when the AMR claim provided by the IdP the user used to authenticate contains \&quot;mfa\&quot;. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days).&quot;</summary>
+        /// <summary>Allows a user to skip MFA via Authentication Method Reference (AMR) matching when the AMR claim provided by the IdP the user used to authenticate contains &quot;mfa&quot;. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AmrMatchingSessionDuration { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Specifies a Cloudflare List of required FIDO2 authenticator device AAGUIDs.</summary>
         public Guid? RequiredAaguids { get; set; }
-        /// <summary>&quot;Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.&quot;</summary>
+        /// <summary>Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionDuration { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_authenticators", n => { AllowedAuthenticators = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig_allowed_authenticators>()?.AsList(); } },
+                { "allowed_authenticators", n => { AllowedAuthenticators = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem>()?.AsList(); } },
                 { "amr_matching_session_duration", n => { AmrMatchingSessionDuration = n.GetStringValue(); } },
                 { "required_aaguids", n => { RequiredAaguids = n.GetGuidValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig_allowed_authenticators>("allowed_authenticators", AllowedAuthenticators);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfigAllowedAuthenticatorsItem>("allowed_authenticators", AllowedAuthenticators);
             writer.WriteStringValue("amr_matching_session_duration", AmrMatchingSessionDuration);
             writer.WriteGuidValue("required_aaguids", RequiredAaguids);
             writer.WriteStringValue("session_duration", SessionDuration);

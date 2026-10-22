@@ -14,12 +14,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.</summary>
+        /// <summary>Temporary migration flag tracking zones opted out of AI bots managed-rule updates.</summary>
+        public bool? AiBotsMigrationOptOut { get; set; }
+        /// <summary>Enable rule to block AI Scrapers and Crawlers.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection? AiBotsProtection { get; set; }
+        /// <summary>Configure robots.txt policy for AI search bots.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch? AiSearch { get; set; }
+        /// <summary>Configure robots.txt policy for AI model training bots.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiTraining? AiTraining { get; set; }
+        /// <summary>Configure robots.txt policy for AI assistant and agent bots.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiUser? AiUser { get; set; }
         /// <summary>Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)</summary>
         public bool? AutoUpdateModel { get; set; }
         /// <summary>Indicates that the bot management cookie can be placed on end user devices accessing the site. Defaults to true</summary>
         public bool? BmCookieEnabled { get; set; }
+        /// <summary>Enable Bot Preference Sync for this zone. When enabled, Cloudflare can serve robots.txt content derived from the zone&apos;s AI Search, AI User, and AI Training preferences.</summary>
+        public bool? BotPreferenceSyncEnabled { get; set; }
         /// <summary>Specifies the Robots Access Control License variant to use.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCfRobotsVariant? CfRobotsVariant { get; set; }
         /// <summary>Enable rule to block content bots. When enabled, blocks automated traffic with low bot scores, excluding safe verified bot categories. Exceptions should be managed via skip rules.</summary>
@@ -30,13 +40,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? EnableJs { get; set; }
         /// <summary>Enable cloudflare managed robots.txt. If an existing robots.txt is detected, then managed robots.txt will be prepended to the existing robots.txt.</summary>
         public bool? IsRobotsTxtManaged { get; set; }
+        /// <summary>Whether to use JavaScript Detection results submitted through the API for this zone.</summary>
+        public bool? JsdApiResultsEnabled { get; set; }
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig_stale_zone_configuration? StaleZoneConfiguration { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfigAllOf2StaleZoneConfiguration? StaleZoneConfiguration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig_stale_zone_configuration StaleZoneConfiguration { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfigAllOf2StaleZoneConfiguration StaleZoneConfiguration { get; private set; }
 #endif
         /// <summary>Whether to disable tracking the highest bot score for a session in the Bot Management cookie.</summary>
         public bool? SuppressSessionScore { get; set; }
@@ -67,15 +79,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ai_bots_migration_opt_out", n => { AiBotsMigrationOptOut = n.GetBoolValue(); } },
                 { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection>(); } },
+                { "ai_search", n => { AiSearch = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch>(); } },
+                { "ai_training", n => { AiTraining = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiTraining>(); } },
+                { "ai_user", n => { AiUser = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiUser>(); } },
                 { "auto_update_model", n => { AutoUpdateModel = n.GetBoolValue(); } },
                 { "bm_cookie_enabled", n => { BmCookieEnabled = n.GetBoolValue(); } },
+                { "bot_preference_sync_enabled", n => { BotPreferenceSyncEnabled = n.GetBoolValue(); } },
                 { "cf_robots_variant", n => { CfRobotsVariant = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCfRobotsVariant>(); } },
                 { "content_bots_protection", n => { ContentBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementContentBotsProtection>(); } },
                 { "crawler_protection", n => { CrawlerProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCrawlerProtection>(); } },
                 { "enable_js", n => { EnableJs = n.GetBoolValue(); } },
                 { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetBoolValue(); } },
-                { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig_stale_zone_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig_stale_zone_configuration.CreateFromDiscriminatorValue); } },
+                { "jsd_api_results_enabled", n => { JsdApiResultsEnabled = n.GetBoolValue(); } },
+                { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfigAllOf2StaleZoneConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfigAllOf2StaleZoneConfiguration.CreateFromDiscriminatorValue); } },
                 { "suppress_session_score", n => { SuppressSessionScore = n.GetBoolValue(); } },
                 { "using_latest_model", n => { UsingLatestModel = n.GetBoolValue(); } },
             };
@@ -87,14 +105,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("ai_bots_migration_opt_out", AiBotsMigrationOptOut);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiBotsProtection>("ai_bots_protection", AiBotsProtection);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiSearch>("ai_search", AiSearch);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiTraining>("ai_training", AiTraining);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementAiUser>("ai_user", AiUser);
             writer.WriteBoolValue("auto_update_model", AutoUpdateModel);
             writer.WriteBoolValue("bm_cookie_enabled", BmCookieEnabled);
+            writer.WriteBoolValue("bot_preference_sync_enabled", BotPreferenceSyncEnabled);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCfRobotsVariant>("cf_robots_variant", CfRobotsVariant);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementContentBotsProtection>("content_bots_protection", ContentBotsProtection);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementCrawlerProtection>("crawler_protection", CrawlerProtection);
             writer.WriteBoolValue("enable_js", EnableJs);
             writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);
+            writer.WriteBoolValue("jsd_api_results_enabled", JsdApiResultsEnabled);
             writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
             writer.WriteBoolValue("using_latest_model", UsingLatestModel);
             writer.WriteAdditionalData(AdditionalData);

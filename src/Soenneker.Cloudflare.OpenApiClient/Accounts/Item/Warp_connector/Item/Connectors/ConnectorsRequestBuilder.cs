@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\warp_connector\{tunnel_id}\connectors
+    /// Builds and executes requests for operations under \accounts\{account-id}\warp_connector\{tunnelId}\connectors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.warp_connector.item.connectors.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors.Item.WithConnector_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors.Item.WithConnector_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors.Item.WithConnectorItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors.Item.WithConnectorItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("connector_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors.Item.WithConnector_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("connectorId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connectors.Item.WithConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.C
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/warp_connector/{tunnel_id}/connectors", pathParameters)
+        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/warp_connector/{tunnelId}/connectors", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.C
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/warp_connector/{tunnel_id}/connectors", rawUrl)
+        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/warp_connector/{tunnelId}/connectors", rawUrl)
         {
         }
     }

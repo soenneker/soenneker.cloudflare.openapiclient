@@ -10,27 +10,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "compliance_violation")]
         #pragma warning disable CS1591
-        Compliance_violation,
+        ComplianceViolation,
         #pragma warning restore CS1591
         [EnumMember(Value = "email_security")]
         #pragma warning disable CS1591
-        Email_security,
+        EmailSecurity,
         #pragma warning restore CS1591
         [EnumMember(Value = "exposed_infrastructure")]
         #pragma warning disable CS1591
-        Exposed_infrastructure,
+        ExposedInfrastructure,
         #pragma warning restore CS1591
         [EnumMember(Value = "insecure_configuration")]
         #pragma warning disable CS1591
-        Insecure_configuration,
+        InsecureConfiguration,
         #pragma warning restore CS1591
         [EnumMember(Value = "weak_authentication")]
         #pragma warning disable CS1591
-        Weak_authentication,
+        WeakAuthentication,
         #pragma warning restore CS1591
         [EnumMember(Value = "configuration_suggestion")]
         #pragma warning disable CS1591
-        Configuration_suggestion,
+        ConfigurationSuggestion,
         #pragma warning restore CS1591
     }
 }

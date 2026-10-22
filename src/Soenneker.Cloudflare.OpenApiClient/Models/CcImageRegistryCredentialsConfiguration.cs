@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies the configuration for the image registry credential to create.
+    /// Specifies the configuration for the image registry credential to create. Cloudflare requires both fields for managed registries. For external registries, Cloudflare ignores both fields, and the registry provider determines the returned credentials&apos; permissions and lifetime.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CcImageRegistryCredentialsConfiguration : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of minutes the credentials will be valid for.</summary>
+        /// <summary>The number of minutes Cloudflare managed registry credentials stay valid. Required for managed registries and must remain positive. Cloudflare ignores this value for external registries.</summary>
         public int? ExpirationMinutes { get; set; }
-        /// <summary>The permissions property</summary>
+        /// <summary>The permissions for Cloudflare managed registry credentials. Required for managed registries. Cloudflare ignores this value for external registries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CcImageRegistryPermissions?>? Permissions { get; set; }

@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "ML")]
         #pragma warning disable CS1591
-        ML,
+        Ml,
         #pragma warning restore CS1591
         [EnumMember(Value = "SessionIdentifier")]
         #pragma warning disable CS1591

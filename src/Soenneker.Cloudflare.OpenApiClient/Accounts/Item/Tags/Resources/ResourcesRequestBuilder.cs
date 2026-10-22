@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.Resources
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\tags\resources
+    /// Builds and executes requests for operations under \accounts\{account-id}\tags\resources
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourcesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.Resources
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tags/resources{?cursor*,tag*,type*}", pathParameters)
+        public ResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tags/resources{?case_insensitive*,cursor*,id*,include_navigation*,name*,tag*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.Resources
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tags/resources{?cursor*,tag*,type*}", rawUrl)
+        public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tags/resources{?case_insensitive*,cursor*,id*,include_navigation*,name*,tag*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,6 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.Resources
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResourcesRequestBuilderGetQueryParameters 
         {
+            /// <summary>Match `tag` keys and values case-insensitively. Stored casing is unchanged. Example: ?tag=environment=production&amp;case_insensitive=true</summary>
+            [QueryParameter("case_insensitive")]
+            public bool? CaseInsensitive { get; set; }
             /// <summary>Cursor for pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +103,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.Resources
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>&quot;Filter resources by tag criteria. This parameter can be repeated multiple times, with AND logic between parameters.Supported syntax:- **Key-only**: `tag=&lt;key&gt;` - Resource must have the tag key (e.g., `tag=production`)- **Key-value**: `tag=&lt;key&gt;=&lt;value&gt;` - Resource must have the tag with specific value (e.g., `tag=env=prod`)- **Multiple values (OR)**: `tag=&lt;key&gt;=&lt;v1&gt;,&lt;v2&gt;` - Resource must have tag with any of the values (e.g., `tag=env=prod,staging`)- **Negate key-only**: `tag=!&lt;key&gt;` - Resource must not have the tag key (e.g., `tag=!archived`)- **Negate key-value**: `tag=&lt;key&gt;!=&lt;value&gt;` - Resource must not have the tag with specific value (e.g., `tag=region!=us-west-1`)Multiple tag parameters are combined with AND logic.&quot;</summary>
+            /// <summary>Filter by resource ID. Can be repeated up to 50 times to filter by multiple IDs. Example: ?id=abc&amp;id=def</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("id")]
+            public string[]? Id { get; set; }
+#nullable restore
+#else
+            [QueryParameter("id")]
+            public string[] Id { get; set; }
+#endif
+            /// <summary>Resolve current namespace Worker navigation by immutable child tag. Optional read-only navigation is omitted for deleted or unresolved children. Lookups are limited to this page, at most five concurrently, with a shared two-second budget. Tag identity, ETag, filters and pagination are unchanged; name filtering still uses the stored resource name. Defaults to false.</summary>
+            [QueryParameter("include_navigation")]
+            public bool? IncludeNavigation { get; set; }
+            /// <summary>Filter by resource name. Performs a case-insensitive substring match. Example: ?name=my-zone</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
+            /// <summary>Filter resources by tag criteria. This parameter can be repeated multiple times, with AND logic between parameters.Supported syntax:- **Key-only**: `tag=&lt;key&gt;` - Resource must have the tag key (e.g., `tag=production`)- **Key-value**: `tag=&lt;key&gt;=&lt;value&gt;` - Resource must have the tag with specific value (e.g., `tag=env=prod`)- **Multiple values (OR)**: `tag=&lt;key&gt;=&lt;v1&gt;,&lt;v2&gt;` - Resource must have tag with any of the values (e.g., `tag=env=prod,staging`)- **Negate key-only**: `tag=!&lt;key&gt;` - Resource must not have the tag key (e.g., `tag=!archived`)- **Negate key-value**: `tag=&lt;key&gt;!=&lt;value&gt;` - Resource must not have the tag with specific value (e.g., `tag=region!=us-west-1`)Multiple tag parameters are combined with AND logic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tag")]
@@ -110,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.Resources
             [QueryParameter("tag")]
             public string[] Tag { get; set; }
 #endif
-            /// <summary>&quot;Filter by resource type. Can be repeated to filter by multiple types (OR logic). Example: ?type=zone&amp;type=worker&quot;</summary>
+            /// <summary>Filter by resource type. Can be repeated to filter by multiple types (OR logic). Example: ?type=zone&amp;type=worker</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

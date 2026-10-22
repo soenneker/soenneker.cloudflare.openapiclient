@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering\devtools\browser\{session_id}\json\close
+    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering\devtools\browser\{sessionId}\json\close
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.browserRendering.devtools.browser.item.jsonEscaped.close.item collection</summary>
         /// <param name="position">Target ID to close.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close.Item.WithTarget_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close.Item.WithTarget_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close.Item.WithTargetItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close.Item.WithTargetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("target_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close.Item.WithTarget_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("targetId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.Close.Item.WithTargetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/devtools/browser/{session_id}/json/close", pathParameters)
+        public CloseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser/{sessionId}/json/close", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/devtools/browser/{session_id}/json/close", rawUrl)
+        public CloseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser/{sessionId}/json/close", rawUrl)
         {
         }
     }

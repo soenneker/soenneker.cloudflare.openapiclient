@@ -9,7 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "self_hosted")]
         #pragma warning disable CS1591
-        Self_hosted,
+        SelfHosted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "end_user")]
+        #pragma warning disable CS1591
+        EndUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "saas")]
         #pragma warning disable CS1591
@@ -25,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "app_launcher")]
         #pragma warning disable CS1591
-        App_launcher,
+        AppLauncher,
         #pragma warning restore CS1591
         [EnumMember(Value = "warp")]
         #pragma warning disable CS1591
@@ -41,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "dash_sso")]
         #pragma warning disable CS1591
-        Dash_sso,
+        DashSso,
         #pragma warning restore CS1591
         [EnumMember(Value = "infrastructure")]
         #pragma warning disable CS1591
@@ -57,11 +61,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "mcp_portal")]
         #pragma warning disable CS1591
-        Mcp_portal,
+        McpPortal,
         #pragma warning restore CS1591
         [EnumMember(Value = "proxy_endpoint")]
         #pragma warning disable CS1591
-        Proxy_endpoint,
+        ProxyEndpoint,
         #pragma warning restore CS1591
     }
 }

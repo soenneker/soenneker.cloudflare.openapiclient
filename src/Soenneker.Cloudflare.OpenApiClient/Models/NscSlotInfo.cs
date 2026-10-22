@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ccr_device_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CcrDeviceName { get; set; }
+#nullable restore
+#else
+        public string CcrDeviceName { get; set; }
+#endif
         /// <summary>The facility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
+                { "ccr_device_name", n => { CcrDeviceName = n.GetStringValue(); } },
                 { "facility", n => { Facility = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "occupied", n => { Occupied = n.GetBoolValue(); } },
@@ -91,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
+            writer.WriteStringValue("ccr_device_name", CcrDeviceName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscFacilityInfo>("facility", Facility);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("occupied", Occupied);

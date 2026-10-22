@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? Metrics { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsColumnMetrics? Metrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch Metrics { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsColumnMetrics Metrics { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsColumn"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "metrics", n => { Metrics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsColumnMetrics>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsColumnMetrics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("metrics", Metrics);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsColumnMetrics>("metrics", Metrics);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

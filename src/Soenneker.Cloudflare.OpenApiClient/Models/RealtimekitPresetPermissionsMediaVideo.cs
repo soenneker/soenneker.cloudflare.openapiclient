@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Can produce video</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideo_can_produce? CanProduce { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideoCanProduce? CanProduce { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideo"/> and sets the default values.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "can_produce", n => { CanProduce = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideo_can_produce>(); } },
+                { "can_produce", n => { CanProduce = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideoCanProduce>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideo_can_produce>("can_produce", CanProduce);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissionsMediaVideoCanProduce>("can_produce", CanProduce);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

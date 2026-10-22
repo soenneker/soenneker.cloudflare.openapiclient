@@ -18,13 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A human-readable description that gives more details than `title`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,22 +37,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Expression { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The last_updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? LastUpdated { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp LastUpdated { get; set; }
-#endif
+        public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>Select operations covered by this rule.For details on selectors, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,12 +89,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAction>(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid.CreateFromDiscriminatorValue); } },
-                { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "selector", n => { Selector = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -119,12 +107,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("expression", Expression);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("last_updated", LastUpdated);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector>("selector", Selector);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

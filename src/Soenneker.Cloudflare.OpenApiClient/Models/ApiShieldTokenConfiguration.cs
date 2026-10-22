@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,22 +32,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The last_updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? LastUpdated { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp LastUpdated { get; set; }
-#endif
+        public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,10 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The token_sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>? TokenSources { get; set; }
+        public List<string>? TokenSources { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch> TokenSources { get; set; }
+        public List<string> TokenSources { get; set; }
 #endif
         /// <summary>The token_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTokenType? TokenType { get; set; }
@@ -97,13 +85,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid.CreateFromDiscriminatorValue); } },
-                { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "token_sources", n => { TokenSources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "token_sources", n => { TokenSources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTokenType>(); } },
             };
         }
@@ -114,13 +102,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials>("credentials", Credentials);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("last_updated", LastUpdated);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("token_sources", TokenSources);
+            writer.WriteCollectionOfPrimitiveValues<string>("token_sources", TokenSources);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTokenType>("token_type", TokenType);
             writer.WriteAdditionalData(AdditionalData);
         }

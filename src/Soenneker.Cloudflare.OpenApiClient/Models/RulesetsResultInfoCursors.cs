@@ -15,13 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The after property</summary>
+        /// <summary>The cursor to use for the next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors_after? After { get; set; }
+        public string? After { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors_after After { get; set; }
+        public string After { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors_after>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors_after.CreateFromDiscriminatorValue); } },
+                { "after", n => { After = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResultInfoCursors_after>("after", After);
+            writer.WriteStringValue("after", After);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

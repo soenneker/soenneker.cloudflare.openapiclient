@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "very_high")]
         #pragma warning disable CS1591
-        Very_high,
+        VeryHigh,
         #pragma warning restore CS1591
     }
 }

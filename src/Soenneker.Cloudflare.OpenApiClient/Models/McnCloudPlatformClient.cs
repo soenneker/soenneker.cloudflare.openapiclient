@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The client_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnCloudPlatformClient_client_type? ClientType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanCloudOnrampClientType? ClientType { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The name property</summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "client_type", n => { ClientType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCloudPlatformClient_client_type>(); } },
+                { "client_type", n => { ClientType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanCloudOnrampClientType>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnCloudPlatformClient_client_type>("client_type", ClientType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicWanCloudOnrampClientType>("client_type", ClientType);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

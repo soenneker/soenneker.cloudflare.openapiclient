@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Codec using which the recording will be encoded.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig_codec? Codec { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigCodec? Codec { get; set; }
         /// <summary>Controls whether to export video file seperately</summary>
         public bool? ExportFile { get; set; }
         /// <summary>Height of the recording video in pixels</summary>
@@ -36,7 +36,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitVideoConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            Codec = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig_codec.H264;
+            ExportFile = true;
+            Height = 720;
+            Width = 1280;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "codec", n => { Codec = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig_codec>(); } },
+                { "codec", n => { Codec = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigCodec>(); } },
                 { "export_file", n => { ExportFile = n.GetBoolValue(); } },
                 { "height", n => { Height = n.GetIntValue(); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark.CreateFromDiscriminatorValue); } },
@@ -70,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig_codec>("codec", Codec);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigCodec>("codec", Codec);
             writer.WriteBoolValue("export_file", ExportFile);
             writer.WriteIntValue("height", Height);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfigWatermark>("watermark", Watermark);

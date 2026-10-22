@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFull_resources? Resources { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources? Resources { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFull_resources Resources { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources Resources { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFull"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetDoubleValue(); } },
-                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFull_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFull_resources.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

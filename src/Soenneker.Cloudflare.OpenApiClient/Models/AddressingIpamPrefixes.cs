@@ -22,22 +22,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The advertised property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Advertised { get; set; }
-#nullable restore
-#else
-        public string Advertised { get; set; }
-#endif
-        /// <summary>The advertised_modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AdvertisedModifiedAt { get; set; }
-#nullable restore
-#else
-        public string AdvertisedModifiedAt { get; set; }
-#endif
+        /// <summary>Prefix advertisement status to the Internet. This field is only not &apos;null&apos; if on demand is enabled.</summary>
+        [Obsolete("")]
+        public bool? Advertised { get; set; }
+        /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
+        [Obsolete("")]
+        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
         /// <summary>Approval state of the prefix (P = pending, V = active).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,8 +138,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "advertised", n => { Advertised = n.GetStringValue(); } },
-                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetStringValue(); } },
+                { "advertised", n => { Advertised = n.GetBoolValue(); } },
+                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "approved", n => { Approved = n.GetStringValue(); } },
                 { "asn", n => { Asn = n.GetIntValue(); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
@@ -175,8 +165,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("advertised", Advertised);
-            writer.WriteStringValue("advertised_modified_at", AdvertisedModifiedAt);
+            writer.WriteBoolValue("advertised", Advertised);
+            writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
             writer.WriteStringValue("approved", Approved);
             writer.WriteIntValue("asn", Asn);
             writer.WriteStringValue("cidr", Cidr);

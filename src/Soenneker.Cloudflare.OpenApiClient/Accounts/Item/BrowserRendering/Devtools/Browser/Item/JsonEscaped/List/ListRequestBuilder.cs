@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering\devtools\browser\{session_id}\json\list
+    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering\devtools\browser\{sessionId}\json\list
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.browserRendering.devtools.browser.item.jsonEscaped.list.item collection</summary>
         /// <param name="position">Target ID.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.Item.WithTarget_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.Item.WithTarget_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.Item.WithTargetItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.Item.WithTargetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("target_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.Item.WithTarget_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("targetId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.Item.WithTargetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/devtools/browser/{session_id}/json/list", pathParameters)
+        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser/{sessionId}/json/list{?liveViewUrlExpiresInMs*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,33 +43,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/devtools/browser/{session_id}/json/list", rawUrl)
+        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser/{sessionId}/json/list{?liveViewUrlExpiresInMs*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a list of all debuggable targets including tabs, pages, service workers, and other browser contexts.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.List&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList400Response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.List>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.List>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList400.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList400Response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList500Response.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.List>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.List.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsJsonList200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -79,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.ListRequestBuilder.ListRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -99,6 +99,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.ListRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped.List.ListRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Returns a list of all debuggable targets including tabs, pages, service workers, and other browser contexts.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ListRequestBuilderGetQueryParameters 
+        {
+            /// <summary>How long the live view URLs remain valid, in milliseconds (max 60 minutes)</summary>
+            [QueryParameter("liveViewUrlExpiresInMs")]
+            public double? LiveViewUrlExpiresInMs { get; set; }
         }
     }
 }

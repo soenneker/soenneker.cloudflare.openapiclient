@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Account or organization ID must be provided.
+    /// Optionally specify `recipient_account_id` to target a specific account, or `organization_id` to target the caller&apos;s whole organization. If neither is provided, the caller&apos;s organization is used.The legacy field `account_id` is accepted as a synonym for `recipient_account_id` during the deprecation period (see `x-sunset` on that field).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourceSharingCreateShareRecipientRequest : IAdditionalDataHolder, IParsable
@@ -30,6 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
+#endif
+        /// <summary>Account identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecipientAccountId { get; set; }
+#nullable restore
+#else
+        public string RecipientAccountId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRecipientRequest"/> and sets the default values.
@@ -58,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
+                { "recipient_account_id", n => { RecipientAccountId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("organization_id", OrganizationId);
+            writer.WriteStringValue("recipient_account_id", RecipientAccountId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

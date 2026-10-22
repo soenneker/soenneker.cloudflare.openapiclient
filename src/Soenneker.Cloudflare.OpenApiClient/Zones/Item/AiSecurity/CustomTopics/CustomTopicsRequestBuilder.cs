@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\ai-security\custom-topics
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\ai-security\custom-topics
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomTopicsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomTopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ai-security/custom-topics", pathParameters)
+        public CustomTopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/ai-security/custom-topics", pathParameters)
         {
         }
         /// <summary>
@@ -30,16 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomTopicsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ai-security/custom-topics", rawUrl)
+        public CustomTopicsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/ai-security/custom-topics", rawUrl)
         {
         }
         /// <summary>
-        /// Get the AI Security for Apps custom topic categories for a zone.
+        /// Get the custom topic categories defined for the zone. While AI Security for Apps is enabled, it scores every incoming prompt against these topics and writes the scores to the `cf.llm.prompt.custom_topic_categories` field, keyed by topic label. Topics can be configured while the detection is disabled, but no prompt is scored until you enable it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsGet4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsGet4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,18 +52,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsGet4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsGet4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the AI Security for Apps custom topic categories for a zone.A maximum of 20 custom topics can be configured per zone.Each topic label must be 2–20 characters using only lowercase letters (a–z), digits (0–9), and hyphens.Each topic description must be 2–50 printable ASCII characters.Changes can take up to a minute to propagate to the zone.
+        /// Update the custom topic list of the zone, overwriting it entirely with the topics in the request, so includeevery topic you want to keep. Changes can take up to a minute to propagate.Each entry has a `label`, used to reference the topic in rule expressions and analytics, and a `topic`description, which the classifier scores prompts against while AI Security for Apps is enabled. The followingrules apply:- A zone can hold at most 20 topics.- `label` must be 2–20 characters, using only lowercase letters (a–z), digits (0–9), and hyphens.- `topic` must be 2–50 printable ASCII characters.- Labels must be unique within the zone, and so must topic descriptions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsPut4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsPut4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleCustomTopics body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,12 +77,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsPut4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AiSecurityCustomTopicsPut4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleResponseCustomTopics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the AI Security for Apps custom topic categories for a zone.
+        /// Get the custom topic categories defined for the zone. While AI Security for Apps is enabled, it scores every incoming prompt against these topics and writes the scores to the `cf.llm.prompt.custom_topic_categories` field, keyed by topic label. Topics can be configured while the detection is disabled, but no prompt is scored until you enable it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.CustomTopics
             return requestInfo;
         }
         /// <summary>
-        /// Set the AI Security for Apps custom topic categories for a zone.A maximum of 20 custom topics can be configured per zone.Each topic label must be 2–20 characters using only lowercase letters (a–z), digits (0–9), and hyphens.Each topic description must be 2–50 printable ASCII characters.Changes can take up to a minute to propagate to the zone.
+        /// Update the custom topic list of the zone, overwriting it entirely with the topics in the request, so includeevery topic you want to keep. Changes can take up to a minute to propagate.Each entry has a `label`, used to reference the topic in rule expressions and analytics, and a `topic`description, which the classifier scores prompts against while AI Security for Apps is enabled. The followingrules apply:- A zone can hold at most 20 topics.- `label` must be 2–20 characters, using only lowercase letters (a–z), digits (0–9), and hyphens.- `topic` must be 2–50 printable ASCII characters.- Labels must be unique within the zone, and so must topic descriptions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

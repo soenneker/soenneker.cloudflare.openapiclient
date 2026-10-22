@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Permission_groups
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\tokens\permission_groups
+    /// Builds and executes requests for operations under \accounts\{account-id}\tokens\permission_groups
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Permission_groupsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Permission_gro
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Permission_groupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tokens/permission_groups{?name*,scope*}", pathParameters)
+        public Permission_groupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tokens/permission_groups{?name*,scope*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Permission_gro
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Permission_groupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tokens/permission_groups{?name*,scope*}", rawUrl)
+        public Permission_groupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tokens/permission_groups{?name*,scope*}", rawUrl)
         {
         }
         /// <summary>
-        /// Find all available permission groups for Account Owned API Tokens
+        /// Find all available permission groups for Account Owned API Tokens.Each permission group indicates whether the caller can select it whencreating a token. Token creation performs the authoritative permissioncheck.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionsGroupResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Permission_gro
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionsGroupResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionsGroupResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Find all available permission groups for Account Owned API Tokens
+        /// Find all available permission groups for Account Owned API Tokens.Each permission group indicates whether the caller can select it whencreating a token. Token creation performs the authoritative permissioncheck.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Permission_gro
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Permission_groups.Permission_groupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Find all available permission groups for Account Owned API Tokens
+        /// Find all available permission groups for Account Owned API Tokens.Each permission group indicates whether the caller can select it whencreating a token. Token creation performs the authoritative permissioncheck.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Permission_groupsRequestBuilderGetQueryParameters 

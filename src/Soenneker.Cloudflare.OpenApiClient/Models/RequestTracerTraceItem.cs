@@ -24,10 +24,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If step type is rule, then action parameters of this rule as JSON</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItem_action_parameters? ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItemActionParametersProperty? ActionParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItem_action_parameters ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItemActionParametersProperty ActionParameters { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -115,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "action_parameters", n => { ActionParameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItem_action_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItem_action_parameters.CreateFromDiscriminatorValue); } },
+                { "action_parameters", n => { ActionParameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItemActionParametersProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItemActionParametersProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
@@ -134,7 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItem_action_parameters>("action_parameters", ActionParameters);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracerTraceItemActionParametersProperty>("action_parameters", ActionParameters);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("kind", Kind);

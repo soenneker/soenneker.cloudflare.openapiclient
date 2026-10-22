@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The flags property</summary>
+        /// <summary>Ordered chain of organization tags from the root organization down to(and including) this organization itself. Root organizations return asingle-element array containing their own tag; sub-organizations return`[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful forconstructing authorization scopes that need to cover every ancestorin the hierarchy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta_flags? Flags { get; set; }
+        public List<string>? HierarchyTags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta_flags Flags { get; set; }
+        public List<string> HierarchyTags { get; set; }
 #endif
         /// <summary>The managed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +29,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string ManagedBy { get; set; }
+#endif
+        /// <summary>The tenant_flags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags? TenantFlags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags TenantFlags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta"/> and sets the default values.
@@ -55,8 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta_flags>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta_flags.CreateFromDiscriminatorValue); } },
+                { "hierarchy_tags", n => { HierarchyTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "managed_by", n => { ManagedBy = n.GetStringValue(); } },
+                { "tenant_flags", n => { TenantFlags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMeta_flags>("flags", Flags);
+            writer.WriteCollectionOfPrimitiveValues<string>("hierarchy_tags", HierarchyTags);
             writer.WriteStringValue("managed_by", ManagedBy);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganizationMetaTenantFlags>("tenant_flags", TenantFlags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

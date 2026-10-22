@@ -40,8 +40,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings Settings { get; set; }
 #endif
+        /// <summary>Account tags, present only when `include_tags=true` is requested.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountTagsProperty? Tags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountTagsProperty Tags { get; set; }
+#endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount"/> and sets the default values.
         /// </summary>
@@ -71,7 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount_type>(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountTagsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountTagsProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountType>(); } },
             };
         }
         /// <summary>
@@ -85,7 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountSettings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccount_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountTagsProperty>("tags", Tags);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiAccountType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

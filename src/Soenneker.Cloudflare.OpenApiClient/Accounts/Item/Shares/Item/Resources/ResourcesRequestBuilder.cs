@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\shares\{share_id}\resources
+    /// Builds and executes requests for operations under \accounts\{account-id}\shares\{shareId}\resources
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.shares.item.resources.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithShareResourceItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithShareResourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("resource_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("shareResourceId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithShareResourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares/{share_id}/resources{?page*,per_page*,resource_type*,status*}", pathParameters)
+        public ResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/shares/{shareId}/resources{?page*,per_page*,resource_type*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares/{share_id}/resources{?page*,per_page*,resource_type*,status*}", rawUrl)
+        public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/shares/{shareId}/resources{?page*,per_page*,resource_type*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList4XxResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourcesList5XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,8 +78,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate4XxResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareResourceRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,8 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareResourceCreate5XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResourceResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -154,10 +154,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResourcesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Page number.</summary>
+            /// <summary>Page number. Defaults to `1` when `per_page` is supplied without`page`. May be omitted entirely along with `per_page` to receive anon-paginated response.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page.</summary>
+            /// <summary>Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter share resources by resource_type.</summary>

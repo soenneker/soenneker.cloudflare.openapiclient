@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EmlContent { get; set; }
 #endif
-        /// <summary>The escalated_submission_id property</summary>
+        /// <summary>Submission ID of the original user submission, when reclassifying an escalated user report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EscalatedSubmissionId { get; set; }
@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EscalatedSubmissionId { get; set; }
 #endif
-        /// <summary>The expected_disposition property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest_expected_disposition? ExpectedDisposition { get; set; }
+        /// <summary>The disposition the message should have.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition? ExpectedDisposition { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "eml_content", n => { EmlContent = n.GetStringValue(); } },
                 { "escalated_submission_id", n => { EscalatedSubmissionId = n.GetStringValue(); } },
-                { "expected_disposition", n => { ExpectedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest_expected_disposition>(); } },
+                { "expected_disposition", n => { ExpectedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("eml_content", EmlContent);
             writer.WriteStringValue("escalated_submission_id", EscalatedSubmissionId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequest_expected_disposition>("expected_disposition", ExpectedDisposition);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityReclassifyRequestExpectedDisposition>("expected_disposition", ExpectedDisposition);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

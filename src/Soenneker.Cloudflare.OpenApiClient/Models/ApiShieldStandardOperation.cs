@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.&quot;</summary>
+        /// <summary>The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Endpoint { get; set; }
@@ -31,22 +31,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Host { get; set; }
 #endif
         /// <summary>The last_updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? LastUpdated { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp LastUpdated { get; set; }
-#endif
+        public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>The HTTP method used to access the endpoint.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod? Method { get; set; }
-        /// <summary>The operation_id property</summary>
+        /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid? OperationId { get; set; }
+        public string? OperationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid OperationId { get; set; }
+        public string OperationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldStandardOperation"/> and sets the default values.
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod>(); } },
-                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid.CreateFromDiscriminatorValue); } },
+                { "operation_id", n => { OperationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -89,9 +83,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("last_updated", LastUpdated);
+            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod>("method", Method);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasUuid>("operation_id", OperationId);
+            writer.WriteStringValue("operation_id", OperationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

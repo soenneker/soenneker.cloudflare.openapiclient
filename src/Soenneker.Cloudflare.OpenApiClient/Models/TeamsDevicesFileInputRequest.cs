@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether or not file exists.</summary>
         public bool? Exists { get; set; }
         /// <summary>Operating system.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequest_operating_system? OperatingSystem { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequestOperatingSystem? OperatingSystem { get; set; }
         /// <summary>File path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "exists", n => { Exists = n.GetBoolValue(); } },
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequest_operating_system>(); } },
+                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequestOperatingSystem>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
                 { "thumbprint", n => { Thumbprint = n.GetStringValue(); } },
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("exists", Exists);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequest_operating_system>("operating_system", OperatingSystem);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequestOperatingSystem>("operating_system", OperatingSystem);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("sha256", Sha256);
             writer.WriteStringValue("thumbprint", Thumbprint);

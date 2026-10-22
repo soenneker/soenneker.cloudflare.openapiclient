@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway\expression-template\fallthrough
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\expression-template\fallthrough
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FallthroughRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FallthroughRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/expression-template/fallthrough", pathParameters)
+        public FallthroughRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/expression-template/fallthrough", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FallthroughRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/expression-template/fallthrough", rawUrl)
+        public FallthroughRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/expression-template/fallthrough", rawUrl)
         {
         }
         /// <summary>
-        /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
+        /// Generates a WAF expression template that matches fallthrough traffic for the supplied API hosts. This operation is deprecated and should not be used for new integrations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRequestExpressionTemplatesFallthrough body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRequestExpressionTemplatesFallthrough body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRequestExpressionTemplatesFallthrough body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRequestExpressionTemplatesFallthrough body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,14 +57,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldExpressionTemplatesFallthrough200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
+        /// Generates a WAF expression template that matches fallthrough traffic for the supplied API hosts. This operation is deprecated and should not be used for new integrations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRequestExpressionTemplatesFallthrough body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder(rawUrl, RequestAdapter);

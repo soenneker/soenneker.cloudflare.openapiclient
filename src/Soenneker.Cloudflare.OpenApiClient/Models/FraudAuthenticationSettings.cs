@@ -16,18 +16,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Criterion for identifying failed login responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_failure_criteria? FailureCriteria { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria? FailureCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_failure_criteria FailureCriteria { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria FailureCriteria { get; set; }
 #endif
         /// <summary>Criterion for identifying successful login responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_success_criteria? SuccessCriteria { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsSuccessCriteria? SuccessCriteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_success_criteria SuccessCriteria { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsSuccessCriteria SuccessCriteria { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "failure_criteria", n => { FailureCriteria = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_failure_criteria>(global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_failure_criteria.CreateFromDiscriminatorValue); } },
-                { "success_criteria", n => { SuccessCriteria = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_success_criteria>(global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_success_criteria.CreateFromDiscriminatorValue); } },
+                { "failure_criteria", n => { FailureCriteria = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria>(global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria.CreateFromDiscriminatorValue); } },
+                { "success_criteria", n => { SuccessCriteria = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsSuccessCriteria>(global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsSuccessCriteria.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_failure_criteria>("failure_criteria", FailureCriteria);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettings_success_criteria>("success_criteria", SuccessCriteria);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsFailureCriteria>("failure_criteria", FailureCriteria);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FraudAuthenticationSettingsSuccessCriteria>("success_criteria", SuccessCriteria);
         }
     }
 }

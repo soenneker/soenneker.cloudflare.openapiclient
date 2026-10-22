@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>&quot;Masking level for payload logs.- `full`: The entire payload is masked.- `partial`: Only partial payload content is masked.- `clear`: No masking is applied to the payload content.- `default`: DLP uses its default masking behavior.&quot;</summary>
+    /// <summary>Masking level for payload logs.- `full`: The entire payload is masked.- `partial`: Only partial payload content is masked.- `clear`: No masking is applied to the payload content.- `default`: DLP uses its default masking behavior.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DlpPayloadLogMaskingLevel
     {
@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "default")]
         #pragma warning disable CS1591
-        Default,
+        DefaultValue,
         #pragma warning restore CS1591
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\fleet-status\devices
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\fleet-status\devices
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DevicesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", pathParameters)
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,16 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", rawUrl)
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", rawUrl)
         {
         }
         /// <summary>
-        /// List details for devices using WARP
+        /// List details of devices using WARP.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringFleetStatusDevicesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DexFleetStatusDevices4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringFleetStatusDevicesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +52,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DexFleetStatusDevices4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringFleetStatusDevicesResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringFleetStatusDevicesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List details for devices using WARP
+        /// List details of devices using WARP.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +85,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List details for devices using WARP
+        /// List details of devices using WARP.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DevicesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Cloudflare colo</summary>
+            /// <summary>Cloudflare colo airport code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("colo")]
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("colo")]
             public string Colo { get; set; }
 #endif
-            /// <summary>Device-specific ID, given as UUID v4</summary>
+            /// <summary>Device-specific ID, given as UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("device_id")]
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("device_id")]
             public string DeviceId { get; set; }
 #endif
-            /// <summary>Time range beginning in ISO format</summary>
+            /// <summary>Start of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("from")]
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("from")]
             public string From { get; set; }
 #endif
-            /// <summary>The mode under which the WARP client is run</summary>
+            /// <summary>The mode under which the WARP client is run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mode")]
@@ -130,27 +130,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("mode")]
             public string Mode { get; set; }
 #endif
-            /// <summary>Page number</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-            /// <summary>Number of results per page</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public double? Page { get; set; }
+            /// <summary>Number of results per page.</summary>
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
-            /// <summary>Operating system</summary>
+            public double? PerPage { get; set; }
+            /// <summary>Operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("platform")]
@@ -160,13 +146,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("platform")]
             public string Platform { get; set; }
 #endif
-            /// <summary>Dimension to sort results by</summary>
+            /// <summary>Dimension to sort results by.</summary>
             [QueryParameter("sort_by")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSortBy? SortBy { get; set; }
             /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 60 minutes prior. Time windows exceeding 60 minutes will be rejected from June 1st, 2026. Please use &apos;hourly&apos; or &apos;raw&apos; instead for longer time ranges.  * `raw` - device details, up to 7 days prior</summary>
             [QueryParameter("source")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringSource? Source { get; set; }
-            /// <summary>Network status</summary>
+            /// <summary>Network status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -176,7 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            /// <summary>Time range end in ISO format</summary>
+            /// <summary>End of the time range to query. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("to")]
@@ -186,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("to")]
             public string To { get; set; }
 #endif
-            /// <summary>WARP client version</summary>
+            /// <summary>WARP client version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("version")]

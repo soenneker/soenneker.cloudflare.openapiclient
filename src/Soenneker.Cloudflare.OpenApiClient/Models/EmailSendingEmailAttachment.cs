@@ -22,8 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>Must be &apos;attachment&apos;. Indicates a standard file attachment.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment_disposition? Disposition { get; set; }
+        /// <summary>Use &apos;attachment&apos; for a standard file attachment.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AttachmentDisposition? Disposition { get; set; }
         /// <summary>Filename for the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment_disposition>(); } },
+                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AttachmentDisposition>(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment_disposition>("disposition", Disposition);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AttachmentDisposition>("disposition", Disposition);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

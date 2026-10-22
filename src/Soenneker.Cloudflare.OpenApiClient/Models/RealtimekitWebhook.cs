@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Events this webhook will send updates for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhook_events?>? Events { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookEventsItem?>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhook_events?> Events { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookEventsItem?> Events { get; set; }
 #endif
         /// <summary>ID of the webhook</summary>
         public Guid? Id { get; private set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhook_events>()?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookEventsItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhook_events>("events", Events);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitWebhookEventsItem>("events", Events);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);

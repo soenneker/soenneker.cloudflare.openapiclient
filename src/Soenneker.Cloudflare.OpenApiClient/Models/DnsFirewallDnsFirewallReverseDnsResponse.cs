@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Map of cluster IP addresses to PTR record contents</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse_ptr? Ptr { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr? Ptr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse_ptr Ptr { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr Ptr { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ptr", n => { Ptr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse_ptr>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse_ptr.CreateFromDiscriminatorValue); } },
+                { "ptr", n => { Ptr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponse_ptr>("ptr", Ptr);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewallDnsFirewallReverseDnsResponsePtr>("ptr", Ptr);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

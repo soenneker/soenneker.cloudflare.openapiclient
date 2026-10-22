@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rules\lists\{list_id}\items
+    /// Builds and executes requests for operations under \accounts\{account-id}\rules\lists\{listId}\items
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.rules.lists.item.items.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.Item.WithItem_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.Item.WithItem_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.Item.WithItemItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.Item.WithItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("item_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.Item.WithItem_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("itemId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.Item.WithItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rules/lists/{list_id}/items{?cursor*,per_page*,search*}", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rules/lists/{listId}/items{?cursor*,per_page*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,31 +43,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rules/lists/{list_id}/items{?cursor*,per_page*,search*}", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rules/lists/{listId}/items{?cursor*,per_page*,search*}", rawUrl)
         {
         }
         /// <summary>
-        /// Removes one or more items from a list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
+        /// Removes one or more items from a list.This operation is asynchronous. To get the current operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsListResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsGetListItems4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsGetListItems4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsListResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,73 +90,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsGetListItems4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsGetListItems4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsListResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsListResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Appends new items to the list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
+        /// Appends new items to the list.This operation is asynchronous. To get the current operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsCreateListItems4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsCreateListItems4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsCreateListItems4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsCreateListItems4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes all existing items from the list and adds the provided items to the list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
+        /// Removes all existing items from the list and adds the provided items to the list.This operation is asynchronous. To get the current operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsUpdateAllListItems4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsUpdateAllListItems4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsUpdateAllListItems4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ListsUpdateAllListItems4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListsAsyncResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes one or more items from a list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
+        /// Removes one or more items from a list.This operation is asynchronous. To get the current operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItems body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ListsDeleteListItemsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -186,18 +186,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             return requestInfo;
         }
         /// <summary>
-        /// Appends new items to the list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
+        /// Appends new items to the list.This operation is asynchronous. To get the current operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -208,18 +208,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             return requestInfo;
         }
         /// <summary>
-        /// Removes all existing items from the list and adds the provided items to the list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
+        /// Removes all existing items from the list and adds the provided items to the list.This operation is asynchronous. To get the current operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemsUpdateRequestCollectionItem> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -239,121 +239,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Items : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment? ListsListItemAsnComment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment ListsListItemAsnComment { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment? ListsListItemHostnameComment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment ListsListItemHostnameComment { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment? ListsListItemIpComment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment ListsListItemIpComment { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment? ListsListItemRedirectComment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment ListsListItemRedirectComment { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Items();
-                if("ListsListItemAsnComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ListsListItemAsnComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment();
-                }
-                else if("ListsListItemHostnameComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ListsListItemHostnameComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment();
-                }
-                else if("ListsListItemIpComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ListsListItemIpComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment();
-                }
-                else if("ListsListItemRedirectComment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ListsListItemRedirectComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ListsListItemAsnComment != null)
-                {
-                    return ListsListItemAsnComment.GetFieldDeserializers();
-                }
-                else if(ListsListItemHostnameComment != null)
-                {
-                    return ListsListItemHostnameComment.GetFieldDeserializers();
-                }
-                else if(ListsListItemIpComment != null)
-                {
-                    return ListsListItemIpComment.GetFieldDeserializers();
-                }
-                else if(ListsListItemRedirectComment != null)
-                {
-                    return ListsListItemRedirectComment.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ListsListItemAsnComment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemAsnComment>(null, ListsListItemAsnComment);
-                }
-                else if(ListsListItemHostnameComment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameComment>(null, ListsListItemHostnameComment);
-                }
-                else if(ListsListItemIpComment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemIpComment>(null, ListsListItemIpComment);
-                }
-                else if(ListsListItemRedirectComment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemRedirectComment>(null, ListsListItemRedirectComment);
-                }
-            }
-        }
-        /// <summary>
         /// Fetches all the items in the list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -361,23 +246,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string? Cursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string? Search { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

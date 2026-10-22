@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\commands
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\commands
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommandsRequestBuilder : BaseRequestBuilder
@@ -31,15 +31,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Quota.QuotaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dex.commands.item collection</summary>
-        /// <param name="position">Unique identifier for command</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.WithCommand_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.WithCommand_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier for command.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.WithCommandItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.WithCommandItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("command_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.WithCommand_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("commandId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.WithCommandItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommandsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", pathParameters)
+        public CommandsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/commands{?command_type*,device_id*,from*,status*,to*,user_email*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,23 +55,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommandsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", rawUrl)
+        public CommandsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/commands{?command_type*,device_id*,from*,status*,to*,user_email*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder.CommandsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder.CommandsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder.CommandsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder.CommandsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,23 +79,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommands200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initiate commands for up to 10 devices per account
+        /// Initiate commands for up to 10 devices per account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a paginated list of commands issued to devices under the specified account, optionally filtered by time range, device, or other parameters
@@ -120,28 +120,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder.CommandsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/accounts/{account%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Initiate commands for up to 10 devices per account
+        /// Initiate commands for up to 10 devices per account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommands body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -162,17 +162,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommandsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Optionally filter executed commands by command type</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Optionally filter executed commands by command type.</summary>
             [QueryParameter("command_type")]
-            public string? CommandType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("command_type")]
-            public string CommandType { get; set; }
-#endif
-            /// <summary>Unique identifier for a device</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommandsCommandTypeParameter? CommandType { get; set; }
+            /// <summary>Unique identifier for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("device_id")]
@@ -182,22 +175,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
             [QueryParameter("device_id")]
             public string DeviceId { get; set; }
 #endif
-            /// <summary>Start time for the query in ISO (RFC3339 - ISO 8601) format</summary>
+            /// <summary>Start time for the query in ISO (RFC3339 - ISO 8601) format.</summary>
             [QueryParameter("from")]
             public DateTimeOffset? From { get; set; }
-            /// <summary>Page number for pagination</summary>
+            /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
             public double? Page { get; set; }
-            /// <summary>Number of results per page</summary>
+            /// <summary>Number of results per page.</summary>
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-            /// <summary>Optionally filter executed commands by status</summary>
+            /// <summary>Optionally filter executed commands by status.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.GetStatusQueryParameterType? Status { get; set; }
-            /// <summary>End time for the query in ISO (RFC3339 - ISO 8601) format</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetCommandsStatusParameter? Status { get; set; }
+            /// <summary>End time for the query in ISO (RFC3339 - ISO 8601) format.</summary>
             [QueryParameter("to")]
             public DateTimeOffset? To { get; set; }
-            /// <summary>Email tied to the device</summary>
+            /// <summary>Email tied to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user_email")]

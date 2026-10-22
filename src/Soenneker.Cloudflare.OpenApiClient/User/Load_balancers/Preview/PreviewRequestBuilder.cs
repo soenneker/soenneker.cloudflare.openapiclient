@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.user.load_balancers.preview.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreviewItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreviewItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("preview_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("previewId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreviewItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

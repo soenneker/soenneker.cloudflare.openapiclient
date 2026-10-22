@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Map of secret names to secret values:- Set to a secret object to create or update.- Set to `null` to delete.- Omit to leave unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_secrets? Secrets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty? Secrets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_secrets Secrets { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty Secrets { get; set; }
 #endif
         /// <summary>Optional version tags to apply to the new script version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_version_tags? VersionTags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty? VersionTags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_version_tags VersionTags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty VersionTags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "secrets", n => { Secrets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_secrets>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_secrets.CreateFromDiscriminatorValue); } },
-                { "version_tags", n => { VersionTags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_version_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_version_tags.CreateFromDiscriminatorValue); } },
+                { "secrets", n => { Secrets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty.CreateFromDiscriminatorValue); } },
+                { "version_tags", n => { VersionTags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_secrets>("secrets", Secrets);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequest_version_tags>("version_tags", VersionTags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestSecretsProperty>("secrets", Secrets);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSecretPatchRequestVersionTagsProperty>("version_tags", VersionTags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

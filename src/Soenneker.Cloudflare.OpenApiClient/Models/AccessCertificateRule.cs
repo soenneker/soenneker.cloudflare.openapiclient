@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule_certificate? Certificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRuleCertificateProperty? Certificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule_certificate Certificate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRuleCertificateProperty Certificate { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule_certificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule_certificate.CreateFromDiscriminatorValue); } },
+                { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRuleCertificateProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRuleCertificateProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRule_certificate>("certificate", Certificate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCertificateRuleCertificateProperty>("certificate", Certificate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

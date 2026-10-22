@@ -31,14 +31,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string HttpUrl { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesOwnershipVerificationHttp"/> and sets the default values.
         /// </summary>
@@ -66,7 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "http_body", n => { HttpBody = n.GetStringValue(); } },
                 { "http_url", n => { HttpUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +69,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("http_body", HttpBody);
             writer.WriteStringValue("http_url", HttpUrl);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Code { get; set; }
 #endif
         /// <summary>The status of the verification code from the verification process.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfoStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfoStatus>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfo_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSsoConnectorVerificationInfoStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

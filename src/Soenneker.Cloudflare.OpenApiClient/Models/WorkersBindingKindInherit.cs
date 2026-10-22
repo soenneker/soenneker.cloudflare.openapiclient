@@ -31,8 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string OldName { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindInherit_type? Type { get; set; }
-        /// <summary>Identifier for the version to inherit the binding from, which can be the version ID or the literal &quot;latest&quot; to inherit from the latest version. Defaults to inheriting the binding from the latest version.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InheritType? Type { get; set; }
+        /// <summary>Identifier for the version to inherit the binding from. This can be a version ID, or the literal &quot;latest&quot; to inherit from the most recently uploaded version, which may not be the deployed version. Defaults to &quot;latest&quot;. Only the Workers API version endpoints under `/accounts/{account_id}/workers/workers/{worker_id}/versions` accept a version ID. Other endpoints, including script upload and script version upload, accept only &quot;latest&quot; and reject a version ID with error 10057.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VersionId { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "old_name", n => { OldName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindInherit_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InheritType>(); } },
                 { "version_id", n => { VersionId = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("old_name", OldName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindInherit_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InheritType>("type", Type);
             writer.WriteStringValue("version_id", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }

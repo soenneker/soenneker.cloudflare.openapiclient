@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_typ
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.device_type.item collection</summary>
         /// <param name="position">Device type.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_type.Item.WithDevice_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_type.Item.WithDevice_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_type.Item.WithDeviceTypeItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_type.Item.WithDeviceTypeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("device_type", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_type.Item.WithDevice_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deviceType", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Device_type.Item.WithDeviceTypeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

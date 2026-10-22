@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The certificate_authority property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomain_certificate_authority? CertificateAuthority { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainCertificateAuthority? CertificateAuthority { get; private set; }
         /// <summary>The created_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>The domain name.</summary>
+        /// <summary>Fully qualified domain name for the Pages project, such as `example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomain_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainStatus? Status { get; private set; }
         /// <summary>The validation_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,12 +99,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificate_authority", n => { CertificateAuthority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomain_certificate_authority>(); } },
+                { "certificate_authority", n => { CertificateAuthority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainCertificateAuthority>(); } },
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
                 { "domain_id", n => { DomainId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomain_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainStatus>(); } },
                 { "validation_data", n => { ValidationData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData.CreateFromDiscriminatorValue); } },
                 { "verification_data", n => { VerificationData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationData>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainVerificationData.CreateFromDiscriminatorValue); } },
                 { "zone_tag", n => { ZoneTag = n.GetStringValue(); } },

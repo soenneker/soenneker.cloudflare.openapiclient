@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\builds\triggers\{trigger_uuid}\environment_variables
+    /// Builds and executes requests for operations under \accounts\{account-id}\builds\triggers\{triggerUuid}\environment_variables
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Environment_variablesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.triggers.item.environment_variables.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironment_variable_keyItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironment_variable_keyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironmentVariableKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironmentVariableKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("environment_variable_key", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironment_variable_keyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("environmentVariableKey", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironmentVariableKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Environment_variablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/triggers/{trigger_uuid}/environment_variables", pathParameters)
+        public Environment_variablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/triggers/{triggerUuid}/environment_variables", pathParameters)
         {
         }
         /// <summary>
@@ -43,54 +43,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Environment_variablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/triggers/{trigger_uuid}/environment_variables", rawUrl)
+        public Environment_variablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/triggers/{triggerUuid}/environment_variables", rawUrl)
         {
         }
         /// <summary>
-        /// Get all environment variables for a trigger
+        /// List build-time variables configured for a trigger. Secret values are not returned.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListEnvironmentVariables200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update environment variables for a trigger
+        /// Add or replace build-time variables and secrets without changing unspecified keys.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200Response"/></returns>
+        /// <param name="body">Map of environment-variable names to build-time values. Names must begin with a letter or underscore and contain only letters, numbers, and underscores.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Environment_variablesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariablesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Environment_variablesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariablesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariables200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all environment variables for a trigger
+        /// List build-time variables configured for a trigger. Secret values are not returned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,18 +116,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Create or update environment variables for a trigger
+        /// Add or replace build-time variables and secrets without changing unspecified keys.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Map of environment-variable names to build-time values. Names must begin with a letter or underscore and contain only letters, numbers, and underscores.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Environment_variablesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariablesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Environment_variablesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.UpsertEnvironmentVariablesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

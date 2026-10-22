@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rules_by_namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponse_rules_by_namespace? RulesByNamespace { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponseRulesByNamespaceProperty? RulesByNamespace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponse_rules_by_namespace RulesByNamespace { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponseRulesByNamespaceProperty RulesByNamespace { get; set; }
 #endif
         /// <summary>The total_rules property</summary>
         public double? TotalRules { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pending_approvals", n => { PendingApprovals = n.GetDoubleValue(); } },
-                { "rules_by_namespace", n => { RulesByNamespace = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponse_rules_by_namespace>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponse_rules_by_namespace.CreateFromDiscriminatorValue); } },
+                { "rules_by_namespace", n => { RulesByNamespace = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponseRulesByNamespaceProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponseRulesByNamespaceProperty.CreateFromDiscriminatorValue); } },
                 { "total_rules", n => { TotalRules = n.GetDoubleValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("pending_approvals", PendingApprovals);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponse_rules_by_namespace>("rules_by_namespace", RulesByNamespace);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneStatsResponseRulesByNamespaceProperty>("rules_by_namespace", RulesByNamespace);
             writer.WriteDoubleValue("total_rules", TotalRules);
             writer.WriteAdditionalData(AdditionalData);
         }

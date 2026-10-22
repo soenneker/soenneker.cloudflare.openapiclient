@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provides counts of what resources are linked to this label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabel_mapped_resources? MappedResources { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabelMappedResources? MappedResources { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabel_mapped_resources MappedResources { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabelMappedResources MappedResources { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "mapped_resources", n => { MappedResources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabel_mapped_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabel_mapped_resources.CreateFromDiscriminatorValue); } },
+                { "mapped_resources", n => { MappedResources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabelMappedResources>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabelMappedResources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabel_mapped_resources>("mapped_resources", MappedResources);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldFullLabelMappedResources>("mapped_resources", MappedResources);
         }
     }
 }

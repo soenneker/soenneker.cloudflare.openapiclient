@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>array of test results objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponse_tests>? Tests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem>? Tests { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponse_tests> Tests { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem> Tests { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "overviewMetrics", n => { OverviewMetrics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics.CreateFromDiscriminatorValue); } },
-                { "tests", n => { Tests = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponse_tests>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponse_tests.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tests", n => { Tests = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseOverviewMetrics>("overviewMetrics", OverviewMetrics);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponse_tests>("tests", Tests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestsResponseTestsItem>("tests", Tests);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

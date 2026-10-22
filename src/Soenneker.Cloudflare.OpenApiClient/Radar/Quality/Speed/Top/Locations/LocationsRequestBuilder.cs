@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations
         /// <summary>
         /// Retrieves the top locations by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top locations by bandwidth, latency, jitter, or packet loss, from the previous 90 days of Cloudflare Speed Test data.
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations
             [QueryParameter("continent")]
             public string[] Continent { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -122,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocationsFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations
 #endif
             /// <summary>Specifies the metric to order the results by.</summary>
             [QueryParameter("orderBy")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.Locations.GetOrderByQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetQualitySpeedTopLocationsOrderByParameter? OrderBy { get; set; }
             /// <summary>Reverses the order of results.</summary>
             [QueryParameter("reverse")]
             public bool? Reverse { get; set; }

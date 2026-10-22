@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An empty object which matches on all service tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule_any_valid_service_token? AnyValidServiceToken { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRuleAnyValidServiceTokenProperty? AnyValidServiceToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule_any_valid_service_token AnyValidServiceToken { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRuleAnyValidServiceTokenProperty AnyValidServiceToken { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "any_valid_service_token", n => { AnyValidServiceToken = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule_any_valid_service_token>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule_any_valid_service_token.CreateFromDiscriminatorValue); } },
+                { "any_valid_service_token", n => { AnyValidServiceToken = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRuleAnyValidServiceTokenProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRuleAnyValidServiceTokenProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRule_any_valid_service_token>("any_valid_service_token", AnyValidServiceToken);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAnyValidServiceTokenRuleAnyValidServiceTokenProperty>("any_valid_service_token", AnyValidServiceToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

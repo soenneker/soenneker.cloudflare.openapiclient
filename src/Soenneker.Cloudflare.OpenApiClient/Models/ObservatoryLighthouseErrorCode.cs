@@ -9,23 +9,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "NOT_REACHABLE")]
         #pragma warning disable CS1591
-        NOT_REACHABLE,
+        NotReachable,
         #pragma warning restore CS1591
         [EnumMember(Value = "DNS_FAILURE")]
         #pragma warning disable CS1591
-        DNS_FAILURE,
+        DnsFailure,
         #pragma warning restore CS1591
         [EnumMember(Value = "NOT_HTML")]
         #pragma warning disable CS1591
-        NOT_HTML,
+        NotHtml,
         #pragma warning restore CS1591
         [EnumMember(Value = "LIGHTHOUSE_TIMEOUT")]
         #pragma warning disable CS1591
-        LIGHTHOUSE_TIMEOUT,
+        LighthouseTimeout,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
     }
 }

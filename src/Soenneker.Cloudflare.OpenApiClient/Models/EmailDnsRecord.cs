@@ -36,13 +36,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for &apos;automatic&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? Ttl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordTtl? Ttl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch Ttl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordTtl Ttl { get; set; }
 #endif
         /// <summary>DNS record type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord_type? Type { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordType? Type { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord"/> and sets the default values.
         /// </summary>
@@ -71,8 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
-                { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord_type>(); } },
+                { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordTtl.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordType>(); } },
             };
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("ttl", Ttl);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecordTtl>("ttl", Ttl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

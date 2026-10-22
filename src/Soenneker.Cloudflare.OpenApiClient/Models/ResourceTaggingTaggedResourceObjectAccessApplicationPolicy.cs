@@ -41,23 +41,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Contains key-value pairs of tags.</summary>
+        /// <summary>Contains key-value pairs of tags. Keys may contain at most 256 characters. Values may contain at most 1024 characters and may be empty for key-only tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_tags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicyTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_tags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicyTags Tags { get; set; }
 #endif
+        /// <summary>Monotonic version of the resource&apos;s tags: the timestamp assigned when thetags were last written. Returned by read endpoints, by 2PC prepare (theversion that will be assigned on commit, unless a concurrent write landsfirst, in which case a newer version is assigned), and by 2PC commit (theauthoritative committed version). Omitted for untagged resources anddelete commits: a deleted resource has no current version, and deletionsare ordered by event order rather than by version.</summary>
+        public DateTimeOffset? TagsUpdatedAt { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_type? Type { get; set; }
-        /// <summary>Zone ID is required only for zone-level resources</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApplicationPolicyType? Type { get; set; }
+        /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneId? ZoneId { get; set; }
+        public string? ZoneId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneId ZoneId { get; set; }
+        public string ZoneId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy"/> and sets the default values.
@@ -88,9 +90,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "etag", n => { Etag = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_tags.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_type>(); } },
-                { "zone_id", n => { ZoneId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneId>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneId.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicyTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicyTags.CreateFromDiscriminatorValue); } },
+                { "tags_updated_at", n => { TagsUpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApplicationPolicyType>(); } },
+                { "zone_id", n => { ZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -104,9 +107,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("etag", Etag);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_tags>("tags", Tags);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicy_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneId>("zone_id", ZoneId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectAccessApplicationPolicyTags>("tags", Tags);
+            writer.WriteDateTimeOffsetValue("tags_updated_at", TagsUpdatedAt);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApplicationPolicyType>("type", Type);
+            writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

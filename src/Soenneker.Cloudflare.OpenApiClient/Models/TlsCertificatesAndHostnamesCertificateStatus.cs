@@ -29,11 +29,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "timing_out")]
         #pragma warning disable CS1591
-        Timing_out,
+        TimingOut,
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_deployment")]
         #pragma warning disable CS1591
-        Pending_deployment,
+        PendingDeployment,
         #pragma warning restore CS1591
     }
 }

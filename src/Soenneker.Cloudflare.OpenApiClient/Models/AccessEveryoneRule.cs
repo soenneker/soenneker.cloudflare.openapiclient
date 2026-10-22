@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An empty object which matches on all users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule_everyone? Everyone { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty? Everyone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule_everyone Everyone { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty Everyone { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "everyone", n => { Everyone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule_everyone>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule_everyone.CreateFromDiscriminatorValue); } },
+                { "everyone", n => { Everyone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRule_everyone>("everyone", Everyone);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEveryoneRuleEveryoneProperty>("everyone", Everyone);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

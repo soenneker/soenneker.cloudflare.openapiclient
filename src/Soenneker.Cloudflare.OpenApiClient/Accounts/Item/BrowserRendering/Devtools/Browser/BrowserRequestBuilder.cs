@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering\devtools\browser
+    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering\devtools\browser
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrowserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.browserRendering.devtools.browser.item collection</summary>
         /// <param name="position">Browser session ID to close.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.WithSession_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.WithSession_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.WithSessionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.WithSessionItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("session_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.WithSession_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("sessionId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.WithSessionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/devtools/browser{?keep_alive*,lab*,recording*,targets*}", pathParameters)
+        public BrowserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser{?keep_alive*,lab*,liveViewUrlExpiresInMs*,recording*,targets*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,95 +43,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering/devtools/browser{?keep_alive*,lab*,recording*,targets*}", rawUrl)
+        public BrowserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser{?keep_alive*,lab*,liveViewUrlExpiresInMs*,recording*,targets*}", rawUrl)
         {
         }
         /// <summary>
-        /// Acquires and establishes a WebSocket connection to a browser session.
+        /// Acquires a browser and returns its session ID and websocket URL. Optionally accepts a JSON body with session guardrails to restrict outbound HTTP/S traffic.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200Response"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsBrowserAcquire400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsBrowserAcquire429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsBrowserAcquire500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire429Response">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsBrowserAcquire400.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsBrowserAcquire429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiGetDevtoolsBrowserAcquire500.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire429Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a browser session ID.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire429">When receiving a 429 status code</exception>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire429.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquire200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Acquires and establishes a WebSocket connection to a browser session.
+        /// Acquires a browser and returns its session ID and websocket URL. Optionally accepts a JSON body with session guardrails to restrict outbound HTTP/S traffic.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrapiPostDevtoolsAcquireRequest body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Get a browser session ID.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder.BrowserRequestBuilderPostQueryParameters>> requestConfiguration = default)
-        {
-#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -144,22 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.BrowserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Acquires and establishes a WebSocket connection to a browser session.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BrowserRequestBuilderGetQueryParameters 
-        {
-            /// <summary>Keep-alive time in ms (only valid when acquiring new session).</summary>
-            [QueryParameter("keep_alive")]
-            public double? KeepAlive { get; set; }
-            /// <summary>Use experimental browser.</summary>
-            [QueryParameter("lab")]
-            public bool? Lab { get; set; }
-            [QueryParameter("recording")]
-            public bool? Recording { get; set; }
-        }
-        /// <summary>
-        /// Get a browser session ID.
+        /// Acquires a browser and returns its session ID and websocket URL. Optionally accepts a JSON body with session guardrails to restrict outbound HTTP/S traffic.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BrowserRequestBuilderPostQueryParameters 
@@ -170,8 +114,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
             /// <summary>Use experimental browser.</summary>
             [QueryParameter("lab")]
             public bool? Lab { get; set; }
+            /// <summary>How long the live view URL remains valid, in milliseconds (max 60 minutes). Only used when targets is true.</summary>
+            [QueryParameter("liveViewUrlExpiresInMs")]
+            public double? LiveViewUrlExpiresInMs { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("recording")]
             public bool? Recording { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Include browser targets in response.</summary>
             [QueryParameter("targets")]
             public bool? Targets { get; set; }

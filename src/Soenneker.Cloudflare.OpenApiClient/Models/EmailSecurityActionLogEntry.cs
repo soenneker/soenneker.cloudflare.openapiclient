@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Timestamp when action completed</summary>
+        /// <summary>Timestamp when action completed.</summary>
         public DateTimeOffset? CompletedAt { get; private set; }
-        /// <summary>&quot;Deprecated, use `completed_at` instead. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated, use `completed_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,9 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CompletedTimestamp { get; private set; }
 #endif
-        /// <summary>Type of action performed</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntry_operation? Operation { get; set; }
-        /// <summary>Additional properties for the action</summary>
+        /// <summary>Type of action performed.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryOperation? Operation { get; set; }
+        /// <summary>Additional properties for the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryProperties? Properties { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryProperties Properties { get; set; }
 #endif
-        /// <summary>Status of the action</summary>
+        /// <summary>Status of the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "completed_timestamp", n => { CompletedTimestamp = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntry_operation>(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryOperation>(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryProperties>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryProperties.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntry_operation>("operation", Operation);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryOperation>("operation", Operation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntryProperties>("properties", Properties);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

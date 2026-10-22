@@ -18,26 +18,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configure logging settings for DNS firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_dns? Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns? Dns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_dns Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns Dns { get; set; }
 #endif
         /// <summary>Configure logging settings for HTTP/HTTPS firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_http? Http { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp? Http { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_http Http { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp Http { get; set; }
 #endif
         /// <summary>Configure logging settings for Network firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_l4? L4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4? L4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_l4 L4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4 L4 { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_dns.CreateFromDiscriminatorValue); } },
-                { "http", n => { Http = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_http>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_http.CreateFromDiscriminatorValue); } },
-                { "l4", n => { L4 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_l4>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_l4.CreateFromDiscriminatorValue); } },
+                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns.CreateFromDiscriminatorValue); } },
+                { "http", n => { Http = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp.CreateFromDiscriminatorValue); } },
+                { "l4", n => { L4 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_dns>("dns", Dns);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_http>("http", Http);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType_l4>("l4", L4);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeDns>("dns", Dns);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeHttp>("http", Http);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleTypeL4>("l4", L4);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

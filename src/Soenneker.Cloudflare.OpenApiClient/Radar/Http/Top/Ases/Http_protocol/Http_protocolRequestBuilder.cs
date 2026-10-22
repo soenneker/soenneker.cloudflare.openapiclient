@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.http_protocol.item collection</summary>
         /// <param name="position">HTTP protocol (HTTP vs. HTTPS).</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttp_protocolItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttp_protocolItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttpProtocolItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttpProtocolItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("http_protocol", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttp_protocolItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("httpProtocol", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttpProtocolItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

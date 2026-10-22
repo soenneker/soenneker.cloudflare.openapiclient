@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>&quot;Value of the zone setting.Notes: Defaults to on for Business+ plans&quot;</summary>
+    /// <summary>Value of the zone setting.Notes: Defaults to on for Business+ plans</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZonesAdvancedDdosValue
     {

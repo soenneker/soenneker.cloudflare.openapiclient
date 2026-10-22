@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.</summary>
         public bool? AllowAuthenticateViaWarp { get; set; }
-        /// <summary>The unique subdomain assigned to your Zero Trust organization.</summary>
+        /// <summary>The unique subdomain assigned to your Zero Trust organization. If omitted on creation, a unique subdomain is auto-generated in the format `adjective-noun-hex4` (e.g. `frosty-moon-7a3b.cloudflareaccess.com`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthDomain { get; set; }
@@ -27,13 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When set to `true`, users skip the identity provider selection step during login.</summary>
         public bool? AutoRedirectToIdentity { get; set; }
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The custom_pages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> DenyUnmatchedRequestsExemptedZoneNames { get; set; }
 #endif
+        /// <summary>Whether creation of end user applications is disabled for this organization.</summary>
+        public bool? DisableEndUserAppCreation { get; set; }
         /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
         public bool? IsUiReadOnly { get; set; }
         /// <summary>The login_design property</summary>
@@ -70,17 +66,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig MfaConfig { get; set; }
 #endif
-        /// <summary>Determines whether global MFA settings apply to applications by default. The organization must have MFA enabled with at least one authentication method and a session duration configured.</summary>
-        public bool? MfaRequiredForAllApps { get; set; }
-        /// <summary>Configures SSH PIV key requirements for MFA using hardware security keys.</summary>
+        /// <summary>Configures PIV key requirements for MFA using hardware security keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaSshPivKeyRequirements? MfaSshPivKeyRequirements { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirements? MfaPivKeyRequirements { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaSshPivKeyRequirements MfaSshPivKeyRequirements { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirements MfaPivKeyRequirements { get; set; }
 #endif
-        /// <summary>The name of your Zero Trust organization.</summary>
+        /// <summary>Determines whether global MFA settings apply to applications by default. The organization must have MFA enabled with at least one authentication method and a session duration configured. Note: &apos;allowed_authenticators&apos; cannot contain only the infrastructure SSH authenticators (&apos;piv_key&apos; and &apos;ssh_fido2_key&apos;) if the organization has any non-infrastructure applications.</summary>
+        public bool? MfaRequiredForAllApps { get; set; }
+        /// <summary>The name of your Zero Trust organization. When omitted on creation, defaults to the provided auth_domain; when both are omitted, defaults to the auto-generated subdomain slug (e.g. frosty-moon-7a3b).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -88,7 +84,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.&quot;</summary>
+        /// <summary>Configures automatic enforcement for inactive service tokens. A service token is inactive if no policy references it, and it has not successfully authenticated with an Access application during the selected inactivity period. This setting applies to every service token in your Zero Trust account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenInactivity? ServiceTokenInactivity { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenInactivity ServiceTokenInactivity { get; set; }
+#endif
+        /// <summary>The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionDuration { get; set; }
@@ -96,6 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SessionDuration { get; set; }
 #endif
+        /// <summary>Enables new behaviors for requests made with Access service tokens. Unauthorized requests emit audit logs, and return a 401 or 403 status code in the response instead of redirecting to the login page. Successful requests no longer receive a CF_Authorization cookie in the response. Zero Trust organizations created on or after October 5, 2026 will have this setting enabled by default, and cannot disable it.</summary>
+        public bool? StrictServiceTokenAuth { get; set; }
         /// <summary>A description of the reason why the UI read only field is being toggled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,14 +111,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string UiReadOnlyToggleReason { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt UpdatedAt { get; set; }
-#endif
-        /// <summary>&quot;The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.&quot;</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserSeatExpirationInactiveTime { get; set; }
@@ -120,7 +120,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string UserSeatExpirationInactiveTime { get; set; }
 #endif
-        /// <summary>&quot;The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.&quot;</summary>
+        /// <summary>When enabled, unsuccessful WARP authentication requests with a non-HTML Accept header return a 401 response instead of redirecting to the login page.</summary>
+        public bool? WarpAuthNonBrowser401 { get; set; }
+        /// <summary>The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WarpAuthSessionDuration { get; set; }
@@ -156,20 +158,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allow_authenticate_via_warp", n => { AllowAuthenticateViaWarp = n.GetBoolValue(); } },
                 { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
                 { "auto_redirect_to_identity", n => { AutoRedirectToIdentity = n.GetBoolValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_pages", n => { CustomPages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCustomPages>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCustomPages.CreateFromDiscriminatorValue); } },
                 { "deny_unmatched_requests", n => { DenyUnmatchedRequests = n.GetBoolValue(); } },
                 { "deny_unmatched_requests_exempted_zone_names", n => { DenyUnmatchedRequestsExemptedZoneNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "disable_end_user_app_creation", n => { DisableEndUserAppCreation = n.GetBoolValue(); } },
                 { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign.CreateFromDiscriminatorValue); } },
                 { "mfa_config", n => { MfaConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig.CreateFromDiscriminatorValue); } },
+                { "mfa_piv_key_requirements", n => { MfaPivKeyRequirements = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirements>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirements.CreateFromDiscriminatorValue); } },
                 { "mfa_required_for_all_apps", n => { MfaRequiredForAllApps = n.GetBoolValue(); } },
-                { "mfa_ssh_piv_key_requirements", n => { MfaSshPivKeyRequirements = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaSshPivKeyRequirements>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaSshPivKeyRequirements.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "service_token_inactivity", n => { ServiceTokenInactivity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenInactivity>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenInactivity.CreateFromDiscriminatorValue); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
+                { "strict_service_token_auth", n => { StrictServiceTokenAuth = n.GetBoolValue(); } },
                 { "ui_read_only_toggle_reason", n => { UiReadOnlyToggleReason = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_seat_expiration_inactive_time", n => { UserSeatExpirationInactiveTime = n.GetStringValue(); } },
+                { "warp_auth_non_browser_401", n => { WarpAuthNonBrowser401 = n.GetBoolValue(); } },
                 { "warp_auth_session_duration", n => { WarpAuthSessionDuration = n.GetStringValue(); } },
             };
         }
@@ -183,20 +189,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("allow_authenticate_via_warp", AllowAuthenticateViaWarp);
             writer.WriteStringValue("auth_domain", AuthDomain);
             writer.WriteBoolValue("auto_redirect_to_identity", AutoRedirectToIdentity);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCustomPages>("custom_pages", CustomPages);
             writer.WriteBoolValue("deny_unmatched_requests", DenyUnmatchedRequests);
             writer.WriteCollectionOfPrimitiveValues<string>("deny_unmatched_requests_exempted_zone_names", DenyUnmatchedRequestsExemptedZoneNames);
+            writer.WriteBoolValue("disable_end_user_app_creation", DisableEndUserAppCreation);
             writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessLoginDesign>("login_design", LoginDesign);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOrgMfaConfig>("mfa_config", MfaConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaPivKeyRequirements>("mfa_piv_key_requirements", MfaPivKeyRequirements);
             writer.WriteBoolValue("mfa_required_for_all_apps", MfaRequiredForAllApps);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaSshPivKeyRequirements>("mfa_ssh_piv_key_requirements", MfaSshPivKeyRequirements);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessServiceTokenInactivity>("service_token_inactivity", ServiceTokenInactivity);
             writer.WriteStringValue("session_duration", SessionDuration);
+            writer.WriteBoolValue("strict_service_token_auth", StrictServiceTokenAuth);
             writer.WriteStringValue("ui_read_only_toggle_reason", UiReadOnlyToggleReason);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>("updated_at", UpdatedAt);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("user_seat_expiration_inactive_time", UserSeatExpirationInactiveTime);
+            writer.WriteBoolValue("warp_auth_non_browser_401", WarpAuthNonBrowser401);
             writer.WriteStringValue("warp_auth_session_duration", WarpAuthSessionDuration);
             writer.WriteAdditionalData(AdditionalData);
         }

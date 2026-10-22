@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Pass information from the Dispatch Worker to the Outbound Worker through the parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutbound_params>? Params { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem>? Params { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutbound_params> Params { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem> Params { get; set; }
 #endif
         /// <summary>Outbound worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "params", n => { Params = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutbound_params>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutbound_params.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "params", n => { Params = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "worker", n => { Worker = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutbound_params>("params", Params);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundParamsItem>("params", Params);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindDispatchNamespaceOutboundWorker>("worker", Worker);
             writer.WriteAdditionalData(AdditionalData);
         }

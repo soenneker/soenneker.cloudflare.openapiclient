@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The bot_overrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig_bot_overrides? BotOverrides { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty? BotOverrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig_bot_overrides BotOverrides { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty BotOverrides { get; set; }
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The price_usd_microcents property</summary>
+        /// <summary>Price in microcents 1 USD = 100,000,000 microcents. Must be 0 or a multiple of 100,000 $0.001. Range: $0.001–$9,999.999.</summary>
         public int? PriceUsdMicrocents { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig"/> and sets the default values.
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bot_overrides", n => { BotOverrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig_bot_overrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig_bot_overrides.CreateFromDiscriminatorValue); } },
+                { "bot_overrides", n => { BotOverrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "price_usd_microcents", n => { PriceUsdMicrocents = n.GetIntValue(); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfig_bot_overrides>("bot_overrides", BotOverrides);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlDaricConfigBotOverridesProperty>("bot_overrides", BotOverrides);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteIntValue("price_usd_microcents", PriceUsdMicrocents);
             writer.WriteAdditionalData(AdditionalData);

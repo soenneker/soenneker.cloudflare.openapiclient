@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of items in current page</summary>
+        /// <summary>Number of items in current page.</summary>
         public int? Count { get; set; }
-        /// <summary>Cursor for next page</summary>
+        /// <summary>Cursor for next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Next { get; set; }
@@ -24,12 +24,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Next { get; set; }
 #endif
-        /// <summary>&quot;Deprecated: Always returns 0. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated: Always returns 0. End of life: November 1, 2026.</summary>
         [Obsolete("")]
         public int? Page { get; set; }
-        /// <summary>Number of items per page</summary>
+        /// <summary>Number of items per page.</summary>
         public int? PerPage { get; set; }
-        /// <summary>Cursor for previous page</summary>
+        /// <summary>Cursor for previous page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Previous { get; set; }
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Previous { get; set; }
 #endif
-        /// <summary>&quot;Deprecated: Always returns 0. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated: Always returns 0. End of life: November 1, 2026.</summary>
         [Obsolete("")]
         public int? TotalCount { get; set; }
         /// <summary>

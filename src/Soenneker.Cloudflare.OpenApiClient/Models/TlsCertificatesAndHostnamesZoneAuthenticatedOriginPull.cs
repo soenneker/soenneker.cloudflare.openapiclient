@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>When the certificate from the authority expires.</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
-        /// <summary>Identifier.</summary>
+        /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Signature { get; set; }
 #endif
         /// <summary>Status of the certificate activation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus8? Status { get; set; }
         /// <summary>This is the time the certificate was uploaded.</summary>
         public DateTimeOffset? UploadedOn { get; set; }
         /// <summary>
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus8>(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("private_key", PrivateKey);
             writer.WriteStringValue("signature", Signature);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus8>("status", Status);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }

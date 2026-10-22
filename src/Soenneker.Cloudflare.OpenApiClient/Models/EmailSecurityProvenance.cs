@@ -10,19 +10,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "A1S_INTERNAL")]
         #pragma warning disable CS1591
-        A1S_INTERNAL,
+        A1SInternal,
         #pragma warning restore CS1591
         [EnumMember(Value = "SNOOPY-CASB_OFFICE_365")]
         #pragma warning disable CS1591
-        SNOOPYCASB_OFFICE_365,
+        SnoopyCasbOffice365,
         #pragma warning restore CS1591
         [EnumMember(Value = "SNOOPY-OFFICE_365")]
         #pragma warning disable CS1591
-        SNOOPYOFFICE_365,
+        SnoopyOffice365,
         #pragma warning restore CS1591
         [EnumMember(Value = "SNOOPY-GOOGLE_DIRECTORY")]
         #pragma warning disable CS1591
-        SNOOPYGOOGLE_DIRECTORY,
+        SnoopyGoogleDirectory,
         #pragma warning restore CS1591
     }
 }

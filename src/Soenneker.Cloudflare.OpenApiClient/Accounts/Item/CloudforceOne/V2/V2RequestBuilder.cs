@@ -4,7 +4,11 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Collections;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.CredentialMonitor;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Requests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\v2
+    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\v2
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V2RequestBuilder : BaseRequestBuilder
@@ -27,17 +31,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Collections.CollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The credentialMonitor property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.CredentialMonitor.CredentialMonitorRequestBuilder CredentialMonitor
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.CredentialMonitor.CredentialMonitorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The events property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The priorityIntelligence property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.PriorityIntelligenceRequestBuilder PriorityIntelligence
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.PriorityIntelligenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The requests property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Requests.RequestsRequestBuilder Requests
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The threatSignals property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.ThreatSignalsRequestBuilder ThreatSignals
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.ThreatSignalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.V2RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/v2", pathParameters)
+        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/v2", rawUrl)
+        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2", rawUrl)
         {
         }
     }

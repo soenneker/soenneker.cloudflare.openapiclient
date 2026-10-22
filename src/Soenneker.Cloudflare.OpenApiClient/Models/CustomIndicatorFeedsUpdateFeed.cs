@@ -24,7 +24,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filename { get; set; }
 #endif
-        /// <summary>Current status of upload, should be unified</summary>
+        /// <summary>Account-relative polling path. Prepend `/accounts/{account_id}`using the same account identifier and API host as the uploadrequest. The path omits the account segment because the servicedoes not have your account identifier in this context.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PollUrl { get; set; }
+#nullable restore
+#else
+        public string PollUrl { get; set; }
+#endif
+        /// <summary>Current status of the upload at the moment the request returned.This is NOT a terminal state: the file is unified inline, but thedurable loader has only accepted it, so the upload is still`Unifying`. Poll `poll_url` until the status reaches a terminalvalue (`Unified` or `Error`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -32,6 +40,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>Identifier of the upload row, for polling this upload to aterminal state via `poll_url`.</summary>
+        public long? UploadId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeed"/> and sets the default values.
         /// </summary>
@@ -59,7 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "file_id", n => { FileId = n.GetIntValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
+                { "poll_url", n => { PollUrl = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
+                { "upload_id", n => { UploadId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +83,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("file_id", FileId);
             writer.WriteStringValue("filename", Filename);
+            writer.WriteStringValue("poll_url", PollUrl);
             writer.WriteStringValue("status", Status);
+            writer.WriteLongValue("upload_id", UploadId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings Settings { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dead_letter_queue", n => { DeadLetterQueue = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dead_letter_queue", DeadLetterQueue);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequestSettings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpPullType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Base64 { get; set; }
         /// <summary>Expires the key at a certain time, measured in number of seconds since the UNIX epoch.</summary>
         public double? Expiration { get; set; }
-        /// <summary>Expires the key after a number of seconds. Must be at least 60.</summary>
+        /// <summary>Number of seconds until the key expires. Must be at least 60. Takes precedence over `expiration` when both are specified.</summary>
         public double? ExpirationTtl { get; set; }
         /// <summary>A key&apos;s name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Arbitrary JSON that is associated with a key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvListMetadata? Metadata { get; set; }
@@ -50,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersKvBulkWriteItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            Base64 = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

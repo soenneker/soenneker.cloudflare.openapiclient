@@ -9,20 +9,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SecurityCenterNewScanRequestMember1 : IAdditionalDataHolder, IParsable
+    public partial class SecurityCenterNewScanRequestMember1 : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The issue_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType? IssueType { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember1"/> and sets the default values.
-        /// </summary>
-        public SecurityCenterNewScanRequestMember1()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +30,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "issue_type", n => { IssueType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType>(); } },
             };
         }
         /// <summary>
@@ -51,8 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType>("issue_type", IssueType);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

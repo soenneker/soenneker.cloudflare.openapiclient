@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A sending domain restriction that enforces TLS (Transport Layer Security) requirements for emails from specific domains. If TLS is required, mail without TLS from the specified domain will be dropped.
+    /// A sending domain restriction that enforces TLS (Transport Layer Security) requirements for emails from specific domains. If TLS is required, the system drops mail without TLS from the specified domain.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecuritySendingDomainRestriction : IAdditionalDataHolder, IParsable
@@ -24,13 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_created_at CreatedAt { get; private set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Domain that requires TLS enforcement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
-        /// <summary>Excluded subdomains that are exempt from TLS requirements.</summary>
+        /// <summary>Subdomains to exempt from TLS requirements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Exclude { get; set; }
@@ -47,31 +41,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Exclude { get; set; }
 #endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_id Id { get; private set; }
-#endif
-        /// <summary>&quot;Deprecated, use `modified_at` instead. End of life: November 1, 2026.&quot;</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_last_modified? LastModified { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_last_modified LastModified { get; private set; }
-#endif
+        /// <summary>Sending domain restriction identifier.</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
+        public DateTimeOffset? LastModified { get; set; }
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_modified_at? ModifiedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_modified_at ModifiedAt { get; private set; }
-#endif
+        public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction"/> and sets the default values.
         /// </summary>
@@ -98,12 +73,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_created_at.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_id.CreateFromDiscriminatorValue); } },
-                { "last_modified", n => { LastModified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_last_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_last_modified.CreateFromDiscriminatorValue); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_modified_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction_modified_at.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -114,8 +89,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfPrimitiveValues<string>("exclude", Exclude);
+            writer.WriteGuidValue("id", Id);
+            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

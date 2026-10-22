@@ -9,15 +9,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "SUCCESS")]
         #pragma warning disable CS1591
-        SUCCESS,
+        Success,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNSUPPORTED_APPLICATION")]
         #pragma warning disable CS1591
-        UNSUPPORTED_APPLICATION,
+        UnsupportedApplication,
         #pragma warning restore CS1591
         [EnumMember(Value = "INSUFFICIENT_INVOCATIONS")]
         #pragma warning disable CS1591
-        INSUFFICIENT_INVOCATIONS,
+        InsufficientInvocations,
         #pragma warning restore CS1591
     }
 }

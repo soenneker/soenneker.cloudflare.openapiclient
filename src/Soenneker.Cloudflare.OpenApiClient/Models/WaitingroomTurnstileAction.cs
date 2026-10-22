@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "infinite_queue")]
         #pragma warning disable CS1591
-        Infinite_queue,
+        InfiniteQueue,
         #pragma warning restore CS1591
     }
 }

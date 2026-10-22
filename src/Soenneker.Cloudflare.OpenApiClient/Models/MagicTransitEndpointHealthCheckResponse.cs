@@ -46,7 +46,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicTransitEndpointHealthCheckResponse()
         {
             AdditionalData = new Dictionary<string, object>();
-            CheckType = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransitCheckType.Icmp;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

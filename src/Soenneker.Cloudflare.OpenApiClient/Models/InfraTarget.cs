@@ -29,13 +29,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IPv4/IPv6 address that identifies where to reach a target</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPInfo? Ip { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPInfo Ip { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo Ip { get; set; }
 #endif
         /// <summary>Date and time at which the target was modified</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>Tags assigned to the target. Empty when no tags are assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetTagsProperty? Tags { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetTagsProperty Tags { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTarget"/> and sets the default values.
         /// </summary>
@@ -64,8 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPInfo.CreateFromDiscriminatorValue); } },
+                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo.CreateFromDiscriminatorValue); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetTagsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetTagsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,8 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIPInfo>("ip", Ip);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo>("ip", Ip);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetTagsProperty>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

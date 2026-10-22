@@ -48,6 +48,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Who manages the rule. `api` covers dashboard, generic API, and Terraform;`wrangler` means the rule is managed by a Worker&apos;s wrangler.jsonc. Defaultsto `api` when omitted on write.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource? Source { get; set; }
         /// <summary>Routing rule tag. (Deprecated, replaced by routing rule identifier)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public EmailCatchAllRule()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "matchers", n => { Matchers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleCatchallMatcher>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleCatchallMatcher.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
@@ -101,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleCatchallMatcher>("matchers", Matchers);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>("source", Source);
             writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -22,29 +22,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemAnnotations Annotations { get; set; }
 #endif
-        /// <summary>The bindings property</summary>
+        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_bindings? Bindings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? Bindings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_bindings Bindings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> Bindings { get; set; }
 #endif
-        /// <summary>The compatibility_date property</summary>
+        /// <summary>Global CacheW configuration for the Worker. When caching is on,the platform provisions a `cloudflare.app` zone for the Worker.A `type: worker` entry in the `exports` map can override thisvalue for a single entrypoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_date? CompatibilityDate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions? CacheOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_date CompatibilityDate { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions CacheOptions { get; set; }
 #endif
-        /// <summary>The compatibility_flags property</summary>
+        /// <summary>Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_flags? CompatibilityFlags { get; set; }
+        public string? CompatibilityDate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_flags CompatibilityFlags { get; set; }
+        public string CompatibilityDate { get; set; }
+#endif
+        /// <summary>Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CompatibilityFlags { get; set; }
+#nullable restore
+#else
+        public List<string> CompatibilityFlags { get; set; }
+#endif
+        /// <summary>Declarative exports for the Worker. Worker entrypoint entries(`type: worker`) carry cache configuration for that entrypoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExports? Exports { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExports Exports { get; set; }
+#endif
+        /// <summary>Summary of the declarative exports reconciliation that ran onthis upload. Populated only when the uploaded metadata includedan `exports` block. Durable Object entries drive reconciliation;`type: worker` entries do not contribute to this summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExportsReconciliation? ExportsReconciliation { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExportsReconciliation ExportsReconciliation { get; set; }
 #endif
         /// <summary>Limits to apply for this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,42 +83,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Migrations to apply for Durable Objects associated with this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations? Migrations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemMigrations? Migrations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations Migrations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemMigrations Migrations { get; set; }
 #endif
         /// <summary>Observability settings for the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability? Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2? Observability { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability Observability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2 Observability { get; set; }
 #endif
         /// <summary>The placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_placement? Placement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemPlacement? Placement { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_placement Placement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemPlacement Placement { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Tags associated with the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tags? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tags Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
-        /// <summary>The tail_consumers property</summary>
+        /// <summary>List of Workers that will consume logs from the attached Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tail_consumers? TailConsumers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>? TailConsumers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tail_consumers TailConsumers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript> TailConsumers { get; set; }
 #endif
         /// <summary>Usage model for the Worker invocations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? UsageModel { get; set; }
@@ -104,7 +128,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersScriptAndVersionSettingsItem()
         {
             AdditionalData = new Dictionary<string, object>();
-            UsageModel = global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -125,16 +148,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemAnnotations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemAnnotations.CreateFromDiscriminatorValue); } },
-                { "bindings", n => { Bindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_bindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_bindings.CreateFromDiscriminatorValue); } },
-                { "compatibility_date", n => { CompatibilityDate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_date>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_date.CreateFromDiscriminatorValue); } },
-                { "compatibility_flags", n => { CompatibilityFlags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_flags>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_flags.CreateFromDiscriminatorValue); } },
+                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cache_options", n => { CacheOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions.CreateFromDiscriminatorValue); } },
+                { "compatibility_date", n => { CompatibilityDate = n.GetStringValue(); } },
+                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "exports", n => { Exports = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExports>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExports.CreateFromDiscriminatorValue); } },
+                { "exports_reconciliation", n => { ExportsReconciliation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExportsReconciliation>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExportsReconciliation.CreateFromDiscriminatorValue); } },
                 { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersLimits>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersLimits.CreateFromDiscriminatorValue); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
-                { "migrations", n => { Migrations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations.CreateFromDiscriminatorValue); } },
-                { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability.CreateFromDiscriminatorValue); } },
-                { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_placement>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_placement.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tags.CreateFromDiscriminatorValue); } },
-                { "tail_consumers", n => { TailConsumers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tail_consumers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tail_consumers.CreateFromDiscriminatorValue); } },
+                { "migrations", n => { Migrations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemMigrations>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemMigrations.CreateFromDiscriminatorValue); } },
+                { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2.CreateFromDiscriminatorValue); } },
+                { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemPlacement>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemPlacement.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>(); } },
             };
         }
@@ -146,93 +172,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemAnnotations>("annotations", Annotations);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_bindings>("bindings", Bindings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_date>("compatibility_date", CompatibilityDate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_compatibility_flags>("compatibility_flags", CompatibilityFlags);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>("bindings", Bindings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions>("cache_options", CacheOptions);
+            writer.WriteStringValue("compatibility_date", CompatibilityDate);
+            writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExports>("exports", Exports);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemExportsReconciliation>("exports_reconciliation", ExportsReconciliation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersLimits>("limits", Limits);
             writer.WriteBoolValue("logpush", Logpush);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations>("migrations", Migrations);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability>("observability", Observability);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_placement>("placement", Placement);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tags>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem_tail_consumers>("tail_consumers", TailConsumers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemMigrations>("migrations", Migrations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2>("observability", Observability);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItemPlacement>("placement", Placement);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>("tail_consumers", TailConsumers);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipleStepMigrations"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSingleStepMigrations"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkersScriptAndVersionSettingsItem_migrations : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipleStepMigrations"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipleStepMigrations? WorkersMultipleStepMigrations { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipleStepMigrations WorkersMultipleStepMigrations { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSingleStepMigrations"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSingleStepMigrations? WorkersSingleStepMigrations { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSingleStepMigrations WorkersSingleStepMigrations { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptAndVersionSettingsItem.WorkersScriptAndVersionSettingsItem_migrations();
-                if("WorkersMultipleStepMigrations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WorkersMultipleStepMigrations = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipleStepMigrations();
-                }
-                else if("WorkersSingleStepMigrations".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WorkersSingleStepMigrations = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSingleStepMigrations();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkersMultipleStepMigrations != null)
-                {
-                    return WorkersMultipleStepMigrations.GetFieldDeserializers();
-                }
-                else if(WorkersSingleStepMigrations != null)
-                {
-                    return WorkersSingleStepMigrations.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(WorkersMultipleStepMigrations != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMultipleStepMigrations>(null, WorkersMultipleStepMigrations);
-                }
-                else if(WorkersSingleStepMigrations != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersSingleStepMigrations>(null, WorkersSingleStepMigrations);
-                }
-            }
         }
     }
 }

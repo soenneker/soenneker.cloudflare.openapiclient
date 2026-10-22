@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The invoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResult_invoices>? Invoices { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultInvoicesItem>? Invoices { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResult_invoices> Invoices { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultInvoicesItem> Invoices { get; set; }
 #endif
         /// <summary>The pagination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "invoices", n => { Invoices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResult_invoices>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResult_invoices.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "invoices", n => { Invoices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultInvoicesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultInvoicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultPagination>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultPagination.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResult_invoices>("invoices", Invoices);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultInvoicesItem>("invoices", Invoices);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetInvoiceHistoryResultPagination>("pagination", Pagination);
             writer.WriteAdditionalData(AdditionalData);
         }

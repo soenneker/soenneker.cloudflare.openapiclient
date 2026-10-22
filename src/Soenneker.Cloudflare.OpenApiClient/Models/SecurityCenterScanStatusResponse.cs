@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The time at which the scan was started, in RFC 3339 format.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The current status of the scan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponseStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "scan_id", n => { ScanId = n.GetStringValue(); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponseStatus>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("scan_id", ScanId);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterScanStatusResponseStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \organizations\{organization_id}\accounts
+    /// Builds and executes requests for operations under \organizations\{organizationId}\accounts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token}", pathParameters)
+        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_tags,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token}", rawUrl)
+        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organizationId}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,include_tags,include_total,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccounts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Retrieve the accounts immediately attached to a specific organization. Accountsattached to sub-organizations are not included.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AccountsRequestBuilderGetQueryParameters 
@@ -134,9 +134,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             [QueryParameter("account_pubname%2EstartsWith")]
             public string AccountPubnameStartsWith { get; set; }
 #endif
-            /// <summary>&quot;Sort direction for the order_by field. Valid values: `asc`, `desc`.Defaults to `asc` when order_by is specified.&quot;</summary>
+            /// <summary>Sort direction for the order_by field. Valid values: `asc`, `desc`.Defaults to `asc` when order_by is specified.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsGetAccountsDirectionParameter? Direction { get; set; }
+            /// <summary>Include Account tags from the resource tag mirror. Omit this parameter to preserve the existing Account response shape.</summary>
+            [QueryParameter("include_tags")]
+            public bool? IncludeTags { get; set; }
+            /// <summary>Whether to calculate and return the exact result_info.total_size for cursorpagination. Defaults to true. When false, total_size is omitted. page_size andinclude_total may change between pages; next_page_token remains the authoritativecontinuation signal.Legacy page/per_page requests always calculate total_count.</summary>
+            [QueryParameter("include_total")]
+            public bool? IncludeTotal { get; set; }
             /// <summary>(case-insensitive) Filter the list of accounts to where the name is equal to aparticular string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,9 +183,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             [QueryParameter("name%2EstartsWith")]
             public string NameStartsWith { get; set; }
 #endif
-            /// <summary>&quot;Field to order results by. Currently supported values: `account_name`.When not specified, results are ordered by internal account ID.&quot;</summary>
+            /// <summary>Field to order results by. Currently supported values: `account_name`.When not specified, results are ordered by internal account ID.</summary>
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.GetOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountNameOrderBy? OrderBy { get; set; }
             /// <summary>The amount of items to return. Defaults to 10.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }

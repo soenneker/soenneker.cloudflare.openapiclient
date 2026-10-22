@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries
         /// <summary>
         /// Retrieves ASPA (Autonomous System Provider Authorization) object count over time. Supports filtering by RIR or location (country code) to generate multiple named series. If no RIR or location filter is specified, returns total count.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseries200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves ASPA (Autonomous System Provider Authorization) object count over time. Supports filtering by RIR or location (country code) to generate multiple named series. If no RIR or location filter is specified, returns total count.
@@ -90,15 +90,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeseriesRequestBuilderGetQueryParameters 
         {
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`.</summary>
             [QueryParameter("dateEnd")]
             public DateTimeOffset? DateEnd { get; set; }
-            /// <summary>Start of the date range (inclusive).</summary>
+            /// <summary>Start of the date range (inclusive). Alternative to `dateRange`; provide together with `dateEnd`.</summary>
             [QueryParameter("dateStart")]
             public DateTimeOffset? DateStart { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseriesFormatParameter? Format { get; set; }
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 location codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,11 +123,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("rir")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.GetRirQueryParameterType[]? Rir { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseriesRirParameterItem[]? Rir { get; set; }
 #nullable restore
 #else
             [QueryParameter("rir")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.Timeseries.GetRirQueryParameterType[] Rir { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetBgpRpkiAspaTimeseriesRirParameterItem[] Rir { get; set; }
 #endif
         }
     }

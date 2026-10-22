@@ -3,50 +3,49 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The verdict Email Security assigns to a message.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum EmailSecurityDispositionLabel
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MALICIOUS")]
         #pragma warning disable CS1591
-        MALICIOUS,
+        Malicious,
         #pragma warning restore CS1591
         [EnumMember(Value = "MALICIOUS-BEC")]
         #pragma warning disable CS1591
-        MALICIOUSBEC,
+        MaliciousBec,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUSPICIOUS")]
         #pragma warning disable CS1591
-        SUSPICIOUS,
+        Suspicious,
         #pragma warning restore CS1591
         [EnumMember(Value = "SPOOF")]
         #pragma warning disable CS1591
-        SPOOF,
+        Spoof,
         #pragma warning restore CS1591
         [EnumMember(Value = "SPAM")]
         #pragma warning disable CS1591
-        SPAM,
+        Spam,
         #pragma warning restore CS1591
         [EnumMember(Value = "BULK")]
         #pragma warning disable CS1591
-        BULK,
+        Bulk,
         #pragma warning restore CS1591
         [EnumMember(Value = "ENCRYPTED")]
         #pragma warning disable CS1591
-        ENCRYPTED,
+        Encrypted,
         #pragma warning restore CS1591
         [EnumMember(Value = "EXTERNAL")]
         #pragma warning disable CS1591
-        EXTERNAL,
+        External,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
         [EnumMember(Value = "NONE")]
         #pragma warning disable CS1591
-        NONE,
+        None,
         #pragma warning restore CS1591
     }
 }

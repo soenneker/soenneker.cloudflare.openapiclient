@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The read replication mode for the database. Use &apos;auto&apos; to create replicas and allow D1 automatically place them around the world, or &apos;disabled&apos; to not use any database replicas (it can take a few hours for all replicas to be deleted).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest_mode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequestMode? Mode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest"/> and sets the default values.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest_mode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequestMode>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequest_mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForRequestMode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

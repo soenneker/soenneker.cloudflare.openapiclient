@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Timeseries_groups
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.origins.timeseries_groups.item collection</summary>
-        /// <param name="position">Specifies the origin attribute by which to group the results.</param>
+        /// <param name="position">Specifies the origin attribute by which to group the results. `ORIGIN` groups across all providers and does not accept an `origin` or `region`. `REGION` requires an `origin`. `SUCCESS_RATE` and `PERCENTILE` require both an `origin` and a `region` and constrain the `metric` (`SUCCESS_RATE` supports only `REQUESTS`; `PERCENTILE` supports any metric except `REQUESTS`). `limitPerGroup` is only supported on the `REGION` dimension.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.Timeseries_groups.Item.WithDimensionItemRequestBuilder this[string position]
         {

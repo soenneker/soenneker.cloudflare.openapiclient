@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CloudService { get; set; }
 #endif
-        /// <summary>Whether this was a cold start (1) or warm invocation (0).</summary>
+        /// <summary>The coldStart property</summary>
         public int? ColdStart { get; set; }
         /// <summary>Estimated cost units for this invocation.</summary>
         public int? Cost { get; set; }
@@ -39,6 +39,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Duration { get; set; }
         /// <summary>Span end time as a Unix epoch in milliseconds.</summary>
         public int? EndTime { get; set; }
+        /// <summary>Span end time as a Unix epoch in nanoseconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndTimeNs { get; set; }
+#nullable restore
+#else
+        public string EndTimeNs { get; set; }
+#endif
         /// <summary>Error message, present when the log represents an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ErrorTemplate { get; set; }
 #endif
+        /// <summary>Size of the stored telemetry event in bytes.</summary>
+        public int? EventSize { get; set; }
         /// <summary>Content-based fingerprint used to group similar events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +137,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
+        /// <summary>Cloudflare Ray ID from the `cf-ray` header of the request that triggered the invocation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RayId { get; set; }
+#nullable restore
+#else
+        public string RayId { get; set; }
+#endif
         /// <summary>Cloudflare data center / region that handled the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,8 +195,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Span start time as a Unix epoch in milliseconds.</summary>
         public int? StartTime { get; set; }
+        /// <summary>Span start time as a Unix epoch in nanoseconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StartTimeNs { get; set; }
+#nullable restore
+#else
+        public string StartTimeNs { get; set; }
+#endif
         /// <summary>HTTP response status code returned by the Worker.</summary>
         public int? StatusCode { get; set; }
+        /// <summary>Event time as a Unix epoch in nanoseconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimestampNs { get; set; }
+#nullable restore
+#else
+        public string TimestampNs { get; set; }
+#endif
         /// <summary>Total duration of the entire trace in milliseconds.</summary>
         public int? TraceDuration { get; set; }
         /// <summary>Distributed trace ID linking spans across services.</summary>
@@ -252,8 +286,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cost", n => { Cost = n.GetIntValue(); } },
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "endTime", n => { EndTime = n.GetIntValue(); } },
+                { "endTimeNs", n => { EndTimeNs = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "errorTemplate", n => { ErrorTemplate = n.GetStringValue(); } },
+                { "eventSize", n => { EventSize = n.GetIntValue(); } },
                 { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "level", n => { Level = n.GetStringValue(); } },
@@ -263,6 +299,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "origin", n => { Origin = n.GetStringValue(); } },
                 { "parentSpanId", n => { ParentSpanId = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
+                { "rayId", n => { RayId = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
@@ -270,7 +307,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "spanName", n => { SpanName = n.GetStringValue(); } },
                 { "stackId", n => { StackId = n.GetStringValue(); } },
                 { "startTime", n => { StartTime = n.GetIntValue(); } },
+                { "startTimeNs", n => { StartTimeNs = n.GetStringValue(); } },
                 { "statusCode", n => { StatusCode = n.GetIntValue(); } },
+                { "timestampNs", n => { TimestampNs = n.GetStringValue(); } },
                 { "traceDuration", n => { TraceDuration = n.GetIntValue(); } },
                 { "traceId", n => { TraceId = n.GetStringValue(); } },
                 { "transactionName", n => { TransactionName = n.GetStringValue(); } },
@@ -292,8 +331,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("cost", Cost);
             writer.WriteIntValue("duration", Duration);
             writer.WriteIntValue("endTime", EndTime);
+            writer.WriteStringValue("endTimeNs", EndTimeNs);
             writer.WriteStringValue("error", Error);
             writer.WriteStringValue("errorTemplate", ErrorTemplate);
+            writer.WriteIntValue("eventSize", EventSize);
             writer.WriteStringValue("fingerprint", Fingerprint);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("level", Level);
@@ -303,6 +344,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("parentSpanId", ParentSpanId);
             writer.WriteStringValue("provider", Provider);
+            writer.WriteStringValue("rayId", RayId);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("requestId", RequestId);
             writer.WriteStringValue("service", Service);
@@ -310,7 +352,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("spanName", SpanName);
             writer.WriteStringValue("stackId", StackId);
             writer.WriteIntValue("startTime", StartTime);
+            writer.WriteStringValue("startTimeNs", StartTimeNs);
             writer.WriteIntValue("statusCode", StatusCode);
+            writer.WriteStringValue("timestampNs", TimestampNs);
             writer.WriteIntValue("traceDuration", TraceDuration);
             writer.WriteStringValue("traceId", TraceId);
             writer.WriteStringValue("transactionName", TransactionName);

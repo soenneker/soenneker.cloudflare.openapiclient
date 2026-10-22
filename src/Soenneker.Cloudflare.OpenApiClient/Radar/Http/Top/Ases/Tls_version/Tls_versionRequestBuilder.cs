@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.tls_version.item collection</summary>
         /// <param name="position">TLS version.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTls_versionItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTls_versionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTlsVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTlsVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tls_version", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTls_versionItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tlsVersion", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTlsVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

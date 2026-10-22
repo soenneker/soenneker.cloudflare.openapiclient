@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifier.</summary>
+        /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CertId { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Certificate { get; set; }
 #endif
         /// <summary>Status of the certificate or the association.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? CertStatus { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9? CertStatus { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
         public DateTimeOffset? CertUpdatedAt { get; set; }
         /// <summary>The time when the certificate was uploaded.</summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Hostname { get; set; }
 #endif
-        /// <summary>Identifier.</summary>
+        /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Signature { get; set; }
 #endif
         /// <summary>Status of the certificate or the association.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9? Status { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cert_id", n => { CertId = n.GetStringValue(); } },
-                { "cert_status", n => { CertStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus>(); } },
+                { "cert_status", n => { CertStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9>(); } },
                 { "cert_updated_at", n => { CertUpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "cert_uploaded_on", n => { CertUploadedOn = n.GetDateTimeOffsetValue(); } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
                 { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }

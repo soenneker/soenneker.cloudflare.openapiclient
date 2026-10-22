@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Any additional comments about the infringement not exceeding 2000 characters</summary>
+        /// <summary>Any additional comments about the infringement not exceeding 2000 characters. Comments are kept internal to Cloudflare and not shared with the host or customer as part of regular processing. For delegated reports, comments may be shared in full.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comments { get; set; }
@@ -62,8 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReport_owner_notification? OwnerNotification { get; set; }
+        /// <summary>Notification type based on the abuse type. For delegated reports, the report—including contact information and comments—will be forwarded to the customer in full regardless of this value. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReportOwnerNotification? OwnerNotification { get; set; }
         /// <summary>RDP-mandated fields for registrar WHOIS data disclosure requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "email2", n => { Email2 = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner_notification", n => { OwnerNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReport_owner_notification>(); } },
+                { "owner_notification", n => { OwnerNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReportOwnerNotification>(); } },
                 { "reg_who_request", n => { RegWhoRequest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields.CreateFromDiscriminatorValue); } },
                 { "reported_country", n => { ReportedCountry = n.GetStringValue(); } },
                 { "reported_user_agent", n => { ReportedUserAgent = n.GetStringValue(); } },
@@ -165,7 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("email2", Email2);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReport_owner_notification>("owner_notification", OwnerNotification);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReportOwnerNotification>("owner_notification", OwnerNotification);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields>("reg_who_request", RegWhoRequest);
             writer.WriteStringValue("reported_country", ReportedCountry);
             writer.WriteStringValue("reported_user_agent", ReportedUserAgent);

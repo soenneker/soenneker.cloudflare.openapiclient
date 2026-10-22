@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Initial_resolved_ip;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Warp;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zerotrust\subnets
+    /// Builds and executes requests for operations under \accounts\{account-id}\zerotrust\subnets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubnetsRequestBuilder : BaseRequestBuilder
@@ -23,6 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder Cloudflare_source
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The initial_resolved_ip property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Initial_resolved_ip.Initial_resolved_ipRequestBuilder Initial_resolved_ip
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Initial_resolved_ip.Initial_resolved_ipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The warp property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Warp.WarpRequestBuilder Warp
@@ -34,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubnetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", pathParameters)
+        public SubnetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubnetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", rawUrl)
+        public SubnetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", rawUrl)
         {
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSubnetResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksSubnetsList4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksSubnetsList4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSubnetResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksSubnetsList4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksSubnetsList4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSubnetResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelSubnetResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,26 +113,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelAddressFamily? AddressFamily { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("comment")]
             public string? Comment { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("comment")]
             public string Comment { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("existed_at")]
             public string? ExistedAt { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("existed_at")]
             public string ExistedAt { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("is_default_network")]
             public bool? IsDefaultNetwork { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("is_deleted")]
             public bool? IsDeleted { get; set; }
+            #pragma warning restore CS1591
             /// <summary>If set, only list subnets with the given name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,35 +157,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("network")]
             public string? Network { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("network")]
             public string Network { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksSubnetsListSortOrderParameter? SortOrder { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("subnet_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.GetSubnet_typesQueryParameterType? SubnetTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustNetworksSubnetsListSubnetTypesParameter? SubnetTypes { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

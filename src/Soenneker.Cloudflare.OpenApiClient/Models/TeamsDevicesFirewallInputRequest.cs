@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Enabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Operating System.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequest_operating_system? OperatingSystem { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequestOperatingSystem? OperatingSystem { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequest"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequest_operating_system>(); } },
+                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequestOperatingSystem>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequest_operating_system>("operating_system", OperatingSystem);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequestOperatingSystem>("operating_system", OperatingSystem);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

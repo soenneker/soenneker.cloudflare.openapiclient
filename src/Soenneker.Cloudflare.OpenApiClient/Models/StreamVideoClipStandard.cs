@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandard_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandardMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandard_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandardMeta Meta { get; set; }
 #endif
         /// <summary>A name for the video.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "endTimeSeconds", n => { EndTimeSeconds = n.GetIntValue(); } },
                 { "input", n => { Input = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandard_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandard_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandardMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandardMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
                 { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("creator", Creator);
             writer.WriteIntValue("endTimeSeconds", EndTimeSeconds);
             writer.WriteStringValue("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandard_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideoClipStandardMeta>("meta", Meta);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);

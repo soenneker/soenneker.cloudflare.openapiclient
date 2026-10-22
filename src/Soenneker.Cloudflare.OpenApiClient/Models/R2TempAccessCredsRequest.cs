@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Objects { get; set; }
 #endif
-        /// <summary>The parent access key id to use for signing.</summary>
+        /// <summary>Access key ID of the parent R2 API token. The temporary credentials cannot exceed this token&apos;s permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentAccessKeyId { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ParentAccessKeyId { get; set; }
 #endif
         /// <summary>Permissions allowed on the credentials.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest_permission? Permission { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission? Permission { get; set; }
         /// <summary>Optional prefix paths to scope the credentials to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Prefixes { get; set; }
 #endif
-        /// <summary>How long the credentials will live for in seconds.</summary>
+        /// <summary>Lifetime of the temporary credentials in seconds, up to 604800 seconds (7 days).</summary>
         public double? TtlSeconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest"/> and sets the default values.
@@ -56,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public R2TempAccessCredsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            TtlSeconds = 900;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "objects", n => { Objects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "parentAccessKeyId", n => { ParentAccessKeyId = n.GetStringValue(); } },
-                { "permission", n => { Permission = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest_permission>(); } },
+                { "permission", n => { Permission = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission>(); } },
                 { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ttlSeconds", n => { TtlSeconds = n.GetDoubleValue(); } },
             };
@@ -93,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteCollectionOfPrimitiveValues<string>("objects", Objects);
             writer.WriteStringValue("parentAccessKeyId", ParentAccessKeyId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequest_permission>("permission", Permission);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2TempAccessCredsRequestPermission>("permission", Permission);
             writer.WriteCollectionOfPrimitiveValues<string>("prefixes", Prefixes);
             writer.WriteDoubleValue("ttlSeconds", TtlSeconds);
             writer.WriteAdditionalData(AdditionalData);

@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\secrets_store\stores\{store_id}\secrets
+    /// Builds and executes requests for operations under \accounts\{account-id}\secrets_store\stores\{storeId}\secrets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.secrets_store.stores.item.secrets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.Item.WithSecret_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.Item.WithSecret_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.Item.WithSecretItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.Item.WithSecretItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("secret_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.Item.WithSecret_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("secretId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.Item.WithSecretItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/secrets_store/stores/{store_id}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", pathParameters)
+        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store/stores/{storeId}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,17 +43,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/secrets_store/stores/{store_id}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", rawUrl)
+        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store/stores/{storeId}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes one or more secrets
+        /// Deletes one or more secrets.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse"/></returns>
-        /// <param name="body">Request body for bulk deleting secrets</param>
+        /// <param name="body">Request body for bulk deleting secrets.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteBulk4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteBulk4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteSecretsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,17 +67,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteBulk4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteBulk4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all store secrets
+        /// Lists all store secrets.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsList4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsList4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.SecretsRequestBuilder.SecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,18 +90,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsList4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsList4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a secret in the account
+        /// Creates a secret in the account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretCreate4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretCreate4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObject> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -115,15 +115,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretCreate4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretCreate4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes one or more secrets
+        /// Deletes one or more secrets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request body for bulk deleting secrets</param>
+        /// <param name="body">Request body for bulk deleting secrets.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             return requestInfo;
         }
         /// <summary>
-        /// Lists all store secrets
+        /// Lists all store secrets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             return requestInfo;
         }
         /// <summary>
-        /// Creates a secret in the account
+        /// Creates a secret in the account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,34 +192,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.SecretsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all store secrets
+        /// Lists all store secrets.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecretsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Direction to sort objects</summary>
+            /// <summary>Direction to sort objects.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.GetDirectionQueryParameterType? Direction { get; set; }
-            /// <summary>Order secrets by values in the given field</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDirection? Direction { get; set; }
+            /// <summary>Order secrets by values in the given field.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets.GetOrderQueryParameterType? Order { get; set; }
-            /// <summary>Page number</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreOrder? Order { get; set; }
+            /// <summary>Page number.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page</summary>
+            /// <summary>Number of objects to return per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Only secrets with the given scopes will be returned</summary>
+            /// <summary>Only secrets with the given scopes will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("scopes")]
-            public string[]? Scopes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreScopesQueryItem[]? Scopes { get; set; }
 #nullable restore
 #else
             [QueryParameter("scopes")]
-            public string[] Scopes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreScopesQueryItem[] Scopes { get; set; }
 #endif
-            /// <summary>Search secrets using a filter string, filtering across name and comment</summary>
+            /// <summary>Search secrets using a filter string, filtering across name and comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]

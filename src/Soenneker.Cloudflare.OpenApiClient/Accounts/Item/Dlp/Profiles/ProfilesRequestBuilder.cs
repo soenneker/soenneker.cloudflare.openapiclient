@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Custom;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Integration;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefined;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -15,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\profiles
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\profiles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfilesRequestBuilder : BaseRequestBuilder
@@ -25,6 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Custom.CustomRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The integration property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Integration.IntegrationRequestBuilder Integration
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Integration.IntegrationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The predefined property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefined.PredefinedRequestBuilder Predefined
         {
@@ -32,14 +38,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.profiles.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item.WithProfile_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item.WithProfile_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item.WithProfileItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item.WithProfileItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("profile_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item.WithProfile_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("profileId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Item.WithProfileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/profiles{?all*}", pathParameters)
+        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/profiles{?all*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,23 +61,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/profiles{?all*}", rawUrl)
+        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/profiles{?all*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists all DLP profiles in an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilesListAllProfiles200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all DLP profiles in an account.

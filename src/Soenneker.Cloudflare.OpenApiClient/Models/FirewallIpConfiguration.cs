@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration target. You must set the target to `ip` when specifying an IP address in the rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallIpConfiguration_target? Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpTarget? Target { get; set; }
         /// <summary>The IP address to match. This address will be compared to the IP address of incoming requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallIpConfiguration_target>(); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpTarget>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallIpConfiguration_target>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpTarget>("target", Target);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

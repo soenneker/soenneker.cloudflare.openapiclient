@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Supports nested groups via kind: &apos;group&apos;.&quot;
+    /// Supports nested groups via kind: &apos;group&apos;.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersObservabilityFilterNode : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The filterCombination property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_filterCombination? FilterCombination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1FilterCombination? FilterCombination { get; set; }
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,24 +34,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Key { get; set; }
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_kind? Kind { get; set; }
-        /// <summary>&quot;Comparison operator. String operators: includes, not_includes, starts_with, regex. Existence: exists, is_null. Set membership: in, not_in (comma-separated values). Numeric: eq, neq, gt, gte, lt, lte.&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_operation? Operation { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GroupKind? Kind { get; set; }
+        /// <summary>Comparison operator. String operators: includes, not_includes, starts_with, ends_with, regex. Existence: exists, is_null. Set membership: in, not_in (comma-separated values). Numeric: eq, neq, gt, gte, lt, lte.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafOperation? Operation { get; set; }
+        /// <summary>Data type of the filter field. Must match the actual type of the key being filtered.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafType? Type { get; set; }
         /// <summary>Comparison value. Must match actual values in your data — verify with the values endpoint. Ensure the value type (string/number/boolean) matches the field type. String comparisons are case-sensitive. Regex uses RE2 syntax (no lookaheads/lookbehinds).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value Value { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeaf"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,13 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeaf WorkersObservabilityFilterLeaf { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeMember1? WorkersObservabilityFilterNodeMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1? WorkersObservabilityFilterNodeAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeMember1 WorkersObservabilityFilterNodeMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1 WorkersObservabilityFilterNodeAnyOf1 { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode"/> and sets the default values.
@@ -89,30 +83,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.Key = keyValue;
             }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_filterCombination>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_filterCombination filterCombinationValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1FilterCombination>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1FilterCombination filterCombinationValue)
             {
                 result.FilterCombination = filterCombinationValue;
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_kind>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_kind kindValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GroupKind>() is global::Soenneker.Cloudflare.OpenApiClient.Models.GroupKind kindValue)
             {
                 result.Kind = kindValue;
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_operation>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_operation operationValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafOperation>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafOperation operationValue)
             {
                 result.Operation = operationValue;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafType>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafType typeValue)
+            {
+                result.Type = typeValue;
             }
             else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode> filtersValue)
             {
                 result.Filters = filtersValue;
             }
             else {
-                result.Value = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
+                result.Value = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value();
                 result.WorkersObservabilityFilterLeaf = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeaf();
-                result.WorkersObservabilityFilterNodeMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeMember1();
+                result.WorkersObservabilityFilterNodeAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1();
             }
             return result;
         }
@@ -122,9 +116,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(Value != null || WorkersObservabilityFilterLeaf != null || WorkersObservabilityFilterNodeMember1 != null)
+            if(Value != null || WorkersObservabilityFilterLeaf != null || WorkersObservabilityFilterNodeAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Value, WorkersObservabilityFilterLeaf, WorkersObservabilityFilterNodeMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Value, WorkersObservabilityFilterLeaf, WorkersObservabilityFilterNodeAnyOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -139,30 +133,101 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteStringValue(null, Key);
             }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
             else if(FilterCombination != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_filterCombination>(null, FilterCombination);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNodeAnyOf1FilterCombination>(null, FilterCombination);
             }
             else if(Kind != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_kind>(null, Kind);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GroupKind>(null, Kind);
             }
             else if(Operation != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode_operation>(null, Operation);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafOperation>(null, Operation);
+            }
+            else if(Type != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterLeafType>(null, Type);
             }
             else if(Filters != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode>(null, Filters);
             }
             else {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, Value, WorkersObservabilityFilterLeaf, WorkersObservabilityFilterNodeMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value>(null, Value, WorkersObservabilityFilterLeaf, WorkersObservabilityFilterNodeAnyOf1);
             }
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WorkersObservabilityFilterNode_value : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="bool"/></summary>
+            public bool? Boolean { get; set; }
+            /// <summary>Composed type representation for type <see cref="double"/></summary>
+            public double? Double { get; set; }
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityFilterNode.WorkersObservabilityFilterNode_value();
+                if(parseNode.GetBoolValue() is bool booleanValue)
+                {
+                    result.Boolean = booleanValue;
+                }
+                else if(parseNode.GetDoubleValue() is double doubleValue)
+                {
+                    result.Double = doubleValue;
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(Boolean != null)
+                {
+                    writer.WriteBoolValue(null, Boolean);
+                }
+                else if(Double != null)
+                {
+                    writer.WriteDoubleValue(null, Double);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\tokens
+    /// Builds and executes requests for operations under \accounts\{account-id}\tokens
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TokensRequestBuilder : BaseRequestBuilder
@@ -32,14 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.tokens.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Item.WithToken_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Item.WithToken_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Item.WithTokenItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Item.WithTokenItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("token_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Item.WithToken_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tokenId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.Item.WithTokenItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tokens{?direction*,page*,per_page*}", pathParameters)
+        public TokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tokens{?direction*,include_expired*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,11 +55,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tokens{?direction*,page*,per_page*}", rawUrl)
+        public TokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tokens{?direction*,include_expired*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// List all Account Owned API tokens created for this account.
+        /// List Account Owned API tokens created for this account. Callers with`com.cloudflare.api.account.token.list_self` permission only receivetokens they created. Results include active, disabled, andrecently-expired tokens when `include_expired` is set to true.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamCollectionTokensResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleTokenCreateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleTokenCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all Account Owned API tokens created for this account.
+        /// List Account Owned API tokens created for this account. Callers with`com.cloudflare.api.account.token.list_self` permission only receivetokens they created. Results include active, disabled, andrecently-expired tokens when `include_expired` is set to true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,17 +157,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.TokensRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all Account Owned API tokens created for this account.
+        /// List Account Owned API tokens created for this account. Callers with`com.cloudflare.api.account.token.list_self` permission only receivetokens they created. Results include active, disabled, andrecently-expired tokens when `include_expired` is set to true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TokensRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountApiTokensListTokensDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            /// <summary>When true, includes recently-expired tokens in the response.</summary>
+            [QueryParameter("include_expired")]
+            public bool? IncludeExpired { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

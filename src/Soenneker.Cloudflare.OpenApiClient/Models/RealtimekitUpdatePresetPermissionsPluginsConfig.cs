@@ -8,27 +8,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfigMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig_Branch1"/>
+    /// Plugin configuration keyed by plugin UUID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RealtimekitUpdatePresetPermissionsPluginsConfig : IComposedTypeWrapper, IParsable
+    public partial class RealtimekitUpdatePresetPermissionsPluginsConfig : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig_Branch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig_Branch1? RealtimekitUpdatePresetPermissionsPluginsConfigBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig_Branch1 RealtimekitUpdatePresetPermissionsPluginsConfigBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfigMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfigMember1? RealtimekitUpdatePresetPermissionsPluginsConfigMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfigMember1 RealtimekitUpdatePresetPermissionsPluginsConfigMember1 { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig"/> and sets the default values.
+        /// </summary>
+        public RealtimekitUpdatePresetPermissionsPluginsConfig()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig();
-            if("RealtimekitUpdatePresetPermissionsPluginsConfig_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RealtimekitUpdatePresetPermissionsPluginsConfigBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig_Branch1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RealtimekitUpdatePresetPermissionsPluginsConfigMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfigMember1();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +38,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RealtimekitUpdatePresetPermissionsPluginsConfigBranch1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return RealtimekitUpdatePresetPermissionsPluginsConfigBranch1.GetFieldDeserializers();
-            }
-            else if(RealtimekitUpdatePresetPermissionsPluginsConfigMember1 != null)
-            {
-                return RealtimekitUpdatePresetPermissionsPluginsConfigMember1.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RealtimekitUpdatePresetPermissionsPluginsConfigBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfig_Branch1>(null, RealtimekitUpdatePresetPermissionsPluginsConfigBranch1);
-            }
-            else if(RealtimekitUpdatePresetPermissionsPluginsConfigMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPluginsConfigMember1>(null, RealtimekitUpdatePresetPermissionsPluginsConfigMember1);
-            }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

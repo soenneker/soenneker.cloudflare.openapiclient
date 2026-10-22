@@ -16,7 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ASN used on the customer end of the BGP session</summary>
         public int? CustomerAsn { get; set; }
-        /// <summary>Prefixes in this list will be advertised to the customer device, in addition to the routes in the Magic routing table.</summary>
+        /// <summary>ID of the BGP filter profile applied to routes advertised to the customer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExportFilterId { get; set; }
+#nullable restore
+#else
+        public string ExportFilterId { get; set; }
+#endif
+        /// <summary>Prefixes in this list will be advertised to the customer device, in addition to the routes in the Magic routing table.Each entry must be a network address in CIDR notation with no host bits set (for example `192.0.2.0/24`, not`192.0.2.1/24`) and must not repeat another entry. IPv6 prefixes are accepted only when the tunnel has an`interface_address6`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExtraPrefixes { get; set; }
@@ -24,7 +32,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> ExtraPrefixes { get; set; }
 #endif
-        /// <summary>&quot;MD5 key to use for session authentication.Note that *this is not a security measure*. MD5 is not a valid security mechanism, and thekey is not treated as a secret value. This is *only* supported for preventingmisconfiguration, not for defending against malicious attacks.The MD5 key, if set, must be of non-zero length and consist only of the following types ofcharacter:* ASCII alphanumerics: `[a-zA-Z0-9]`* Special characters in the set `&apos;!@#$%^&amp;*()+[]{}&lt;&gt;/.,;:_-~`= \|`In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A),quotation mark (`\&quot;`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed(0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more ofthese disallowed characters will be rejected.&quot;</summary>
+        /// <summary>ID of the BGP filter profile applied to routes received from the customer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImportFilterId { get; set; }
+#nullable restore
+#else
+        public string ImportFilterId { get; set; }
+#endif
+        /// <summary>MD5 key to use for session authentication.Note that *this is not a security measure*. MD5 is not a valid security mechanism, and thekey is not treated as a secret value. This is *only* supported for preventingmisconfiguration, not for defending against malicious attacks.The MD5 key, if set, must be of non-zero length and consist only of the following types ofcharacter:* ASCII alphanumerics: `[a-zA-Z0-9]`* Special characters in the set `&apos;!@#$%^&amp;*()+[]{}&lt;&gt;/.,;:_-~`= \|`In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A),quotation mark (`&quot;`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed(0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more ofthese disallowed characters will be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Md5Key { get; set; }
@@ -58,7 +74,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customer_asn", n => { CustomerAsn = n.GetIntValue(); } },
+                { "export_filter_id", n => { ExportFilterId = n.GetStringValue(); } },
                 { "extra_prefixes", n => { ExtraPrefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "import_filter_id", n => { ImportFilterId = n.GetStringValue(); } },
                 { "md5_key", n => { Md5Key = n.GetStringValue(); } },
             };
         }
@@ -70,7 +88,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("customer_asn", CustomerAsn);
+            writer.WriteStringValue("export_filter_id", ExportFilterId);
             writer.WriteCollectionOfPrimitiveValues<string>("extra_prefixes", ExtraPrefixes);
+            writer.WriteStringValue("import_filter_id", ImportFilterId);
             writer.WriteStringValue("md5_key", Md5Key);
             writer.WriteAdditionalData(AdditionalData);
         }

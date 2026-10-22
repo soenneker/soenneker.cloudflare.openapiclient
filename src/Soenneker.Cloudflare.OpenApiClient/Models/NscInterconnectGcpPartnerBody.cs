@@ -56,6 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>The virtual_port_reservation_id property</summary>
+        public Guid? VirtualPortReservationId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscInterconnectGcpPartnerBody"/> and sets the default values.
         /// </summary>
@@ -87,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "speed", n => { Speed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscApiBandwidth>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+                { "virtual_port_reservation_id", n => { VirtualPortReservationId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -102,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NscApiBandwidth>("speed", Speed);
             writer.WriteStringValue("type", Type);
+            writer.WriteGuidValue("virtual_port_reservation_id", VirtualPortReservationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

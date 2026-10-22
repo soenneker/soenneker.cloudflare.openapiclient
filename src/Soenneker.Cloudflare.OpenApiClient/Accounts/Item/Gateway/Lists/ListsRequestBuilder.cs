@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\gateway\lists
+    /// Builds and executes requests for operations under \accounts\{account-id}\gateway\lists
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListsRequestBuilder : BaseRequestBuilder
@@ -26,14 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.gateway.lists.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.Item.WithList_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.Item.WithList_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.Item.WithListItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.Item.WithListItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("list_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.Item.WithList_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("listId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.Item.WithListItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/gateway/lists{?type*}", pathParameters)
+        public ListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/gateway/lists{?direction*,filter*,order_by*,search*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,31 +49,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/gateway/lists{?type*}", rawUrl)
+        public ListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/gateway/lists{?direction*,filter*,order_by*,search*,type*}", rawUrl)
         {
         }
         /// <summary>
         /// Fetch all Zero Trust lists for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayComponentsSchemasResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection3"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsListZeroTrustLists4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsListZeroTrustLists4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayComponentsSchemasResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection3?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayComponentsSchemasResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection3> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder.ListsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsListZeroTrustLists4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsListZeroTrustLists4XxResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayComponentsSchemasResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayComponentsSchemasResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection3>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayResponseCollection3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new Zero Trust list.
@@ -82,21 +82,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponseWithListItems?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponseWithListItems?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustListRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponseWithListItems> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponseWithListItems> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustListRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponseWithListItems>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySingleResponseWithListItems.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -127,11 +127,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustListRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsCreateZeroTrustListRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -156,8 +156,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Sort direction. Applies to the field named in `order_by`; when `order_by`is omitted it applies to the default `created_at` ordering. When`direction` is omitted the default is field-specific: explicitly choosing`created_at` or `updated_at` defaults to descending (newest first); `name`and `item_count` default to ascending; and the default `created_at`ordering used when `order_by` is omitted is ascending (for backwardscompatibility).  * `asc` — ascending.  * `desc` — descending.</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsListZeroTrustListsDirectionParameter? Direction { get; set; }
+            /// <summary>Filter the returned lists by one or more `field:value` pairs.Repeat the parameter to apply multiple filters; they are combined withlogical AND (a list must satisfy every filter to be returned).Supported fields and their matching behaviour:  * `name` — case-insensitive substring match on the list name.  * `id` — substring match on the list ID (UUID), with or without dashes.  * `type` — exact match on the list type. Supersedes the legacy `type` query    parameter when both are supplied. Must be one of the valid type values.  * `item_count` — exact integer match on the number of items in the list.Each entry must match one of the per-field patterns below: the field must beone of `name`, `id`, `type`, or `item_count`; `name`/`id` accept any value,`type` is restricted to the valid list type values, and `item_count` must bea non-negative integer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public string[]? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public string[] Filter { get; set; }
+#endif
+            /// <summary>Field to sort the returned lists by. When omitted, results are ordered by`created_at` in ascending order (i.e. creation order) for backwardscompatibility. Supported values:  * `name` — sort alphabetically by list name.  * `created_at` — sort by creation time; defaults to descending unless `direction` is set.  * `updated_at` — sort by last-modified time; defaults to descending unless `direction` is set.  * `item_count` — sort by number of items in the list.</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustListsListZeroTrustListsOrderByParameter? OrderBy { get; set; }
+            /// <summary>Case-insensitive substring match on the list name or description. Whencombined with `filter`, both must match (logical AND).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
+            [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchemasType? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayType2? Type { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

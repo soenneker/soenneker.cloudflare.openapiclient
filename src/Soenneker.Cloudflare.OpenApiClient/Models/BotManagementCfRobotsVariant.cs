@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "policy_only")]
         #pragma warning disable CS1591
-        Policy_only,
+        PolicyOnly,
         #pragma warning restore CS1591
     }
 }

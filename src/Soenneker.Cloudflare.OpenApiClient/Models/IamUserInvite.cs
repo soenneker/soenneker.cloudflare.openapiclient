@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Roles { get; set; }
 #endif
         /// <summary>Current status of the invitation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInvite_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInvite"/> and sets the default values.
         /// </summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "organization_is_enforcing_twofactor", n => { OrganizationIsEnforcingTwofactor = n.GetBoolValue(); } },
                 { "organization_name", n => { OrganizationName = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInvite_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus>(); } },
             };
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("invited_on", InvitedOn);
             writer.WriteBoolValue("organization_is_enforcing_twofactor", OrganizationIsEnforcingTwofactor);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInvite_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

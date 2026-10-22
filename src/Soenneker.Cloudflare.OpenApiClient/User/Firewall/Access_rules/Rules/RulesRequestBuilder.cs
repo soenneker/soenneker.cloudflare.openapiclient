@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.user.firewall.access_rules.rules.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRuleItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRuleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("rule_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ruleId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRuleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserListIpAccessRules4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,32 +65,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserListIpAccessRules4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.&quot;
+        /// Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRule4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRule4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -114,18 +114,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.&quot;
+        /// Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserCreateAnIpAccessRuleRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -150,38 +150,60 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("configuration%2Etarget")]
-            public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.GetConfigurationTargetQueryParameterType? ConfigurationTarget { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserListIpAccessRulesConfigurationTargetParameter? ConfigurationTarget { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("configuration%2Evalue")]
             public string? ConfigurationValue { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("configuration%2Evalue")]
             public string ConfigurationValue { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserListIpAccessRulesDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.GetMatchQueryParameterType? Match { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserListIpAccessRulesMatchParameter? Match { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("mode")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode? Mode { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("notes")]
             public string? Notes { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("notes")]
             public string Notes { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.GetOrderQueryParameterType? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserListIpAccessRulesOrderParameter? Order { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

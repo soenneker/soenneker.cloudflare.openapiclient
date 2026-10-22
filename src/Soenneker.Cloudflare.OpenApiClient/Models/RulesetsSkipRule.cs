@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The parameters configuring the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_action_parameters? ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleActionParameters? ActionParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_action_parameters ActionParameters { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleActionParameters ActionParameters { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -46,14 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_enabled Enabled { get; set; }
-#endif
+        /// <summary>Whether the rule should be executed.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>Configuration for exposed credential checking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,10 +132,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "action_parameters", n => { ActionParameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_action_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_action_parameters.CreateFromDiscriminatorValue); } },
+                { "action_parameters", n => { ActionParameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleActionParameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleActionParameters.CreateFromDiscriminatorValue); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_enabled.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "exposed_credential_check", n => { ExposedCredentialCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck.CreateFromDiscriminatorValue); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -160,10 +154,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_action_parameters>("action_parameters", ActionParameters);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRuleActionParameters>("action_parameters", ActionParameters);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule_enabled>("enabled", Enabled);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleExposedCredentialCheck>("exposed_credential_check", ExposedCredentialCheck);
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("id", Id);

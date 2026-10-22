@@ -40,8 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The action to apply to a matched request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode? Mode { get; set; }
+        /// <summary>The mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode? Mode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode Mode { get; set; }
+#endif
         /// <summary>The timestamp of when the rule was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>An informative summary of the rule, typically used as a reminder or explanation.</summary>
@@ -55,10 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>All zones owned by the user will have the rule applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRule_scope? Scope { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2Scope? Scope { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRule_scope Scope { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2Scope Scope { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRule"/> and sets the default values.
@@ -89,10 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration.CreateFromDiscriminatorValue); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode>(); } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRule_scope>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRule_scope.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2Scope>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2Scope.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration>("configuration", Configuration);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode>("mode", Mode);
             writer.WriteStringValue("notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }

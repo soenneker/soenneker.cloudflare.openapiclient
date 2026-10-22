@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The operation to perform.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperation_op? Op { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationOp? Op { get; set; }
         /// <summary>Attribute path targeted by this operation. Use `members` to modify group membership. May also include a filter expression to target specific members, e.g. `members[value eq &quot;userTag&quot;]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,10 +28,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value(s) for the operation. For member add/replace operations, an array of member value objects. For `displayName` or `externalId` updates, a string value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperation"/> and sets the default values.
@@ -58,9 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperation_op>(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationOp>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperation_op>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationOp>("op", Op);
             writer.WriteStringValue("path", Path);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupPatchOperationValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

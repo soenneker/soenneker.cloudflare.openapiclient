@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRESTError>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRestError>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRESTError> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRestError> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponseResult Result { get; set; }
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
@@ -60,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRESTError>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRESTError.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRestError>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRestError.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponseResult.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -72,8 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRESTError>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponse_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlRestError>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlApiErrorResponseResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

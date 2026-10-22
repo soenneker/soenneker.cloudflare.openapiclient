@@ -12,6 +12,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class RealtimekitUpdatePresetPermissions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The accept_stage_requests property</summary>
+        public bool? AcceptStageRequests { get; set; }
         /// <summary>Whether this participant can accept waiting requests</summary>
         public bool? AcceptWaitingRequests { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? CanRecord { get; set; }
         /// <summary>The can_spotlight property</summary>
         public bool? CanSpotlight { get; set; }
-        /// <summary>Chat permissions</summary>
+        /// <summary>The chat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsChat? Chat { get; set; }
@@ -83,18 +85,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls Polls { get; set; }
 #endif
         /// <summary>Type of the recording peer</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_recorder_type? RecorderType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsRecorderType? RecorderType { get; set; }
         /// <summary>The show_participant_list property</summary>
         public bool? ShowParticipantList { get; set; }
+        /// <summary>The stage_access property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsStageAccess? StageAccess { get; set; }
+        /// <summary>The stage_enabled property</summary>
+        public bool? StageEnabled { get; set; }
+        /// <summary>The transcription_enabled property</summary>
+        public bool? TranscriptionEnabled { get; set; }
         /// <summary>Waiting room type</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_waiting_room_type? WaitingRoomType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType? WaitingRoomType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions"/> and sets the default values.
         /// </summary>
         public RealtimekitUpdatePresetPermissions()
         {
             AdditionalData = new Dictionary<string, object>();
-            RecorderType = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_recorder_type.NONE;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -114,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accept_stage_requests", n => { AcceptStageRequests = n.GetBoolValue(); } },
                 { "accept_waiting_requests", n => { AcceptWaitingRequests = n.GetBoolValue(); } },
                 { "can_accept_production_requests", n => { CanAcceptProductionRequests = n.GetBoolValue(); } },
                 { "can_change_participant_permissions", n => { CanChangeParticipantPermissions = n.GetBoolValue(); } },
@@ -133,9 +141,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "pin_participant", n => { PinParticipant = n.GetBoolValue(); } },
                 { "plugins", n => { Plugins = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins.CreateFromDiscriminatorValue); } },
                 { "polls", n => { Polls = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls.CreateFromDiscriminatorValue); } },
-                { "recorder_type", n => { RecorderType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_recorder_type>(); } },
+                { "recorder_type", n => { RecorderType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsRecorderType>(); } },
                 { "show_participant_list", n => { ShowParticipantList = n.GetBoolValue(); } },
-                { "waiting_room_type", n => { WaitingRoomType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_waiting_room_type>(); } },
+                { "stage_access", n => { StageAccess = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsStageAccess>(); } },
+                { "stage_enabled", n => { StageEnabled = n.GetBoolValue(); } },
+                { "transcription_enabled", n => { TranscriptionEnabled = n.GetBoolValue(); } },
+                { "waiting_room_type", n => { WaitingRoomType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType>(); } },
             };
         }
         /// <summary>
@@ -145,6 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("accept_stage_requests", AcceptStageRequests);
             writer.WriteBoolValue("accept_waiting_requests", AcceptWaitingRequests);
             writer.WriteBoolValue("can_accept_production_requests", CanAcceptProductionRequests);
             writer.WriteBoolValue("can_change_participant_permissions", CanChangeParticipantPermissions);
@@ -164,9 +176,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("pin_participant", PinParticipant);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPlugins>("plugins", Plugins);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsPolls>("polls", Polls);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_recorder_type>("recorder_type", RecorderType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsRecorderType>("recorder_type", RecorderType);
             writer.WriteBoolValue("show_participant_list", ShowParticipantList);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissions_waiting_room_type>("waiting_room_type", WaitingRoomType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsStageAccess>("stage_access", StageAccess);
+            writer.WriteBoolValue("stage_enabled", StageEnabled);
+            writer.WriteBoolValue("transcription_enabled", TranscriptionEnabled);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetPermissionsWaitingRoomType>("waiting_room_type", WaitingRoomType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

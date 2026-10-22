@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The environment to deploy the certificate to, defaults to production</summary>
+    /// <summary>The environment to deploy the certificate to, defaults to production.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TlsCertificatesAndHostnamesDeploy
     {

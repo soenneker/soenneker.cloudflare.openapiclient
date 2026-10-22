@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unit_memberships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_memberships>? UnitMemberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty>? UnitMemberships { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_memberships> UnitMemberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty> UnitMemberships { get; set; }
 #endif
         /// <summary>The unit_metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_metadata? UnitMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty? UnitMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_metadata UnitMetadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty UnitMetadata { get; set; }
 #endif
         /// <summary>The unit_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,8 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "unit_memberships", n => { UnitMemberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_memberships>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_memberships.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "unit_metadata", n => { UnitMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_metadata.CreateFromDiscriminatorValue); } },
+                { "unit_memberships", n => { UnitMemberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unit_metadata", n => { UnitMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "unit_name", n => { UnitName = n.GetStringValue(); } },
                 { "unit_status", n => { UnitStatus = n.GetStringValue(); } },
                 { "unit_tag", n => { UnitTag = n.GetStringValue(); } },
@@ -93,8 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_memberships>("unit_memberships", UnitMemberships);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnit_unit_metadata>("unit_metadata", UnitMetadata);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMembershipsItemProperty>("unit_memberships", UnitMemberships);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantUnitUnitMetadataProperty>("unit_metadata", UnitMetadata);
             writer.WriteStringValue("unit_name", UnitName);
             writer.WriteStringValue("unit_status", UnitStatus);
             writer.WriteStringValue("unit_tag", UnitTag);

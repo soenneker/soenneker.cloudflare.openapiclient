@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\gateways\{gateway_-id}\logs
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\gateways\{gateway-id}\logs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/gateways/{gateway_%2Did}/logs{?cached*,direction*,end_date*,feedback*,filters*,limit*,max_cost*,max_duration*,max_tokens_in*,max_tokens_out*,max_total_tokens*,meta_info*,min_cost*,min_duration*,min_tokens_in*,min_tokens_out*,min_total_tokens*,model*,model_type*,order_by*,order_by_direction*,page*,per_page*,provider*,request_content_type*,response_content_type*,search*,start_date*,success*}", pathParameters)
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/gateways/{gateway%2Did}/logs{?cached*,direction*,end_date*,feedback*,filters*,limit*,max_cost*,max_duration*,max_tokens_in*,max_tokens_out*,max_total_tokens*,meta_info*,min_cost*,min_duration*,min_tokens_in*,min_tokens_out*,min_total_tokens*,model*,model_type*,order_by*,order_by_direction*,page*,per_page*,provider*,request_content_type*,response_content_type*,search*,start_date*,success*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,57 +43,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/gateways/{gateway_%2Did}/logs{?cached*,direction*,end_date*,feedback*,filters*,limit*,max_cost*,max_duration*,max_tokens_in*,max_tokens_out*,max_total_tokens*,meta_info*,min_cost*,min_duration*,min_tokens_in*,min_tokens_out*,min_total_tokens*,model*,model_type*,order_by*,order_by_direction*,page*,per_page*,provider*,request_content_type*,response_content_type*,search*,start_date*,success*}", rawUrl)
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/gateways/{gateway%2Did}/logs{?cached*,direction*,end_date*,feedback*,filters*,limit*,max_cost*,max_duration*,max_tokens_in*,max_tokens_out*,max_total_tokens*,meta_info*,min_cost*,min_duration*,min_tokens_in*,min_tokens_out*,min_total_tokens*,model*,model_type*,order_by*,order_by_direction*,page*,per_page*,provider*,request_content_type*,response_content_type*,search*,start_date*,success*}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete Gateway Logs
+        /// Deletes gateway log entries matching the specified criteria.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Gateway Logs
+        /// Lists request/response log entries for the AI gateway with filtering and pagination.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Gateway Logs
+        /// Deletes gateway log entries matching the specified criteria.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return requestInfo;
         }
         /// <summary>
-        /// List Gateway Logs
+        /// Lists request/response log entries for the AI gateway with filtering and pagination.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,166 +140,238 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete Gateway Logs
+        /// Deletes gateway log entries matching the specified criteria.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderDeleteQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("filters")]
             public string[]? Filters { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("filters")]
             public string[] Filters { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.DeleteOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogsOrderByParameter? OrderBy { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("order_by_direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.DeleteOrder_by_directionQueryParameterType? OrderByDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGatewayLogsOrderByDirectionParameter? OrderByDirection { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
-        /// List Gateway Logs
+        /// Lists request/response log entries for the AI gateway with filtering and pagination.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderGetQueryParameters 
         {
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("cached")]
             public bool? Cached { get; set; }
-            [Obsolete("")]
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogsDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("end_date")]
             public DateTimeOffset? EndDate { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
+            [QueryParameter("feedback")]
+            public double? Feedback { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("feedback")]
-            public string? Feedback { get; set; }
-#nullable restore
-#else
-            [QueryParameter("feedback")]
-            public string Feedback { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("filters")]
             public string[]? Filters { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("filters")]
             public string[] Filters { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("max_cost")]
             public double? MaxCost { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("max_duration")]
             public double? MaxDuration { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("max_tokens_in")]
             public double? MaxTokensIn { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("max_tokens_out")]
             public double? MaxTokensOut { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("max_total_tokens")]
             public double? MaxTotalTokens { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("meta_info")]
             public bool? MetaInfo { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("min_cost")]
             public double? MinCost { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("min_duration")]
             public double? MinDuration { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("min_tokens_in")]
             public double? MinTokensIn { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("min_tokens_out")]
             public double? MinTokensOut { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("min_total_tokens")]
             public double? MinTotalTokens { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("model")]
             public string? Model { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("model")]
             public string Model { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("model_type")]
             public string? ModelType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("model_type")]
             public string ModelType { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.GetOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogsOrderByParameter? OrderBy { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("order_by_direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.GetOrder_by_directionQueryParameterType? OrderByDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigListGatewayLogsOrderByDirectionParameter? OrderByDirection { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("provider")]
             public string? Provider { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("provider")]
             public string Provider { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("request_content_type")]
             public string? RequestContentType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("request_content_type")]
             public string RequestContentType { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("response_content_type")]
             public string? ResponseContentType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("response_content_type")]
             public string ResponseContentType { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string? Search { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("search")]
             public string Search { get; set; }
+            #pragma warning restore CS1591
 #endif
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("start_date")]
             public DateTimeOffset? StartDate { get; set; }
+            #pragma warning restore CS1591
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("success")]
             public bool? Success { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

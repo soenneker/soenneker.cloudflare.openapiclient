@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CurrentValue { get; set; }
 #endif
         /// <summary>The field that was changed.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLog_field_changed? FieldChanged { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLogFieldChanged? FieldChanged { get; set; }
         /// <summary>UUIDv7 identifier for the audit log entry, time-ordered.</summary>
         public Guid? Id { get; set; }
         /// <summary>The ID of the insight this audit log entry relates to.</summary>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "changed_at", n => { ChangedAt = n.GetDateTimeOffsetValue(); } },
                 { "changed_by", n => { ChangedBy = n.GetStringValue(); } },
                 { "current_value", n => { CurrentValue = n.GetStringValue(); } },
-                { "field_changed", n => { FieldChanged = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLog_field_changed>(); } },
+                { "field_changed", n => { FieldChanged = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLogFieldChanged>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "issue_id", n => { IssueId = n.GetStringValue(); } },
                 { "previous_value", n => { PreviousValue = n.GetStringValue(); } },
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("changed_at", ChangedAt);
             writer.WriteStringValue("changed_by", ChangedBy);
             writer.WriteStringValue("current_value", CurrentValue);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLog_field_changed>("field_changed", FieldChanged);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterAuditLogFieldChanged>("field_changed", FieldChanged);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("issue_id", IssueId);
             writer.WriteStringValue("previous_value", PreviousValue);

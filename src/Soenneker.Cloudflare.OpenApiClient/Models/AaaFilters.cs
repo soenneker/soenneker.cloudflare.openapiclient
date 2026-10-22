@@ -130,10 +130,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Used for configuring incident_alert</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_incident_impact?>? IncidentImpact { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersIncidentImpactItem?>? IncidentImpact { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_incident_impact?> IncidentImpact { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersIncidentImpactItem?> IncidentImpact { get; set; }
 #endif
         /// <summary>Used for configuring stream_live_notifications</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -311,13 +311,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> TargetZoneName { get; set; }
 #endif
+        /// <summary>Access service token IDs to include for expiring_service_token_alert. Omit this property to include all current and future service tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? TokenId { get; set; }
+#nullable restore
+#else
+        public List<string> TokenId { get; set; }
+#endif
         /// <summary>Used for configuring traffic_anomalies_alert</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_traffic_exclusions?>? TrafficExclusions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityEventsItem?>? TrafficExclusions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_traffic_exclusions?> TrafficExclusions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityEventsItem?> TrafficExclusions { get; set; }
 #endif
         /// <summary>Used for configuring tunnel_health_event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -398,7 +406,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "event_type", n => { EventType = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "group_by", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "health_check_id", n => { HealthCheckId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "incident_impact", n => { IncidentImpact = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_incident_impact>()?.AsList(); } },
+                { "incident_impact", n => { IncidentImpact = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersIncidentImpactItem>()?.AsList(); } },
                 { "input_id", n => { InputId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "insight_class", n => { InsightClass = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limit", n => { Limit = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -421,7 +429,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "target_hostname", n => { TargetHostname = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "target_ip", n => { TargetIp = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "target_zone_name", n => { TargetZoneName = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "traffic_exclusions", n => { TrafficExclusions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_traffic_exclusions>()?.AsList(); } },
+                { "token_id", n => { TokenId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "traffic_exclusions", n => { TrafficExclusions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityEventsItem>()?.AsList(); } },
                 { "tunnel_id", n => { TunnelId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tunnel_name", n => { TunnelName = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -450,7 +459,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("event_type", EventType);
             writer.WriteCollectionOfPrimitiveValues<string>("group_by", GroupBy);
             writer.WriteCollectionOfPrimitiveValues<string>("health_check_id", HealthCheckId);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_incident_impact>("incident_impact", IncidentImpact);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersIncidentImpactItem>("incident_impact", IncidentImpact);
             writer.WriteCollectionOfPrimitiveValues<string>("input_id", InputId);
             writer.WriteCollectionOfPrimitiveValues<string>("insight_class", InsightClass);
             writer.WriteCollectionOfPrimitiveValues<string>("limit", Limit);
@@ -473,7 +482,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("target_hostname", TargetHostname);
             writer.WriteCollectionOfPrimitiveValues<string>("target_ip", TargetIp);
             writer.WriteCollectionOfPrimitiveValues<string>("target_zone_name", TargetZoneName);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFilters_traffic_exclusions>("traffic_exclusions", TrafficExclusions);
+            writer.WriteCollectionOfPrimitiveValues<string>("token_id", TokenId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityEventsItem>("traffic_exclusions", TrafficExclusions);
             writer.WriteCollectionOfPrimitiveValues<string>("tunnel_id", TunnelId);
             writer.WriteCollectionOfPrimitiveValues<string>("tunnel_name", TunnelName);
             writer.WriteCollectionOfPrimitiveValues<string>("type", Type);

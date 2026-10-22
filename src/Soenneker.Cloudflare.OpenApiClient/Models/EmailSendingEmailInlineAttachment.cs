@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
-        /// <summary>&quot;Content ID used to reference this attachment in HTML via cid: URI (e.g., &lt;img src=\&quot;cid:logo\&quot;&gt;).&quot;</summary>
+        /// <summary>Content ID used to reference this attachment in HTML via cid: URI (e.g., &lt;img src=&quot;cid:logo&quot;&gt;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentId { get; set; }
@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ContentId { get; set; }
 #endif
-        /// <summary>Must be &apos;inline&apos;. Indicates the attachment is embedded in the email body.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment_disposition? Disposition { get; set; }
+        /// <summary>Use &apos;inline&apos; to embed the attachment in the email body.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InlineDisposition? Disposition { get; set; }
         /// <summary>Filename for the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "content_id", n => { ContentId = n.GetStringValue(); } },
-                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment_disposition>(); } },
+                { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InlineDisposition>(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("content_id", ContentId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment_disposition>("disposition", Disposition);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InlineDisposition>("disposition", Disposition);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

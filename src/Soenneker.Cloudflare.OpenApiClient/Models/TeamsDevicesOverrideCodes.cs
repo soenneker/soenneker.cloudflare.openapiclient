@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The disable_for_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodes_disable_for_time? DisableForTime { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodesDisableForTimeProperty? DisableForTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodes_disable_for_time DisableForTime { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodesDisableForTimeProperty DisableForTime { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodes"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disable_for_time", n => { DisableForTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodes_disable_for_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodes_disable_for_time.CreateFromDiscriminatorValue); } },
+                { "disable_for_time", n => { DisableForTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodesDisableForTimeProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodesDisableForTimeProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodes_disable_for_time>("disable_for_time", DisableForTime);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOverrideCodesDisableForTimeProperty>("disable_for_time", DisableForTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

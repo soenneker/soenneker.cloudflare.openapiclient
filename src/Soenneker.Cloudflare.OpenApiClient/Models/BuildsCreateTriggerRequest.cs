@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The branch_excludes property</summary>
+        /// <summary>Branch patterns that must not start builds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BranchExcludes { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> BranchExcludes { get; set; }
 #endif
-        /// <summary>The branch_includes property</summary>
+        /// <summary>Branch patterns that can start builds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BranchIncludes { get; set; }
@@ -30,9 +30,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> BranchIncludes { get; set; }
 #endif
-        /// <summary>The build_caching_enabled property</summary>
+        /// <summary>Whether builds reuse cached dependencies and build artifacts.</summary>
         public bool? BuildCachingEnabled { get; set; }
-        /// <summary>The build_command property</summary>
+        /// <summary>Command to build the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BuildCommand { get; set; }
@@ -40,9 +40,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BuildCommand { get; set; }
 #endif
-        /// <summary>Build token UUID.</summary>
+        /// <summary>UUID of the build token used when deploying the Worker.</summary>
         public Guid? BuildTokenUuid { get; set; }
-        /// <summary>The deploy_command property</summary>
+        /// <summary>Command to deploy the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeployCommand { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DeployCommand { get; set; }
 #endif
-        /// <summary>System-generated worker script tag.</summary>
+        /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalScriptId { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ExternalScriptId { get; set; }
 #endif
-        /// <summary>The path_excludes property</summary>
+        /// <summary>Path patterns that must not start builds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PathExcludes { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PathExcludes { get; set; }
 #endif
-        /// <summary>The path_includes property</summary>
+        /// <summary>Path patterns that can start builds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PathIncludes { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Repository connection UUID.</summary>
         public Guid? RepoConnectionUuid { get; set; }
-        /// <summary>Root directory path.</summary>
+        /// <summary>Repository directory in which build and deploy commands run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RootDirectory { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RootDirectory { get; set; }
 #endif
-        /// <summary>The trigger_name property</summary>
+        /// <summary>Human-readable name of the build trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerName { get; set; }

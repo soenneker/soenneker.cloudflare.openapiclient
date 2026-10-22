@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ModelName { get; set; }
 #endif
         /// <summary>Type of source</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiModelType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "model_name", n => { ModelName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiModelType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("model_name", ModelName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

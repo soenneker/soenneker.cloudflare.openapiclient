@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class SecretsStoreStoreObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Account Identifier</summary>
+        /// <summary>Account Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whenthe secret was created.</summary>
+        /// <summary>When the secret was created.</summary>
         public DateTimeOffset? Created { get; set; }
-        /// <summary>Store Identifier</summary>
+        /// <summary>Store Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the secret was modified.</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>The name of the store</summary>
+        /// <summary>The name of the store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

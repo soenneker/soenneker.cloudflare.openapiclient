@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>For more information on purging files with URL and headers, please refer to [purge by single-file documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/).</summary>
+        /// <summary>URLs with the request headers your cache key uses. Use this form when your cache key includes request headers, or the visitor&apos;s device type, country, or language: send the header values each URL was cached with, such as `CF-Device-Type`, `CF-IPCountry`, or `Accept-Language`.When you send the `Origin` header, include the scheme and hostname. Include the port unless it is the default for the scheme: 80 for `http`, 443 for `https`.See [Purge by single-file](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders_files>? Files { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeadersFilesItem>? Files { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders_files> Files { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeadersFilesItem> Files { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders_files>(global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders_files.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeadersFilesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeadersFilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeaders_files>("files", Files);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurgeSingleFileWithUrlAndHeadersFilesItem>("files", Files);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

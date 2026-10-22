@@ -8,32 +8,40 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A DNS record status detected during preview, status, or fix.
+    /// A DNS record, sending-configuration, or policy issue detected during preview, status, or fix.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSendingSubdomainConfigError : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Error code identifying the type of issue. `dkim.conflict` isreported whenever 2+ TXT records exist at the DKIM selector,even if one matches the canonical Cloudflare content — multi-recordDKIM can permerror at recipient verification regardless of whichentry is correct. `domainkey.delegated` indicates that`_domainkey.&lt;subdomain&gt;` has NS records in the Cloudflare zone,creating a zone cut that shadows the DKIM TXT record we publish;the customer must remove the NS delegation for DKIM to verify.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError_code? Code { get; set; }
-        /// <summary>List of records needed to enable an Email Routing zone.</summary>
+        /// <summary>Error code identifying the type of issue. `dkim.conflict` isreported whenever 2+ TXT records exist at the DKIM selector,even if one matches the canonical Cloudflare content — multi-recordDKIM can permerror at recipient verification regardless of whichentry is correct. `domainkey.delegated` indicates that`_domainkey.&lt;subdomain&gt;` has NS records in the Cloudflare zone,creating a zone cut that shadows the DKIM TXT record we publish;the customer must remove the NS delegation for DKIM to verify.`dmarc.incompatible` indicates that a wildcard sending row no longersatisfies its DMARC safety requirements, such as relaxed alignment,a valid governing policy, and the organizational-domain constraint.The customer must correct the zone or policy configuration manually;DNS Fix cannot resolve this error.`sending_subdomain.conflict` is reported by preview when an enabledexplicit or wildcard sending row would give some senders a differentsigning identity.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorCode? Code { get; set; }
+        /// <summary>The enabled sending-subdomain row that conflicts with the requested name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord? Existing { get; set; }
+        public string? ConflictingSubdomain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord Existing { get; set; }
+        public string ConflictingSubdomain { get; set; }
 #endif
-        /// <summary>List of records needed to enable an Email Routing zone.</summary>
+        /// <summary>The conflicting DNS record found in the zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord? Missing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting? Existing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord Missing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting Existing { get; set; }
 #endif
-        /// <summary>The multiple property</summary>
+        /// <summary>The DNS record that must be added to resolve this error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing? Missing { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing Missing { get; set; }
+#endif
+        /// <summary>Multiple conflicting DNS records found, for example more than one SPF or DMARC TXT record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>? Multiple { get; set; }
@@ -66,9 +74,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError_code>(); } },
-                { "existing", n => { Existing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord.CreateFromDiscriminatorValue); } },
-                { "missing", n => { Missing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorCode>(); } },
+                { "conflicting_subdomain", n => { ConflictingSubdomain = n.GetStringValue(); } },
+                { "existing", n => { Existing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting.CreateFromDiscriminatorValue); } },
+                { "missing", n => { Missing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing.CreateFromDiscriminatorValue); } },
                 { "multiple", n => { Multiple = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -79,9 +88,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigError_code>("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>("existing", Existing);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>("missing", Missing);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorCode>("code", Code);
+            writer.WriteStringValue("conflicting_subdomain", ConflictingSubdomain);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorExisting>("existing", Existing);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomainConfigErrorMissing>("missing", Missing);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDnsRecord>("multiple", Multiple);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration target. You must set the target to `ua` when specifying a user agent in the rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallUaConfiguration_target? Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UaTarget? Target { get; set; }
         /// <summary>the user agent to exactly match</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallUaConfiguration_target>(); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UaTarget>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallUaConfiguration_target>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UaTarget>("target", Target);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

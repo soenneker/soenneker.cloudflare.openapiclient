@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Mapping of MAC addresses to IP addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer_reservations? Reservations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty? Reservations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer_reservations Reservations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty Reservations { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer"/> and sets the default values.
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dhcp_pool_start", n => { DhcpPoolStart = n.GetStringValue(); } },
                 { "dns_server", n => { DnsServer = n.GetStringValue(); } },
                 { "dns_servers", n => { DnsServers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "reservations", n => { Reservations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer_reservations>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer_reservations.CreateFromDiscriminatorValue); } },
+                { "reservations", n => { Reservations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("dhcp_pool_start", DhcpPoolStart);
             writer.WriteStringValue("dns_server", DnsServer);
             writer.WriteCollectionOfPrimitiveValues<string>("dns_servers", DnsServers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServer_reservations>("reservations", Reservations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicLanDhcpServerReservationsProperty>("reservations", Reservations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

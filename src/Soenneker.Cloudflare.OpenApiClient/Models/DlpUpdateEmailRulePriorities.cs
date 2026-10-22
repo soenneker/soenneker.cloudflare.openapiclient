@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The new_priorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePriorities_new_priorities? NewPriorities { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty? NewPriorities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePriorities_new_priorities NewPriorities { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty NewPriorities { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePriorities"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "new_priorities", n => { NewPriorities = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePriorities_new_priorities>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePriorities_new_priorities.CreateFromDiscriminatorValue); } },
+                { "new_priorities", n => { NewPriorities = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePriorities_new_priorities>("new_priorities", NewPriorities);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpUpdateEmailRulePrioritiesNewPrioritiesProperty>("new_priorities", NewPriorities);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

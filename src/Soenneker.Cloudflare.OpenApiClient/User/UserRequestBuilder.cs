@@ -4,12 +4,20 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.User.Analytics;
+using Soenneker.Cloudflare.OpenApiClient.User.Argo;
 using Soenneker.Cloudflare.OpenApiClient.User.Audit_logs;
+using Soenneker.Cloudflare.OpenApiClient.User.Billing;
+using Soenneker.Cloudflare.OpenApiClient.User.Communication_preferences;
 using Soenneker.Cloudflare.OpenApiClient.User.Firewall;
 using Soenneker.Cloudflare.OpenApiClient.User.Invites;
 using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers;
 using Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics;
+using Soenneker.Cloudflare.OpenApiClient.User.Memberships;
+using Soenneker.Cloudflare.OpenApiClient.User.Organizations;
+using Soenneker.Cloudflare.OpenApiClient.User.Spectrum_analytics;
 using Soenneker.Cloudflare.OpenApiClient.User.Subscriptions;
+using Soenneker.Cloudflare.OpenApiClient.User.Tenants;
 using Soenneker.Cloudflare.OpenApiClient.User.Tokens;
 using System.Collections.Generic;
 using System.IO;
@@ -24,10 +32,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The argo property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Argo.ArgoRequestBuilder Argo
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Argo.ArgoRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The audit_logs property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder Audit_logs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The billing property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Billing.BillingRequestBuilder Billing
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The communication_preferences property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Communication_preferences.Communication_preferencesRequestBuilder Communication_preferences
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Communication_preferences.Communication_preferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The firewall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.FirewallRequestBuilder Firewall
@@ -49,10 +77,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics.Load_balancing_analyticsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The memberships property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Memberships.MembershipsRequestBuilder Memberships
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder Organizations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The spectrum_analytics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Spectrum_analytics.Spectrum_analyticsRequestBuilder Spectrum_analytics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Spectrum_analytics.Spectrum_analyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The subscriptions property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tenants property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Tenants.TenantsRequestBuilder Tenants
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tokens property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder Tokens
@@ -76,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
         {
         }
         /// <summary>
-        /// User Details
+        /// Retrieves detailed information about the currently authenticated user, including email, name, and account memberships.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,11 +156,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -124,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IamSingleUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// User Details
+        /// Retrieves detailed information about the currently authenticated user, including email, name, and account memberships.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,11 +198,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.UserEditUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

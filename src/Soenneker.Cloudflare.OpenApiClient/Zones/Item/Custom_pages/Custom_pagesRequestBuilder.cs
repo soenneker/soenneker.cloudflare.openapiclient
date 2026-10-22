@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Assets;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Preview_tokens;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\custom_pages
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\custom_pages
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Custom_pagesRequestBuilder : BaseRequestBuilder
@@ -23,6 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Assets.AssetsRequestBuilder Assets
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The preview_tokens property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Preview_tokens.Preview_tokensRequestBuilder Preview_tokens
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Preview_tokens.Preview_tokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.custom_pages.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -41,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_pagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_pages", pathParameters)
+        public Custom_pagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/custom_pages", pathParameters)
         {
         }
         /// <summary>
@@ -49,16 +55,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_pagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_pages", rawUrl)
+        public Custom_pagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/custom_pages", rawUrl)
         {
         }
         /// <summary>
-        /// Fetches all the custom pages at the zone level.
+        /// Lists all custom page configurations for a zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesCustomPageResultList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesForAZoneListCustomPages4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesCustomPageResultList?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,12 +77,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesForAZoneListCustomPages4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesCustomPageResultList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPagesCustomPageResultList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches all the custom pages at the zone level.
+        /// Lists all custom page configurations for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

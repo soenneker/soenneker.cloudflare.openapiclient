@@ -25,7 +25,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The date and time when the sinkhole was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The unique identifier for the sinkhole.</summary>
-        public int? Id { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The date and time when the sinkhole was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The name of the sinkhole.</summary>
@@ -79,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "r2_bucket", n => { R2Bucket = n.GetStringValue(); } },
@@ -95,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("r2_bucket", R2Bucket);

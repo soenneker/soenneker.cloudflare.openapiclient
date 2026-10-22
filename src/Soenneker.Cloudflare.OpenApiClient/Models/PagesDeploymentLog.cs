@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLog_data>? Data { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLogDataItem>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLog_data> Data { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLogDataItem> Data { get; set; }
 #endif
         /// <summary>The includes_container_logs property</summary>
         public bool? IncludesContainerLogs { get; private set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLog_data>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLog_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLogDataItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLogDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "includes_container_logs", n => { IncludesContainerLogs = n.GetBoolValue(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLog_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentLogDataItem>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

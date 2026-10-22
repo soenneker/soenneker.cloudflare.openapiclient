@@ -22,9 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Set to `true` and omit `unit` to create a standalone Free Account. If provided, this field must be `true`.</summary>
+        public bool? Standalone { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountType? Type { get; set; }
-        /// <summary>information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/</summary>
+        /// <summary>Information related to the tenant unit. Provide its ID and omit `standalone` to create the Account within an Organization. See https://developers.cloudflare.com/tenant/how-to/manage-accounts/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateAccountUnit? Unit { get; set; }
@@ -58,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "standalone", n => { Standalone = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountType>(); } },
                 { "unit", n => { Unit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateAccountUnit>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateAccountUnit.CreateFromDiscriminatorValue); } },
             };
@@ -70,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("standalone", Standalone);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamAccountType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateAccountUnit>("unit", Unit);
             writer.WriteAdditionalData(AdditionalData);

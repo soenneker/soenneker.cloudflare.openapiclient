@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "pending_deployment")]
         #pragma warning disable CS1591
-        Pending_deployment,
+        PendingDeployment,
         #pragma warning restore CS1591
         [EnumMember(Value = "available")]
         #pragma warning disable CS1591
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_deletion")]
         #pragma warning disable CS1591
-        Pending_deletion,
+        PendingDeletion,
         #pragma warning restore CS1591
         [EnumMember(Value = "inactive")]
         #pragma warning disable CS1591

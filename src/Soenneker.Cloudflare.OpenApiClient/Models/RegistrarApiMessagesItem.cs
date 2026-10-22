@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
+        /// <summary>Location of the invalid value that caused the error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItemSource? Source { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItemSource Source { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem"/> and sets the default values.
         /// </summary>
@@ -51,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItemSource>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItemSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("code", Code);
             writer.WriteStringValue("message", Message);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItemSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

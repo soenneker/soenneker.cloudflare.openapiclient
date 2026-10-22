@@ -24,13 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Ciphers { get; set; }
 #endif
         /// <summary>Whether or not Early Hints is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_early_hints? EarlyHints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints? EarlyHints { get; set; }
         /// <summary>Whether or not HTTP2 is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_http2? Http2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2? Http2 { get; set; }
         /// <summary>The minimum TLS version supported.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_min_tls_version? MinTlsVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion? MinTlsVersion { get; set; }
         /// <summary>Whether or not TLS 1.3 is enabled.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_tls_1_3? Tls13 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13? Tls13 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings"/> and sets the default values.
         /// </summary>
@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "early_hints", n => { EarlyHints = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_early_hints>(); } },
-                { "http2", n => { Http2 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_http2>(); } },
-                { "min_tls_version", n => { MinTlsVersion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_min_tls_version>(); } },
-                { "tls_1_3", n => { Tls13 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_tls_1_3>(); } },
+                { "early_hints", n => { EarlyHints = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints>(); } },
+                { "http2", n => { Http2 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2>(); } },
+                { "min_tls_version", n => { MinTlsVersion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion>(); } },
+                { "tls_1_3", n => { Tls13 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13>(); } },
             };
         }
         /// <summary>
@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ciphers", Ciphers);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_early_hints>("early_hints", EarlyHints);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_http2>("http2", Http2);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_min_tls_version>("min_tls_version", MinTlsVersion);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettings_tls_1_3>("tls_1_3", Tls13);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsEarlyHints>("early_hints", EarlyHints);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsHttp2>("http2", Http2);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsMinTlsVersion>("min_tls_version", MinTlsVersion);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslsettingsTls13>("tls_1_3", Tls13);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

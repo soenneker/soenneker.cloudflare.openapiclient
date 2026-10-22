@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An object which can lend more context to the action being logged. This is a flexible value and varies between different actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs_metadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs_metadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The new value of the resource that was modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsActor>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsActor.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interface", n => { Interface = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "newValue", n => { NewValue = n.GetStringValue(); } },
                 { "oldValue", n => { OldValue = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsOwner>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsOwner.CreateFromDiscriminatorValue); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsActor>("actor", Actor);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interface", Interface);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("newValue", NewValue);
             writer.WriteStringValue("oldValue", OldValue);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsOwner>("owner", Owner);

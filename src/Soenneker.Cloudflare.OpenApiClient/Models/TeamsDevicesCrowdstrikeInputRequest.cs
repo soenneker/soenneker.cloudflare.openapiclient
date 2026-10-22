@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string LastSeen { get; set; }
 #endif
         /// <summary>Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_operator? Operator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestOperator? Operator { get; set; }
         /// <summary>Os Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SensorConfig { get; set; }
 #endif
         /// <summary>For more details on state, please refer to the Crowdstrike documentation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_state? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState? State { get; set; }
         /// <summary>Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Version { get; set; }
 #endif
         /// <summary>Version Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_versionOperator? VersionOperator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestVersionOperator? VersionOperator { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest"/> and sets the default values.
         /// </summary>
@@ -95,13 +95,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
                 { "last_seen", n => { LastSeen = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_operator>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestOperator>(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
                 { "overall", n => { Overall = n.GetStringValue(); } },
                 { "sensor_config", n => { SensorConfig = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
-                { "versionOperator", n => { VersionOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_versionOperator>(); } },
+                { "versionOperator", n => { VersionOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestVersionOperator>(); } },
             };
         }
         /// <summary>
@@ -113,13 +113,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_id", ConnectionId);
             writer.WriteStringValue("last_seen", LastSeen);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_operator>("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestOperator>("operator", Operator);
             writer.WriteStringValue("os", Os);
             writer.WriteStringValue("overall", Overall);
             writer.WriteStringValue("sensor_config", SensorConfig);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestState>("state", State);
             writer.WriteStringValue("version", Version);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest_versionOperator>("versionOperator", VersionOperator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequestVersionOperator>("versionOperator", VersionOperator);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The value property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedBase_value? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedBaseValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedCloudflareSpeedBrainResponse"/> and sets the default values.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedBase_value>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedBaseValue>(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedBase_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedBaseValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

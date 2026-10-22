@@ -8,126 +8,75 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode=&apos;smart&apos; for Smart Placement, or one of region/hostname/host.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf8"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkersPlacementInfoNoStatus : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    public partial class WorkersPlacementInfoNoStatus : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>TCP host and port for targeted placement.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf1? WorkersPlacementInfoNoStatusOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Host { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf1 WorkersPlacementInfoNoStatusOneOf1 { get; set; }
 #endif
-        /// <summary>HTTP hostname for targeted placement.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf2? WorkersPlacementInfoNoStatusOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Hostname { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf2 WorkersPlacementInfoNoStatusOneOf2 { get; set; }
 #endif
-        /// <summary>Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus_mode? Mode { get; set; }
-        /// <summary>Cloud region for targeted placement in format &apos;provider:region&apos;.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf3? WorkersPlacementInfoNoStatusOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf3 WorkersPlacementInfoNoStatusOneOf3 { get; set; }
 #endif
-        /// <summary>Array of placement targets (currently limited to single target).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget>? Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf4? WorkersPlacementInfoNoStatusOneOf4 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget> Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf4 WorkersPlacementInfoNoStatusOneOf4 { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf5? WorkersPlacementInfoNoStatusOneOf5 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf5 WorkersPlacementInfoNoStatusOneOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember1? WorkersPlacementInfoNoStatusMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf6? WorkersPlacementInfoNoStatusOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember1 WorkersPlacementInfoNoStatusMember1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf6 WorkersPlacementInfoNoStatusOneOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember2? WorkersPlacementInfoNoStatusMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf7? WorkersPlacementInfoNoStatusOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember2 WorkersPlacementInfoNoStatusMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf7 WorkersPlacementInfoNoStatusOneOf7 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember3? WorkersPlacementInfoNoStatusMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf8? WorkersPlacementInfoNoStatusOneOf8 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember3 WorkersPlacementInfoNoStatusMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf8 WorkersPlacementInfoNoStatusOneOf8 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember4? WorkersPlacementInfoNoStatusMember4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember4 WorkersPlacementInfoNoStatusMember4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember5? WorkersPlacementInfoNoStatusMember5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember5 WorkersPlacementInfoNoStatusMember5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember6? WorkersPlacementInfoNoStatusMember6 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember6 WorkersPlacementInfoNoStatusMember6 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember7"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember7? WorkersPlacementInfoNoStatusMember7 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember7 WorkersPlacementInfoNoStatusMember7 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember8"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember8? WorkersPlacementInfoNoStatusMember8 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember8 WorkersPlacementInfoNoStatusMember8 { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus"/> and sets the default values.
-        /// </summary>
-        public WorkersPlacementInfoNoStatus()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -136,63 +85,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus();
-            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus_mode>() is global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus_mode modeValue)
+            if("WorkersPlacementInfoNoStatusOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.Mode = modeValue;
+                result.WorkersPlacementInfoNoStatusOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember1();
+                result.WorkersPlacementInfoNoStatusOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf2();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember2();
+                result.WorkersPlacementInfoNoStatusOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf3();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember3();
+                result.WorkersPlacementInfoNoStatusOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf4();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember4();
+                result.WorkersPlacementInfoNoStatusOneOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf5();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember5();
+                result.WorkersPlacementInfoNoStatusOneOf6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf6();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf7".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember6();
+                result.WorkersPlacementInfoNoStatusOneOf7 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf7();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersPlacementInfoNoStatusOneOf8".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersPlacementInfoNoStatusMember7 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember7();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WorkersPlacementInfoNoStatusMember8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember8();
-            }
-            else if(parseNode.GetStringValue() is string hostValue)
-            {
-                result.Host = hostValue;
-            }
-            else if(parseNode.GetStringValue() is string hostnameValue)
-            {
-                result.Hostname = hostnameValue;
-            }
-            else if(parseNode.GetStringValue() is string regionValue)
-            {
-                result.Region = regionValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget> targetValue)
-            {
-                result.Target = targetValue;
+                result.WorkersPlacementInfoNoStatusOneOf8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf8();
             }
             return result;
         }
@@ -202,37 +127,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkersPlacementInfoNoStatusMember1 != null)
+            if(WorkersPlacementInfoNoStatusOneOf1 != null)
             {
-                return WorkersPlacementInfoNoStatusMember1.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf1.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember2 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf2 != null)
             {
-                return WorkersPlacementInfoNoStatusMember2.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf2.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember3 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf3 != null)
             {
-                return WorkersPlacementInfoNoStatusMember3.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf3.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember4 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf4 != null)
             {
-                return WorkersPlacementInfoNoStatusMember4.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf4.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember5 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf5 != null)
             {
-                return WorkersPlacementInfoNoStatusMember5.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf5.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember6 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf6 != null)
             {
-                return WorkersPlacementInfoNoStatusMember6.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf6.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember7 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf7 != null)
             {
-                return WorkersPlacementInfoNoStatusMember7.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf7.GetFieldDeserializers();
             }
-            else if(WorkersPlacementInfoNoStatusMember8 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf8 != null)
             {
-                return WorkersPlacementInfoNoStatusMember8.GetFieldDeserializers();
+                return WorkersPlacementInfoNoStatusOneOf8.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -243,63 +168,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(Mode != null)
+            if(WorkersPlacementInfoNoStatusOneOf1 != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatus_mode>(null, Mode);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf1>(null, WorkersPlacementInfoNoStatusOneOf1);
             }
-            else if(WorkersPlacementInfoNoStatusMember1 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember1>(null, WorkersPlacementInfoNoStatusMember1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf2>(null, WorkersPlacementInfoNoStatusOneOf2);
             }
-            else if(WorkersPlacementInfoNoStatusMember2 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember2>(null, WorkersPlacementInfoNoStatusMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf3>(null, WorkersPlacementInfoNoStatusOneOf3);
             }
-            else if(WorkersPlacementInfoNoStatusMember3 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember3>(null, WorkersPlacementInfoNoStatusMember3);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf4>(null, WorkersPlacementInfoNoStatusOneOf4);
             }
-            else if(WorkersPlacementInfoNoStatusMember4 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember4>(null, WorkersPlacementInfoNoStatusMember4);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf5>(null, WorkersPlacementInfoNoStatusOneOf5);
             }
-            else if(WorkersPlacementInfoNoStatusMember5 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf6 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember5>(null, WorkersPlacementInfoNoStatusMember5);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf6>(null, WorkersPlacementInfoNoStatusOneOf6);
             }
-            else if(WorkersPlacementInfoNoStatusMember6 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf7 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember6>(null, WorkersPlacementInfoNoStatusMember6);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf7>(null, WorkersPlacementInfoNoStatusOneOf7);
             }
-            else if(WorkersPlacementInfoNoStatusMember7 != null)
+            else if(WorkersPlacementInfoNoStatusOneOf8 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember7>(null, WorkersPlacementInfoNoStatusMember7);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusOneOf8>(null, WorkersPlacementInfoNoStatusOneOf8);
             }
-            else if(WorkersPlacementInfoNoStatusMember8 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfoNoStatusMember8>(null, WorkersPlacementInfoNoStatusMember8);
-            }
-            else if(Host != null)
-            {
-                writer.WriteStringValue(null, Host);
-            }
-            else if(Hostname != null)
-            {
-                writer.WriteStringValue(null, Hostname);
-            }
-            else if(Region != null)
-            {
-                writer.WriteStringValue(null, Region);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
-            else if(Target != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementTarget>(null, Target);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

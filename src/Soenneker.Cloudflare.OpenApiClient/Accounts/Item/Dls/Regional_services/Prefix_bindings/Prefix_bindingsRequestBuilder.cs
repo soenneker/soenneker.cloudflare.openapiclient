@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dls\regional_services\prefix_bindings
+    /// Builds and executes requests for operations under \accounts\{account-id}\dls\regional_services\prefix_bindings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Prefix_bindingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dls.regional_services.prefix_bindings.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Item.WithBinding_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Item.WithBinding_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Item.WithBindingItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Item.WithBindingItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("binding_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Item.WithBinding_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("bindingId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Item.WithBindingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Prefix_bindingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dls/regional_services/prefix_bindings{?cursor*,per_page*}", pathParameters)
+        public Prefix_bindingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dls/regional_services/prefix_bindings{?cursor*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Prefix_bindingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dls/regional_services/prefix_bindings{?cursor*,per_page*}", rawUrl)
+        public Prefix_bindingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dls/regional_services/prefix_bindings{?cursor*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// List DLS prefix bindings for an account
+        /// List the BYOIP prefix bindings configured for an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlsPrefixBindingPaginatedListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsPrefixBindingPaginatedListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlsPrefixBindingPaginatedListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a DLS prefix binding
+        /// Bind a CIDR from a BYOIP prefix to a region.This requires the **IP Prefixes Write** permission in addition to **DLS Write**, because the binding is created against a BYOIP prefix in Addressing.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlsPrefixBindingResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsPrefixBindingResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlsPrefixBindingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List DLS prefix bindings for an account
+        /// List the BYOIP prefix bindings configured for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
             return requestInfo;
         }
         /// <summary>
-        /// Create a DLS prefix binding
+        /// Bind a CIDR from a BYOIP prefix to a region.This requires the **IP Prefixes Write** permission in addition to **DLS Write**, because the binding is created against a BYOIP prefix in Addressing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services.Prefix_bindings.Prefix_bindingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List DLS prefix bindings for an account
+        /// List the BYOIP prefix bindings configured for an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Prefix_bindingsRequestBuilderGetQueryParameters 
@@ -174,8 +174,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regional_services
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

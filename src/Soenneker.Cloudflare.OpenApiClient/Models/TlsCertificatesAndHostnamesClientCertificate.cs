@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Client Certificate PEM</summary>
+        /// <summary>The Client Certificate PEM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Certificate { get; set; }
@@ -22,15 +22,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Certificate { get; set; }
 #endif
-        /// <summary>Certificate Authority used to issue the Client Certificate</summary>
+        /// <summary>Certificate Authority used to issue the Client Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority? CertificateAuthority { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority4? CertificateAuthority { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority CertificateAuthority { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority4 CertificateAuthority { get; set; }
 #endif
-        /// <summary>Common Name of the Client Certificate</summary>
+        /// <summary>Common Name of the Client Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommonName { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CommonName { get; set; }
 #endif
-        /// <summary>Country, provided by the CSR</summary>
+        /// <summary>Country, provided by the CSR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Csr { get; set; }
 #endif
-        /// <summary>Date that the Client Certificate expires</summary>
+        /// <summary>Date that the Client Certificate expires.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExpiresOn { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ExpiresOn { get; set; }
 #endif
-        /// <summary>Unique identifier of the Client Certificate</summary>
+        /// <summary>Unique identifier of the Client Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FingerprintSha256 { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FingerprintSha256 { get; set; }
 #endif
-        /// <summary>Identifier.</summary>
+        /// <summary>Client Certificate Tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Date that the Client Certificate was issued by the Certificate Authority</summary>
+        /// <summary>Date that the Client Certificate was issued by the Certificate Authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuedOn { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string IssuedOn { get; set; }
 #endif
-        /// <summary>Location, provided by the CSR</summary>
+        /// <summary>Location, provided by the CSR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Location { get; set; }
 #endif
-        /// <summary>Organization, provided by the CSR</summary>
+        /// <summary>Organization, provided by the CSR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Organization { get; set; }
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Organization { get; set; }
 #endif
-        /// <summary>Organizational Unit, provided by the CSR</summary>
+        /// <summary>Organizational Unit, provided by the CSR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationalUnit { get; set; }
@@ -126,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Signature { get; set; }
 #endif
-        /// <summary>Subject Key Identifier</summary>
+        /// <summary>Subject Key Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ski { get; set; }
@@ -134,7 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Ski { get; set; }
 #endif
-        /// <summary>State, provided by the CSR</summary>
+        /// <summary>State, provided by the CSR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -142,9 +142,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus? Status { get; set; }
-        /// <summary>The number of days the Client Certificate will be valid after the issued_on date</summary>
+        /// <summary>Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus11? Status { get; set; }
+        /// <summary>The number of days the Client Certificate will be valid after the issued_on date.</summary>
         public int? ValidityDays { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificate"/> and sets the default values.
@@ -172,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
-                { "certificate_authority", n => { CertificateAuthority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority.CreateFromDiscriminatorValue); } },
+                { "certificate_authority", n => { CertificateAuthority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority4>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority4.CreateFromDiscriminatorValue); } },
                 { "common_name", n => { CommonName = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "csr", n => { Csr = n.GetStringValue(); } },
@@ -187,7 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "ski", n => { Ski = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus11>(); } },
                 { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
         }
@@ -199,7 +199,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("certificate", Certificate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority>("certificate_authority", CertificateAuthority);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateAuthority4>("certificate_authority", CertificateAuthority);
             writer.WriteStringValue("common_name", CommonName);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("csr", Csr);
@@ -214,7 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("signature", Signature);
             writer.WriteStringValue("ski", Ski);
             writer.WriteStringValue("state", State);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus11>("status", Status);
             writer.WriteIntValue("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);
         }

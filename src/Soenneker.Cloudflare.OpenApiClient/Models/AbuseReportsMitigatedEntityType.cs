@@ -3,14 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The type of entity targeted by a mitigation.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AbuseReportsMitigatedEntityType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "url_pattern")]
         #pragma warning disable CS1591
-        Url_pattern,
+        UrlPattern,
         #pragma warning restore CS1591
         [EnumMember(Value = "account")]
         #pragma warning disable CS1591
@@ -19,6 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "zone")]
         #pragma warning disable CS1591
         Zone,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "custom_expression")]
+        #pragma warning disable CS1591
+        CustomExpression,
         #pragma warning restore CS1591
     }
 }

@@ -21,11 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "udp_icmp")]
         #pragma warning disable CS1591
-        Udp_icmp,
+        UdpIcmp,
         #pragma warning restore CS1591
         [EnumMember(Value = "icmp_ping")]
         #pragma warning disable CS1591
-        Icmp_ping,
+        IcmpPing,
         #pragma warning restore CS1591
         [EnumMember(Value = "smtp")]
         #pragma warning disable CS1591

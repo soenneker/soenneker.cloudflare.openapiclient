@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MtlsCertificateId { get; set; }
 #endif
-        /// <summary>Set SSL mode to &apos;require&apos;, &apos;verify-ca&apos;, or &apos;verify-full&apos; to verify the CA.</summary>
+        /// <summary>PostgreSQL accepts `require`, `verify-ca`, and `verify-full`. MySQL accepts `REQUIRED`, `VERIFY_CA`, and `VERIFY_IDENTITY`. The verify modes require a CA certificate; the require modes cannot be used with a CA certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sslmode { get; set; }

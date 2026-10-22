@@ -9,11 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "false_positive")]
         #pragma warning disable CS1591
-        False_positive,
+        FalsePositive,
         #pragma warning restore CS1591
         [EnumMember(Value = "false_negative")]
         #pragma warning disable CS1591
-        False_negative,
+        FalseNegative,
         #pragma warning restore CS1591
     }
 }

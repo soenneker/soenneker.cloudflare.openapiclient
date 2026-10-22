@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations Locations { get; set; }
 #endif
         /// <summary>Operating System.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequest_operating_system? OperatingSystem { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem? OperatingSystem { get; set; }
         /// <summary>List of certificate Subject Alternative Names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cn", n => { Cn = n.GetStringValue(); } },
                 { "extended_key_usage", n => { ExtendedKeyUsage = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum>()?.AsList(); } },
                 { "locations", n => { Locations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations.CreateFromDiscriminatorValue); } },
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequest_operating_system>(); } },
+                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem>(); } },
                 { "subject_alternative_names", n => { SubjectAlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("cn", Cn);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesExtendedKeyUsageEnum>("extended_key_usage", ExtendedKeyUsage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestLocations>("locations", Locations);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequest_operating_system>("operating_system", OperatingSystem);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequestOperatingSystem>("operating_system", OperatingSystem);
             writer.WriteCollectionOfPrimitiveValues<string>("subject_alternative_names", SubjectAlternativeNames);
             writer.WriteAdditionalData(AdditionalData);
         }

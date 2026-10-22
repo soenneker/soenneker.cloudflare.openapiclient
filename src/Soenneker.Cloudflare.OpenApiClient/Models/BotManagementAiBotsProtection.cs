@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.</summary>
+    /// <summary>Enable rule to block AI Scrapers and Crawlers.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BotManagementAiBotsProtection
     {
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "only_on_ad_pages")]
         #pragma warning disable CS1591
-        Only_on_ad_pages,
+        OnlyOnAdPages,
         #pragma warning restore CS1591
     }
 }

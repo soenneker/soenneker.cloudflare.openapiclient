@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Date the test was created, in RFC 3339 format.</summary>
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The configuration object which contains the details for the WARP client to conduct the test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TestId { get; set; }
 #endif
+        /// <summary>Date the test was last updated, in RFC 3339 format.</summary>
+        public DateTimeOffset? Updated { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasHttp"/> and sets the default values.
         /// </summary>
@@ -91,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasData>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDeviceDexTestSchemasData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -99,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDexTargetPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDexTargetPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeted", n => { Targeted = n.GetBoolValue(); } },
                 { "test_id", n => { TestId = n.GetStringValue(); } },
+                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

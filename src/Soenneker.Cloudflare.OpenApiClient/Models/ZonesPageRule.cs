@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The set of actions to perform if the targets of this rule match therequest. Actions can redirect to another URL or override settings, butnot both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem>? Actions { get; set; }
 #nullable restore
 #else
-        public List<string> Actions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem> Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The timestamp of when the Page Rule was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>&quot;The priority of the rule, used to define which Page Rule is processedover another. A higher number indicates a higher priority. For example,if you have a catch-all Page Rule (rule A: `/images/*`) but want a morespecific Page Rule to take precedence (rule B: `/images/special/*`),specify a higher priority for rule B so it overrides rule A.&quot;</summary>
+        /// <summary>The priority of the rule, used to define which Page Rule is processedover another. A higher number indicates a higher priority. For example,if you have a catch-all Page Rule (rule A: `/images/*`) but want a morespecific Page Rule to take precedence (rule B: `/images/special/*`),specify a higher priority for rule B so it overrides rule A.</summary>
         public int? Priority { get; set; }
         /// <summary>The status of the Page Rule.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStatus? Status { get; set; }
@@ -52,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesPageRule()
         {
             AdditionalData = new Dictionary<string, object>();
-            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStatus.Disabled;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
@@ -88,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem>("actions", Actions);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);

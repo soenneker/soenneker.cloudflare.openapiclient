@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Anniversary date is when annual quota limit is refreshed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_anniversary_date? AnniversaryDate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_anniversary_date AnniversaryDate { get; set; }
-#endif
+        public DateTimeOffset? AnniversaryDate { get; set; }
         /// <summary>Quarter anniversary date is when quota limit is refreshed each quarter.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_quarter_anniversary_date? QuarterAnniversaryDate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_quarter_anniversary_date QuarterAnniversaryDate { get; set; }
-#endif
+        public DateTimeOffset? QuarterAnniversaryDate { get; set; }
         /// <summary>Tokens for the quarter.</summary>
         public int? Quota { get; set; }
         /// <summary>Tokens remaining for the quarter.</summary>
@@ -59,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anniversary_date", n => { AnniversaryDate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_anniversary_date>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_anniversary_date.CreateFromDiscriminatorValue); } },
-                { "quarter_anniversary_date", n => { QuarterAnniversaryDate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_quarter_anniversary_date>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_quarter_anniversary_date.CreateFromDiscriminatorValue); } },
+                { "anniversary_date", n => { AnniversaryDate = n.GetDateTimeOffsetValue(); } },
+                { "quarter_anniversary_date", n => { QuarterAnniversaryDate = n.GetDateTimeOffsetValue(); } },
                 { "quota", n => { Quota = n.GetIntValue(); } },
                 { "remaining", n => { Remaining = n.GetIntValue(); } },
             };
@@ -72,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_anniversary_date>("anniversary_date", AnniversaryDate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsQuota_quarter_anniversary_date>("quarter_anniversary_date", QuarterAnniversaryDate);
+            writer.WriteDateTimeOffsetValue("anniversary_date", AnniversaryDate);
+            writer.WriteDateTimeOffsetValue("quarter_anniversary_date", QuarterAnniversaryDate);
             writer.WriteIntValue("quota", Quota);
             writer.WriteIntValue("remaining", Remaining);
             writer.WriteAdditionalData(AdditionalData);

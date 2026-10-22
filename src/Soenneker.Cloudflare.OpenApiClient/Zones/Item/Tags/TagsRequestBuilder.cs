@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\tags
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\tags
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/tags?resource_id={resource_id}&resource_type={resource_type}{&access_application_id*}", pathParameters)
+        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/tags{?access_application_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/tags?resource_id={resource_id}&resource_type={resource_type}{&access_application_id*}", rawUrl)
+        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/tags{?access_application_id*}", rawUrl)
         {
         }
         /// <summary>
         /// Removes all tags from a specific zone-level resource.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Request body schema for deleting tags from zone-level resources.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -44,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingApiResponseCommonFailure">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestZoneLevel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -58,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
                 { "412", global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingApiResponseCommonFailure.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves tags for a specific zone-level resource.
@@ -126,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/zones/{zone_identifier%2Did}/tags", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -146,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags.TagsRequestBuilder.TagsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/zones/{zoneIdentifier%2Did}/tags?resource_id={resource_id}&resource_type={resource_type}{&access_application_id*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -167,7 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/zones/{zone_identifier%2Did}/tags", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -189,15 +188,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Tags
         public partial class TagsRequestBuilderGetQueryParameters 
         {
             /// <summary>Access application ID identifier. Required for access_application_policy resources.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("access_application_id")]
-            public string? AccessApplicationId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("access_application_id")]
-            public string AccessApplicationId { get; set; }
-#endif
+            public Guid? AccessApplicationId { get; set; }
             /// <summary>The ID of the resource to retrieve tags for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.ip_version.item collection</summary>
         /// <param name="position">IP version.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Item.WithIp_versionItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Item.WithIp_versionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Item.WithIpVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Item.WithIpVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("ip_version", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Item.WithIp_versionItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ipVersion", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Item.WithIpVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

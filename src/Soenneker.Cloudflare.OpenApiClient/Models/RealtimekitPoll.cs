@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Answer options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll_options>? Options { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPollOptionsItem>? Options { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll_options> Options { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPollOptionsItem> Options { get; set; }
 #endif
         /// <summary>Question asked by the poll</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "hide_votes", n => { HideVotes = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll_options.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPollOptionsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPollOptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "question", n => { Question = n.GetStringValue(); } },
                 { "voted", n => { Voted = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("anonymous", Anonymous);
             writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteBoolValue("hide_votes", HideVotes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll_options>("options", Options);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPollOptionsItem>("options", Options);
             writer.WriteStringValue("question", Question);
             writer.WriteCollectionOfPrimitiveValues<string>("voted", Voted);
             writer.WriteAdditionalData(AdditionalData);

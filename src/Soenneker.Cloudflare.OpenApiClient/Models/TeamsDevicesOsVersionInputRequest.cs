@@ -15,9 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Operating System.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest_operating_system? OperatingSystem { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem? OperatingSystem { get; set; }
         /// <summary>Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest_operator? Operator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequestOperator? Operator { get; set; }
         /// <summary>Operating System Distribution Name (linux only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,8 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest_operating_system>(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest_operator>(); } },
+                { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequestOperator>(); } },
                 { "os_distro_name", n => { OsDistroName = n.GetStringValue(); } },
                 { "os_distro_revision", n => { OsDistroRevision = n.GetStringValue(); } },
                 { "os_version_extra", n => { OsVersionExtra = n.GetStringValue(); } },
@@ -90,8 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest_operating_system>("operating_system", OperatingSystem);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest_operator>("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WindowsOperatingSystem>("operating_system", OperatingSystem);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequestOperator>("operator", Operator);
             writer.WriteStringValue("os_distro_name", OsDistroName);
             writer.WriteStringValue("os_distro_revision", OsDistroRevision);
             writer.WriteStringValue("os_version_extra", OsVersionExtra);

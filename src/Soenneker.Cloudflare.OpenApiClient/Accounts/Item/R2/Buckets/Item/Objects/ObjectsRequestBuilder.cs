@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2\buckets\{bucket_name}\objects
+    /// Builds and executes requests for operations under \accounts\{account-id}\r2\buckets\{bucketName}\objects
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ObjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.r2.buckets.item.objects.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.Item.WithObject_keyItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.Item.WithObject_keyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.Item.WithObjectKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.Item.WithObjectKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("object_key", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.Item.WithObject_keyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("objectKey", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.Item.WithObjectKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2/buckets/{bucket_name}/objects{?cursor*,delimiter*,per_page*,prefix*,start_after*}", pathParameters)
+        public ObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2/buckets/{bucketName}/objects{?cursor*,delimiter*,per_page*,prefix*,start_after*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2/buckets/{bucket_name}/objects{?cursor*,delimiter*,per_page*,prefix*,start_after*}", rawUrl)
+        public ObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2/buckets/{bucketName}/objects{?cursor*,delimiter*,per_page*,prefix*,start_after*}", rawUrl)
         {
         }
         /// <summary>
-        /// &quot;Deletes multiple objects from an R2 bucket. Two modes are supported:1. **Delete by list** (default): Provide a JSON array of object keys in the request body.   All listed objects are deleted; per-key errors are reported in the response.2. **Delete by prefix**: Provide the `prefix` query parameter (and an empty/no body)   to schedule deletion of every object whose key begins with the given prefix.   This kicks off an asynchronous prefix-delete job and returns the job descriptor.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.&quot;
+        /// Deletes the listed objects from an R2 bucket. Provide a JSON array of 1 to 1000 objectkeys in the request body.If any key cannot be deleted (for example, because it does not exist or is locked), theremaining keys are still deleted, but the response is HTTP 200 with `success: false`,`result: null` and one entry in `errors` per failed key. The entries in `errors` do notidentify which key failed.To delete every object under a prefix, or to empty a bucket, create a `prefixDelete` jobwith the Create Bucket Job endpoint instead. The `prefix` query parameter on this endpointis deprecated; it creates the same job, but responses to it carry a `Deprecation` headerand a message pointing to Create Bucket Job.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200?> DeleteAsync(List<string> body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200Response?> DeleteAsync(List<string> body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200> DeleteAsync(List<string> body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200Response> DeleteAsync(List<string> body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -69,22 +69,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objec
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.R2DeleteObjects200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists objects in an R2 bucket. Returns object metadata including key, size, etag, last modified date, HTTP metadata, and custom metadata.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder.ObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -92,10 +92,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objec
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2V4ResponseFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.R2ListObjects200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes multiple objects from an R2 bucket. Two modes are supported:1. **Delete by list** (default): Provide a JSON array of object keys in the request body.   All listed objects are deleted; per-key errors are reported in the response.2. **Delete by prefix**: Provide the `prefix` query parameter (and an empty/no body)   to schedule deletion of every object whose key begins with the given prefix.   This kicks off an asynchronous prefix-delete job and returns the job descriptor.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.&quot;
+        /// Deletes the listed objects from an R2 bucket. Provide a JSON array of 1 to 1000 objectkeys in the request body.If any key cannot be deleted (for example, because it does not exist or is locked), theremaining keys are still deleted, but the response is HTTP 200 with `success: false`,`result: null` and one entry in `errors` per failed key. The entries in `errors` do notidentify which key failed.To delete every object under a prefix, or to empty a bucket, create a `prefixDelete` jobwith the Create Bucket Job endpoint instead. The `prefix` query parameter on this endpointis deprecated; it creates the same job, but responses to it carry a `Deprecation` headerand a message pointing to Create Bucket Job.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,11 +145,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objec
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objects.ObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Deletes multiple objects from an R2 bucket. Two modes are supported:1. **Delete by list** (default): Provide a JSON array of object keys in the request body.   All listed objects are deleted; per-key errors are reported in the response.2. **Delete by prefix**: Provide the `prefix` query parameter (and an empty/no body)   to schedule deletion of every object whose key begins with the given prefix.   This kicks off an asynchronous prefix-delete job and returns the job descriptor.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.&quot;
+        /// Deletes the listed objects from an R2 bucket. Provide a JSON array of 1 to 1000 objectkeys in the request body.If any key cannot be deleted (for example, because it does not exist or is locked), theremaining keys are still deleted, but the response is HTTP 200 with `success: false`,`result: null` and one entry in `errors` per failed key. The entries in `errors` do notidentify which key failed.To delete every object under a prefix, or to empty a bucket, create a `prefixDelete` jobwith the Create Bucket Job endpoint instead. The `prefix` query parameter on this endpointis deprecated; it creates the same job, but responses to it carry a `Deprecation` headerand a message pointing to Create Bucket Job.For most workloads, we recommend using R2&apos;s [S3-compatible API](https://developers.cloudflare.com/r2/api/s3/api/) or a [Worker with an R2 binding](https://developers.cloudflare.com/r2/api/workers/workers-api-reference/) instead.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ObjectsRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>Deprecated. Create a `prefixDelete` job with the Create Bucket Job endpoint instead.When present, the request body is ignored and a prefix-delete job is created for thisprefix, exactly as Create Bucket Job does; an empty value empties the bucket. Theresponse is the job descriptor, with a `Deprecation` header and a deprecation messagein `messages`.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("prefix")]
@@ -168,41 +170,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Objec
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string? Cursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("delimiter")]
             public string? Delimiter { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("delimiter")]
             public string Delimiter { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("prefix")]
             public string? Prefix { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("prefix")]
             public string Prefix { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("start_after")]
             public string? StartAfter { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("start_after")]
             public string StartAfter { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

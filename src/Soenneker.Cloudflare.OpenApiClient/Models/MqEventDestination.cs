@@ -23,14 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string QueueId { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Type of destination</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesQueueType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestination"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "queue_id", n => { QueueId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesQueueType>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("queue_id", QueueId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesQueueType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

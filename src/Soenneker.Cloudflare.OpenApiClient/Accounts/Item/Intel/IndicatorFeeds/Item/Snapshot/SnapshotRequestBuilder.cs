@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\indicator-feeds\{feed_id}\snapshot
+    /// Builds and executes requests for operations under \accounts\{account-id}\intel\indicator-feeds\{feedId}\snapshot
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SnapshotRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SnapshotRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/indicator-feeds/{feed_id}/snapshot", pathParameters)
+        public SnapshotRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/indicator-feeds/{feedId}/snapshot", pathParameters)
         {
         }
         /// <summary>
@@ -30,17 +30,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SnapshotRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/indicator-feeds/{feed_id}/snapshot", rawUrl)
+        public SnapshotRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/indicator-feeds/{feedId}/snapshot", rawUrl)
         {
         }
         /// <summary>
-        /// Revises the raw data entries in a custom threat indicator feed.
+        /// Revises the raw data entries in a custom threat indicator feed.Accepts both plain and gzipped STIX2/CRDF bodies. Gzip isdetected by RFC 1952 magic bytes (`0x1f 0x8b`) and/or a `.gz`filename suffix (case-insensitive) — either signal alone issufficient to trigger the gzip path; if the body is not validgzip, the upload fails fast. Customers are encouraged to gziplarger uploads — the api-gateway 500 MB body cap applies tothe on-the-wire (compressed) size, so gzip lets a singleupload carry several GiB of decompressed STIX.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData413Response">When receiving a 413 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse?> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,12 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData4XX.CreateFromDiscriminatorValue },
+                { "413", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData413Response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateIndicatorFeedData4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsUpdateFeedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revises the raw data entries in a custom threat indicator feed.
+        /// Revises the raw data entries in a custom threat indicator feed.Accepts both plain and gzipped STIX2/CRDF bodies. Gzip isdetected by RFC 1952 magic bytes (`0x1f 0x8b`) and/or a `.gz`filename suffix (case-insensitive) — either signal alone issufficient to trigger the gzip path; if the body is not validgzip, the upload fails fast. Customers are encouraged to gziplarger uploads — the api-gateway 500 MB body cap applies tothe on-the-wire (compressed) size, so gzip lets a singleupload carry several GiB of decompressed STIX.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

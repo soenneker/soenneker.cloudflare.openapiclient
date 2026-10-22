@@ -50,6 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Priority of the routing rule.</summary>
         public double? Priority { get; set; }
+        /// <summary>Who manages the rule. `api` covers dashboard, generic API, and Terraform;`wrangler` means the rule is managed by a Worker&apos;s wrangler.jsonc. Defaultsto `api` when omitted on write.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource? Source { get; set; }
         /// <summary>Routing rule tag. (Deprecated, replaced by routing rule identifier)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public EmailRules()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "matchers", n => { Matchers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
@@ -105,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher>("matchers", Matchers);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>("source", Source);
             writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }

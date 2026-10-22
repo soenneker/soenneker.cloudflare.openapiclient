@@ -16,8 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of supported action.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleAction_type? Type { get; set; }
-        /// <summary>The value property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleActionType? Type { get; set; }
+        /// <summary>List of values for the action. Currently limited to a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Value { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleAction_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleActionType>(); } },
                 { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleAction_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleActionType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

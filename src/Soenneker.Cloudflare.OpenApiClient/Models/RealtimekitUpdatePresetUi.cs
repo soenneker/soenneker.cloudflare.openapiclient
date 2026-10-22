@@ -14,14 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config_diff property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUi_config_diff? ConfigDiff { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUi_config_diff ConfigDiff { get; set; }
-#endif
         /// <summary>The design_tokens property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +47,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config_diff", n => { ConfigDiff = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUi_config_diff>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUi_config_diff.CreateFromDiscriminatorValue); } },
                 { "design_tokens", n => { DesignTokens = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUi_config_diff>("config_diff", ConfigDiff);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetUiDesignTokens>("design_tokens", DesignTokens);
             writer.WriteAdditionalData(AdditionalData);
         }

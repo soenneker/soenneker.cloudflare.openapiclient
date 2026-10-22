@@ -53,26 +53,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_tools? Tools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools? Tools { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_tools Tools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools Tools { get; set; }
 #endif
         /// <summary>Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_triggers? Triggers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers? Triggers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_triggers Triggers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers Triggers { get; set; }
 #endif
         /// <summary>Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_variables? Variables { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables? Variables { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_variables Variables { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables Variables { get; set; }
 #endif
         /// <summary>Zaraz internal version of the config.</summary>
         public int? ZarazVersion { get; set; }
@@ -107,9 +107,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "debugKey", n => { DebugKey = n.GetStringValue(); } },
                 { "historyChange", n => { HistoryChange = n.GetBoolValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings.CreateFromDiscriminatorValue); } },
-                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_tools>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_tools.CreateFromDiscriminatorValue); } },
-                { "triggers", n => { Triggers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_triggers>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_triggers.CreateFromDiscriminatorValue); } },
-                { "variables", n => { Variables = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_variables>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_variables.CreateFromDiscriminatorValue); } },
+                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools.CreateFromDiscriminatorValue); } },
+                { "triggers", n => { Triggers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers.CreateFromDiscriminatorValue); } },
+                { "variables", n => { Variables = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables.CreateFromDiscriminatorValue); } },
                 { "zarazVersion", n => { ZarazVersion = n.GetIntValue(); } },
             };
         }
@@ -126,9 +126,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("debugKey", DebugKey);
             writer.WriteBoolValue("historyChange", HistoryChange);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBaseSettings>("settings", Settings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_tools>("tools", Tools);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_triggers>("triggers", Triggers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBody_variables>("variables", Variables);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTools>("tools", Tools);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyTriggers>("triggers", Triggers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZarazZarazConfigBodyVariables>("variables", Variables);
             writer.WriteIntValue("zarazVersion", ZarazVersion);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Password { get; set; }
 #endif
         /// <summary>The authentication scheme to use when making SCIM requests to this application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationHttpBasic_scheme? Scheme { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme? Scheme { get; set; }
         /// <summary>User name used to authenticate with the remote SCIM service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "password", n => { Password = n.GetStringValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationHttpBasic_scheme>(); } },
+                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme>(); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("password", Password);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigAuthenticationHttpBasic_scheme>("scheme", Scheme);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HttpbasicScheme>("scheme", Scheme);
             writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

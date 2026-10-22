@@ -39,13 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; private set; }
 #endif
-        /// <summary>The scope associated to the resource group</summary>
+        /// <summary>A scope is a combination of scope objects which provides additional context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope>? Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope? Scope { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope> Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope Scope { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroup"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroupMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroupMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamResourceGroupMeta>("meta", Meta);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope>("scope", Scope);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

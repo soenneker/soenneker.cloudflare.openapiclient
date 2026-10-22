@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether the Device IP profile is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>&quot;The wirefilter expression to match registrations. Available values: \&quot;identity.name\&quot;, \&quot;identity.email\&quot;, \&quot;identity.groups.id\&quot;, \&quot;identity.groups.name\&quot;, \&quot;identity.groups.email\&quot;, \&quot;identity.saml_attributes\&quot;.&quot;</summary>
+        /// <summary>The wirefilter expression to match registrations. Available values: &quot;identity.name&quot;, &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.saml_attributes&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Match { get; set; }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Configs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.IntegrationsOperations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\hyperdrive
+    /// Builds and executes requests for operations under \accounts\{account-id}\hyperdrive
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HyperdriveRequestBuilder : BaseRequestBuilder
@@ -20,12 +21,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Configs.ConfigsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The integrationsOperations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.IntegrationsOperations.IntegrationsOperationsRequestBuilder IntegrationsOperations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.IntegrationsOperations.IntegrationsOperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.HyperdriveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HyperdriveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/hyperdrive", pathParameters)
+        public HyperdriveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/hyperdrive", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HyperdriveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/hyperdrive", rawUrl)
+        public HyperdriveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/hyperdrive", rawUrl)
         {
         }
     }

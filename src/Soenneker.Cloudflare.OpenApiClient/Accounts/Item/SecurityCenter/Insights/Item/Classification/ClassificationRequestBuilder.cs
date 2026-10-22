@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Classification
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\security-center\insights\{issue_id}\classification
+    /// Builds and executes requests for operations under \accounts\{account-id}\security-center\insights\{issueId}\classification
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClassificationRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights/{issue_id}/classification", pathParameters)
+        public ClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights/{issueId}/classification", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights/{issue_id}/classification", rawUrl)
+        public ClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights/{issueId}/classification", rawUrl)
         {
         }
         /// <summary>
         /// Updates the user classification for a Security Center insight. Valid values are &apos;false_positive&apos; or &apos;accept_risk&apos;. To reset, set classification to null. Cannot change directly between classification values - must reset to null first.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassificationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassificationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassificationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassificationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateSecurityCenterInsightClassification200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the user classification for a Security Center insight. Valid values are &apos;false_positive&apos; or &apos;accept_risk&apos;. To reset, set classification to null. Cannot change directly between classification values - must reset to null first.

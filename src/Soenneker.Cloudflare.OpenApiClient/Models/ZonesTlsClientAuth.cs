@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesTlsClientAuth()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTlsClientAuthValue.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

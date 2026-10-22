@@ -29,12 +29,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? HeadSamplingRate { get; set; }
         /// <summary>Whether trace persistence is enabled for the Worker.</summary>
         public bool? Persist { get; set; }
+        /// <summary>Controls how inbound trace context (traceparent/tracestate) headers on incoming requests are handled. &quot;authenticated&quot; honors inbound trace context only when accompanied by a valid trace auth token. &quot;accept&quot; unconditionally accepts inbound trace context. Requires the trace propagation feature to be enabled. Returns null when the trace propagation feature is not enabled for the account.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTracesPropagationPolicy? PropagationPolicy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTraces"/> and sets the default values.
         /// </summary>
         public WorkersWorkerObservabilityTraces()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            HeadSamplingRate = 1;
+            Persist = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -58,6 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
                 { "persist", n => { Persist = n.GetBoolValue(); } },
+                { "propagation_policy", n => { PropagationPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTracesPropagationPolicy>(); } },
             };
         }
         /// <summary>
@@ -71,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
             writer.WriteBoolValue("persist", Persist);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservabilityTracesPropagationPolicy>("propagation_policy", PropagationPolicy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

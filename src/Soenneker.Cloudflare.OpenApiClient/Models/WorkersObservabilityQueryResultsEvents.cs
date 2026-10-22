@@ -28,18 +28,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of fields discovered in the matched events. Useful for building dynamic UIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_fields>? Fields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsFieldsItem>? Fields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_fields> Fields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsFieldsItem> Fields { get; set; }
 #endif
         /// <summary>Time-series data for the matched events, bucketed by the query granularity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_series>? Series { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsSeriesItem>? Series { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_series> Series { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsSeriesItem> Series { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents"/> and sets the default values.
@@ -68,8 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_fields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "series", n => { Series = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_series>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_series.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsFieldsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "series", n => { Series = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsSeriesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsSeriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("count", Count);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent>("events", Events);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_fields>("fields", Fields);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEvents_series>("series", Series);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsFieldsItem>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryResultsEventsSeriesItem>("series", Series);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

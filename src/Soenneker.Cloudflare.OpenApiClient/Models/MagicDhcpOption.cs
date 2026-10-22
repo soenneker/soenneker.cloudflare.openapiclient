@@ -17,8 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>DHCP option number (1-254). Options 0 and 255 are reserved by RFC 2132. Options 3, 6, and 51 are not allowed because they conflict with connector-managed configuration.</summary>
         public int? Code { get; set; }
-        /// <summary>&quot;The type of the option value. text: a string (max 255 bytes). hex: colon-separated hex bytes (e.g. \&quot;01:04:aa:bb:cc\&quot;, max 255 bytes). ip: an IPv4 address (e.g. \&quot;10.20.30.40\&quot;). byte: an unsigned integer 0-255 (1 byte). short: an unsigned integer 0-65535 (2 bytes). integer: an unsigned integer 0-4294967295 (4 bytes).&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption_type? Type { get; set; }
+        /// <summary>The type of the option value. text: a string (max 255 bytes). hex: colon-separated hex bytes (e.g. &quot;01:04:aa:bb:cc&quot;, max 255 bytes). ip: an IPv4 address (e.g. &quot;10.20.30.40&quot;). byte: an unsigned integer 0-255 (1 byte). short: an unsigned integer 0-65535 (2 bytes). integer: an unsigned integer 0-4294967295 (4 bytes).</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOptionType? Type { get; set; }
         /// <summary>The option value, interpreted according to the type field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOptionType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("code", Code);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOption_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicDhcpOptionType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

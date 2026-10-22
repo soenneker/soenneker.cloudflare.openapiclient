@@ -15,8 +15,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration target. You must set the target to `country` when specifying a country code in the rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallCountryConfiguration_target? Target { get; set; }
-        /// <summary>&quot;The two-letter ISO-3166-1 alpha-2 code to match. For more information, refer to [IP Access rules: Parameters](https://developers.cloudflare.com/waf/tools/ip-access-rules/parameters/#country).&quot;</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CountryTarget? Target { get; set; }
+        /// <summary>The two-letter ISO-3166-1 alpha-2 code to match. For more information, refer to [IP Access rules: Parameters](https://developers.cloudflare.com/waf/tools/ip-access-rules/parameters/#country).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallCountryConfiguration_target>(); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CountryTarget>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallCountryConfiguration_target>("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CountryTarget>("target", Target);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

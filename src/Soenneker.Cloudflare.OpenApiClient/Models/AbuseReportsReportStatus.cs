@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "in_review")]
         #pragma warning disable CS1591
-        In_review,
+        InReview,
         #pragma warning restore CS1591
     }
 }

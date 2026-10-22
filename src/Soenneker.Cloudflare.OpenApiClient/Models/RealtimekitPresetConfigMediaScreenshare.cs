@@ -16,9 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Frame rate of screen share</summary>
-        public int? FrameRate { get; set; }
+        public double? FrameRate { get; set; }
         /// <summary>Quality of screen share </summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshare_quality? Quality { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshareQuality? Quality { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshare"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frame_rate", n => { FrameRate = n.GetIntValue(); } },
-                { "quality", n => { Quality = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshare_quality>(); } },
+                { "frame_rate", n => { FrameRate = n.GetDoubleValue(); } },
+                { "quality", n => { Quality = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshareQuality>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("frame_rate", FrameRate);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshare_quality>("quality", Quality);
+            writer.WriteDoubleValue("frame_rate", FrameRate);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfigMediaScreenshareQuality>("quality", Quality);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\spectrum\analytics\events\summary
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\spectrum\analytics\events\summary
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
+        public SummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
+        public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,58 +92,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("dimensions")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary.GetDimensionsQueryParameterType[]? Dimensions { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsDimensionsItem[]? Dimensions { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("dimensions")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary.GetDimensionsQueryParameterType[] Dimensions { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsDimensionsItem[] Dimensions { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("filters")]
             public string? Filters { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("filters")]
             public string Filters { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("metrics")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary.GetMetricsQueryParameterType[]? Metrics { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsMetricsItem[]? Metrics { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("metrics")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary.GetMetricsQueryParameterType[] Metrics { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsMetricsItem[] Metrics { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
+            [QueryParameter("since")]
+            public DateTimeOffset? Since { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("since")]
-            public string? Since { get; set; }
-#nullable restore
-#else
-            [QueryParameter("since")]
-            public string Since { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string[]? Sort { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
+            #pragma warning restore CS1591
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("until")]
-            public string? Until { get; set; }
-#nullable restore
-#else
-            [QueryParameter("until")]
-            public string Until { get; set; }
-#endif
+            public DateTimeOffset? Until { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

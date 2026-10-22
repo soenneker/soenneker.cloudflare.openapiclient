@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls Mtls { get; set; }
 #endif
-        /// <summary>The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API.</summary>
+        /// <summary>The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API. An empty value leaves the name unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -41,12 +41,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatch_origin? Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatchOrigin? Origin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatch_origin Origin { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatchOrigin Origin { get; set; }
 #endif
-        /// <summary>&quot;The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts.If not specified, defaults to 20 for free tier and 60 for paid tier.Contact Cloudflare if you need a higher limit.&quot;</summary>
+        /// <summary>The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts.If not specified, defaults to 20 for free tier and 60 for paid tier.Certain Cloudflare-managed origins may be permitted a higher limit.Contact Cloudflare if you need a higher limit.</summary>
         public int? OriginConnectionLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatch"/> and sets the default values.
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "caching", n => { Caching = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCaching>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCaching.CreateFromDiscriminatorValue); } },
                 { "mtls", n => { Mtls = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatch_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatch_origin.CreateFromDiscriminatorValue); } },
+                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatchOrigin>(global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatchOrigin.CreateFromDiscriminatorValue); } },
                 { "origin_connection_limit", n => { OriginConnectionLimit = n.GetIntValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveCaching>("caching", Caching);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveMtls>("mtls", Mtls);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatch_origin>("origin", Origin);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveConfigPatchOrigin>("origin", Origin);
             writer.WriteIntValue("origin_connection_limit", OriginConnectionLimit);
             writer.WriteAdditionalData(AdditionalData);
         }

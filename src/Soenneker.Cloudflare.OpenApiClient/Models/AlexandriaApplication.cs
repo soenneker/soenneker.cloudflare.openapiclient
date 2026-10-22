@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Returns the score composition breakdown for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationScoreComposition? ApplicationScoreComposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition? ApplicationScoreComposition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationScoreComposition ApplicationScoreComposition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition ApplicationScoreComposition { get; set; }
 #endif
         /// <summary>Returns the application source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +48,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ApplicationTypeDescription { get; set; }
 #endif
+        /// <summary>Numeric identifier for an application category.</summary>
+        public long? CategoryId { get; set; }
         /// <summary>Returns the application creation time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>GenAI score for the application. Returns -1 when no score is available.</summary>
         public float? GenAiScore { get; set; }
-        /// <summary>Returns the list of hostnames for the application.</summary>
+        /// <summary>Hostnames matched by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Hostnames { get; set; }
@@ -66,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Hostnames { get; set; }
 #endif
-        /// <summary>Returns the human readable ID.</summary>
+        /// <summary>Human-readable identifier for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HumanId { get; set; }
@@ -74,17 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string HumanId { get; set; }
 #endif
-        /// <summary>Returns the application ID.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>Returns the Intel API ID for the application.</summary>
-        public long? IntelId { get; set; }
-        /// <summary>Returns the list of IP subnets for the application.</summary>
+        /// <summary>Numeric identifier for the application.</summary>
+        public long? Id { get; set; }
+        /// <summary>IP subnets for this application. Custom application create and update requests accept IPv4 prefix lengths /8 through /32 and IPv6 prefix lengths /32 through /128.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IpSubnets { get; set; }
@@ -92,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> IpSubnets { get; set; }
 #endif
-        /// <summary>Returns the application name.</summary>
+        /// <summary>Application name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -100,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Returns the list of port protocols for the application.</summary>
+        /// <summary>Ports matched by the application, in `protocol/port` or inclusive `protocol/start-end` format (for example, `tcp/443` or `udp/10000-20000`). TCP and UDP ports must be between 0 and 65535.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PortProtocols { get; set; }
@@ -108,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PortProtocols { get; set; }
 #endif
-        /// <summary>Returns the list of support domains for the application.</summary>
+        /// <summary>Support domains matched by the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportDomains { get; set; }
@@ -119,10 +113,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare products that support this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication_supported?>? Supported { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?>? Supported { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication_supported?> Supported { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?> Supported { get; set; }
 #endif
         /// <summary>Returns the application update time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,21 +160,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "application_confidence_score", n => { ApplicationConfidenceScore = n.GetFloatValue(); } },
-                { "application_score_composition", n => { ApplicationScoreComposition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationScoreComposition>(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationScoreComposition.CreateFromDiscriminatorValue); } },
+                { "application_score_composition", n => { ApplicationScoreComposition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition>(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition.CreateFromDiscriminatorValue); } },
                 { "application_source", n => { ApplicationSource = n.GetStringValue(); } },
                 { "application_type", n => { ApplicationType = n.GetStringValue(); } },
                 { "application_type_description", n => { ApplicationTypeDescription = n.GetStringValue(); } },
+                { "category_id", n => { CategoryId = n.GetLongValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "gen_ai_score", n => { GenAiScore = n.GetFloatValue(); } },
                 { "hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "human_id", n => { HumanId = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "intel_id", n => { IntelId = n.GetLongValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "ip_subnets", n => { IpSubnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "port_protocols", n => { PortProtocols = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "support_domains", n => { SupportDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "supported", n => { Supported = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication_supported>()?.AsList(); } },
+                { "supported", n => { Supported = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -193,21 +187,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteFloatValue("application_confidence_score", ApplicationConfidenceScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationScoreComposition>("application_score_composition", ApplicationScoreComposition);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationApplicationScoreComposition>("application_score_composition", ApplicationScoreComposition);
             writer.WriteStringValue("application_source", ApplicationSource);
             writer.WriteStringValue("application_type", ApplicationType);
             writer.WriteStringValue("application_type_description", ApplicationTypeDescription);
+            writer.WriteLongValue("category_id", CategoryId);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteFloatValue("gen_ai_score", GenAiScore);
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
             writer.WriteStringValue("human_id", HumanId);
-            writer.WriteStringValue("id", Id);
-            writer.WriteLongValue("intel_id", IntelId);
+            writer.WriteLongValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("ip_subnets", IpSubnets);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("port_protocols", PortProtocols);
             writer.WriteCollectionOfPrimitiveValues<string>("support_domains", SupportDomains);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplication_supported>("supported", Supported);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem>("supported", Supported);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

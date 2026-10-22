@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to enable public bucket access at the specified custom domain.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to previous value.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequest_minTLS? MinTLS { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls? MinTLS { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequest"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "minTLS", n => { MinTLS = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequest_minTLS>(); } },
+                { "minTLS", n => { MinTLS = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("ciphers", Ciphers);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequest_minTLS>("minTLS", MinTLS);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2EditCustomDomainRequestMinTls>("minTLS", MinTLS);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

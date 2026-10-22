@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The pool property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalytics_pool? Pool { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalyticsPoolProperty? Pool { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalytics_pool Pool { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalyticsPoolProperty Pool { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
         public DateTimeOffset? Timestamp { get; set; }
@@ -40,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingAnalytics()
         {
             AdditionalData = new Dictionary<string, object>();
+            Id = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "origins", n => { Origins = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginAnalytics>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginAnalytics.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pool", n => { Pool = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalytics_pool>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalytics_pool.CreateFromDiscriminatorValue); } },
+                { "pool", n => { Pool = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalyticsPoolProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalyticsPoolProperty.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -74,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingOriginAnalytics>("origins", Origins);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalytics_pool>("pool", Pool);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAnalyticsPoolProperty>("pool", Pool);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

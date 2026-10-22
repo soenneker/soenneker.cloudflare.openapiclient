@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\connectors
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\connectors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.connectors.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnector_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnector_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnectorItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnectorItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("connector_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnector_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("connectorId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors{?device_type*}", pathParameters)
+        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors{?device_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,13 +43,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors{?device_type*}", rawUrl)
+        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors{?device_type*}", rawUrl)
         {
         }
         /// <summary>
-        /// List Connectors
+        /// Lists Magic WAN Connectors.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorListResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse">When receiving a 400 status code</exception>
@@ -58,11 +58,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder.ConnectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -73,12 +73,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a connector to your account
+        /// Creates a Magic WAN Connector.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,11 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -108,10 +108,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MconnBadResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Connectors
+        /// Lists Magic WAN Connectors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,18 +130,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
             return requestInfo;
         }
         /// <summary>
-        /// Add a connector to your account
+        /// Creates a Magic WAN Connector.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnCustomerConnectorsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -161,14 +161,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List Connectors
+        /// Lists Magic WAN Connectors.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConnectorsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter connectors by device type.</summary>
             [QueryParameter("device_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.GetDevice_typeQueryParameterType? DeviceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnConnectorsListDeviceTypeParameter? DeviceType { get; set; }
         }
     }
 }

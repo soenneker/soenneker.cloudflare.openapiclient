@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categor
         /// <summary>
         /// Retrieves the top domain categories by the number of robots.txt files parsed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsed200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top domain categories by the number of robots.txt files parsed.
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categor
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetRobotsTxtTopDomainCategoriesByFilesParsedFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categor
 #endif
             /// <summary>Filters results by user agent category.</summary>
             [QueryParameter("userAgentCategory")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.GetUserAgentCategoryQueryParameterType? UserAgentCategory { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AiUserAgentCategory? UserAgentCategory { get; set; }
         }
     }
 }

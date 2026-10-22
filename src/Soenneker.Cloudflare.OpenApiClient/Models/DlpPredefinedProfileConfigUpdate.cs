@@ -51,7 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DlpPredefinedProfileConfigUpdate()
         {
             AdditionalData = new Dictionary<string, object>();
+            AiContextEnabled = false;
+            AllowedMatchCount = 0;
             ConfidenceThreshold = "low";
+            OcrEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

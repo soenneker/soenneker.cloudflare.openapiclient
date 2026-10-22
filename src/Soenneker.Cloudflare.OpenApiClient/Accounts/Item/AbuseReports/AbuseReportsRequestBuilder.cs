@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Submitted;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -13,21 +14,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\abuse-reports
+    /// Builds and executes requests for operations under \accounts\{account-id}\abuse-reports
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbuseReportsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The submitted property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Submitted.SubmittedRequestBuilder Submitted
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Submitted.SubmittedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.abuseReports.item collection</summary>
-        /// <param name="position">Identifier of the abuse report</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Report_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Report_ItemRequestBuilder this[string position]
+        /// <param name="position">Public report ID.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.ReportItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.ReportItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("report_%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Report_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("report%2Did", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.ReportItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,sort*,status*,type*}", pathParameters)
+        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,34 +49,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,sort*,status*,type*}", rawUrl)
+        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// List the abuse reports for a given account
+        /// List abuse reports made against domains or other content associated with the account. To list reports that the account submitted, use the submitted abuse reports endpoint instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCloudflareApiErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports500Response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder.AbuseReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder.AbuseReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder.AbuseReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder.AbuseReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports500.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCloudflareApiErrorResponse.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports500Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the abuse reports for a given account
+        /// List abuse reports made against domains or other content associated with the account. To list reports that the account submitted, use the submitted abuse reports endpoint instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the abuse reports for a given account
+        /// List abuse reports made against domains or other content associated with the account. To list reports that the account submitted, use the submitted abuse reports endpoint instead.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AbuseReportsRequestBuilderGetQueryParameters 
@@ -142,6 +150,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
             /// <summary>How many abuse reports per page to list</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Free-text search. Returns reports whose report ID starts with the term or whose domain contains the term, both case-insensitively. Surrounding whitespace is ignored, and an empty value is treated as absent. Combined with the other filters using AND.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
             /// <summary>A property to sort by, followed by the order (id, cdate, domain, type, status)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

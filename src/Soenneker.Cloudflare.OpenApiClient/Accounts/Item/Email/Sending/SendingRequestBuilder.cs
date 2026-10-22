@@ -2,11 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Feedback;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Limits;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Messages;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Reputation;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send_raw;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppressions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -14,20 +16,25 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email\sending
+    /// Builds and executes requests for operations under \accounts\{account-id}\email\sending
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SendingRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The feedback property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Feedback.FeedbackRequestBuilder Feedback
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Feedback.FeedbackRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The limits property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Limits.LimitsRequestBuilder Limits
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Limits.LimitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The messages property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Messages.MessagesRequestBuilder Messages
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The reputation property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Reputation.ReputationRequestBuilder Reputation
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Reputation.ReputationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The send property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Send.SendRequestBuilder Send
@@ -44,12 +51,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppression.SuppressionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The suppressions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppressions.SuppressionsRequestBuilder Suppressions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppressions.SuppressionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.SendingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/sending", pathParameters)
+        public SendingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending", pathParameters)
         {
         }
         /// <summary>
@@ -57,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/sending", rawUrl)
+        public SendingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending", rawUrl)
         {
         }
     }

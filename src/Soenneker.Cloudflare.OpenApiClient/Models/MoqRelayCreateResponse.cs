@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Relay with auto-generated tokens (shown once).
+    /// Relay with its auto-created default token pair (one full-access[publish, subscribe] and one [subscribe]-only), each with its one-timesecret, wrapped in the issuers envelope.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MoqRelayCreateResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>origin_fallback and lingering_subscribe are mutually exclusive.</summary>
+        /// <summary>Relay configuration. All sub-objects use whole-object replacement whenpresent; omitted sub-objects preserve the existing value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelayConfig? Config { get; set; }
@@ -25,6 +25,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created property</summary>
         public DateTimeOffset? Created { get; set; }
+        /// <summary>Token collection (discriminated union on `type`). On create thisholds the auto-created default pair, each including its one-timesecret.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer>? Issuers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer> Issuers { get; set; }
+#endif
         /// <summary>The modified property</summary>
         public DateTimeOffset? Modified { get; set; }
         /// <summary>The name property</summary>
@@ -34,22 +42,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
-#endif
-        /// <summary>Full access token (publish + subscribe). Treat as sensitive.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenPublishSubscribe { get; set; }
-#nullable restore
-#else
-        public string TokenPublishSubscribe { get; set; }
-#endif
-        /// <summary>Subscribe-only token. Treat as sensitive.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenSubscribe { get; set; }
-#nullable restore
-#else
-        public string TokenSubscribe { get; set; }
 #endif
         /// <summary>Server-generated unique identifier (32 hex chars).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,10 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelayConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelayConfig.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "issuers", n => { Issuers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "token_publish_subscribe", n => { TokenPublishSubscribe = n.GetStringValue(); } },
-                { "token_subscribe", n => { TokenSubscribe = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -102,10 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelayConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer>("issuers", Issuers);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("token_publish_subscribe", TokenPublishSubscribe);
-            writer.WriteStringValue("token_subscribe", TokenSubscribe);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

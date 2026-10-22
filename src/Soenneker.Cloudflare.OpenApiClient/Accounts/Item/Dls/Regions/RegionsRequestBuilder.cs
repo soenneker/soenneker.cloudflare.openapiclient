@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dls\regions
+    /// Builds and executes requests for operations under \accounts\{account-id}\dls\regions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dls.regions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.Item.WithRegion_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.Item.WithRegion_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.Item.WithRegionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.Item.WithRegionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("region_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.Item.WithRegion_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("regionId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.Item.WithRegionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dls/regions{?cursor*,per_page*,type*}", pathParameters)
+        public RegionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dls/regions{?cursor*,per_page*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dls/regions{?cursor*,per_page*,type*}", rawUrl)
+        public RegionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dls/regions{?cursor*,per_page*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// List DLS regions for an account
+        /// List the DLS regions (managed and custom) available to an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlsRegionPublicPaginatedListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlsRegionPublicPaginatedListResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlsRegionPublicPaginatedListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List DLS regions for an account
+        /// List the DLS regions (managed and custom) available to an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.RegionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List DLS regions for an account
+        /// List the DLS regions (managed and custom) available to an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegionsRequestBuilderGetQueryParameters 
@@ -119,11 +119,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Filter regions by type. Omit to return all regions.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.Regions.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicListRegionsTypeParameter? Type { get; set; }
         }
     }
 }

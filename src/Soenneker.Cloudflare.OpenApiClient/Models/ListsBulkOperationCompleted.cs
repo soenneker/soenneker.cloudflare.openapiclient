@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The current status of the asynchronous operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationCompleted_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CompletedStatus? Status { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationCompleted"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "completed", n => { Completed = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationCompleted_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CompletedStatus>(); } },
             };
         }
         /// <summary>

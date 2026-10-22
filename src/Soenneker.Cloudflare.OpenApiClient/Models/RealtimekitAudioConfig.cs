@@ -16,9 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Audio signal pathway within an audio file that carries a specific sound source.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_channel? Channel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel? Channel { get; set; }
         /// <summary>Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_codec? Codec { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec? Codec { get; set; }
         /// <summary>Controls whether to export audio file seperately</summary>
         public bool? ExportFile { get; set; }
         /// <summary>
@@ -27,8 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RealtimekitAudioConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            Channel = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_channel.Stereo;
-            Codec = global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_codec.AAC;
+            ExportFile = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "channel", n => { Channel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_channel>(); } },
-                { "codec", n => { Codec = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_codec>(); } },
+                { "channel", n => { Channel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel>(); } },
+                { "codec", n => { Codec = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec>(); } },
                 { "export_file", n => { ExportFile = n.GetBoolValue(); } },
             };
         }
@@ -60,8 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_channel>("channel", Channel);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig_codec>("codec", Codec);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigChannel>("channel", Channel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfigCodec>("codec", Codec);
             writer.WriteBoolValue("export_file", ExportFile);
             writer.WriteAdditionalData(AdditionalData);
         }

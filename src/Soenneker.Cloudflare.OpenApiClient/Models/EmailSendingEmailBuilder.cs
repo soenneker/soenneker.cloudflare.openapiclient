@@ -15,44 +15,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>File attachments and inline images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments>? Attachments { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderAttachmentsItem>? Attachments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments> Attachments { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderAttachmentsItem> Attachments { get; set; }
 #endif
-        /// <summary>BCC recipient(s). A single email string or an array of email strings.</summary>
+        /// <summary>Blind carbon copy recipient(s). Optional. A single email string, a named address object, or an array of either.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc? Bcc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderBcc? Bcc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc Bcc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderBcc Bcc { get; set; }
 #endif
-        /// <summary>CC recipient(s). A single email string or an array of email strings.</summary>
+        /// <summary>Carbon copy recipient(s). Optional. A single email string, a named address object, or an array of either.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc? Cc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderCc? Cc { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc Cc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderCc Cc { get; set; }
 #endif
         /// <summary>Sender email address. Either a plain string or an object with address and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from? From { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderFrom? From { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from From { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderFrom From { get; set; }
 #endif
         /// <summary>Custom email headers as key-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder_headers? Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderHeadersProperty? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder_headers Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderHeadersProperty Headers { get; set; }
 #endif
-        /// <summary>HTML body of the email. At least one of text or html must be provided.</summary>
+        /// <summary>HTML body of the email. Provide at least one of text or html (non-empty).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Html { get; set; }
@@ -63,10 +63,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Reply-to address. Either a plain string or an object with address and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to? ReplyTo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderReplyTo? ReplyTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to ReplyTo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderReplyTo ReplyTo { get; set; }
 #endif
         /// <summary>Email subject line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Subject { get; set; }
 #endif
-        /// <summary>Plain text body of the email. At least one of text or html must be provided.</summary>
+        /// <summary>Plain text body of the email. Provide at least one of text or html (non-empty).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -84,13 +84,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>Recipient(s). A single email string or an array of email strings.</summary>
+        /// <summary>Recipient(s). Optional if cc or bcc is provided. A single email string, a named address object, or an array of either.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to? To { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderTo? To { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to To { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderTo To { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -110,16 +110,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "bcc", n => { Bcc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc.CreateFromDiscriminatorValue); } },
-                { "cc", n => { Cc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc.CreateFromDiscriminatorValue); } },
-                { "from", n => { From = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from.CreateFromDiscriminatorValue); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder_headers.CreateFromDiscriminatorValue); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderAttachmentsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderAttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "bcc", n => { Bcc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderBcc>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderBcc.CreateFromDiscriminatorValue); } },
+                { "cc", n => { Cc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderCc>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderCc.CreateFromDiscriminatorValue); } },
+                { "from", n => { From = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderFrom>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderFrom.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderHeadersProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "html", n => { Html = n.GetStringValue(); } },
-                { "reply_to", n => { ReplyTo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to.CreateFromDiscriminatorValue); } },
+                { "reply_to", n => { ReplyTo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderReplyTo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderReplyTo.CreateFromDiscriminatorValue); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "to", n => { To = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to.CreateFromDiscriminatorValue); } },
+                { "to", n => { To = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderTo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderTo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,466 +129,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments>("attachments", Attachments);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc>("bcc", Bcc);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc>("cc", Cc);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from>("from", From);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder_headers>("headers", Headers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderAttachmentsItem>("attachments", Attachments);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderBcc>("bcc", Bcc);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderCc>("cc", Cc);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderFrom>("from", From);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderHeadersProperty>("headers", Headers);
             writer.WriteStringValue("html", Html);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to>("reply_to", ReplyTo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderReplyTo>("reply_to", ReplyTo);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("text", Text);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to>("to", To);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmailSendingEmailBuilder_attachments : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment? EmailSendingEmailAttachment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment EmailSendingEmailAttachment { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment? EmailSendingEmailInlineAttachment { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment EmailSendingEmailInlineAttachment { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("disposition")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_attachments();
-                if("attachment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailAttachment = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment();
-                }
-                else if("inline".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailInlineAttachment = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmailSendingEmailAttachment != null)
-                {
-                    return EmailSendingEmailAttachment.GetFieldDeserializers();
-                }
-                else if(EmailSendingEmailInlineAttachment != null)
-                {
-                    return EmailSendingEmailInlineAttachment.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmailSendingEmailAttachment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAttachment>(null, EmailSendingEmailAttachment);
-                }
-                else if(EmailSendingEmailInlineAttachment != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailInlineAttachment>(null, EmailSendingEmailInlineAttachment);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmailSendingEmailBuilder_bcc : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper? EmailSendingEmailAddressListWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper EmailSendingEmailAddressListWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_bcc();
-                if("EmailSendingEmailAddressList_Wrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailAddressListWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmailSendingEmailAddressListWrapper != null)
-                {
-                    return EmailSendingEmailAddressListWrapper.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmailSendingEmailAddressListWrapper != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper>(null, EmailSendingEmailAddressListWrapper);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmailSendingEmailBuilder_cc : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper? EmailSendingEmailAddressListWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper EmailSendingEmailAddressListWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_cc();
-                if("EmailSendingEmailAddressList_Wrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailAddressListWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmailSendingEmailAddressListWrapper != null)
-                {
-                    return EmailSendingEmailAddressListWrapper.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmailSendingEmailAddressListWrapper != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper>(null, EmailSendingEmailAddressListWrapper);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmailSendingEmailBuilder_from : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject? EmailSendingEmailAddressObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject EmailSendingEmailAddressObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_from();
-                if("EmailSendingEmailAddressObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailAddressObject = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmailSendingEmailAddressObject != null)
-                {
-                    return EmailSendingEmailAddressObject.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmailSendingEmailAddressObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject>(null, EmailSendingEmailAddressObject);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmailSendingEmailBuilder_reply_to : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject? EmailSendingEmailAddressObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject EmailSendingEmailAddressObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_reply_to();
-                if("EmailSendingEmailAddressObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailAddressObject = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmailSendingEmailAddressObject != null)
-                {
-                    return EmailSendingEmailAddressObject.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmailSendingEmailAddressObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressObject>(null, EmailSendingEmailAddressObject);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmailSendingEmailBuilder_to : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper? EmailSendingEmailAddressListWrapper { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper EmailSendingEmailAddressListWrapper { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilder.EmailSendingEmailBuilder_to();
-                if("EmailSendingEmailAddressList_Wrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EmailSendingEmailAddressListWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper();
-                }
-                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmailSendingEmailAddressListWrapper != null)
-                {
-                    return EmailSendingEmailAddressListWrapper.GetFieldDeserializers();
-                }
-                else if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmailSendingEmailAddressListWrapper != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailAddressList_Wrapper>(null, EmailSendingEmailAddressListWrapper);
-                }
-                else if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingEmailBuilderTo>("to", To);
         }
     }
 }

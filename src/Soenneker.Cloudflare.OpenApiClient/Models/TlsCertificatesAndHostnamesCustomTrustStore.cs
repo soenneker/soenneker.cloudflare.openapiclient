@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the certificate expires.</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
-        /// <summary>Identifier.</summary>
+        /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Signature { get; set; }
 #endif
         /// <summary>Status of the zone&apos;s custom SSL.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus7? Status { get; private set; }
         /// <summary>When the certificate was last modified.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>When the certificate was uploaded to Cloudflare.</summary>
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus7>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };

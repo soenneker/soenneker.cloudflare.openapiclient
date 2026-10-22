@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerMetadata Metadata { get; set; }
 #endif
         /// <summary>What caused the deployment.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerMetadata.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerMetadata>("metadata", Metadata);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTrigger_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDeploymentDeploymentTriggerType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

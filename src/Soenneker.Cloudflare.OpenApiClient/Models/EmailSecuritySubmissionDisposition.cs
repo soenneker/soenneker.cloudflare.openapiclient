@@ -3,34 +3,33 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The disposition a message is submitted to have.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum EmailSecuritySubmissionDisposition
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "MALICIOUS")]
         #pragma warning disable CS1591
-        MALICIOUS,
+        Malicious,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUSPICIOUS")]
         #pragma warning disable CS1591
-        SUSPICIOUS,
+        Suspicious,
         #pragma warning restore CS1591
         [EnumMember(Value = "SPOOF")]
         #pragma warning disable CS1591
-        SPOOF,
+        Spoof,
         #pragma warning restore CS1591
         [EnumMember(Value = "SPAM")]
         #pragma warning disable CS1591
-        SPAM,
+        Spam,
         #pragma warning restore CS1591
         [EnumMember(Value = "BULK")]
         #pragma warning disable CS1591
-        BULK,
+        Bulk,
         #pragma warning restore CS1591
         [EnumMember(Value = "NONE")]
         #pragma warning disable CS1591
-        NONE,
+        None,
         #pragma warning restore CS1591
     }
 }

@@ -65,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta Meta { get; set; }
 #endif
         /// <summary>The date and time the media item was last modified.</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -178,7 +178,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "liveInput", n => { LiveInput = n.GetStringValue(); } },
                 { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "maxSizeBytes", n => { MaxSizeBytes = n.GetLongValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "playback", n => { Playback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback.CreateFromDiscriminatorValue); } },
                 { "preview", n => { Preview = n.GetStringValue(); } },
@@ -213,7 +213,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("liveInput", LiveInput);
             writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
             writer.WriteLongValue("maxSizeBytes", MaxSizeBytes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideos_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamVideosMeta>("meta", Meta);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamPlayback>("playback", Playback);
             writer.WriteStringValue("preview", Preview);

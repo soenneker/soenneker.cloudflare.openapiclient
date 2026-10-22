@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Schema { get; set; }
 #endif
         /// <summary>The level of adherence to outbound resource schemas when provisioning to this mapping. ‘Strict’ removes unknown values, while ‘passthrough’ passes unknown values to the target.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping_strictness? Strictness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMappingStrictness? Strictness { get; set; }
         /// <summary>A [JSONata](https://jsonata.org/) expression that transforms the resource before provisioning it in the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "operations", n => { Operations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMappingOperations>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMappingOperations.CreateFromDiscriminatorValue); } },
                 { "schema", n => { Schema = n.GetStringValue(); } },
-                { "strictness", n => { Strictness = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping_strictness>(); } },
+                { "strictness", n => { Strictness = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMappingStrictness>(); } },
                 { "transform_jsonata", n => { TransformJsonata = n.GetStringValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("filter", Filter);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMappingOperations>("operations", Operations);
             writer.WriteStringValue("schema", Schema);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMapping_strictness>("strictness", Strictness);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMappingStrictness>("strictness", Strictness);
             writer.WriteStringValue("transform_jsonata", TransformJsonata);
             writer.WriteAdditionalData(AdditionalData);
         }

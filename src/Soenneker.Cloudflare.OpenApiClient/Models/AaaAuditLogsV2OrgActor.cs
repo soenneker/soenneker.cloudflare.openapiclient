@@ -14,8 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The context property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor_context? Context { get; set; }
+        /// <summary>The context in which the action was initiated.- `api`: The action was performed through the API. The specific credential type was not recorded.- `api_key`: The action was authenticated with a Cloudflare Global API Key.- `api_token`: The action was authenticated with an API token.- `dash`: The action was performed through the Cloudflare dashboard.- `oauth`: The action was authenticated with an OAuth token.- `origin_ca_key`: The action was authenticated with an Origin CA key.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogActorBaseContext? Context { get; set; }
         /// <summary>The email of the actor who performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string TokenName { get; set; }
 #endif
         /// <summary>The type of actor.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActorType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor"/> and sets the default values.
         /// </summary>
@@ -83,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor_context>(); } },
+                { "context", n => { Context = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogActorBaseContext>(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip_address", n => { IpAddress = n.GetStringValue(); } },
                 { "token_id", n => { TokenId = n.GetStringValue(); } },
                 { "token_name", n => { TokenName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActorType>(); } },
             };
         }
         /// <summary>
@@ -99,13 +99,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor_context>("context", Context);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogActorBaseContext>("context", Context);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip_address", IpAddress);
             writer.WriteStringValue("token_id", TokenId);
             writer.WriteStringValue("token_name", TokenName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActor_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgActorType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

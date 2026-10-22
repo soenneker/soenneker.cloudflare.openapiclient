@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\devices\registrations
+    /// Builds and executes requests for operations under \accounts\{account-id}\devices\registrations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrationsRequestBuilder : BaseRequestBuilder
@@ -32,14 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.devices.registrations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Item.WithRegistration_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Item.WithRegistration_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Item.WithRegistrationItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Item.WithRegistrationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("registration_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Item.WithRegistration_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("registrationId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.Item.WithRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices/registrations?id={id}{&cursor,device%2Eid,include*,per_page,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", pathParameters)
+        public RegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/registrations{?cursor,device%2Eid,include*,per_page,policy%2Eid,registration_type,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,44 +55,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices/registrations?id={id}{&cursor,device%2Eid,include*,per_page,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", rawUrl)
+        public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/registrations{?cursor,device%2Eid,include*,per_page,policy%2Eid,registration_type,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", rawUrl)
         {
         }
         /// <summary>
         /// Deletes a list of WARP registrations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteRegistrations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists WARP registrations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesV4ErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListRegistrations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a list of WARP registrations.
@@ -108,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/accounts/{account_identifier%2Did}/devices/registrations?id={id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/accounts/{account%2Did}/devices/registrations{?id*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -127,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/accounts/{account_identifier%2Did}/devices/registrations{?cursor,device%2Eid,id*,include*,per_page,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -194,7 +204,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
-            /// <summary>&quot;Comma-separated list of additional information that should be included in the registration response. Supported values are: \&quot;policy\&quot;.&quot;</summary>
+            /// <summary>Comma-separated list of additional information that should be included in the registration response. Supported values are: &quot;policy&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
@@ -207,6 +217,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             /// <summary>The maximum number of devices to return in a single response.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Filter by the ID of the device settings profile assigned to the registration.</summary>
+            [QueryParameter("policy%2Eid")]
+            public Guid? PolicyId { get; set; }
+            /// <summary>Filter by registration client type.</summary>
+            [QueryParameter("registration_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesRegistrationType? RegistrationType { get; set; }
             /// <summary>Filter by registration details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -239,13 +255,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
 #endif
             /// <summary>The registration field to order results by.</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.GetSort_byQueryParameterType? SortBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesListRegistrationsParamSortBy? SortBy { get; set; }
             /// <summary>Sort direction.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.GetSort_orderQueryParameterType? SortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesListRegistrationsParamSortOrder? SortOrder { get; set; }
             /// <summary>Filter by registration status. Defaults to &apos;active&apos;.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDevicesListRegistrationsParamStatus? Status { get; set; }
             /// <summary>Filter by user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

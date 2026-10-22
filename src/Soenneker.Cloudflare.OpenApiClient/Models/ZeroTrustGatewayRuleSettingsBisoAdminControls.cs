@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_copy? Copy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Copy { get; set; }
         /// <summary>Set to false to enable copy-pasting. Only applies when `version == &quot;v1&quot;`.</summary>
         public bool? Dcp { get; set; }
         /// <summary>Set to false to enable downloading. Only applies when `version == &quot;v1&quot;`.</summary>
@@ -24,21 +24,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Set to false to enable keyboard usage. Only applies when `version == &quot;v1&quot;`.</summary>
         public bool? Dk { get; set; }
         /// <summary>Configure download behavior. When set to remote_only, users can view downloads but cannot save them. If this field is absent, downloading remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_download? Download { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Download { get; set; }
         /// <summary>Set to false to enable printing. Only applies when `version == &quot;v1&quot;`.</summary>
         public bool? Dp { get; set; }
         /// <summary>Set to false to enable uploading. Only applies when `version == &quot;v1&quot;`.</summary>
         public bool? Du { get; set; }
         /// <summary>Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_keyboard? Keyboard { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Keyboard { get; set; }
         /// <summary>Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_paste? Paste { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Paste { get; set; }
         /// <summary>Configure print behavior. Default, Printing is enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_printing? Printing { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Printing { get; set; }
         /// <summary>Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == &quot;v2&quot;.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_upload? Upload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Upload { get; set; }
         /// <summary>Indicate which version of the browser isolation controls should apply.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_version? Version { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? Version { get; set; }
         /// <summary>Specify the watermark ID (UUID) to apply to the isolated browser session. When present, enables watermark rendering in the isolated browser.</summary>
         public Guid? WmId { get; set; }
         /// <summary>
@@ -47,7 +47,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGatewayRuleSettingsBisoAdminControls()
         {
             AdditionalData = new Dictionary<string, object>();
-            Version = global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_version.V1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,18 +66,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "copy", n => { Copy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_copy>(); } },
+                { "copy", n => { Copy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy>(); } },
                 { "dcp", n => { Dcp = n.GetBoolValue(); } },
                 { "dd", n => { Dd = n.GetBoolValue(); } },
                 { "dk", n => { Dk = n.GetBoolValue(); } },
-                { "download", n => { Download = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_download>(); } },
+                { "download", n => { Download = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload>(); } },
                 { "dp", n => { Dp = n.GetBoolValue(); } },
                 { "du", n => { Du = n.GetBoolValue(); } },
-                { "keyboard", n => { Keyboard = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_keyboard>(); } },
-                { "paste", n => { Paste = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_paste>(); } },
-                { "printing", n => { Printing = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_printing>(); } },
-                { "upload", n => { Upload = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_upload>(); } },
-                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_version>(); } },
+                { "keyboard", n => { Keyboard = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard>(); } },
+                { "paste", n => { Paste = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste>(); } },
+                { "printing", n => { Printing = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting>(); } },
+                { "upload", n => { Upload = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload>(); } },
+                { "version", n => { Version = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion>(); } },
                 { "wm_id", n => { WmId = n.GetGuidValue(); } },
             };
         }
@@ -89,18 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_copy>("copy", Copy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy>("copy", Copy);
             writer.WriteBoolValue("dcp", Dcp);
             writer.WriteBoolValue("dd", Dd);
             writer.WriteBoolValue("dk", Dk);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_download>("download", Download);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload>("download", Download);
             writer.WriteBoolValue("dp", Dp);
             writer.WriteBoolValue("du", Du);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_keyboard>("keyboard", Keyboard);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_paste>("paste", Paste);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_printing>("printing", Printing);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_upload>("upload", Upload);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControls_version>("version", Version);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard>("keyboard", Keyboard);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste>("paste", Paste);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting>("printing", Printing);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload>("upload", Upload);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion>("version", Version);
             writer.WriteGuidValue("wm_id", WmId);
             writer.WriteAdditionalData(AdditionalData);
         }

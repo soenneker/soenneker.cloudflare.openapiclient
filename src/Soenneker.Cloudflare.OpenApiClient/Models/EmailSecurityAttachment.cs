@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>MIME type of the attachment</summary>
+        /// <summary>MIME type of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType { get; set; }
@@ -22,17 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ContentType { get; set; }
 #endif
-        /// <summary>Detection result for this attachment</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachment_detection? Detection { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachment_detection Detection { get; set; }
-#endif
-        /// <summary>Whether the attachment is encrypted</summary>
+        /// <summary>The verdict Email Security assigns to a message.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachmentDetection? Detection { get; set; }
+        /// <summary>Whether the attachment is encrypted.</summary>
         public bool? Encrypted { get; set; }
-        /// <summary>Name of the attached file</summary>
+        /// <summary>Name of the attached file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filename { get; set; }
@@ -40,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filename { get; set; }
 #endif
-        /// <summary>MD5 hash of the attachment</summary>
+        /// <summary>MD5 hash of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Md5 { get; set; }
@@ -48,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Md5 { get; set; }
 #endif
-        /// <summary>Attachment name (alternative to filename)</summary>
+        /// <summary>Attachment name (alternative to filename).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>SHA1 hash of the attachment</summary>
+        /// <summary>SHA1 hash of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sha1 { get; set; }
@@ -64,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Sha1 { get; set; }
 #endif
-        /// <summary>SHA256 hash of the attachment</summary>
+        /// <summary>SHA256 hash of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sha256 { get; set; }
@@ -72,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Sha256 { get; set; }
 #endif
-        /// <summary>Size of the attachment in bytes</summary>
+        /// <summary>Size of the attachment in bytes.</summary>
         public int? Size { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachment"/> and sets the default values.
@@ -100,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "detection", n => { Detection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachment_detection>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachment_detection.CreateFromDiscriminatorValue); } },
+                { "detection", n => { Detection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachmentDetection>(); } },
                 { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "md5", n => { Md5 = n.GetStringValue(); } },
@@ -118,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_type", ContentType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachment_detection>("detection", Detection);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAttachmentDetection>("detection", Detection);
             writer.WriteBoolValue("encrypted", Encrypted);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("md5", Md5);

@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4error>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4Error>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4error> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4Error> Errors { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseCollection_result? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientObject>? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseCollection_result Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientObject> Result { get; set; }
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,8 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4error>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4error.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseCollection_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseCollection_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4Error>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4Error.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientObject>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -78,8 +78,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4error>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientResponseCollection_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingV4Error>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareRecipientObject>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

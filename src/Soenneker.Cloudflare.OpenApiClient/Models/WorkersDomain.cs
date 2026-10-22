@@ -16,14 +16,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the TLS certificate issued for the domain.</summary>
         public Guid? CertId { get; private set; }
+        /// <summary>Whether the configured hostname is routable for the domain. If disabled, then requests to the configured hostname will not be routed to the configured Worker. If disabled, then preview routing must be enabled, and only subdomains of the configured hostname will be routable.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>Worker environment associated with the domain.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get; set; }
+        public string? Environment { get; private set; }
 #nullable restore
 #else
-        public string Environment { get; set; }
+        public string Environment { get; private set; }
 #endif
         /// <summary>Hostname of the domain. Can be either the zone apex or a subdomain of the zone. Requests to this hostname will be routed to the configured Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,6 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
+        /// <summary>Whether previews are routable for the domain. If enabled, previews will be routable as subdomains of the configured hostname. For example, if the configured hostname is `app.example.com`, then requests to `my-feature.app.example.com` will be routed to the preview with slug `my-feature`, if such a preview exists. If preview routing is disabled, then hostname routing must be enabled.</summary>
+        public bool? PreviewsEnabled { get; set; }
         /// <summary>Name of the Worker associated with the domain. Requests to the configured hostname will be routed to this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersDomain()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            PreviewsEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -91,9 +97,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cert_id", n => { CertId = n.GetGuidValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "previews_enabled", n => { PreviewsEnabled = n.GetBoolValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "zone_id", n => { ZoneId = n.GetStringValue(); } },
                 { "zone_name", n => { ZoneName = n.GetStringValue(); } },
@@ -106,8 +114,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("environment", Environment);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("hostname", Hostname);
+            writer.WriteBoolValue("previews_enabled", PreviewsEnabled);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteStringValue("zone_name", ZoneName);

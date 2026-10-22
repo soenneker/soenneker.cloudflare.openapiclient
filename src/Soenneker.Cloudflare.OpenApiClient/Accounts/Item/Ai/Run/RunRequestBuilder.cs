@@ -3,8 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -15,31 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RunRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The Cf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.CfRequestBuilder Cf
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.CfRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The Hf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.HfRequestBuilder Hf
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.HfRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.ai.run.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder this[string position]
+        /// <param name="position">Workers AI model identifier, including its namespace and model name.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModelNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModelNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("model_name", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("modelName", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModelNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run", pathParameters)
+        public RunRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run", pathParameters)
         {
         }
         /// <summary>
@@ -55,47 +43,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run", rawUrl)
+        public RunRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run", rawUrl)
         {
         }
         /// <summary>
-        /// Execute an AI model by specifying the model name in the request body.This endpoint provides a generic interface for running AI models where the model name is part of the request payload rather than the URL path. It supports all AI Gateway features including caching, custom headers, and request options.Model-specific inputs available in [Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/).
+        /// Runs an AI model using a JSON body containing model, input, and optional options fields. Unlike the model-specific URL endpoint, this endpoint takes the model identifier in the body and nests the model&apos;s inputs under input.Use options.extraHeaders to pass additional provider headers. Accepts Workers AI model identifiers and AI Gateway provider model identifiers.See the [Workers AI model catalog](https://developers.cloudflare.com/workers-ai/models/) for Workers AI model inputs, or the provider&apos;s documentation for models accessed through AI Gateway.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGenericRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGenericRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute an AI model by specifying the model name in the request body.This endpoint provides a generic interface for running AI models where the model name is part of the request payload rather than the URL path. It supports all AI Gateway features including caching, custom headers, and request options.Model-specific inputs available in [Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/).
+        /// Runs an AI model using a JSON body containing model, input, and optional options fields. Unlike the model-specific URL endpoint, this endpoint takes the model identifier in the body and nests the model&apos;s inputs under input.Use options.extraHeaders to pass additional provider headers. Accepts Workers AI model identifiers and AI Gateway provider model identifiers.See the [Workers AI model catalog](https://developers.cloudflare.com/workers-ai/models/) for Workers AI model inputs, or the provider&apos;s documentation for models accessed through AI Gateway.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGenericRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGeneric body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunGenericRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

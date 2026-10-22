@@ -10,11 +10,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "NONE")]
         #pragma warning disable CS1591
-        NONE,
+        None,
         #pragma warning restore CS1591
         [EnumMember(Value = "ZERO_TRUST_LIST")]
         #pragma warning disable CS1591
-        ZERO_TRUST_LIST,
+        ZeroTrustList,
         #pragma warning restore CS1591
     }
 }

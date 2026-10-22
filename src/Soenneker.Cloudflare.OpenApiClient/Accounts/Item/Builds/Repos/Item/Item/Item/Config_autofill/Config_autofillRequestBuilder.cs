@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Item.Item.Config_autofill
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\builds\repos\{provider_type}\{provider_account_id}\{repo_id}\config_autofill
+    /// Builds and executes requests for operations under \accounts\{account-id}\builds\repos\{providerType}\{providerAccountId}\{repoId}\config_autofill
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Config_autofillRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Config_autofillRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill?branch={branch}{&root_directory*}", pathParameters)
+        public Config_autofillRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/repos/{providerType}/{providerAccountId}/{repoId}/config_autofill?branch={branch}{&root_directory*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Config_autofillRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill?branch={branch}{&root_directory*}", rawUrl)
+        public Config_autofillRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/repos/{providerType}/{providerAccountId}/{repoId}/config_autofill?branch={branch}{&root_directory*}", rawUrl)
         {
         }
         /// <summary>
         /// Analyze repository for automatic configuration detection
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Item.Item.Config_autofill.Config_autofillRequestBuilder.Config_autofillRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Item.Item.Config_autofill.Config_autofillRequestBuilder.Config_autofillRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Item.Item.Config_autofill.Config_autofillRequestBuilder.Config_autofillRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Item.Item.Config_autofill.Config_autofillRequestBuilder.Config_autofillRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Analyze repository for automatic configuration detection
@@ -87,21 +92,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("branch")]
             public string? Branch { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("branch")]
             public string Branch { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("root_directory")]
             public string? RootDirectory { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("root_directory")]
             public string RootDirectory { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

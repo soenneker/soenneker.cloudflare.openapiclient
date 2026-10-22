@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "no_op")]
         #pragma warning disable CS1591
-        No_op,
+        NoOp,
         #pragma warning restore CS1591
         [EnumMember(Value = "create")]
         #pragma warning disable CS1591

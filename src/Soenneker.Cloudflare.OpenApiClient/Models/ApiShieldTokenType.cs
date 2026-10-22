@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "JWT")]
         #pragma warning disable CS1591
-        JWT,
+        Jwt,
         #pragma warning restore CS1591
     }
 }

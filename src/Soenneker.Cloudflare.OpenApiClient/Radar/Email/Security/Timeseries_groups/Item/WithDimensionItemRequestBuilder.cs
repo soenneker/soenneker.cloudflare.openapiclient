@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
         /// <summary>
         /// Retrieves the distribution of email security metrics grouped by dimension over time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroup200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the distribution of email security metrics grouped by dimension over time.
@@ -90,20 +90,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/). When omitted, the interval is auto-selected from the requested date range; finer intervals are only available for shorter ranges. If the requested interval is too granular for the date range, the request is rejected.</summary>
             [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetAggIntervalQueryParameterType? AggInterval { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupAggIntervalParameter? AggInterval { get; set; }
             /// <summary>Filters results by ARC (Authenticated Received Chain) validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("arc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetArcQueryParameterType[]? Arc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupArcParameterItem[]? Arc { get; set; }
 #nullable restore
 #else
             [QueryParameter("arc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetArcQueryParameterType[] Arc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupArcParameterItem[] Arc { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -123,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -137,26 +137,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dkim")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetDkimQueryParameterType[]? Dkim { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupDkimParameterItem[]? Dkim { get; set; }
 #nullable restore
 #else
             [QueryParameter("dkim")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetDkimQueryParameterType[] Dkim { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupDkimParameterItem[] Dkim { get; set; }
 #endif
             /// <summary>Filters results by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dmarc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetDmarcQueryParameterType[]? Dmarc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupDmarcParameterItem[]? Dmarc { get; set; }
 #nullable restore
 #else
             [QueryParameter("dmarc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetDmarcQueryParameterType[] Dmarc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupDmarcParameterItem[] Dmarc { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetFormatQueryParameterType? Format { get; set; }
-            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupFormatParameter? Format { get; set; }
+            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
             /// <summary>Array of names used to label the series in the response.</summary>
@@ -173,21 +173,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("spf")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetSpfQueryParameterType[]? Spf { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupSpfParameterItem[]? Spf { get; set; }
 #nullable restore
 #else
             [QueryParameter("spf")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetSpfQueryParameterType[] Spf { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupSpfParameterItem[] Spf { get; set; }
 #endif
             /// <summary>Filters results by TLS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetTlsVersionQueryParameterType[]? TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupTlsVersionParameterItem[]? TlsVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.GetTlsVersionQueryParameterType[] TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTimeseriesGroupTlsVersionParameterItem[] TlsVersion { get; set; }
 #endif
         }
     }

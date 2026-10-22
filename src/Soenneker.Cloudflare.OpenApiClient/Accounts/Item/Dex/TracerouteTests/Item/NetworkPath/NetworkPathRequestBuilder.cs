@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\traceroute-tests\{test_id}\network-path
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\traceroute-tests\{testId}\network-path
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkPathRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NetworkPathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/traceroute-tests/{test_id}/network-path?deviceId={deviceId}&from={from}&interval={interval}&to={to}", pathParameters)
+        public NetworkPathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/traceroute-tests/{testId}/network-path?deviceId={deviceId}&from={from}&interval={interval}&to={to}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NetworkPathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/traceroute-tests/{test_id}/network-path?deviceId={deviceId}&from={from}&interval={interval}&to={to}", rawUrl)
+        public NetworkPathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/traceroute-tests/{testId}/network-path?deviceId={deviceId}&from={from}&interval={interval}&to={to}", rawUrl)
         {
         }
         /// <summary>
-        /// Get a breakdown of metrics by hop for individual traceroute test runs
+        /// Get a breakdown of metrics by hop for individual traceroute test runs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder.NetworkPathRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder.NetworkPathRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder.NetworkPathRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder.NetworkPathRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.I
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPath200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a breakdown of metrics by hop for individual traceroute test runs
+        /// Get a breakdown of metrics by hop for individual traceroute test runs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,12 +85,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.I
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a breakdown of metrics by hop for individual traceroute test runs
+        /// Get a breakdown of metrics by hop for individual traceroute test runs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NetworkPathRequestBuilderGetQueryParameters 
         {
-            /// <summary>Device to filter tracroute result runs to</summary>
+            /// <summary>Device to filter traceroute result runs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceId")]
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.I
             [QueryParameter("deviceId")]
             public string DeviceId { get; set; }
 #endif
-            /// <summary>Start time for aggregate metrics in ISO ms</summary>
+            /// <summary>Start time for aggregate metrics in ISO ms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("from")]
@@ -112,8 +112,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.I
 #endif
             /// <summary>Time interval for aggregate time slots.</summary>
             [QueryParameter("interval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.GetIntervalQueryParameterType? Interval { get; set; }
-            /// <summary>End time for aggregate metrics in ISO ms</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DexEndpointsTracerouteTestNetworkPathIntervalParameter? Interval { get; set; }
+            /// <summary>End time for aggregate metrics in ISO ms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("to")]

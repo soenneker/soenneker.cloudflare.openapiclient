@@ -7,18 +7,19 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Default settings for new zones created in this account.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class DnsSettingsDnsSettingsAccountPatch : global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsPatch, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Settings determining the nameservers through which the zone should be available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatch_nameservers? Nameservers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatchAllOf2Nameservers? Nameservers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatch_nameservers Nameservers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatchAllOf2Nameservers Nameservers { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "nameservers", n => { Nameservers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatch_nameservers>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatch_nameservers.CreateFromDiscriminatorValue); } },
+                { "nameservers", n => { Nameservers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatchAllOf2Nameservers>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatchAllOf2Nameservers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatch_nameservers>("nameservers", Nameservers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountPatchAllOf2Nameservers>("nameservers", Nameservers);
         }
     }
 }

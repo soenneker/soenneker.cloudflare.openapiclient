@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Psk;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -13,21 +14,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\ipsec_tunnels
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\ipsec_tunnels
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ipsec_tunnelsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The psk property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Psk.PskRequestBuilder Psk
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Psk.PskRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.ipsec_tunnels.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item.WithIpsec_tunnel_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item.WithIpsec_tunnel_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item.WithIpsecTunnelItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item.WithIpsecTunnelItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("ipsec_tunnel_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item.WithIpsec_tunnel_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ipsecTunnelId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Item.WithIpsecTunnelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ipsec_tunnelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/ipsec_tunnels", pathParameters)
+        public Ipsec_tunnelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/ipsec_tunnels", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ipsec_tunnelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/ipsec_tunnels", rawUrl)
+        public Ipsec_tunnelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/ipsec_tunnels", rawUrl)
         {
         }
         /// <summary>
@@ -52,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasTunnelsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsListIpsecTunnels4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasTunnelsCollectionResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsListIpsecTunnels4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasTunnelsCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasTunnelsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsCreateIpsecTunnels4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasCreateIpsecTunnelResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsCreateIpsecTunnels4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasCreateIpsecTunnelResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasCreateIpsecTunnelResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,21 +107,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnels4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnels body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnels body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnels4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicSchemasModifiedTunnelsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -168,11 +174,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnels body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnels body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicIpsecTunnelsUpdateMultipleIpsecTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

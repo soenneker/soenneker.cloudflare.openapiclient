@@ -58,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public StreamSignedTokenRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Downloadable = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -37,6 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersWorkerObservabilityLogs()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            HeadSamplingRate = 1;
+            InvocationLogs = true;
+            Persist = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

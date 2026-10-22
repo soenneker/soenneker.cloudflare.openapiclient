@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.browser_family.item collection</summary>
         /// <param name="position">Browser family.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Item.WithBrowser_familyItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Item.WithBrowser_familyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Item.WithBrowserFamilyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Item.WithBrowserFamilyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("browser_family", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Item.WithBrowser_familyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("browserFamily", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Item.WithBrowserFamilyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

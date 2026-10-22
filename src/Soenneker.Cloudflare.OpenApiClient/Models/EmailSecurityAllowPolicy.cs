@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// An email allow policy
+    /// An email allow policy.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityAllowPolicy : IAdditionalDataHolder, IParsable
@@ -24,56 +24,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_created_at CreatedAt { get; private set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_id Id { get; private set; }
-#endif
-        /// <summary>Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions. Note - This will not exempt messages with Malicious or Suspicious dispositions.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Timestamp at which the policy expires. After this time, Email Security ignores the policy. The value must lie in the future. Send `null` to clear the expiration.</summary>
+        public DateTimeOffset? ExpiresAt { get; set; }
+        /// <summary>Allow policy identifier.</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Exempts messages from this sender from Spam, Spoof and Bulk dispositions only; Malicious and Suspicious dispositions still apply.</summary>
         public bool? IsAcceptableSender { get; set; }
-        /// <summary>Messages to this recipient will bypass all detections</summary>
+        /// <summary>Bypasses all detections for messages to this recipient.</summary>
         public bool? IsExemptRecipient { get; set; }
-        /// <summary>&quot;Deprecated as of July 1, 2025. Use `is_exempt_recipient` instead. End of life: July 1, 2026.&quot;</summary>
+        /// <summary>Deprecated as of July 1, 2025. Use `is_exempt_recipient` instead. End of life: July 1, 2026.</summary>
         [Obsolete("")]
         public bool? IsRecipient { get; set; }
         /// <summary>The is_regex property</summary>
         public bool? IsRegex { get; set; }
-        /// <summary>&quot;Deprecated as of July 1, 2025. Use `is_trusted_sender` instead. End of life: July 1, 2026.&quot;</summary>
+        /// <summary>Deprecated as of July 1, 2025. Use `is_trusted_sender` instead. End of life: July 1, 2026.</summary>
         [Obsolete("")]
         public bool? IsSender { get; set; }
-        /// <summary>&quot;Deprecated as of July 1, 2025. Use `is_acceptable_sender` instead. End of life: July 1, 2026.&quot;</summary>
+        /// <summary>Deprecated as of July 1, 2025. Use `is_acceptable_sender` instead. End of life: July 1, 2026.</summary>
         [Obsolete("")]
         public bool? IsSpoof { get; set; }
-        /// <summary>Messages from this sender will bypass all detections and link following</summary>
+        /// <summary>Bypasses all detections and link following for messages from this sender.</summary>
         public bool? IsTrustedSender { get; set; }
-        /// <summary>&quot;Deprecated, use `modified_at` instead. End of life: November 1, 2026.&quot;</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_last_modified? LastModified { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_last_modified LastModified { get; private set; }
-#endif
+        /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
+        public DateTimeOffset? LastModified { get; set; }
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_modified_at? ModifiedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_modified_at ModifiedAt { get; private set; }
-#endif
-        /// <summary>The pattern property</summary>
+        public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Pattern { get; set; }
@@ -81,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Pattern { get; set; }
 #endif
-        /// <summary>&quot;Type of pattern matching.Note: UNKNOWN is deprecated and cannot be used when creating or updating policies, but may be returned for existing entries.&quot;</summary>
+        /// <summary>Type of pattern matching.- EMAIL: matches a full email address (e.g. `user@example.com`)- DOMAIN: matches a domain name (e.g. `example.com`)- IP: matches a plain IPv4 or IPv6 address (e.g. `1.2.3.4` or `2606:4700:4700::1111`) or CIDR block (e.g. `1.2.3.0/24` or `2606:4700:4700::/48`). The API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.- UNKNOWN: deprecated; you cannot use this when creating or updating policies, but it may appear on existing entries.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPatternType? PatternType { get; set; }
         /// <summary>Enforce DMARC, SPF or DKIM authentication. When on, Email Security only honors policies that pass authentication.</summary>
         public bool? VerifySender { get; set; }
@@ -111,8 +88,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_created_at.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_id.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_acceptable_sender", n => { IsAcceptableSender = n.GetBoolValue(); } },
                 { "is_exempt_recipient", n => { IsExemptRecipient = n.GetBoolValue(); } },
                 { "is_recipient", n => { IsRecipient = n.GetBoolValue(); } },
@@ -120,8 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_sender", n => { IsSender = n.GetBoolValue(); } },
                 { "is_spoof", n => { IsSpoof = n.GetBoolValue(); } },
                 { "is_trusted_sender", n => { IsTrustedSender = n.GetBoolValue(); } },
-                { "last_modified", n => { LastModified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_last_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_last_modified.CreateFromDiscriminatorValue); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_modified_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityAllowPolicy_modified_at.CreateFromDiscriminatorValue); } },
+                { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
                 { "pattern_type", n => { PatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPatternType>(); } },
                 { "verify_sender", n => { VerifySender = n.GetBoolValue(); } },
@@ -135,6 +113,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
+            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_acceptable_sender", IsAcceptableSender);
             writer.WriteBoolValue("is_exempt_recipient", IsExemptRecipient);
             writer.WriteBoolValue("is_recipient", IsRecipient);
@@ -142,6 +123,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_sender", IsSender);
             writer.WriteBoolValue("is_spoof", IsSpoof);
             writer.WriteBoolValue("is_trusted_sender", IsTrustedSender);
+            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPatternType>("pattern_type", PatternType);
             writer.WriteBoolValue("verify_sender", VerifySender);

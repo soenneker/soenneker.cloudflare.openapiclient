@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Portals;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Servers;
 using System.Collections.Generic;
@@ -11,11 +12,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\ai-controls\mcp
+    /// Builds and executes requests for operations under \accounts\{account-id}\access\ai-controls\mcp
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The portals property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Portals.PortalsRequestBuilder Portals
         {
@@ -31,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public McpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/ai-controls/mcp", pathParameters)
+        public McpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/ai-controls/mcp", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public McpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/ai-controls/mcp", rawUrl)
+        public McpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/ai-controls/mcp", rawUrl)
         {
         }
     }

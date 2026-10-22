@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last_updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp? LastUpdated { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp LastUpdated { get; set; }
-#endif
+        public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>The period in seconds these statistics were computed over</summary>
         public int? PeriodSeconds { get; private set; }
         /// <summary>The average number of requests seen during this period</summary>
@@ -51,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "period_seconds", n => { PeriodSeconds = n.GetIntValue(); } },
                 { "requests", n => { Requests = n.GetFloatValue(); } },
             };
@@ -63,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemasTimestamp>("last_updated", LastUpdated);
+            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

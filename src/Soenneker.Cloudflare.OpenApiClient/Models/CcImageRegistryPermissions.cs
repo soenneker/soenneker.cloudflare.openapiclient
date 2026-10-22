@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Specifies what permissions the credentials will have.</summary>
+    /// <summary>Specifies what permissions the credentials carry.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CcImageRegistryPermissions
     {
@@ -15,9 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Push,
         #pragma warning restore CS1591
-        [EnumMember(Value = "library_push")]
+        [EnumMember(Value = "list")]
         #pragma warning disable CS1591
-        Library_push,
+        List,
         #pragma warning restore CS1591
     }
 }

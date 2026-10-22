@@ -15,13 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Updates compaction configuration (all fields optional).</summary>
+        /// <summary>Updates table compaction configuration; all fields are optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCompactionUpdateParams? Compaction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionUpdateParams? Compaction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCompactionUpdateParams Compaction { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionUpdateParams Compaction { get; set; }
 #endif
         /// <summary>Updates snapshot expiration configuration (all fields optional).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "compaction", n => { Compaction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCompactionUpdateParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCompactionUpdateParams.CreateFromDiscriminatorValue); } },
+                { "compaction", n => { Compaction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionUpdateParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionUpdateParams.CreateFromDiscriminatorValue); } },
                 { "snapshot_expiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationUpdateParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationUpdateParams.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCompactionUpdateParams>("compaction", Compaction);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionUpdateParams>("compaction", Compaction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationUpdateParams>("snapshot_expiration", SnapshotExpiration);
             writer.WriteAdditionalData(AdditionalData);
         }

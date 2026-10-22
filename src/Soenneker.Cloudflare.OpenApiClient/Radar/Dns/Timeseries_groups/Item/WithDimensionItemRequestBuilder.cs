@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
         /// <summary>
         /// Retrieves the distribution of DNS queries grouped by dimension over time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroup200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the distribution of DNS queries grouped by dimension over time.
@@ -90,9 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/). When omitted, the interval is auto-selected from the requested date range; finer intervals are only available for shorter ranges. If the requested interval is too granular for the date range, the request is rejected.</summary>
             [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetAggIntervalQueryParameterType? AggInterval { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupAggIntervalParameter? AggInterval { get; set; }
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("continent")]
             public string[] Continent { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -157,21 +157,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dnssec")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecQueryParameterType[]? Dnssec { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupDnssecParameterItem[]? Dnssec { get; set; }
 #nullable restore
 #else
             [QueryParameter("dnssec")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecQueryParameterType[] Dnssec { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupDnssecParameterItem[] Dnssec { get; set; }
 #endif
             /// <summary>Filters results based on DNSSEC (DNS Security Extensions) client awareness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dnssecAware")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecAwareQueryParameterType[]? DnssecAware { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupDnssecAwareParameterItem[]? DnssecAware { get; set; }
 #nullable restore
 #else
             [QueryParameter("dnssecAware")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecAwareQueryParameterType[] DnssecAware { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupDnssecAwareParameterItem[] DnssecAware { get; set; }
 #endif
             /// <summary>Filters results based on DNSSEC-validated answers by end-to-end security status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -185,18 +185,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupFormatParameter? Format { get; set; }
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupIpVersionParameterItem[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetIpVersionQueryParameterType[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupIpVersionParameterItem[] IpVersion { get; set; }
 #endif
-            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
+            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
@@ -239,50 +239,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("nodata")]
             public bool?[] Nodata { get; set; }
 #endif
-            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/). `RANK` is only meaningful with the `TLD_DNS_MAGNITUDE` dimension, where it ranks TLDs by DNS query magnitude at each timestamp; for other dimensions it has no effect.</summary>
             [QueryParameter("normalization")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetNormalizationQueryParameterType? Normalization { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupNormalizationParameter? Normalization { get; set; }
             /// <summary>Filters results by DNS transport protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetProtocolQueryParameterType[]? Protocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupProtocolParameterItem[]? Protocol { get; set; }
 #nullable restore
 #else
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetProtocolQueryParameterType[] Protocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupProtocolParameterItem[] Protocol { get; set; }
 #endif
             /// <summary>Filters results by DNS query type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetQueryTypeQueryParameterType[]? QueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupQueryTypeParameterItem[]? QueryType { get; set; }
 #nullable restore
 #else
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetQueryTypeQueryParameterType[] QueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupQueryTypeParameterItem[] QueryType { get; set; }
 #endif
             /// <summary>Filters results by DNS response code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseCodeQueryParameterType[]? ResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupResponseCodeParameterItem[]? ResponseCode { get; set; }
 #nullable restore
 #else
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseCodeQueryParameterType[] ResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupResponseCodeParameterItem[] ResponseCode { get; set; }
 #endif
             /// <summary>Filters results by DNS response TTL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("responseTtl")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseTtlQueryParameterType[]? ResponseTtl { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupResponseTtlParameterItem[]? ResponseTtl { get; set; }
 #nullable restore
 #else
             [QueryParameter("responseTtl")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseTtlQueryParameterType[] ResponseTtl { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetDnsTimeseriesGroupResponseTtlParameterItem[] ResponseTtl { get; set; }
 #endif
-            /// <summary>Filters results by top-level domain.</summary>
+            /// <summary>Filters results by top-level domain. Incompatible with the `ipVersion`, `protocol`, `dnssecE2e`, `dnssecAware`, `responseTtl`, and `cacheHit` filters/dimensions; this restriction does not apply to country-code TLDs (2-letter, e.g. `uk`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tld")]

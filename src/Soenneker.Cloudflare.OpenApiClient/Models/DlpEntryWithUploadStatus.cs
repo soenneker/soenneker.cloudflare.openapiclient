@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The upload_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus_upload_status? UploadStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus? UploadStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus_upload_status UploadStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus UploadStatus { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -28,12 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            return mappingValue switch
-            {
-                "DlpEntryWithSharedProfiles" => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles(),
-                _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus(),
-            };
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "upload_status", n => { UploadStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus_upload_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus_upload_status.CreateFromDiscriminatorValue); } },
+                { "upload_status", n => { UploadStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -54,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus_upload_status>("upload_status", UploadStatus);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus>("upload_status", UploadStatus);
         }
     }
 }

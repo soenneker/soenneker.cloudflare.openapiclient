@@ -9,35 +9,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "1m")]
         #pragma warning disable CS1591
-        Onem,
+        Value1M,
         #pragma warning restore CS1591
         [EnumMember(Value = "5m")]
         #pragma warning disable CS1591
-        Fivem,
+        Value5M,
         #pragma warning restore CS1591
         [EnumMember(Value = "10m")]
         #pragma warning disable CS1591
-        OneZerom,
+        Value10M,
         #pragma warning restore CS1591
         [EnumMember(Value = "15m")]
         #pragma warning disable CS1591
-        OneFivem,
+        Value15M,
         #pragma warning restore CS1591
         [EnumMember(Value = "20m")]
         #pragma warning disable CS1591
-        TwoZerom,
+        Value20M,
         #pragma warning restore CS1591
         [EnumMember(Value = "30m")]
         #pragma warning disable CS1591
-        ThreeZerom,
+        Value30M,
         #pragma warning restore CS1591
         [EnumMember(Value = "45m")]
         #pragma warning disable CS1591
-        FourFivem,
+        Value45M,
         #pragma warning restore CS1591
         [EnumMember(Value = "60m")]
         #pragma warning disable CS1591
-        SixZerom,
+        Value60M,
         #pragma warning restore CS1591
     }
 }

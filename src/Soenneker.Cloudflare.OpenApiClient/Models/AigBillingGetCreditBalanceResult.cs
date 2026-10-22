@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The payment_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult_payment_method? PaymentMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod? PaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult_payment_method PaymentMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod PaymentMethod { get; set; }
 #endif
         /// <summary>The topup_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "balance", n => { Balance = n.GetDoubleValue(); } },
                 { "first_topup_success", n => { FirstTopupSuccess = n.GetBoolValue(); } },
                 { "has_default_payment_method", n => { HasDefaultPaymentMethod = n.GetBoolValue(); } },
-                { "payment_method", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult_payment_method>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult_payment_method.CreateFromDiscriminatorValue); } },
+                { "payment_method", n => { PaymentMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod.CreateFromDiscriminatorValue); } },
                 { "topup_config", n => { TopupConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("balance", Balance);
             writer.WriteBoolValue("first_topup_success", FirstTopupSuccess);
             writer.WriteBoolValue("has_default_payment_method", HasDefaultPaymentMethod);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResult_payment_method>("payment_method", PaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultPaymentMethod>("payment_method", PaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetCreditBalanceResultTopupConfig>("topup_config", TopupConfig);
             writer.WriteAdditionalData(AdditionalData);
         }

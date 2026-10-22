@@ -9,135 +9,151 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "access_requests")]
         #pragma warning disable CS1591
-        Access_requests,
+        AccessRequests,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "account_abuse_protection_events")]
+        #pragma warning disable CS1591
+        AccountAbuseProtectionEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "audit_logs")]
         #pragma warning disable CS1591
-        Audit_logs,
+        AuditLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "audit_logs_v2")]
         #pragma warning disable CS1591
-        Audit_logs_v2,
+        AuditLogsV2,
         #pragma warning restore CS1591
         [EnumMember(Value = "biso_user_actions")]
         #pragma warning disable CS1591
-        Biso_user_actions,
+        BisoUserActions,
         #pragma warning restore CS1591
         [EnumMember(Value = "casb_findings")]
         #pragma warning disable CS1591
-        Casb_findings,
+        CasbFindings,
         #pragma warning restore CS1591
         [EnumMember(Value = "device_posture_results")]
         #pragma warning disable CS1591
-        Device_posture_results,
+        DevicePostureResults,
         #pragma warning restore CS1591
         [EnumMember(Value = "dex_application_tests")]
         #pragma warning disable CS1591
-        Dex_application_tests,
+        DexApplicationTests,
         #pragma warning restore CS1591
         [EnumMember(Value = "dex_device_state_events")]
         #pragma warning disable CS1591
-        Dex_device_state_events,
+        DexDeviceStateEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "dlp_forensic_copies")]
         #pragma warning disable CS1591
-        Dlp_forensic_copies,
+        DlpForensicCopies,
         #pragma warning restore CS1591
         [EnumMember(Value = "dns_firewall_logs")]
         #pragma warning disable CS1591
-        Dns_firewall_logs,
+        DnsFirewallLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "dns_logs")]
         #pragma warning disable CS1591
-        Dns_logs,
+        DnsLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "email_security_alerts")]
         #pragma warning disable CS1591
-        Email_security_alerts,
+        EmailSecurityAlerts,
         #pragma warning restore CS1591
         [EnumMember(Value = "email_security_post_delivery_events")]
         #pragma warning disable CS1591
-        Email_security_post_delivery_events,
+        EmailSecurityPostDeliveryEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "firewall_events")]
         #pragma warning disable CS1591
-        Firewall_events,
+        FirewallEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "gateway_dns")]
         #pragma warning disable CS1591
-        Gateway_dns,
+        GatewayDns,
         #pragma warning restore CS1591
         [EnumMember(Value = "gateway_http")]
         #pragma warning disable CS1591
-        Gateway_http,
+        GatewayHttp,
         #pragma warning restore CS1591
         [EnumMember(Value = "gateway_network")]
         #pragma warning disable CS1591
-        Gateway_network,
+        GatewayNetwork,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_requests")]
         #pragma warning disable CS1591
-        Http_requests,
+        HttpRequests,
         #pragma warning restore CS1591
         [EnumMember(Value = "ipsec_logs")]
         #pragma warning disable CS1591
-        Ipsec_logs,
+        IpsecLogs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "magic_bgp_logs")]
+        #pragma warning disable CS1591
+        MagicBgpLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "magic_ids_detections")]
         #pragma warning disable CS1591
-        Magic_ids_detections,
+        MagicIdsDetections,
         #pragma warning restore CS1591
         [EnumMember(Value = "mcp_portal_logs")]
         #pragma warning disable CS1591
-        Mcp_portal_logs,
+        McpPortalLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "mnm_flow_logs")]
         #pragma warning disable CS1591
-        Mnm_flow_logs,
+        MnmFlowLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "nel_reports")]
         #pragma warning disable CS1591
-        Nel_reports,
+        NelReports,
         #pragma warning restore CS1591
         [EnumMember(Value = "network_analytics_logs")]
         #pragma warning disable CS1591
-        Network_analytics_logs,
+        NetworkAnalyticsLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "page_shield_events")]
         #pragma warning disable CS1591
-        Page_shield_events,
+        PageShieldEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "sinkhole_http_logs")]
         #pragma warning disable CS1591
-        Sinkhole_http_logs,
+        SinkholeHttpLogs,
         #pragma warning restore CS1591
         [EnumMember(Value = "spectrum_events")]
         #pragma warning disable CS1591
-        Spectrum_events,
+        SpectrumEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "ssh_logs")]
         #pragma warning disable CS1591
-        Ssh_logs,
+        SshLogs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "turnstile_events")]
+        #pragma warning disable CS1591
+        TurnstileEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "warp_config_changes")]
         #pragma warning disable CS1591
-        Warp_config_changes,
+        WarpConfigChanges,
         #pragma warning restore CS1591
         [EnumMember(Value = "warp_toggle_changes")]
         #pragma warning disable CS1591
-        Warp_toggle_changes,
+        WarpToggleChanges,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "websocket_analytics")]
+        #pragma warning disable CS1591
+        WebsocketAnalytics,
         #pragma warning restore CS1591
         [EnumMember(Value = "workers_trace_events")]
         #pragma warning disable CS1591
-        Workers_trace_events,
+        WorkersTraceEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "zaraz_events")]
         #pragma warning disable CS1591
-        Zaraz_events,
+        ZarazEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "zero_trust_network_sessions")]
         #pragma warning disable CS1591
-        Zero_trust_network_sessions,
+        ZeroTrustNetworkSessions,
         #pragma warning restore CS1591
     }
 }

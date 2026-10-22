@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The maxAgeSeconds property</summary>
         public int? MaxAgeSeconds { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AgeType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition"/> and sets the default values.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "maxAgeSeconds", n => { MaxAgeSeconds = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AgeType>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maxAgeSeconds", MaxAgeSeconds);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AgeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

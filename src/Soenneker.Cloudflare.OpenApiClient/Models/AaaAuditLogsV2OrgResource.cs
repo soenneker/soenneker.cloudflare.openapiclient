@@ -34,26 +34,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_request? Request { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceRequestProperty? Request { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_request Request { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceRequestProperty Request { get; set; }
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_response? Response { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceResponseProperty? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_response Response { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceResponseProperty Response { get; set; }
 #endif
         /// <summary>The scope of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_scope? Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceScopeProperty? Scope { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_scope Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceScopeProperty Scope { get; set; }
 #endif
         /// <summary>The type of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,9 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "product", n => { Product = n.GetStringValue(); } },
-                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_request.CreateFromDiscriminatorValue); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_response.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_scope>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_scope.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceRequestProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceRequestProperty.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceResponseProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceResponseProperty.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceScopeProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceScopeProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -105,9 +105,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("product", Product);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_request>("request", Request);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_response>("response", Response);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResource_scope>("scope", Scope);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceRequestProperty>("request", Request);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceResponseProperty>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2OrgResourceScopeProperty>("scope", Scope);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

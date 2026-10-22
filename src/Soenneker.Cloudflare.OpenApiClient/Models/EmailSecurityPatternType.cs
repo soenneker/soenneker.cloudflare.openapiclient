@@ -3,25 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>&quot;Type of pattern matching.Note: UNKNOWN is deprecated and cannot be used when creating or updating policies, but may be returned for existing entries.&quot;</summary>
+    /// <summary>Type of pattern matching.- EMAIL: matches a full email address (e.g. `user@example.com`)- DOMAIN: matches a domain name (e.g. `example.com`)- IP: matches a plain IPv4 or IPv6 address (e.g. `1.2.3.4` or `2606:4700:4700::1111`) or CIDR block (e.g. `1.2.3.0/24` or `2606:4700:4700::/48`). The API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.- UNKNOWN: deprecated; you cannot use this when creating or updating policies, but it may appear on existing entries.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EmailSecurityPatternType
     {
         [EnumMember(Value = "EMAIL")]
         #pragma warning disable CS1591
-        EMAIL,
+        Email,
         #pragma warning restore CS1591
         [EnumMember(Value = "DOMAIN")]
         #pragma warning disable CS1591
-        DOMAIN,
+        Domain,
         #pragma warning restore CS1591
         [EnumMember(Value = "IP")]
         #pragma warning disable CS1591
-        IP,
+        Ip,
         #pragma warning restore CS1591
         [EnumMember(Value = "UNKNOWN")]
         #pragma warning disable CS1591
-        UNKNOWN,
+        Unknown,
         #pragma warning restore CS1591
     }
 }

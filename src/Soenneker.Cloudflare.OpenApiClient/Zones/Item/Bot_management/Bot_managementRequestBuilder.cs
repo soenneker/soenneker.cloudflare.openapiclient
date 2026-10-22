@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\bot_management
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\bot_management
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Bot_managementRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Bot_managementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/bot_management", pathParameters)
+        public Bot_managementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/bot_management", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Bot_managementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/bot_management", rawUrl)
+        public Bot_managementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/bot_management", rawUrl)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneGetConfig4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneGetConfig4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,18 +58,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneGetConfig4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneGetConfig4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates the Bot Management configuration for a zone.This API is used to update:- **Bot Fight Mode**- **Super Bot Fight Mode**- **Bot Management for Enterprise**See [Bot Plans](https://developers.cloudflare.com/bots/plans/) for more information on the different plans\If you recently upgraded or downgraded your plan, refer to the following examples to clean up old configurations.Copy and paste the example body to remove old zone configurations based on your current plan.#### Clean up configuration for Bot Fight Mode plan```json{  \&quot;sbfm_likely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_definitely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_verified_bots\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_static_resource_protection\&quot;: false,  \&quot;optimize_wordpress\&quot;: false,  \&quot;suppress_session_score\&quot;: false}```#### Clean up configuration for SBFM Pro plan```json{  \&quot;sbfm_likely_automated\&quot;: \&quot;allow\&quot;,  \&quot;fight_mode\&quot;: false}```#### Clean up configuration for SBFM Biz plan```json{  \&quot;fight_mode\&quot;: false}```#### Clean up configuration for BM Enterprise Subscription planIt is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks.```json{  \&quot;sbfm_likely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_definitely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_verified_bots\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_static_resource_protection\&quot;: false,  \&quot;optimize_wordpress\&quot;: false,  \&quot;fight_mode\&quot;: false}```&quot;
+        /// Updates the Bot Management configuration for a zone.This API is used to update:- **Bot Fight Mode**- **Super Bot Fight Mode**- **Bot Management for Enterprise**See [Bot Plans](https://developers.cloudflare.com/bots/plans/) for more information on the different plans\If you recently upgraded or downgraded your plan, refer to the following examples to clean up old configurations.Copy and paste the example body to remove old zone configurations based on your current plan.#### Clean up configuration for Bot Fight Mode plan```json{  &quot;sbfm_likely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_definitely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_verified_bots&quot;: &quot;allow&quot;,  &quot;sbfm_static_resource_protection&quot;: false,  &quot;optimize_wordpress&quot;: false,  &quot;suppress_session_score&quot;: false}```#### Clean up configuration for SBFM Pro plan```json{  &quot;sbfm_likely_automated&quot;: &quot;allow&quot;,  &quot;fight_mode&quot;: false}```#### Clean up configuration for SBFM Biz plan```json{  &quot;fight_mode&quot;: false}```#### Clean up configuration for BM Enterprise Subscription planIt is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks.```json{  &quot;sbfm_likely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_definitely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_verified_bots&quot;: &quot;allow&quot;,  &quot;sbfm_static_resource_protection&quot;: false,  &quot;optimize_wordpress&quot;: false,  &quot;fight_mode&quot;: false}```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneUpdateConfig4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneUpdateConfig4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementConfigSingle body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneUpdateConfig4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementForAZoneUpdateConfig4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBotManagementResponseBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates the Bot Management configuration for a zone.This API is used to update:- **Bot Fight Mode**- **Super Bot Fight Mode**- **Bot Management for Enterprise**See [Bot Plans](https://developers.cloudflare.com/bots/plans/) for more information on the different plans\If you recently upgraded or downgraded your plan, refer to the following examples to clean up old configurations.Copy and paste the example body to remove old zone configurations based on your current plan.#### Clean up configuration for Bot Fight Mode plan```json{  \&quot;sbfm_likely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_definitely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_verified_bots\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_static_resource_protection\&quot;: false,  \&quot;optimize_wordpress\&quot;: false,  \&quot;suppress_session_score\&quot;: false}```#### Clean up configuration for SBFM Pro plan```json{  \&quot;sbfm_likely_automated\&quot;: \&quot;allow\&quot;,  \&quot;fight_mode\&quot;: false}```#### Clean up configuration for SBFM Biz plan```json{  \&quot;fight_mode\&quot;: false}```#### Clean up configuration for BM Enterprise Subscription planIt is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks.```json{  \&quot;sbfm_likely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_definitely_automated\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_verified_bots\&quot;: \&quot;allow\&quot;,  \&quot;sbfm_static_resource_protection\&quot;: false,  \&quot;optimize_wordpress\&quot;: false,  \&quot;fight_mode\&quot;: false}```&quot;
+        /// Updates the Bot Management configuration for a zone.This API is used to update:- **Bot Fight Mode**- **Super Bot Fight Mode**- **Bot Management for Enterprise**See [Bot Plans](https://developers.cloudflare.com/bots/plans/) for more information on the different plans\If you recently upgraded or downgraded your plan, refer to the following examples to clean up old configurations.Copy and paste the example body to remove old zone configurations based on your current plan.#### Clean up configuration for Bot Fight Mode plan```json{  &quot;sbfm_likely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_definitely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_verified_bots&quot;: &quot;allow&quot;,  &quot;sbfm_static_resource_protection&quot;: false,  &quot;optimize_wordpress&quot;: false,  &quot;suppress_session_score&quot;: false}```#### Clean up configuration for SBFM Pro plan```json{  &quot;sbfm_likely_automated&quot;: &quot;allow&quot;,  &quot;fight_mode&quot;: false}```#### Clean up configuration for SBFM Biz plan```json{  &quot;fight_mode&quot;: false}```#### Clean up configuration for BM Enterprise Subscription planIt is strongly recommended that you ensure you have [custom rules](https://developers.cloudflare.com/waf/custom-rules/) in place to protect your zone before disabling the SBFM rules. Without these protections, your zone is vulnerable to attacks.```json{  &quot;sbfm_likely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_definitely_automated&quot;: &quot;allow&quot;,  &quot;sbfm_verified_bots&quot;: &quot;allow&quot;,  &quot;sbfm_static_resource_protection&quot;: false,  &quot;optimize_wordpress&quot;: false,  &quot;fight_mode&quot;: false}```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

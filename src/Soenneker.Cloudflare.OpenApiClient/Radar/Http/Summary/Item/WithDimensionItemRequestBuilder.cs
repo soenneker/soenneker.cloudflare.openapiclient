@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/summary/{dimension}{?apiTraffic*,asn*,botClass*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limitPerGroup*,location*,name*,os*,tlsVersion*}", pathParameters)
+        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/summary/{dimension}{?apiTraffic*,asn*,botClass*,contentType*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limitPerGroup*,location*,name*,os*,tlsVersion*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/summary/{dimension}{?apiTraffic*,asn*,botClass*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limitPerGroup*,location*,name*,os*,tlsVersion*}", rawUrl)
+        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/summary/{dimension}{?apiTraffic*,asn*,botClass*,contentType*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limitPerGroup*,location*,name*,os*,tlsVersion*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the distribution of HTTP requests by the specified dimension.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary400Response">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary400Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummary200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the distribution of HTTP requests by the specified dimension.
@@ -90,15 +90,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filters results by API traffic classification. API traffic is identified by JSON or XML response content types on dynamic (non-cacheable) HTTP requests.</summary>
+            /// <summary>Filters results by API traffic classification. API traffic is identified by JSON or XML response content types on dynamic (non-cacheable) HTTP requests. Incompatible with the `browserFamily`, `deviceType`, `httpProtocol`, `httpVersion`, `ipVersion`, `os`, and `tlsVersion` filters/dimensions. When set, results can only be further filtered by location, continent, or Autonomous System.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("apiTraffic")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetApiTrafficQueryParameterType[]? ApiTraffic { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryApiTrafficParameterItem[]? ApiTraffic { get; set; }
 #nullable restore
 #else
             [QueryParameter("apiTraffic")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetApiTrafficQueryParameterType[] ApiTraffic { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryApiTrafficParameterItem[] ApiTraffic { get; set; }
 #endif
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,11 +114,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("botClass")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetBotClassQueryParameterType[]? BotClass { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryBotClassParameterItem[]? BotClass { get; set; }
 #nullable restore
 #else
             [QueryParameter("botClass")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetBotClassQueryParameterType[] BotClass { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryBotClassParameterItem[] BotClass { get; set; }
+#endif
+            /// <summary>Filters results by content type category. When set, results can only be further filtered by location, continent, or Autonomous System.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("contentType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryContentTypeParameterItem[]? ContentType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("contentType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryContentTypeParameterItem[] ContentType { get; set; }
 #endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
             [QueryParameter("continent")]
             public string[] Continent { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -140,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -150,7 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -164,15 +174,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetDeviceTypeQueryParameterType[]? DeviceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryDeviceTypeParameterItem[]? DeviceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("deviceType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetDeviceTypeQueryParameterType[] DeviceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryDeviceTypeParameterItem[] DeviceType { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryFormatParameter? Format { get; set; }
             /// <summary>Filters results by Geolocation. Specify a comma-separated list of GeoNames IDs. Prefix with `-` to exclude geoIds from results. For example, `-2267056,360689` excludes results from the 2267056 (Lisbon), but includes results from 5128638 (New York).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,33 +197,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpProtocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetHttpProtocolQueryParameterType[]? HttpProtocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryHttpProtocolParameterItem[]? HttpProtocol { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpProtocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetHttpProtocolQueryParameterType[] HttpProtocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryHttpProtocolParameterItem[] HttpProtocol { get; set; }
 #endif
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetHttpVersionQueryParameterType[]? HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryHttpVersionParameterItem[]? HttpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetHttpVersionQueryParameterType[] HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryHttpVersionParameterItem[] HttpVersion { get; set; }
 #endif
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryIpVersionParameterItem[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetIpVersionQueryParameterType[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryIpVersionParameterItem[] IpVersion { get; set; }
 #endif
-            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
+            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
@@ -240,21 +250,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("os")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetOsQueryParameterType[]? Os { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryOsParameterItem[]? Os { get; set; }
 #nullable restore
 #else
             [QueryParameter("os")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetOsQueryParameterType[] Os { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryOsParameterItem[] Os { get; set; }
 #endif
             /// <summary>Filters results by TLS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetTlsVersionQueryParameterType[]? TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryTlsVersionParameterItem[]? TlsVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.GetTlsVersionQueryParameterType[] TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetHttpSummaryTlsVersionParameterItem[] TlsVersion { get; set; }
 #endif
         }
     }

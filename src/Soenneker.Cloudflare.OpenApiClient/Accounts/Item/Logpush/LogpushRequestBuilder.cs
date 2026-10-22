@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Jobs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Ownership;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Transformers;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Validate;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logpush
+    /// Builds and executes requests for operations under \accounts\{account-id}\logpush
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogpushRequestBuilder : BaseRequestBuilder
@@ -33,6 +34,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Ownership.OwnershipRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The transformers property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Transformers.TransformersRequestBuilder Transformers
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Transformers.TransformersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The validate property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Validate.ValidateRequestBuilder Validate
         {
@@ -43,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogpushRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logpush", pathParameters)
+        public LogpushRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logpush", pathParameters)
         {
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogpushRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logpush", rawUrl)
+        public LogpushRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logpush", rawUrl)
         {
         }
     }

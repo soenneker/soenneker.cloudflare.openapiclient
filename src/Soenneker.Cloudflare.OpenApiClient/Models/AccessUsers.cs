@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsers_emails>? Emails { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsersEmailsItem>? Emails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsers_emails> Emails { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsersEmailsItem> Emails { get; set; }
 #endif
         /// <summary>The IdP-generated Id of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsers_emails>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsers_emails.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsersEmailsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsersEmailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMeta.CreateFromDiscriminatorValue); } },
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsers_emails>("emails", Emails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUsersEmailsItem>("emails", Emails);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMeta>("meta", Meta);

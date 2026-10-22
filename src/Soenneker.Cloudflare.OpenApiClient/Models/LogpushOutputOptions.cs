@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If set to true, subrequests will be merged into the parent request. Only supported for the `http_requests` dataset.</summary>
         public bool? MergeSubrequests { get; set; }
         /// <summary>Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions_output_type? OutputType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType? OutputType { get; set; }
         /// <summary>String to be inserted in-between the records as separator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,10 +85,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RecordTemplate { get; set; }
 #endif
-        /// <summary>Floating number to specify sampling rate. Sampling is applied on top of filtering, and regardless of the current `sample_interval` of the data.</summary>
+        /// <summary>Specifies the sampling rate as a floating number greater than 0 and at most 1. Sampling is applied on top of filtering, and regardless of the current `sample_interval` of the data.</summary>
         public float? SampleRate { get; set; }
         /// <summary>String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339`, `rfc3339ms` or `rfc3339ns`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions_timestamp_format? TimestampFormat { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat? TimestampFormat { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions"/> and sets the default values.
         /// </summary>
@@ -120,13 +120,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "field_delimiter", n => { FieldDelimiter = n.GetStringValue(); } },
                 { "field_names", n => { FieldNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "merge_subrequests", n => { MergeSubrequests = n.GetBoolValue(); } },
-                { "output_type", n => { OutputType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions_output_type>(); } },
+                { "output_type", n => { OutputType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType>(); } },
                 { "record_delimiter", n => { RecordDelimiter = n.GetStringValue(); } },
                 { "record_prefix", n => { RecordPrefix = n.GetStringValue(); } },
                 { "record_suffix", n => { RecordSuffix = n.GetStringValue(); } },
                 { "record_template", n => { RecordTemplate = n.GetStringValue(); } },
                 { "sample_rate", n => { SampleRate = n.GetFloatValue(); } },
-                { "timestamp_format", n => { TimestampFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions_timestamp_format>(); } },
+                { "timestamp_format", n => { TimestampFormat = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat>(); } },
             };
         }
         /// <summary>
@@ -142,13 +142,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("field_delimiter", FieldDelimiter);
             writer.WriteCollectionOfPrimitiveValues<string>("field_names", FieldNames);
             writer.WriteBoolValue("merge_subrequests", MergeSubrequests);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions_output_type>("output_type", OutputType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsOutputType>("output_type", OutputType);
             writer.WriteStringValue("record_delimiter", RecordDelimiter);
             writer.WriteStringValue("record_prefix", RecordPrefix);
             writer.WriteStringValue("record_suffix", RecordSuffix);
             writer.WriteStringValue("record_template", RecordTemplate);
             writer.WriteFloatValue("sample_rate", SampleRate);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptions_timestamp_format>("timestamp_format", TimestampFormat);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushOutputOptionsTimestampFormat>("timestamp_format", TimestampFormat);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

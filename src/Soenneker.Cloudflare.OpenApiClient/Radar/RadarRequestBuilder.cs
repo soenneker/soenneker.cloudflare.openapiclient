@@ -27,6 +27,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Search;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Tcp_resets_timeouts;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Tlds;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -163,6 +164,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder Traffic_anomalies
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The verified_bots property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Verified_botsRequestBuilder Verified_bots
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Verified_botsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder"/> and sets the default values.

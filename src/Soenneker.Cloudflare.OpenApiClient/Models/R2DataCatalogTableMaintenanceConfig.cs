@@ -23,13 +23,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig Compaction { get; set; }
 #endif
-        /// <summary>Configures snapshot expiration settings.</summary>
+        /// <summary>Scheduling interval between normal table maintenance runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig? SnapshotExpiration { get; set; }
+        public string? Interval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig SnapshotExpiration { get; set; }
+        public string Interval { get; set; }
+#endif
+        /// <summary>The snapshot_expiration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig? SnapshotExpiration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig SnapshotExpiration { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableMaintenanceConfig"/> and sets the default values.
@@ -57,7 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "compaction", n => { Compaction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig.CreateFromDiscriminatorValue); } },
-                { "snapshot_expiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetStringValue(); } },
+                { "snapshot_expiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +77,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig>("compaction", Compaction);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogSnapshotExpirationConfig>("snapshot_expiration", SnapshotExpiration);
+            writer.WriteStringValue("interval", Interval);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig>("snapshot_expiration", SnapshotExpiration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

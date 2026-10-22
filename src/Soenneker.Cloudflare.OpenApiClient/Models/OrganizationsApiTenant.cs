@@ -61,10 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tenant_network property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenant_tenant_network? TenantNetwork { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantNetworkProperty? TenantNetwork { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenant_tenant_network TenantNetwork { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantNetworkProperty TenantNetwork { get; set; }
 #endif
         /// <summary>The tenant_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "tenant_labels", n => { TenantLabels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tenant_metadata", n => { TenantMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantMetadata.CreateFromDiscriminatorValue); } },
                 { "tenant_name", n => { TenantName = n.GetStringValue(); } },
-                { "tenant_network", n => { TenantNetwork = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenant_tenant_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenant_tenant_network.CreateFromDiscriminatorValue); } },
+                { "tenant_network", n => { TenantNetwork = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantNetworkProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantNetworkProperty.CreateFromDiscriminatorValue); } },
                 { "tenant_status", n => { TenantStatus = n.GetStringValue(); } },
                 { "tenant_tag", n => { TenantTag = n.GetStringValue(); } },
                 { "tenant_type", n => { TenantType = n.GetStringValue(); } },
@@ -151,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tenant_labels", TenantLabels);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantMetadata>("tenant_metadata", TenantMetadata);
             writer.WriteStringValue("tenant_name", TenantName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenant_tenant_network>("tenant_network", TenantNetwork);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiTenantTenantNetworkProperty>("tenant_network", TenantNetwork);
             writer.WriteStringValue("tenant_status", TenantStatus);
             writer.WriteStringValue("tenant_tag", TenantTag);
             writer.WriteStringValue("tenant_type", TenantType);

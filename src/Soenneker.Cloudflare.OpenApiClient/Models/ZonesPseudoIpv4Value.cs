@@ -13,11 +13,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "add_header")]
         #pragma warning disable CS1591
-        Add_header,
+        AddHeader,
         #pragma warning restore CS1591
         [EnumMember(Value = "overwrite_header")]
         #pragma warning disable CS1591
-        Overwrite_header,
+        OverwriteHeader,
         #pragma warning restore CS1591
     }
 }

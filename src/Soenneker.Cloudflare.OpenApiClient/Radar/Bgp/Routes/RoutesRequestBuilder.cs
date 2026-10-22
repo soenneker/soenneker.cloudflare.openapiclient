@@ -4,9 +4,11 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Ases;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Moas;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Paths;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Stats;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Upstreams;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -29,6 +31,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Moas.MoasRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The paths property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Paths.PathsRequestBuilder Paths
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Paths.PathsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The pfx2as property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.Pfx2asRequestBuilder Pfx2as
         {
@@ -43,6 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Stats.StatsRequestBuilder Stats
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Stats.StatsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The upstreams property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Upstreams.UpstreamsRequestBuilder Upstreams
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Upstreams.UpstreamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.RoutesRequestBuilder"/> and sets the default values.

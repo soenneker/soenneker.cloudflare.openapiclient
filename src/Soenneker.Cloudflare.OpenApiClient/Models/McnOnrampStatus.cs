@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The lifecycle_errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus_lifecycle_errors? LifecycleErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatusLifecycleErrorsProperty? LifecycleErrors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus_lifecycle_errors LifecycleErrors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatusLifecycleErrorsProperty LifecycleErrors { get; set; }
 #endif
         /// <summary>The lifecycle_state property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampLifecycleState? LifecycleState { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "apply_progress", n => { ApplyProgress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnApplyProgress>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnApplyProgress.CreateFromDiscriminatorValue); } },
-                { "lifecycle_errors", n => { LifecycleErrors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus_lifecycle_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus_lifecycle_errors.CreateFromDiscriminatorValue); } },
+                { "lifecycle_errors", n => { LifecycleErrors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatusLifecycleErrorsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatusLifecycleErrorsProperty.CreateFromDiscriminatorValue); } },
                 { "lifecycle_state", n => { LifecycleState = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampLifecycleState>(); } },
                 { "plan_progress", n => { PlanProgress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnPlanProgress>(global::Soenneker.Cloudflare.OpenApiClient.Models.McnPlanProgress.CreateFromDiscriminatorValue); } },
                 { "routes", n => { Routes = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnApplyProgress>("apply_progress", ApplyProgress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatus_lifecycle_errors>("lifecycle_errors", LifecycleErrors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampStatusLifecycleErrorsProperty>("lifecycle_errors", LifecycleErrors);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnOnrampLifecycleState>("lifecycle_state", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.McnPlanProgress>("plan_progress", PlanProgress);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("routes", Routes);

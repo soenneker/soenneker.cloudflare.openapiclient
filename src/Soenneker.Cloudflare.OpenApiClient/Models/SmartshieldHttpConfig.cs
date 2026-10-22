@@ -38,13 +38,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_header? Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty? Header { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_header Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty Header { get; set; }
 #endif
         /// <summary>The HTTP method to use for the health check.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_method? Method { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod? Method { get; set; }
         /// <summary>The endpoint path to health check against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,9 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public SmartshieldHttpConfig()
         {
             AdditionalData = new Dictionary<string, object>();
-            ExpectedCodes = new List<string> { "200" };
-            Method = global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_method.GET;
+            AllowInsecure = false;
+            FollowRedirects = false;
             Path = "/";
+            Port = 80;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,8 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expected_body", n => { ExpectedBody = n.GetStringValue(); } },
                 { "expected_codes", n => { ExpectedCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "follow_redirects", n => { FollowRedirects = n.GetBoolValue(); } },
-                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_header>(global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_header.CreateFromDiscriminatorValue); } },
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_method>(); } },
+                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty.CreateFromDiscriminatorValue); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
             };
@@ -104,8 +105,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expected_body", ExpectedBody);
             writer.WriteCollectionOfPrimitiveValues<string>("expected_codes", ExpectedCodes);
             writer.WriteBoolValue("follow_redirects", FollowRedirects);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_header>("header", Header);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfig_method>("method", Method);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigHeaderProperty>("header", Header);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SmartshieldHttpConfigMethod>("method", Method);
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("port", Port);
             writer.WriteAdditionalData(AdditionalData);

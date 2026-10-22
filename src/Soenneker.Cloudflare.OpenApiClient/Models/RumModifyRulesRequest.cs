@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of rules to create or update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequest_rules>? Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequestRulesItem>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequest_rules> Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequestRulesItem> Rules { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequest"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "delete_rules", n => { DeleteRules = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequest_rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequest_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequestRulesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequestRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("delete_rules", DeleteRules);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequest_rules>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RumModifyRulesRequestRulesItem>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

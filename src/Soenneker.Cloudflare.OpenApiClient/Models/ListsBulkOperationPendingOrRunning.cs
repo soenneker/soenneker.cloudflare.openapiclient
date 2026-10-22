@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The current status of the asynchronous operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationPendingOrRunning_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationPendingOrRunningStatus? Status { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationPendingOrRunning"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationPendingOrRunning_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsBulkOperationPendingOrRunningStatus>(); } },
             };
         }
         /// <summary>

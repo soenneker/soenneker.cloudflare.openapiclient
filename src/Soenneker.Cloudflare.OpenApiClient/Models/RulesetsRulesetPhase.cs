@@ -9,99 +9,103 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "ddos_l4")]
         #pragma warning disable CS1591
-        Ddos_l4,
+        DdosL4,
         #pragma warning restore CS1591
         [EnumMember(Value = "ddos_l7")]
         #pragma warning disable CS1591
-        Ddos_l7,
+        DdosL7,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_config_settings")]
         #pragma warning disable CS1591
-        Http_config_settings,
+        HttpConfigSettings,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_custom_errors")]
         #pragma warning disable CS1591
-        Http_custom_errors,
+        HttpCustomErrors,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_log_custom_fields")]
         #pragma warning disable CS1591
-        Http_log_custom_fields,
+        HttpLogCustomFields,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_ratelimit")]
         #pragma warning disable CS1591
-        Http_ratelimit,
+        HttpRatelimit,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_cache_settings")]
         #pragma warning disable CS1591
-        Http_request_cache_settings,
+        HttpRequestCacheSettings,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_dynamic_redirect")]
         #pragma warning disable CS1591
-        Http_request_dynamic_redirect,
+        HttpRequestDynamicRedirect,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_firewall_custom")]
         #pragma warning disable CS1591
-        Http_request_firewall_custom,
+        HttpRequestFirewallCustom,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_firewall_managed")]
         #pragma warning disable CS1591
-        Http_request_firewall_managed,
+        HttpRequestFirewallManaged,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_late_transform")]
         #pragma warning disable CS1591
-        Http_request_late_transform,
+        HttpRequestLateTransform,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_origin")]
         #pragma warning disable CS1591
-        Http_request_origin,
+        HttpRequestOrigin,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_redirect")]
         #pragma warning disable CS1591
-        Http_request_redirect,
+        HttpRequestRedirect,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_sanitize")]
         #pragma warning disable CS1591
-        Http_request_sanitize,
+        HttpRequestSanitize,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_sbfm")]
         #pragma warning disable CS1591
-        Http_request_sbfm,
+        HttpRequestSbfm,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_request_transform")]
         #pragma warning disable CS1591
-        Http_request_transform,
+        HttpRequestTransform,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_response_cache_settings")]
         #pragma warning disable CS1591
-        Http_response_cache_settings,
+        HttpResponseCacheSettings,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_response_compression")]
         #pragma warning disable CS1591
-        Http_response_compression,
+        HttpResponseCompression,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "http_response_firewall_custom")]
+        #pragma warning disable CS1591
+        HttpResponseFirewallCustom,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_response_firewall_managed")]
         #pragma warning disable CS1591
-        Http_response_firewall_managed,
+        HttpResponseFirewallManaged,
         #pragma warning restore CS1591
         [EnumMember(Value = "http_response_headers_transform")]
         #pragma warning disable CS1591
-        Http_response_headers_transform,
+        HttpResponseHeadersTransform,
         #pragma warning restore CS1591
         [EnumMember(Value = "magic_transit")]
         #pragma warning disable CS1591
-        Magic_transit,
+        MagicTransit,
         #pragma warning restore CS1591
         [EnumMember(Value = "magic_transit_ids_managed")]
         #pragma warning disable CS1591
-        Magic_transit_ids_managed,
+        MagicTransitIdsManaged,
         #pragma warning restore CS1591
         [EnumMember(Value = "magic_transit_managed")]
         #pragma warning disable CS1591
-        Magic_transit_managed,
+        MagicTransitManaged,
         #pragma warning restore CS1591
         [EnumMember(Value = "magic_transit_ratelimit")]
         #pragma warning disable CS1591
-        Magic_transit_ratelimit,
+        MagicTransitRatelimit,
         #pragma warning restore CS1591
     }
 }

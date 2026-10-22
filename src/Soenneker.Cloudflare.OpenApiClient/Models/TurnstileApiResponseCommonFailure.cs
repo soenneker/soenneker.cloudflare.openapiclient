@@ -18,28 +18,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_errors? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem>? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_errors Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_messages? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_messages Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailureResultProperty? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailureResultProperty Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful</summary>
         public bool? Success { get; set; }
@@ -68,9 +76,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailureResultProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailureResultProperty.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -81,9 +90,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailure_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem>("errors", Errors);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileMessagesItem>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileApiResponseCommonFailureResultProperty>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

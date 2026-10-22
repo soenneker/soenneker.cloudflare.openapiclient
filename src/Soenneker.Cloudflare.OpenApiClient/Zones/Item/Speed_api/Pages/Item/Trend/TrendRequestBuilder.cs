@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\speed_api\pages\{url}\trend
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\speed_api\pages\{url}\trend
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrendRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/speed_api/pages/{url}/trend?deviceType={deviceType}&metrics={metrics}&region={region}&start={start}&tz={tz}{&end*}", pathParameters)
+        public TrendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/speed_api/pages/{url}/trend?deviceType={deviceType}&metrics={metrics}&region={region}&start={start}&tz={tz}{&end*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/speed_api/pages/{url}/trend?deviceType={deviceType}&metrics={metrics}&region={region}&start={start}&tz={tz}{&end*}", rawUrl)
+        public TrendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/speed_api/pages/{url}/trend?deviceType={deviceType}&metrics={metrics}&region={region}&start={start}&tz={tz}{&end*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,17 +90,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TrendRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("deviceType")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryDeviceType? DeviceType { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("end")]
-            public string? End { get; set; }
-#nullable restore
-#else
-            [QueryParameter("end")]
-            public string End { get; set; }
-#endif
+            public DateTimeOffset? End { get; set; }
+            #pragma warning restore CS1591
             /// <summary>A comma-separated list of metrics to include in the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,17 +108,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
             [QueryParameter("metrics")]
             public string Metrics { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("region")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ObservatoryRegion? Region { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("start")]
-            public string? Start { get; set; }
-#nullable restore
-#else
-            [QueryParameter("start")]
-            public string Start { get; set; }
-#endif
+            public DateTimeOffset? Start { get; set; }
+            #pragma warning restore CS1591
             /// <summary>The timezone of the start and end timestamps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

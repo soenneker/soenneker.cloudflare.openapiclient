@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Dataset { get; set; }
 #endif
         /// <summary>Whether this dataset type is account-scoped or zone-scoped.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestination_object_type? ObjectType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationObjectType? ObjectType { get; set; }
         /// <summary>JSON Schema that describes the fields this dataset exposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
-                { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestination_object_type>(); } },
+                { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationObjectType>(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema.CreateFromDiscriminatorValue); } },
                 { "timestamp_field", n => { TimestampField = n.GetStringValue(); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataset", Dataset);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestination_object_type>("object_type", ObjectType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationObjectType>("object_type", ObjectType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexAvailableDestinationSchema>("schema", Schema);
             writer.WriteStringValue("timestamp_field", TimestampField);
             writer.WriteAdditionalData(AdditionalData);

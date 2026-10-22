@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Dimension to sort results by</summary>
+    /// <summary>Dimension to sort results by.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DigitalExperienceMonitoringSortBy
     {
@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "device_id")]
         #pragma warning disable CS1591
-        Device_id,
+        DeviceId,
         #pragma warning restore CS1591
         [EnumMember(Value = "mode")]
         #pragma warning disable CS1591

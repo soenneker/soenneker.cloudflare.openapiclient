@@ -22,8 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Tunnel type: gre, ipsec, or cni&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequest_type? Type { get; set; }
+        /// <summary>Tunnel type: gre, ipsec, or cni</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequestType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicRedundancyMemberRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,15 +25,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ResourceId { get; set; }
 #endif
-        /// <summary>Enum for base zone-level resource types (those with no extra required fields).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum? ResourceType { get; set; }
-        /// <summary>Contains key-value pairs of tags.</summary>
+        /// <summary>Enum for access_application_policy resource type.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum? ResourceType { get; set; }
+        /// <summary>Contains key-value pairs of tags. Keys may contain at most 256 characters. Values may contain at most 1024 characters and may be empty for key-only tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy_tags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicyTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy_tags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicyTags Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy"/> and sets the default values.
@@ -62,8 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "access_application_id", n => { AccessApplicationId = n.GetGuidValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum>(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy_tags.CreateFromDiscriminatorValue); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum>(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicyTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicyTags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,8 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("access_application_id", AccessApplicationId);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeBaseEnum>("resource_type", ResourceType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy_tags>("tags", Tags);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum>("resource_type", ResourceType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicyTags>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

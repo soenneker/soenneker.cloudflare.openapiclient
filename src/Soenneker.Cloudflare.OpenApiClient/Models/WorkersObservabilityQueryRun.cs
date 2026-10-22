@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// The query run metadata including the query definition, execution status, and timeframe.
+    /// Represents a single execution of a query against Workers Observability data, including the query definition, execution status, and performance statistics.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersObservabilityQueryRun : IAdditionalDataHolder, IParsable
@@ -60,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatistics Statistics { get; set; }
 #endif
         /// <summary>Current execution status of the query run.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun_status? Status { get; set; }
-        /// <summary>Time range for the query execution</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatus? Status { get; set; }
+        /// <summary>Time range for the query execution. &apos;from&apos; must be earlier than &apos;to&apos;. No fractional milliseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunTimeframe? Timeframe { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "query", n => { Query = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunQuery>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunQuery.CreateFromDiscriminatorValue); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatistics>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatistics.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatus>(); } },
                 { "timeframe", n => { Timeframe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunTimeframe>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunTimeframe.CreateFromDiscriminatorValue); } },
                 { "updated", n => { Updated = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
@@ -137,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunQuery>("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatistics>("statistics", Statistics);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRun_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityQueryRunTimeframe>("timeframe", Timeframe);
             writer.WriteStringValue("updated", Updated);
             writer.WriteStringValue("userId", UserId);

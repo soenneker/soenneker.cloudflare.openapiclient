@@ -13,6 +13,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessAppPolicyLink : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountId { get; set; }
+#nullable restore
+#else
+        public string AccountId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The UUID of the policy</summary>
@@ -50,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "precedence", n => { Precedence = n.GetIntValue(); } },
             };
@@ -61,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("precedence", Precedence);
             writer.WriteAdditionalData(AdditionalData);

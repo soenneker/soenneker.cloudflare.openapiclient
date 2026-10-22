@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>&quot;Additional error-specific details (optional).- For `invalid_domain` errors: the invalid domain string- For `invalid_mechanism` errors: the invalid mechanism text (e.g., \&quot;invalidmech123\&quot;)- For `loop_detected` errors: the domain that caused the loop- For other error types: not present&quot;</summary>
+        /// <summary>Additional error-specific details (optional).- For `invalid_domain` errors: the invalid domain string- For `invalid_mechanism` errors: the invalid mechanism text (e.g., &quot;invalidmech123&quot;)- For `loop_detected` errors: the domain that caused the loop- For other error types: not present</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Details { get; set; }

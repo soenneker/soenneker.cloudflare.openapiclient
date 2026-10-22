@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Lookup;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -13,15 +14,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\resource-library\applications
+    /// Builds and executes requests for operations under \accounts\{account-id}\resource-library\applications
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The lookup property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Lookup.LookupRequestBuilder Lookup
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Lookup.LookupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.resourceLibrary.applications.item collection</summary>
         /// <param name="position">Application ID.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Item.ApplicationsItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Item.ApplicationsItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.Item.ApplicationsItemRequestBuilder this[long position]
         {
             get
             {
@@ -35,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/resource-library/applications{?filter*,limit*,offset*,order_by*,search*}", pathParameters)
+        public ApplicationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/resource-library/applications{?cursor*,fields*,filter*,limit*,lookup*,offset*,order_by*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +49,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/resource-library/applications{?filter*,limit*,offset*,order_by*,search*}", rawUrl)
+        public ApplicationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/resource-library/applications{?cursor*,fields*,filter*,limit*,lookup*,offset*,order_by*,search*}", rawUrl)
         {
         }
         /// <summary>
-        /// List applications with different filters.
+        /// List the applications available to an account, both the applications Cloudflarecurates and the custom applications the account has defined.Results are paginated. Page with `cursor` so that applications added or removedbetween requests do not make other results repeat or go missing; `offset` paging canrepeat or miss results when the list changes between requests. Use `filter` and`search` to narrow the list, `order_by` to sort it, and `fields` to reduce each resultto only the properties you need.Use `lookup` to find complete application names mentioned in a rule sentence,ignoring case. Lookup does not correct misspellings. It ranks matches byrelevance and uses the same filters, fields, and pagination as listing.`lookup` cannot be combined with `search`.Invalid UTF-8 or a NUL character (U+0000) in any query parameter name or valuereturns `400`.The authenticated principal must have access to the account identified by`account_id`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetApplications4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 502 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.ApplicationsRequestBuilder.ApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,12 +74,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.GetApplications4XX.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List applications with different filters.
+        /// Create a custom application for an account from a name, category, and optional network matchers.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationResponse"/></returns>
+        /// <param name="body">Defines a custom application. At least one hostname or IP subnet is required.Support domains and port/protocol pairs do not satisfy this requirement.A NUL character (U+0000) in any string value returns `400`.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure">When receiving a 4XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaGetApplicationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// List the applications available to an account, both the applications Cloudflarecurates and the custom applications the account has defined.Results are paginated. Page with `cursor` so that applications added or removedbetween requests do not make other results repeat or go missing; `offset` paging canrepeat or miss results when the list changes between requests. Use `filter` and`search` to narrow the list, `order_by` to sort it, and `fields` to reduce each resultto only the properties you need.Use `lookup` to find complete application names mentioned in a rule sentence,ignoring case. Lookup does not correct misspellings. It ranks matches byrelevance and uses the same filters, fields, and pagination as listing.`lookup` cannot be combined with `search`.Invalid UTF-8 or a NUL character (U+0000) in any query parameter name or valuereturns `400`.The authenticated principal must have access to the account identified by`account_id`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,6 +126,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             return requestInfo;
         }
         /// <summary>
+        /// Create a custom application for an account from a name, category, and optional network matchers.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Defines a custom application. At least one hostname or IP subnet is required.Support domains and port/protocol pairs do not satisfy this requirement.A NUL character (U+0000) in any string value returns `400`.</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaCreateApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.ApplicationsRequestBuilder"/></returns>
@@ -98,12 +157,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Applications.ApplicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List applications with different filters.
+        /// List the applications available to an account, both the applications Cloudflarecurates and the custom applications the account has defined.Results are paginated. Page with `cursor` so that applications added or removedbetween requests do not make other results repeat or go missing; `offset` paging canrepeat or miss results when the list changes between requests. Use `filter` and`search` to narrow the list, `order_by` to sort it, and `fields` to reduce each resultto only the properties you need.Use `lookup` to find complete application names mentioned in a rule sentence,ignoring case. Lookup does not correct misspellings. It ranks matches byrelevance and uses the same filters, fields, and pagination as listing.`lookup` cannot be combined with `search`.Invalid UTF-8 or a NUL character (U+0000) in any query parameter name or valuereturns `400`.The authenticated principal must have access to the account identified by`account_id`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationsRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Filter applications using key:value format. Supported filter keys:- name: Filter by application name (e.g., name:HR)- id: Filter by application ID (e.g., id:0b63249c-95bf-4cc0-a7cc-d7faaaf1dac0)- human_id: Filter by human-readable ID (e.g., human_id:HR)- hostname: Filter by hostname or support domain (e.g., hostname:portal.example.com)- source: Filter by application source name (e.g., source:cloudflare)- ip_subnet: Filter by IP subnet using CIDR containment — returns applications where any stored subnet contains the search value (e.g., ip_subnet:10.0.1.5/32 matches apps with 10.0.0.0/16)- intel_id: Filter by Intel API ID (e.g., intel_id:498). also supports multiple values (e.g., intel_id:498,1001)- category_id: Filter by category ID (e.g., category_id:37f8ec03-8766-49d4-9a15-369b044c842c).- category_name: Filter by category name (e.g., category_name:HR).- supported: Filter by supported Cloudflare product (e.g., supported:ACCESS). Values: GATEWAY, ACCESS, CASB..&quot;</summary>
+            /// <summary>Opaque value from `result_info.cursor` of the previous response. Returns theresults that follow it. Send the same `filter`, `search`, `lookup`, and`order_by` values as the request that returned it; `limit` and `fields` maychange. An empty value is the same as no cursor. A modified cursor, or one usedwith different values, returns `400`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            /// <summary>Return only the listed properties on each application, as a comma-separated list.Use this to keep responses small when you only need part of each application, forexample populating a picker with `fields=id,name` instead of downloading everyhostname and IP subnet.Omit this parameter to receive the full application object, includingwhen lookup is used.`id` is always returned.Selectable properties: `id`, `name`, `human_id`, `version`, `hostnames`,`support_domains`, `ip_subnets`, `port_protocols`, `supported`, `gen_ai_score`,`application_confidence_score`, `created_at`, `updated_at`, `review_status`.Unknown or empty property names return `400`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
+#endif
+            /// <summary>Filter applications using `key:value` format. Supported filter keys:- `name`: application name (for example, `name:HR`).- `id`: application ID (for example, `id:498`).- `human_id`: human-readable ID (for example, `human_id:HR`).- `hostname`: hostname or support domain (for example, `hostname:portal.example.com`).- `source`: application source name (for example, `source:cloudflare`).- `ip_subnet`: CIDR containment; returns applications where a stored subnet contains the search value (for example, `ip_subnet:10.0.1.5/32` matches `10.0.0.0/16`).- `category_id`: category ID (for example, `category_id:12`).- `category_name`: category name (for example, `category_name:HR`).- `supported`: supported Cloudflare product. Values: `GATEWAY`, `ACCESS`, `CASB`.- `review_status`: account-specific Gateway review status. Values: `approved`, `unapproved`, `in_review`, `unreviewed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -113,13 +192,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.Appli
             [QueryParameter("filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Limit of number of results to return (max 250).</summary>
+            /// <summary>Number of results to return. Defaults to 25; values are clamped to 1–250.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            /// <summary>Offset of results to return.</summary>
+            /// <summary>Find complete, case-insensitive application name mentions in a phrase orrule sentence. Misspelled names do not match. Returns matching applicationsranked by relevance. Must be between 2 and 1000 characters, with no controlcharacters other than tab and line breaks. Uses the samefilters, fields, and pagination as listing. `search` cannot be combinedwith lookup. Results are ranked by relevance, so `order_by` is ignored.To keep the text out of URLs, send it to `POST .../applications/lookup` instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("lookup")]
+            public string? Lookup { get; set; }
+#nullable restore
+#else
+            [QueryParameter("lookup")]
+            public string Lookup { get; set; }
+#endif
+            /// <summary>Number of results to skip. Defaults to 0; negative values are clamped to 0. Ignored when `cursor` is provided.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>Order results by field name and direction (e.g., name:asc). Ignored when search is provided; results are ranked by relevance instead.</summary>
+            /// <summary>Order results using field:direction format. Supported fields are name, id, human_id,category_id, application_type, application_confidence_score, and gen_ai_score.Supported directions are asc and desc. Ignored when search is provided; results areranked by relevance instead. Also ignored when lookup is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]

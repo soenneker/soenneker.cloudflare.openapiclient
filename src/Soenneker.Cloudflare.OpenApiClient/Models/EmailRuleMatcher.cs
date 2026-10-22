@@ -16,9 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Field for type matcher.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher_field? Field { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ToField? Field { get; set; }
         /// <summary>Type of matcher.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcherType? Type { get; set; }
         /// <summary>Value for matcher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "field", n => { Field = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher_field>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher_type>(); } },
+                { "field", n => { Field = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ToField>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcherType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -64,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher_field>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ToField>("field", Field);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcherType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

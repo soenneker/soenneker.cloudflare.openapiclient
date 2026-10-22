@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway\discovery
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\discovery
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DiscoveryRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DiscoveryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/discovery", pathParameters)
+        public DiscoveryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/discovery", pathParameters)
         {
         }
         /// <summary>
@@ -36,16 +36,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DiscoveryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/discovery", rawUrl)
+        public DiscoveryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/discovery", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
+        /// Returns the latest API operations discovered from zone traffic, rendered as OpenAPI schemas.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseDiscovery"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenApi4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseDiscovery?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -58,12 +58,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenApi4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseDiscovery>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSchemaResponseDiscovery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
+        /// Returns the latest API operations discovered from zone traffic, rendered as OpenAPI schemas.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

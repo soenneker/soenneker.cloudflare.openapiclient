@@ -7,19 +7,28 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Cloudflare.OpenApiClient.Accounts;
+using Soenneker.Cloudflare.OpenApiClient.Analytics;
+using Soenneker.Cloudflare.OpenApiClient.Api;
+using Soenneker.Cloudflare.OpenApiClient.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
+using Soenneker.Cloudflare.OpenApiClient.Cws;
+using Soenneker.Cloudflare.OpenApiClient.Heartbeat;
 using Soenneker.Cloudflare.OpenApiClient.Internal;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
 using Soenneker.Cloudflare.OpenApiClient.Live;
 using Soenneker.Cloudflare.OpenApiClient.Memberships;
+using Soenneker.Cloudflare.OpenApiClient.Oauth;
 using Soenneker.Cloudflare.OpenApiClient.Organizations;
+using Soenneker.Cloudflare.OpenApiClient.Pages;
+using Soenneker.Cloudflare.OpenApiClient.Produce;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Ready;
 using Soenneker.Cloudflare.OpenApiClient.SignedUrl;
-using Soenneker.Cloudflare.OpenApiClient.System;
+using Soenneker.Cloudflare.OpenApiClient.Subscriptions;
 using Soenneker.Cloudflare.OpenApiClient.Tenants;
 using Soenneker.Cloudflare.OpenApiClient.User;
-using Soenneker.Cloudflare.OpenApiClient.Users;
+using Soenneker.Cloudflare.OpenApiClient.V1;
+using Soenneker.Cloudflare.OpenApiClient.V2;
 using Soenneker.Cloudflare.OpenApiClient.Workers;
 using Soenneker.Cloudflare.OpenApiClient.Zones;
 using System.Collections.Generic;
@@ -39,10 +48,35 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The api property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Api.ApiRequestBuilder Api
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Api.ApiRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The billing property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Billing.BillingRequestBuilder Billing
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder Certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The cws property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Cws.CwsRequestBuilder Cws
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Cws.CwsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The heartbeat property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Heartbeat.HeartbeatRequestBuilder Heartbeat
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Heartbeat.HeartbeatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The internal property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Internal.InternalRequestBuilder Internal
@@ -64,10 +98,25 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The oauth property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Oauth.OauthRequestBuilder Oauth
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Oauth.OauthRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The organizations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder Organizations
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pages property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Pages.PagesRequestBuilder Pages
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The produce property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Produce.ProduceRequestBuilder Produce
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Produce.ProduceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The radar property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder Radar
@@ -84,10 +133,10 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The system property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.System.SystemRequestBuilder System
+        /// <summary>The subscriptions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.System.SystemRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tenants property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.TenantsRequestBuilder Tenants
@@ -99,10 +148,15 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The users property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Users.UsersRequestBuilder Users
+        /// <summary>The v1 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.V1.V1RequestBuilder V1
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.V1.V1RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v2 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.V2.V2RequestBuilder V2
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workers property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Workers.WorkersRequestBuilder Workers

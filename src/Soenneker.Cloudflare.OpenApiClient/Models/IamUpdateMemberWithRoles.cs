@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole> Roles { get; set; }
 #endif
         /// <summary>A member&apos;s status in the account.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateMemberWithRoles_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateMemberWithRolesStatus? Status { get; private set; }
         /// <summary>Details of the user associated to the membership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateMemberWithRoles_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateMemberWithRolesStatus>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateMemberWithRolesUser>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateMemberWithRolesUser.CreateFromDiscriminatorValue); } },
             };
         }

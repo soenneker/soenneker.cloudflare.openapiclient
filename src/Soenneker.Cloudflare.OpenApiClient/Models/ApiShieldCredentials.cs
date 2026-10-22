@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJWTKey>? Keys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyResponse>? Keys { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJWTKey> Keys { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyResponse> Keys { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keys", n => { Keys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJWTKey>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJWTKey.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "keys", n => { Keys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJWTKey>("keys", Keys);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentialsJwtKeyResponse>("keys", Keys);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecurityCenterNewScanRequest : IComposedTypeWrapper, IParsable
@@ -21,21 +21,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember1 SecurityCenterNewScanRequestMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember2? SecurityCenterNewScanRequestMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf1? SecurityCenterNewScanRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember2 SecurityCenterNewScanRequestMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf1 SecurityCenterNewScanRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember3? SecurityCenterNewScanRequestMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf2? SecurityCenterNewScanRequestOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember3 SecurityCenterNewScanRequestMember3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf2 SecurityCenterNewScanRequestOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,19 +45,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequest();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SecurityCenterNewScanRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SecurityCenterNewScanRequestMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember1();
+                result.SecurityCenterNewScanRequestOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SecurityCenterNewScanRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SecurityCenterNewScanRequestMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SecurityCenterNewScanRequestMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember3();
+                result.SecurityCenterNewScanRequestOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf2();
             }
             return result;
         }
@@ -71,13 +67,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return SecurityCenterNewScanRequestMember1.GetFieldDeserializers();
             }
-            else if(SecurityCenterNewScanRequestMember2 != null)
+            else if(SecurityCenterNewScanRequestOneOf1 != null)
             {
-                return SecurityCenterNewScanRequestMember2.GetFieldDeserializers();
+                return SecurityCenterNewScanRequestOneOf1.GetFieldDeserializers();
             }
-            else if(SecurityCenterNewScanRequestMember3 != null)
+            else if(SecurityCenterNewScanRequestOneOf2 != null)
             {
-                return SecurityCenterNewScanRequestMember3.GetFieldDeserializers();
+                return SecurityCenterNewScanRequestOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -92,13 +88,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember1>(null, SecurityCenterNewScanRequestMember1);
             }
-            else if(SecurityCenterNewScanRequestMember2 != null)
+            else if(SecurityCenterNewScanRequestOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember2>(null, SecurityCenterNewScanRequestMember2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf1>(null, SecurityCenterNewScanRequestOneOf1);
             }
-            else if(SecurityCenterNewScanRequestMember3 != null)
+            else if(SecurityCenterNewScanRequestOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestMember3>(null, SecurityCenterNewScanRequestMember3);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterNewScanRequestOneOf2>(null, SecurityCenterNewScanRequestOneOf2);
             }
         }
     }

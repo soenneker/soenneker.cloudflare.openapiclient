@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EntityId { get; set; }
 #endif
-        /// <summary>The entity_type property</summary>
+        /// <summary>The type of entity targeted by a mitigation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigatedEntityType? EntityType { get; set; }
         /// <summary>ID of remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,8 +42,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The status of a mitigation</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationStatus? Status { get; set; }
-        /// <summary>The type of mitigation</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationType? Type { get; set; }
+        /// <summary>The type of mitigation applied to a reported entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationListItem"/> and sets the default values.
         /// </summary>
@@ -74,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "entity_type", n => { EntityType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigatedEntityType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationType>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -89,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigatedEntityType>("entity_type", EntityType);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationType>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

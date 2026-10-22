@@ -18,21 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The constraint of a target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_constraint? Constraint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint? Constraint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_constraint Constraint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint Constraint { get; set; }
 #endif
         /// <summary>A target based on the URL of the request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_target? Target { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget? Target { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget"/> and sets the default values.
         /// </summary>
@@ -58,9 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "constraint", n => { Constraint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_constraint>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_constraint.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_target>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "constraint", n => { Constraint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget>(); } },
             };
         }
         /// <summary>
@@ -70,9 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_constraint>("constraint", Constraint);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget_target>("target", Target);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTargetConstraint>("constraint", Constraint);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlTarget>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

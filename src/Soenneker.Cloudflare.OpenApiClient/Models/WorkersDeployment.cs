@@ -43,14 +43,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Source { get; private set; }
 #endif
         /// <summary>The strategy property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_strategy? Strategy { get; set; }
-        /// <summary>The versions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy? Strategy { get; set; }
+        /// <summary>Worker versions included in this deployment. Each object must contain a `version_id` UUID and a `percentage`; percentages across all objects must total 100. In the `cf` CLI, pass the entire array as one JSON value to `--versions`, either inline, for example `--versions &apos;[{&quot;version_id&quot;:&quot;023e105f-2a42-4f8b-a1c1-73f6a2a30c0f&quot;,&quot;percentage&quot;:100}]&apos;`, or from a JSON file with `--versions @versions.json`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_versions>? Versions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>? Versions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_versions> Versions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem> Versions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment"/> and sets the default values.
@@ -82,8 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_strategy>(); } },
-                { "versions", n => { Versions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_versions>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_versions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy>(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -94,8 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentAnnotations>("annotations", Annotations);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_strategy>("strategy", Strategy);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeployment_versions>("versions", Versions);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PercentageStrategy>("strategy", Strategy);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersDeploymentVersionsItem>("versions", Versions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

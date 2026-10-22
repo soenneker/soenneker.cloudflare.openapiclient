@@ -8,13 +8,31 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents a single billable usage record.
+    /// Represents a single billable usage record.This schema carries 19 of the 21 columns FOCUS 1.3 marks as mandatory. Mandatory columns are always present, using an explicit null when the value is unknown, so consumers can distinguish &quot;unknown&quot; from &quot;not provided&quot;.Known gap 1: `ServiceCategory` (FOCUS 1.3 section 3.1.55) is not yet implemented and does not appear in this schema. Cloudflare&apos;s product catalog does not yet have a stakeholder-approved mapping from product family to a FOCUS ServiceCategory value, so the column is omitted entirely rather than shipping unapproved values. It will be added once that mapping exists.Known gap 2: `BillingPeriodEnd` (FOCUS 1.3 section 3.1.4) is not yet implemented and does not appear in this schema, because no authoritative source for it exists today. Deriving it by calendar arithmetic drifts for billing cycle anchors on day 29-31, and the billing provider&apos;s current period end describes only the current period, so it is wrong for backdated records. `BillingPeriodStart` is correctly sourced and is still reported, so records carry a billing period start with no corresponding end until an authoritative end date is available.Per FOCUS 1.3 section 4.1.4.1, the columns that are not part of FOCUS (`ServiceFamilyName`, `CumulatedPricingQuantity`, `CumulatedContractedCost`, `ZoneId`, `ZoneName` and `SubscriptionId`) would normally carry an `x_` prefix. They are kept unprefixed here to avoid a breaking change for existing consumers.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillableUsageApiUsageRecord : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The amount invoiced for this charge. PayGo is billed directly by Cloudflare, so this equals ContractedCost.</summary>
+        public double? BilledCost { get; set; }
+        /// <summary>The identifier of the account the charge is billed to (account tag).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingAccountId { get; set; }
+#nullable restore
+#else
+        public string BillingAccountId { get; set; }
+#endif
+        /// <summary>The display name of the billing account. Null when the name could not be resolved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingAccountName { get; set; }
+#nullable restore
+#else
+        public string BillingAccountName { get; set; }
+#endif
         /// <summary>Specifies the billing currency code (ISO 4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,8 +41,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BillingCurrency { get; set; }
 #endif
-        /// <summary>Indicates the start of the billing period.</summary>
+        /// <summary>Indicates the start of the billing period. There is no `BillingPeriodEnd` counterpart; see the known gaps described on this schema.</summary>
         public DateTimeOffset? BillingPeriodStart { get; set; }
+        /// <summary>Highest-level classification of a charge based on the nature of how it gets billed. Currently only &quot;Usage&quot; is supported.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UsageChargeCategory? ChargeCategory { get; set; }
+        /// <summary>Indicates whether the row corrects a previously invoiced billing period. Always null for this endpoint, which does not return corrections.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeClass { get; set; }
+#nullable restore
+#else
+        public string ChargeClass { get; set; }
+#endif
+        /// <summary>A human-readable summary of the charge.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChargeDescription { get; set; }
+#nullable restore
+#else
+        public string ChargeDescription { get; set; }
+#endif
         /// <summary>Indicates the end of the charge period.</summary>
         public DateTimeOffset? ChargePeriodEnd { get; set; }
         /// <summary>Indicates the start of the charge period.</summary>
@@ -43,10 +79,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? ContractedCost { get; set; }
         /// <summary>Specifies the cumulated cost for the billing period in the billing currency.</summary>
         public double? CumulatedContractedCost { get; set; }
-        /// <summary>Specifies the cumulated pricing quantity for the billing period.</summary>
+        /// <summary>Specifies the portion of usage that is actually subject to a unit price.</summary>
         public int? CumulatedPricingQuantity { get; set; }
+        /// <summary>The amortized cost of the charge. PayGo has no upfront commitments, so this equals ContractedCost.</summary>
+        public double? EffectiveCost { get; set; }
+        /// <summary>The provider that hosts the infrastructure or platform the service runs on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HostProviderName { get; set; }
+#nullable restore
+#else
+        public string HostProviderName { get; set; }
+#endif
+        /// <summary>The entity that issues the invoice for this charge.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceIssuerName { get; set; }
+#nullable restore
+#else
+        public string InvoiceIssuerName { get; set; }
+#endif
+        /// <summary>The cost at published list prices, before any discount. PayGo has no commitment discounts, so this equals ContractedCost.</summary>
+        public double? ListCost { get; set; }
         /// <summary>Specifies the pricing quantity for this charge period.</summary>
         public int? PricingQuantity { get; set; }
+        /// <summary>The unit that PricingQuantity is expressed in. Unlike ConsumedUnit this is never empty; it falls back to &quot;Count&quot; when the service has no explicit unit.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PricingUnit { get; set; }
+#nullable restore
+#else
+        public string PricingUnit { get; set; }
+#endif
+        /// <summary>Identifies the product family for the Cloudflare service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceFamilyName { get; set; }
+#nullable restore
+#else
+        public string ServiceFamilyName { get; set; }
+#endif
         /// <summary>Identifies the Cloudflare service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +126,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string ServiceName { get; set; }
+#endif
+        /// <summary>The provider of the purchased service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceProviderName { get; set; }
+#nullable restore
+#else
+        public string ServiceProviderName { get; set; }
+#endif
+        /// <summary>The identifier for the Cloudflare subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionId { get; set; }
+#nullable restore
+#else
+        public string SubscriptionId { get; set; }
+#endif
+        /// <summary>The identifier for the Cloudflare zone (zone tag).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZoneId { get; set; }
+#nullable restore
+#else
+        public string ZoneId { get; set; }
+#endif
+        /// <summary>The display name of the Cloudflare zone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZoneName { get; set; }
+#nullable restore
+#else
+        public string ZoneName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillableUsageApiUsageRecord"/> and sets the default values.
@@ -80,8 +184,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "BilledCost", n => { BilledCost = n.GetDoubleValue(); } },
+                { "BillingAccountId", n => { BillingAccountId = n.GetStringValue(); } },
+                { "BillingAccountName", n => { BillingAccountName = n.GetStringValue(); } },
                 { "BillingCurrency", n => { BillingCurrency = n.GetStringValue(); } },
                 { "BillingPeriodStart", n => { BillingPeriodStart = n.GetDateTimeOffsetValue(); } },
+                { "ChargeCategory", n => { ChargeCategory = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UsageChargeCategory>(); } },
+                { "ChargeClass", n => { ChargeClass = n.GetStringValue(); } },
+                { "ChargeDescription", n => { ChargeDescription = n.GetStringValue(); } },
                 { "ChargePeriodEnd", n => { ChargePeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "ChargePeriodStart", n => { ChargePeriodStart = n.GetDateTimeOffsetValue(); } },
                 { "ConsumedQuantity", n => { ConsumedQuantity = n.GetDoubleValue(); } },
@@ -89,8 +199,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ContractedCost", n => { ContractedCost = n.GetDoubleValue(); } },
                 { "CumulatedContractedCost", n => { CumulatedContractedCost = n.GetDoubleValue(); } },
                 { "CumulatedPricingQuantity", n => { CumulatedPricingQuantity = n.GetIntValue(); } },
+                { "EffectiveCost", n => { EffectiveCost = n.GetDoubleValue(); } },
+                { "HostProviderName", n => { HostProviderName = n.GetStringValue(); } },
+                { "InvoiceIssuerName", n => { InvoiceIssuerName = n.GetStringValue(); } },
+                { "ListCost", n => { ListCost = n.GetDoubleValue(); } },
                 { "PricingQuantity", n => { PricingQuantity = n.GetIntValue(); } },
+                { "PricingUnit", n => { PricingUnit = n.GetStringValue(); } },
+                { "ServiceFamilyName", n => { ServiceFamilyName = n.GetStringValue(); } },
                 { "ServiceName", n => { ServiceName = n.GetStringValue(); } },
+                { "ServiceProviderName", n => { ServiceProviderName = n.GetStringValue(); } },
+                { "SubscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "ZoneId", n => { ZoneId = n.GetStringValue(); } },
+                { "ZoneName", n => { ZoneName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -100,8 +220,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("BilledCost", BilledCost);
+            writer.WriteStringValue("BillingAccountId", BillingAccountId);
+            writer.WriteStringValue("BillingAccountName", BillingAccountName);
             writer.WriteStringValue("BillingCurrency", BillingCurrency);
             writer.WriteDateTimeOffsetValue("BillingPeriodStart", BillingPeriodStart);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UsageChargeCategory>("ChargeCategory", ChargeCategory);
+            writer.WriteStringValue("ChargeClass", ChargeClass);
+            writer.WriteStringValue("ChargeDescription", ChargeDescription);
             writer.WriteDateTimeOffsetValue("ChargePeriodEnd", ChargePeriodEnd);
             writer.WriteDateTimeOffsetValue("ChargePeriodStart", ChargePeriodStart);
             writer.WriteDoubleValue("ConsumedQuantity", ConsumedQuantity);
@@ -109,8 +235,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("ContractedCost", ContractedCost);
             writer.WriteDoubleValue("CumulatedContractedCost", CumulatedContractedCost);
             writer.WriteIntValue("CumulatedPricingQuantity", CumulatedPricingQuantity);
+            writer.WriteDoubleValue("EffectiveCost", EffectiveCost);
+            writer.WriteStringValue("HostProviderName", HostProviderName);
+            writer.WriteStringValue("InvoiceIssuerName", InvoiceIssuerName);
+            writer.WriteDoubleValue("ListCost", ListCost);
             writer.WriteIntValue("PricingQuantity", PricingQuantity);
+            writer.WriteStringValue("PricingUnit", PricingUnit);
+            writer.WriteStringValue("ServiceFamilyName", ServiceFamilyName);
             writer.WriteStringValue("ServiceName", ServiceName);
+            writer.WriteStringValue("ServiceProviderName", ServiceProviderName);
+            writer.WriteStringValue("SubscriptionId", SubscriptionId);
+            writer.WriteStringValue("ZoneId", ZoneId);
+            writer.WriteStringValue("ZoneName", ZoneName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

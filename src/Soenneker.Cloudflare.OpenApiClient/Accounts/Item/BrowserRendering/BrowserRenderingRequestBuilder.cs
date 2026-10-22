@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.AccessibilityTree;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools;
@@ -9,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEsca
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Links;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Markdown;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Recording;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Snapshot;
@@ -19,11 +21,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering
+    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrowserRenderingRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The accessibilityTree property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.AccessibilityTree.AccessibilityTreeRequestBuilder AccessibilityTree
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.AccessibilityTree.AccessibilityTreeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The content property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder Content
         {
@@ -59,6 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf.PdfRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The recording property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Recording.RecordingRequestBuilder Recording
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Recording.RecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The scrape property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder Scrape
         {
@@ -79,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRenderingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering", pathParameters)
+        public BrowserRenderingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering", pathParameters)
         {
         }
         /// <summary>
@@ -87,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRenderingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering", rawUrl)
+        public BrowserRenderingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering", rawUrl)
         {
         }
     }

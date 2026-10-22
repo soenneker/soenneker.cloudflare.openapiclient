@@ -40,14 +40,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Public tag (script_tag) of the Worker that owns this rule. Required when`source` is `wrangler`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerWorkerTag { get; set; }
+#nullable restore
+#else
+        public string OwnerWorkerTag { get; set; }
+#endif
         /// <summary>Priority of the routing rule.</summary>
         public double? Priority { get; set; }
+        /// <summary>Who manages the rule. `api` covers dashboard, generic API, and Terraform;`wrangler` means the rule is managed by a Worker&apos;s wrangler.jsonc. Defaultsto `api` when omitted on write.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource? Source { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailUpdateRuleProperties"/> and sets the default values.
         /// </summary>
         public EmailUpdateRuleProperties()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +82,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "matchers", n => { Matchers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "owner_worker_tag", n => { OwnerWorkerTag = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>(); } },
             };
         }
         /// <summary>
@@ -85,7 +98,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher>("matchers", Matchers);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("owner_worker_tag", OwnerWorkerTag);
             writer.WriteDoubleValue("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,11 +14,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The remaining number of commands that can be initiated for an account</summary>
+        /// <summary>The total number of commands that can be initiated for an account.</summary>
         public double? Quota { get; set; }
-        /// <summary>The number of commands that have been initiated for an account</summary>
+        /// <summary>The number of commands that have been initiated for an account.</summary>
         public double? QuotaUsage { get; set; }
-        /// <summary>The time when the quota resets</summary>
+        /// <summary>The time when the quota resets.</summary>
         public DateTimeOffset? ResetTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringGetCommandsQuotaResponse"/> and sets the default values.

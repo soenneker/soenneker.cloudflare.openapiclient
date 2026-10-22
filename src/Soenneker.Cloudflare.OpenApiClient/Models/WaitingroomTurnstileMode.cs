@@ -17,11 +17,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "visible_non_interactive")]
         #pragma warning disable CS1591
-        Visible_non_interactive,
+        VisibleNonInteractive,
         #pragma warning restore CS1591
         [EnumMember(Value = "visible_managed")]
         #pragma warning disable CS1591
-        Visible_managed,
+        VisibleManaged,
         #pragma warning restore CS1591
     }
 }

@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class StreamAccessRules : IAdditionalDataHolder, IParsable
     {
         /// <summary>The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules_action? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRulesAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of 2-letter country codes in ISO 3166-1 Alpha-2 format used to match requests.</summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Ip { get; set; }
 #endif
         /// <summary>Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRulesType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules"/> and sets the default values.
         /// </summary>
@@ -60,10 +60,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules_action>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRulesAction>(); } },
                 { "country", n => { Country = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ip", n => { Ip = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRulesType>(); } },
             };
         }
         /// <summary>
@@ -73,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules_action>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRulesAction>("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("country", Country);
             writer.WriteCollectionOfPrimitiveValues<string>("ip", Ip);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRules_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamAccessRulesType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

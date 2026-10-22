@@ -47,6 +47,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ListsItemRedirect()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeSubdomains = false;
+            PreservePathSuffix = true;
+            PreserveQueryString = false;
+            StatusCode = 301;
+            SubpathMatching = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -11,10 +11,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// Object specifying allowed origins, methods and headers for this CORS rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class R2CorsRuleAllowed : IAdditionalDataHolder, IParsable
+    public partial class R2CorsRuleAllowed : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,10 +24,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the value for the Access-Control-Allow-Methods header R2 sets when requesting objects in a bucket from a browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed_methods?>? Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?>? Methods { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed_methods?> Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem?> Methods { get; set; }
 #endif
         /// <summary>Specifies the value for the Access-Control-Allow-Origin header R2 sets when requesting objects in a bucket from a browser.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +37,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Origins { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed"/> and sets the default values.
-        /// </summary>
-        public R2CorsRuleAllowed()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "headers", n => { Headers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "methods", n => { Methods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed_methods>()?.AsList(); } },
+                { "methods", n => { Methods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem>()?.AsList(); } },
                 { "origins", n => { Origins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -77,9 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("headers", Headers);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowed_methods>("methods", Methods);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRuleAllowedMethodsItem>("methods", Methods);
             writer.WriteCollectionOfPrimitiveValues<string>("origins", Origins);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

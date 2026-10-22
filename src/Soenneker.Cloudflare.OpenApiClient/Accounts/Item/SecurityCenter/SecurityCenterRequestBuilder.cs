@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partners;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.State;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\security-center
+    /// Builds and executes requests for operations under \accounts\{account-id}\security-center
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecurityCenterRequestBuilder : BaseRequestBuilder
@@ -20,12 +22,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The partners property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partners.PartnersRequestBuilder Partners
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Partners.PartnersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The state property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.State.StateRequestBuilder State
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.State.StateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.SecurityCenterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityCenterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center", pathParameters)
+        public SecurityCenterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityCenterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center", rawUrl)
+        public SecurityCenterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center", rawUrl)
         {
         }
     }

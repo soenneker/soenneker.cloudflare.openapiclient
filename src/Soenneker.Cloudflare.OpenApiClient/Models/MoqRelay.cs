@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>origin_fallback and lingering_subscribe are mutually exclusive.</summary>
+        /// <summary>Relay configuration. All sub-objects use whole-object replacement whenpresent; omitted sub-objects preserve the existing value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelayConfig? Config { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>&quot;connected&quot; when active, omitted otherwise.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelay_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ConnectedStatus? Status { get; set; }
         /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelay_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ConnectedStatus>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelay_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ConnectedStatus>("status", Status);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

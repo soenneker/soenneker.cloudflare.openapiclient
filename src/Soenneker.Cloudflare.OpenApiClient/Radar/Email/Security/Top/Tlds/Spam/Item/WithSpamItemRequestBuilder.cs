@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.
         /// <summary>
         /// Retrieves the top TLDs by emails classified as spam or not.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam404Response">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.WithSpamItemRequestBuilder.WithSpamItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.WithSpamItemRequestBuilder.WithSpamItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.WithSpamItemRequestBuilder.WithSpamItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.WithSpamItemRequestBuilder.WithSpamItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam404.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam404Response.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpam200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top TLDs by emails classified as spam or not.
@@ -94,13 +94,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("arc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetArcQueryParameterType[]? Arc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamArcParameterItem[]? Arc { get; set; }
 #nullable restore
 #else
             [QueryParameter("arc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetArcQueryParameterType[] Arc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamArcParameterItem[] Arc { get; set; }
 #endif
-            /// <summary>End of the date range (inclusive).</summary>
+            /// <summary>End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateEnd")]
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.
             [QueryParameter("dateEnd")]
             public DateTimeOffset?[] DateEnd { get; set; }
 #endif
-            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+            /// <summary>Filters results by relative date range ending at the current time, with each value producing a separate series. Use `&lt;n&gt;d` for days (up to `364d`) or `&lt;n&gt;w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window&apos;s length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateRange")]
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.
             [QueryParameter("dateRange")]
             public string[] DateRange { get; set; }
 #endif
-            /// <summary>Start of the date range.</summary>
+            /// <summary>Start of the date range. Alternative to `dateRange`; provide together with `dateEnd`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dateStart")]
@@ -134,25 +134,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dkim")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetDkimQueryParameterType[]? Dkim { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamDkimParameterItem[]? Dkim { get; set; }
 #nullable restore
 #else
             [QueryParameter("dkim")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetDkimQueryParameterType[] Dkim { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamDkimParameterItem[] Dkim { get; set; }
 #endif
             /// <summary>Filters results by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dmarc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetDmarcQueryParameterType[]? Dmarc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamDmarcParameterItem[]? Dmarc { get; set; }
 #nullable restore
 #else
             [QueryParameter("dmarc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetDmarcQueryParameterType[] Dmarc { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamDmarcParameterItem[] Dmarc { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetFormatQueryParameterType? Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamFormatParameter? Format { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -170,24 +170,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("spf")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetSpfQueryParameterType[]? Spf { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamSpfParameterItem[]? Spf { get; set; }
 #nullable restore
 #else
             [QueryParameter("spf")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetSpfQueryParameterType[] Spf { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamSpfParameterItem[] Spf { get; set; }
 #endif
             /// <summary>Filters results by TLD category.</summary>
             [QueryParameter("tldCategory")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetTldCategoryQueryParameterType? TldCategory { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamTldCategoryParameter? TldCategory { get; set; }
             /// <summary>Filters results by TLS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetTlsVersionQueryParameterType[]? TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamTlsVersionParameterItem[]? TlsVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.GetTlsVersionQueryParameterType[] TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetEmailSecurityTopTldsBySpamTlsVersionParameterItem[] TlsVersion { get; set; }
 #endif
         }
     }

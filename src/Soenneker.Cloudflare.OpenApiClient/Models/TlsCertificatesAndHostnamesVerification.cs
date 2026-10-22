@@ -27,9 +27,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CertPackUuid { get; set; }
 #endif
         /// <summary>Certificate&apos;s signature algorithm.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasSignature? Signature { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSignature2? Signature { get; set; }
         /// <summary>Validation method in use for a certificate pack order.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasValidationMethod? ValidationMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod2? ValidationMethod { get; set; }
         /// <summary>Certificate&apos;s required verification information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,8 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "brand_check", n => { BrandCheck = n.GetBoolValue(); } },
                 { "cert_pack_uuid", n => { CertPackUuid = n.GetStringValue(); } },
                 { "certificate_status", n => { CertificateStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateStatus>(); } },
-                { "signature", n => { Signature = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasSignature>(); } },
-                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasValidationMethod>(); } },
+                { "signature", n => { Signature = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSignature2>(); } },
+                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod2>(); } },
                 { "verification_info", n => { VerificationInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfo.CreateFromDiscriminatorValue); } },
                 { "verification_status", n => { VerificationStatus = n.GetBoolValue(); } },
                 { "verification_type", n => { VerificationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationType>(); } },
@@ -87,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("brand_check", BrandCheck);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificateStatus>("certificate_status", CertificateStatus);
             writer.WriteStringValue("cert_pack_uuid", CertPackUuid);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasSignature>("signature", Signature);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSchemasValidationMethod>("validation_method", ValidationMethod);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSignature2>("signature", Signature);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValidationMethod2>("validation_method", ValidationMethod);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationInfo>("verification_info", VerificationInfo);
             writer.WriteBoolValue("verification_status", VerificationStatus);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesVerificationType>("verification_type", VerificationType);

@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class EmailSecurityMessageDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Deprecated, use `GET /investigate/{investigate_id}/action_log` instead. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated, use `GET /investigate/{investigate_id}/action_log` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> ClientRecipients { get; set; }
 #endif
         /// <summary>The delivery_mode property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDeliveryMode? DeliveryMode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsDeliveryMode? DeliveryMode { get; set; }
         /// <summary>The delivery_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,16 +81,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> EnvelopeTo { get; set; }
 #endif
-        /// <summary>The final_disposition property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel? FinalDisposition { get; set; }
-        /// <summary>&quot;Deprecated, use the `findings` field from `GET /investigate/{investigate_id}/detections` instead. End of life: November 1, 2026. Detection findings for this message.&quot;</summary>
+        /// <summary>The verdict Email Security assigns to a message.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFinalDisposition? FinalDisposition { get; set; }
+        /// <summary>Deprecated, use the `findings` field from `GET /investigate/{investigate_id}/detections` instead. End of life: November 1, 2026. Detection findings for this message.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_findings>? Findings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFindingsItem>? Findings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_findings> Findings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFindingsItem> Findings { get; set; }
 #endif
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,13 +116,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string HtmltextStructureHash { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for a message retrieved from investigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The is_phish_submission property</summary>
         public bool? IsPhishSubmission { get; set; }
@@ -136,15 +136,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MessageId { get; set; }
 #endif
-        /// <summary>Post-delivery operations performed on this message</summary>
+        /// <summary>Post-delivery operations performed on this message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_post_delivery_operations?>? PostDeliveryOperations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPostDeliveryOperationsItem?>? PostDeliveryOperations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_post_delivery_operations?> PostDeliveryOperations { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPostDeliveryOperationsItem?> PostDeliveryOperations { get; set; }
 #endif
-        /// <summary>The identifier of the message</summary>
+        /// <summary>The identifier of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostfixId { get; set; }
@@ -160,7 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PostfixIdOutbound { get; set; }
 #endif
-        /// <summary>Message processing properties</summary>
+        /// <summary>Message processing properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties? Properties { get; set; }
@@ -176,9 +176,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Replyto { get; set; }
 #endif
-        /// <summary>When the message was scanned (UTC)</summary>
+        /// <summary>When the message was scanned (UTC).</summary>
         public DateTimeOffset? ScannedAt { get; set; }
-        /// <summary>When the message was sent (UTC)</summary>
+        /// <summary>When the message was sent (UTC).</summary>
         public DateTimeOffset? SentAt { get; set; }
         /// <summary>The sent_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,7 +236,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> ToName { get; set; }
 #endif
-        /// <summary>&quot;Deprecated, use `scanned_at` instead. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated, use `scanned_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -248,10 +248,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The validation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation? Validation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidation? Validation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation Validation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidation Validation { get; set; }
 #endif
         /// <summary>The x_originating_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -289,22 +289,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "action_log", n => { ActionLog = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntry>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "alert_id", n => { AlertId = n.GetStringValue(); } },
                 { "client_recipients", n => { ClientRecipients = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "delivery_mode", n => { DeliveryMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDeliveryMode>(); } },
+                { "delivery_mode", n => { DeliveryMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsDeliveryMode>(); } },
                 { "delivery_status", n => { DeliveryStatus = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDeliveryStatus>()?.AsList(); } },
                 { "detection_reasons", n => { DetectionReasons = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "edf_hash", n => { EdfHash = n.GetStringValue(); } },
                 { "envelope_from", n => { EnvelopeFrom = n.GetStringValue(); } },
                 { "envelope_to", n => { EnvelopeTo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "final_disposition", n => { FinalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>(); } },
-                { "findings", n => { Findings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_findings>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_findings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "final_disposition", n => { FinalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFinalDisposition>(); } },
+                { "findings", n => { Findings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFindingsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFindingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetStringValue(); } },
                 { "from_name", n => { FromName = n.GetStringValue(); } },
                 { "htmltext_structure_hash", n => { HtmltextStructureHash = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "is_phish_submission", n => { IsPhishSubmission = n.GetBoolValue(); } },
                 { "is_quarantined", n => { IsQuarantined = n.GetBoolValue(); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
-                { "post_delivery_operations", n => { PostDeliveryOperations = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_post_delivery_operations>()?.AsList(); } },
+                { "post_delivery_operations", n => { PostDeliveryOperations = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPostDeliveryOperationsItem>()?.AsList(); } },
                 { "postfix_id", n => { PostfixId = n.GetStringValue(); } },
                 { "postfix_id_outbound", n => { PostfixIdOutbound = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties.CreateFromDiscriminatorValue); } },
@@ -319,7 +319,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "to", n => { To = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "to_name", n => { ToName = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ts", n => { Ts = n.GetStringValue(); } },
-                { "validation", n => { Validation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation.CreateFromDiscriminatorValue); } },
+                { "validation", n => { Validation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidation>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidation.CreateFromDiscriminatorValue); } },
                 { "x_originating_ip", n => { XOriginatingIp = n.GetStringValue(); } },
             };
         }
@@ -333,22 +333,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionLogEntry>("action_log", ActionLog);
             writer.WriteStringValue("alert_id", AlertId);
             writer.WriteCollectionOfPrimitiveValues<string>("client_recipients", ClientRecipients);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDeliveryMode>("delivery_mode", DeliveryMode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsDeliveryMode>("delivery_mode", DeliveryMode);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDeliveryStatus>("delivery_status", DeliveryStatus);
             writer.WriteCollectionOfPrimitiveValues<string>("detection_reasons", DetectionReasons);
             writer.WriteStringValue("edf_hash", EdfHash);
             writer.WriteStringValue("envelope_from", EnvelopeFrom);
             writer.WriteCollectionOfPrimitiveValues<string>("envelope_to", EnvelopeTo);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>("final_disposition", FinalDisposition);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_findings>("findings", Findings);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFinalDisposition>("final_disposition", FinalDisposition);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsFindingsItem>("findings", Findings);
             writer.WriteStringValue("from", From);
             writer.WriteStringValue("from_name", FromName);
             writer.WriteStringValue("htmltext_structure_hash", HtmltextStructureHash);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_id>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_phish_submission", IsPhishSubmission);
             writer.WriteBoolValue("is_quarantined", IsQuarantined);
             writer.WriteStringValue("message_id", MessageId);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetails_post_delivery_operations>("post_delivery_operations", PostDeliveryOperations);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsPostDeliveryOperationsItem>("post_delivery_operations", PostDeliveryOperations);
             writer.WriteStringValue("postfix_id", PostfixId);
             writer.WriteStringValue("postfix_id_outbound", PostfixIdOutbound);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsProperties>("properties", Properties);
@@ -362,7 +362,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("threat_categories", ThreatCategories);
             writer.WriteCollectionOfPrimitiveValues<string>("to", To);
             writer.WriteCollectionOfPrimitiveValues<string>("to_name", ToName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation>("validation", Validation);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidation>("validation", Validation);
             writer.WriteStringValue("x_originating_ip", XOriginatingIp);
             writer.WriteAdditionalData(AdditionalData);
         }

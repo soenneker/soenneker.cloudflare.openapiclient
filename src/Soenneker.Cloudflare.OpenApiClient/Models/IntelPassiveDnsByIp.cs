@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Reverse DNS look-ups observed during the time period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp_reverse_records>? ReverseRecords { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIpReverseRecordsItem>? ReverseRecords { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp_reverse_records> ReverseRecords { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIpReverseRecordsItem> ReverseRecords { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "page", n => { Page = n.GetDoubleValue(); } },
                 { "per_page", n => { PerPage = n.GetDoubleValue(); } },
-                { "reverse_records", n => { ReverseRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp_reverse_records>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp_reverse_records.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "reverse_records", n => { ReverseRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIpReverseRecordsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIpReverseRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("count", Count);
             writer.WriteDoubleValue("page", Page);
             writer.WriteDoubleValue("per_page", PerPage);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp_reverse_records>("reverse_records", ReverseRecords);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIpReverseRecordsItem>("reverse_records", ReverseRecords);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

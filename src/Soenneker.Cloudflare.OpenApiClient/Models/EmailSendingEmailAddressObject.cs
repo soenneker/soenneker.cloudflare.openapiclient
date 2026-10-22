@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Address { get; set; }
 #endif
-        /// <summary>Display name for the email address (e.g., &apos;John Doe&apos;).</summary>
+        /// <summary>Display name for the email address (e.g., &apos;John Doe&apos;). Optional; set to null or leave it unset to send the address on its own.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

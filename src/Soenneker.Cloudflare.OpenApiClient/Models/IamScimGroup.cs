@@ -42,10 +42,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of members of the Group. Only populated for custom (Phase 2) groups on individual GET requests. Each member object contains a `value` (user tag) and optional `display` (email).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroup_members>? Members { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupMembersItem>? Members { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroup_members> Members { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupMembersItem> Members { get; private set; }
 #endif
         /// <summary>Resource metadata for a SCIM Group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroup_members>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroup_members.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupMembersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupMembersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimGroupMeta.CreateFromDiscriminatorValue); } },
                 { "schemas", n => { Schemas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "no_clearance")]
         #pragma warning disable CS1591
-        No_clearance,
+        NoClearance,
         #pragma warning restore CS1591
         [EnumMember(Value = "jschallenge")]
         #pragma warning disable CS1591

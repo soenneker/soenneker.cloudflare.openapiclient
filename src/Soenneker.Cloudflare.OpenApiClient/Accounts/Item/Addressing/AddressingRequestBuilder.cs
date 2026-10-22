@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Leases;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing
+    /// Builds and executes requests for operations under \accounts\{account-id}\addressing
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddressingRequestBuilder : BaseRequestBuilder
@@ -39,6 +40,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The regional_hostnames property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder Regional_hostnames
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The services property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services.ServicesRequestBuilder Services
         {
@@ -49,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddressingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/addressing", pathParameters)
+        public AddressingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/addressing", pathParameters)
         {
         }
         /// <summary>
@@ -57,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddressingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/addressing", rawUrl)
+        public AddressingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/addressing", rawUrl)
         {
         }
     }

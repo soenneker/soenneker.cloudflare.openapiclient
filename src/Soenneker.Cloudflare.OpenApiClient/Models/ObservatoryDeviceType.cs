@@ -9,11 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "DESKTOP")]
         #pragma warning disable CS1591
-        DESKTOP,
+        Desktop,
         #pragma warning restore CS1591
         [EnumMember(Value = "MOBILE")]
         #pragma warning disable CS1591
-        MOBILE,
+        Mobile,
         #pragma warning restore CS1591
     }
 }

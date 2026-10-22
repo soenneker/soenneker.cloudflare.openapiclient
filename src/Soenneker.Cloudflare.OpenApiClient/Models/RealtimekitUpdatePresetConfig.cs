@@ -14,8 +14,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Livestream viewer quality levels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? LivestreamViewerQualities { get; set; }
+#nullable restore
+#else
+        public List<int?> LivestreamViewerQualities { get; set; }
+#endif
         /// <summary>Maximum number of screen shares that can be active at a given time</summary>
-        public int? MaxScreenshareCount { get; set; }
+        public double? MaxScreenshareCount { get; set; }
         /// <summary>Maximum number of streams that are visible on a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams MaxVideoStreams { get; set; }
 #endif
-        /// <summary>&quot;Media configuration options. eg: Video quality&quot;</summary>
+        /// <summary>Media configuration options. eg: Video quality</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia? Media { get; set; }
@@ -33,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia Media { get; set; }
 #endif
         /// <summary>Type of the meeting</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfig_view_type? ViewType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType? ViewType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfig"/> and sets the default values.
         /// </summary>
@@ -59,10 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max_screenshare_count", n => { MaxScreenshareCount = n.GetIntValue(); } },
+                { "livestream_viewer_qualities", n => { LivestreamViewerQualities = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "max_screenshare_count", n => { MaxScreenshareCount = n.GetDoubleValue(); } },
                 { "max_video_streams", n => { MaxVideoStreams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia.CreateFromDiscriminatorValue); } },
-                { "view_type", n => { ViewType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfig_view_type>(); } },
+                { "view_type", n => { ViewType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType>(); } },
             };
         }
         /// <summary>
@@ -72,10 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("max_screenshare_count", MaxScreenshareCount);
+            writer.WriteCollectionOfPrimitiveValues<int?>("livestream_viewer_qualities", LivestreamViewerQualities);
+            writer.WriteDoubleValue("max_screenshare_count", MaxScreenshareCount);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMaxVideoStreams>("max_video_streams", MaxVideoStreams);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMedia>("media", Media);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfig_view_type>("view_type", ViewType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigViewType>("view_type", ViewType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

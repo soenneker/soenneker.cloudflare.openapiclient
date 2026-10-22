@@ -14,19 +14,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>average observed in the time period</summary>
+        /// <summary>average observed in the time period.</summary>
         public int? Avg { get; set; }
-        /// <summary>highest observed in the time period</summary>
+        /// <summary>highest observed in the time period.</summary>
         public int? Max { get; set; }
-        /// <summary>lowest observed in the time period</summary>
+        /// <summary>lowest observed in the time period.</summary>
         public int? Min { get; set; }
         /// <summary>The slots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime_slots>? Slots { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTimeSlotsItem>? Slots { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime_slots> Slots { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTimeSlotsItem> Slots { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "avg", n => { Avg = n.GetIntValue(); } },
                 { "max", n => { Max = n.GetIntValue(); } },
                 { "min", n => { Min = n.GetIntValue(); } },
-                { "slots", n => { Slots = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime_slots>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime_slots.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "slots", n => { Slots = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTimeSlotsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTimeSlotsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("avg", Avg);
             writer.WriteIntValue("max", Max);
             writer.WriteIntValue("min", Min);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTime_slots>("slots", Slots);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTestStatOverTimeSlotsItem>("slots", Slots);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

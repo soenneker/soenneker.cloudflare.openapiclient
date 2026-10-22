@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An array containing the learned parameter schemas.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_parameters>? Parameters { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionParametersItemProperty>? Parameters { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_parameters> Parameters { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionParametersItemProperty> Parameters { get; private set; }
 #endif
         /// <summary>An empty response object. This field is required to yield a valid operation schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_responses? Responses { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty? Responses { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_responses Responses { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty Responses { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_parameters.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "responses", n => { Responses = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_responses>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition_responses.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionParametersItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionParametersItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "responses", n => { Responses = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty>("responses", Responses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

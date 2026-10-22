@@ -19,15 +19,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Vulnerability report produced after the scan completes. The shape depends on the scan type. Present only for finished scans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_report? Report { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport? Report { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_report Report { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport Report { get; set; }
 #endif
-        /// <summary>The type of vulnerability scan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_scan_type? ScanType { get; set; }
+        /// <summary>The scan_type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType? ScanType { get; set; }
         /// <summary>Current lifecycle status of the scan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus? Status { get; set; }
         /// <summary>The target environment this scan runs against.</summary>
         public Guid? TargetEnvironmentId { get; set; }
         /// <summary>
@@ -56,9 +56,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "report", n => { Report = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_report>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_report.CreateFromDiscriminatorValue); } },
-                { "scan_type", n => { ScanType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_scan_type>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_status>(); } },
+                { "report", n => { Report = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport.CreateFromDiscriminatorValue); } },
+                { "scan_type", n => { ScanType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus>(); } },
                 { "target_environment_id", n => { TargetEnvironmentId = n.GetGuidValue(); } },
             };
         }
@@ -70,9 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_report>("report", Report);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_scan_type>("scan_type", ScanType);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScan_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanReport>("report", Report);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BolaScanType>("scan_type", ScanType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerScanStatus>("status", Status);
             writer.WriteGuidValue("target_environment_id", TargetEnvironmentId);
             writer.WriteAdditionalData(AdditionalData);
         }

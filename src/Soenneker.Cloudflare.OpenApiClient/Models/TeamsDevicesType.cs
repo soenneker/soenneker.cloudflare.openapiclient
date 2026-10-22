@@ -29,11 +29,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "disk_encryption")]
         #pragma warning disable CS1591
-        Disk_encryption,
+        DiskEncryption,
         #pragma warning restore CS1591
         [EnumMember(Value = "serial_number")]
         #pragma warning disable CS1591
-        Serial_number,
+        SerialNumber,
         #pragma warning restore CS1591
         [EnumMember(Value = "sentinelone")]
         #pragma warning disable CS1591
@@ -49,19 +49,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "os_version")]
         #pragma warning disable CS1591
-        Os_version,
+        OsVersion,
         #pragma warning restore CS1591
         [EnumMember(Value = "domain_joined")]
         #pragma warning disable CS1591
-        Domain_joined,
+        DomainJoined,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_certificate")]
         #pragma warning disable CS1591
-        Client_certificate,
+        ClientCertificate,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_certificate_v2")]
         #pragma warning disable CS1591
-        Client_certificate_v2,
+        ClientCertificateV2,
         #pragma warning restore CS1591
         [EnumMember(Value = "antivirus")]
         #pragma warning disable CS1591
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "unique_client_id")]
         #pragma warning disable CS1591
-        Unique_client_id,
+        UniqueClientId,
         #pragma warning restore CS1591
         [EnumMember(Value = "kolide")]
         #pragma warning disable CS1591
@@ -77,11 +77,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "tanium_s2s")]
         #pragma warning disable CS1591
-        Tanium_s2s,
+        TaniumS2S,
         #pragma warning restore CS1591
         [EnumMember(Value = "crowdstrike_s2s")]
         #pragma warning disable CS1591
-        Crowdstrike_s2s,
+        CrowdstrikeS2S,
         #pragma warning restore CS1591
         [EnumMember(Value = "intune")]
         #pragma warning disable CS1591
@@ -89,15 +89,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "workspace_one")]
         #pragma warning disable CS1591
-        Workspace_one,
+        WorkspaceOne,
         #pragma warning restore CS1591
         [EnumMember(Value = "sentinelone_s2s")]
         #pragma warning disable CS1591
-        Sentinelone_s2s,
+        SentineloneS2S,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_s2s")]
         #pragma warning disable CS1591
-        Custom_s2s,
+        CustomS2S,
         #pragma warning restore CS1591
     }
 }

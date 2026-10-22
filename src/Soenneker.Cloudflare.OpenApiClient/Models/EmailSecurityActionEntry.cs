@@ -14,19 +14,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Timestamp when the action completed</summary>
+        /// <summary>Timestamp when the action completed.</summary>
         public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The operation property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_operation? Operation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryOperation? Operation { get; set; }
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_properties? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_properties Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed Properties { get; set; }
 #endif
-        /// <summary>Timestamp when the action was initiated</summary>
+        /// <summary>Timestamp when the action was initiated.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_operation>(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_properties>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_properties.CreateFromDiscriminatorValue); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryOperation>(); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed.CreateFromDiscriminatorValue); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -79,8 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_operation>("operation", Operation);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntry_properties>("properties", Properties);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryOperation>("operation", Operation);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityActionEntryPropertiesComposed>("properties", Properties);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
             writer.WriteStringValue("status", Status);
             writer.WriteBoolValue("success", Success);

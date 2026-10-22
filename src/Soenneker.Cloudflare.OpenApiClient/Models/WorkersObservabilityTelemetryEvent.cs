@@ -16,10 +16,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare Containers event information that enriches your logs for identifying and debugging issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_Containers? Containers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventContainersProperty? Containers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_Containers Containers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventContainersProperty Containers { get; set; }
 #endif
         /// <summary>The dataset this event belongs to (e.g. cloudflare-workers).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,10 +40,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Raw log payload. May be a string or a structured object depending on how the log was emitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_source? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventSource? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_source Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventSource Source { get; set; }
 #endif
         /// <summary>Event timestamp as a Unix epoch in milliseconds.</summary>
         public int? Timestamp { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "$containers", n => { Containers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_Containers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_Containers.CreateFromDiscriminatorValue); } },
+                { "$containers", n => { Containers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventContainersProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventContainersProperty.CreateFromDiscriminatorValue); } },
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "$metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventMetadata.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_source.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventSource>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventSource.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
                 { "$workers", n => { Workers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkers.CreateFromDiscriminatorValue); } },
             };
@@ -88,10 +88,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_Containers>("$containers", Containers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventContainersProperty>("$containers", Containers);
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventMetadata>("$metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEvent_source>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventSource>("source", Source);
             writer.WriteIntValue("timestamp", Timestamp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityTelemetryEventWorkers>("$workers", Workers);
         }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;If there is sensitive content on your website that you want visible to real visitors, but that you want to hide from suspicious visitors, all you have to do is wrap the content with Cloudflare SSE tags. Wrap any content that you want to be excluded from suspicious visitors in the following SSE tags: &lt;!--sse--&gt;&lt;!--/sse--&gt;. For example: &lt;!--sse--&gt;  Bad visitors won&apos;t see my phone number, 555-555-5555 &lt;!--/sse--&gt;. Note: SSE only will work with HTML. If you have HTML minification enabled, you won&apos;t see the SSE tags in your HTML source when it&apos;s served through Cloudflare. SSE will still function in this case, as Cloudflare&apos;s HTML minification and SSE functionality occur on-the-fly as the resource moves through our network to the visitor&apos;s computer. (https://support.cloudflare.com/hc/en-us/articles/200170036).&quot;
+    /// If there is sensitive content on your website that you want visible to real visitors, but that you want to hide from suspicious visitors, all you have to do is wrap the content with Cloudflare SSE tags. Wrap any content that you want to be excluded from suspicious visitors in the following SSE tags: &lt;!--sse--&gt;&lt;!--/sse--&gt;. For example: &lt;!--sse--&gt;  Bad visitors won&apos;t see my phone number, 555-555-5555 &lt;!--/sse--&gt;. Note: SSE only will work with HTML. If you have HTML minification enabled, you won&apos;t see the SSE tags in your HTML source when it&apos;s served through Cloudflare. SSE will still function in this case, as Cloudflare&apos;s HTML minification and SSE functionality occur on-the-fly as the resource moves through our network to the visitor&apos;s computer. (https://support.cloudflare.com/hc/en-us/articles/200170036).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesServerSideExclude : IAdditionalDataHolder, IParsable
@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesServerSideExclude()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesServerSideExcludeValue.On;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

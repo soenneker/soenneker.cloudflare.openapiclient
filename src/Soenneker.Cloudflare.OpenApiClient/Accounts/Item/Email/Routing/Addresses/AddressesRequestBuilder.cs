@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email\routing\addresses
+    /// Builds and executes requests for operations under \accounts\{account-id}\email\routing\addresses
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddressesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.email.routing.addresses.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.Item.WithDestination_address_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.Item.WithDestination_address_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.Item.WithDestinationAddressIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.Item.WithDestinationAddressIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("destination_address_identifier", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.Item.WithDestination_address_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("destinationAddressIdentifier", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.Item.WithDestinationAddressIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Address
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/routing/addresses{?direction*,page*,per_page*,verified*}", pathParameters)
+        public AddressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/routing/addresses{?direction*,page*,per_page*,verified*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Address
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email/routing/addresses{?direction*,page*,per_page*,verified*}", rawUrl)
+        public AddressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/routing/addresses{?direction*,page*,per_page*,verified*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists existing destination addresses.
+        /// Lists destination addresses configured for Email Routing in an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressesResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Address
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailDestinationAddressResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists existing destination addresses.
+        /// Lists destination addresses configured for Email Routing in an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,19 +135,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Address
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.AddressesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists existing destination addresses.
+        /// Lists destination addresses configured for Email Routing in an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AddressesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.Addresses.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRoutingDestinationAddressesListDestinationAddressesDirectionParameter? Direction { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public double? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("verified")]
             public bool? Verified { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

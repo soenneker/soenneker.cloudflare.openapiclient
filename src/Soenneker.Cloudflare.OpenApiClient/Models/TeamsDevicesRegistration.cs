@@ -79,6 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPolicySummary Policy { get; set; }
 #endif
+        /// <summary>The registration client type, derived from device_type.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesRegistrationType? RegistrationType { get; set; }
         /// <summary>The RFC3339 timestamp when the registration was revoked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +112,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUser User { get; set; }
+#endif
+        /// <summary>The virtual IPv4 address assigned to the network interface of the tunnel for this registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VirtualIpv4 { get; set; }
+#nullable restore
+#else
+        public string VirtualIpv4 { get; set; }
+#endif
+        /// <summary>The virtual IPv6 address assigned to the network interface of the tunnel for this registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VirtualIpv6 { get; set; }
+#nullable restore
+#else
+        public string VirtualIpv6 { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesRegistration"/> and sets the default values.
@@ -144,10 +162,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "key_type", n => { KeyType = n.GetStringValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPolicySummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPolicySummary.CreateFromDiscriminatorValue); } },
+                { "registration_type", n => { RegistrationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesRegistrationType>(); } },
                 { "revoked_at", n => { RevokedAt = n.GetStringValue(); } },
                 { "tunnel_type", n => { TunnelType = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUser>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUser.CreateFromDiscriminatorValue); } },
+                { "virtual_ipv4", n => { VirtualIpv4 = n.GetStringValue(); } },
+                { "virtual_ipv6", n => { VirtualIpv6 = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -165,10 +186,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("key_type", KeyType);
             writer.WriteStringValue("last_seen_at", LastSeenAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesPolicySummary>("policy", Policy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesRegistrationType>("registration_type", RegistrationType);
             writer.WriteStringValue("revoked_at", RevokedAt);
             writer.WriteStringValue("tunnel_type", TunnelType);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUser>("user", User);
+            writer.WriteStringValue("virtual_ipv4", VirtualIpv4);
+            writer.WriteStringValue("virtual_ipv6", VirtualIpv6);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

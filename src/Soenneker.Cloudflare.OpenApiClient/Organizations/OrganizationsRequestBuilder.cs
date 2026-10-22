@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.organizations.item collection</summary>
         /// <param name="position">The ID of the organization to delete.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.WithOrganization_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.WithOrganization_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.WithOrganizationItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.WithOrganizationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("organization_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.WithOrganization_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("organizationId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.WithOrganizationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,19 +47,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
         {
         }
         /// <summary>
-        /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Retrieve a list of organizations a particular user has access to.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationListOrganizations200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Create a new organization for a user. Sub-organization creation availability depends onthe organization&apos;s capabilities.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response"/></returns>
         /// <param name="body">References an Organization in the Cloudflare data model.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,10 +92,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiV4ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsCreateUserOrganization200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Retrieve a list of organizations a particular user has access to.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new organization for a user. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Create a new organization for a user. Sub-organization creation availability depends onthe organization&apos;s capabilities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">References an Organization in the Cloudflare data model.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of organizations a particular user has access to. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+        /// Retrieve a list of organizations a particular user has access to.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationsRequestBuilderGetQueryParameters 
@@ -170,7 +170,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             [QueryParameter("containing%2Eorganization")]
             public string ContainingOrganization { get; set; }
 #endif
-            /// <summary>&quot;Filter the list of organizations to the ones that contain this particularuser.IMPORTANT: Just because an organization \&quot;contains\&quot; a user is not arepresentation of any authorization or privilege to manage any resourcestherein. An organization \&quot;containing\&quot; a user simply means the user is managed bythat organization.&quot;</summary>
+            /// <summary>Filter the list of organizations to the ones that contain this particularuser.IMPORTANT: Just because an organization &quot;contains&quot; a user is not arepresentation of any authorization or privilege to manage any resourcestherein. An organization &quot;containing&quot; a user simply means the user is managed bythat organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("containing%2Euser")]

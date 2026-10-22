@@ -29,11 +29,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing live inputs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequest_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequestMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequest_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequestMeta Meta { get; set; }
 #endif
+        /// <summary>When enabled, the live stream is delivered using Low-Latency HLS (LL-HLS), reducing glass-to-glass latency for viewers at the cost of reduced player compatibility.</summary>
+        public bool? PreferLowLatency { get; set; }
         /// <summary>Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "defaultCreator", n => { DefaultCreator = n.GetStringValue(); } },
                 { "deleteRecordingAfterDays", n => { DeleteRecordingAfterDays = n.GetDoubleValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequest_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequest_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequestMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequestMeta.CreateFromDiscriminatorValue); } },
+                { "preferLowLatency", n => { PreferLowLatency = n.GetBoolValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -84,7 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("defaultCreator", DefaultCreator);
             writer.WriteDoubleValue("deleteRecordingAfterDays", DeleteRecordingAfterDays);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequest_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamCreateInputRequestMeta>("meta", Meta);
+            writer.WriteBoolValue("preferLowLatency", PreferLowLatency);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamLiveInputRecordingSettings>("recording", Recording);
             writer.WriteAdditionalData(AdditionalData);
         }

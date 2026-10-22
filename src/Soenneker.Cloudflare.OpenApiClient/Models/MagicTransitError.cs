@@ -9,19 +9,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "Could not gather traceroute data: Code 1")]
         #pragma warning disable CS1591
-        CouldNotGatherTracerouteDataCode1,
+        CouldNotGatherTracerouteDataColonCode1,
         #pragma warning restore CS1591
         [EnumMember(Value = "Could not gather traceroute data: Code 2")]
         #pragma warning disable CS1591
-        CouldNotGatherTracerouteDataCode2,
+        CouldNotGatherTracerouteDataColonCode2,
         #pragma warning restore CS1591
         [EnumMember(Value = "Could not gather traceroute data: Code 3")]
         #pragma warning disable CS1591
-        CouldNotGatherTracerouteDataCode3,
+        CouldNotGatherTracerouteDataColonCode3,
         #pragma warning restore CS1591
         [EnumMember(Value = "Could not gather traceroute data: Code 4")]
         #pragma warning disable CS1591
-        CouldNotGatherTracerouteDataCode4,
+        CouldNotGatherTracerouteDataColonCode4,
         #pragma warning restore CS1591
     }
 }

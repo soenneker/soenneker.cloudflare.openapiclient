@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\shares
+    /// Builds and executes requests for operations under \accounts\{account-id}\shares
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SharesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.shares.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.WithShare_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.WithShare_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.WithShareItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.WithShareItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("share_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.WithShare_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("shareId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.WithShareItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", pathParameters)
+        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", rawUrl)
+        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,tag*,target_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -52,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList4XxResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SharesList5XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -78,8 +78,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate4XxResponse">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate5XxResponse">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingCreateShareRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -93,8 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate4XxResponse.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ShareCreate5XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -156,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         {
             /// <summary>Direction to sort objects.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.GetDirectionQueryParameterType? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingDirection? Direction { get; set; }
             /// <summary>Include recipient counts in the response.</summary>
             [QueryParameter("include_recipient_counts")]
             public bool? IncludeRecipientCounts { get; set; }
@@ -168,11 +168,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingShareKind? Kind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.GetOrderQueryParameterType? Order { get; set; }
-            /// <summary>Page number.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharingOrder? Order { get; set; }
+            /// <summary>Page number. Defaults to `1` when `per_page` is supplied without`page`. May be omitted entirely along with `per_page` to receive anon-paginated response.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>Number of objects to return per page.</summary>
+            /// <summary>Number of objects to return per page. Defaults to `20` when `page` is supplied without `per_page`. May be omitted entirely along with `page` to receive a non-paginated response.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter share resources by resource_types.</summary>

@@ -68,20 +68,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl Ttl { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Record type.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithoutData"/> and sets the default values.
         /// </summary>
         public DnsRecordsDnsRecordWithoutData()
         {
             AdditionalData = new Dictionary<string, object>();
+            PrivateRouting = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -110,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AType>(); } },
             };
         }
         /// <summary>
@@ -129,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings>("settings", Settings);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl>("ttl", Ttl);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

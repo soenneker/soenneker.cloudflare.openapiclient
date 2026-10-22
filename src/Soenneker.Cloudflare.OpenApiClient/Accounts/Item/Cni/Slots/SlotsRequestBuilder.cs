@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cni\slots
+    /// Builds and executes requests for operations under \accounts\{account-id}\cni\slots
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SlotsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/slots{?address_contains*,cursor*,limit*,occupied*,site*,speed*}", pathParameters)
+        public SlotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/slots{?address_contains*,cursor*,limit*,occupied*,site*,speed*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/slots{?address_contains*,cursor*,limit*,occupied*,site*,speed*}", rawUrl)
+        public SlotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cni/slots{?address_contains*,cursor*,limit*,occupied*,site*,speed*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve a list of all slots matching the specified parameters
+        /// Lists all available infrastructure slots for the account, showing allocation status andcapacity.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NscSlotList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.NscSlotList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.NscSlotList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of all slots matching the specified parameters
+        /// Lists all available infrastructure slots for the account, showing allocation status andcapacity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of all slots matching the specified parameters
+        /// Lists all available infrastructure slots for the account, showing allocation status andcapacity.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SlotsRequestBuilderGetQueryParameters 
@@ -108,10 +108,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
             [QueryParameter("address_contains")]
             public string AddressContains { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public int? Cursor { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
             /// <summary>If specified, only show slots with a specific occupied/unoccupied state</summary>
             [QueryParameter("occupied")]
             public bool? Occupied { get; set; }

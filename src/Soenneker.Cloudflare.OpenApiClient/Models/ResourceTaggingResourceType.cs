@@ -9,79 +9,143 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "access_application")]
         #pragma warning disable CS1591
-        Access_application,
+        AccessApplication,
         #pragma warning restore CS1591
         [EnumMember(Value = "access_application_policy")]
         #pragma warning disable CS1591
-        Access_application_policy,
+        AccessApplicationPolicy,
         #pragma warning restore CS1591
         [EnumMember(Value = "access_group")]
         #pragma warning disable CS1591
-        Access_group,
+        AccessGroup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "access_service_token")]
+        #pragma warning disable CS1591
+        AccessServiceToken,
         #pragma warning restore CS1591
         [EnumMember(Value = "account")]
         #pragma warning disable CS1591
         Account,
         #pragma warning restore CS1591
+        [EnumMember(Value = "account_ruleset")]
+        #pragma warning disable CS1591
+        AccountRuleset,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ai_gateway")]
         #pragma warning disable CS1591
-        Ai_gateway,
+        AiGateway,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai_search_instance")]
+        #pragma warning disable CS1591
+        AiSearchInstance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ai_search_namespace")]
+        #pragma warning disable CS1591
+        AiSearchNamespace,
         #pragma warning restore CS1591
         [EnumMember(Value = "alerting_policy")]
         #pragma warning disable CS1591
-        Alerting_policy,
+        AlertingPolicy,
         #pragma warning restore CS1591
         [EnumMember(Value = "alerting_webhook")]
         #pragma warning disable CS1591
-        Alerting_webhook,
+        AlertingWebhook,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_gateway_operation")]
         #pragma warning disable CS1591
-        Api_gateway_operation,
+        ApiGatewayOperation,
         #pragma warning restore CS1591
         [EnumMember(Value = "cloudflared_tunnel")]
         #pragma warning disable CS1591
-        Cloudflared_tunnel,
+        CloudflaredTunnel,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_certificate")]
         #pragma warning disable CS1591
-        Custom_certificate,
+        CustomCertificate,
         #pragma warning restore CS1591
         [EnumMember(Value = "custom_hostname")]
         #pragma warning disable CS1591
-        Custom_hostname,
+        CustomHostname,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cws_deployment")]
+        #pragma warning disable CS1591
+        CwsDeployment,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cws_policy")]
+        #pragma warning disable CS1591
+        CwsPolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cws_policy_set")]
+        #pragma warning disable CS1591
+        CwsPolicySet,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cws_workload")]
+        #pragma warning disable CS1591
+        CwsWorkload,
         #pragma warning restore CS1591
         [EnumMember(Value = "d1_database")]
         #pragma warning disable CS1591
-        D1_database,
+        D1Database,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "device")]
+        #pragma warning disable CS1591
+        Device,
         #pragma warning restore CS1591
         [EnumMember(Value = "dns_record")]
         #pragma warning disable CS1591
-        Dns_record,
+        DnsRecord,
         #pragma warning restore CS1591
         [EnumMember(Value = "durable_object_namespace")]
         #pragma warning disable CS1591
-        Durable_object_namespace,
+        DurableObjectNamespace,
         #pragma warning restore CS1591
         [EnumMember(Value = "gateway_list")]
         #pragma warning disable CS1591
-        Gateway_list,
+        GatewayList,
         #pragma warning restore CS1591
         [EnumMember(Value = "gateway_rule")]
         #pragma warning disable CS1591
-        Gateway_rule,
+        GatewayRule,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "healthcheck")]
+        #pragma warning disable CS1591
+        Healthcheck,
         #pragma warning restore CS1591
         [EnumMember(Value = "image")]
         #pragma warning disable CS1591
         Image,
         #pragma warning restore CS1591
+        [EnumMember(Value = "infrastructure_target")]
+        #pragma warning disable CS1591
+        InfrastructureTarget,
+        #pragma warning restore CS1591
         [EnumMember(Value = "kv_namespace")]
         #pragma warning disable CS1591
-        Kv_namespace,
+        KvNamespace,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "load_balancer")]
+        #pragma warning disable CS1591
+        LoadBalancer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "load_balancer_monitor")]
+        #pragma warning disable CS1591
+        LoadBalancerMonitor,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "load_balancer_pool")]
+        #pragma warning disable CS1591
+        LoadBalancerPool,
         #pragma warning restore CS1591
         [EnumMember(Value = "managed_client_certificate")]
         #pragma warning disable CS1591
-        Managed_client_certificate,
+        ManagedClientCertificate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "namespace_worker")]
+        #pragma warning disable CS1591
+        NamespaceWorker,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pages_project")]
+        #pragma warning disable CS1591
+        PagesProject,
         #pragma warning restore CS1591
         [EnumMember(Value = "queue")]
         #pragma warning disable CS1591
@@ -89,31 +153,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "r2_bucket")]
         #pragma warning disable CS1591
-        R2_bucket,
+        R2Bucket,
         #pragma warning restore CS1591
         [EnumMember(Value = "resource_share")]
         #pragma warning disable CS1591
-        Resource_share,
+        ResourceShare,
         #pragma warning restore CS1591
         [EnumMember(Value = "stream_live_input")]
         #pragma warning disable CS1591
-        Stream_live_input,
+        StreamLiveInput,
         #pragma warning restore CS1591
         [EnumMember(Value = "stream_video")]
         #pragma warning disable CS1591
-        Stream_video,
+        StreamVideo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "vectorize_index")]
+        #pragma warning disable CS1591
+        VectorizeIndex,
         #pragma warning restore CS1591
         [EnumMember(Value = "worker")]
         #pragma warning disable CS1591
         Worker,
         #pragma warning restore CS1591
+        [EnumMember(Value = "worker_route")]
+        #pragma warning disable CS1591
+        WorkerRoute,
+        #pragma warning restore CS1591
         [EnumMember(Value = "worker_version")]
         #pragma warning disable CS1591
-        Worker_version,
+        WorkerVersion,
         #pragma warning restore CS1591
         [EnumMember(Value = "zone")]
         #pragma warning disable CS1591
         Zone,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "zone_ruleset")]
+        #pragma warning disable CS1591
+        ZoneRuleset,
         #pragma warning restore CS1591
     }
 }

@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bond_id property</summary>
         public int? BondId { get; set; }
+        /// <summary>mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.</summary>
+        public bool? HaLink { get; set; }
         /// <summary>mark true to use this LAN for source-based breakout traffic</summary>
         public bool? IsBreakout { get; set; }
         /// <summary>mark true to use this LAN for source-based prioritized traffic</summary>
@@ -82,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bond_id", n => { BondId = n.GetIntValue(); } },
+                { "ha_link", n => { HaLink = n.GetBoolValue(); } },
                 { "is_breakout", n => { IsBreakout = n.GetBoolValue(); } },
                 { "is_prioritized", n => { IsPrioritized = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -100,6 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bond_id", BondId);
+            writer.WriteBoolValue("ha_link", HaLink);
             writer.WriteBoolValue("is_breakout", IsBreakout);
             writer.WriteBoolValue("is_prioritized", IsPrioritized);
             writer.WriteStringValue("name", Name);

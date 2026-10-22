@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The allocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation? Allocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlementAllocation? Allocation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation Allocation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlementAllocation Allocation { get; set; }
 #endif
         /// <summary>The feature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allocation", n => { Allocation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation.CreateFromDiscriminatorValue); } },
+                { "allocation", n => { Allocation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlementAllocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlementAllocation.CreateFromDiscriminatorValue); } },
                 { "feature", n => { Feature = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiFeature>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiFeature.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,75 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation>("allocation", Allocation);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlementAllocation>("allocation", Allocation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiFeature>("feature", Feature);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiBoolAllocation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMaxCountAllocation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OrganizationsApiEntitlement_allocation : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiBoolAllocation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiBoolAllocation? OrganizationsApiBoolAllocation { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiBoolAllocation OrganizationsApiBoolAllocation { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMaxCountAllocation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMaxCountAllocation? OrganizationsApiMaxCountAllocation { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMaxCountAllocation OrganizationsApiMaxCountAllocation { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation? OrganizationsApiNullAllocation { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation OrganizationsApiNullAllocation { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiEntitlement.OrganizationsApiEntitlement_allocation();
-                result.OrganizationsApiBoolAllocation = new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiBoolAllocation();
-                result.OrganizationsApiMaxCountAllocation = new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiMaxCountAllocation();
-                result.OrganizationsApiNullAllocation = new global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiNullAllocation();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(OrganizationsApiBoolAllocation != null || OrganizationsApiMaxCountAllocation != null || OrganizationsApiNullAllocation != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(OrganizationsApiBoolAllocation, OrganizationsApiMaxCountAllocation, OrganizationsApiNullAllocation);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsApiBoolAllocation>(null, OrganizationsApiBoolAllocation, OrganizationsApiMaxCountAllocation, OrganizationsApiNullAllocation);
-            }
         }
     }
 }

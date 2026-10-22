@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Hosts { get; set; }
 #endif
-        /// <summary>Identifier.</summary>
+        /// <summary>Custom certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the certificate was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>&quot;The policy restrictions returned by the API. This field is returned in responseswhen a policy has been set. The API accepts the \&quot;policy\&quot; field in requests butreturns this field as \&quot;policy_restrictions\&quot; in responses.Specifies the region(s) where your private key can be held locally for optimalTLS performance. Format is a boolean expression, for example:\&quot;(country: US) or (region: EU)\&quot;&quot;</summary>
+        /// <summary>The policy restrictions returned by the API. This field is returned in responseswhen a policy has been set. The API accepts the &quot;policy&quot; field in requests butreturns this field as &quot;policy_restrictions&quot; in responses.Specifies the region(s) where your private key can be held locally for optimalTLS performance. Format is a boolean expression, for example:&quot;(country: US) or (region: EU)&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyRestrictions { get; set; }
@@ -104,7 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public TlsCertificatesAndHostnamesCustomCertificate()
         {
             AdditionalData = new Dictionary<string, object>();
-            BundleMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesBundleMethod.Ubiquitous;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

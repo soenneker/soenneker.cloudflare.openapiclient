@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configs for preview deploys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_preview? Preview { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsPreview? Preview { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_preview Preview { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsPreview Preview { get; set; }
 #endif
         /// <summary>Configs for production deploys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_production? Production { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsProduction? Production { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_production Production { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsProduction Production { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "preview", n => { Preview = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_preview>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_preview.CreateFromDiscriminatorValue); } },
-                { "production", n => { Production = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_production>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_production.CreateFromDiscriminatorValue); } },
+                { "preview", n => { Preview = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsPreview>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsPreview.CreateFromDiscriminatorValue); } },
+                { "production", n => { Production = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsProduction>(global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsProduction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_preview>("preview", Preview);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigs_production>("production", Production);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsPreview>("preview", Preview);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesProjectDeploymentConfigsProduction>("production", Production);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

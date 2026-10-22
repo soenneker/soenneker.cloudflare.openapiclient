@@ -15,21 +15,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The key property</summary>
+        /// <summary>A category used to group permission groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Category { get; set; }
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Category { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Indicates whether the permission group is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Deprecated { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Deprecated { get; set; }
+#endif
+        /// <summary>Additional information about the permission group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Indicates whether the permission group can be edited.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Editable { get; set; }
+#nullable restore
+#else
+        public string Editable { get; set; }
+#endif
+        /// <summary>The planned end-of-life date and time, when provided.</summary>
+        public DateTimeOffset? EolAt { get; set; }
+        /// <summary>A label identifying the permission group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label { get; set; }
+#nullable restore
+#else
+        public string Label { get; set; }
+#endif
+        /// <summary>The scope associated with the permission group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Scopes { get; set; }
+#nullable restore
+#else
+        public string Scopes { get; set; }
+#endif
+        /// <summary>Indicates the permission group&apos;s availability or visibility.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Visibility { get; set; }
+#nullable restore
+#else
+        public string Visibility { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamPermissionGroupMeta"/> and sets the default values.
@@ -56,8 +98,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "deprecated", n => { Deprecated = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "editable", n => { Editable = n.GetStringValue(); } },
+                { "eol_at", n => { EolAt = n.GetDateTimeOffsetValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "scopes", n => { Scopes = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +115,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("value", Value);
+            writer.WriteStringValue("category", Category);
+            writer.WriteStringValue("deprecated", Deprecated);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("editable", Editable);
+            writer.WriteDateTimeOffsetValue("eol_at", EolAt);
+            writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("scopes", Scopes);
+            writer.WriteStringValue("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,30 +18,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_errors? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem>? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_errors Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_messages? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem>? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_messages Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_result? Result { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_result Result { get; set; }
-#endif
-        /// <summary>Whether the API call was successful</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailureResult? Result { get; set; }
+        /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure"/> and sets the default values.
@@ -68,9 +70,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailureResult>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -81,9 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailure_result>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem>("errors", Errors);
+            writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiMessagesItem>("messages", Messages);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiApiResponseCommonFailureResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

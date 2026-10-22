@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Policies attached to the User group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBody_policies>? Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBodyPoliciesItem>? Policies { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBody_policies> Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBodyPoliciesItem> Policies { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBody"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBody_policies>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBody_policies.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBodyPoliciesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBodyPoliciesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBody_policies>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUpdateUserGroupBodyPoliciesItem>("policies", Policies);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

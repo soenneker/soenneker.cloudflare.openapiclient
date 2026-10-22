@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "advanced_ddos")]
         #pragma warning disable CS1591
-        Advanced_ddos,
+        AdvancedDdos,
         #pragma warning restore CS1591
     }
 }

@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> To { get; set; }
 #endif
-        /// <summary>Deprecated, use `occurred_at` instead</summary>
+        /// <summary>Deprecated, use `occurred_at` instead.</summary>
         [Obsolete("")]
         public DateTimeOffset? Ts { get; private set; }
         /// <summary>

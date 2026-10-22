@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Analyze;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\ssl
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\ssl
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SslRequestBuilder : BaseRequestBuilder
@@ -27,6 +28,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder Certificate_packs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The recommendation property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder Recommendation
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The universal property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal.UniversalRequestBuilder Universal
@@ -43,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SslRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ssl", pathParameters)
+        public SslRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/ssl", pathParameters)
         {
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ssl", rawUrl)
+        public SslRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/ssl", rawUrl)
         {
         }
     }

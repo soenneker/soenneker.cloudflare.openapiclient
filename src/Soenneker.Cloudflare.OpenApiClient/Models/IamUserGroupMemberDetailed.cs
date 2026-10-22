@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; private set; }
 #endif
         /// <summary>The member&apos;s status in the account.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberDetailed_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberDetailedStatus? Status { get; private set; }
         /// <summary>Details of the user associated with this membership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberDetailed_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberDetailedStatus>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberDetailedUser>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserGroupMemberDetailedUser.CreateFromDiscriminatorValue); } },
             };
         }

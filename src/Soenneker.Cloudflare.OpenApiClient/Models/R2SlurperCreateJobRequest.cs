@@ -38,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public R2SlurperCreateJobRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Overwrite = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

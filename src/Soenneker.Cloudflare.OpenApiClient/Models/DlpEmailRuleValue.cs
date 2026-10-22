@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch2"/>
+    /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpEmailRuleValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch1? DlpEmailRuleValueBranch1 { get; set; }
+        public string? DlpEmailRuleValueString { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch1 DlpEmailRuleValueBranch1 { get; set; }
+        public string DlpEmailRuleValueString { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch2"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch2? DlpEmailRuleValueBranch2 { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch2 DlpEmailRuleValueBranch2 { get; set; }
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue();
-            if("DlpEmailRuleValue_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetStringValue() is string dlpEmailRuleValueStringValue)
             {
-                result.DlpEmailRuleValueBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch1();
+                result.DlpEmailRuleValueString = dlpEmailRuleValueStringValue;
             }
-            else if("DlpEmailRuleValue_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.DlpEmailRuleValueBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch2();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DlpEmailRuleValueBranch1 != null)
-            {
-                return DlpEmailRuleValueBranch1.GetFieldDeserializers();
-            }
-            else if(DlpEmailRuleValueBranch2 != null)
-            {
-                return DlpEmailRuleValueBranch2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +64,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DlpEmailRuleValueBranch1 != null)
+            if(DlpEmailRuleValueString != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch1>(null, DlpEmailRuleValueBranch1);
+                writer.WriteStringValue(null, DlpEmailRuleValueString);
             }
-            else if(DlpEmailRuleValueBranch2 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEmailRuleValue_Branch2>(null, DlpEmailRuleValueBranch2);
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

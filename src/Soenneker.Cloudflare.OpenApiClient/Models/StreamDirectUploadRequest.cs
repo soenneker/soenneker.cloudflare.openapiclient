@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequest_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequest_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta Meta { get; set; }
 #endif
         /// <summary>Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.</summary>
         public bool? RequireSignedURLs { get; set; }
@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The watermark property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload_1? Watermark { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2? Watermark { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload_1 Watermark { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2 Watermark { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequest"/> and sets the default values.
@@ -85,11 +85,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "expiry", n => { Expiry = n.GetDateTimeOffsetValue(); } },
                 { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequest_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequest_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
                 { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
                 { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetDoubleValue(); } },
-                { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload_1>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload_1.CreateFromDiscriminatorValue); } },
+                { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2>(global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,11 +103,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("creator", Creator);
             writer.WriteDateTimeOffsetValue("expiry", Expiry);
             writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequest_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamDirectUploadRequestMeta>("meta", Meta);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);
             writer.WriteDoubleValue("thumbnailTimestampPct", ThumbnailTimestampPct);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload_1>("watermark", Watermark);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.StreamWatermarkAtUpload2>("watermark", Watermark);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

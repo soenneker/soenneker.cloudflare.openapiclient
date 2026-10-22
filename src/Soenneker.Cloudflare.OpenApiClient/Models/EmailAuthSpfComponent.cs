@@ -15,21 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Number of DNS lookups this component requires (per RFC 7208).- MX, A, EXISTS, INCLUDE, REDIRECT, PTR: 1- IP4, IP6, ALL: 0&quot;</summary>
+        /// <summary>Number of DNS lookups this component requires (per RFC 7208).- MX, A, EXISTS, INCLUDE, REDIRECT, PTR: 1- IP4, IP6, ALL: 0</summary>
         public int? LookupCount { get; set; }
         /// <summary>Nested SPF tree for INCLUDE or REDIRECT mechanisms.Only present for INCLUDE/REDIRECT components.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_nested? Nested { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested? Nested { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_nested Nested { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested Nested { get; set; }
 #endif
         /// <summary>SPF mechanism result qualifier</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult? Result { get; set; }
         /// <summary>Component type (UPPERCASE)</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_type? Type { get; set; }
-        /// <summary>&quot;Component value with qualifier prefix.For IP4/IP6, stores just the IP address (no \&quot;ip4:\&quot; or \&quot;ip6:\&quot; prefix).Examples: \&quot;203.0.113.1\&quot;, \&quot;203.0.113.0/24\&quot;, \&quot;2001:db8::1/64\&quot;, \&quot;-all\&quot;, \&quot;~mx:example.com\&quot;, \&quot;include:_spf.example.com\&quot;&quot;</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType? Type { get; set; }
+        /// <summary>Component value with qualifier prefix.For IP4/IP6, stores just the IP address (no &quot;ip4:&quot; or &quot;ip6:&quot; prefix).Examples: &quot;203.0.113.1&quot;, &quot;203.0.113.0/24&quot;, &quot;2001:db8::1/64&quot;, &quot;-all&quot;, &quot;~mx:example.com&quot;, &quot;include:_spf.example.com&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lookup_count", n => { LookupCount = n.GetIntValue(); } },
-                { "nested", n => { Nested = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_nested>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_nested.CreateFromDiscriminatorValue); } },
+                { "nested", n => { Nested = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -77,9 +77,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("lookup_count", LookupCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_nested>("nested", Nested);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentNested>("nested", Nested);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfResult>("result", Result);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAuthSpfComponentType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

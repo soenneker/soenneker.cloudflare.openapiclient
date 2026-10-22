@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\entries\predefined
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\entries\predefined
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PredefinedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.entries.predefined.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.Item.WithEntry_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.Item.WithEntry_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.Item.WithEntryItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.Item.WithEntryItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("entry_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.Item.WithEntry_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("entryId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.Item.WithEntryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PredefinedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/entries/predefined", pathParameters)
+        public PredefinedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/entries/predefined", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PredefinedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/entries/predefined", rawUrl)
+        public PredefinedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/entries/predefined", rawUrl)
         {
         }
         /// <summary>
         /// Predefined entries can&apos;t be created, this will update an existing predefined entry.This is needed for our generated terraform API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200Response"/></returns>
         /// <param name="body">Used to create a new predefined or integration entry.Predefined or integration entries can not be updated via the API sothese fields will update the entry&apos;s settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpNewPredefinedEntry body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpNewPredefinedEntry body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpNewPredefinedEntry body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpNewPredefinedEntry body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DlpApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntriesCreatePredefinedEntry200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Predefined entries can&apos;t be created, this will update an existing predefined entry.This is needed for our generated terraform API.

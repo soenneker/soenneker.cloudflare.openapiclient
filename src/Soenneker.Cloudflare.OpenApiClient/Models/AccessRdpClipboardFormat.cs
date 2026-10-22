@@ -11,5 +11,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Text,
         #pragma warning restore CS1591
+        [EnumMember(Value = "file")]
+        #pragma warning disable CS1591
+        File,
+        #pragma warning restore CS1591
     }
 }

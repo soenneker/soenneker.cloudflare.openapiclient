@@ -44,6 +44,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservability Observability { get; set; }
 #endif
+        /// <summary>Template configuration used when creating new Previews for this Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerPreviewsBaseConfig? PreviewsBaseConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerPreviewsBaseConfig PreviewsBaseConfig { get; set; }
+#endif
         /// <summary>Other resources that reference the Worker and depend on it existing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,10 +79,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Other Workers that should consume logs from the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorker_tail_consumers>? TailConsumers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerTailConsumersItem>? TailConsumers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorker_tail_consumers> TailConsumers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerTailConsumersItem> TailConsumers { get; set; }
 #endif
         /// <summary>When the Worker was most recently updated.</summary>
         public DateTimeOffset? UpdatedOn { get; private set; }
@@ -84,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersWorker()
         {
             AdditionalData = new Dictionary<string, object>();
+            Logpush = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -109,10 +118,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservability>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservability.CreateFromDiscriminatorValue); } },
+                { "previews_base_config", n => { PreviewsBaseConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerPreviewsBaseConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerPreviewsBaseConfig.CreateFromDiscriminatorValue); } },
                 { "references", n => { References = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerReferences.CreateFromDiscriminatorValue); } },
                 { "subdomain", n => { Subdomain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerSubdomain>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerSubdomain.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorker_tail_consumers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorker_tail_consumers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerTailConsumersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerTailConsumersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_on", n => { UpdatedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -126,9 +136,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("logpush", Logpush);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerObservability>("observability", Observability);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerPreviewsBaseConfig>("previews_base_config", PreviewsBaseConfig);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerSubdomain>("subdomain", Subdomain);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorker_tail_consumers>("tail_consumers", TailConsumers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerTailConsumersItem>("tail_consumers", TailConsumers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Postal/mailing information for the registrant contact.
+    /// Postal/mailing information for the contact. The `name` field is thecomplete contact name in one string. Some registries require a completepersonal name, including a family or last name where applicable, but thisAPI does not accept separate first-name and last-name fields forregistration contacts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrarApiRegistrationContactPostalInfo : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApiRegistrationContactAddress Address { get; set; }
 #endif
-        /// <summary>Full legal name of the registrant (individual or authorized representative).</summary>
+        /// <summary>Full legal name of the contact, including all required name components for an individual or authorized representative. Some registries require a complete personal name that includes a family or last name where applicable. Provide the complete name in this single field, for example `Ada Lovelace`; do not send separate first-name or last-name fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

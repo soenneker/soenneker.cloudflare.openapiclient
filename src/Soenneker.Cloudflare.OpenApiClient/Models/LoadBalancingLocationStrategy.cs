@@ -15,18 +15,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.- `\&quot;pop\&quot;`: Use the Cloudflare PoP location.- `\&quot;resolver_ip\&quot;`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_mode? Mode { get; set; }
-        /// <summary>&quot;Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.- `\&quot;always\&quot;`: Always prefer ECS.- `\&quot;never\&quot;`: Never prefer ECS.- `\&quot;proximity\&quot;`: Prefer ECS only when `steering_policy=\&quot;proximity\&quot;`.- `\&quot;geo\&quot;`: Prefer ECS only when `steering_policy=\&quot;geo\&quot;`.&quot;</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_prefer_ecs? PreferEcs { get; set; }
+        /// <summary>Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.- `&quot;pop&quot;`: Use the Cloudflare PoP location.- `&quot;resolver_ip&quot;`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode? Mode { get; set; }
+        /// <summary>Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.- `&quot;always&quot;`: Always prefer ECS.- `&quot;never&quot;`: Never prefer ECS.- `&quot;proximity&quot;`: Prefer ECS only when `steering_policy=&quot;proximity&quot;`.- `&quot;geo&quot;`: Prefer ECS only when `steering_policy=&quot;geo&quot;`.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs? PreferEcs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy"/> and sets the default values.
         /// </summary>
         public LoadBalancingLocationStrategy()
         {
             AdditionalData = new Dictionary<string, object>();
-            Mode = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_mode.Pop;
-            PreferEcs = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_prefer_ecs.Proximity;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_mode>(); } },
-                { "prefer_ecs", n => { PreferEcs = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_prefer_ecs>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode>(); } },
+                { "prefer_ecs", n => { PreferEcs = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs>(); } },
             };
         }
         /// <summary>
@@ -57,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_mode>("mode", Mode);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy_prefer_ecs>("prefer_ecs", PreferEcs);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategyPreferEcs>("prefer_ecs", PreferEcs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

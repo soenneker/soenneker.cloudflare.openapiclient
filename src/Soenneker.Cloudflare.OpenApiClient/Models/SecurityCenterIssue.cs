@@ -61,11 +61,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ResolveText { get; set; }
 #endif
         /// <summary>The severity property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue_severity? Severity { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueSeverity? Severity { get; set; }
         /// <summary>The since property</summary>
         public DateTimeOffset? Since { get; set; }
+        /// <summary>Who generated the insight. `cloudflare` for Cloudflare-generated insights, otherwise the partner.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource? Source { get; set; }
         /// <summary>The current status of the insight.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus? Status { get; set; }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,9 +113,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload.CreateFromDiscriminatorValue); } },
                 { "resolve_link", n => { ResolveLink = n.GetStringValue(); } },
                 { "resolve_text", n => { ResolveText = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue_severity>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueSeverity>(); } },
                 { "since", n => { Since = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue_status>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
                 { "user_classification", n => { UserClassification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>(); } },
@@ -134,9 +137,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssuePayload>("payload", Payload);
             writer.WriteStringValue("resolve_link", ResolveLink);
             writer.WriteStringValue("resolve_text", ResolveText);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue_severity>("severity", Severity);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueSeverity>("severity", Severity);
             writer.WriteDateTimeOffsetValue("since", Since);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssue_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueStatus>("status", Status);
             writer.WriteStringValue("subject", Subject);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterUserClassification>("user_classification", UserClassification);

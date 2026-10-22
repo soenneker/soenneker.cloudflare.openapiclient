@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The behaviors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviors_behaviors? Behaviors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty? Behaviors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviors_behaviors Behaviors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty Behaviors { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviors"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "behaviors", n => { Behaviors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviors_behaviors>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviors_behaviors.CreateFromDiscriminatorValue); } },
+                { "behaviors", n => { Behaviors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviors_behaviors>("behaviors", Behaviors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpBehaviorsBehaviorsProperty>("behaviors", Behaviors);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,11 +9,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class R2CorsRule : IAdditionalDataHolder, IParsable
+    public partial class R2CorsRule : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Object specifying allowed origins, methods and headers for this CORS rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,13 +38,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Specifies the amount of time (in seconds) browsers are allowed to cache CORS preflight responses. Browsers may limit this to 2 hours or less, even if the maximum value (86400) is specified.</summary>
         public double? MaxAgeSeconds { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CorsRule"/> and sets the default values.
-        /// </summary>
-        public R2CorsRule()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,7 +73,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("exposeHeaders", ExposeHeaders);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("maxAgeSeconds", MaxAgeSeconds);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.UsageHistory
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\billing\usage-history
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\billing\usage-history
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageHistoryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Usa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageHistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/usage-history?value_grouping_window={value_grouping_window}{&end_time*,start_time*}", pathParameters)
+        public UsageHistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/usage-history?value_grouping_window={value_grouping_window}{&end_time*,start_time*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Usa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageHistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/billing/usage-history?value_grouping_window={value_grouping_window}{&end_time*,start_time*}", rawUrl)
+        public UsageHistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/billing/usage-history?value_grouping_window={value_grouping_window}{&end_time*,start_time*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieve aggregated usage meter event summaries for the given time range.
+        /// Retrieve AI Gateway usage cost, in US dollars, aggregated by hour or day for the given time range.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Usa
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve aggregated usage meter event summaries for the given time range.
+        /// Retrieve AI Gateway usage cost, in US dollars, aggregated by hour or day for the given time range.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,17 +89,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.Usa
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.UsageHistory.UsageHistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve aggregated usage meter event summaries for the given time range.
+        /// Retrieve AI Gateway usage cost, in US dollars, aggregated by hour or day for the given time range.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageHistoryRequestBuilderGetQueryParameters 
         {
+            /// <summary>End time as Unix timestamp in milliseconds.</summary>
             [QueryParameter("end_time")]
             public double? EndTime { get; set; }
+            /// <summary>Start time as Unix timestamp in milliseconds.</summary>
             [QueryParameter("start_time")]
             public double? StartTime { get; set; }
+            /// <summary>Grouping window for usage data.</summary>
             [QueryParameter("value_grouping_window")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.UsageHistory.GetValue_grouping_windowQueryParameterType? ValueGroupingWindow { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetUsageHistoryValueGroupingWindowParameter? ValueGroupingWindow { get; set; }
         }
     }
 }

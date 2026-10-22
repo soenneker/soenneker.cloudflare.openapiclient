@@ -18,26 +18,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_email>? Email { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsEmailItem>? Email { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_email> Email { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsEmailItem> Email { get; set; }
 #endif
         /// <summary>The pagerduty property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_pagerduty>? Pagerduty { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsPagerdutyItem>? Pagerduty { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_pagerduty> Pagerduty { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsPagerdutyItem> Pagerduty { get; set; }
 #endif
         /// <summary>The webhooks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_webhooks>? Webhooks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsWebhooksItem>? Webhooks { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_webhooks> Webhooks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsWebhooksItem> Webhooks { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_email>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_email.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pagerduty", n => { Pagerduty = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_pagerduty>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_pagerduty.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "webhooks", n => { Webhooks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_webhooks>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_webhooks.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "email", n => { Email = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsEmailItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsEmailItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pagerduty", n => { Pagerduty = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsPagerdutyItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsPagerdutyItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "webhooks", n => { Webhooks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsWebhooksItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsWebhooksItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_email>("email", Email);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_pagerduty>("pagerduty", Pagerduty);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanisms_webhooks>("webhooks", Webhooks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsEmailItem>("email", Email);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsPagerdutyItem>("pagerduty", Pagerduty);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMechanismsWebhooksItem>("webhooks", Webhooks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

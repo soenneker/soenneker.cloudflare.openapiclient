@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Monitors;
 using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools;
 using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview;
+using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Regions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers
         public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.PreviewRequestBuilder Preview
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The regions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Regions.RegionsRequestBuilder Regions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Regions.RegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Load_balancersRequestBuilder"/> and sets the default values.

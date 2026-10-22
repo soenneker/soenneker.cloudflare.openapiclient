@@ -2,6 +2,11 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BadDebt;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Credits;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.History;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Profile;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.UnpaidInvoice;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage;
 using System.Collections.Generic;
 using System.IO;
@@ -10,11 +15,36 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\billing
+    /// Builds and executes requests for operations under \accounts\{account-id}\billing
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillingRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The badDebt property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BadDebt.BadDebtRequestBuilder BadDebt
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BadDebt.BadDebtRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The credits property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Credits.CreditsRequestBuilder Credits
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Credits.CreditsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The history property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.History.HistoryRequestBuilder History
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The profile property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Profile.ProfileRequestBuilder Profile
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unpaidInvoice property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.UnpaidInvoice.UnpaidInvoiceRequestBuilder UnpaidInvoice
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.UnpaidInvoice.UnpaidInvoiceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The usage property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.UsageRequestBuilder Usage
         {
@@ -25,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BillingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/billing", pathParameters)
+        public BillingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/billing", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BillingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/billing", rawUrl)
+        public BillingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/billing", rawUrl)
         {
         }
     }

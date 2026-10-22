@@ -16,9 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The scope of the URL normalization.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization_scope? Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalizationScope? Scope { get; set; }
         /// <summary>The type of URL normalization performed by Cloudflare.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalizationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization"/> and sets the default values.
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization_scope>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization_type>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalizationScope>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalizationType>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization_scope>("scope", Scope);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalization_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalizationScope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsUrlNormalizationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

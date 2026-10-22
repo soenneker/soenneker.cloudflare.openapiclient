@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicates if the attribute is multi-valued.</summary>
         public bool? MultiValued { get; set; }
         /// <summary>Indicates the circumstances under which the value of the attribute can be defined or redefined.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_mutability? Mutability { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrMutability? Mutability { get; set; }
         /// <summary>The attribute&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicates if the attribute is required.</summary>
         public bool? Required { get; set; }
         /// <summary>Indicates when an attribute and associated values are returned in response to a GET request or in response to a PUT, POST, or PATCH request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_returned? Returned { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrReturned? Returned { get; set; }
         /// <summary>Defines a set of sub-attributes when the attribute type is `complex`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr> SubAttributes { get; set; }
 #endif
         /// <summary>The attribute&apos;s data type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType? Type { get; set; }
         /// <summary>Indicates how the service provider enforces uniqueness of attribute values.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_uniqueness? Uniqueness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness? Uniqueness { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr"/> and sets the default values.
         /// </summary>
@@ -98,14 +98,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "caseExact", n => { CaseExact = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "multiValued", n => { MultiValued = n.GetBoolValue(); } },
-                { "mutability", n => { Mutability = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_mutability>(); } },
+                { "mutability", n => { Mutability = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrMutability>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "referenceTypes", n => { ReferenceTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
-                { "returned", n => { Returned = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_returned>(); } },
+                { "returned", n => { Returned = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrReturned>(); } },
                 { "subAttributes", n => { SubAttributes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_type>(); } },
-                { "uniqueness", n => { Uniqueness = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_uniqueness>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType>(); } },
+                { "uniqueness", n => { Uniqueness = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness>(); } },
             };
         }
         /// <summary>
@@ -119,14 +119,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("caseExact", CaseExact);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("multiValued", MultiValued);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_mutability>("mutability", Mutability);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrMutability>("mutability", Mutability);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("referenceTypes", ReferenceTypes);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_returned>("returned", Returned);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrReturned>("returned", Returned);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr>("subAttributes", SubAttributes);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_type>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttr_uniqueness>("uniqueness", Uniqueness);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamScimSchemaAttrUniqueness>("uniqueness", Uniqueness);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

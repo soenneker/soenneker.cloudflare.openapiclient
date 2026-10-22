@@ -25,6 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingFilterOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            Disable = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

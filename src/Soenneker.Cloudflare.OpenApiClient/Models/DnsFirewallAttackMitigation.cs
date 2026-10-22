@@ -25,6 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DnsFirewallAttackMitigation()
         {
             AdditionalData = new Dictionary<string, object>();
+            OnlyWhenUpstreamUnhealthy = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

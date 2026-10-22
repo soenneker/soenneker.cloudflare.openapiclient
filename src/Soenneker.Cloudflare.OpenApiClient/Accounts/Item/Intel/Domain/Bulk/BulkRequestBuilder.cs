@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\domain\bulk
+    /// Builds and executes requests for operations under \accounts\{account-id}\intel\domain\bulk
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BulkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/domain/bulk{?domain*}", pathParameters)
+        public BulkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/domain/bulk{?domain*,include_ranking*,skip_ranking*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,16 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BulkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/domain/bulk{?domain*}", rawUrl)
+        public BulkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/domain/bulk{?domain*,include_ranking*,skip_ranking*}", rawUrl)
         {
         }
         /// <summary>
-        /// Same as summary.
+        /// Returns security details and statistics about multiple domains in asingle request.**Behavior change — domain ranking is becoming opt-in.** This endpointpreviously included domain ranking data in every response and accepteda `skip_ranking=true` query parameter to opt out. That parameter isbeing deprecated and ranking will no longer be returned by default.Callers that want ranking data must pass `include_ranking=true`. The`skip_ranking` parameter will be silently ignored once the change ships.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DomainIntelligenceGetMultipleDomainDetails4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DomainIntelligenceGetMultipleDomainDetails4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk.BulkRequestBuilder.BulkRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +52,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DomainIntelligenceGetMultipleDomainDetails4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DomainIntelligenceGetMultipleDomainDetails4XxResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.IntelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Same as summary.
+        /// Returns security details and statistics about multiple domains in asingle request.**Behavior change — domain ranking is becoming opt-in.** This endpointpreviously included domain ranking data in every response and accepteda `skip_ranking=true` query parameter to opt out. That parameter isbeing deprecated and ranking will no longer be returned by default.Callers that want ranking data must pass `include_ranking=true`. The`skip_ranking` parameter will be silently ignored once the change ships.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk.BulkRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Same as summary.
+        /// Returns security details and statistics about multiple domains in asingle request.**Behavior change — domain ranking is becoming opt-in.** This endpointpreviously included domain ranking data in every response and accepteda `skip_ranking=true` query parameter to opt out. That parameter isbeing deprecated and ranking will no longer be returned by default.Callers that want ranking data must pass `include_ranking=true`. The`skip_ranking` parameter will be silently ignored once the change ships.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BulkRequestBuilderGetQueryParameters 
@@ -100,6 +100,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.Bulk
             [QueryParameter("domain")]
             public string[] Domain { get; set; }
 #endif
+            /// <summary>Whether to include domain ranking data in the response. Defaults to`false` — ranking lookups are expensive at bulk scale and mostcallers do not need them. Set to `true` to opt in. This parameterreplaces the deprecated `skip_ranking` (see below).</summary>
+            [QueryParameter("include_ranking")]
+            public bool? IncludeRanking { get; set; }
+            /// <summary>**Deprecated.** Previously controlled whether the ranking lookupwas skipped (defaulted to `false`, meaning ranking ran). Theendpoint&apos;s default behavior is being flipped — ranking is nowopt-in via `include_ranking=true` — and this parameter will besilently ignored. Remove it from your callers and use`include_ranking` instead.</summary>
+            [Obsolete("")]
+            [QueryParameter("skip_ranking")]
+            public bool? SkipRanking { get; set; }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC3339 timestamp recording when the API created this dataset.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Dataset type name (e.g. `http_requests`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,31 +28,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Unique dataset ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetId { get; set; }
+        public string? DatasetId { get; private set; }
 #nullable restore
 #else
-        public string DatasetId { get; set; }
+        public string DatasetId { get; private set; }
 #endif
+        /// <summary>Whether deletion is blocked. Set to `false` before deleting the dataset.</summary>
+        public bool? DeletionProtection { get; set; }
         /// <summary>Whether log ingest is currently active for this dataset.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Public ID of the account or zone that owns this dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectId { get; set; }
+        public string? ObjectId { get; private set; }
 #nullable restore
 #else
-        public string ObjectId { get; set; }
+        public string ObjectId { get; private set; }
 #endif
         /// <summary>Whether this dataset belongs to an account or a zone.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummary_object_type? ObjectType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetResponseObjectType? ObjectType { get; private set; }
         /// <summary>RFC3339 timestamp recording when the API last updated this dataset.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummary"/> and sets the default values.
         /// </summary>
         public LexDatasetSummary()
         {
             AdditionalData = new Dictionary<string, object>();
+            DeletionProtection = true;
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,9 +79,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "dataset_id", n => { DatasetId = n.GetStringValue(); } },
+                { "deletion_protection", n => { DeletionProtection = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "object_id", n => { ObjectId = n.GetStringValue(); } },
-                { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummary_object_type>(); } },
+                { "object_type", n => { ObjectType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetResponseObjectType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -88,13 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("dataset", Dataset);
-            writer.WriteStringValue("dataset_id", DatasetId);
+            writer.WriteBoolValue("deletion_protection", DeletionProtection);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("object_id", ObjectId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LexDatasetSummary_object_type>("object_type", ObjectType);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

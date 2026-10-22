@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Job { get; set; }
 #endif
         /// <summary>The logType property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobLogResponse_logType? LogType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobLogResponseLogType? LogType { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "job", n => { Job = n.GetStringValue(); } },
-                { "logType", n => { LogType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobLogResponse_logType>(); } },
+                { "logType", n => { LogType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobLogResponseLogType>(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "objectKey", n => { ObjectKey = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteStringValue("job", Job);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobLogResponse_logType>("logType", LogType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperJobLogResponseLogType>("logType", LogType);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("objectKey", ObjectKey);
             writer.WriteAdditionalData(AdditionalData);

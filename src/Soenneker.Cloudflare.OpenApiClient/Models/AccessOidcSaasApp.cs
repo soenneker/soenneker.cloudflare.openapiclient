@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string AppLauncherUrl { get; set; }
 #endif
         /// <summary>Identifier of the authentication protocol used for the saas app. Required for OIDC.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_auth_type? AuthType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppAuthType? AuthType { get; set; }
         /// <summary>The application client id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,28 +51,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ClientSecret { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The custom_claims property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_custom_claims>? CustomClaims { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem>? CustomClaims { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_custom_claims> CustomClaims { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem> CustomClaims { get; set; }
 #endif
         /// <summary>The OIDC flows supported by this application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_grant_types?>? GrantTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?>? GrantTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_grant_types?> GrantTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem?> GrantTypes { get; set; }
 #endif
         /// <summary>A regex to filter Cloudflare groups returned in ID token and userinfo endpoint</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,19 +111,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Define the user information shared with access, &quot;offline_access&quot; scope will be automatically enabled if refresh tokens are enabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_scopes?>? Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_scopes?> Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem?> Scopes { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt UpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp"/> and sets the default values.
         /// </summary>
@@ -158,19 +146,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "access_token_lifetime", n => { AccessTokenLifetime = n.GetStringValue(); } },
                 { "allow_pkce_without_client_secret", n => { AllowPkceWithoutClientSecret = n.GetBoolValue(); } },
                 { "app_launcher_url", n => { AppLauncherUrl = n.GetStringValue(); } },
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_auth_type>(); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppAuthType>(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt.CreateFromDiscriminatorValue); } },
-                { "custom_claims", n => { CustomClaims = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_custom_claims>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_custom_claims.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "grant_types", n => { GrantTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_grant_types>()?.AsList(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "custom_claims", n => { CustomClaims = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "grant_types", n => { GrantTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem>()?.AsList(); } },
                 { "group_filter_regex", n => { GroupFilterRegex = n.GetStringValue(); } },
                 { "hybrid_and_implicit_options", n => { HybridAndImplicitOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions.CreateFromDiscriminatorValue); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
                 { "redirect_uris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "refresh_token_options", n => { RefreshTokenOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions.CreateFromDiscriminatorValue); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_scopes>()?.AsList(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem>()?.AsList(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -183,19 +171,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("access_token_lifetime", AccessTokenLifetime);
             writer.WriteBoolValue("allow_pkce_without_client_secret", AllowPkceWithoutClientSecret);
             writer.WriteStringValue("app_launcher_url", AppLauncherUrl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_auth_type>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppAuthType>("auth_type", AuthType);
             writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_secret", ClientSecret);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCreatedAt>("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_custom_claims>("custom_claims", CustomClaims);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_grant_types>("grant_types", GrantTypes);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppCustomClaimsItem>("custom_claims", CustomClaims);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppGrantTypesItem>("grant_types", GrantTypes);
             writer.WriteStringValue("group_filter_regex", GroupFilterRegex);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppHybridAndImplicitOptions>("hybrid_and_implicit_options", HybridAndImplicitOptions);
             writer.WriteStringValue("public_key", PublicKey);
             writer.WriteCollectionOfPrimitiveValues<string>("redirect_uris", RedirectUris);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppRefreshTokenOptions>("refresh_token_options", RefreshTokenOptions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasApp_scopes>("scopes", Scopes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUpdatedAt>("updated_at", UpdatedAt);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidcSaasAppScopesItem>("scopes", Scopes);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

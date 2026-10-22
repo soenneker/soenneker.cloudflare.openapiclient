@@ -38,15 +38,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The specific WHOIS data elements being requested per RDP 10.2.2. Required for all WHOIS requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requested_data_elements?>? RegWhoRequestedDataElements { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestedDataElementsItem?>? RegWhoRequestedDataElements { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requested_data_elements?> RegWhoRequestedDataElements { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestedDataElementsItem?> RegWhoRequestedDataElements { get; set; }
 #endif
         /// <summary>The nature of the requestor per RDP 10.2.1.2.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requestor_type? RegWhoRequestorType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestorType? RegWhoRequestorType { get; set; }
         /// <summary>The type of WHOIS data request per RDP procedure.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_request_type? RegWhoRequestType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestType? RegWhoRequestType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields"/> and sets the default values.
         /// </summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "reg_who_good_faith_affirmation", n => { RegWhoGoodFaithAffirmation = n.GetBoolValue(); } },
                 { "reg_who_lawful_processing_agreement", n => { RegWhoLawfulProcessingAgreement = n.GetBoolValue(); } },
                 { "reg_who_legal_basis", n => { RegWhoLegalBasis = n.GetStringValue(); } },
-                { "reg_who_request_type", n => { RegWhoRequestType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_request_type>(); } },
-                { "reg_who_requested_data_elements", n => { RegWhoRequestedDataElements = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requested_data_elements>()?.AsList(); } },
-                { "reg_who_requestor_type", n => { RegWhoRequestorType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requestor_type>(); } },
+                { "reg_who_request_type", n => { RegWhoRequestType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestType>(); } },
+                { "reg_who_requested_data_elements", n => { RegWhoRequestedDataElements = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestedDataElementsItem>()?.AsList(); } },
+                { "reg_who_requestor_type", n => { RegWhoRequestorType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestorType>(); } },
             };
         }
         /// <summary>
@@ -92,9 +92,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("reg_who_good_faith_affirmation", RegWhoGoodFaithAffirmation);
             writer.WriteBoolValue("reg_who_lawful_processing_agreement", RegWhoLawfulProcessingAgreement);
             writer.WriteStringValue("reg_who_legal_basis", RegWhoLegalBasis);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requested_data_elements>("reg_who_requested_data_elements", RegWhoRequestedDataElements);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_requestor_type>("reg_who_requestor_type", RegWhoRequestorType);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFields_reg_who_request_type>("reg_who_request_type", RegWhoRequestType);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestedDataElementsItem>("reg_who_requested_data_elements", RegWhoRequestedDataElements);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestorType>("reg_who_requestor_type", RegWhoRequestorType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoIsFieldsRegWhoRequestType>("reg_who_request_type", RegWhoRequestType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

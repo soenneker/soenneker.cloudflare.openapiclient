@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.Managed.Item.Resources.Operation
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\api_gateway\labels\managed\{name}\resources\operation
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\labels\managed\{name}\resources\operation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OperationRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.Manag
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OperationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/labels/managed/{name}/resources/operation", pathParameters)
+        public OperationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/labels/managed/{name}/resources/operation", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.Manag
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OperationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/api_gateway/labels/managed/{name}/resources/operation", rawUrl)
+        public OperationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/labels/managed/{name}/resources/operation", rawUrl)
         {
         }
         /// <summary>
-        /// Replace all operations(s) attached to a managed label
+        /// Replaces the complete set of web and API operations attached to the managed label.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldReplaceOperationsAttachedToLabelRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200Response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldReplaceOperationsAttachedToLabelRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldReplaceOperationsAttachedToLabelRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200Response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldReplaceOperationsAttachedToLabelRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,10 +56,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.Manag
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldLabelsReplaceOperationsAttachedToManagedLabel200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replace all operations(s) attached to a managed label
+        /// Replaces the complete set of web and API operations attached to the managed label.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

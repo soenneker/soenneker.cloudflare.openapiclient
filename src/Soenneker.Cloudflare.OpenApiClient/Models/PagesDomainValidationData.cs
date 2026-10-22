@@ -23,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ErrorMessage { get; set; }
 #endif
         /// <summary>The method property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData_method? Method { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationDataMethod? Method { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationDataStatus? Status { get; set; }
         /// <summary>The txt_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,8 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData_method>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData_status>(); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationDataMethod>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationDataStatus>(); } },
                 { "txt_name", n => { TxtName = n.GetStringValue(); } },
                 { "txt_value", n => { TxtValue = n.GetStringValue(); } },
             };
@@ -82,8 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error_message", ErrorMessage);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData_method>("method", Method);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationData_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationDataMethod>("method", Method);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PagesDomainValidationDataStatus>("status", Status);
             writer.WriteStringValue("txt_name", TxtName);
             writer.WriteStringValue("txt_value", TxtValue);
             writer.WriteAdditionalData(AdditionalData);

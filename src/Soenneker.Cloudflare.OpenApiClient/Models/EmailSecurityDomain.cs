@@ -25,19 +25,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The authorization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorization? Authorization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed? Authorization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorization Authorization { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed Authorization { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_created_at CreatedAt { get; private set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The dmarc_status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus? DmarcStatus { get; set; }
         /// <summary>The domain property</summary>
@@ -59,17 +53,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The emails_processed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityEmailsProcessed? EmailsProcessed { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed? EmailsProcessed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityEmailsProcessed EmailsProcessed { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed EmailsProcessed { get; set; }
 #endif
         /// <summary>The folder property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityScannableFolder? Folder { get; set; }
-        /// <summary>Domain identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder? Folder { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder Folder { get; set; }
+#endif
+        /// <summary>Domain identifier.</summary>
         public Guid? Id { get; set; }
         /// <summary>The inbox_provider property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_inbox_provider? InboxProvider { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider? InboxProvider { get; set; }
         /// <summary>The integration_id property</summary>
         public Guid? IntegrationId { get; set; }
         /// <summary>The ip_restrictions property</summary>
@@ -80,25 +80,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> IpRestrictions { get; set; }
 #endif
-        /// <summary>&quot;Deprecated, use `modified_at` instead. End of life: November 1, 2026.&quot;</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_last_modified? LastModified { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_last_modified LastModified { get; private set; }
-#endif
+        /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
+        public DateTimeOffset? LastModified { get; set; }
         /// <summary>The lookback_hops property</summary>
         public int? LookbackHops { get; set; }
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_modified_at? ModifiedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_modified_at ModifiedAt { get; private set; }
-#endif
+        public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>The o365_tenant_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,20 +144,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>()?.AsList(); } },
-                { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorization>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorization.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_created_at.CreateFromDiscriminatorValue); } },
+                { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dmarc_status", n => { DmarcStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>()?.AsList(); } },
-                { "emails_processed", n => { EmailsProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityEmailsProcessed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityEmailsProcessed.CreateFromDiscriminatorValue); } },
-                { "folder", n => { Folder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityScannableFolder>(); } },
+                { "emails_processed", n => { EmailsProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed.CreateFromDiscriminatorValue); } },
+                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "inbox_provider", n => { InboxProvider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_inbox_provider>(); } },
+                { "inbox_provider", n => { InboxProvider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>(); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
                 { "ip_restrictions", n => { IpRestrictions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "last_modified", n => { LastModified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_last_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_last_modified.CreateFromDiscriminatorValue); } },
+                { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "lookback_hops", n => { LookbackHops = n.GetIntValue(); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_modified_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_modified_at.CreateFromDiscriminatorValue); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "o365_tenant_id", n => { O365TenantId = n.GetStringValue(); } },
                 { "regions", n => { Regions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityRegion>()?.AsList(); } },
                 { "require_tls_inbound", n => { RequireTlsInbound = n.GetBoolValue(); } },
@@ -188,17 +175,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorization>("authorization", Authorization);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed>("authorization", Authorization);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>("dmarc_status", DmarcStatus);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>("drop_dispositions", DropDispositions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityEmailsProcessed>("emails_processed", EmailsProcessed);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityScannableFolder>("folder", Folder);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed>("emails_processed", EmailsProcessed);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>("folder", Folder);
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomain_inbox_provider>("inbox_provider", InboxProvider);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>("inbox_provider", InboxProvider);
             writer.WriteGuidValue("integration_id", IntegrationId);
             writer.WriteCollectionOfPrimitiveValues<string>("ip_restrictions", IpRestrictions);
+            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
             writer.WriteIntValue("lookback_hops", LookbackHops);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("o365_tenant_id", O365TenantId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityRegion>("regions", Regions);
             writer.WriteBoolValue("require_tls_inbound", RequireTlsInbound);

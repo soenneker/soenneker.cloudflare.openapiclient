@@ -13,11 +13,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "cdn_only")]
         #pragma warning disable CS1591
-        Cdn_only,
+        CdnOnly,
         #pragma warning restore CS1591
         [EnumMember(Value = "dns_only")]
         #pragma warning disable CS1591
-        Dns_only,
+        DnsOnly,
         #pragma warning restore CS1591
     }
 }

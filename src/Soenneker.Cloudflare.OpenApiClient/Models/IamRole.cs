@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole_permissions? Permissions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamRolePermissions? Permissions { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole_permissions Permissions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamRolePermissions Permissions { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole_permissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole_permissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamRolePermissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamRolePermissions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,7 +85,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamRole_permissions>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

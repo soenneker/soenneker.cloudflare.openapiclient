@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ModifiedOn { get; private set; }
 #endif
         /// <summary>The source of the version upload.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata_source? Source { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadataSource? Source { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
                 { "hasPreview", n => { HasPreview = n.GetBoolValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata_source>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadataSource>(); } },
             };
         }
         /// <summary>

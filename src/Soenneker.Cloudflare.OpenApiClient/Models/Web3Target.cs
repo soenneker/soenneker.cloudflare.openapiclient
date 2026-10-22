@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "ipfs_universal_path")]
         #pragma warning disable CS1591
-        Ipfs_universal_path,
+        IpfsUniversalPath,
         #pragma warning restore CS1591
     }
 }

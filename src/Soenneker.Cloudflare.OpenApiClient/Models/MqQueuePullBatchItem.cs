@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItem_metadata? Metadata { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItemMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItem_metadata Metadata { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItemMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The timestamp_ms property</summary>
         public double? TimestampMs { get; private set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "lease_id", n => { LeaseId = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItem_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItem_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItemMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItemMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "timestamp_ms", n => { TimestampMs = n.GetDoubleValue(); } },
             };
         }
@@ -91,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lease_id", LeaseId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueuePullBatchItemMetadataProperty>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

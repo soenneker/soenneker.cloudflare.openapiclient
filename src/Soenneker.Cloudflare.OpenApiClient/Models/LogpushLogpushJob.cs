@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Flag that indicates if the job is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>&quot;If not null, the job is currently failing. Failures are usually. repetitive (example: no permissions to write to destination bucket). Only the last failure is recorded. On successful execution of a job the error_message and last_error are set to null.&quot;</summary>
+        /// <summary>If not null, the job is currently failing. Failures are usually. repetitive (example: no permissions to write to destination bucket). Only the last failure is recorded. On successful execution of a job the error_message and last_error are set to null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage { get; set; }
@@ -34,14 +34,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ErrorMessage { get; set; }
 #endif
-        /// <summary>The frequency property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Frequency { get; set; }
-#nullable restore
-#else
-        public string Frequency { get; set; }
-#endif
+        /// <summary>When true, excludes DDoS attack traffic from logs. This option is supported for the `http_requests`, `firewall_events`, and `network_analytics_logs` datasets.</summary>
+        public bool? FilterAttackTraffic { get; set; }
+        /// <summary>This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushFrequency? Frequency { get; set; }
         /// <summary>Unique id of the job.</summary>
         public int? Id { get; set; }
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</summary>
@@ -50,7 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? LastComplete { get; set; }
         /// <summary>Records the last time the job failed. If not null, the job is currently. failing. If null, the job has either never failed or has run successfully at least once since last failure. See also the error_message field.</summary>
         public DateTimeOffset? LastError { get; set; }
-        /// <summary>The logpull_options property</summary>
+        /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogpullOptions { get; set; }
@@ -104,17 +102,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LogpushLogpushJob()
         {
             AdditionalData = new Dictionary<string, object>();
-            Dataset = global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushDataset.Http_requests;
-        }
-        /// <summary>
-        /// Creates a new instance of the appropriate class based on discriminator value
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushLogpushJob"/></returns>
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushLogpushJob CreateFromDiscriminatorValue(IParseNode parseNode)
-        {
-            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushLogpushJob();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,7 +115,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetStringValue(); } },
+                { "filter_attack_traffic", n => { FilterAttackTraffic = n.GetBoolValue(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushFrequency>(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushKind>(); } },
                 { "last_complete", n => { LastComplete = n.GetDateTimeOffsetValue(); } },
@@ -152,7 +140,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("destination_conf", DestinationConf);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("error_message", ErrorMessage);
-            writer.WriteStringValue("frequency", Frequency);
+            writer.WriteBoolValue("filter_attack_traffic", FilterAttackTraffic);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushFrequency>("frequency", Frequency);
             writer.WriteIntValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushKind>("kind", Kind);
             writer.WriteDateTimeOffsetValue("last_complete", LastComplete);

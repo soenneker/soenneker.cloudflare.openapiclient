@@ -5,11 +5,13 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Gateway_ca;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Groups;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Idp_federation_grants;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Keys;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations;
@@ -19,6 +21,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Saml_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Service_tokens;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Tags;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +30,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access
+    /// Builds and executes requests for operations under \accounts\{account-id}\access
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessRequestBuilder : BaseRequestBuilder
@@ -46,6 +49,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids.Authenticator_device_aaguidsRequestBuilder Authenticator_device_aaguids
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids.Authenticator_device_aaguidsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The bookmarks property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder Bookmarks
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder Certificates
@@ -71,6 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Identity_providersRequestBuilder Identity_providers
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Identity_providersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The idp_federation_grants property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Idp_federation_grants.Idp_federation_grantsRequestBuilder Idp_federation_grants
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Idp_federation_grants.Idp_federation_grantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Keys.KeysRequestBuilder Keys
@@ -117,6 +130,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The user_populations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populations.User_populationsRequestBuilder User_populations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populations.User_populationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The users property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.UsersRequestBuilder Users
         {
@@ -127,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access", pathParameters)
+        public AccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access", pathParameters)
         {
         }
         /// <summary>
@@ -135,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access", rawUrl)
+        public AccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access", rawUrl)
         {
         }
     }

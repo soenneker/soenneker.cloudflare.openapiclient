@@ -13,11 +13,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "created_on")]
         #pragma warning disable CS1591
-        Created_on,
+        CreatedOn,
         #pragma warning restore CS1591
         [EnumMember(Value = "modified_on")]
         #pragma warning disable CS1591
-        Modified_on,
+        ModifiedOn,
         #pragma warning restore CS1591
     }
 }

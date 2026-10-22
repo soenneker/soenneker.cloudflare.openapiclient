@@ -23,13 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Disable this specific rule. It will no longer be evaluated by this load balancer.</summary>
         public bool? Disabled { get; set; }
-        /// <summary>A collection of fields used to directly respond to the eyeball instead of routing to a pool. If a fixed_response is supplied the rule will be marked as terminates.</summary>
+        /// <summary>A collection of fields used to directly respond to the client instead of routing to a pool. When supplied on a rule, that rule stops further rule evaluation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemFixedResponse? FixedResponse { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingFixedResponse? FixedResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemFixedResponse FixedResponse { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingFixedResponse FixedResponse { get; set; }
 #endif
         /// <summary>Name of this rule. Only used for human readability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,18 +39,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A collection of overrides to apply to the load balancer when this rule&apos;s condition is true. All fields are optional.</summary>
+        /// <summary>A collection of overrides to apply when this rule&apos;s condition (or a pool set&apos;s `match`) is true. All fields are optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemOverrides? Overrides { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRuleOverrides? Overrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemOverrides Overrides { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRuleOverrides Overrides { get; set; }
 #endif
         /// <summary>The order in which rules should be executed in relation to each other. Lower values are executed first. Values do not need to be sequential. If no value is provided for any rule the array order of the rules field will be used to assign a priority.</summary>
         public int? Priority { get; set; }
         /// <summary>If this rule&apos;s condition is true, this causes rule evaluation to stop after processing this rule.</summary>
         public bool? Terminates { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItem"/> and sets the default values.
+        /// </summary>
+        public LoadBalancingRulesItem()
+        {
+            Disabled = false;
+            Priority = 0;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "condition", n => { Condition = n.GetStringValue(); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
-                { "fixed_response", n => { FixedResponse = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemFixedResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemFixedResponse.CreateFromDiscriminatorValue); } },
+                { "fixed_response", n => { FixedResponse = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingFixedResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingFixedResponse.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemOverrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemOverrides.CreateFromDiscriminatorValue); } },
+                { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRuleOverrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRuleOverrides.CreateFromDiscriminatorValue); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "terminates", n => { Terminates = n.GetBoolValue(); } },
             };
@@ -87,9 +95,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("condition", Condition);
             writer.WriteBoolValue("disabled", Disabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemFixedResponse>("fixed_response", FixedResponse);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingFixedResponse>("fixed_response", FixedResponse);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRulesItemOverrides>("overrides", Overrides);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingRuleOverrides>("overrides", Overrides);
             writer.WriteIntValue("priority", Priority);
             writer.WriteBoolValue("terminates", Terminates);
         }

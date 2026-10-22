@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of risk score levels to match. Values can be low, medium, high, or unscored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScore_user_risk_score?>? UserRiskScore { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?>? UserRiskScore { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScore_user_risk_score?> UserRiskScore { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem?> UserRiskScore { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScore"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "user_risk_score", n => { UserRiskScore = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScore_user_risk_score>()?.AsList(); } },
+                { "user_risk_score", n => { UserRiskScore = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScore_user_risk_score>("user_risk_score", UserRiskScore);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessUserRiskScoreRuleUserRiskScoreUserRiskScoreItem>("user_risk_score", UserRiskScore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the type of metadata property to index.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequest_indexType? IndexType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType? IndexType { get; set; }
         /// <summary>Specifies the metadata property to index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "indexType", n => { IndexType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequest_indexType>(); } },
+                { "indexType", n => { IndexType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType>(); } },
                 { "propertyName", n => { PropertyName = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequest_indexType>("indexType", IndexType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateMetadataIndexRequestIndexType>("indexType", IndexType);
             writer.WriteStringValue("propertyName", PropertyName);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,12 +14,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When the move operation completed (UTC)</summary>
+        /// <summary>When the move operation completed (UTC).</summary>
         public DateTimeOffset? CompletedAt { get; set; }
-        /// <summary>&quot;Deprecated, use `completed_at` instead. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Deprecated, use `completed_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
         public DateTimeOffset? CompletedTimestamp { get; set; }
-        /// <summary>Destination folder for the message</summary>
+        /// <summary>Destination folder for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Destination { get; set; }
@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Destination { get; set; }
 #endif
-        /// <summary>&quot;Number of items moved. End of life: November 1, 2026.&quot;</summary>
+        /// <summary>Number of items moved. End of life: November 1, 2026.</summary>
         [Obsolete("")]
         public int? ItemCount { get; set; }
-        /// <summary>Message identifier</summary>
+        /// <summary>Message identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageId { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MessageId { get; set; }
 #endif
-        /// <summary>Type of operation performed</summary>
+        /// <summary>Type of operation performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operation { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Operation { get; set; }
 #endif
-        /// <summary>Recipient email address</summary>
+        /// <summary>Recipient email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Recipient { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Recipient { get; set; }
 #endif
-        /// <summary>Operation status</summary>
+        /// <summary>Operation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
-        /// <summary>Whether the operation succeeded</summary>
+        /// <summary>Whether the operation succeeded.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMoveResponseItem"/> and sets the default values.

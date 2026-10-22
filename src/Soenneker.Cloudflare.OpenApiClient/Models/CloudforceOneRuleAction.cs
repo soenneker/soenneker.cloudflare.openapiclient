@@ -15,13 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Action-specific configuration parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_config? ActionConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionConfigProperty? ActionConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_config ActionConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionConfigProperty ActionConfig { get; set; }
 #endif
         /// <summary>The action_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_type? ActionType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionType? ActionType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
@@ -32,6 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public CloudforceOneRuleAction()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action_config", n => { ActionConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_config.CreateFromDiscriminatorValue); } },
-                { "action_type", n => { ActionType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_type>(); } },
+                { "action_config", n => { ActionConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionConfigProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionConfigProperty.CreateFromDiscriminatorValue); } },
+                { "action_type", n => { ActionType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionType>(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
@@ -63,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_config>("action_config", ActionConfig);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleAction_action_type>("action_type", ActionType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionConfigProperty>("action_config", ActionConfig);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRuleActionActionType>("action_type", ActionType);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteAdditionalData(AdditionalData);
         }

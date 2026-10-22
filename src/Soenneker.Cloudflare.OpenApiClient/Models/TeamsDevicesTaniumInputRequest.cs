@@ -31,11 +31,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string EidLastSeen { get; set; }
 #endif
         /// <summary>Operator to evaluate risk_level or eid_last_seen.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_operator? Operator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestOperator? Operator { get; set; }
         /// <summary>For more details on risk level, refer to the Tanium documentation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_risk_level? RiskLevel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel? RiskLevel { get; set; }
         /// <summary>Score Operator.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_scoreOperator? ScoreOperator { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestScoreOperator? ScoreOperator { get; set; }
         /// <summary>For more details on total score, refer to the Tanium documentation.</summary>
         public double? TotalScore { get; set; }
         /// <summary>
@@ -65,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "connection_id", n => { ConnectionId = n.GetStringValue(); } },
                 { "eid_last_seen", n => { EidLastSeen = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_operator>(); } },
-                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_risk_level>(); } },
-                { "scoreOperator", n => { ScoreOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_scoreOperator>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestOperator>(); } },
+                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel>(); } },
+                { "scoreOperator", n => { ScoreOperator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestScoreOperator>(); } },
                 { "total_score", n => { TotalScore = n.GetDoubleValue(); } },
             };
         }
@@ -80,9 +80,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("connection_id", ConnectionId);
             writer.WriteStringValue("eid_last_seen", EidLastSeen);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_operator>("operator", Operator);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_risk_level>("risk_level", RiskLevel);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest_scoreOperator>("scoreOperator", ScoreOperator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestOperator>("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestRiskLevel>("risk_level", RiskLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequestScoreOperator>("scoreOperator", ScoreOperator);
             writer.WriteDoubleValue("total_score", TotalScore);
             writer.WriteAdditionalData(AdditionalData);
         }

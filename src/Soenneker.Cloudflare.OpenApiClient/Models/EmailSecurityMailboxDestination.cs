@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The mailbox folder to move messages to.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum EmailSecurityMailboxDestination
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Inbox")]
         #pragma warning disable CS1591

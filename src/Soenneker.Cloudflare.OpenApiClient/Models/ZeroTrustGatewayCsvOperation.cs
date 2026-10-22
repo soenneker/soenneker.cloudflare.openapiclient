@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type of operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperation_operation_type? OperationType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CreateListOperationType? OperationType { get; set; }
         /// <summary>A human-readable error message if the operation failed. Only present when the operation status is `failed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Result { get; set; }
 #endif
         /// <summary>The status of the operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperation_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperationStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -82,10 +82,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperationData>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperationData.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "operation_type", n => { OperationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperation_operation_type>(); } },
+                { "operation_type", n => { OperationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateListOperationType>(); } },
                 { "processing_error", n => { ProcessingError = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperation_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperationStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -99,10 +99,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperationData>("data", Data);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperation_operation_type>("operation_type", OperationType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CreateListOperationType>("operation_type", OperationType);
             writer.WriteStringValue("processing_error", ProcessingError);
             writer.WriteStringValue("result", Result);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperation_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCsvOperationStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

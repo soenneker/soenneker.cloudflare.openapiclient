@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Summary of the declarative exports reconciliation thatran on this upload. Populated only when the uploadedmetadata included an `exports` block. Durable Objectentries drive reconciliation; `type: worker` entries donot contribute to this summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation? ExportsReconciliation { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation ExportsReconciliation { get; set; }
+#endif
         /// <summary>Unique identifier for the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploaded_resources? Resources { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources? Resources { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploaded_resources Resources { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources Resources { get; private set; }
 #endif
         /// <summary>Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).</summary>
         public int? StartupTimeMs { get; set; }
@@ -67,10 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "exports_reconciliation", n => { ExportsReconciliation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemShortMetadata.CreateFromDiscriminatorValue); } },
                 { "number", n => { Number = n.GetDoubleValue(); } },
-                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploaded_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploaded_resources.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2Resources.CreateFromDiscriminatorValue); } },
                 { "startup_time_ms", n => { StartupTimeMs = n.GetIntValue(); } },
             };
         }
@@ -81,6 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemUploadedAllOf2ExportsReconciliation>("exports_reconciliation", ExportsReconciliation);
             writer.WriteIntValue("startup_time_ms", StartupTimeMs);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -19,12 +19,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>Whether [preview URLs](https://developers.cloudflare.com/workers/configuration/previews/) are enabled for the Worker.</summary>
         public bool? PreviewsEnabled { get; set; }
+        /// <summary>Prepend a version or preview prefix to this host suffix to form the *.workers.dev [preview URL](https://developers.cloudflare.com/workers/configuration/previews/) the Worker would serve on once previews are enabled, e.g. `https://&lt;prefix&gt;-my-worker.my-subdomain.workers.dev`. Present whenever the account owns a workers.dev subdomain, regardless of whether `previews_enabled` is true, so presence does not imply preview URLs are currently live. Absent only when the account owns no workers.dev subdomain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewUrlSuffix { get; private set; }
+#nullable restore
+#else
+        public string PreviewUrlSuffix { get; private set; }
+#endif
+        /// <summary>The address the Worker would serve on once its *.workers.dev subdomain is enabled. Present whenever the account owns a workers.dev subdomain, regardless of whether `enabled` is true, so presence does not imply the Worker is currently live at this URL. Absent only when the account owns no workers.dev subdomain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; private set; }
+#nullable restore
+#else
+        public string Url { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersWorkerSubdomain"/> and sets the default values.
         /// </summary>
         public WorkersWorkerSubdomain()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +62,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "preview_url_suffix", n => { PreviewUrlSuffix = n.GetStringValue(); } },
                 { "previews_enabled", n => { PreviewsEnabled = n.GetBoolValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

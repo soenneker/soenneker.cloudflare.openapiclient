@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When enabled, forces all proxied DNS records in the account to behave as DNS-only at the edge, regardless of each record&apos;s individual proxy setting. Note that this account-level override does not modify the records themselves; it only affects how they are served at the edge. See more on [Enforce DNS-only](https://developers.cloudflare.com/dns/proxy-status/enforce-dns-only).</summary>
         public bool? EnforceDnsOnly { get; set; }
-        /// <summary>The zone_defaults property</summary>
+        /// <summary>Default settings for new zones created in this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsAccountResponse? ZoneDefaults { get; set; }

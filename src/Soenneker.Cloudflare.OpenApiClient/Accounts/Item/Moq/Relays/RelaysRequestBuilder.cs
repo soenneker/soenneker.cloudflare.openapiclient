@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\moq\relays
+    /// Builds and executes requests for operations under \accounts\{account-id}\moq\relays
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelaysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.moq.relays.item collection</summary>
-        /// <param name="position">Relay unique identifier (32 hex characters).</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelay_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelay_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelayItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelayItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("relay_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelay_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("relayId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelayItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/moq/relays", pathParameters)
+        public RelaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/moq/relays{?asc*,created_after*,created_before*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,36 +43,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/moq/relays", rawUrl)
+        public RelaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/moq/relays{?asc*,created_after*,created_before*,per_page*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists all MoQ relays for the account. Returns only metadata.Config, status, and tokens are omitted.
+        /// Lists all MoQ relays for the account. Returns only metadata.Config, status, and tokens are omitted.Results are cursor-paginated (keyset on the `created` timestamp).Use `created_before` / `created_after` with the `created` value of thefirst/last item in a page to fetch the adjacent page. `result_info`reports the page `count` and the `total` matching the cursor filters.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountsAccountIdMoqRelays200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountsAccountIdMoqRelays200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysList200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.RelaysRequestBuilder.RelaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountsAccountIdMoqRelays200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysList200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.RelaysRequestBuilder.RelaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountsAccountIdMoqRelays200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountsAccountIdMoqRelays200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provisions a new MoQ relay instance. Auto-creates a publish+subscribetoken and a subscribe-only token. Token values are included in theresponse (shown once). Config is set to defaults (lingering subscribeenabled, 30s ceiling, origin fallback off). Use PUT to modify.
+        /// Provisions a new MoQ relay instance. Auto-creates a publish+subscribetoken and a subscribe-only token. Token values are included in theresponse (shown once). Config is always set to defaults (upstreamsoff) and cannot be supplied here — sending a non-empty `config` isrejected (21014); `null` or `{}` is accepted as absent. Use PUT toconfigure the relay after it exists.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreate201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,11 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreate201Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreate201Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -98,20 +100,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
                 { "413", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.MoqApiResponseError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays201>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreate201Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreate201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all MoQ relays for the account. Returns only metadata.Config, status, and tokens are omitted.
+        /// Lists all MoQ relays for the account. Returns only metadata.Config, status, and tokens are omitted.Results are cursor-paginated (keyset on the `created` timestamp).Use `created_before` / `created_after` with the `created` value of thefirst/last item in a page to fetch the adjacent page. `result_info`reports the page `count` and the `total` matching the cursor filters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.RelaysRequestBuilder.RelaysRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.RelaysRequestBuilder.RelaysRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -120,18 +122,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
             return requestInfo;
         }
         /// <summary>
-        /// Provisions a new MoQ relay instance. Auto-creates a publish+subscribetoken and a subscribe-only token. Token values are included in theresponse (shown once). Config is set to defaults (lingering subscribeenabled, 30s ceiling, origin fallback off). Use PUT to modify.
+        /// Provisions a new MoQ relay instance. Auto-creates a publish+subscribetoken and a subscribe-only token. Token values are included in theresponse (shown once). Config is always set to defaults (upstreamsoff) and cannot be supplied here — sending a non-empty `config` isrejected (21014); `null` or `{}` is accepted as absent. Use PUT toconfigure the relay after it exists.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostAccountsAccountIdMoqRelays body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqRelaysCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -149,6 +151,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.RelaysRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.RelaysRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Lists all MoQ relays for the account. Returns only metadata.Config, status, and tokens are omitted.Results are cursor-paginated (keyset on the `created` timestamp).Use `created_before` / `created_after` with the `created` value of thefirst/last item in a page to fetch the adjacent page. `result_info`reports the page `count` and the `total` matching the cursor filters.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class RelaysRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Sort order by `created`. When true, results are returned oldest-first(ascending); otherwise newest-first (descending, the default).</summary>
+            [QueryParameter("asc")]
+            public bool? Asc { get; set; }
+            /// <summary>Cursor for pagination. Returns relays created strictly after thisRFC 3339 timestamp (typically the `created` value of the last itemon the current page, to fetch the next page).</summary>
+            [QueryParameter("created_after")]
+            public DateTimeOffset? CreatedAfter { get; set; }
+            /// <summary>Cursor for pagination. Returns relays created strictly before thisRFC 3339 timestamp (typically the `created` value of the first itemon the current page, to fetch the previous page).</summary>
+            [QueryParameter("created_before")]
+            public DateTimeOffset? CreatedBefore { get; set; }
+            /// <summary>Maximum number of relays to return per page. Values above the maximum areclamped to it rather than rejected.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
         }
     }
 }

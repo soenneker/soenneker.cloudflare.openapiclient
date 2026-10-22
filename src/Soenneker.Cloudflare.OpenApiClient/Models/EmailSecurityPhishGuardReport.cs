@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
-        /// <summary>The disposition property</summary>
+        /// <summary>The verdict Email Security assigns to a message.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel? Disposition { get; set; }
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>Deprecated, use `created_at` instead</summary>
+        /// <summary>Deprecated, use `created_at` instead.</summary>
         [Obsolete("")]
         public DateTimeOffset? Ts { get; private set; }
         /// <summary>The updated_at property</summary>

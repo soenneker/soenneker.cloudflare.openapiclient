@@ -117,28 +117,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_plan? Plan { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan? Plan { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_plan Plan { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan Plan { get; set; }
 #endif
         /// <summary>The zone status on Cloudflare.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_status? Status { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneStatus? Status { get; private set; }
         /// <summary>The root organizational unit that this zone belongs to (such as a tenant or organization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant? Tenant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant? Tenant { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant Tenant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant Tenant { get; set; }
 #endif
         /// <summary>The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant_unit? TenantUnit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit? TenantUnit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant_unit TenantUnit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit TenantUnit { get; set; }
 #endif
         /// <summary>A full zone implies that DNS is hosted with Cloudflare. A partial zone istypically a partner-hosted zone or a CNAME setup.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType? Type { get; set; }
@@ -164,7 +164,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesZone()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType.Full;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -200,10 +199,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner.CreateFromDiscriminatorValue); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "plan", n => { Plan = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_plan>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_plan.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_status>(); } },
-                { "tenant", n => { Tenant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant.CreateFromDiscriminatorValue); } },
-                { "tenant_unit", n => { TenantUnit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant_unit>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant_unit.CreateFromDiscriminatorValue); } },
+                { "plan", n => { Plan = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneStatus>(); } },
+                { "tenant", n => { Tenant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant.CreateFromDiscriminatorValue); } },
+                { "tenant_unit", n => { TenantUnit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType>(); } },
                 { "vanity_name_servers", n => { VanityNameServers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "verification_key", n => { VerificationKey = n.GetStringValue(); } },
@@ -224,9 +223,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneOwner>("owner", Owner);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_plan>("plan", Plan);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant>("tenant", Tenant);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZone_tenant_unit>("tenant_unit", TenantUnit);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZonePlan>("plan", Plan);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenant>("tenant", Tenant);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesZoneTenantUnit>("tenant_unit", TenantUnit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("vanity_name_servers", VanityNameServers);
             writer.WriteAdditionalData(AdditionalData);

@@ -8,13 +8,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Media configuration options. eg: Video quality&quot;
+    /// Media configuration options. eg: Video quality
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitUpdatePresetConfigMedia : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Control options for Audio quality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio? Audio { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio Audio { get; set; }
+#endif
         /// <summary>Configuration options for participant screen shares</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "audio", n => { Audio = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio.CreateFromDiscriminatorValue); } },
                 { "screenshare", n => { Screenshare = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare.CreateFromDiscriminatorValue); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo.CreateFromDiscriminatorValue); } },
             };
@@ -67,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaAudio>("audio", Audio);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaScreenshare>("screenshare", Screenshare);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitUpdatePresetConfigMediaVideo>("video", Video);
             writer.WriteAdditionalData(AdditionalData);

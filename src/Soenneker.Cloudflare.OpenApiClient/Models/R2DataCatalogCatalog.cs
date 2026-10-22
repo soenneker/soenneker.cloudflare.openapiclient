@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Contains R2 Data Catalog information.
+    /// Contains catalog information.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2DataCatalogCatalog : IAdditionalDataHolder, IParsable
@@ -24,22 +24,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Bucket { get; set; }
 #endif
         /// <summary>Shows the credential configuration status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_credential_status? CredentialStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_credential_status CredentialStatus { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCredentialStatus? CredentialStatus { get; set; }
         /// <summary>Use this to uniquely identify the catalog.</summary>
         public Guid? Id { get; set; }
         /// <summary>Configures maintenance for the catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_maintenance_config? MaintenanceConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfigComposed? MaintenanceConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_maintenance_config MaintenanceConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfigComposed MaintenanceConfig { get; set; }
 #endif
         /// <summary>Specifies the catalog name (generated from account and bucket name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,9 +71,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
-                { "credential_status", n => { CredentialStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_credential_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_credential_status.CreateFromDiscriminatorValue); } },
+                { "credential_status", n => { CredentialStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCredentialStatus>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "maintenance_config", n => { MaintenanceConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_maintenance_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_maintenance_config.CreateFromDiscriminatorValue); } },
+                { "maintenance_config", n => { MaintenanceConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfigComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfigComposed.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogStatus>(); } },
             };
@@ -92,9 +86,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_credential_status>("credential_status", CredentialStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogCredentialStatus>("credential_status", CredentialStatus);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalog_maintenance_config>("maintenance_config", MaintenanceConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogMaintenanceConfigComposed>("maintenance_config", MaintenanceConfig);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogCatalogStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

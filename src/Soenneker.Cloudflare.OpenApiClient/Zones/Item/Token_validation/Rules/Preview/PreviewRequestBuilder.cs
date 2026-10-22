@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\token_validation\rules\preview
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\token_validation\rules\preview
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreviewRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.P
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/token_validation/rules/preview{?endpoint*,host*,hostname*,method*,page*,per_page*,state*}", pathParameters)
+        public PreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/token_validation/rules/preview{?endpoint*,host*,hostname*,method*,page*,per_page*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,25 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.P
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/token_validation/rules/preview{?endpoint*,host*,hostname*,method*,page*,per_page*,state*}", rawUrl)
+        public PreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/token_validation/rules/preview{?endpoint*,host*,hostname*,method*,page*,per_page*,state*}", rawUrl)
         {
         }
         /// <summary>
-        /// Preview operations covered by a Token Validation rule.The API will return all operations on a zone annotated with an additional `state` field.Operations with an `included` `state` will be covered by a Token Validation Rule.
+        /// Returns zone operations annotated as included or excluded to preview the rule&apos;s coverage before creation.
         /// Learn more about JSON Web Tokens Validation. <see href="https://developers.cloudflare.com/api-shield/security/jwt-validation/" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponse"/></returns>
         /// <param name="body">Select operations covered by this rule.For details on selectors, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelector body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder.PreviewRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.P
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPreviewRulesSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Preview operations covered by a Token Validation rule.The API will return all operations on a zone annotated with an additional `state` field.Operations with an `included` `state` will be covered by a Token Validation Rule.
+        /// Returns zone operations annotated as included or excluded to preview the rule&apos;s coverage before creation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Select operations covered by this rule.For details on selectors, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.P
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Preview operations covered by a Token Validation rule.The API will return all operations on a zone annotated with an additional `state` field.Operations with an `included` `state` will be covered by a Token Validation Rule.
+        /// Returns zone operations annotated as included or excluded to preview the rule&apos;s coverage before creation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PreviewRequestBuilderPostQueryParameters 
@@ -144,12 +144,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.P
             public int? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelectorOperationState[]? State { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelectorOperationState[] State { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

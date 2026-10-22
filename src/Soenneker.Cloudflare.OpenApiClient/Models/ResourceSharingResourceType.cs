@@ -31,5 +31,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         IdpFederationGrant,
         #pragma warning restore CS1591
+        [EnumMember(Value = "trust-grant")]
+        #pragma warning disable CS1591
+        TrustGrant,
+        #pragma warning restore CS1591
     }
 }

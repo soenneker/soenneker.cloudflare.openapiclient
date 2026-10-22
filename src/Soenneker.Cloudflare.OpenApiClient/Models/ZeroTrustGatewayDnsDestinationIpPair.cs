@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Specify whether the pair shared across multiple accounts (shared) or available exclusively to this account. Non-shared pairs can contain Cloudflare-owned IPs (dedicated) or customer-provided IPs (byoip).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPair_pair_type? PairType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType? PairType { get; set; }
         /// <summary>The primary_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "backup_ip", n => { BackupIp = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "pair_type", n => { PairType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPair_pair_type>(); } },
+                { "pair_type", n => { PairType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType>(); } },
                 { "primary_ip", n => { PrimaryIp = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("backup_ip", BackupIp);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPair_pair_type>("pair_type", PairType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayDnsDestinationIpPairPairType>("pair_type", PairType);
             writer.WriteStringValue("primary_ip", PrimaryIp);
             writer.WriteAdditionalData(AdditionalData);
         }

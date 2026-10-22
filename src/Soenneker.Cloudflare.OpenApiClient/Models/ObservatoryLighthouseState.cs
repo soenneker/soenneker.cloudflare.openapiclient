@@ -9,15 +9,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         [EnumMember(Value = "RUNNING")]
         #pragma warning disable CS1591
-        RUNNING,
+        Running,
         #pragma warning restore CS1591
         [EnumMember(Value = "COMPLETE")]
         #pragma warning disable CS1591
-        COMPLETE,
+        Complete,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
     }
 }

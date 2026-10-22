@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.Ack
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\queues\{queue_id}\messages\preview\ack
+    /// Builds and executes requests for operations under \accounts\{account-id}\queues\{queueId}\messages\preview\ack
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AckRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AckRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/queues/{queue_id}/messages/preview/ack", pathParameters)
+        public AckRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/queues/{queueId}/messages/preview/ack", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AckRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/queues/{queue_id}/messages/preview/ack", rawUrl)
+        public AckRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/queues/{queueId}/messages/preview/ack", rawUrl)
         {
         }
         /// <summary>
-        /// Delete previewed messages from a Queue. Note that messages acknowledged this way aren&apos;t considered delivered, they are instantly deleted from this queue and do not affect metrics.
+        /// Delete messages returned by the legacy preview endpoint. This deprecated route is retained for compatibility; use the peek and purge endpoints for new integrations. Deleting messages this way does not count as delivery and does not affect metrics.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqApiV4Failure">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200Response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200Response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,21 +57,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.MqApiV4Failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete previewed messages from a Queue. Note that messages acknowledged this way aren&apos;t considered delivered, they are instantly deleted from this queue and do not affect metrics.
+        /// Delete messages returned by the legacy preview endpoint. This deprecated route is retained for compatibility; use the peek and purge endpoints for new integrations. Deleting messages this way does not count as delivery and does not affect metrics.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessages body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.QueuesAckPreviewMessagesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.Ack.AckRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.Ack.AckRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Preview.Ack.AckRequestBuilder(rawUrl, RequestAdapter);

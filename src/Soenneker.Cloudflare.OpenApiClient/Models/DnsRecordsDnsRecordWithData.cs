@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Components of a CAA record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData_data? Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsCaaRecordAllOf2Data? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData_data Data { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsCaaRecordAllOf2Data Data { get; set; }
 #endif
         /// <summary>Complete DNS record name, including the zone name, in Punycode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,14 +74,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl Ttl { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Record type.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CaaType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData"/> and sets the default values.
         /// </summary>
@@ -109,14 +103,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData_data>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsCaaRecordAllOf2Data>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsCaaRecordAllOf2Data.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "proxied", n => { Proxied = n.GetBoolValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CaaType>(); } },
             };
         }
         /// <summary>
@@ -127,14 +121,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsCaaRecordAllOf2Data>("data", Data);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("priority", Priority);
             writer.WriteBoolValue("proxied", Proxied);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings>("settings", Settings);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl>("ttl", Ttl);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CaaType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

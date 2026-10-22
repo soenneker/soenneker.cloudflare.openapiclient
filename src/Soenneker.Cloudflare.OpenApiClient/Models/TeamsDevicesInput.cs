@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesAccessSerialNumberListInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesAntivirusInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApplicationInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2sInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDiskEncryptionInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDomainJoinedInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2sInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUniqueClientIdInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneInputRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesAccessSerialNumberListInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesAntivirusInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesApplicationInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCarbonblackInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesClientCertificateV2InputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDiskEncryptionInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDomainJoinedInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFileInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesFirewallInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesOsVersionInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUniqueClientIdInputRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneInputRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamsDevicesInput : IComposedTypeWrapper, IParsable
@@ -69,13 +69,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest TeamsDevicesCrowdstrikeInputRequest { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2sInputRequest"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SInputRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2sInputRequest? TeamsDevicesCustomS2sInputRequest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SInputRequest? TeamsDevicesCustomS2SInputRequest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2sInputRequest TeamsDevicesCustomS2sInputRequest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SInputRequest TeamsDevicesCustomS2SInputRequest { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesDiskEncryptionInputRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,13 +141,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneInputRequest TeamsDevicesSentineloneInputRequest { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2sInputRequest"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2sInputRequest? TeamsDevicesSentineloneS2sInputRequest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest? TeamsDevicesSentineloneS2SInputRequest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2sInputRequest TeamsDevicesSentineloneS2sInputRequest { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest TeamsDevicesSentineloneS2SInputRequest { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumInputRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesInput();
             if("TeamsDevicesAccessSerialNumberListInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -211,9 +211,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.TeamsDevicesCrowdstrikeInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest();
             }
-            else if("TeamsDevicesCustomS2sInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TeamsDevicesCustomS2SInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesCustomS2sInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2sInputRequest();
+                result.TeamsDevicesCustomS2SInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SInputRequest();
             }
             else if("TeamsDevicesDiskEncryptionInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -247,9 +247,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.TeamsDevicesSentineloneInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneInputRequest();
             }
-            else if("TeamsDevicesSentineloneS2sInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TeamsDevicesSentineloneS2SInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TeamsDevicesSentineloneS2sInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2sInputRequest();
+                result.TeamsDevicesSentineloneS2SInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest();
             }
             else if("TeamsDevicesTaniumInputRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -299,9 +299,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return TeamsDevicesCrowdstrikeInputRequest.GetFieldDeserializers();
             }
-            else if(TeamsDevicesCustomS2sInputRequest != null)
+            else if(TeamsDevicesCustomS2SInputRequest != null)
             {
-                return TeamsDevicesCustomS2sInputRequest.GetFieldDeserializers();
+                return TeamsDevicesCustomS2SInputRequest.GetFieldDeserializers();
             }
             else if(TeamsDevicesDiskEncryptionInputRequest != null)
             {
@@ -335,9 +335,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return TeamsDevicesSentineloneInputRequest.GetFieldDeserializers();
             }
-            else if(TeamsDevicesSentineloneS2sInputRequest != null)
+            else if(TeamsDevicesSentineloneS2SInputRequest != null)
             {
-                return TeamsDevicesSentineloneS2sInputRequest.GetFieldDeserializers();
+                return TeamsDevicesSentineloneS2SInputRequest.GetFieldDeserializers();
             }
             else if(TeamsDevicesTaniumInputRequest != null)
             {
@@ -388,9 +388,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeInputRequest>(null, TeamsDevicesCrowdstrikeInputRequest);
             }
-            else if(TeamsDevicesCustomS2sInputRequest != null)
+            else if(TeamsDevicesCustomS2SInputRequest != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2sInputRequest>(null, TeamsDevicesCustomS2sInputRequest);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SInputRequest>(null, TeamsDevicesCustomS2SInputRequest);
             }
             else if(TeamsDevicesDiskEncryptionInputRequest != null)
             {
@@ -424,9 +424,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneInputRequest>(null, TeamsDevicesSentineloneInputRequest);
             }
-            else if(TeamsDevicesSentineloneS2sInputRequest != null)
+            else if(TeamsDevicesSentineloneS2SInputRequest != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2sInputRequest>(null, TeamsDevicesSentineloneS2sInputRequest);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SInputRequest>(null, TeamsDevicesSentineloneS2SInputRequest);
             }
             else if(TeamsDevicesTaniumInputRequest != null)
             {

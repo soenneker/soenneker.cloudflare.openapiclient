@@ -21,6 +21,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel? ClearanceLevel { get; set; }
         /// <summary>When the widget was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
+        /// <summary>Origin that created this widget, recorded at creation time andimmutable afterward. Server-derived from the create request; notclient-settable. Omitted from the response for widgets createdbefore this field existed.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileDeployedVia? DeployedVia { get; private set; }
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +33,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Return the Ephemeral ID in /siteverify (ENT only).</summary>
         public bool? EphemeralId { get; set; }
+        /// <summary>Origin of the most recent mutation (create, update, delete, orsecret rotation). Server-derived; not client-settable. Omitted forwidgets last mutated before this field existed.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileLastModifiedVia? LastModifiedVia { get; private set; }
         /// <summary>Widget Mode</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode? Mode { get; set; }
         /// <summary>When the widget was modified.</summary>
@@ -55,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Secret { get; set; }
 #endif
-        /// <summary>Widget item identifier tag.</summary>
+        /// <summary>Unique identifier for a Turnstile widget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sitekey { get; set; }
@@ -69,7 +73,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public TurnstileWidgetDetail()
         {
             AdditionalData = new Dictionary<string, object>();
-            Region = global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion.World;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,8 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "bot_fight_mode", n => { BotFightMode = n.GetBoolValue(); } },
                 { "clearance_level", n => { ClearanceLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "deployed_via", n => { DeployedVia = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileDeployedVia>(); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ephemeral_id", n => { EphemeralId = n.GetBoolValue(); } },
+                { "last_modified_via", n => { LastModifiedVia = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileLastModifiedVia>(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },

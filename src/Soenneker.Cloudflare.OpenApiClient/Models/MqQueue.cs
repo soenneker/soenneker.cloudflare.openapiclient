@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CreatedOn { get; private set; }
 #endif
+        /// <summary>The jurisdiction property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqJurisdiction? Jurisdiction { get; set; }
         /// <summary>The modified_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "consumers", n => { Consumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MqConsumerResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqConsumerResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "consumers_total_count", n => { ConsumersTotalCount = n.GetDoubleValue(); } },
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqJurisdiction>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
                 { "producers", n => { Producers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MqProducer>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqProducer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "producers_total_count", n => { ProducersTotalCount = n.GetDoubleValue(); } },
@@ -117,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqJurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("queue_name", QueueName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueSettings>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);

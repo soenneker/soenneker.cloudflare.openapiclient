@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The Certificate Authority that will issue the certificate</summary>
+    /// <summary>The Certificate Authority that will issue the certificate.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TlsCertificatesAndHostnamesCertificateAuthority
     {
@@ -17,11 +17,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "lets_encrypt")]
         #pragma warning disable CS1591
-        Lets_encrypt,
+        LetsEncrypt,
         #pragma warning restore CS1591
         [EnumMember(Value = "ssl_com")]
         #pragma warning disable CS1591
-        Ssl_com,
+        SslCom,
         #pragma warning restore CS1591
     }
 }

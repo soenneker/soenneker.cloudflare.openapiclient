@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "gre+icmp")]
         #pragma warning disable CS1591
-        Gre_plus_icmp,
+        GrePlusIcmp,
         #pragma warning restore CS1591
     }
 }

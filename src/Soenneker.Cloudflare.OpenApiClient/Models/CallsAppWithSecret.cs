@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? Created { get; set; }
         /// <summary>The date and time the item was last modified.</summary>
         public DateTimeOffset? Modified { get; set; }
-        /// <summary>A short description of Calls app, not shown to end users.</summary>
+        /// <summary>A short description of a Realtime SFU app, not shown to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

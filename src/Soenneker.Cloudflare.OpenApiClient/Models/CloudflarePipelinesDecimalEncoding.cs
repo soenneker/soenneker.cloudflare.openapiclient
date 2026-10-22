@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "string")]
         #pragma warning disable CS1591
-        String,
+        StringValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "bytes")]
         #pragma warning disable CS1591
