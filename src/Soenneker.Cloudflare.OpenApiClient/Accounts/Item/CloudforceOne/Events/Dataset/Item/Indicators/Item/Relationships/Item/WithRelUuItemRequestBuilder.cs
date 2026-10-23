@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Indicators.Item.Relationships.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\dataset\{datasetId}\indicators\{indicatorId}\relationships\{relUuid}
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\dataset\{datasetId}\indicators\{indicatorId}\relationships\{relUuid}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRelUuItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelUuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/dataset/{datasetId}/indicators/{indicatorId}/relationships/{relUuid}", pathParameters)
+        public WithRelUuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/dataset/{datasetId}/indicators/{indicatorId}/relationships/{relUuid}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelUuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/dataset/{datasetId}/indicators/{indicatorId}/relationships/{relUuid}", rawUrl)
+        public WithRelUuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/dataset/{datasetId}/indicators/{indicatorId}/relationships/{relUuid}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a relationship by UUID. Idempotent: returns deleted=false if not found.
+        /// Deletes an indicator relationship by its UUID. Returns `deleted: false` if the relationship doesn&apos;t exist.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorRelationshipDelete200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorRelationshipDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteIndicatorRelationshipDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Partially updates a relationship by UUID. Only provided fields are changed.
+        /// Updates the given fields of an indicator relationship and leaves the other fields unchanged.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorRelationshipUpdate200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorRelationshipUpdate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorRelationshipUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a relationship by UUID. Idempotent: returns deleted=false if not found.
+        /// Deletes an indicator relationship by its UUID. Returns `deleted: false` if the relationship doesn&apos;t exist.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return requestInfo;
         }
         /// <summary>
-        /// Partially updates a relationship by UUID. Only provided fields are changed.
+        /// Updates the given fields of an indicator relationship and leaves the other fields unchanged.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

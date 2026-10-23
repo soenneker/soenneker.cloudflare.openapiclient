@@ -7,13 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// A single R2 bucket.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class R2CreateBucket200ResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Creation timestamp.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreationDate { get; set; }
+#nullable restore
+#else
+        public string CreationDate { get; set; }
+#endif
+        /// <summary>Jurisdiction where objects in this bucket are guaranteed to be stored.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Jurisdiction? Jurisdiction { get; set; }
+        /// <summary>Location of the bucket.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation? Location { get; set; }
+        /// <summary>Name of the bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Storage class for newly uploaded objects, unless specified otherwise.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass? StorageClass { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucket200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +62,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "creation_date", n => { CreationDate = n.GetStringValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Jurisdiction>(); } },
+                { "location", n => { Location = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "storage_class", n => { StorageClass = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass>(); } },
             };
         }
         /// <summary>
@@ -48,6 +76,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("creation_date", CreationDate);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Jurisdiction>("jurisdiction", Jurisdiction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLocation>("location", Location);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass>("storage_class", StorageClass);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

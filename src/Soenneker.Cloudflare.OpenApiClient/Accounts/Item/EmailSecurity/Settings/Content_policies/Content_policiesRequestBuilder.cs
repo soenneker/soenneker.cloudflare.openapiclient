@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Content_policies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\content_policies
+    /// Builds and executes requests for operations under \accounts\{accountId}\email-security\settings\content_policies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Content_policiesRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Content_policiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/content_policies{?direction*,enabled*,expired*,name*,order*,page*,per_page*,search*}", pathParameters)
+        public Content_policiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email-security/settings/content_policies{?direction*,enabled*,expired*,name*,order*,page*,per_page*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Content_policiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/content_policies{?direction*,enabled*,expired*,name*,order*,page*,per_page*,search*}", rawUrl)
+        public Content_policiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email-security/settings/content_policies{?direction*,enabled*,expired*,name*,order*,page*,per_page*,search*}", rawUrl)
         {
         }
         /// <summary>

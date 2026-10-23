@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.Item.Tables.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\r2-catalog\{bucketName}\namespaces\{namespaceValue}\tables\{tableName}
+    /// Builds and executes requests for operations under \accounts\{accountId}\r2-catalog\{bucketName}\namespaces\{namespaceValue}\tables\{tableName}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithTableNameItemRequestBuilder : BaseRequestBuilder
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTableNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", pathParameters)
+        public WithTableNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/r2-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTableNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", rawUrl)
+        public WithTableNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/r2-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", rawUrl)
         {
         }
         /// <summary>

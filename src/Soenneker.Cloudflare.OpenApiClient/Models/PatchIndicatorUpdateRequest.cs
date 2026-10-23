@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestTagsItem>? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestTagsItem> Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>Traffic Light Protocol designation. Case-insensitive on input, stored and returned as UPPERCASE. Allowed values: clear, green, amber, amber-strict, red, purple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestRelatedEventsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestRelatedEventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestTagsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tlp", n => { Tlp = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestRelatedEventsItem>("relatedEvents", RelatedEvents);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchIndicatorUpdateRequestTagsItem>("tags", Tags);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("tlp", Tlp);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

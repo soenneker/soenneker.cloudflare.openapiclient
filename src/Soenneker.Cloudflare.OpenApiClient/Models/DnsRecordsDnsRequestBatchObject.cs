@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The patches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPatch>? Patches { get; set; }
+        public List<UntypedNode>? Patches { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPatch> Patches { get; set; }
+        public List<UntypedNode> Patches { get; set; }
 #endif
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The puts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPut>? Puts { get; set; }
+        public List<UntypedNode>? Puts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPut> Puts { get; set; }
+        public List<UntypedNode> Puts { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRequestBatchObject"/> and sets the default values.
@@ -72,9 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchDelete>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchDelete.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "patches", n => { Patches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPatch>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPatch.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "patches", n => { Patches = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "puts", n => { Puts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPut>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPut.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "puts", n => { Puts = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchDelete>("deletes", Deletes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPatch>("patches", Patches);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("patches", Patches);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost>("posts", Posts);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPut>("puts", Puts);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("puts", Puts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

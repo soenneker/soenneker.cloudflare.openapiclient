@@ -32,6 +32,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem Item { get; set; }
 #endif
+        /// <summary>Audio/video transcript chunks only: end, in milliseconds from the start of the media (whole seconds), of the last transcript section the chunk covers.</summary>
+        public int? MediaEndMs { get; set; }
+        /// <summary>Audio/video transcript chunks only: start, in milliseconds from the start of the media (whole seconds), of the transcript section the chunk begins in.</summary>
+        public int? MediaStartMs { get; set; }
+        /// <summary>Audio/video transcript chunks only: type of the source media file. Omitted for all other chunks.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType? SourceMediaType { get; set; }
         /// <summary>The start_byte property</summary>
         public double? StartByte { get; set; }
         /// <summary>The text property</summary>
@@ -70,6 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "end_byte", n => { EndByte = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "item", n => { Item = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem.CreateFromDiscriminatorValue); } },
+                { "media_end_ms", n => { MediaEndMs = n.GetIntValue(); } },
+                { "media_start_ms", n => { MediaStartMs = n.GetIntValue(); } },
+                { "source_media_type", n => { SourceMediaType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType>(); } },
                 { "start_byte", n => { StartByte = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -84,6 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("end_byte", EndByte);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemItem>("item", Item);
+            writer.WriteIntValue("media_end_ms", MediaEndMs);
+            writer.WriteIntValue("media_start_ms", MediaStartMs);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceListItemChunks200ResponseResultItemSourceMediaType>("source_media_type", SourceMediaType);
             writer.WriteDoubleValue("start_byte", StartByte);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);

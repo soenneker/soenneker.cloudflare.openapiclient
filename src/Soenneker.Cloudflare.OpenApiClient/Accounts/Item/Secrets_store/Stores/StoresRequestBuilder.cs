@@ -13,13 +13,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\secrets_store\stores
+    /// Builds and executes requests for operations under \accounts\{accountId}\secrets_store\stores
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StoresRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.secrets_store.stores.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Store identifier.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.WithStoreItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.WithStoreItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StoresRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store/stores{?direction*,order*,page*,per_page*}", pathParameters)
+        public StoresRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/secrets_store/stores{?direction*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StoresRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store/stores{?direction*,order*,page*,per_page*}", rawUrl)
+        public StoresRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/secrets_store/stores{?direction*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

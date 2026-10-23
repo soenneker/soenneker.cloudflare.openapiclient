@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Defines the scope of the rule.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2ScopeType? Type { get; private set; }
@@ -71,7 +71,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

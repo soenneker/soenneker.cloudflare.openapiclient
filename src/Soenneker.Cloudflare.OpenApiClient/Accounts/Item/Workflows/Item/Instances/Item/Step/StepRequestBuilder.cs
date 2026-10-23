@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\workflows\{workflowName}\instances\{instanceId}\step
+    /// Builds and executes requests for operations under \accounts\{accountId}\workflows\{workflowName}\instances\{instanceId}\step
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StepRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StepRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflowName}/instances/{instanceId}/step?name={name}&type={type}{&attempt*}", pathParameters)
+        public StepRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workflows/{workflowName}/instances/{instanceId}/step?name={name}&type={type}{&attempt*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StepRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflowName}/instances/{instanceId}/step?name={name}&type={type}{&attempt*}", rawUrl)
+        public StepRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workflows/{workflowName}/instances/{instanceId}/step?name={name}&type={type}{&attempt*}", rawUrl)
         {
         }
         /// <summary>

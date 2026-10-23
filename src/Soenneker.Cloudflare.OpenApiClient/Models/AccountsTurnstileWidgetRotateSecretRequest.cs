@@ -22,6 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccountsTurnstileWidgetRotateSecretRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            InvalidateImmediately = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

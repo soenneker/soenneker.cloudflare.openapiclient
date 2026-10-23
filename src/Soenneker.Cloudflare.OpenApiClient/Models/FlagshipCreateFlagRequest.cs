@@ -38,13 +38,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
+        /// <summary>Key-value metadata associated with the flag. `null` or an empty object clears existing metadata; omission semantics depend on the endpoint (PUT clears it, PATCH preserves it).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestMetadata Metadata { get; set; }
+#endif
         /// <summary>Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestRulesItem>? Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestRulesItem> Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule> Rules { get; set; }
 #endif
         /// <summary>Deprecated compatibility field. Omit it; the API ignores this value and infers the type from the flag&apos;s variations.</summary>
         [Obsolete("")]
@@ -79,7 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestRulesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestMetadata.CreateFromDiscriminatorValue); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestType>(); } },
                 { "variations", n => { Variations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestVariations>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestVariations.CreateFromDiscriminatorValue); } },
             };
@@ -95,7 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("key", Key);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestRulesItem>("rules", Rules);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestMetadata>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipRule>("rules", Rules);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipCreateFlagRequestVariations>("variations", Variations);
         }

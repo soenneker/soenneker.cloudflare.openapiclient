@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The industry of the account</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry? Industry { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry Industry { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBody"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "industry", n => { Industry = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry.CreateFromDiscriminatorValue); } },
+                { "industry", n => { Industry = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry>(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry>("industry", Industry);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsPatchAccountIndustryBodyIndustry>("industry", Industry);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

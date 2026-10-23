@@ -35,13 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cache_threshold property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheThreshold? CacheThreshold { get; set; }
         /// <summary>Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheTtl? CacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheTtl CacheTtl { get; set; }
-#endif
+        public int? CacheTtl { get; set; }
         /// <summary>The chunk property</summary>
         public bool? Chunk { get; set; }
         /// <summary>The chunk_overlap property</summary>
@@ -158,13 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSourceParams SourceParams { get; set; }
 #endif
         /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSyncInterval? SyncInterval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSyncInterval SyncInterval { get; set; }
-#endif
+        public int? SyncInterval { get; set; }
         /// <summary>The token_id property</summary>
         public Guid? TokenId { get; set; }
         /// <summary>Source type. When omitted or null with a non-blank source, HTTP(S) URLs infer web-crawler and existing R2 bucket names infer r2. A missing or blank source without a type uses managed upload-only storage.</summary>
@@ -176,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Cache = true;
+            CacheTtl = 172800;
             Chunk = true;
             ChunkOverlap = 10;
             MaxNumResults = 10;
@@ -204,7 +193,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_search_model", n => { AiSearchModel = n.GetStringValue(); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
                 { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheThreshold>(); } },
-                { "cache_ttl", n => { CacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheTtl.CreateFromDiscriminatorValue); } },
+                { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
@@ -226,7 +215,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "score_threshold", n => { ScoreThreshold = n.GetDoubleValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "source_params", n => { SourceParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSourceParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSourceParams.CreateFromDiscriminatorValue); } },
-                { "sync_interval", n => { SyncInterval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSyncInterval>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSyncInterval.CreateFromDiscriminatorValue); } },
+                { "sync_interval", n => { SyncInterval = n.GetIntValue(); } },
                 { "token_id", n => { TokenId = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestType>(); } },
             };
@@ -242,7 +231,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheThreshold>("cache_threshold", CacheThreshold);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestCacheTtl>("cache_ttl", CacheTtl);
+            writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
@@ -264,7 +253,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSourceParams>("source_params", SourceParams);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestSyncInterval>("sync_interval", SyncInterval);
+            writer.WriteIntValue("sync_interval", SyncInterval);
             writer.WriteGuidValue("token_id", TokenId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstanceRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

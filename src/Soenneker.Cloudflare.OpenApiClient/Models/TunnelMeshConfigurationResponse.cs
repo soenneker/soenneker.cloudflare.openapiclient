@@ -25,11 +25,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Monotonically increasing configuration version, incremented on each PUT.</summary>
         public int? ConfigurationVersion { get; set; }
         /// <summary>Timestamp of when the resource was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>High-availability mode for the Mesh node. `none` means HA is enabled but no provider is configured yet (newly created nodes default to this). `disabled` means HA is explicitly turned off. `aws` uses AWS ENI move for failover. `local` uses virtual IPs (VIPs) on the local interface.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode? HaMode { get; set; }
         /// <summary>UUID of the tunnel.</summary>
-        public Guid? TunnelId { get; set; }
+        public Guid? TunnelId { get; private set; }
         /// <summary>Timestamp of the last update. Null if never updated.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
@@ -74,9 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshConfigurationResponseConfig>("config", Config);
             writer.WriteIntValue("configuration_version", ConfigurationVersion);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMeshHaMode>("ha_mode", HaMode);
-            writer.WriteGuidValue("tunnel_id", TunnelId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Return the Ephemeral ID in /siteverify (ENT only).</summary>
         public bool? EphemeralId { get; set; }
         /// <summary>Widget Mode</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode? Mode { get; set; }
         /// <summary>Human readable widget name. Not unique. Cloudflare suggests that youset this to a meaningful string to make it easier to identify yourwidget, and where it is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "clearance_level", n => { ClearanceLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>(); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ephemeral_id", n => { EphemeralId = n.GetBoolValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "offlabel", n => { Offlabel = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>("clearance_level", ClearanceLevel);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
             writer.WriteBoolValue("ephemeral_id", EphemeralId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountsTurnstileWidgetUpdateRequestMode>("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("offlabel", Offlabel);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>("region", Region);

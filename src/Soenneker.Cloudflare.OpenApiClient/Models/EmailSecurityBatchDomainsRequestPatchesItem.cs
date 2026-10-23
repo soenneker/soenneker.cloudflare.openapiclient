@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel?> DropDispositions { get; set; }
 #endif
         /// <summary>The mailbox folder to scan, for API-scanning domains.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder? Folder { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder Folder { get; set; }
-#endif
         /// <summary>Domain identifier.</summary>
         public Guid? Id { get; set; }
         /// <summary>Identifier of the CASB integration that authorizes this domain. The integration also enables API scanning, post-delivery actions, and directory sync.</summary>
@@ -99,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>()?.AsList(); } },
                 { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>()?.AsList(); } },
-                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder.CreateFromDiscriminatorValue); } },
+                { "folder", n => { Folder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
                 { "ip_restrictions", n => { IpRestrictions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -119,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>("drop_dispositions", DropDispositions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder>("folder", Folder);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityUpdateDomainBodyFolder>("folder", Folder);
             writer.WriteGuidValue("id", Id);
             writer.WriteGuidValue("integration_id", IntegrationId);
             writer.WriteCollectionOfPrimitiveValues<string>("ip_restrictions", IpRestrictions);

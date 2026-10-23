@@ -8,42 +8,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueOneOf5"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueOneOf5"/>, <see cref="int"/>, <see cref="string"/>, List&lt;double&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntitlementsAllocationValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type List&lt;double&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch1? EntitlementsAllocationValueBranch1 { get; set; }
+        public List<double?>? Double { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch1 EntitlementsAllocationValueBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch2? EntitlementsAllocationValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch2 EntitlementsAllocationValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch3? EntitlementsAllocationValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch3 EntitlementsAllocationValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch4? EntitlementsAllocationValueBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch4 EntitlementsAllocationValueBranch4 { get; set; }
+        public List<double?> Double { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueOneOf5 EntitlementsAllocationValueOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,25 +51,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValue();
-            if("EntitlementsAllocationValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.EntitlementsAllocationValueBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch1();
-            }
-            else if("EntitlementsAllocationValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.EntitlementsAllocationValueBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch2();
-            }
-            else if("EntitlementsAllocationValueBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.EntitlementsAllocationValueBranch3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch3();
-            }
-            else if("EntitlementsAllocationValueBranch4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.EntitlementsAllocationValueBranch4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch4();
-            }
-            else if("EntitlementsAllocationValueOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("EntitlementsAllocationValueOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EntitlementsAllocationValueOneOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueOneOf5();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetIntValue() is int integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfPrimitiveValues<double?>()?.AsList() is List<double?> doubleValue)
+            {
+                result.Double = doubleValue;
             }
             return result;
         }
@@ -91,23 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(EntitlementsAllocationValueBranch1 != null)
-            {
-                return EntitlementsAllocationValueBranch1.GetFieldDeserializers();
-            }
-            else if(EntitlementsAllocationValueBranch2 != null)
-            {
-                return EntitlementsAllocationValueBranch2.GetFieldDeserializers();
-            }
-            else if(EntitlementsAllocationValueBranch3 != null)
-            {
-                return EntitlementsAllocationValueBranch3.GetFieldDeserializers();
-            }
-            else if(EntitlementsAllocationValueBranch4 != null)
-            {
-                return EntitlementsAllocationValueBranch4.GetFieldDeserializers();
-            }
-            else if(EntitlementsAllocationValueOneOf5 != null)
+            if(EntitlementsAllocationValueOneOf5 != null)
             {
                 return EntitlementsAllocationValueOneOf5.GetFieldDeserializers();
             }
@@ -120,25 +92,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(EntitlementsAllocationValueBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch1>(null, EntitlementsAllocationValueBranch1);
-            }
-            else if(EntitlementsAllocationValueBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch2>(null, EntitlementsAllocationValueBranch2);
-            }
-            else if(EntitlementsAllocationValueBranch3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch3>(null, EntitlementsAllocationValueBranch3);
-            }
-            else if(EntitlementsAllocationValueBranch4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueBranch4>(null, EntitlementsAllocationValueBranch4);
-            }
-            else if(EntitlementsAllocationValueOneOf5 != null)
+            if(EntitlementsAllocationValueOneOf5 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EntitlementsAllocationValueOneOf5>(null, EntitlementsAllocationValueOneOf5);
+            }
+            else if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Integer != null)
+            {
+                writer.WriteIntValue(null, Integer);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(Double != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<double?>(null, Double);
             }
         }
     }

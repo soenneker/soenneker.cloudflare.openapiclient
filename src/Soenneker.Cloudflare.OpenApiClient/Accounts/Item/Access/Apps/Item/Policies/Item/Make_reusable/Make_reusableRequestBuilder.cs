@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Policies.Item.Make_reusable
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\access\apps\{appId}\policies\{policyId}\make_reusable
+    /// Builds and executes requests for operations under \accounts\{accountId}\access\apps\{appId}\policies\{policyId}\make_reusable
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Make_reusableRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Poli
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Make_reusableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/apps/{appId}/policies/{policyId}/make_reusable", pathParameters)
+        public Make_reusableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/apps/{appId}/policies/{policyId}/make_reusable", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Poli
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Make_reusableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/apps/{appId}/policies/{policyId}/make_reusable", rawUrl)
+        public Make_reusableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/apps/{appId}/policies/{policyId}/make_reusable", rawUrl)
         {
         }
         /// <summary>

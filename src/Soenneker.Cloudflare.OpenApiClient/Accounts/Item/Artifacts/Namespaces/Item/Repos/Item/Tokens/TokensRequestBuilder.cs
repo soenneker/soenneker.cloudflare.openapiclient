@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.Item.Repos.Item.Tokens
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\artifacts\namespaces\{namespaceValue}\repos\{name}\tokens
+    /// Builds and executes requests for operations under \accounts\{accountId}\artifacts\namespaces\{namespaceValue}\repos\{name}\tokens
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TokensRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/artifacts/namespaces/{namespaceValue}/repos/{name}/tokens{?page*,per_page*,state*}", pathParameters)
+        public TokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/artifacts/namespaces/{namespaceValue}/repos/{name}/tokens{?page*,per_page*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/artifacts/namespaces/{namespaceValue}/repos/{name}/tokens{?page*,per_page*,state*}", rawUrl)
+        public TokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/artifacts/namespaces/{namespaceValue}/repos/{name}/tokens{?page*,per_page*,state*}", rawUrl)
         {
         }
         /// <summary>

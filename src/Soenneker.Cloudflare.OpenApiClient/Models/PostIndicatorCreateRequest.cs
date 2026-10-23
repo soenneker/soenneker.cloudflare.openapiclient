@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestTagsItem>? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestTagsItem> Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>Traffic Light Protocol designation. Case-insensitive on input, stored and returned as UPPERCASE. Allowed values: clear, green, amber, amber-strict, red, purple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "autoCreateType", n => { AutoCreateType = n.GetBoolValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestTagsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tlp", n => { Tlp = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("autoCreateType", AutoCreateType);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestRelatedEventsItem>("relatedEvents", RelatedEvents);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostIndicatorCreateRequestTagsItem>("tags", Tags);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("tlp", Tlp);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

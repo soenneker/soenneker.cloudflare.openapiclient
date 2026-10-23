@@ -8,27 +8,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZonesCacheKeyFieldsValueQueryStringExclude : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2? ZonesCacheKeyFieldsValueQueryStringExcludeBranch2 { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2 ZonesCacheKeyFieldsValueQueryStringExcludeBranch2 { get; set; }
+        public List<string> String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper? ZonesCacheKeyFieldsValueQueryStringExcludeWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper ZonesCacheKeyFieldsValueQueryStringExcludeWrapper { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1"/></summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1? ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,13 +33,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExclude();
-            if("ZonesCacheKeyFieldsValueQueryStringExcludeBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1>() is global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1 zonesCacheKeyFieldsValueQueryStringExcludeOneOf1Value)
             {
-                result.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2();
+                result.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1 = zonesCacheKeyFieldsValueQueryStringExcludeOneOf1Value;
             }
-            else if("ZonesCacheKeyFieldsValueQueryStringExcludeWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +49,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ZonesCacheKeyFieldsValueQueryStringExcludeBranch2 != null)
-            {
-                return ZonesCacheKeyFieldsValueQueryStringExcludeBranch2.GetFieldDeserializers();
-            }
-            else if(ZonesCacheKeyFieldsValueQueryStringExcludeWrapper != null)
-            {
-                return ZonesCacheKeyFieldsValueQueryStringExcludeWrapper.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +58,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ZonesCacheKeyFieldsValueQueryStringExcludeBranch2 != null)
+            if(ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeBranch2>(null, ZonesCacheKeyFieldsValueQueryStringExcludeBranch2);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1>(null, ZonesCacheKeyFieldsValueQueryStringExcludeOneOf1);
             }
-            else if(ZonesCacheKeyFieldsValueQueryStringExcludeWrapper != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheKeyFieldsValueQueryStringExcludeWrapper>(null, ZonesCacheKeyFieldsValueQueryStringExcludeWrapper);
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

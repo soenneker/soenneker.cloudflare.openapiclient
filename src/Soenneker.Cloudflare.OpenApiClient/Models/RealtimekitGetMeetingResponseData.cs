@@ -15,12 +15,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The AI Config allows you to customize the behavior of meeting transcriptions and summaries</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig? AiConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig AiConfig { get; set; }
+#endif
+        /// <summary>Timestamp the object was created at. The time is returned in ISO format.</summary>
+        public DateTimeOffset? CreatedAt { get; private set; }
+        /// <summary>ID of the meeting.</summary>
+        public Guid? Id { get; private set; }
+        /// <summary>Specifies if the meeting should start getting livestreamed on start.</summary>
+        public bool? LiveStreamOnStart { get; set; }
+        /// <summary>Specifies if Chat within a meeting should persist for a week.</summary>
+        public bool? PersistChat { get; set; }
+        /// <summary>Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig? RecordingConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig RecordingConfig { get; set; }
+#endif
+        /// <summary>Specifies if the meeting should start getting recorded as soon as someone joins the meeting.</summary>
+        public bool? RecordOnStart { get; set; }
+        /// <summary>Time in seconds, for which a session remains active, after the last participant has left the meeting.</summary>
+        public double? SessionKeepAliveTimeInSecs { get; set; }
+        /// <summary>Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus? Status { get; set; }
+        /// <summary>Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API.</summary>
+        public bool? SummarizeOnEnd { get; set; }
+        /// <summary>Title of the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
+#endif
+        /// <summary>Automatically generate transcripts when the meeting ends.</summary>
+        public bool? TranscribeOnEnd { get; set; }
+        /// <summary>Timestamp the object was updated at. The time is returned in ISO format.</summary>
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetMeetingResponseData"/> and sets the default values.
         /// </summary>
         public RealtimekitGetMeetingResponseData()
         {
             AdditionalData = new Dictionary<string, object>();
+            SessionKeepAliveTimeInSecs = 60;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +85,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ai_config", n => { AiConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "live_stream_on_start", n => { LiveStreamOnStart = n.GetBoolValue(); } },
+                { "persist_chat", n => { PersistChat = n.GetBoolValue(); } },
+                { "record_on_start", n => { RecordOnStart = n.GetBoolValue(); } },
+                { "recording_config", n => { RecordingConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig.CreateFromDiscriminatorValue); } },
+                { "session_keep_alive_time_in_secs", n => { SessionKeepAliveTimeInSecs = n.GetDoubleValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus>(); } },
+                { "summarize_on_end", n => { SummarizeOnEnd = n.GetBoolValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "transcribe_on_end", n => { TranscribeOnEnd = n.GetBoolValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +107,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAiConfig>("ai_config", AiConfig);
+            writer.WriteBoolValue("live_stream_on_start", LiveStreamOnStart);
+            writer.WriteBoolValue("persist_chat", PersistChat);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingConfig>("recording_config", RecordingConfig);
+            writer.WriteBoolValue("record_on_start", RecordOnStart);
+            writer.WriteDoubleValue("session_keep_alive_time_in_secs", SessionKeepAliveTimeInSecs);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeetingStatus>("status", Status);
+            writer.WriteBoolValue("summarize_on_end", SummarizeOnEnd);
+            writer.WriteStringValue("title", Title);
+            writer.WriteBoolValue("transcribe_on_end", TranscribeOnEnd);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

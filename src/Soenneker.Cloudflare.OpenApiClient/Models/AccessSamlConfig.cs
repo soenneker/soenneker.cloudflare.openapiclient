@@ -15,12 +15,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A list of SAML attribute names that will be added to your signed JWT token and can be used in SAML policy rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Attributes { get; set; }
+#nullable restore
+#else
+        public List<string> Attributes { get; set; }
+#endif
+        /// <summary>The attribute name for email in the SAML response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmailAttributeName { get; set; }
+#nullable restore
+#else
+        public string EmailAttributeName { get; set; }
+#endif
+        /// <summary>Enable SAML assertion encryption. When enabled, the Identity Provider will encrypt SAML assertions using the certificate from the assigned certificate set.To enable encryption:1. Create a certificate set via POST to `/identity_providers/{id}/saml_certificate`2. Set this field to `true` and include `saml_certificate_set_id` in the PUT request3. Configure the public certificate in your external Identity ProviderNote: Requires `saml_certificate_set_id` to be set when `true`.</summary>
+        public bool? EnableEncryption { get; set; }
+        /// <summary>Asks the IdP to reauthenticate the user for each SAML authentication request.</summary>
+        public bool? ForceAuthn { get; set; }
+        /// <summary>Add a list of attribute names that will be returned in the response header from the Access callback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlAllOf2ConfigHeaderAttributesItem>? HeaderAttributes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlAllOf2ConfigHeaderAttributesItem> HeaderAttributes { get; set; }
+#endif
+        /// <summary>X509 certificate to verify the signature in the SAML authentication response</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IdpPublicCerts { get; set; }
+#nullable restore
+#else
+        public List<string> IdpPublicCerts { get; set; }
+#endif
+        /// <summary>IdP Entity ID or Issuer URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IssuerUrl { get; set; }
+#nullable restore
+#else
+        public string IssuerUrl { get; set; }
+#endif
+        /// <summary>The maximum URL length the IdP accepts for the SSO redirect URL.When the constructed SSO URL would exceed this length, the RelayStateis stored server-side and a short nonce is passed to the IdP instead.Set this if your IdP enforces a URL length limit.</summary>
+        public int? MaxSsoUrlLength { get; set; }
+        /// <summary>Sign the SAML authentication request with Access credentials. To verify the signature, use the public key from the Access certs endpoints.</summary>
+        public bool? SignRequest { get; set; }
+        /// <summary>URL to send the SAML authentication requests to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SsoTargetUrl { get; set; }
+#nullable restore
+#else
+        public string SsoTargetUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlConfig"/> and sets the default values.
         /// </summary>
         public AccessSamlConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableEncryption = false;
+            ForceAuthn = false;
+            SignRequest = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +99,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attributes", n => { Attributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "email_attribute_name", n => { EmailAttributeName = n.GetStringValue(); } },
+                { "enable_encryption", n => { EnableEncryption = n.GetBoolValue(); } },
+                { "force_authn", n => { ForceAuthn = n.GetBoolValue(); } },
+                { "header_attributes", n => { HeaderAttributes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlAllOf2ConfigHeaderAttributesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlAllOf2ConfigHeaderAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "idp_public_certs", n => { IdpPublicCerts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "issuer_url", n => { IssuerUrl = n.GetStringValue(); } },
+                { "max_sso_url_length", n => { MaxSsoUrlLength = n.GetIntValue(); } },
+                { "sign_request", n => { SignRequest = n.GetBoolValue(); } },
+                { "sso_target_url", n => { SsoTargetUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +118,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("attributes", Attributes);
+            writer.WriteStringValue("email_attribute_name", EmailAttributeName);
+            writer.WriteBoolValue("enable_encryption", EnableEncryption);
+            writer.WriteBoolValue("force_authn", ForceAuthn);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessSamlAllOf2ConfigHeaderAttributesItem>("header_attributes", HeaderAttributes);
+            writer.WriteCollectionOfPrimitiveValues<string>("idp_public_certs", IdpPublicCerts);
+            writer.WriteStringValue("issuer_url", IssuerUrl);
+            writer.WriteIntValue("max_sso_url_length", MaxSsoUrlLength);
+            writer.WriteBoolValue("sign_request", SignRequest);
+            writer.WriteStringValue("sso_target_url", SsoTargetUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -32,13 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Domain { get; set; }
 #endif
         /// <summary>The type of registry that is being configured.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind? Kind { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind Kind { get; set; }
-#endif
         /// <summary>Public component of the registry credentials. For managed registries this isa base64-encoded public key; for external registries the format depends onthe registry provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind.CreateFromDiscriminatorValue); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind>(); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
             };
         }
@@ -87,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("domain", Domain);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcCustomerImageRegistryKind>("kind", Kind);
             writer.WriteStringValue("public_key", PublicKey);
             writer.WriteAdditionalData(AdditionalData);
         }

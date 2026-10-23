@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
+        /// <summary>The bindings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? Bindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings? Bindings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> Bindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings Bindings { get; set; }
 #endif
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "bindings", n => { Bindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings.CreateFromDiscriminatorValue); } },
                 { "script", n => { Script = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScript>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScript.CreateFromDiscriminatorValue); } },
                 { "script_runtime", n => { ScriptRuntime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScriptRuntime>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesScriptRuntime.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>("bindings", Bindings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersVersionItemFullAllOf2ResourcesBindings>("bindings", Bindings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

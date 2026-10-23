@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CreatedBy { get; set; }
 #endif
         /// <summary>When the script was created.</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ModifiedBy { get; set; }
 #endif
         /// <summary>When the script was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersNamespaceResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            TrustedWorkers = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,9 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_by", CreatedBy);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("modified_by", ModifiedBy);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("namespace_id", NamespaceId);
             writer.WriteStringValue("namespace_name", NamespaceName);
             writer.WriteIntValue("script_count", ScriptCount);

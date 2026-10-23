@@ -24,11 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Timestamp at which the policy expires. After this time, Email Security ignores the policy. The value must lie in the future. Send `null` to clear the expiration.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>Allow policy identifier.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>Exempts messages from this sender from Spam, Spoof and Bulk dispositions only; Malicious and Suspicious dispositions still apply.</summary>
         public bool? IsAcceptableSender { get; set; }
         /// <summary>Bypasses all detections for messages to this recipient.</summary>
@@ -47,9 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Bypasses all detections and link following for messages from this sender.</summary>
         public bool? IsTrustedSender { get; set; }
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
-        public DateTimeOffset? LastModified { get; set; }
+        [Obsolete("")]
+        public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,9 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
-            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_acceptable_sender", IsAcceptableSender);
             writer.WriteBoolValue("is_exempt_recipient", IsExemptRecipient);
             writer.WriteBoolValue("is_recipient", IsRecipient);
@@ -123,8 +122,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_sender", IsSender);
             writer.WriteBoolValue("is_spoof", IsSpoof);
             writer.WriteBoolValue("is_trusted_sender", IsTrustedSender);
-            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityPatternType>("pattern_type", PatternType);
             writer.WriteBoolValue("verify_sender", VerifySender);

@@ -13,13 +13,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Intel.Sinkholes.Item.Ingresses
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\intel\sinkholes\{sinkholeId}\ingresses
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\intel\sinkholes\{sinkholeId}\ingresses
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IngressesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.intel.sinkholes.item.ingresses.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier for the ingress rule.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Intel.Sinkholes.Item.Ingresses.Item.WithIngressItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Intel.Sinkholes.Item.Ingresses.Item.WithIngressItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Intel.Sinkholes.Item.Ing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IngressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/intel/sinkholes/{sinkholeId}/ingresses", pathParameters)
+        public IngressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/intel/sinkholes/{sinkholeId}/ingresses", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Intel.Sinkholes.Item.Ing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IngressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/intel/sinkholes/{sinkholeId}/ingresses", rawUrl)
+        public IngressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/intel/sinkholes/{sinkholeId}/ingresses", rawUrl)
         {
         }
         /// <summary>

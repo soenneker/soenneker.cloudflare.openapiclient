@@ -12,8 +12,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class ClientSideSecurityGetZonePolicyResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The action to take if the expression matches</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityPolicyAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A description for the policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>Whether the policy is enabled</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Expression { get; set; }
+#nullable restore
+#else
+        public string Expression { get; set; }
+#endif
+        /// <summary>Identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; private set; }
+#nullable restore
+#else
+        public string Id { get; private set; }
+#endif
+        /// <summary>The policy which will be applied</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityGetZonePolicyResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityPolicyAction>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityPolicyAction>("action", Action);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("expression", Expression);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

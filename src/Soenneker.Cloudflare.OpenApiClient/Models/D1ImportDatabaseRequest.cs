@@ -7,46 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class D1ImportDatabaseRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class D1ImportDatabaseRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Indicates you have a new SQL file to upload.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestAction? Action { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This identifies the currently-running import, checking its status.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentBookmark { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest? D1ImportDatabaseRequestIngest { get; set; }
 #nullable restore
 #else
-        public string CurrentBookmark { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest D1ImportDatabaseRequestIngest { get; set; }
 #endif
-        /// <summary>Required when action is &apos;init&apos; or &apos;ingest&apos;. An md5 hash of the file you&apos;re uploading. Used to check if it already exists, and validate its contents before ingesting.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit? D1ImportDatabaseRequestInit { get; set; }
 #nullable restore
 #else
-        public string Etag { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit D1ImportDatabaseRequestInit { get; set; }
 #endif
-        /// <summary>The filename you have successfully uploaded.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filename { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll? D1ImportDatabaseRequestPoll { get; set; }
 #nullable restore
 #else
-        public string Filename { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll D1ImportDatabaseRequestPoll { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest"/> and sets the default values.
-        /// </summary>
-        public D1ImportDatabaseRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest();
+            var mappingValue = parseNode.GetChildNode("action")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequest();
+            if("ingest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.D1ImportDatabaseRequestIngest = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest();
+            }
+            else if("init".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.D1ImportDatabaseRequestInit = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit();
+            }
+            else if("poll".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.D1ImportDatabaseRequestPoll = new global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(D1ImportDatabaseRequestIngest != null)
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestAction>(); } },
-                { "current_bookmark", n => { CurrentBookmark = n.GetStringValue(); } },
-                { "etag", n => { Etag = n.GetStringValue(); } },
-                { "filename", n => { Filename = n.GetStringValue(); } },
-            };
+                return D1ImportDatabaseRequestIngest.GetFieldDeserializers();
+            }
+            else if(D1ImportDatabaseRequestInit != null)
+            {
+                return D1ImportDatabaseRequestInit.GetFieldDeserializers();
+            }
+            else if(D1ImportDatabaseRequestPoll != null)
+            {
+                return D1ImportDatabaseRequestPoll.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestAction>("action", Action);
-            writer.WriteStringValue("current_bookmark", CurrentBookmark);
-            writer.WriteStringValue("etag", Etag);
-            writer.WriteStringValue("filename", Filename);
-            writer.WriteAdditionalData(AdditionalData);
+            if(D1ImportDatabaseRequestIngest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestIngest>(null, D1ImportDatabaseRequestIngest);
+            }
+            else if(D1ImportDatabaseRequestInit != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestInit>(null, D1ImportDatabaseRequestInit);
+            }
+            else if(D1ImportDatabaseRequestPoll != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ImportDatabaseRequestPoll>(null, D1ImportDatabaseRequestPoll);
+            }
         }
     }
 }

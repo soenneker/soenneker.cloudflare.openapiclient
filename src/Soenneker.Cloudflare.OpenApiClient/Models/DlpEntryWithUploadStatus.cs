@@ -7,49 +7,179 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustom"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustomPromptTopic"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDocumentFingerprint"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusExactData"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusIntegration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusPredefined"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusWordList"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DlpEntryWithUploadStatus : global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry, IParsable
-    #pragma warning restore CS1591
+    public partial class DlpEntryWithUploadStatus : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The upload_status property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustom"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus? UploadStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustom? DlpEntryWithUploadStatusCustom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus UploadStatus { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustom DlpEntryWithUploadStatusCustom { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustomPromptTopic"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustomPromptTopic? DlpEntryWithUploadStatusCustomPromptTopic { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustomPromptTopic DlpEntryWithUploadStatusCustomPromptTopic { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDocumentFingerprint"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDocumentFingerprint? DlpEntryWithUploadStatusDocumentFingerprint { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDocumentFingerprint DlpEntryWithUploadStatusDocumentFingerprint { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusExactData"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusExactData? DlpEntryWithUploadStatusExactData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusExactData DlpEntryWithUploadStatusExactData { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusIntegration"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusIntegration? DlpEntryWithUploadStatusIntegration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusIntegration DlpEntryWithUploadStatusIntegration { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusPredefined"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusPredefined? DlpEntryWithUploadStatusPredefined { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusPredefined DlpEntryWithUploadStatusPredefined { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusWordList"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusWordList? DlpEntryWithUploadStatusWordList { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusWordList DlpEntryWithUploadStatusWordList { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus();
+            if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusCustom = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustom();
+            }
+            else if("custom_prompt_topic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusCustomPromptTopic = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustomPromptTopic();
+            }
+            else if("document_fingerprint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusDocumentFingerprint = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDocumentFingerprint();
+            }
+            else if("exact_data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusExactData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusExactData();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusIntegration = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusIntegration();
+            }
+            else if("predefined".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusPredefined = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusPredefined();
+            }
+            else if("word_list".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithUploadStatusWordList = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusWordList();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            if(DlpEntryWithUploadStatusCustom != null)
             {
-                { "upload_status", n => { UploadStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus.CreateFromDiscriminatorValue); } },
-            };
+                return DlpEntryWithUploadStatusCustom.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithUploadStatusCustomPromptTopic != null)
+            {
+                return DlpEntryWithUploadStatusCustomPromptTopic.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithUploadStatusDocumentFingerprint != null)
+            {
+                return DlpEntryWithUploadStatusDocumentFingerprint.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithUploadStatusExactData != null)
+            {
+                return DlpEntryWithUploadStatusExactData.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithUploadStatusIntegration != null)
+            {
+                return DlpEntryWithUploadStatusIntegration.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithUploadStatusPredefined != null)
+            {
+                return DlpEntryWithUploadStatusPredefined.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithUploadStatusWordList != null)
+            {
+                return DlpEntryWithUploadStatusWordList.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusAllOf2UploadStatus>("upload_status", UploadStatus);
+            if(DlpEntryWithUploadStatusCustom != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustom>(null, DlpEntryWithUploadStatusCustom);
+            }
+            else if(DlpEntryWithUploadStatusCustomPromptTopic != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusCustomPromptTopic>(null, DlpEntryWithUploadStatusCustomPromptTopic);
+            }
+            else if(DlpEntryWithUploadStatusDocumentFingerprint != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusDocumentFingerprint>(null, DlpEntryWithUploadStatusDocumentFingerprint);
+            }
+            else if(DlpEntryWithUploadStatusExactData != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusExactData>(null, DlpEntryWithUploadStatusExactData);
+            }
+            else if(DlpEntryWithUploadStatusIntegration != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusIntegration>(null, DlpEntryWithUploadStatusIntegration);
+            }
+            else if(DlpEntryWithUploadStatusPredefined != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusPredefined>(null, DlpEntryWithUploadStatusPredefined);
+            }
+            else if(DlpEntryWithUploadStatusWordList != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatusWordList>(null, DlpEntryWithUploadStatusWordList);
+            }
         }
     }
 }

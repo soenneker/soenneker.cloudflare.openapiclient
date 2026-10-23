@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel&apos;s configuration on the Zero Trust dashboard.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfigSrc2? Source { get; set; }
         /// <summary>UUID of the tunnel.</summary>
-        public Guid? TunnelId { get; set; }
+        public Guid? TunnelId { get; private set; }
         /// <summary>The version of the Tunnel Configuration.</summary>
         public int? Version { get; set; }
         /// <summary>
@@ -83,7 +83,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfigSrc2>("source", Source);
-            writer.WriteGuidValue("tunnel_id", TunnelId);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

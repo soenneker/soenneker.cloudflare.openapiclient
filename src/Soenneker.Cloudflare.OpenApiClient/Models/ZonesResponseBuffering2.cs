@@ -18,18 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).</summary>
         public bool? Editable { get; private set; }
-        /// <summary>Identifier of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>Turn on or off whether Cloudflare should wait for an entire filefrom the origin server before forwarding it to the site visitor. Bydefault, Cloudflare sends packets to the client as they arrive fromthe origin server.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResponseBufferingId? Id { get; set; }
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBufferingValue? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBuffering2Value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBuffering2"/> and sets the default values.
         /// </summary>
@@ -56,9 +50,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResponseBufferingId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBufferingValue>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBuffering2Value>(); } },
             };
         }
         /// <summary>
@@ -68,8 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBufferingValue>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResponseBufferingId>("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBuffering2Value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

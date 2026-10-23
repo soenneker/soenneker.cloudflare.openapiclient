@@ -30,13 +30,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem> Messages { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelApiResponseCommonResult? Result { get; set; }
+        public string? Result { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelApiResponseCommonResult Result { get; set; }
+        public string Result { get; private set; }
 #endif
         /// <summary>Whether the API call was successful</summary>
         public bool? Success { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelApiResponseCommonResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelApiResponseCommonResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetStringValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelApiResponseCommonResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

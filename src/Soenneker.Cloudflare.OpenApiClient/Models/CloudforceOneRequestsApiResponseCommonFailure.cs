@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsApiResponseCommonFailureErrors? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsApiResponseCommonFailureErrors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsApiResponseCommonFailureErrors>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsApiResponseCommonFailureErrors.CreateFromDiscriminatorValue); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsApiResponseCommonFailureErrors>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequestsMessagesItem>("messages", Messages);
             writer.WriteBoolValue("success", Success);

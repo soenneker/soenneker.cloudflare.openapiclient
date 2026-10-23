@@ -77,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             PrivateRouting = false;
+            Proxied = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

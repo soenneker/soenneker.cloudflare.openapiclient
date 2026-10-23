@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DnsSettingsNameserverSetCreateMember()
         {
             AdditionalData = new Dictionary<string, object>();
+            IpCount = 1L;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

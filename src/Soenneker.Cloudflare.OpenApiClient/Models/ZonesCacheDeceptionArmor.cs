@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Protect from web cache deception attacks while still allowing staticassets to be cached. This setting verifies that the URL&apos;s extensionmatches the returned `Content-Type`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheDeceptionArmorId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Cache Deception Armor.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheDeceptionArmorValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheDeceptionArmor"/> and sets the default values.

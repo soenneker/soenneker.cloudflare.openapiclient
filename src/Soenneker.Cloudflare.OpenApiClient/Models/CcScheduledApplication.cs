@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Grace period for active instances to stay alive before becoming eligible for shutdown signal due to a rollout, in seconds.Defaults to 0.</summary>
         public int? RolloutActiveGracePeriod { get; set; }
         /// <summary>The scheduling policy to use for an application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcSchedulingPolicy? SchedulingPolicy { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcScheduledApplicationSchedulingPolicyComposed? SchedulingPolicy { get; set; }
         /// <summary>UTC timestamp string in ISO 8601 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public CcScheduledApplication()
         {
             AdditionalData = new Dictionary<string, object>();
+            RolloutActiveGracePeriod = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -151,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationObservabilityComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationObservabilityComposed.CreateFromDiscriminatorValue); } },
                 { "rollout_active_grace_period", n => { RolloutActiveGracePeriod = n.GetIntValue(); } },
-                { "scheduling_policy", n => { SchedulingPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcSchedulingPolicy>(); } },
+                { "scheduling_policy", n => { SchedulingPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcScheduledApplicationSchedulingPolicyComposed>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
@@ -176,7 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcApplicationObservabilityComposed>("observability", Observability);
             writer.WriteIntValue("rollout_active_grace_period", RolloutActiveGracePeriod);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcSchedulingPolicy>("scheduling_policy", SchedulingPolicy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcScheduledApplicationSchedulingPolicyComposed>("scheduling_policy", SchedulingPolicy);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

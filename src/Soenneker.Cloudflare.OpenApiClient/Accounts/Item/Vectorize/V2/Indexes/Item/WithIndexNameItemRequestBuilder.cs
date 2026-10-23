@@ -20,7 +20,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\vectorize\v2\indexes\{indexName}
+    /// Builds and executes requests for operations under \accounts\{accountId}\vectorize\v2\indexes\{indexName}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIndexNameItemRequestBuilder : BaseRequestBuilder
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIndexNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vectorize/v2/indexes/{indexName}", pathParameters)
+        public WithIndexNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/vectorize/v2/indexes/{indexName}", pathParameters)
         {
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIndexNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vectorize/v2/indexes/{indexName}", rawUrl)
+        public WithIndexNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/vectorize/v2/indexes/{indexName}", rawUrl)
         {
         }
         /// <summary>

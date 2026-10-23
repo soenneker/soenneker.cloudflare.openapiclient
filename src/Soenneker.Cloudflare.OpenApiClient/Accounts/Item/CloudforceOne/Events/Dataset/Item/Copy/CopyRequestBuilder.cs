@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Copy
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\dataset\{datasetId}\copy
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\dataset\{datasetId}\copy
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CopyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CopyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/dataset/{datasetId}/copy{?keepRawData*}", pathParameters)
+        public CopyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/dataset/{datasetId}/copy{?keepRawData*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/dataset/{datasetId}/copy{?keepRawData*}", rawUrl)
+        public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/dataset/{datasetId}/copy{?keepRawData*}", rawUrl)
         {
         }
         /// <summary>
-        /// Copies specified events from one dataset to another dataset
+        /// Copies events to the dataset given by `destDatasetId` and leaves the originals in place. Raw event data is copied only when `keepRawData` is true.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventCopyToNewDs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Copies specified events from one dataset to another dataset
+        /// Copies events to the dataset given by `destDatasetId` and leaves the originals in place. Raw event data is copied only when `keepRawData` is true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.Copy.CopyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Copies specified events from one dataset to another dataset
+        /// Copies events to the dataset given by `destDatasetId` and leaves the originals in place. Raw event data is copied only when `keepRawData` is true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CopyRequestBuilderPostQueryParameters 

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\categories\{categoryId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\categories\{categoryId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithCategoryItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/categories/{categoryId}", pathParameters)
+        public WithCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/categories/{categoryId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/categories/{categoryId}", rawUrl)
+        public WithCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/categories/{categoryId}", rawUrl)
         {
         }
         /// <summary>
-        /// Deprecated; use DELETE /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories delete` (`DELETE /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteLegacyCategoryDelete200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteLegacyCategoryDelete200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DeleteLegacyCategoryDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deprecated; use GET /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories get` (`GET /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyCategoryRead200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyCategoryRead200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyCategoryRead200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deprecated; use PATCH /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories update` (`PATCH /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchLegacyCategoryUpdate200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchLegacyCategoryUpdate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PatchLegacyCategoryUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deprecated; use POST /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories update` (`POST /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostLegacyCategoryUpdate200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -134,7 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostLegacyCategoryUpdate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostLegacyCategoryUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deprecated; use DELETE /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories delete` (`DELETE /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return requestInfo;
         }
         /// <summary>
-        /// Deprecated; use GET /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories get` (`GET /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +174,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return requestInfo;
         }
         /// <summary>
-        /// Deprecated; use PATCH /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories update` (`PATCH /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -197,7 +197,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return requestInfo;
         }
         /// <summary>
-        /// Deprecated; use POST /events/event-categories/by-id/{category_id}. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events categories update` (`POST /events/event-categories/by-id/{category_id}`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

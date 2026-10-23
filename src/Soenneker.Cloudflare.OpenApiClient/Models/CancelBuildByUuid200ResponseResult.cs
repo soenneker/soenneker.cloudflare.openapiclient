@@ -14,6 +14,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The build_outcome property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome? BuildOutcome { get; set; }
+        /// <summary>Build UUID.</summary>
+        public Guid? BuildUuid { get; set; }
+        /// <summary>The stopped_on property</summary>
+        public DateTimeOffset? StoppedOn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CancelBuildByUuid200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "build_outcome", n => { BuildOutcome = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome>(); } },
+                { "build_uuid", n => { BuildUuid = n.GetGuidValue(); } },
+                { "stopped_on", n => { StoppedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildOutcome>("build_outcome", BuildOutcome);
+            writer.WriteGuidValue("build_uuid", BuildUuid);
+            writer.WriteDateTimeOffsetValue("stopped_on", StoppedOn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

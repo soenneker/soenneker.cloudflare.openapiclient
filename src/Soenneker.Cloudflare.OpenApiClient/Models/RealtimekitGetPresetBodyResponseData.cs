@@ -15,6 +15,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The config property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfig? Config { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfig Config { get; set; }
+#endif
+        /// <summary>Timestamp this preset was created at</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>ID of the preset</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Name of the preset</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The permissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissions? Permissions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissions Permissions { get; set; }
+#endif
+        /// <summary>The ui property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUi? Ui { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUi Ui { get; set; }
+#endif
+        /// <summary>Timestamp this preset was last updated</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetPresetBodyResponseData"/> and sets the default values.
         /// </summary>
@@ -40,6 +78,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfig.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissions.CreateFromDiscriminatorValue); } },
+                { "ui", n => { Ui = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUi>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUi.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +94,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetConfig>("config", Config);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteGuidValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetPermissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPresetUi>("ui", Ui);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

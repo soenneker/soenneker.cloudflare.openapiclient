@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SortQueryStringForCacheId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Query String Sort</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSortQueryStringForCacheValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSortQueryStringForCache"/> and sets the default values.

@@ -66,6 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ClientDefault = false;
+            Dns64Enabled = false;
+            EcsSupport = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

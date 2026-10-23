@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.DirectoryNamespace.Services
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\connectivity\directory\services
+    /// Builds and executes requests for operations under \accounts\{accountId}\connectivity\directory\services
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServicesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/connectivity/directory/services{?page*,per_page*,type*}", pathParameters)
+        public ServicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/connectivity/directory/services{?page*,per_page*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/connectivity/directory/services{?page*,per_page*,type*}", rawUrl)
+        public ServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/connectivity/directory/services{?page*,per_page*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -156,19 +156,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
             /// <summary>Max amount of entries returned per page</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("type")]
-            public string? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.DirectoryNamespace.Services.GetTypeQueryParameterType? Type { get; set; }
             #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("type")]
-            public string Type { get; set; }
-            #pragma warning restore CS1591
-#endif
         }
     }
 }

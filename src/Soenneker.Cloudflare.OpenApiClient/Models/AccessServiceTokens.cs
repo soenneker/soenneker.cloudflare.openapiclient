@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>The expires_at property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>The ID of the service token.</summary>
+        /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -47,22 +47,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The last_seen_at property</summary>
         public DateTimeOffset? LastSeenAt { get; set; }
         /// <summary>When a secret scanning partner reported this service token&apos;s `client_secret` as leaked. A leaked service token is disabled and must be rotated before it can be re-enabled. Cleared once the secret is rotated. Omitted if the token has not been reported as leaked.</summary>
-        public DateTimeOffset? LeakReportedAt { get; set; }
+        public DateTimeOffset? LeakReportedAt { get; private set; }
         /// <summary>The secret scanning partner that reported the leak. Omitted if the token has not been reported as leaked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeakReporter { get; set; }
+        public string? LeakReporter { get; private set; }
 #nullable restore
 #else
-        public string LeakReporter { get; set; }
+        public string LeakReporter { get; private set; }
 #endif
         /// <summary>Where the leaked `client_secret` was found, if provided by the reporter. Omitted if the token has not been reported as leaked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LeakReportUrl { get; set; }
+        public string? LeakReportUrl { get; private set; }
 #nullable restore
 #else
-        public string LeakReportUrl { get; set; }
+        public string LeakReportUrl { get; private set; }
 #endif
         /// <summary>The name of the service token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccessServiceTokens()
         {
             AdditionalData = new Dictionary<string, object>();
+            Duration = "8760h";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -127,9 +128,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
-            writer.WriteDateTimeOffsetValue("leak_reported_at", LeakReportedAt);
-            writer.WriteStringValue("leak_reporter", LeakReporter);
-            writer.WriteStringValue("leak_report_url", LeakReportUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

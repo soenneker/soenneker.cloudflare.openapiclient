@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>Current setting of the automatic SSL/TLS.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum CacheResultValue
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "auto")]
         #pragma warning disable CS1591

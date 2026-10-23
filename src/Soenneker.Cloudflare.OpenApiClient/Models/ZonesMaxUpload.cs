@@ -17,14 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).</summary>
         public bool? Editable { get; private set; }
-        /// <summary>Identifier of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>identifier of the zone setting.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MaxUploadId? Id { get; set; }
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 5000, Business = 200, Pro = 100, Free = 100)</summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MaxUploadId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "value", n => { Value = n.GetIntValue(); } },
             };
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MaxUploadId>("id", Id);
             writer.WriteIntValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

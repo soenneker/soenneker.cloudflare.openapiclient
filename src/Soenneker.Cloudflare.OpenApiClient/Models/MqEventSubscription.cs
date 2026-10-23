@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Destination configuration for the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestination? Destination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestinationQueue? Destination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestination Destination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestinationQueue Destination { get; set; }
 #endif
         /// <summary>Whether the subscription is active</summary>
         public bool? Enabled { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestination>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestination.CreateFromDiscriminatorValue); } },
+                { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestinationQueue>(global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestinationQueue.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestination>("destination", Destination);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventDestinationQueue>("destination", Destination);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("id", Id);

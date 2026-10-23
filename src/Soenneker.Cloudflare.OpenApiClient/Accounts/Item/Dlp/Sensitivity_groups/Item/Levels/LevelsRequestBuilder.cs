@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_groups.Item.Levels
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\sensitivity_groups\{sensitivityGroupId}\levels
+    /// Builds and executes requests for operations under \accounts\{accountId}\dlp\sensitivity_groups\{sensitivityGroupId}\levels
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LevelsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_group
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LevelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/sensitivity_groups/{sensitivityGroupId}/levels", pathParameters)
+        public LevelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dlp/sensitivity_groups/{sensitivityGroupId}/levels", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_group
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LevelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/sensitivity_groups/{sensitivityGroupId}/levels", rawUrl)
+        public LevelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dlp/sensitivity_groups/{sensitivityGroupId}/levels", rawUrl)
         {
         }
         /// <summary>

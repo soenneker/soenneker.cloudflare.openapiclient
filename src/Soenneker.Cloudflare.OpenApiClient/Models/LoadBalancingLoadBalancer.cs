@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools CountryPools { get; set; }
 #endif
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy LocationStrategy { get; set; }
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare&apos;s DNS, the Load Balancer will take precedence and the DNS record will not be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +164,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingLoadBalancer()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            Proxied = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -218,14 +220,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingAdaptiveRouting>("adaptive_routing", AdaptiveRouting);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadBalancerCountryPools>("country_pools", CountryPools);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteCollectionOfPrimitiveValues<string>("default_pools", DefaultPools);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("fallback_pool", FallbackPool);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLocationStrategy>("location_strategy", LocationStrategy);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingPoolSet>("pool_sets", PoolSets);

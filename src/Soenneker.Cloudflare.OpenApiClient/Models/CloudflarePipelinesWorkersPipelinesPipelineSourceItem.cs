@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.CloudflarePipelinesWorkersPipelinesBindingSource = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesBindingSource();
             }
-            else if("CloudflarePipelinesWorkersPipelinesHttpSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudflarePipelinesWorkersPipelinesHttpSource = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesWorkersPipelinesHttpSource();
             }

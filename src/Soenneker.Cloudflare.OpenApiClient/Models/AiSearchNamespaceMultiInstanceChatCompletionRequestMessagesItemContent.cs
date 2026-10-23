@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item&gt;
+    /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContent : IComposedTypeWrapper, IParsable
@@ -21,8 +21,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item> AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3"/></summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3? AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3 { get; set; }
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,10 +41,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(parseNode.GetStringValue() is string stringValue)
             {
                 result.String = stringValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3>() is global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3 aiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3Value)
-            {
-                result.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3 = aiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3Value;
             }
             else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item> aiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemValue)
             {
@@ -72,10 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(String != null)
             {
                 writer.WriteStringValue(null, String);
-            }
-            else if(AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3 != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3>(null, AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf3);
             }
             else if(AiSearchNamespaceMultiInstanceChatCompletionRequestMessagesItemContentAnyOf2Item != null)
             {

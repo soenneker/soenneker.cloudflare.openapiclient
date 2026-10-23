@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The kind of the schema</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.OpenApiV3Kind? Kind { get; private set; }
         /// <summary>A human-readable name for the schema</summary>
@@ -27,8 +27,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; private set; }
 #endif
-        /// <summary>UUID.</summary>
-        public Guid? SchemaId { get; set; }
+        /// <summary>The schema_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId? SchemaId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId SchemaId { get; set; }
+#endif
         /// <summary>The raw schema, e.g., the OpenAPI schema, either as JSON or YAML</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OpenApiV3Kind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "schema_id", n => { SchemaId = n.GetGuidValue(); } },
+                { "schema_id", n => { SchemaId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "validation_enabled", n => { ValidationEnabled = n.GetBoolValue(); } },
             };
@@ -79,8 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteGuidValue("schema_id", SchemaId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPublicSchemaSchemaId>("schema_id", SchemaId);
             writer.WriteBoolValue("validation_enabled", ValidationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

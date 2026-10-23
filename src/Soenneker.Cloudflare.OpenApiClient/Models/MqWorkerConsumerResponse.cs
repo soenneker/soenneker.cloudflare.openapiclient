@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerId { get; set; }
+        public string? ConsumerId { get; private set; }
 #nullable restore
 #else
-        public string ConsumerId { get; set; }
+        public string ConsumerId { get; private set; }
 #endif
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; set; }
@@ -99,7 +99,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("consumer_id", ConsumerId);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("dead_letter_queue", DeadLetterQueue);
             writer.WriteStringValue("queue_name", QueueName);

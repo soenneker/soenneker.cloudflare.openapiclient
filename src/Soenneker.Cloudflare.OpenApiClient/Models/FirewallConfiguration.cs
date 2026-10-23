@@ -61,25 +61,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("target")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration();
-            if("FirewallAsnConfiguration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("asn".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FirewallAsnConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallAsnConfiguration();
             }
-            else if("FirewallCidrConfiguration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ip_range".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FirewallCidrConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallCidrConfiguration();
             }
-            else if("FirewallCountryConfiguration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("country".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FirewallCountryConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallCountryConfiguration();
             }
-            else if("FirewallIpConfiguration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ip".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FirewallIpConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallIpConfiguration();
             }
-            else if("FirewallIpv6Configuration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ip6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FirewallIpv6Configuration = new global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallIpv6Configuration();
             }

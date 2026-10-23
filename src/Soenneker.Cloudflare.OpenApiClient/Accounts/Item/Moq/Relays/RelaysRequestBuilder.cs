@@ -13,13 +13,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\moq\relays
+    /// Builds and executes requests for operations under \accounts\{accountId}\moq\relays
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelaysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.moq.relays.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Relay unique identifier (32 hex characters).</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelayItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays.Item.WithRelayItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/moq/relays{?asc*,created_after*,created_before*,per_page*}", pathParameters)
+        public RelaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/moq/relays{?asc*,created_after*,created_before*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq.Relays
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/moq/relays{?asc*,created_after*,created_before*,per_page*}", rawUrl)
+        public RelaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/moq/relays{?asc*,created_after*,created_before*,per_page*}", rawUrl)
         {
         }
         /// <summary>

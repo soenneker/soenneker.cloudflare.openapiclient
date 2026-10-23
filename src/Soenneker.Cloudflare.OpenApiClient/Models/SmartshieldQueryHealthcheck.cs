@@ -88,6 +88,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public SmartshieldQueryHealthcheck()
         {
             AdditionalData = new Dictionary<string, object>();
+            ConsecutiveFails = 1;
+            ConsecutiveSuccesses = 1;
+            Interval = 60;
+            Retries = 2;
+            Suspended = false;
+            Timeout = 5;
+            Type = "HTTP";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

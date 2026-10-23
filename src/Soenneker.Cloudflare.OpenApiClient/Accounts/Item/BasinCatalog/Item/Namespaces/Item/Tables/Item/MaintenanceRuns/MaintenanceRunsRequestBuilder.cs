@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Namespaces.Item.Tables.Item.MaintenanceRuns
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\basin-catalog\{bucketName}\namespaces\{namespaceValue}\tables\{tableName}\maintenance-runs
+    /// Builds and executes requests for operations under \accounts\{accountId}\basin-catalog\{bucketName}\namespaces\{namespaceValue}\tables\{tableName}\maintenance-runs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MaintenanceRunsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Nam
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MaintenanceRunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}/maintenance-runs{?page_size*,page_token*}", pathParameters)
+        public MaintenanceRunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}/maintenance-runs{?page_size*,page_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Nam
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MaintenanceRunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}/maintenance-runs{?page_size*,page_token*}", rawUrl)
+        public MaintenanceRunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}/maintenance-runs{?page_size*,page_token*}", rawUrl)
         {
         }
         /// <summary>

@@ -15,23 +15,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of auth-ids seen across this calculation.</summary>
-        public int? AuthIdTokens { get; set; }
+        public int? AuthIdTokens { get; private set; }
         /// <summary>The number of data points used for the threshold suggestion calculation.</summary>
-        public int? DataPoints { get; set; }
+        public int? DataPoints { get; private set; }
         /// <summary>The last_updated property</summary>
         public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>The p50 quantile of requests (in period_seconds).</summary>
-        public int? P50 { get; set; }
+        public int? P50 { get; private set; }
         /// <summary>The p90 quantile of requests (in period_seconds).</summary>
-        public int? P90 { get; set; }
+        public int? P90 { get; private set; }
         /// <summary>The p99 quantile of requests (in period_seconds).</summary>
-        public int? P99 { get; set; }
+        public int? P99 { get; private set; }
         /// <summary>The period over which this threshold is suggested.</summary>
-        public int? PeriodSeconds { get; set; }
+        public int? PeriodSeconds { get; private set; }
         /// <summary>The estimated number of requests covered by these calculations.</summary>
-        public int? Requests { get; set; }
+        public int? Requests { get; private set; }
         /// <summary>The suggested threshold in requests done by the same auth_id or period_seconds.</summary>
-        public int? SuggestedThreshold { get; set; }
+        public int? SuggestedThreshold { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldOperationFeatureThresholdsThresholds"/> and sets the default values.
         /// </summary>
@@ -75,15 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("auth_id_tokens", AuthIdTokens);
-            writer.WriteIntValue("data_points", DataPoints);
             writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
-            writer.WriteIntValue("p50", P50);
-            writer.WriteIntValue("p90", P90);
-            writer.WriteIntValue("p99", P99);
-            writer.WriteIntValue("period_seconds", PeriodSeconds);
-            writer.WriteIntValue("requests", Requests);
-            writer.WriteIntValue("suggested_threshold", SuggestedThreshold);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

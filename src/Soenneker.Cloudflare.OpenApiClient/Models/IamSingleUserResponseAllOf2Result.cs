@@ -87,9 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Telephone { get; set; }
 #endif
         /// <summary>Indicates whether two-factor authentication is enabled for the user account. Does not apply to API authentication.</summary>
-        public bool? TwoFactorAuthenticationEnabled { get; set; }
+        public bool? TwoFactorAuthenticationEnabled { get; private set; }
         /// <summary>Indicates whether two-factor authentication is required by one of the accounts that the user is a member of.</summary>
-        public bool? TwoFactorAuthenticationLocked { get; set; }
+        public bool? TwoFactorAuthenticationLocked { get; private set; }
         /// <summary>The zipcode or postal code where the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +108,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             HasEnterpriseZones = false;
             HasProZones = false;
             Suspended = false;
+            TwoFactorAuthenticationEnabled = false;
+            TwoFactorAuthenticationLocked = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -156,8 +158,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOrganization>("organizations", Organizations);
             writer.WriteStringValue("telephone", Telephone);
-            writer.WriteBoolValue("two_factor_authentication_enabled", TwoFactorAuthenticationEnabled);
-            writer.WriteBoolValue("two_factor_authentication_locked", TwoFactorAuthenticationLocked);
             writer.WriteStringValue("zipcode", Zipcode);
             writer.WriteAdditionalData(AdditionalData);
         }

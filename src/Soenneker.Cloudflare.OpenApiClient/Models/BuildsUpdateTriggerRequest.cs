@@ -88,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public BuildsUpdateTriggerRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            BuildCachingEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

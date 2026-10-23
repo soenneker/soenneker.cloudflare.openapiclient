@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The RFC 3339 timestamp of when the list was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedOn { get; set; }
+        public string? CreatedOn { get; private set; }
 #nullable restore
 #else
-        public string CreatedOn { get; set; }
+        public string CreatedOn { get; private set; }
 #endif
         /// <summary>An informative summary of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,20 +33,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique ID of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ListsKind? Kind { get; set; }
         /// <summary>The RFC 3339 timestamp of when the list was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedOn { get; set; }
+        public string? ModifiedOn { get; private set; }
 #nullable restore
 #else
-        public string ModifiedOn { get; set; }
+        public string ModifiedOn { get; private set; }
 #endif
         /// <summary>An informative name for the list. Use this name in filter and rule expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The number of items in the list.</summary>
-        public double? NumItems { get; set; }
+        public double? NumItems { get; private set; }
         /// <summary>The number of [filters](/api/resources/filters/) referencing the list.</summary>
-        public double? NumReferencingFilters { get; set; }
+        public double? NumReferencingFilters { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsList"/> and sets the default values.
         /// </summary>
@@ -102,14 +102,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsKind>("kind", Kind);
-            writer.WriteStringValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("num_items", NumItems);
-            writer.WriteDoubleValue("num_referencing_filters", NumReferencingFilters);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

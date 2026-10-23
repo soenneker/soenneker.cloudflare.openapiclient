@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOAuthConfigurationDynamicClientRegistration DynamicClientRegistration { get; set; }
 #endif
-        /// <summary>Whether the OAuth configuration is enabled for this application. When set to `false`, Access will not handle OAuth for this application. Defaults to `true` if omitted.</summary>
+        /// <summary>Managed OAuth is required for end user applications and cannot be disabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Settings for OAuth grant behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

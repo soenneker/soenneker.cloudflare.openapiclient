@@ -18,28 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseErrors? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseErrors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>The primary error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get; set; }
-#nullable restore
-#else
-        public string MessageEscaped { get; set; }
-#endif
+        public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseMessages? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseMessages Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,9 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseErrors>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseErrors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseMessages>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseMessages.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomRuleResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomRuleResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomApiResponseCollectionAllOf2ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomApiResponseCollectionAllOf2ResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -99,9 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>("errors", Errors);
-            writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomMessagesItem>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseErrors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingRoomPatchWaitingRoomRule4XxResponseMessages>("messages", Messages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomRuleResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomApiResponseCollectionAllOf2ResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);

@@ -26,7 +26,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The issuer property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer? Issuer { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MoqIssuer"/> and sets the default values.
         /// </summary>
@@ -54,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "cloudflare_tokens", n => { CloudflareTokens = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>(global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "issuer", n => { Issuer = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MoqCloudflareJwtToken>("cloudflare_tokens", CloudflareTokens);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareIssuer>("issuer", Issuer);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareJwtType>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.InfraHttpServiceConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraHttpServiceConfig();
             }
-            else if("InfraTcpServiceConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("tcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InfraTcpServiceConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTcpServiceConfig();
             }

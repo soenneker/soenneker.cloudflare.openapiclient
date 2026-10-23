@@ -8,50 +8,22 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RssArticleSkillRun200ResponseResultAnyOf2CustomOutput : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item>? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1 RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2 RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3 RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4 RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6? RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6 RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item> RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,6 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,12 +50,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutput();
-            result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1();
-            result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2();
-            result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3();
-            result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4();
-            result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6();
-            result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item> rssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6ItemValue)
+            {
+                result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item = rssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6ItemValue;
+            }
+            else {
+                result.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1();
+            }
             return result;
         }
         /// <summary>
@@ -84,9 +77,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1 != null || RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2 != null || RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3 != null || RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4 != null || RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6 != null || RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 != null)
+            if(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -97,7 +90,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1>(null, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch1, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch2, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch3, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch4, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputBranch6, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item>(null, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputAnyOf6Item);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1>(null, RssArticleSkillRun200ResponseResultAnyOf2CustomOutputMember1);
+            }
         }
     }
 }

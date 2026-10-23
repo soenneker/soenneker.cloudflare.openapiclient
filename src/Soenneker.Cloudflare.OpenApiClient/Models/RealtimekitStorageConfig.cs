@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("auth_method")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig();
             if("RealtimekitStorageConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaApiResponseCommon"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2OneOf1"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AaaAuditLogsResponseCollection2 : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
-    #pragma warning restore CS1591
+    public partial class AaaAuditLogsResponseCollection2 : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaApiResponseCommon"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,41 +29,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2OneOf1 AaaAuditLogsResponseCollection2OneOf1 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The errors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem> Errors { get; set; }
-#endif
-        /// <summary>The messages property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem>? Messages { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem> Messages { get; set; }
-#endif
-        /// <summary>The result property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs>? Result { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs> Result { get; set; }
-#endif
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2"/> and sets the default values.
-        /// </summary>
-        public AaaAuditLogsResponseCollection2()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,22 +46,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if("AaaAuditLogsResponseCollection2OneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AaaAuditLogsResponseCollection2OneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2OneOf1();
-            }
-            else if(parseNode.GetBoolValue() is bool successValue)
-            {
-                result.Success = successValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem> errorsValue)
-            {
-                result.Errors = errorsValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem> messagesValue)
-            {
-                result.Messages = messagesValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs>(global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs> resultValue)
-            {
-                result.Result = resultValue;
             }
             return result;
         }
@@ -130,23 +80,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsResponseCollection2OneOf1>(null, AaaAuditLogsResponseCollection2OneOf1);
             }
-            else if(Success != null)
-            {
-                writer.WriteBoolValue(null, Success);
-            }
-            else if(Errors != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem>(null, Errors);
-            }
-            else if(Messages != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaMessagesItem>(null, Messages);
-            }
-            else if(Result != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogs>(null, Result);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

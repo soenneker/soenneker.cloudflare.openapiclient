@@ -25,13 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The kind of the firewall rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind? Kind { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind Kind { get; set; }
-#endif
         /// <summary>Unique identifier of the firewall rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,13 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string RulesetId { get; set; }
 #endif
         /// <summary>The source that triggered the firewall event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource? Source { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource Source { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItem"/> and sets the default values.
         /// </summary>
@@ -83,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind.CreateFromDiscriminatorValue); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind>(); } },
                 { "rule_id", n => { RuleId = n.GetStringValue(); } },
                 { "ruleset_id", n => { RulesetId = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource>(); } },
             };
         }
         /// <summary>
@@ -98,10 +86,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemKind>("kind", Kind);
             writer.WriteStringValue("rule_id", RuleId);
             writer.WriteStringValue("ruleset_id", RulesetId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource>("source", Source);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopRulesByMitigatedRequestsItemSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

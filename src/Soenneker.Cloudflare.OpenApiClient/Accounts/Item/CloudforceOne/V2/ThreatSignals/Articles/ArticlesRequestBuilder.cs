@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Relevance;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Severity;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -13,11 +15,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\v2\threat-signals\articles
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\v2\threat-signals\articles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ArticlesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The relevance property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Relevance.RelevanceRequestBuilder Relevance
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Relevance.RelevanceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The severity property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Severity.SeverityRequestBuilder Severity
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Severity.SeverityRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.v2.threatSignals.articles.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.ThreatSignals.Articles.Item.WithArticleItemRequestBuilder"/></returns>
@@ -35,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,per_page*,published_after*,published_before*,read*,search*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", pathParameters)
+        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,per_page*,published_after*,published_before*,read*,search*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", rawUrl)
+        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -193,8 +205,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             public bool? IncludeTotal { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
+            [QueryParameter("min_relevance")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleListMinRelevanceParameter? MinRelevance { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("pir_id")]
+            public Guid? PirId { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("published_after")]

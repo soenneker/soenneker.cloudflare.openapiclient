@@ -18,19 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).</summary>
         public bool? Editable { get; private set; }
-        /// <summary>Identifier of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>Cloudflare Mirage reduces bandwidth used by images in mobile browsers.It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MirageId? Id { get; set; }
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting.</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirageValue? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirage2Value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirage2"/> and sets the default values.
         /// </summary>
@@ -57,9 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MirageId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirageValue>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirage2Value>(); } },
             };
         }
         /// <summary>
@@ -69,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirageValue>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MirageId>("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesMirage2Value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

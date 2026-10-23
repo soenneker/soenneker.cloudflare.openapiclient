@@ -20,28 +20,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseErrors? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseErrors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>The primary error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get; set; }
-#nullable restore
-#else
-        public string MessageEscaped { get; set; }
-#endif
+        public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseMessages? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseMessages Messages { get; set; }
 #endif
         /// <summary>The number of the name server set to assign to the zone.</summary>
         public double? NsSet { get; set; }
@@ -84,9 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseErrors>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseErrors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseMessages>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseMessages.CreateFromDiscriminatorValue); } },
                 { "ns_set", n => { NsSet = n.GetDoubleValue(); } },
                 { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversApiResponseCommonFailureResult>(); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversApiResponseCollectionAllOf2ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversApiResponseCollectionAllOf2ResultInfo.CreateFromDiscriminatorValue); } },
@@ -101,9 +92,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem>("errors", Errors);
-            writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversMessagesItem>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseErrors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadata4XxResponseMessages>("messages", Messages);
             writer.WriteDoubleValue("ns_set", NsSet);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversApiResponseCommonFailureResult>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameserversApiResponseCollectionAllOf2ResultInfo>("result_info", ResultInfo);

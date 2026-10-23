@@ -14,32 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The file property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemFile? File { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemFile File { get; set; }
-#endif
-        /// <summary>The image_url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemImageUrl? ImageUrl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemImageUrl ImageUrl { get; set; }
-#endif
-        /// <summary>The text property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Text { get; set; }
-#nullable restore
-#else
-        public string Text { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2Item"/> and sets the default values.
         /// </summary>
@@ -65,10 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file", n => { File = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemFile>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemFile.CreateFromDiscriminatorValue); } },
-                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemImageUrl>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemImageUrl.CreateFromDiscriminatorValue); } },
-                { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemType>(); } },
             };
         }
         /// <summary>
@@ -78,10 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemFile>("file", File);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemImageUrl>("image_url", ImageUrl);
-            writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceChatCompletionRequestMessagesItemContentAnyOf2ItemType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

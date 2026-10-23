@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\intel\attack-surface-report\issues
+    /// Builds and executes requests for operations under \accounts\{accountId}\intel\attack-surface-report\issues
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IssuesRequestBuilder : BaseRequestBuilder
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/attack-surface-report/issues{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,source*,subject*,subject%7Eneq*}", pathParameters)
+        public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/intel/attack-surface-report/issues{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,source*,subject*,subject%7Eneq*}", pathParameters)
         {
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/attack-surface-report/issues{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,source*,subject*,subject%7Eneq*}", rawUrl)
+        public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/intel/attack-surface-report/issues{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,source*,subject*,subject%7Eneq*}", rawUrl)
         {
         }
         /// <summary>
@@ -221,26 +221,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
 #nullable enable
             #pragma warning disable CS1591
             [QueryParameter("severity")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[]? Severity { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterIssuesSeverityParameterItem[]? Severity { get; set; }
             #pragma warning restore CS1591
 #nullable restore
 #else
             #pragma warning disable CS1591
             [QueryParameter("severity")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[] Severity { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterIssuesSeverityParameterItem[] Severity { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
             [QueryParameter("severity%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[]? SeverityNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterIssuesSeverityNeqParameterItem[]? SeverityNeq { get; set; }
             #pragma warning restore CS1591
 #nullable restore
 #else
             #pragma warning disable CS1591
             [QueryParameter("severity%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterSeverityQueryParamItem[] SeverityNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterIssuesSeverityNeqParameterItem[] SeverityNeq { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

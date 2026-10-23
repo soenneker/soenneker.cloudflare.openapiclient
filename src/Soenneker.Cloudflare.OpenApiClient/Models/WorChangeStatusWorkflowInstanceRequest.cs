@@ -7,32 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class WorChangeStatusWorkflowInstanceRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class WorChangeStatusWorkflowInstanceRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Step to restart from.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestFrom? From { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1? WorChangeStatusWorkflowInstanceRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestFrom From { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1 WorChangeStatusWorkflowInstanceRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Run rollback before terminating.</summary>
-        public bool? Rollback { get; set; }
-        /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequest"/> and sets the default values.
-        /// </summary>
-        public WorChangeStatusWorkflowInstanceRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2? WorChangeStatusWorkflowInstanceRequestOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2 WorChangeStatusWorkflowInstanceRequestOneOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3? WorChangeStatusWorkflowInstanceRequestOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3 WorChangeStatusWorkflowInstanceRequestOneOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4? WorChangeStatusWorkflowInstanceRequestOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4 WorChangeStatusWorkflowInstanceRequestOneOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +53,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequest();
+            var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequest();
+            if("pause".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorChangeStatusWorkflowInstanceRequestOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1();
+            }
+            else if("resume".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorChangeStatusWorkflowInstanceRequestOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2();
+            }
+            else if("terminate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorChangeStatusWorkflowInstanceRequestOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3();
+            }
+            else if("restart".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorChangeStatusWorkflowInstanceRequestOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +79,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorChangeStatusWorkflowInstanceRequestOneOf1 != null)
             {
-                { "from", n => { From = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestFrom>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestFrom.CreateFromDiscriminatorValue); } },
-                { "rollback", n => { Rollback = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestStatus>(); } },
-            };
+                return WorChangeStatusWorkflowInstanceRequestOneOf1.GetFieldDeserializers();
+            }
+            else if(WorChangeStatusWorkflowInstanceRequestOneOf2 != null)
+            {
+                return WorChangeStatusWorkflowInstanceRequestOneOf2.GetFieldDeserializers();
+            }
+            else if(WorChangeStatusWorkflowInstanceRequestOneOf3 != null)
+            {
+                return WorChangeStatusWorkflowInstanceRequestOneOf3.GetFieldDeserializers();
+            }
+            else if(WorChangeStatusWorkflowInstanceRequestOneOf4 != null)
+            {
+                return WorChangeStatusWorkflowInstanceRequestOneOf4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +104,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestFrom>("from", From);
-            writer.WriteBoolValue("rollback", Rollback);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestStatus>("status", Status);
-            writer.WriteAdditionalData(AdditionalData);
+            if(WorChangeStatusWorkflowInstanceRequestOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf1>(null, WorChangeStatusWorkflowInstanceRequestOneOf1);
+            }
+            else if(WorChangeStatusWorkflowInstanceRequestOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf2>(null, WorChangeStatusWorkflowInstanceRequestOneOf2);
+            }
+            else if(WorChangeStatusWorkflowInstanceRequestOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf3>(null, WorChangeStatusWorkflowInstanceRequestOneOf3);
+            }
+            else if(WorChangeStatusWorkflowInstanceRequestOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorChangeStatusWorkflowInstanceRequestOneOf4>(null, WorChangeStatusWorkflowInstanceRequestOneOf4);
+            }
         }
     }
 }

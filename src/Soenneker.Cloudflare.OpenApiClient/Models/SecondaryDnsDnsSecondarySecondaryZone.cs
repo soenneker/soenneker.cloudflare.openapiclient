@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Zone name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public SecondaryDnsDnsSecondarySecondaryZone()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutoRefreshSeconds = 86400;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -79,7 +80,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("auto_refresh_seconds", AutoRefreshSeconds);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("peers", Peers);
             writer.WriteAdditionalData(AdditionalData);

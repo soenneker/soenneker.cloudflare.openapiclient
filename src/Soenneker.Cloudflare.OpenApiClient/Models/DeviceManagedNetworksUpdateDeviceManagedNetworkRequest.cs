@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config property</summary>
+        /// <summary>The configuration object containing information for the WARP client to detect the managed network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DeviceManagedNetworksUpdateDeviceManagedNetworkRequestConfig? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DeviceManagedNetworksUpdateDeviceManagedNetworkRequestConfig Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest Config { get; set; }
 #endif
         /// <summary>The name of the device managed network. This name must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DeviceManagedNetworksUpdateDeviceManagedNetworkRequestConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.DeviceManagedNetworksUpdateDeviceManagedNetworkRequestConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesComponentsSchemasType>(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DeviceManagedNetworksUpdateDeviceManagedNetworkRequestConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTlsConfigRequest>("config", Config);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesComponentsSchemasType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

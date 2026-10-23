@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Apply filters to narrow key discovery. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>? Filters { get; set; }
+        public List<UntypedNode>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem> Filters { get; set; }
+        public List<UntypedNode> Filters { get; set; }
 #endif
         /// <summary>The from property</summary>
         public double? From { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "from", n => { From = n.GetDoubleValue(); } },
                 { "keyNeedle", n => { KeyNeedle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle>(global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestFiltersItem>("filters", Filters);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("filters", Filters);
             writer.WriteDoubleValue("from", From);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TelemetryKeysListRequestKeyNeedle>("keyNeedle", KeyNeedle);
             writer.WriteDoubleValue("limit", Limit);

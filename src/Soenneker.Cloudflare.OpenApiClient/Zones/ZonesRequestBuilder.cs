@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ZoneIdentifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ZoneIdentifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("zoneIdentifier%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ZoneIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("zoneIdentifier", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.WithZoneIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

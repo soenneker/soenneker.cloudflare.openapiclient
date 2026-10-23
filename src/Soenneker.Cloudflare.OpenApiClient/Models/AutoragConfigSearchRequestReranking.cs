@@ -17,13 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel? Model { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel Model { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestReranking"/> and sets the default values.
         /// </summary>
@@ -51,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel>(global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel>(); } },
             };
         }
         /// <summary>
@@ -62,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel>("model", Model);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigSearchRequestRerankingModel>("model", Model);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

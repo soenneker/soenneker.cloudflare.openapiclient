@@ -62,6 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AddressingIpamBgpPrefixes()
         {
             AdditionalData = new Dictionary<string, object>();
+            AsnPrependCount = 0;
+            AutoAdvertiseWithdraw = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

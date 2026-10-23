@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Bookmark
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\d1\database\{databaseId}\time_travel\bookmark
+    /// Builds and executes requests for operations under \accounts\{accountId}\d1\database\{databaseId}\time_travel\bookmark
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BookmarkRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/d1/database/{databaseId}/time_travel/bookmark{?timestamp*}", pathParameters)
+        public BookmarkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/d1/database/{databaseId}/time_travel/bookmark{?timestamp*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/d1/database/{databaseId}/time_travel/bookmark{?timestamp*}", rawUrl)
+        public BookmarkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/d1/database/{databaseId}/time_travel/bookmark{?timestamp*}", rawUrl)
         {
         }
         /// <summary>

@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the list of possible actions of the WAF rule when it is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional?>? AllowedModes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional?>? AllowedModes { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional?> AllowedModes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional?> AllowedModes { get; private set; }
 #endif
         /// <summary>Defines the default action/mode of a rule.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesDefaultMode? DefaultMode { get; private set; }
         /// <summary>Defines the public description of the WAF rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Defines the rule group to which the current WAF rule belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,28 +44,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the unique identifier of the WAF rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Defines the action that the current WAF rule will perform when triggered. Applies to traditional (deny) WAF rules.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional? Mode { get; set; }
         /// <summary>Defines the unique identifier of a WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId { get; set; }
+        public string? PackageId { get; private set; }
 #nullable restore
 #else
-        public string PackageId { get; set; }
+        public string PackageId { get; private set; }
 #endif
         /// <summary>Defines the order in which the individual WAF rule is executed within its rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Priority { get; set; }
+        public string? Priority { get; private set; }
 #nullable restore
 #else
-        public string Priority { get; set; }
+        public string Priority { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesTraditionalDenyRule"/> and sets the default values.
@@ -109,12 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional>("allowed_modes", AllowedModes);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeDenyTraditional>("mode", Mode);
-            writer.WriteStringValue("package_id", PackageId);
-            writer.WriteStringValue("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

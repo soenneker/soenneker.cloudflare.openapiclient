@@ -7,13 +7,48 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Worker build configuration including git repository linkage, production settings, and Preview settings
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetWorkerBuild200ResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Git repository details linked to a Worker script build configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository? GitRepository { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository GitRepository { get; set; }
+#endif
+        /// <summary>Build and deploy settings for a Worker script environment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings? PreviewsBaseConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings PreviewsBaseConfig { get; set; }
+#endif
+        /// <summary>Whether Previews are enabled for this Worker</summary>
+        public bool? PreviewsEnabled { get; set; }
+        /// <summary>Build and deploy settings for a Worker script environment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings? ProductionSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings ProductionSettings { get; set; }
+#endif
+        /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScriptTag { get; set; }
+#nullable restore
+#else
+        public string ScriptTag { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerBuild200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "git_repository", n => { GitRepository = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository.CreateFromDiscriminatorValue); } },
+                { "previews_base_config", n => { PreviewsBaseConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings.CreateFromDiscriminatorValue); } },
+                { "previews_enabled", n => { PreviewsEnabled = n.GetBoolValue(); } },
+                { "production_settings", n => { ProductionSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings.CreateFromDiscriminatorValue); } },
+                { "script_tag", n => { ScriptTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerGitRepository>("git_repository", GitRepository);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>("previews_base_config", PreviewsBaseConfig);
+            writer.WriteBoolValue("previews_enabled", PreviewsEnabled);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>("production_settings", ProductionSettings);
+            writer.WriteStringValue("script_tag", ScriptTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

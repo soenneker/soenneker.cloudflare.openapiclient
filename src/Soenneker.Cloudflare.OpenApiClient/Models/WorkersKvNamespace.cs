@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ID of the Workers KV namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Specify the jurisdiction to restrict the KV namespace to durably store data within. Can only be set at namespace creation time.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvJurisdiction? Jurisdiction { get; set; }
@@ -75,7 +75,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvJurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvNamespaceMode>("mode", Mode);
             writer.WriteStringValue("title", Title);

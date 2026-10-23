@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Sending_domain_restrictions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\sending_domain_restrictions\{sendingDomainRestrictionId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\email-security\settings\sending_domain_restrictions\{sendingDomainRestrictionId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSendingDomainRestrictionItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSendingDomainRestrictionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/sending_domain_restrictions/{sendingDomainRestrictionId}", pathParameters)
+        public WithSendingDomainRestrictionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email-security/settings/sending_domain_restrictions/{sendingDomainRestrictionId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSendingDomainRestrictionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/sending_domain_restrictions/{sendingDomainRestrictionId}", rawUrl)
+        public WithSendingDomainRestrictionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email-security/settings/sending_domain_restrictions/{sendingDomainRestrictionId}", rawUrl)
         {
         }
         /// <summary>

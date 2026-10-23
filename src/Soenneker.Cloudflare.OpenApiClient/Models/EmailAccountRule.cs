@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Routing rule identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Matching patterns to forward to your actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,12 +53,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Who manages the rule. `api` covers dashboard, generic API, and Terraform;`wrangler` means the rule is managed by a Worker&apos;s wrangler.jsonc. Defaultsto `api` when omitted on write.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource? Source { get; set; }
         /// <summary>Routing rule tag. (Deprecated, replaced by routing rule identifier)</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+        public string? Tag { get; private set; }
 #nullable restore
 #else
-        public string Tag { get; set; }
+        public string Tag { get; private set; }
 #endif
         /// <summary>Zone information for the routing rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Enabled = true;
+            Priority = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -114,12 +116,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleAction>("actions", Actions);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher>("matchers", Matchers);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("priority", Priority);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleSource>("source", Source);
-            writer.WriteStringValue("tag", Tag);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailAccountRuleAllOf2Zone>("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }

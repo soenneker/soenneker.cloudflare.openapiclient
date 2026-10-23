@@ -11,10 +11,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// The reputation policy thresholds currently applied to the account.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailSendingReputationPropertiesActivePolicy : IAdditionalDataHolder, IParsable
+    public partial class EmailSendingReputationPropertiesActivePolicy : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Complaint-rate thresholds used to evaluate reputation status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The grace period before suspension. The value must be a whole number of days.</summary>
         public long? SuspensionAfterHours { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingReputationPropertiesActivePolicy"/> and sets the default values.
-        /// </summary>
-        public EmailSendingReputationPropertiesActivePolicy()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,7 +74,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyCustomerBounce>("customer_bounce", CustomerBounce);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicySpamRejection>("spam_rejection", SpamRejection);
             writer.WriteLongValue("suspension_after_hours", SuspensionAfterHours);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

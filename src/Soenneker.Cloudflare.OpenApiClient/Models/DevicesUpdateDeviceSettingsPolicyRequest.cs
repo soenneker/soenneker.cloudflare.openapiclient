@@ -150,6 +150,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DevicesUpdateDeviceSettingsPolicyRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowedToLeave = true;
+            AllowModeSwitch = false;
+            AllowUpdates = false;
+            AutoConnect = 0;
+            CaptivePortal = 180;
+            Default = false;
+            DisableAutoFallback = false;
+            EnableDeviceCredentialAuthentication = false;
+            ExcludeOfficeIps = false;
+            RegisterInterfaceIpWithDns = true;
+            SccmVpnBoundarySupport = false;
+            SwitchLocked = false;
+            UninstallProtection = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

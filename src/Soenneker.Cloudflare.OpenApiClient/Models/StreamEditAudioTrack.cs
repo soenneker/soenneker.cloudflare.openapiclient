@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public StreamEditAudioTrack()
         {
             AdditionalData = new Dictionary<string, object>();
+            Default = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

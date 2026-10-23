@@ -15,19 +15,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the settings have been created.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>State of the zone settings for Email Routing.</summary>
         public bool? Enabled { get; private set; }
         /// <summary>Email Routing settings identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The date and time the settings have been modified.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>Domain of your zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,12 +43,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether subaddressing (plus-addressing) is honored when matching incoming mail against routing rules.</summary>
         public bool? SupportSubaddress { get; private set; }
         /// <summary>Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+        public string? Tag { get; private set; }
 #nullable restore
 #else
-        public string Tag { get; set; }
+        public string Tag { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSettings"/> and sets the default values.
@@ -93,11 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created", Created);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

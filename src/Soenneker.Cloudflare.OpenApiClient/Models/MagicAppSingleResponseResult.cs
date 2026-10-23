@@ -7,13 +7,62 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Custom app defined for an account.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class MagicAppSingleResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
+        /// <summary>Magic account app ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountAppId { get; set; }
+#nullable restore
+#else
+        public string AccountAppId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>FQDNs to associate with traffic decisions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Hostnames { get; set; }
+#nullable restore
+#else
+        public List<string> Hostnames { get; set; }
+#endif
+        /// <summary>IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IpSubnets { get; set; }
+#nullable restore
+#else
+        public List<string> IpSubnets { get; set; }
+#endif
+        /// <summary>Display name for the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SourceSubnets { get; set; }
+#nullable restore
+#else
+        public List<string> SourceSubnets { get; set; }
+#endif
+        /// <summary>Category of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppSingleResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +88,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_app_id", n => { AccountAppId = n.GetStringValue(); } },
+                { "hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ip_subnets", n => { IpSubnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "source_subnets", n => { SourceSubnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +103,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account_app_id", AccountAppId);
+            writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
+            writer.WriteCollectionOfPrimitiveValues<string>("ip_subnets", IpSubnets);
+            writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("source_subnets", SourceSubnets);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

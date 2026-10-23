@@ -15,6 +15,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to enable Automatic HTTPS Rewrites.</summary>
+        public bool? AutomaticHttpsRewrites { get; set; }
+        /// <summary>Which file extensions to minify automatically.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify? Autominify { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify Autominify { get; set; }
+#endif
+        /// <summary>Whether to enable Browser Integrity Check (BIC).</summary>
+        public bool? Bic { get; set; }
+        /// <summary>Whether to enable content conversion (e.g., HTML to Markdown).</summary>
+        public bool? ContentConverter { get; set; }
+        /// <summary>Whether to disable Cloudflare Apps.</summary>
+        [Obsolete("")]
+        public bool? DisableApps { get; set; }
+        /// <summary>Whether to disable Pay Per Crawl.</summary>
+        public bool? DisablePayPerCrawl { get; set; }
+        /// <summary>Whether to disable Real User Monitoring (RUM).</summary>
+        public bool? DisableRum { get; set; }
+        /// <summary>Whether to disable Zaraz.</summary>
+        public bool? DisableZaraz { get; set; }
+        /// <summary>Whether to enable Email Obfuscation.</summary>
+        public bool? EmailObfuscation { get; set; }
+        /// <summary>Whether to enable Cloudflare Fonts.</summary>
+        public bool? Fonts { get; set; }
+        /// <summary>Whether to enable Hotlink Protection.</summary>
+        public bool? HotlinkProtection { get; set; }
+        /// <summary>Whether to enable Mirage.</summary>
+        [Obsolete("")]
+        public bool? Mirage { get; set; }
+        /// <summary>Whether to enable Opportunistic Encryption.</summary>
+        public bool? OpportunisticEncryption { get; set; }
+        /// <summary>The Polish level to configure.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersPolish? Polish { get; set; }
+        /// <summary>Whether to redirect verified AI training crawlers to canonical URLs found in the HTML response.</summary>
+        public bool? RedirectsForAiTraining { get; set; }
+        /// <summary>The request body buffering mode.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersRequestBodyBuffering? RequestBodyBuffering { get; set; }
+        /// <summary>The response body buffering mode.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersResponseBodyBuffering? ResponseBodyBuffering { get; set; }
+        /// <summary>Whether to enable Rocket Loader.</summary>
+        public bool? RocketLoader { get; set; }
+        /// <summary>The Security Level to configure.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSecurityLevel? SecurityLevel { get; set; }
+        /// <summary>Whether to enable Server-Side Excludes.</summary>
+        public bool? ServerSideExcludes { get; set; }
+        /// <summary>The SSL level to configure.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSsl? Ssl { get; set; }
+        /// <summary>Whether to enable Signed Exchanges (SXG).</summary>
+        [Obsolete("")]
+        public bool? Sxg { get; set; }
+        /// <summary>Whether to serve the WebMCP bridge script, which exposes the page&apos;s tools to browser AI agents.</summary>
+        public bool? WebmcpEnabled { get; set; }
+        /// <summary>Bundled WebMCP tool packs to activate for matching requests. An empty array disables all packs. Omitting this parameter leaves the pack selection unchanged. Does not enable the WebMCP bridge itself.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? WebmcpPacks { get; set; }
+#nullable restore
+#else
+        public List<string> WebmcpPacks { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleActionParameters"/> and sets the default values.
         /// </summary>
@@ -40,6 +103,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "automatic_https_rewrites", n => { AutomaticHttpsRewrites = n.GetBoolValue(); } },
+                { "autominify", n => { Autominify = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify.CreateFromDiscriminatorValue); } },
+                { "bic", n => { Bic = n.GetBoolValue(); } },
+                { "content_converter", n => { ContentConverter = n.GetBoolValue(); } },
+                { "disable_apps", n => { DisableApps = n.GetBoolValue(); } },
+                { "disable_pay_per_crawl", n => { DisablePayPerCrawl = n.GetBoolValue(); } },
+                { "disable_rum", n => { DisableRum = n.GetBoolValue(); } },
+                { "disable_zaraz", n => { DisableZaraz = n.GetBoolValue(); } },
+                { "email_obfuscation", n => { EmailObfuscation = n.GetBoolValue(); } },
+                { "fonts", n => { Fonts = n.GetBoolValue(); } },
+                { "hotlink_protection", n => { HotlinkProtection = n.GetBoolValue(); } },
+                { "mirage", n => { Mirage = n.GetBoolValue(); } },
+                { "opportunistic_encryption", n => { OpportunisticEncryption = n.GetBoolValue(); } },
+                { "polish", n => { Polish = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersPolish>(); } },
+                { "redirects_for_ai_training", n => { RedirectsForAiTraining = n.GetBoolValue(); } },
+                { "request_body_buffering", n => { RequestBodyBuffering = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersRequestBodyBuffering>(); } },
+                { "response_body_buffering", n => { ResponseBodyBuffering = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersResponseBodyBuffering>(); } },
+                { "rocket_loader", n => { RocketLoader = n.GetBoolValue(); } },
+                { "security_level", n => { SecurityLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSecurityLevel>(); } },
+                { "server_side_excludes", n => { ServerSideExcludes = n.GetBoolValue(); } },
+                { "ssl", n => { Ssl = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSsl>(); } },
+                { "sxg", n => { Sxg = n.GetBoolValue(); } },
+                { "webmcp_enabled", n => { WebmcpEnabled = n.GetBoolValue(); } },
+                { "webmcp_packs", n => { WebmcpPacks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,6 +136,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("automatic_https_rewrites", AutomaticHttpsRewrites);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigAutominify>("autominify", Autominify);
+            writer.WriteBoolValue("bic", Bic);
+            writer.WriteBoolValue("content_converter", ContentConverter);
+            writer.WriteBoolValue("disable_apps", DisableApps);
+            writer.WriteBoolValue("disable_pay_per_crawl", DisablePayPerCrawl);
+            writer.WriteBoolValue("disable_rum", DisableRum);
+            writer.WriteBoolValue("disable_zaraz", DisableZaraz);
+            writer.WriteBoolValue("email_obfuscation", EmailObfuscation);
+            writer.WriteBoolValue("fonts", Fonts);
+            writer.WriteBoolValue("hotlink_protection", HotlinkProtection);
+            writer.WriteBoolValue("mirage", Mirage);
+            writer.WriteBoolValue("opportunistic_encryption", OpportunisticEncryption);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersPolish>("polish", Polish);
+            writer.WriteBoolValue("redirects_for_ai_training", RedirectsForAiTraining);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersRequestBodyBuffering>("request_body_buffering", RequestBodyBuffering);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersResponseBodyBuffering>("response_body_buffering", ResponseBodyBuffering);
+            writer.WriteBoolValue("rocket_loader", RocketLoader);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSecurityLevel>("security_level", SecurityLevel);
+            writer.WriteBoolValue("server_side_excludes", ServerSideExcludes);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRuleSetConfigurationRuleActionParametersSsl>("ssl", Ssl);
+            writer.WriteBoolValue("sxg", Sxg);
+            writer.WriteBoolValue("webmcp_enabled", WebmcpEnabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("webmcp_packs", WebmcpPacks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

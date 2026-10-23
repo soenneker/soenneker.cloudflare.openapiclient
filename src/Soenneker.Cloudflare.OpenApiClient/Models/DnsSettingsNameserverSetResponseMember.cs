@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IPv4 addresses assigned to the nameserver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv4 { get; set; }
+        public List<string>? Ipv4 { get; private set; }
 #nullable restore
 #else
-        public List<string> Ipv4 { get; set; }
+        public List<string> Ipv4 { get; private set; }
 #endif
         /// <summary>IPv6 addresses assigned to the nameserver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv6 { get; set; }
+        public List<string>? Ipv6 { get; private set; }
 #nullable restore
 #else
-        public List<string> Ipv6 { get; set; }
+        public List<string> Ipv6 { get; private set; }
 #endif
         /// <summary>A unique lowercase Punycode nameserver name within the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,8 +75,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("ipv4", Ipv4);
-            writer.WriteCollectionOfPrimitiveValues<string>("ipv6", Ipv6);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

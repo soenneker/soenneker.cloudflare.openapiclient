@@ -17,34 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IPv4 addresses assigned to the nameserver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv4 { get; set; }
+        public List<string>? Ipv4 { get; private set; }
 #nullable restore
 #else
-        public List<string> Ipv4 { get; set; }
+        public List<string> Ipv4 { get; private set; }
 #endif
         /// <summary>Advanced anycast group for each address in the corresponding address array. Entries have the same order as, and correspond one-to-one with, the addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem?>? Ipv4Groups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponseMemberIpv4GroupsItem?>? Ipv4Groups { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem?> Ipv4Groups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponseMemberIpv4GroupsItem?> Ipv4Groups { get; private set; }
 #endif
         /// <summary>IPv6 addresses assigned to the nameserver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv6 { get; set; }
+        public List<string>? Ipv6 { get; private set; }
 #nullable restore
 #else
-        public List<string> Ipv6 { get; set; }
+        public List<string> Ipv6 { get; private set; }
 #endif
         /// <summary>Advanced anycast group for each address in the corresponding address array. Entries have the same order as, and correspond one-to-one with, the addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem?>? Ipv6Groups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponseMemberIpv6GroupsItem?>? Ipv6Groups { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem?> Ipv6Groups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponseMemberIpv6GroupsItem?> Ipv6Groups { get; private set; }
 #endif
         /// <summary>A unique lowercase Punycode nameserver name within the set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,9 +80,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ipv4", n => { Ipv4 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ipv4_groups", n => { Ipv4Groups = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem>()?.AsList(); } },
+                { "ipv4_groups", n => { Ipv4Groups = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponseMemberIpv4GroupsItem>()?.AsList(); } },
                 { "ipv6", n => { Ipv6 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ipv6_groups", n => { Ipv6Groups = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem>()?.AsList(); } },
+                { "ipv6_groups", n => { Ipv6Groups = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAdvancedResponseMemberIpv6GroupsItem>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -93,10 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("ipv4", Ipv4);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem>("ipv4_groups", Ipv4Groups);
-            writer.WriteCollectionOfPrimitiveValues<string>("ipv6", Ipv6);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsNameserverSetAddressGroupsItem>("ipv6_groups", Ipv6Groups);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

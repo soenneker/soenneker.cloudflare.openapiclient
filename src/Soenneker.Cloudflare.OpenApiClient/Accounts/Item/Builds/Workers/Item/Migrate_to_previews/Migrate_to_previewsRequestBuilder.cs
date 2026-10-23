@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Migrate_to_previews
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\builds\workers\{externalScript-id}\migrate_to_previews
+    /// Builds and executes requests for operations under \accounts\{accountId}\builds\workers\{externalScriptId}\migrate_to_previews
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Migrate_to_previewsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.M
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Migrate_to_previewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/workers/{externalScript%2Did}/migrate_to_previews", pathParameters)
+        public Migrate_to_previewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/workers/{externalScriptId}/migrate_to_previews", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.M
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Migrate_to_previewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/workers/{externalScript%2Did}/migrate_to_previews", rawUrl)
+        public Migrate_to_previewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/workers/{externalScriptId}/migrate_to_previews", rawUrl)
         {
         }
         /// <summary>

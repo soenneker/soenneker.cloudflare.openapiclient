@@ -8,19 +8,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailSecurityMessageDetailsValidation : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationBranch2? EmailSecurityMessageDetailsValidationBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationBranch2 EmailSecurityMessageDetailsValidationBranch2 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationOneOf2"/></summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationOneOf2? EmailSecurityMessageDetailsValidationOneOf2 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityValidation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,9 +33,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidation();
-            if("EmailSecurityMessageDetailsValidationBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationOneOf2>() is global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationOneOf2 emailSecurityMessageDetailsValidationOneOf2Value)
             {
-                result.EmailSecurityMessageDetailsValidationBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationBranch2();
+                result.EmailSecurityMessageDetailsValidationOneOf2 = emailSecurityMessageDetailsValidationOneOf2Value;
             }
             else if("EmailSecurityValidation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -55,11 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(EmailSecurityMessageDetailsValidationBranch2 != null)
-            {
-                return EmailSecurityMessageDetailsValidationBranch2.GetFieldDeserializers();
-            }
-            else if(EmailSecurityValidation != null)
+            if(EmailSecurityValidation != null)
             {
                 return EmailSecurityValidation.GetFieldDeserializers();
             }
@@ -72,9 +62,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(EmailSecurityMessageDetailsValidationBranch2 != null)
+            if(EmailSecurityMessageDetailsValidationOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationBranch2>(null, EmailSecurityMessageDetailsValidationBranch2);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityMessageDetailsValidationOneOf2>(null, EmailSecurityMessageDetailsValidationOneOf2);
             }
             else if(EmailSecurityValidation != null)
             {

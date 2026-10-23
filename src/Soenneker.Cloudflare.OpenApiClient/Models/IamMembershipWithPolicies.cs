@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Membership identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>All access permissions for the user at the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of role names the membership has for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Roles { get; set; }
+        public List<string>? Roles { get; private set; }
 #nullable restore
 #else
-        public List<string> Roles { get; set; }
+        public List<string> Roles { get; private set; }
 #endif
         /// <summary>Status of this membership.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamSchemasStatus? Status { get; set; }
@@ -100,9 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("api_access_enabled", ApiAccessEnabled);
-            writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamListMemberPolicy>("policies", Policies);
-            writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamSchemasStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off whether Cloudflare should wait for an entire filefrom the origin server before forwarding it to the site visitor. Bydefault, Cloudflare sends packets to the client as they arrive fromthe origin server.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResponseBufferingId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Response Buffering</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBufferingValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesResponseBuffering"/> and sets the default values.

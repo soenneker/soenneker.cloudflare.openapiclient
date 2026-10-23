@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Apply custom caching based on the option selected.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheLevelId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>* `bypass`: Cloudflare does not cache.* `basic`: Delivers resources from cache when there is no query  string.* `simplified`: Delivers the same resource to everyone independent  of the query string.* `aggressive`: Caches all static content that has a query string.* `cache_everything`: Treats all content as static and caches all  file types beyond the [Cloudflare default cached  content](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/#default-cached-file-extensions).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheLevelValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheLevel"/> and sets the default values.

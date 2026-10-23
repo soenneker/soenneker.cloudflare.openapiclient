@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_static;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_Escaped;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Labels;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Schema_validation;
 using System.Collections.Generic;
@@ -16,15 +16,15 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\api_gateway\operations
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\api_gateway\operations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OperationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The item_static property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_static.Item_staticRequestBuilder Item_static
+        /// <summary>The item property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_Escaped.Item_EscapedRequestBuilder Item
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_static.Item_staticRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The labels property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Labels.LabelsRequestBuilder Labels
@@ -37,8 +37,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Schema_validation.Schema_validationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.api_gateway.operations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Identifier for the operation</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.WithOperationItemRequestBuilder"/></returns>
+        [global::System.Runtime.CompilerServices.IndexerName("ItemByKey")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.WithOperationItemRequestBuilder this[string position]
         {
             get
@@ -53,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OperationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/operations{?direction*,endpoint*,feature*,host*,method*,order*,page*,per_page*}", pathParameters)
+        public OperationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/api_gateway/operations{?direction*,endpoint*,feature*,host*,method*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/api_gateway/operations{?direction*,endpoint*,feature*,host*,method*,order*,page*,per_page*}", rawUrl)
+        public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/api_gateway/operations{?direction*,endpoint*,feature*,host*,method*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

@@ -45,17 +45,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipChangelogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("event")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipChangelogEntry();
-            if("FlagshipChangelogEntryOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FlagshipChangelogEntryOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipChangelogEntryOneOf1();
             }
-            else if("FlagshipChangelogEntryOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FlagshipChangelogEntryOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipChangelogEntryOneOf2();
             }
-            else if("FlagshipChangelogEntryOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FlagshipChangelogEntryOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipChangelogEntryOneOf3();
             }

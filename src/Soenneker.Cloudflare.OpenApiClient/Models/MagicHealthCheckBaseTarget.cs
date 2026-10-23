@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTargetBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MagicHealthCheckBaseTarget : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTargetBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTargetBranch2? MagicHealthCheckBaseTargetBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTargetBranch2 MagicHealthCheckBaseTargetBranch2 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget MagicHealthCheckTarget { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTarget();
-            if("MagicHealthCheckBaseTargetBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MagicHealthCheckBaseTargetBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTargetBranch2();
-            }
-            else if("MagicHealthCheckTarget".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("MagicHealthCheckTarget".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MagicHealthCheckTarget = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget();
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,11 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MagicHealthCheckBaseTargetBranch2 != null)
-            {
-                return MagicHealthCheckBaseTargetBranch2.GetFieldDeserializers();
-            }
-            else if(MagicHealthCheckTarget != null)
+            if(MagicHealthCheckTarget != null)
             {
                 return MagicHealthCheckTarget.GetFieldDeserializers();
             }
@@ -72,13 +68,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(MagicHealthCheckBaseTargetBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckBaseTargetBranch2>(null, MagicHealthCheckBaseTargetBranch2);
-            }
-            else if(MagicHealthCheckTarget != null)
+            if(MagicHealthCheckTarget != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicHealthCheckTarget>(null, MagicHealthCheckTarget);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

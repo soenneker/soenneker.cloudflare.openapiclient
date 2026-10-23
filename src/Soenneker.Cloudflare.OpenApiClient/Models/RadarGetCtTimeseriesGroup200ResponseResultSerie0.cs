@@ -7,196 +7,76 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class RadarGetCtTimeseriesGroup200ResponseResultSerie0 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class RadarGetCtTimeseriesGroup200ResponseResultSerie0 : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The CERTIFICATE property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CERTIFICATE { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<string> CERTIFICATE { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1 { get; set; }
 #endif
-        /// <summary>The domain property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domain { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> Domain { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2 { get; set; }
 #endif
-        /// <summary>The DSA property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DSA { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 { get; set; }
 #nullable restore
 #else
-        public List<string> DSA { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 { get; set; }
 #endif
-        /// <summary>The ECDSA property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ECDSA { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4 { get; set; }
 #nullable restore
 #else
-        public List<string> ECDSA { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4 { get; set; }
 #endif
-        /// <summary>The EXPIRED property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EXPIRED { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5 { get; set; }
 #nullable restore
 #else
-        public List<string> EXPIRED { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5 { get; set; }
 #endif
-        /// <summary>The extended property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Extended { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 { get; set; }
 #nullable restore
 #else
-        public List<string> Extended { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 { get; set; }
 #endif
-        /// <summary>The gt_121d property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt121d { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7 { get; set; }
 #nullable restore
 #else
-        public List<string> Gt121d { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7 { get; set; }
 #endif
-        /// <summary>The gt_16d_lte_31d property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gt16dLte31d { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8? RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8 { get; set; }
 #nullable restore
 #else
-        public List<string> Gt16dLte31d { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8 RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8 { get; set; }
 #endif
-        /// <summary>The gt_31d_lte_91d property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Gt31dLte91d { get; set; }
-#nullable restore
-#else
-        public List<string> Gt31dLte91d { get; set; }
-#endif
-        /// <summary>The gt_3d_lte_16d property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Gt3dLte16d { get; set; }
-#nullable restore
-#else
-        public List<string> Gt3dLte16d { get; set; }
-#endif
-        /// <summary>The gt_91d_lte_121d property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Gt91dLte121d { get; set; }
-#nullable restore
-#else
-        public List<string> Gt91dLte121d { get; set; }
-#endif
-        /// <summary>The lte_3d property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Lte3d { get; set; }
-#nullable restore
-#else
-        public List<string> Lte3d { get; set; }
-#endif
-        /// <summary>The NEGATIVE property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? NEGATIVE { get; set; }
-#nullable restore
-#else
-        public List<string> NEGATIVE { get; set; }
-#endif
-        /// <summary>The organization property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Organization { get; set; }
-#nullable restore
-#else
-        public List<string> Organization { get; set; }
-#endif
-        /// <summary>The POSITIVE property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? POSITIVE { get; set; }
-#nullable restore
-#else
-        public List<string> POSITIVE { get; set; }
-#endif
-        /// <summary>The PRECERTIFICATE property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? PRECERTIFICATE { get; set; }
-#nullable restore
-#else
-        public List<string> PRECERTIFICATE { get; set; }
-#endif
-        /// <summary>The rfc6962 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Rfc6962 { get; set; }
-#nullable restore
-#else
-        public List<string> Rfc6962 { get; set; }
-#endif
-        /// <summary>The RSA property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? RSA { get; set; }
-#nullable restore
-#else
-        public List<string> RSA { get; set; }
-#endif
-        /// <summary>The static property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Static { get; set; }
-#nullable restore
-#else
-        public List<string> Static { get; set; }
-#endif
-        /// <summary>The timestamps property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<DateTimeOffset?>? Timestamps { get; set; }
-#nullable restore
-#else
-        public List<DateTimeOffset?> Timestamps { get; set; }
-#endif
-        /// <summary>The unknown property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Unknown { get; set; }
-#nullable restore
-#else
-        public List<string> Unknown { get; set; }
-#endif
-        /// <summary>The VALID property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? VALID { get; set; }
-#nullable restore
-#else
-        public List<string> VALID { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0"/> and sets the default values.
-        /// </summary>
-        public RadarGetCtTimeseriesGroup200ResponseResultSerie0()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -205,7 +85,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7();
+            result.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -213,31 +102,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7 != null || RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8 != null)
             {
-                { "CERTIFICATE", n => { CERTIFICATE = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "DSA", n => { DSA = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "domain", n => { Domain = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ECDSA", n => { ECDSA = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "EXPIRED", n => { EXPIRED = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "extended", n => { Extended = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "gt_121d", n => { Gt121d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "gt_16d_lte_31d", n => { Gt16dLte31d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "gt_31d_lte_91d", n => { Gt31dLte91d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "gt_3d_lte_16d", n => { Gt3dLte16d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "gt_91d_lte_121d", n => { Gt91dLte121d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "lte_3d", n => { Lte3d = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "NEGATIVE", n => { NEGATIVE = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "organization", n => { Organization = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "POSITIVE", n => { POSITIVE = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "PRECERTIFICATE", n => { PRECERTIFICATE = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "RSA", n => { RSA = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "rfc6962", n => { Rfc6962 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "static", n => { Static = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
-                { "unknown", n => { Unknown = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "VALID", n => { VALID = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -246,29 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("CERTIFICATE", CERTIFICATE);
-            writer.WriteCollectionOfPrimitiveValues<string>("domain", Domain);
-            writer.WriteCollectionOfPrimitiveValues<string>("DSA", DSA);
-            writer.WriteCollectionOfPrimitiveValues<string>("ECDSA", ECDSA);
-            writer.WriteCollectionOfPrimitiveValues<string>("EXPIRED", EXPIRED);
-            writer.WriteCollectionOfPrimitiveValues<string>("extended", Extended);
-            writer.WriteCollectionOfPrimitiveValues<string>("gt_121d", Gt121d);
-            writer.WriteCollectionOfPrimitiveValues<string>("gt_16d_lte_31d", Gt16dLte31d);
-            writer.WriteCollectionOfPrimitiveValues<string>("gt_31d_lte_91d", Gt31dLte91d);
-            writer.WriteCollectionOfPrimitiveValues<string>("gt_3d_lte_16d", Gt3dLte16d);
-            writer.WriteCollectionOfPrimitiveValues<string>("gt_91d_lte_121d", Gt91dLte121d);
-            writer.WriteCollectionOfPrimitiveValues<string>("lte_3d", Lte3d);
-            writer.WriteCollectionOfPrimitiveValues<string>("NEGATIVE", NEGATIVE);
-            writer.WriteCollectionOfPrimitiveValues<string>("organization", Organization);
-            writer.WriteCollectionOfPrimitiveValues<string>("POSITIVE", POSITIVE);
-            writer.WriteCollectionOfPrimitiveValues<string>("PRECERTIFICATE", PRECERTIFICATE);
-            writer.WriteCollectionOfPrimitiveValues<string>("rfc6962", Rfc6962);
-            writer.WriteCollectionOfPrimitiveValues<string>("RSA", RSA);
-            writer.WriteCollectionOfPrimitiveValues<string>("static", Static);
-            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
-            writer.WriteCollectionOfPrimitiveValues<string>("unknown", Unknown);
-            writer.WriteCollectionOfPrimitiveValues<string>("VALID", VALID);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1>(null, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf1, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf2, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf3, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf4, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf5, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf6, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf7, RadarGetCtTimeseriesGroup200ResponseResultSerie0AnyOf8);
         }
     }
 }

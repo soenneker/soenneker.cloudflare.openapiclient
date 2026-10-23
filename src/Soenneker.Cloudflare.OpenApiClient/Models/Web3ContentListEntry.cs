@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Content { get; set; }
 #endif
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Specify an optional description of the content list entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,13 +36,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the identifier of the hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Specify the type of content list entry to block.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryType? Type { get; set; }
         /// <summary>
@@ -86,10 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3ContentListEntryType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

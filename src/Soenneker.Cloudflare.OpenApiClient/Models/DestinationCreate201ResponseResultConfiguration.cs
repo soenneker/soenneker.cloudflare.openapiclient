@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus JobStatus { get; set; }
 #endif
         /// <summary>The logpushDataset property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset? LogpushDataset { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset LogpushDataset { get; set; }
-#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType? Type { get; set; }
         /// <summary>The url property</summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders.CreateFromDiscriminatorValue); } },
                 { "jobStatus", n => { JobStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus.CreateFromDiscriminatorValue); } },
-                { "logpushDataset", n => { LogpushDataset = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset.CreateFromDiscriminatorValue); } },
+                { "logpushDataset", n => { LogpushDataset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -89,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationHeaders>("headers", Headers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationJobStatus>("jobStatus", JobStatus);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset>("logpushDataset", LogpushDataset);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreate201ResponseResultConfigurationLogpushDataset>("logpushDataset", LogpushDataset);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

@@ -11,10 +11,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// Cache options used when creating new Previews.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorkersPreviewsBaseConfigCacheOptions : IAdditionalDataHolder, IParsable
+    public partial class WorkersPreviewsBaseConfigCacheOptions : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether cached responses are shared across Worker versionuploads. This is independent of `enabled`. It can stay truewhile caching is off, so the preference survives turningcaching off and back on.</summary>
         public bool? CrossVersionCache { get; set; }
         /// <summary>Whether caching is enabled for this Worker.</summary>
@@ -24,7 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// </summary>
         public WorkersPreviewsBaseConfigCacheOptions()
         {
-            AdditionalData = new Dictionary<string, object>();
             CrossVersionCache = false;
             Enabled = false;
         }
@@ -59,7 +56,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("cross_version_cache", CrossVersionCache);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

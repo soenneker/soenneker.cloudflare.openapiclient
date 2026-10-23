@@ -18,7 +18,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser.Item.JsonEscaped
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering\devtools\browser\{sessionId}\json
+    /// Builds and executes requests for operations under \accounts\{accountId}\browser-rendering\devtools\browser\{sessionId}\json
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JsonRequestBuilder : BaseRequestBuilder
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JsonRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser/{sessionId}/json{?liveViewUrlExpiresInMs*}", pathParameters)
+        public JsonRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/browser-rendering/devtools/browser/{sessionId}/json{?liveViewUrlExpiresInMs*}", pathParameters)
         {
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JsonRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser/{sessionId}/json{?liveViewUrlExpiresInMs*}", rawUrl)
+        public JsonRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/browser-rendering/devtools/browser/{sessionId}/json{?liveViewUrlExpiresInMs*}", rawUrl)
         {
         }
         /// <summary>

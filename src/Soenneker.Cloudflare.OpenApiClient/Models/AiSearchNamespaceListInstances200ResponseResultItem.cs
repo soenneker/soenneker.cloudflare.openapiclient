@@ -33,13 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cache_threshold property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold? CacheThreshold { get; set; }
         /// <summary>The cache_ttl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheTtl? CacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheTtl CacheTtl { get; set; }
-#endif
+        public int? CacheTtl { get; set; }
         /// <summary>The chunk property</summary>
         public bool? Chunk { get; set; }
         /// <summary>The chunk_overlap property</summary>
@@ -217,13 +211,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SummarizationModel { get; set; }
 #endif
         /// <summary>The sync_interval property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemSyncInterval? SyncInterval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemSyncInterval SyncInterval { get; set; }
-#endif
+        public int? SyncInterval { get; set; }
         /// <summary>The system_prompt_ai_search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -280,7 +268,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_search_model", n => { AiSearchModel = n.GetStringValue(); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
                 { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold>(); } },
-                { "cache_ttl", n => { CacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheTtl.CreateFromDiscriminatorValue); } },
+                { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetDoubleValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetDoubleValue(); } },
@@ -315,7 +303,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "summarization", n => { Summarization = n.GetBoolValue(); } },
                 { "summarization_model", n => { SummarizationModel = n.GetStringValue(); } },
-                { "sync_interval", n => { SyncInterval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemSyncInterval>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemSyncInterval.CreateFromDiscriminatorValue); } },
+                { "sync_interval", n => { SyncInterval = n.GetIntValue(); } },
                 { "system_prompt_ai_search", n => { SystemPromptAiSearch = n.GetStringValue(); } },
                 { "system_prompt_index_summarization", n => { SystemPromptIndexSummarization = n.GetStringValue(); } },
                 { "system_prompt_rewrite_query", n => { SystemPromptRewriteQuery = n.GetStringValue(); } },
@@ -334,7 +322,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheThreshold>("cache_threshold", CacheThreshold);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemCacheTtl>("cache_ttl", CacheTtl);
+            writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteDoubleValue("chunk_overlap", ChunkOverlap);
             writer.WriteDoubleValue("chunk_size", ChunkSize);
@@ -369,7 +357,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteBoolValue("summarization", Summarization);
             writer.WriteStringValue("summarization_model", SummarizationModel);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceListInstances200ResponseResultItemSyncInterval>("sync_interval", SyncInterval);
+            writer.WriteIntValue("sync_interval", SyncInterval);
             writer.WriteStringValue("system_prompt_ai_search", SystemPromptAiSearch);
             writer.WriteStringValue("system_prompt_index_summarization", SystemPromptIndexSummarization);
             writer.WriteStringValue("system_prompt_rewrite_query", SystemPromptRewriteQuery);

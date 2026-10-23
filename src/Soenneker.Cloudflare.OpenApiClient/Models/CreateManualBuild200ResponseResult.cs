@@ -14,6 +14,62 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The build_outcome property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome? BuildOutcome { get; set; }
+        /// <summary>The build_trigger_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse? BuildTriggerMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse BuildTriggerMetadata { get; set; }
+#endif
+        /// <summary>Build UUID.</summary>
+        public Guid? BuildUuid { get; set; }
+        /// <summary>The created_on property</summary>
+        public DateTimeOffset? CreatedOn { get; set; }
+        /// <summary>The deploy_hook property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook? DeployHook { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook DeployHook { get; set; }
+#endif
+        /// <summary>The initializing_on property</summary>
+        public DateTimeOffset? InitializingOn { get; set; }
+        /// <summary>The modified_on property</summary>
+        public DateTimeOffset? ModifiedOn { get; set; }
+        /// <summary>URL serving the Worker version this build deployed. Only returned by Get build by UUID, and only once the build has produced a preview artifact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewUrl { get; set; }
+#nullable restore
+#else
+        public string PreviewUrl { get; set; }
+#endif
+        /// <summary>The pull_request property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest? PullRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest PullRequest { get; set; }
+#endif
+        /// <summary>The running_on property</summary>
+        public DateTimeOffset? RunningOn { get; set; }
+        /// <summary>The status property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus? Status { get; set; }
+        /// <summary>The stopped_on property</summary>
+        public DateTimeOffset? StoppedOn { get; set; }
+        /// <summary>Trigger information without build_token_uuid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger? Trigger { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger Trigger { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CreateManualBuild200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +95,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "build_outcome", n => { BuildOutcome = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome>(); } },
+                { "build_trigger_metadata", n => { BuildTriggerMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse.CreateFromDiscriminatorValue); } },
+                { "build_uuid", n => { BuildUuid = n.GetGuidValue(); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "deploy_hook", n => { DeployHook = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook.CreateFromDiscriminatorValue); } },
+                { "initializing_on", n => { InitializingOn = n.GetDateTimeOffsetValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
+                { "pull_request", n => { PullRequest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest.CreateFromDiscriminatorValue); } },
+                { "running_on", n => { RunningOn = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus>(); } },
+                { "stopped_on", n => { StoppedOn = n.GetDateTimeOffsetValue(); } },
+                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +117,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseBuildOutcome>("build_outcome", BuildOutcome);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildTriggerMetadataResponse>("build_trigger_metadata", BuildTriggerMetadata);
+            writer.WriteGuidValue("build_uuid", BuildUuid);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseDeployHook>("deploy_hook", DeployHook);
+            writer.WriteDateTimeOffsetValue("initializing_on", InitializingOn);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
+            writer.WriteStringValue("preview_url", PreviewUrl);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponsePullRequest>("pull_request", PullRequest);
+            writer.WriteDateTimeOffsetValue("running_on", RunningOn);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildStatus>("status", Status);
+            writer.WriteDateTimeOffsetValue("stopped_on", StoppedOn);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsBuildResponseTrigger>("trigger", Trigger);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

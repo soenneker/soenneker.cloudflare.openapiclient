@@ -93,41 +93,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSource();
-            if("MqEventSourceImages".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("images".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceImages = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceImages();
             }
-            else if("MqEventSourceKv".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("kv".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceKv = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceKv();
             }
-            else if("MqEventSourceR2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("r2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceR2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceR2();
             }
-            else if("MqEventSourceSuperSlurper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("superSlurper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceSuperSlurper = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceSuperSlurper();
             }
-            else if("MqEventSourceVectorize".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("vectorize".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceVectorize = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceVectorize();
             }
-            else if("MqEventSourceWorkersAiModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("workersAi.model".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceWorkersAiModel = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersAiModel();
             }
-            else if("MqEventSourceWorkersBuildsWorker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("workersBuilds.worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceWorkersBuildsWorker = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersBuildsWorker();
             }
-            else if("MqEventSourceWorkersScript".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("workers.script".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceWorkersScript = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkersScript();
             }
-            else if("MqEventSourceWorkflowsWorkflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("workflows.workflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceWorkflowsWorkflow = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqEventSourceWorkflowsWorkflow();
             }

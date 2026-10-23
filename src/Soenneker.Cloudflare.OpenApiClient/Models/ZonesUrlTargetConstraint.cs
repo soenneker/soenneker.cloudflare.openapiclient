@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The matches operator can use asterisks and pipes as wildcard and &apos;or&apos; operators.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStringConstraintOperator? Operator { get; set; }
-        /// <summary>The value to apply the operator to.</summary>
+        /// <summary>The URL pattern to match against the current request. The pattern may contain up to four asterisks (&apos;*&apos;) as placeholders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IpGeolocationId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of adding the IP Geolocation Header.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesIpGeolocationValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesIpGeolocation"/> and sets the default values.

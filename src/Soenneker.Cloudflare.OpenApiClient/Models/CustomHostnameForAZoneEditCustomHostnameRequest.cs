@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>SSL properties used when creating the custom hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpost? Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1? Ssl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpost Ssl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1 Ssl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequest"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "custom_metadata", n => { CustomMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata.CreateFromDiscriminatorValue); } },
                 { "custom_origin_server", n => { CustomOriginServer = n.GetStringValue(); } },
                 { "custom_origin_sni", n => { CustomOriginSni = n.GetStringValue(); } },
-                { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpost>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpost.CreateFromDiscriminatorValue); } },
+                { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomHostnameForAZoneEditCustomHostnameRequestCustomMetadata>("custom_metadata", CustomMetadata);
             writer.WriteStringValue("custom_origin_server", CustomOriginServer);
             writer.WriteStringValue("custom_origin_sni", CustomOriginSni);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpost>("ssl", Ssl);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesSslpostOneOf1>("ssl", Ssl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

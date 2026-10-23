@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Separate cached content based on the visitor&apos;s device type.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheByDeviceTypeId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Cache By Device Type.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheByDeviceTypeValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesCacheByDeviceType"/> and sets the default values.

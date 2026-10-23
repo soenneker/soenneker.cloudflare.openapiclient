@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One.Integrations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\one\integrations
+    /// Builds and executes requests for operations under \accounts\{accountId}\one\integrations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IntegrationsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One.Integrations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntegrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/one/integrations{?application*,direction*,dlp_enabled*,order*,page*,page_size*,search*,status*,use_cases*}", pathParameters)
+        public IntegrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/one/integrations{?application*,direction*,dlp_enabled*,order*,page*,page_size*,search*,status*,use_cases*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One.Integrations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntegrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/one/integrations{?application*,direction*,dlp_enabled*,order*,page*,page_size*,search*,status*,use_cases*}", rawUrl)
+        public IntegrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/one/integrations{?application*,direction*,dlp_enabled*,order*,page*,page_size*,search*,status*,use_cases*}", rawUrl)
         {
         }
         /// <summary>

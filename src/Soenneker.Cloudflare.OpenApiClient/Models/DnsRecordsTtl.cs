@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtlAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="double"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DnsRecordsTtl : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtlAnyOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtlAnyOf2? DnsRecordsTtlAnyOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtlAnyOf2 DnsRecordsTtlAnyOf2 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
         /// <summary>
@@ -36,9 +28,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.Double = doubleValue;
             }
-            else {
-                result.DnsRecordsTtlAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtlAnyOf2();
-            }
             return result;
         }
         /// <summary>
@@ -47,10 +36,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DnsRecordsTtlAnyOf2 != null)
-            {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DnsRecordsTtlAnyOf2);
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -63,9 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(Double != null)
             {
                 writer.WriteDoubleValue(null, Double);
-            }
-            else {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtlAnyOf2>(null, DnsRecordsTtlAnyOf2);
             }
         }
     }

@@ -8,84 +8,75 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// The configuration object containing third-party integration information.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig : IAdditionalDataHolder, IParsable
+    public partial class DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig : IComposedTypeWrapper, IParsable
     {
-        /// <summary>If present, this id will be passed in the `CF-Access-Client-ID` header when hitting the `api_url`.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessClientId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest? TeamsDevicesCrowdstrikeConfigRequest { get; set; }
 #nullable restore
 #else
-        public string AccessClientId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest TeamsDevicesCrowdstrikeConfigRequest { get; set; }
 #endif
-        /// <summary>If present, this secret will be passed in the `CF-Access-Client-Secret` header when hitting the `api_url`.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessClientSecret { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest? TeamsDevicesCustomS2SConfigRequest { get; set; }
 #nullable restore
 #else
-        public string AccessClientSecret { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest TeamsDevicesCustomS2SConfigRequest { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Workspace One API URL provided in the Workspace One Admin Dashboard.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiUrl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest? TeamsDevicesIntuneConfigRequest { get; set; }
 #nullable restore
 #else
-        public string ApiUrl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest TeamsDevicesIntuneConfigRequest { get; set; }
 #endif
-        /// <summary>The Workspace One Authorization URL depending on your region.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthUrl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest? TeamsDevicesKolideConfigRequest { get; set; }
 #nullable restore
 #else
-        public string AuthUrl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest TeamsDevicesKolideConfigRequest { get; set; }
 #endif
-        /// <summary>The Workspace One client ID provided in the Workspace One Admin Dashboard.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest? TeamsDevicesSentineloneS2SConfigRequest { get; set; }
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest TeamsDevicesSentineloneS2SConfigRequest { get; set; }
 #endif
-        /// <summary>The Uptycs client secret.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest? TeamsDevicesTaniumConfigRequest { get; set; }
 #nullable restore
 #else
-        public string ClientKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest TeamsDevicesTaniumConfigRequest { get; set; }
 #endif
-        /// <summary>The Workspace One client secret provided in the Workspace One Admin Dashboard.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest? TeamsDevicesUptycsConfigRequest { get; set; }
 #nullable restore
 #else
-        public string ClientSecret { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest TeamsDevicesUptycsConfigRequest { get; set; }
 #endif
-        /// <summary>The Crowdstrike customer ID.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest? TeamsDevicesWorkspaceOneConfigRequest { get; set; }
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest TeamsDevicesWorkspaceOneConfigRequest { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig"/> and sets the default values.
-        /// </summary>
-        public DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,7 +85,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DevicePostureIntegrationsUpdateDevicePostureIntegrationRequestConfig();
+            if("TeamsDevicesCrowdstrikeConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesCrowdstrikeConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest();
+            }
+            else if("TeamsDevicesCustomS2SConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesCustomS2SConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest();
+            }
+            else if("TeamsDevicesIntuneConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesIntuneConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest();
+            }
+            else if("TeamsDevicesKolideConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesKolideConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest();
+            }
+            else if("TeamsDevicesSentineloneS2SConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesSentineloneS2SConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest();
+            }
+            else if("TeamsDevicesTaniumConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesTaniumConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest();
+            }
+            else if("TeamsDevicesUptycsConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesUptycsConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest();
+            }
+            else if("TeamsDevicesWorkspaceOneConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesWorkspaceOneConfigRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,17 +127,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TeamsDevicesCrowdstrikeConfigRequest != null)
             {
-                { "access_client_id", n => { AccessClientId = n.GetStringValue(); } },
-                { "access_client_secret", n => { AccessClientSecret = n.GetStringValue(); } },
-                { "api_url", n => { ApiUrl = n.GetStringValue(); } },
-                { "auth_url", n => { AuthUrl = n.GetStringValue(); } },
-                { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "client_key", n => { ClientKey = n.GetStringValue(); } },
-                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
-                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-            };
+                return TeamsDevicesCrowdstrikeConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesCustomS2SConfigRequest != null)
+            {
+                return TeamsDevicesCustomS2SConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesIntuneConfigRequest != null)
+            {
+                return TeamsDevicesIntuneConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesKolideConfigRequest != null)
+            {
+                return TeamsDevicesKolideConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesSentineloneS2SConfigRequest != null)
+            {
+                return TeamsDevicesSentineloneS2SConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesTaniumConfigRequest != null)
+            {
+                return TeamsDevicesTaniumConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesUptycsConfigRequest != null)
+            {
+                return TeamsDevicesUptycsConfigRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesWorkspaceOneConfigRequest != null)
+            {
+                return TeamsDevicesWorkspaceOneConfigRequest.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -121,15 +168,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("access_client_id", AccessClientId);
-            writer.WriteStringValue("access_client_secret", AccessClientSecret);
-            writer.WriteStringValue("api_url", ApiUrl);
-            writer.WriteStringValue("auth_url", AuthUrl);
-            writer.WriteStringValue("client_id", ClientId);
-            writer.WriteStringValue("client_key", ClientKey);
-            writer.WriteStringValue("client_secret", ClientSecret);
-            writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TeamsDevicesCrowdstrikeConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCrowdstrikeConfigRequest>(null, TeamsDevicesCrowdstrikeConfigRequest);
+            }
+            else if(TeamsDevicesCustomS2SConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesCustomS2SConfigRequest>(null, TeamsDevicesCustomS2SConfigRequest);
+            }
+            else if(TeamsDevicesIntuneConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesIntuneConfigRequest>(null, TeamsDevicesIntuneConfigRequest);
+            }
+            else if(TeamsDevicesKolideConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesKolideConfigRequest>(null, TeamsDevicesKolideConfigRequest);
+            }
+            else if(TeamsDevicesSentineloneS2SConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesSentineloneS2SConfigRequest>(null, TeamsDevicesSentineloneS2SConfigRequest);
+            }
+            else if(TeamsDevicesTaniumConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesTaniumConfigRequest>(null, TeamsDevicesTaniumConfigRequest);
+            }
+            else if(TeamsDevicesUptycsConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesUptycsConfigRequest>(null, TeamsDevicesUptycsConfigRequest);
+            }
+            else if(TeamsDevicesWorkspaceOneConfigRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevicesWorkspaceOneConfigRequest>(null, TeamsDevicesWorkspaceOneConfigRequest);
+            }
         }
     }
 }

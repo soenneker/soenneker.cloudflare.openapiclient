@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.MqHttpConsumerResponse = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqHttpConsumerResponse();
             }
-            else if("MqWorkerConsumerResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqWorkerConsumerResponse = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerConsumerResponse();
             }

@@ -7,96 +7,68 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntry"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntry"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntry"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntry"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntry"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntry"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntry"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DlpEntry : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DlpEntry : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Only applies to custom word lists.Determines if the words should be matched in a case-sensitive mannerCannot be set to false if secret is true</summary>
-        public bool? CaseSensitive { get; set; }
-        /// <summary>The confidence property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence? Confidence { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntry? DlpEntryCustomEntry { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence Confidence { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntry DlpEntryCustomEntry { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Whether this entry is deprecated for new use. This is computed from the static catalog andemitted only when true.</summary>
-        public bool? Deprecated { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntry? DlpEntryCustomPromptTopicEntry { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntry DlpEntryCustomPromptTopicEntry { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-        [Obsolete("")]
-        public bool? Enabled { get; set; }
-        /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntry? DlpEntryDocumentFingerprintEntry { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntry DlpEntryDocumentFingerprintEntry { get; set; }
 #endif
-        /// <summary>The pattern property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern? Pattern { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntry? DlpEntryExactDataEntry { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern Pattern { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntry DlpEntryExactDataEntry { get; set; }
 #endif
-        /// <summary>The profile_id property</summary>
-        [Obsolete("")]
-        public Guid? ProfileId { get; set; }
-        /// <summary>The secret property</summary>
-        public bool? Secret { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryTypeEnum? Type { get; set; }
-        /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Validators this entry references, by id, at most 10. An empty list means the entryreferences none.Returned by the entry endpoints. Not returned on entries embedded in other responses, suchas profiles.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ValidatorIds { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntry? DlpEntryIntegrationEntry { get; set; }
 #nullable restore
 #else
-        public List<Guid?> ValidatorIds { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntry DlpEntryIntegrationEntry { get; set; }
 #endif
-        /// <summary>The variant property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed? Variant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntry? DlpEntryPredefinedEntry { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed Variant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntry DlpEntryPredefinedEntry { get; set; }
 #endif
-        /// <summary>The word_list property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntry"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WordList { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntry? DlpEntryWordListEntry { get; set; }
 #nullable restore
 #else
-        public List<string> WordList { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntry DlpEntryWordListEntry { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry"/> and sets the default values.
-        /// </summary>
-        public DlpEntry()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,7 +77,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry();
+            if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryCustomEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntry();
+            }
+            else if("custom_prompt_topic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryCustomPromptTopicEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntry();
+            }
+            else if("document_fingerprint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryDocumentFingerprintEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntry();
+            }
+            else if("exact_data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryExactDataEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntry();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryIntegrationEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntry();
+            }
+            else if("predefined".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryPredefinedEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntry();
+            }
+            else if("word_list".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWordListEntry = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntry();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,25 +115,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DlpEntryCustomEntry != null)
             {
-                { "case_sensitive", n => { CaseSensitive = n.GetBoolValue(); } },
-                { "confidence", n => { Confidence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "pattern", n => { Pattern = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern.CreateFromDiscriminatorValue); } },
-                { "profile_id", n => { ProfileId = n.GetGuidValue(); } },
-                { "secret", n => { Secret = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryTypeEnum>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "validator_ids", n => { ValidatorIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "variant", n => { Variant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed.CreateFromDiscriminatorValue); } },
-                { "word_list", n => { WordList = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-            };
+                return DlpEntryCustomEntry.GetFieldDeserializers();
+            }
+            else if(DlpEntryCustomPromptTopicEntry != null)
+            {
+                return DlpEntryCustomPromptTopicEntry.GetFieldDeserializers();
+            }
+            else if(DlpEntryDocumentFingerprintEntry != null)
+            {
+                return DlpEntryDocumentFingerprintEntry.GetFieldDeserializers();
+            }
+            else if(DlpEntryExactDataEntry != null)
+            {
+                return DlpEntryExactDataEntry.GetFieldDeserializers();
+            }
+            else if(DlpEntryIntegrationEntry != null)
+            {
+                return DlpEntryIntegrationEntry.GetFieldDeserializers();
+            }
+            else if(DlpEntryPredefinedEntry != null)
+            {
+                return DlpEntryPredefinedEntry.GetFieldDeserializers();
+            }
+            else if(DlpEntryWordListEntry != null)
+            {
+                return DlpEntryWordListEntry.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -140,23 +152,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("case_sensitive", CaseSensitive);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryConfidence>("confidence", Confidence);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteBoolValue("deprecated", Deprecated);
-            writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteGuidValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPattern>("pattern", Pattern);
-            writer.WriteGuidValue("profile_id", ProfileId);
-            writer.WriteBoolValue("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryTypeEnum>("type", Type);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("validator_ids", ValidatorIds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPredefinedEntryVariantComposed>("variant", Variant);
-            writer.WriteCollectionOfPrimitiveValues<string>("word_list", WordList);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DlpEntryCustomEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomEntry>(null, DlpEntryCustomEntry);
+            }
+            else if(DlpEntryCustomPromptTopicEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryCustomPromptTopicEntry>(null, DlpEntryCustomPromptTopicEntry);
+            }
+            else if(DlpEntryDocumentFingerprintEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryDocumentFingerprintEntry>(null, DlpEntryDocumentFingerprintEntry);
+            }
+            else if(DlpEntryExactDataEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryExactDataEntry>(null, DlpEntryExactDataEntry);
+            }
+            else if(DlpEntryIntegrationEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryIntegrationEntry>(null, DlpEntryIntegrationEntry);
+            }
+            else if(DlpEntryPredefinedEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryPredefinedEntry>(null, DlpEntryPredefinedEntry);
+            }
+            else if(DlpEntryWordListEntry != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWordListEntry>(null, DlpEntryWordListEntry);
+            }
         }
     }
 }

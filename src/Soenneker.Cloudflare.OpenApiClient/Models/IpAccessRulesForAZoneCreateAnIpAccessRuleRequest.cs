@@ -23,14 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration Configuration { get; set; }
 #endif
         /// <summary>The action to apply to a matched request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode? Mode { get; set; }
-        /// <summary>The notes property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestMode? Mode { get; set; }
+        /// <summary>An informative summary of the rule, typically used as a reminder or explanation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestNotes? Notes { get; set; }
+        public string? Notes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestNotes Notes { get; set; }
+        public string Notes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequest"/> and sets the default values.
@@ -58,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration.CreateFromDiscriminatorValue); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode>(); } },
-                { "notes", n => { Notes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestNotes>(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestNotes.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestMode>(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,8 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration>("configuration", Configuration);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode>("mode", Mode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestNotes>("notes", Notes);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAZoneCreateAnIpAccessRuleRequestMode>("mode", Mode);
+            writer.WriteStringValue("notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -40,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGatewayRulesPatchZeroTrustGatewayRuleRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -7,30 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AiSearchCreateInstance409ResponseErrorsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AiSearchCreateInstance409ResponseErrorsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
-        public double? Code { get; set; }
-        /// <summary>The message property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf1? AiSearchCreateInstance409ResponseErrorsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Message { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf1 AiSearchCreateInstance409ResponseErrorsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItem"/> and sets the default values.
-        /// </summary>
-        public AiSearchCreateInstance409ResponseErrorsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf2? AiSearchCreateInstance409ResponseErrorsItemAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf2 AiSearchCreateInstance409ResponseErrorsItemAnyOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf3? AiSearchCreateInstance409ResponseErrorsItemAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf3 AiSearchCreateInstance409ResponseErrorsItemAnyOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +45,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItem();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItem();
+            result.AiSearchCreateInstance409ResponseErrorsItemAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf1();
+            result.AiSearchCreateInstance409ResponseErrorsItemAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf2();
+            result.AiSearchCreateInstance409ResponseErrorsItemAnyOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,11 +57,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AiSearchCreateInstance409ResponseErrorsItemAnyOf1 != null || AiSearchCreateInstance409ResponseErrorsItemAnyOf2 != null || AiSearchCreateInstance409ResponseErrorsItemAnyOf3 != null)
             {
-                { "code", n => { Code = n.GetDoubleValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AiSearchCreateInstance409ResponseErrorsItemAnyOf1, AiSearchCreateInstance409ResponseErrorsItemAnyOf2, AiSearchCreateInstance409ResponseErrorsItemAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -60,9 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("code", Code);
-            writer.WriteStringValue("message", Message);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchCreateInstance409ResponseErrorsItemAnyOf1>(null, AiSearchCreateInstance409ResponseErrorsItemAnyOf1, AiSearchCreateInstance409ResponseErrorsItemAnyOf2, AiSearchCreateInstance409ResponseErrorsItemAnyOf3);
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_groups.Item.Levels.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\sensitivity_groups\{sensitivityGroupId}\levels\{sensitivityLevelId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\dlp\sensitivity_groups\{sensitivityGroupId}\levels\{sensitivityLevelId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSensitivityLevelItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_group
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSensitivityLevelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/sensitivity_groups/{sensitivityGroupId}/levels/{sensitivityLevelId}", pathParameters)
+        public WithSensitivityLevelItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dlp/sensitivity_groups/{sensitivityGroupId}/levels/{sensitivityLevelId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Sensitivity_group
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSensitivityLevelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/sensitivity_groups/{sensitivityGroupId}/levels/{sensitivityLevelId}", rawUrl)
+        public WithSensitivityLevelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dlp/sensitivity_groups/{sensitivityGroupId}/levels/{sensitivityLevelId}", rawUrl)
         {
         }
         /// <summary>

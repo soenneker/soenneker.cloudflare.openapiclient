@@ -42,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DnsSettingsNameserverSetAdvancedResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            IpSet = 1L;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

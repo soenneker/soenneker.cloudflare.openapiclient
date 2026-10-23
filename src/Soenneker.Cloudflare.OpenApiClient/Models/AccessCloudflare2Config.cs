@@ -15,12 +15,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The redirect_url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RedirectUrl { get; private set; }
+#nullable restore
+#else
+        public string RedirectUrl { get; private set; }
+#endif
+        /// <summary>When enabled, only users who are members of your Cloudflare account can authenticate through this identity provider. When disabled, any user with a Cloudflare account can authenticate, subject to your Access policies.</summary>
+        public bool? RestrictToAccountMembers { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflare2Config"/> and sets the default values.
         /// </summary>
         public AccessCloudflare2Config()
         {
             AdditionalData = new Dictionary<string, object>();
+            RestrictToAccountMembers = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +51,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "redirect_url", n => { RedirectUrl = n.GetStringValue(); } },
+                { "restrict_to_account_members", n => { RestrictToAccountMembers = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("restrict_to_account_members", RestrictToAccountMembers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

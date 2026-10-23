@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off Automatic HTTPS Rewrites.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AutomaticHttpsRewritesId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Automatic HTTPS Rewrites.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAutomaticHttpsRewritesValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesAutomaticHttpsRewrites"/> and sets the default values.

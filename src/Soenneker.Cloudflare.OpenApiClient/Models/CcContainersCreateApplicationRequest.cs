@@ -37,13 +37,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("scheduling_policy")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateApplicationRequest();
-            if("CcContainersCreateDurableObjectApplicationRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("durable_object".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CcContainersCreateDurableObjectApplicationRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequest();
             }
-            else if("CcContainersCreateScheduledApplicationRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CcContainersCreateScheduledApplicationRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequest();
             }

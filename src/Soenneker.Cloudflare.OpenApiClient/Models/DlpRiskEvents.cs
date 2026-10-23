@@ -41,13 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The risk_level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel? RiskLevel { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel RiskLevel { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvents"/> and sets the default values.
         /// </summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "last_reset_time", n => { LastResetTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "risk_level", n => { RiskLevel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel.CreateFromDiscriminatorValue); } },
+                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel>(); } },
             };
         }
         /// <summary>
@@ -91,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEvent>("events", Events);
             writer.WriteDateTimeOffsetValue("last_reset_time", LastResetTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel>("risk_level", RiskLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpRiskEventsRiskLevel>("risk_level", RiskLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

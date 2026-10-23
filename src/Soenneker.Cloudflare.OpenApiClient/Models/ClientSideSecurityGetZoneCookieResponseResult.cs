@@ -14,6 +14,70 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The domain_attribute property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainAttribute { get; set; }
+#nullable restore
+#else
+        public string DomainAttribute { get; set; }
+#endif
+        /// <summary>The expires_attribute property</summary>
+        public DateTimeOffset? ExpiresAttribute { get; set; }
+        /// <summary>The first_seen_at property</summary>
+        public DateTimeOffset? FirstSeenAt { get; set; }
+        /// <summary>The host property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Host { get; set; }
+#nullable restore
+#else
+        public string Host { get; set; }
+#endif
+        /// <summary>The http_only_attribute property</summary>
+        public bool? HttpOnlyAttribute { get; set; }
+        /// <summary>Identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; private set; }
+#nullable restore
+#else
+        public string Id { get; private set; }
+#endif
+        /// <summary>The last_seen_at property</summary>
+        public DateTimeOffset? LastSeenAt { get; set; }
+        /// <summary>The max_age_attribute property</summary>
+        public int? MaxAgeAttribute { get; set; }
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The page_urls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PageUrls { get; set; }
+#nullable restore
+#else
+        public List<string> PageUrls { get; set; }
+#endif
+        /// <summary>The path_attribute property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PathAttribute { get; set; }
+#nullable restore
+#else
+        public string PathAttribute { get; set; }
+#endif
+        /// <summary>The same_site_attribute property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute? SameSiteAttribute { get; set; }
+        /// <summary>The secure_attribute property</summary>
+        public bool? SecureAttribute { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityGetZoneCookieResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +103,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "domain_attribute", n => { DomainAttribute = n.GetStringValue(); } },
+                { "expires_attribute", n => { ExpiresAttribute = n.GetDateTimeOffsetValue(); } },
+                { "first_seen_at", n => { FirstSeenAt = n.GetDateTimeOffsetValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "http_only_attribute", n => { HttpOnlyAttribute = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
+                { "max_age_attribute", n => { MaxAgeAttribute = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "page_urls", n => { PageUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "path_attribute", n => { PathAttribute = n.GetStringValue(); } },
+                { "same_site_attribute", n => { SameSiteAttribute = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute>(); } },
+                { "secure_attribute", n => { SecureAttribute = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType>(); } },
             };
         }
         /// <summary>
@@ -48,6 +126,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("domain_attribute", DomainAttribute);
+            writer.WriteDateTimeOffsetValue("expires_attribute", ExpiresAttribute);
+            writer.WriteDateTimeOffsetValue("first_seen_at", FirstSeenAt);
+            writer.WriteStringValue("host", Host);
+            writer.WriteBoolValue("http_only_attribute", HttpOnlyAttribute);
+            writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
+            writer.WriteIntValue("max_age_attribute", MaxAgeAttribute);
+            writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("page_urls", PageUrls);
+            writer.WriteStringValue("path_attribute", PathAttribute);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieSameSiteAttribute>("same_site_attribute", SameSiteAttribute);
+            writer.WriteBoolValue("secure_attribute", SecureAttribute);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ClientSideSecurityCookieType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

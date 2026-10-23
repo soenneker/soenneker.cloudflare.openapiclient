@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>URL ignore pattern identifier.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
         [Obsolete("")]
         public DateTimeOffset? LastModified { get; private set; }
@@ -81,7 +81,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
-            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteAdditionalData(AdditionalData);
         }

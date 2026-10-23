@@ -15,6 +15,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A value to rewrite the HTTP host header to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HostHeader { get; set; }
+#nullable restore
+#else
+        public string HostHeader { get; set; }
+#endif
+        /// <summary>An origin to route to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin? Origin { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin Origin { get; set; }
+#endif
+        /// <summary>A Server Name Indication (SNI) override.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni? Sni { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni Sni { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRuleActionParameters"/> and sets the default values.
         /// </summary>
@@ -40,6 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "host_header", n => { HostHeader = n.GetStringValue(); } },
+                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin.CreateFromDiscriminatorValue); } },
+                { "sni", n => { Sni = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("host_header", HostHeader);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteOrigin>("origin", Origin);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteSni>("sni", Sni);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

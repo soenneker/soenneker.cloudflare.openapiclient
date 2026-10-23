@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Messages { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>Result of a successful object upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2PutObject200ResponseResult? Result { get; set; }

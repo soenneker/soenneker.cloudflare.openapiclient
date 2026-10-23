@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public NamespaceWorkerPutNamespaceRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            TrustedWorkers = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

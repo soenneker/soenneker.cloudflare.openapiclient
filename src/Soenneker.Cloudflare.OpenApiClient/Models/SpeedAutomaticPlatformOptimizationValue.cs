@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SpeedAutomaticPlatformOptimizationValue : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1"/></summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1? SpeedAutomaticPlatformOptimizationValueOneOf1 { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2 SpeedAutomaticPlatformOptimizationValueOneOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueWrapper? SpeedAutomaticPlatformOptimizationValueWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueWrapper SpeedAutomaticPlatformOptimizationValueWrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +33,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValue();
-            if("SpeedAutomaticPlatformOptimizationValueOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1>() is global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1 speedAutomaticPlatformOptimizationValueOneOf1Value)
+            {
+                result.SpeedAutomaticPlatformOptimizationValueOneOf1 = speedAutomaticPlatformOptimizationValueOneOf1Value;
+            }
+            else if("SpeedAutomaticPlatformOptimizationValueOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SpeedAutomaticPlatformOptimizationValueOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2();
-            }
-            else if("SpeedAutomaticPlatformOptimizationValueWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SpeedAutomaticPlatformOptimizationValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueWrapper();
             }
             return result;
         }
@@ -59,10 +53,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return SpeedAutomaticPlatformOptimizationValueOneOf2.GetFieldDeserializers();
             }
-            else if(SpeedAutomaticPlatformOptimizationValueWrapper != null)
-            {
-                return SpeedAutomaticPlatformOptimizationValueWrapper.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +62,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SpeedAutomaticPlatformOptimizationValueOneOf2 != null)
+            if(SpeedAutomaticPlatformOptimizationValueOneOf1 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf1>(null, SpeedAutomaticPlatformOptimizationValueOneOf1);
+            }
+            else if(SpeedAutomaticPlatformOptimizationValueOneOf2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueOneOf2>(null, SpeedAutomaticPlatformOptimizationValueOneOf2);
-            }
-            else if(SpeedAutomaticPlatformOptimizationValueWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpeedAutomaticPlatformOptimizationValueWrapper>(null, SpeedAutomaticPlatformOptimizationValueWrapper);
             }
         }
     }

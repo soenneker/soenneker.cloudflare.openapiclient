@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DnsCustomNameserversCustomNsInput()
         {
             AdditionalData = new Dictionary<string, object>();
+            NsSet = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

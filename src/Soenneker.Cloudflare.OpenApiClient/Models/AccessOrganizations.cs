@@ -136,6 +136,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccessOrganizations()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowAuthenticateViaWarp = false;
+            AutoRedirectToIdentity = false;
+            DisableEndUserAppCreation = false;
+            IsUiReadOnly = false;
+            MfaRequiredForAllApps = false;
+            WarpAuthNonBrowser401 = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,30 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// `default`: every event dataset the account can read: Cloudforce One intelligence, datasets shared with the account, and the account&apos;s own datasets, such as Threat Signals. `datasets`: explicit dataset IDs. Analytics datasets are not matched. An active PIR can cover at most 50 datasets. Access is rechecked whenever the PIR is matched.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PutPirUpdateRequestDatasetScope : IAdditionalDataHolder, IParsable
+    public partial class PutPirUpdateRequestDatasetScope : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dataset_ids property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? DatasetIds { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf1? PutPirUpdateRequestDatasetScopeOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<Guid?> DatasetIds { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf1 PutPirUpdateRequestDatasetScopeOneOf1 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope"/> and sets the default values.
-        /// </summary>
-        public PutPirUpdateRequestDatasetScope()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf2? PutPirUpdateRequestDatasetScopeOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf2 PutPirUpdateRequestDatasetScopeOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScope();
+            if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PutPirUpdateRequestDatasetScopeOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf1();
+            }
+            else if("datasets".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PutPirUpdateRequestDatasetScopeOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PutPirUpdateRequestDatasetScopeOneOf1 != null)
             {
-                { "dataset_ids", n => { DatasetIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeType>(); } },
-            };
+                return PutPirUpdateRequestDatasetScopeOneOf1.GetFieldDeserializers();
+            }
+            else if(PutPirUpdateRequestDatasetScopeOneOf2 != null)
+            {
+                return PutPirUpdateRequestDatasetScopeOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,9 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("dataset_ids", DatasetIds);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PutPirUpdateRequestDatasetScopeOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf1>(null, PutPirUpdateRequestDatasetScopeOneOf1);
+            }
+            else if(PutPirUpdateRequestDatasetScopeOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutPirUpdateRequestDatasetScopeOneOf2>(null, PutPirUpdateRequestDatasetScopeOneOf2);
+            }
         }
     }
 }

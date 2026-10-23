@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\zerotrust\subnets
+    /// Builds and executes requests for operations under \accounts\{accountId}\zerotrust\subnets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubnetsRequestBuilder : BaseRequestBuilder
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubnetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", pathParameters)
+        public SubnetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubnetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", rawUrl)
+        public SubnetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/zerotrust/subnets{?address_family*,comment*,existed_at*,is_default_network*,is_deleted*,name*,network*,page*,per_page*,sort_order*,subnet_types*}", rawUrl)
         {
         }
         /// <summary>

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Origin CA certificate. Will be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Certificate { get; set; }
+        public string? Certificate { get; private set; }
 #nullable restore
 #else
-        public string Certificate { get; set; }
+        public string Certificate { get; private set; }
 #endif
         /// <summary>The Certificate Signing Request (CSR). Must be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the certificate will expire.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresOn { get; set; }
+        public string? ExpiresOn { get; private set; }
 #nullable restore
 #else
-        public string ExpiresOn { get; set; }
+        public string ExpiresOn { get; private set; }
 #endif
         /// <summary>Array of hostnames or wildcard names bound to the certificate.Hostnames must be fully qualified domain names (FQDNs) belonging to zones on your account (e.g., `example.com` or `sub.example.com`). Wildcards are supported only as a `*.` prefix for a single level (e.g., `*.example.com`). Double wildcards (`*.*.example.com`) and interior wildcards (`foo.*.example.com`) are not allowed. The wildcard suffix must be a multi-label domain (`*.example.com` is valid, but `*.com` is not). Unicode/IDN hostnames are accepted and automatically converted to punycode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The x509 serial number of the Origin CA certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The number of days for which the certificate should be valid.</summary>
         public double? RequestedValidity { get; set; }
@@ -100,11 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("certificate", Certificate);
             writer.WriteStringValue("csr", Csr);
-            writer.WriteStringValue("expires_on", ExpiresOn);
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
-            writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("requested_validity", RequestedValidity);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesRequestType>("request_type", RequestType);
             writer.WriteAdditionalData(AdditionalData);

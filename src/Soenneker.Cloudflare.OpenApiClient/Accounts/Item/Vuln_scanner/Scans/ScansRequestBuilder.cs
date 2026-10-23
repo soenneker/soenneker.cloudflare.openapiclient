@@ -13,15 +13,15 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Scans
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\vuln_scanner\scans
+    /// Builds and executes requests for operations under \accounts\{accountId}\vuln_scanner\scans
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScansRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.vuln_scanner.scans.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Scan identifier.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Scans.Item.WithScanItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Scans.Item.WithScanItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Scans.Item.WithScanItemRequestBuilder this[Guid position]
         {
             get
             {
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Scans
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScansRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vuln_scanner/scans{?page*,per_page*}", pathParameters)
+        public ScansRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/vuln_scanner/scans{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Scans
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vuln_scanner/scans{?page*,per_page*}", rawUrl)
+        public ScansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/vuln_scanner/scans{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

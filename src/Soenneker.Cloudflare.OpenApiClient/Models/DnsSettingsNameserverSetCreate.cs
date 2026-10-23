@@ -33,6 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Advanced = false;
+            IpSet = 1L;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

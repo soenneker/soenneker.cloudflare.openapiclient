@@ -7,140 +7,124 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The branches property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemBranchesItem>? Branches { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemBranchesItem> Branches { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1 { get; set; }
 #endif
-        /// <summary>The catch_block property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemCatchBlock? CatchBlock { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemCatchBlock CatchBlock { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10 { get; set; }
 #endif
-        /// <summary>The class_name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11 { get; set; }
 #nullable restore
 #else
-        public string ClassName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11 { get; set; }
 #endif
-        /// <summary>Configuration for a step (retries and timeout).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemConfig? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemConfig Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12 { get; set; }
 #endif
-        /// <summary>The discriminant property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Discriminant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13 { get; set; }
 #nullable restore
 #else
-        public string Discriminant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13 { get; set; }
 #endif
-        /// <summary>Duration as milliseconds (number) or human-readable string.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration? Duration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration Duration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14 { get; set; }
 #endif
-        /// <summary>The finally_block property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFinallyBlock? FinallyBlock { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFinallyBlock FinallyBlock { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2 { get; set; }
 #endif
-        /// <summary>The functions property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFunctions? Functions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFunctions Functions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3 { get; set; }
 #endif
-        /// <summary>Parallel execution strategy.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemKind? Kind { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4 { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4 { get; set; }
 #endif
-        /// <summary>Child nodes (recursive).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemNodesItem>? Nodes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemNodesItem> Nodes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5 { get; set; }
 #endif
-        /// <summary>Options for a waitForEvent step.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOptions? Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOptions Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6 { get; set; }
 #endif
-        /// <summary>Shape descriptor for JSON payloads.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemPayload? Payload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemPayload Payload { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7 { get; set; }
 #endif
-        /// <summary>The resolves property</summary>
-        public double? Resolves { get; set; }
-        /// <summary>The starts property</summary>
-        public double? Starts { get; set; }
-        /// <summary>The timestamp property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8 { get; set; }
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8 { get; set; }
 #endif
-        /// <summary>The try_block property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemTryBlock? TryBlock { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemTryBlock TryBlock { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem"/> and sets the default values.
-        /// </summary>
-        public WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -149,7 +133,65 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem();
+            if("step_sleep".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1();
+            }
+            else if("switch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10();
+            }
+            else if("start".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11();
+            }
+            else if("function_call".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12();
+            }
+            else if("function_def".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13();
+            }
+            else if("break".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14();
+            }
+            else if("step_do".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2();
+            }
+            else if("step_wait_for_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3();
+            }
+            else if("step_sleep_until".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4();
+            }
+            else if("loop".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5();
+            }
+            else if("parallel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6();
+            }
+            else if("try".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7();
+            }
+            else if("block".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8();
+            }
+            else if("if".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,27 +199,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1 != null)
             {
-                { "branches", n => { Branches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemBranchesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemBranchesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "catch_block", n => { CatchBlock = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemCatchBlock>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemCatchBlock.CreateFromDiscriminatorValue); } },
-                { "class_name", n => { ClassName = n.GetStringValue(); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemConfig.CreateFromDiscriminatorValue); } },
-                { "discriminant", n => { Discriminant = n.GetStringValue(); } },
-                { "duration", n => { Duration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration.CreateFromDiscriminatorValue); } },
-                { "finally_block", n => { FinallyBlock = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFinallyBlock>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFinallyBlock.CreateFromDiscriminatorValue); } },
-                { "functions", n => { Functions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFunctions>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFunctions.CreateFromDiscriminatorValue); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemKind>(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemNodesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemNodesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOptions.CreateFromDiscriminatorValue); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemPayload>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemPayload.CreateFromDiscriminatorValue); } },
-                { "resolves", n => { Resolves = n.GetDoubleValue(); } },
-                { "starts", n => { Starts = n.GetDoubleValue(); } },
-                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
-                { "try_block", n => { TryBlock = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemTryBlock>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemTryBlock.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemType>(); } },
-            };
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -186,85 +264,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemBranchesItem>("branches", Branches);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemCatchBlock>("catch_block", CatchBlock);
-            writer.WriteStringValue("class_name", ClassName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemConfig>("config", Config);
-            writer.WriteStringValue("discriminant", Discriminant);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration>("duration", Duration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFinallyBlock>("finally_block", FinallyBlock);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemFunctions>("functions", Functions);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemKind>("kind", Kind);
-            writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemNodesItem>("nodes", Nodes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOptions>("options", Options);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemPayload>("payload", Payload);
-            writer.WriteDoubleValue("resolves", Resolves);
-            writer.WriteDoubleValue("starts", Starts);
-            writer.WriteStringValue("timestamp", Timestamp);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemTryBlock>("try_block", TryBlock);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration CreateFromDiscriminatorValue(IParseNode parseNode)
+            if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1 != null)
             {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItem_duration();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf1);
             }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10 != null)
             {
-                return new Dictionary<string, Action<IParseNode>>();
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf10);
             }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11 != null)
             {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf11);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf12);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf13);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf14);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf2);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf3);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf4);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf5);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf6);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf7);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf8);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowNodesItemOneOf9);
             }
         }
     }

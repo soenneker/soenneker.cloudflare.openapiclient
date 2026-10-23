@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\builds\triggers\{triggerUuid}\environment_variables\{environmentVariableKey}
+    /// Builds and executes requests for operations under \accounts\{accountId}\builds\triggers\{triggerUuid}\environment_variables\{environmentVariableKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithEnvironmentVariableKeyItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironmentVariableKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/triggers/{triggerUuid}/environment_variables/{environmentVariableKey}", pathParameters)
+        public WithEnvironmentVariableKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/triggers/{triggerUuid}/environment_variables/{environmentVariableKey}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironmentVariableKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/triggers/{triggerUuid}/environment_variables/{environmentVariableKey}", rawUrl)
+        public WithEnvironmentVariableKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/triggers/{triggerUuid}/environment_variables/{environmentVariableKey}", rawUrl)
         {
         }
         /// <summary>

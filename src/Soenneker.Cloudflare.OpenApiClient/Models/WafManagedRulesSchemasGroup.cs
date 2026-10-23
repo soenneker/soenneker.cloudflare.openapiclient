@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the available states for the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode?>? AllowedModes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode?>? AllowedModes { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode?> AllowedModes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode?> AllowedModes { get; private set; }
 #endif
         /// <summary>Defines an informative summary of what the rule group does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,39 +33,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the unique identifier of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Defines the state of the rules contained in the rule group. When `on`, the rules in the group are configurable/usable.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode? Mode { get; set; }
         /// <summary>Defines the number of rules within the group that have been modified from their default configuration.</summary>
-        public double? ModifiedRulesCount { get; set; }
+        public double? ModifiedRulesCount { get; private set; }
         /// <summary>Defines the name of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get; private set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get; private set; }
 #endif
         /// <summary>Defines the unique identifier of a WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId { get; set; }
+        public string? PackageId { get; private set; }
 #nullable restore
 #else
-        public string PackageId { get; set; }
+        public string PackageId { get; private set; }
 #endif
         /// <summary>Defines the number of rules in the current rule group.</summary>
-        public double? RulesCount { get; set; }
+        public double? RulesCount { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesSchemasGroup"/> and sets the default values.
         /// </summary>
         public WafManagedRulesSchemasGroup()
         {
             AdditionalData = new Dictionary<string, object>();
+            ModifiedRulesCount = 0;
+            RulesCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,13 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode>("allowed_modes", AllowedModes);
-            writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesMode>("mode", Mode);
-            writer.WriteDoubleValue("modified_rules_count", ModifiedRulesCount);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("package_id", PackageId);
-            writer.WriteDoubleValue("rules_count", RulesCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

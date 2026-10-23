@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Messages { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>Descriptor of a bucket background job, discriminated by `jobType`. Returned by theCreate Bucket Job, Get Bucket Job and List Bucket Jobs endpoints. A small operation canalready be `COMPLETED` when it is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateBucketJob200ResponseResult? Result { get; set; }

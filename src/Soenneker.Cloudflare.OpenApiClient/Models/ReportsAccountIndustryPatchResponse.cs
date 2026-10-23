@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Industry string value</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry? Industry { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry Industry { get; set; }
-#endif
         /// <summary>Time when the industry can be updated again</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "industry", n => { Industry = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry.CreateFromDiscriminatorValue); } },
+                { "industry", n => { Industry = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry>(); } },
                 { "unlock_time", n => { UnlockTime = n.GetStringValue(); } },
                 { "valid_from", n => { ValidFrom = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -78,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry>("industry", Industry);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsAccountIndustryPatchResponseIndustry>("industry", Industry);
             writer.WriteStringValue("unlock_time", UnlockTime);
             writer.WriteStringValue("valid_from", ValidFrom);
             writer.WriteIntValue("version", Version);

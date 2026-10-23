@@ -539,39 +539,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingTaggedResourceObjectR2Bucket = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectR2Bucket();
             }
-            else if("ResourceTaggingTaggedResourceObjectResourceShare".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("resource_share".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectResourceShare = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectResourceShare();
             }
-            else if("ResourceTaggingTaggedResourceObjectStreamLiveInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("stream_live_input".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectStreamLiveInput = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamLiveInput();
             }
-            else if("ResourceTaggingTaggedResourceObjectStreamVideo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("stream_video".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectStreamVideo = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectStreamVideo();
             }
-            else if("ResourceTaggingTaggedResourceObjectVectorizeIndex".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("vectorize_index".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectVectorizeIndex = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectVectorizeIndex();
             }
-            else if("ResourceTaggingTaggedResourceObjectWorker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectWorker = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorker();
             }
-            else if("ResourceTaggingTaggedResourceObjectWorkerRoute".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker_route".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectWorkerRoute = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerRoute();
             }
-            else if("ResourceTaggingTaggedResourceObjectWorkerVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker_version".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectWorkerVersion = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectWorkerVersion();
             }
-            else if("ResourceTaggingTaggedResourceObjectZone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("zone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectZone = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZone();
             }
-            else if("ResourceTaggingTaggedResourceObjectZoneRuleset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("zone_ruleset".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingTaggedResourceObjectZoneRuleset = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRuleset();
             }

@@ -92,6 +92,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WaitingroomQueryEvent()
         {
             AdditionalData = new Dictionary<string, object>();
+            ShuffleAtEventStart = false;
+            Suspended = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

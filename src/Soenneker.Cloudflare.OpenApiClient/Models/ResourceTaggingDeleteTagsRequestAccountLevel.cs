@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingDeleteTagsRequestAccountLevelBase = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelBase();
             }
-            else if("ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker_version".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingDeleteTagsRequestAccountLevelWorkerVersion();
             }

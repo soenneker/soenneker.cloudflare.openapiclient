@@ -57,13 +57,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmLikelyConfigAllOf2StaleZoneConfiguration StaleZoneConfiguration { get; private set; }
 #endif
         /// <summary>A read-only field that indicates whether the zone currently is running the latest ML model.</summary>
-        public bool? UsingLatestModel { get; set; }
+        public bool? UsingLatestModel { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmLikelyConfig"/> and sets the default values.
         /// </summary>
         public BotManagementSbfmLikelyConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            AiBotsMigrationOptOut = false;
+            BotPreferenceSyncEnabled = false;
+            IsRobotsTxtManaged = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -128,7 +131,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmLikelyAutomated>("sbfm_likely_automated", SbfmLikelyAutomated);
             writer.WriteBoolValue("sbfm_static_resource_protection", SbfmStaticResourceProtection);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementSbfmVerifiedBots>("sbfm_verified_bots", SbfmVerifiedBots);
-            writer.WriteBoolValue("using_latest_model", UsingLatestModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

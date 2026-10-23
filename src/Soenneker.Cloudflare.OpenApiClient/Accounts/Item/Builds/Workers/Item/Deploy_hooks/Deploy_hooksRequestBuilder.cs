@@ -13,15 +13,15 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\builds\workers\{externalScript-id}\deploy_hooks
+    /// Builds and executes requests for operations under \accounts\{accountId}\builds\workers\{externalScriptId}\deploy_hooks
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Deploy_hooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.workers.item.deploy_hooks.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Deploy hook UUID</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks.Item.WithDeployHookUuItemRequestBuilder this[Guid position]
         {
             get
             {
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deploy_hooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/workers/{externalScript%2Did}/deploy_hooks", pathParameters)
+        public Deploy_hooksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/workers/{externalScriptId}/deploy_hooks", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deploy_hooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/workers/{externalScript%2Did}/deploy_hooks", rawUrl)
+        public Deploy_hooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/workers/{externalScriptId}/deploy_hooks", rawUrl)
         {
         }
         /// <summary>

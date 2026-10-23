@@ -56,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public KeylessSslForAZoneCreateKeylessSslConfigurationRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Port = 24008;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

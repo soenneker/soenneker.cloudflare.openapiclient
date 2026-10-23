@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Domain that requires TLS enforcement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,11 +42,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Exclude { get; set; }
 #endif
         /// <summary>Sending domain restriction identifier.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
-        public DateTimeOffset? LastModified { get; set; }
+        [Obsolete("")]
+        public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySendingDomainRestriction"/> and sets the default values.
         /// </summary>
@@ -89,12 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfPrimitiveValues<string>("exclude", Exclude);
-            writer.WriteGuidValue("id", Id);
-            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

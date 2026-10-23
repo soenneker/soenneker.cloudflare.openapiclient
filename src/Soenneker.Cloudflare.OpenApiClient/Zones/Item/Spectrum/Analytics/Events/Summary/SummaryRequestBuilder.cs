@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\spectrum\analytics\events\summary
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\spectrum\analytics\events\summary
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
+        public SummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
+        public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,13 +94,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
 #nullable enable
             #pragma warning disable CS1591
             [QueryParameter("dimensions")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsDimensionsItem[]? Dimensions { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsSummaryGetAnalyticsSummaryDimensionsParameterItem[]? Dimensions { get; set; }
             #pragma warning restore CS1591
 #nullable restore
 #else
             #pragma warning disable CS1591
             [QueryParameter("dimensions")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsDimensionsItem[] Dimensions { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsSummaryGetAnalyticsSummaryDimensionsParameterItem[] Dimensions { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,13 +120,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
 #nullable enable
             #pragma warning disable CS1591
             [QueryParameter("metrics")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsMetricsItem[]? Metrics { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsSummaryGetAnalyticsSummaryMetricsParameterItem[]? Metrics { get; set; }
             #pragma warning restore CS1591
 #nullable restore
 #else
             #pragma warning disable CS1591
             [QueryParameter("metrics")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsMetricsItem[] Metrics { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalyticsSummaryGetAnalyticsSummaryMetricsParameterItem[] Metrics { get; set; }
             #pragma warning restore CS1591
 #endif
             #pragma warning disable CS1591

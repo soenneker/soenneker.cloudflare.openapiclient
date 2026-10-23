@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\abuse-reports
+    /// Builds and executes requests for operations under \accounts\{accountId}\abuse-reports
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbuseReportsRequestBuilder : BaseRequestBuilder
@@ -26,14 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.abuseReports.item collection</summary>
         /// <param name="position">Public report ID.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.ReportItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.ReportItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReportItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReportItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("report%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.ReportItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("reportId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReportItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", pathParameters)
+        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", rawUrl)
+        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,search*,sort*,status*,type*}", rawUrl)
         {
         }
         /// <summary>

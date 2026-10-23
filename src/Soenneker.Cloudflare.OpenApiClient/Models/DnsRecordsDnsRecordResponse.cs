@@ -7,46 +7,180 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DnsRecordsDnsRecordResponse : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DnsRecordsDnsRecordResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When the record comment was last modified. Omitted if there is no comment.</summary>
-        public DateTimeOffset? CommentModifiedOn { get; private set; }
-        /// <summary>When the record was created.</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
-        /// <summary>Identifier.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA? DnsRecordsDnsRecordResponseA { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA DnsRecordsDnsRecordResponseA { get; set; }
 #endif
-        /// <summary>Extra Cloudflare-specific metadata about the record.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAllOf2Meta? Meta { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa? DnsRecordsDnsRecordResponseAaaa { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAllOf2Meta Meta { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa DnsRecordsDnsRecordResponseAaaa { get; set; }
 #endif
-        /// <summary>When the record was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>Whether the record can be proxied by Cloudflare or not.</summary>
-        public bool? Proxiable { get; private set; }
-        /// <summary>When the record tags were last modified. Omitted if there are no tags.</summary>
-        public DateTimeOffset? TagsModifiedOn { get; private set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse"/> and sets the default values.
-        /// </summary>
-        public DnsRecordsDnsRecordResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa? DnsRecordsDnsRecordResponseCaa { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa DnsRecordsDnsRecordResponseCaa { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert? DnsRecordsDnsRecordResponseCert { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert DnsRecordsDnsRecordResponseCert { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname? DnsRecordsDnsRecordResponseCname { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname DnsRecordsDnsRecordResponseCname { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey? DnsRecordsDnsRecordResponseDnskey { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey DnsRecordsDnsRecordResponseDnskey { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs? DnsRecordsDnsRecordResponseDs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs DnsRecordsDnsRecordResponseDs { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps? DnsRecordsDnsRecordResponseHttps { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps DnsRecordsDnsRecordResponseHttps { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc? DnsRecordsDnsRecordResponseLoc { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc DnsRecordsDnsRecordResponseLoc { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx? DnsRecordsDnsRecordResponseMx { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx DnsRecordsDnsRecordResponseMx { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr? DnsRecordsDnsRecordResponseNaptr { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr DnsRecordsDnsRecordResponseNaptr { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs? DnsRecordsDnsRecordResponseNs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs DnsRecordsDnsRecordResponseNs { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey? DnsRecordsDnsRecordResponseOpenpgpkey { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey DnsRecordsDnsRecordResponseOpenpgpkey { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr? DnsRecordsDnsRecordResponsePtr { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr DnsRecordsDnsRecordResponsePtr { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea? DnsRecordsDnsRecordResponseSmimea { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea DnsRecordsDnsRecordResponseSmimea { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv? DnsRecordsDnsRecordResponseSrv { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv DnsRecordsDnsRecordResponseSrv { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp? DnsRecordsDnsRecordResponseSshfp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp DnsRecordsDnsRecordResponseSshfp { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb? DnsRecordsDnsRecordResponseSvcb { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb DnsRecordsDnsRecordResponseSvcb { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa? DnsRecordsDnsRecordResponseTlsa { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa DnsRecordsDnsRecordResponseTlsa { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt? DnsRecordsDnsRecordResponseTxt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt DnsRecordsDnsRecordResponseTxt { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri? DnsRecordsDnsRecordResponseUri { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri DnsRecordsDnsRecordResponseUri { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +189,93 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponse();
+            if("A".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseA = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA();
+            }
+            else if("AAAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseAaaa = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa();
+            }
+            else if("CAA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseCaa = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa();
+            }
+            else if("CERT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseCert = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert();
+            }
+            else if("CNAME".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseCname = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname();
+            }
+            else if("DNSKEY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseDnskey = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey();
+            }
+            else if("DS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseDs = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs();
+            }
+            else if("HTTPS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseHttps = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps();
+            }
+            else if("LOC".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseLoc = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc();
+            }
+            else if("MX".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseMx = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx();
+            }
+            else if("NAPTR".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseNaptr = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr();
+            }
+            else if("NS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseNs = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs();
+            }
+            else if("OPENPGPKEY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseOpenpgpkey = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey();
+            }
+            else if("PTR".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponsePtr = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr();
+            }
+            else if("SMIMEA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseSmimea = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea();
+            }
+            else if("SRV".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseSrv = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv();
+            }
+            else if("SSHFP".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseSshfp = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp();
+            }
+            else if("SVCB".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseSvcb = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb();
+            }
+            else if("TLSA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseTlsa = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa();
+            }
+            else if("TXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseTxt = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt();
+            }
+            else if("URI".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsRecordsDnsRecordResponseUri = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,16 +283,91 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DnsRecordsDnsRecordResponseA != null)
             {
-                { "comment_modified_on", n => { CommentModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAllOf2Meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAllOf2Meta.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "proxiable", n => { Proxiable = n.GetBoolValue(); } },
-                { "tags_modified_on", n => { TagsModifiedOn = n.GetDateTimeOffsetValue(); } },
-            };
+                return DnsRecordsDnsRecordResponseA.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseAaaa != null)
+            {
+                return DnsRecordsDnsRecordResponseAaaa.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseCaa != null)
+            {
+                return DnsRecordsDnsRecordResponseCaa.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseCert != null)
+            {
+                return DnsRecordsDnsRecordResponseCert.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseCname != null)
+            {
+                return DnsRecordsDnsRecordResponseCname.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseDnskey != null)
+            {
+                return DnsRecordsDnsRecordResponseDnskey.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseDs != null)
+            {
+                return DnsRecordsDnsRecordResponseDs.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseHttps != null)
+            {
+                return DnsRecordsDnsRecordResponseHttps.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseLoc != null)
+            {
+                return DnsRecordsDnsRecordResponseLoc.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseMx != null)
+            {
+                return DnsRecordsDnsRecordResponseMx.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseNaptr != null)
+            {
+                return DnsRecordsDnsRecordResponseNaptr.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseNs != null)
+            {
+                return DnsRecordsDnsRecordResponseNs.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseOpenpgpkey != null)
+            {
+                return DnsRecordsDnsRecordResponseOpenpgpkey.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponsePtr != null)
+            {
+                return DnsRecordsDnsRecordResponsePtr.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseSmimea != null)
+            {
+                return DnsRecordsDnsRecordResponseSmimea.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseSrv != null)
+            {
+                return DnsRecordsDnsRecordResponseSrv.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseSshfp != null)
+            {
+                return DnsRecordsDnsRecordResponseSshfp.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseSvcb != null)
+            {
+                return DnsRecordsDnsRecordResponseSvcb.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseTlsa != null)
+            {
+                return DnsRecordsDnsRecordResponseTlsa.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseTxt != null)
+            {
+                return DnsRecordsDnsRecordResponseTxt.GetFieldDeserializers();
+            }
+            else if(DnsRecordsDnsRecordResponseUri != null)
+            {
+                return DnsRecordsDnsRecordResponseUri.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,8 +376,90 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DnsRecordsDnsRecordResponseA != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseA>(null, DnsRecordsDnsRecordResponseA);
+            }
+            else if(DnsRecordsDnsRecordResponseAaaa != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseAaaa>(null, DnsRecordsDnsRecordResponseAaaa);
+            }
+            else if(DnsRecordsDnsRecordResponseCaa != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCaa>(null, DnsRecordsDnsRecordResponseCaa);
+            }
+            else if(DnsRecordsDnsRecordResponseCert != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCert>(null, DnsRecordsDnsRecordResponseCert);
+            }
+            else if(DnsRecordsDnsRecordResponseCname != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseCname>(null, DnsRecordsDnsRecordResponseCname);
+            }
+            else if(DnsRecordsDnsRecordResponseDnskey != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDnskey>(null, DnsRecordsDnsRecordResponseDnskey);
+            }
+            else if(DnsRecordsDnsRecordResponseDs != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseDs>(null, DnsRecordsDnsRecordResponseDs);
+            }
+            else if(DnsRecordsDnsRecordResponseHttps != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseHttps>(null, DnsRecordsDnsRecordResponseHttps);
+            }
+            else if(DnsRecordsDnsRecordResponseLoc != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseLoc>(null, DnsRecordsDnsRecordResponseLoc);
+            }
+            else if(DnsRecordsDnsRecordResponseMx != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseMx>(null, DnsRecordsDnsRecordResponseMx);
+            }
+            else if(DnsRecordsDnsRecordResponseNaptr != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNaptr>(null, DnsRecordsDnsRecordResponseNaptr);
+            }
+            else if(DnsRecordsDnsRecordResponseNs != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseNs>(null, DnsRecordsDnsRecordResponseNs);
+            }
+            else if(DnsRecordsDnsRecordResponseOpenpgpkey != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseOpenpgpkey>(null, DnsRecordsDnsRecordResponseOpenpgpkey);
+            }
+            else if(DnsRecordsDnsRecordResponsePtr != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponsePtr>(null, DnsRecordsDnsRecordResponsePtr);
+            }
+            else if(DnsRecordsDnsRecordResponseSmimea != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSmimea>(null, DnsRecordsDnsRecordResponseSmimea);
+            }
+            else if(DnsRecordsDnsRecordResponseSrv != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSrv>(null, DnsRecordsDnsRecordResponseSrv);
+            }
+            else if(DnsRecordsDnsRecordResponseSshfp != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSshfp>(null, DnsRecordsDnsRecordResponseSshfp);
+            }
+            else if(DnsRecordsDnsRecordResponseSvcb != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseSvcb>(null, DnsRecordsDnsRecordResponseSvcb);
+            }
+            else if(DnsRecordsDnsRecordResponseTlsa != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTlsa>(null, DnsRecordsDnsRecordResponseTlsa);
+            }
+            else if(DnsRecordsDnsRecordResponseTxt != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseTxt>(null, DnsRecordsDnsRecordResponseTxt);
+            }
+            else if(DnsRecordsDnsRecordResponseUri != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordResponseUri>(null, DnsRecordsDnsRecordResponseUri);
+            }
         }
     }
 }

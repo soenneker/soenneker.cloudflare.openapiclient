@@ -15,6 +15,110 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? Immutable { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective Immutable { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? MaxAge { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue MaxAge { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? MustRevalidate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective MustRevalidate { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? MustUnderstand { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective MustUnderstand { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration that accepts optional qualifiers (header names).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? NoCache { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers NoCache { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? NoStore { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective NoStore { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? NoTransform { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective NoTransform { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration that accepts optional qualifiers (header names).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers? Private { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers Private { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? ProxyRevalidate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective ProxyRevalidate { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective? Public { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective Public { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? SMaxage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue SMaxage { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? StaleIfError { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue StaleIfError { get; set; }
+#endif
+        /// <summary>A cache-control directive configuration that accepts a duration value in seconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue? StaleWhileRevalidate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue StaleWhileRevalidate { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRuleActionParameters"/> and sets the default values.
         /// </summary>
@@ -40,6 +144,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "immutable", n => { Immutable = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "max-age", n => { MaxAge = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue.CreateFromDiscriminatorValue); } },
+                { "must-revalidate", n => { MustRevalidate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "must-understand", n => { MustUnderstand = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "no-cache", n => { NoCache = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers.CreateFromDiscriminatorValue); } },
+                { "no-store", n => { NoStore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "no-transform", n => { NoTransform = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "private", n => { Private = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers.CreateFromDiscriminatorValue); } },
+                { "proxy-revalidate", n => { ProxyRevalidate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "public", n => { Public = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective.CreateFromDiscriminatorValue); } },
+                { "s-maxage", n => { SMaxage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue.CreateFromDiscriminatorValue); } },
+                { "stale-if-error", n => { StaleIfError = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue.CreateFromDiscriminatorValue); } },
+                { "stale-while-revalidate", n => { StaleWhileRevalidate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +166,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("immutable", Immutable);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>("max-age", MaxAge);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("must-revalidate", MustRevalidate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("must-understand", MustUnderstand);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers>("no-cache", NoCache);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("no-store", NoStore);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("no-transform", NoTransform);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithQualifiers>("private", Private);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("proxy-revalidate", ProxyRevalidate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirective>("public", Public);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>("s-maxage", SMaxage);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>("stale-if-error", StaleIfError);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlDirectiveWithValue>("stale-while-revalidate", StaleWhileRevalidate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

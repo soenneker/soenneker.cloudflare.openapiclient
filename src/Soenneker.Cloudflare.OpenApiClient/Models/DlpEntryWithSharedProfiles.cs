@@ -7,49 +7,179 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DlpEntryWithSharedProfiles : global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithUploadStatus, IParsable
-    #pragma warning restore CS1591
+    public partial class DlpEntryWithSharedProfiles : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The profiles property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile>? Profiles { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom? DlpEntryWithSharedProfilesCustom { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile> Profiles { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom DlpEntryWithSharedProfilesCustom { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic? DlpEntryWithSharedProfilesCustomPromptTopic { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic DlpEntryWithSharedProfilesCustomPromptTopic { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint? DlpEntryWithSharedProfilesDocumentFingerprint { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint DlpEntryWithSharedProfilesDocumentFingerprint { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData? DlpEntryWithSharedProfilesExactData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData DlpEntryWithSharedProfilesExactData { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration? DlpEntryWithSharedProfilesIntegration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration DlpEntryWithSharedProfilesIntegration { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined? DlpEntryWithSharedProfilesPredefined { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined DlpEntryWithSharedProfilesPredefined { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList? DlpEntryWithSharedProfilesWordList { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList DlpEntryWithSharedProfilesWordList { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfiles();
+            if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesCustom = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom();
+            }
+            else if("custom_prompt_topic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesCustomPromptTopic = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic();
+            }
+            else if("document_fingerprint".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesDocumentFingerprint = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint();
+            }
+            else if("exact_data".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesExactData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesIntegration = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration();
+            }
+            else if("predefined".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesPredefined = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined();
+            }
+            else if("word_list".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpEntryWithSharedProfilesWordList = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            if(DlpEntryWithSharedProfilesCustom != null)
             {
-                { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return DlpEntryWithSharedProfilesCustom.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithSharedProfilesCustomPromptTopic != null)
+            {
+                return DlpEntryWithSharedProfilesCustomPromptTopic.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithSharedProfilesDocumentFingerprint != null)
+            {
+                return DlpEntryWithSharedProfilesDocumentFingerprint.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithSharedProfilesExactData != null)
+            {
+                return DlpEntryWithSharedProfilesExactData.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithSharedProfilesIntegration != null)
+            {
+                return DlpEntryWithSharedProfilesIntegration.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithSharedProfilesPredefined != null)
+            {
+                return DlpEntryWithSharedProfilesPredefined.GetFieldDeserializers();
+            }
+            else if(DlpEntryWithSharedProfilesWordList != null)
+            {
+                return DlpEntryWithSharedProfilesWordList.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryProfile>("profiles", Profiles);
+            if(DlpEntryWithSharedProfilesCustom != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustom>(null, DlpEntryWithSharedProfilesCustom);
+            }
+            else if(DlpEntryWithSharedProfilesCustomPromptTopic != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesCustomPromptTopic>(null, DlpEntryWithSharedProfilesCustomPromptTopic);
+            }
+            else if(DlpEntryWithSharedProfilesDocumentFingerprint != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesDocumentFingerprint>(null, DlpEntryWithSharedProfilesDocumentFingerprint);
+            }
+            else if(DlpEntryWithSharedProfilesExactData != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesExactData>(null, DlpEntryWithSharedProfilesExactData);
+            }
+            else if(DlpEntryWithSharedProfilesIntegration != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesIntegration>(null, DlpEntryWithSharedProfilesIntegration);
+            }
+            else if(DlpEntryWithSharedProfilesPredefined != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesPredefined>(null, DlpEntryWithSharedProfilesPredefined);
+            }
+            else if(DlpEntryWithSharedProfilesWordList != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntryWithSharedProfilesWordList>(null, DlpEntryWithSharedProfilesWordList);
+            }
         }
     }
 }

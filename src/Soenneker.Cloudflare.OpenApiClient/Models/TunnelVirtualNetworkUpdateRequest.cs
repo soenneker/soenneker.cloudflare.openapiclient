@@ -38,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public TunnelVirtualNetworkUpdateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsDefaultNetwork = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyInitReqPoliciesItem>? Policies { get; set; }
+        public List<string>? Policies { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyInitReqPoliciesItem> Policies { get; set; }
+        public List<string> Policies { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyInitReq"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyInitReqPoliciesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyInitReqPoliciesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessPolicyInitReqPoliciesItem>("policies", Policies);
+            writer.WriteCollectionOfPrimitiveValues<string>("policies", Policies);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

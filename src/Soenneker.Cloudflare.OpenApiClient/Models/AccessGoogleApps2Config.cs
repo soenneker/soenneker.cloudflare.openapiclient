@@ -15,6 +15,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Your companies TLD</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppsDomain { get; set; }
+#nullable restore
+#else
+        public string AppsDomain { get; set; }
+#endif
+        /// <summary>Your OAuth Client ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
+        /// <summary>Your OAuth Client Secret</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSecret { get; set; }
+#nullable restore
+#else
+        public string ClientSecret { get; set; }
+#endif
+        /// <summary>Configures the prompt behavior for Google authentication.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGoogleApps2AllOf2ConfigPrompt? Prompt { get; set; }
+        /// <summary>Whether to use a previously authenticated Access email as a Google login hint when exactly one email matches the Workspace domain.</summary>
+        public bool? UseLoginHint { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGoogleApps2Config"/> and sets the default values.
         /// </summary>
@@ -40,6 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "apps_domain", n => { AppsDomain = n.GetStringValue(); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
+                { "prompt", n => { Prompt = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGoogleApps2AllOf2ConfigPrompt>(); } },
+                { "use_login_hint", n => { UseLoginHint = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +82,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("apps_domain", AppsDomain);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessGoogleApps2AllOf2ConfigPrompt>("prompt", Prompt);
+            writer.WriteBoolValue("use_login_hint", UseLoginHint);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

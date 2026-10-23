@@ -23,22 +23,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Certificate { get; set; }
 #endif
         /// <summary>The date when the certificate expires.</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The certificate authority that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; set; }
+        public string? Issuer { get; private set; }
 #nullable restore
 #else
-        public string Issuer { get; set; }
+        public string Issuer { get; private set; }
 #endif
         /// <summary>The serial number on the uploaded certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The type of hash used for the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get; private set; }
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get; private set; }
 #endif
         /// <summary>Status of the certificate or the association.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9? Status { get; private set; }
@@ -103,11 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("certificate", Certificate);
-            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("serial_number", SerialNumber);
-            writer.WriteStringValue("signature", Signature);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }

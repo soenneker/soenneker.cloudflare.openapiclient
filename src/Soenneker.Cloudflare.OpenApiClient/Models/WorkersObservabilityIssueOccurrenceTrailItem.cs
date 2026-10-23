@@ -37,9 +37,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItem();
-            result.WorkersObservabilityIssueOccurrenceTrailItemAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf1();
-            result.WorkersObservabilityIssueOccurrenceTrailItemAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf2();
+            if("log".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersObservabilityIssueOccurrenceTrailItemAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf1();
+            }
+            else if("span".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersObservabilityIssueOccurrenceTrailItemAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf2();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WorkersObservabilityIssueOccurrenceTrailItemAnyOf1 != null || WorkersObservabilityIssueOccurrenceTrailItemAnyOf2 != null)
+            if(WorkersObservabilityIssueOccurrenceTrailItemAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkersObservabilityIssueOccurrenceTrailItemAnyOf1, WorkersObservabilityIssueOccurrenceTrailItemAnyOf2);
+                return WorkersObservabilityIssueOccurrenceTrailItemAnyOf1.GetFieldDeserializers();
+            }
+            else if(WorkersObservabilityIssueOccurrenceTrailItemAnyOf2 != null)
+            {
+                return WorkersObservabilityIssueOccurrenceTrailItemAnyOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf1>(null, WorkersObservabilityIssueOccurrenceTrailItemAnyOf1, WorkersObservabilityIssueOccurrenceTrailItemAnyOf2);
+            if(WorkersObservabilityIssueOccurrenceTrailItemAnyOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf1>(null, WorkersObservabilityIssueOccurrenceTrailItemAnyOf1);
+            }
+            else if(WorkersObservabilityIssueOccurrenceTrailItemAnyOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservabilityIssueOccurrenceTrailItemAnyOf2>(null, WorkersObservabilityIssueOccurrenceTrailItemAnyOf2);
+            }
         }
     }
 }

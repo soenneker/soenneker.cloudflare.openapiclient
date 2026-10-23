@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.IntegrationsOperations.PlanetScale.CreateDatabaseSignature
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\hyperdrive\integrationsOperations\planetScale\createDatabaseSignature
+    /// Builds and executes requests for operations under \accounts\{accountId}\hyperdrive\integrationsOperations\planetScale\createDatabaseSignature
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateDatabaseSignatureRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Integratio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreateDatabaseSignatureRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/hyperdrive/integrationsOperations/planetScale/createDatabaseSignature", pathParameters)
+        public CreateDatabaseSignatureRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/hyperdrive/integrationsOperations/planetScale/createDatabaseSignature", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Integratio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreateDatabaseSignatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/hyperdrive/integrationsOperations/planetScale/createDatabaseSignature", rawUrl)
+        public CreateDatabaseSignatureRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/hyperdrive/integrationsOperations/planetScale/createDatabaseSignature", rawUrl)
         {
         }
         /// <summary>

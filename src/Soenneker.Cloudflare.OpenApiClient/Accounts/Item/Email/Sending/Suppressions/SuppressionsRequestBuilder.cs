@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppressions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\email\sending\suppressions
+    /// Builds and executes requests for operations under \accounts\{accountId}\email\sending\suppressions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SuppressionsRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending/suppressions{?cursor*,email*,per_page*,reason*,scope_type*,scope_value*,search*}", pathParameters)
+        public SuppressionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email/sending/suppressions{?cursor*,email*,per_page*,reason*,scope_type*,scope_value*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending.Suppres
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SuppressionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email/sending/suppressions{?cursor*,email*,per_page*,reason*,scope_type*,scope_value*,search*}", rawUrl)
+        public SuppressionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email/sending/suppressions{?cursor*,email*,per_page*,reason*,scope_type*,scope_value*,search*}", rawUrl)
         {
         }
         /// <summary>

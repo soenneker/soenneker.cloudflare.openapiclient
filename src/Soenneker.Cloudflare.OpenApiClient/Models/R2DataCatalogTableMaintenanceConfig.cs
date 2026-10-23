@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Scheduling interval between normal table maintenance runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interval { get; set; }
+        public string? Interval { get; private set; }
 #nullable restore
 #else
-        public string Interval { get; set; }
+        public string Interval { get; private set; }
 #endif
         /// <summary>The snapshot_expiration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableCompactionConfig>("compaction", Compaction);
-            writer.WriteStringValue("interval", Interval);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2DataCatalogTableSnapshotExpirationConfig>("snapshot_expiration", SnapshotExpiration);
             writer.WriteAdditionalData(AdditionalData);
         }

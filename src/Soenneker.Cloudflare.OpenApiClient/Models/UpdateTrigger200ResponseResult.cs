@@ -14,12 +14,113 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Branch patterns that must not start builds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? BranchExcludes { get; set; }
+#nullable restore
+#else
+        public List<string> BranchExcludes { get; set; }
+#endif
+        /// <summary>Branch patterns that can start builds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? BranchIncludes { get; set; }
+#nullable restore
+#else
+        public List<string> BranchIncludes { get; set; }
+#endif
+        /// <summary>Whether builds reuse cached dependencies and build artifacts.</summary>
+        public bool? BuildCachingEnabled { get; set; }
+        /// <summary>Command to build the Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildCommand { get; set; }
+#nullable restore
+#else
+        public string BuildCommand { get; set; }
+#endif
+        /// <summary>The build_token_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildTokenName { get; set; }
+#nullable restore
+#else
+        public string BuildTokenName { get; set; }
+#endif
+        /// <summary>UUID of the build token used when deploying the Worker.</summary>
+        public Guid? BuildTokenUuid { get; set; }
+        /// <summary>The created_on property</summary>
+        public DateTimeOffset? CreatedOn { get; set; }
+        /// <summary>The deleted_on property</summary>
+        public DateTimeOffset? DeletedOn { get; set; }
+        /// <summary>Command to deploy the Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeployCommand { get; set; }
+#nullable restore
+#else
+        public string DeployCommand { get; set; }
+#endif
+        /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalScriptId { get; set; }
+#nullable restore
+#else
+        public string ExternalScriptId { get; set; }
+#endif
+        /// <summary>The modified_on property</summary>
+        public DateTimeOffset? ModifiedOn { get; set; }
+        /// <summary>Path patterns that must not start builds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PathExcludes { get; set; }
+#nullable restore
+#else
+        public List<string> PathExcludes { get; set; }
+#endif
+        /// <summary>Path patterns that can start builds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PathIncludes { get; set; }
+#nullable restore
+#else
+        public List<string> PathIncludes { get; set; }
+#endif
+        /// <summary>The repo_connection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUpsertRepoConnectionResponse? RepoConnection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUpsertRepoConnectionResponse RepoConnection { get; set; }
+#endif
+        /// <summary>Repository directory in which build and deploy commands run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RootDirectory { get; set; }
+#nullable restore
+#else
+        public string RootDirectory { get; set; }
+#endif
+        /// <summary>Human-readable name of the build trigger.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TriggerName { get; set; }
+#nullable restore
+#else
+        public string TriggerName { get; set; }
+#endif
+        /// <summary>Trigger UUID.</summary>
+        public Guid? TriggerUuid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UpdateTrigger200ResponseResult"/> and sets the default values.
         /// </summary>
         public UpdateTrigger200ResponseResult()
         {
             AdditionalData = new Dictionary<string, object>();
+            BuildCachingEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +140,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "branch_excludes", n => { BranchExcludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "branch_includes", n => { BranchIncludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "build_caching_enabled", n => { BuildCachingEnabled = n.GetBoolValue(); } },
+                { "build_command", n => { BuildCommand = n.GetStringValue(); } },
+                { "build_token_name", n => { BuildTokenName = n.GetStringValue(); } },
+                { "build_token_uuid", n => { BuildTokenUuid = n.GetGuidValue(); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "deleted_on", n => { DeletedOn = n.GetDateTimeOffsetValue(); } },
+                { "deploy_command", n => { DeployCommand = n.GetStringValue(); } },
+                { "external_script_id", n => { ExternalScriptId = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "path_excludes", n => { PathExcludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "path_includes", n => { PathIncludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "repo_connection", n => { RepoConnection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUpsertRepoConnectionResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUpsertRepoConnectionResponse.CreateFromDiscriminatorValue); } },
+                { "root_directory", n => { RootDirectory = n.GetStringValue(); } },
+                { "trigger_name", n => { TriggerName = n.GetStringValue(); } },
+                { "trigger_uuid", n => { TriggerUuid = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +166,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("branch_excludes", BranchExcludes);
+            writer.WriteCollectionOfPrimitiveValues<string>("branch_includes", BranchIncludes);
+            writer.WriteBoolValue("build_caching_enabled", BuildCachingEnabled);
+            writer.WriteStringValue("build_command", BuildCommand);
+            writer.WriteStringValue("build_token_name", BuildTokenName);
+            writer.WriteGuidValue("build_token_uuid", BuildTokenUuid);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
+            writer.WriteDateTimeOffsetValue("deleted_on", DeletedOn);
+            writer.WriteStringValue("deploy_command", DeployCommand);
+            writer.WriteStringValue("external_script_id", ExternalScriptId);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
+            writer.WriteCollectionOfPrimitiveValues<string>("path_excludes", PathExcludes);
+            writer.WriteCollectionOfPrimitiveValues<string>("path_includes", PathIncludes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsUpsertRepoConnectionResponse>("repo_connection", RepoConnection);
+            writer.WriteStringValue("root_directory", RootDirectory);
+            writer.WriteStringValue("trigger_name", TriggerName);
+            writer.WriteGuidValue("trigger_uuid", TriggerUuid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

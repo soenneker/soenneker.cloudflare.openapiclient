@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Origin Cache Control is enabled by default for Free, Pro, andBusiness domains and disabled by default for Enterprise domains.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ExplicitCacheControlId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Origin Cache Control.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesExplicitCacheControlValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesExplicitCacheControl"/> and sets the default values.

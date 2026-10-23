@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp of when the webhook destination was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The unique identifier of a webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,9 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Timestamp of the last time an attempt to dispatch a notification to this webhook failed.</summary>
-        public DateTimeOffset? LastFailure { get; set; }
+        public DateTimeOffset? LastFailure { get; private set; }
         /// <summary>Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.</summary>
-        public DateTimeOffset? LastSuccess { get; set; }
+        public DateTimeOffset? LastSuccess { get; private set; }
         /// <summary>The name of the webhook destination. This will be included in the request body when you receive a webhook notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,10 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("last_failure", LastFailure);
-            writer.WriteDateTimeOffsetValue("last_success", LastSuccess);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("secret", Secret);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaComponentsSchemasType>("type", Type);

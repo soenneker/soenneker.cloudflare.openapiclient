@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Access permissions for this User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions { get; set; }
+        public List<string>? Permissions { get; private set; }
 #nullable restore
 #else
-        public List<string> Permissions { get; set; }
+        public List<string> Permissions { get; private set; }
 #endif
         /// <summary>List of roles that a user has within an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamComponentsSchemasStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

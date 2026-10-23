@@ -81,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Map of property key to FieldDefinition for object fields. Required when kind is &apos;object&apos;. See FieldDefinition (recursive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionPropertiesProperty? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionPropertiesProperty Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties Properties { get; set; }
 #endif
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "maxLength", n => { MaxLength = n.GetIntValue(); } },
                 { "numberConstraint", n => { NumberConstraint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionPropertiesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionPropertiesProperty.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties.CreateFromDiscriminatorValue); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
             };
         }
@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("label", Label);
             writer.WriteIntValue("maxLength", MaxLength);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionNumberConstraint>("numberConstraint", NumberConstraint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionPropertiesProperty>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEventsFieldDefinitionProperties>("properties", Properties);
             writer.WriteBoolValue("required", Required);
         }
     }

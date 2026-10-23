@@ -14,12 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone.Verified search engine crawlers will not be tracked or counted by the waiting room system,and will not appear in waiting room analytics.</summary>
+        public bool? SearchEngineCrawlerBypass { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WaitingroomZoneSettingsResponseResult"/> and sets the default values.
         /// </summary>
         public WaitingroomZoneSettingsResponseResult()
         {
             AdditionalData = new Dictionary<string, object>();
+            SearchEngineCrawlerBypass = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "search_engine_crawler_bypass", n => { SearchEngineCrawlerBypass = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("search_engine_crawler_bypass", SearchEngineCrawlerBypass);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

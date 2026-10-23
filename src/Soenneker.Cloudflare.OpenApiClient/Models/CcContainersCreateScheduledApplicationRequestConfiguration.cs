@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Image { get; set; }
 #endif
         /// <summary>The instance type configures vCPU, memory, and disk.- &quot;lite&quot;: 1/16 vCPU, 256 MiB memory, 2 GB disk- &quot;basic&quot;: 1/4 vCPU, 1 GiB memory, 4 GB disk- &quot;standard-1&quot;: 1/2 vCPU, 4 GiB memory, 8 GB disk- &quot;standard-2&quot;: 1 vCPU, 6 GiB memory, 12 GB disk- &quot;standard-3&quot;: 2 vCPU, 8 GiB memory, 16 GB disk- &quot;standard-4&quot;: 4 vCPU, 12 GiB memory, 20 GB disk</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceTypeAnyOf1? InstanceType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType? InstanceType { get; set; }
         /// <summary>Settings for deployment observability such as logging.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "entrypoint", n => { Entrypoint = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "environment_variables", n => { EnvironmentVariables = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
-                { "instance_type", n => { InstanceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceTypeAnyOf1>(); } },
+                { "instance_type", n => { InstanceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType>(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability.CreateFromDiscriminatorValue); } },
             };
         }
@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("entrypoint", Entrypoint);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CcEnvironmentVariable>("environment_variables", EnvironmentVariables);
             writer.WriteStringValue("image", Image);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceTypeAnyOf1>("instance_type", InstanceType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcInstanceType>("instance_type", InstanceType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcDeploymentObservability>("observability", Observability);
             writer.WriteAdditionalData(AdditionalData);
         }

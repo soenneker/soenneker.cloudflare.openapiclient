@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.Browser
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering\devtools\browser
+    /// Builds and executes requests for operations under \accounts\{accountId}\browser-rendering\devtools\browser
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrowserRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser{?keep_alive*,lab*,liveViewUrlExpiresInMs*,recording*,targets*}", pathParameters)
+        public BrowserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/browser-rendering/devtools/browser{?keep_alive*,lab*,liveViewUrlExpiresInMs*,recording*,targets*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devt
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering/devtools/browser{?keep_alive*,lab*,liveViewUrlExpiresInMs*,recording*,targets*}", rawUrl)
+        public BrowserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/browser-rendering/devtools/browser{?keep_alive*,lab*,liveViewUrlExpiresInMs*,recording*,targets*}", rawUrl)
         {
         }
         /// <summary>

@@ -21,7 +21,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.Item.Repos.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\artifacts\namespaces\{namespaceValue}\repos\{name}
+    /// Builds and executes requests for operations under \accounts\{accountId}\artifacts\namespaces\{namespaceValue}\repos\{name}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithNameItemRequestBuilder : BaseRequestBuilder
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/artifacts/namespaces/{namespaceValue}/repos/{name}", pathParameters)
+        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/artifacts/namespaces/{namespaceValue}/repos/{name}", pathParameters)
         {
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/artifacts/namespaces/{namespaceValue}/repos/{name}", rawUrl)
+        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/artifacts/namespaces/{namespaceValue}/repos/{name}", rawUrl)
         {
         }
         /// <summary>

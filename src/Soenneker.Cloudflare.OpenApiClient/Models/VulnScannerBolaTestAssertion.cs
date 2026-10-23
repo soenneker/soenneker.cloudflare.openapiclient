@@ -33,14 +33,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Observed value on which the assertion was made.</summary>
         public int? Observed { get; set; }
-        /// <summary>Outcome of the assertion.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Outcome of an assertion. `ok` means the assertion passed, `fail` means the assertion failed, `inconclusive` means the scanner could not evaluate the assertion.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome? Outcome { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome Outcome { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertion"/> and sets the default values.
         /// </summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionKind>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionKind.CreateFromDiscriminatorValue); } },
                 { "observed", n => { Observed = n.GetIntValue(); } },
-                { "outcome", n => { Outcome = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome.CreateFromDiscriminatorValue); } },
+                { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome>(); } },
             };
         }
         /// <summary>
@@ -82,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionKind>("kind", Kind);
             writer.WriteIntValue("observed", Observed);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome>("outcome", Outcome);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestAssertionOutcome>("outcome", Outcome);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

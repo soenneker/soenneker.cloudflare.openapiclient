@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.OverTime
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\dex\devices\{deviceId}\fleet-status\over-time
+    /// Builds and executes requests for operations under \accounts\{accountId}\dex\devices\{deviceId}\fleet-status\over-time
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OverTimeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/{deviceId}/fleet-status/over-time?from={from}&interval={interval}&to={to}{&colo*}", pathParameters)
+        public OverTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dex/devices/{deviceId}/fleet-status/over-time?from={from}&interval={interval}&to={to}{&colo*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/{deviceId}/fleet-status/over-time?from={from}&interval={interval}&to={to}{&colo*}", rawUrl)
+        public OverTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dex/devices/{deviceId}/fleet-status/over-time?from={from}&interval={interval}&to={to}{&colo*}", rawUrl)
         {
         }
         /// <summary>

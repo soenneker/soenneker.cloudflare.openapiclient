@@ -17,38 +17,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A summary of the purpose/function of the WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a &apos;block&apos; action will win over a &apos;challenge&apos; action).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallDetectionMode? DetectionMode { get; private set; }
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The name of the WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get; private set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get; private set; }
 #endif
         /// <summary>When set to `active`, indicates that the WAF package will be applied to the zone.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallStatus? Status { get; private set; }
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneId { get; set; }
+        public string? ZoneId { get; private set; }
 #nullable restore
 #else
-        public string ZoneId { get; set; }
+        public string ZoneId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallPackageDefinition"/> and sets the default values.
@@ -90,10 +90,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for an OAuth client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get; private set; }
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get; private set; }
 #endif
         /// <summary>Human-readable name of the OAuth client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,10 +68,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of OAuth grant types the client is allowed to use. `authorization_code` is required; `refresh_token` may be included optionally.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientGrantTypesItem?>? GrantTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretGrantTypesItem?>? GrantTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientGrantTypesItem?> GrantTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretGrantTypesItem?> GrantTypes { get; set; }
 #endif
         /// <summary>Indicates whether the client has a rotated secret that has not yet been deleted.</summary>
         public bool? HasRotatedSecret { get; private set; }
@@ -120,10 +120,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of OAuth response types the client is allowed to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientResponseTypesItem?>? ResponseTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretResponseTypesItem?>? ResponseTypes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientResponseTypesItem?> ResponseTypes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretResponseTypesItem?> ResponseTypes { get; set; }
 #endif
         /// <summary>Array of OAuth scopes the client is allowed to request. Colon-delimited scopes are not accepted. Dot-delimited scopes are validated against available OAuth API scopes; simple identity scopes are allowed. Protocol scopes `offline_access` and `openid` are added or removed automatically based on `grant_types` and `response_types`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,7 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "client_uri", n => { ClientUri = n.GetStringValue(); } },
                 { "client_uri_verification", n => { ClientUriVerification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientUriVerification>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientUriVerification.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "grant_types", n => { GrantTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientGrantTypesItem>()?.AsList(); } },
+                { "grant_types", n => { GrantTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretGrantTypesItem>()?.AsList(); } },
                 { "has_rotated_secret", n => { HasRotatedSecret = n.GetBoolValue(); } },
                 { "logo_uri", n => { LogoUri = n.GetStringValue(); } },
                 { "optional_scopes", n => { OptionalScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -187,7 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "post_logout_redirect_uris", n => { PostLogoutRedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "promoted_at", n => { PromotedAt = n.GetDateTimeOffsetValue(); } },
                 { "redirect_uris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "response_types", n => { ResponseTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientResponseTypesItem>()?.AsList(); } },
+                { "response_types", n => { ResponseTypes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretResponseTypesItem>()?.AsList(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "token_endpoint_auth_method", n => { TokenEndpointAuthMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod>(); } },
                 { "tos_uri", n => { TosUri = n.GetStringValue(); } },
@@ -203,17 +203,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_cors_origins", AllowedCorsOrigins);
-            writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_name", ClientName);
             writer.WriteStringValue("client_uri", ClientUri);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientUriVerification>("client_uri_verification", ClientUriVerification);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientGrantTypesItem>("grant_types", GrantTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretGrantTypesItem>("grant_types", GrantTypes);
             writer.WriteStringValue("logo_uri", LogoUri);
             writer.WriteCollectionOfPrimitiveValues<string>("optional_scopes", OptionalScopes);
             writer.WriteStringValue("policy_uri", PolicyUri);
             writer.WriteCollectionOfPrimitiveValues<string>("post_logout_redirect_uris", PostLogoutRedirectUris);
             writer.WriteCollectionOfPrimitiveValues<string>("redirect_uris", RedirectUris);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientResponseTypesItem>("response_types", ResponseTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientWithSecretResponseTypesItem>("response_types", ResponseTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientTokenEndpointAuthMethod>("token_endpoint_auth_method", TokenEndpointAuthMethod);
             writer.WriteStringValue("tos_uri", TosUri);

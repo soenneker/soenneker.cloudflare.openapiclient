@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An empty response object. This field is required to yield a valid operation schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty? Responses { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty? Responses { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty Responses { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty Responses { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinition"/> and sets the default values.
@@ -67,7 +67,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldParameterSchemasDefinitionResponsesProperty>("responses", Responses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

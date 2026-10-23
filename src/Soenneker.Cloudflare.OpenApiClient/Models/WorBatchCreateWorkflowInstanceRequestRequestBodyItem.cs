@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The instance_retention property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetention? InstanceRetention { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention? InstanceRetention { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetention InstanceRetention { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention InstanceRetention { get; set; }
 #endif
         /// <summary>The location_hint property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint? LocationHint { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
-                { "instance_retention", n => { InstanceRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetention>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetention.CreateFromDiscriminatorValue); } },
+                { "instance_retention", n => { InstanceRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention.CreateFromDiscriminatorValue); } },
                 { "location_hint", n => { LocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint>(); } },
                 { "params", n => { Params = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("instance_id", InstanceId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemInstanceRetention>("instance_retention", InstanceRetention);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestRequestBodyItemInstanceRetention>("instance_retention", InstanceRetention);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorBatchCreateWorkflowInstanceRequestItemLocationHint>("location_hint", LocationHint);
             writer.WriteStringValue("params", Params);
             writer.WriteAdditionalData(AdditionalData);

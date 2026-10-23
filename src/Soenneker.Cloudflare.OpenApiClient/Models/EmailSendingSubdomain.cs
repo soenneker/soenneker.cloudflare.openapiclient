@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the destination address has been created.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The DKIM selector used for email signing. Wildcard rows publish the selector and sign with `d=&lt;base&gt;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether Email Sending is enabled on this subdomain.</summary>
         public bool? Enabled { get; private set; }
         /// <summary>The date and time the destination address was last modified.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The exact domain name or a leftmost wildcard such as `*.example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Sending subdomain identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+        public string? Tag { get; private set; }
 #nullable restore
 #else
-        public string Tag { get; set; }
+        public string Tag { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSendingSubdomain"/> and sets the default values.
@@ -99,12 +99,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteBoolValue("drop_suppressed_recipients", DropSuppressedRecipients);
-            writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("preview_enabled", PreviewEnabled);
-            writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

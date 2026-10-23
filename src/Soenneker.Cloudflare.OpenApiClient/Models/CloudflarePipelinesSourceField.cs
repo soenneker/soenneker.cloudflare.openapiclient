@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public new string? Name { get => base.Name; set => base.Name = value; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public new string Name { get => base.Name; set => base.Name = value; }
 #endif
         /// <summary>The required property</summary>
         public bool? Required { get; set; }
@@ -57,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "metadata_key", n => { MetadataKey = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "sql_name", n => { SqlName = n.GetStringValue(); } },
             };
@@ -71,7 +70,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("metadata_key", MetadataKey);
-            writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("required", Required);
             writer.WriteStringValue("sql_name", SqlName);
         }

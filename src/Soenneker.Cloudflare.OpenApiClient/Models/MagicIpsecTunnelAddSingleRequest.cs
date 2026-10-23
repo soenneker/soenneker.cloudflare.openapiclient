@@ -104,6 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicIpsecTunnelAddSingleRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            AutomaticReturnRouting = false;
+            ReplayProtection = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

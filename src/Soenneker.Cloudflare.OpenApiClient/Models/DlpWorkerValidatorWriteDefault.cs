@@ -7,22 +7,16 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerDefaultOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DlpWorkerValidatorWriteDefault : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DlpWorkerValidatorWriteDefault : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
-        public double? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorWriteDefault"/> and sets the default values.
-        /// </summary>
-        public DlpWorkerValidatorWriteDefault()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerDefaultOneOf2"/></summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerDefaultOneOf2? DlpWorkerDefaultOneOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +25,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorWriteDefault CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorWriteDefault();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorWriteDefault();
+            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerDefaultOneOf2>() is global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerDefaultOneOf2 dlpWorkerDefaultOneOf2Value)
+            {
+                result.DlpWorkerDefaultOneOf2 = dlpWorkerDefaultOneOf2Value;
+            }
+            else if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,10 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
-            {
-                { "value", n => { Value = n.GetDoubleValue(); } },
-            };
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -51,8 +52,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DlpWorkerDefaultOneOf2 != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerDefaultOneOf2>(null, DlpWorkerDefaultOneOf2);
+            }
+            else if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
         }
     }
 }

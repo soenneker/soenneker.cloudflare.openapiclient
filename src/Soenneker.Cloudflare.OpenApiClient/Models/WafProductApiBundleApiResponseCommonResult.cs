@@ -8,26 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WafProductApiBundleApiResponseCommonResult : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch2? WafProductApiBundleApiResponseCommonResultBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch2 WafProductApiBundleApiResponseCommonResultBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch3? WafProductApiBundleApiResponseCommonResultBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch3 WafProductApiBundleApiResponseCommonResultBranch3 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +28,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1 WafProductApiBundleApiResponseCommonResultMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2>? WafProductApiBundleApiResponseCommonResultMember2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2> WafProductApiBundleApiResponseCommonResultMember2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +46,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResult();
-            result.WafProductApiBundleApiResponseCommonResultBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch2();
-            result.WafProductApiBundleApiResponseCommonResultBranch3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch3();
-            result.WafProductApiBundleApiResponseCommonResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2> wafProductApiBundleApiResponseCommonResultMember2Value)
+            {
+                result.WafProductApiBundleApiResponseCommonResultMember2 = wafProductApiBundleApiResponseCommonResultMember2Value;
+            }
+            else {
+                result.WafProductApiBundleApiResponseCommonResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WafProductApiBundleApiResponseCommonResultBranch2 != null || WafProductApiBundleApiResponseCommonResultBranch3 != null || WafProductApiBundleApiResponseCommonResultMember1 != null)
+            if(WafProductApiBundleApiResponseCommonResultMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WafProductApiBundleApiResponseCommonResultBranch2, WafProductApiBundleApiResponseCommonResultBranch3, WafProductApiBundleApiResponseCommonResultMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WafProductApiBundleApiResponseCommonResultMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +78,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultBranch2>(null, WafProductApiBundleApiResponseCommonResultBranch2, WafProductApiBundleApiResponseCommonResultBranch3, WafProductApiBundleApiResponseCommonResultMember1);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else if(WafProductApiBundleApiResponseCommonResultMember2 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember2>(null, WafProductApiBundleApiResponseCommonResultMember2);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundleApiResponseCommonResultMember1>(null, WafProductApiBundleApiResponseCommonResultMember1);
+            }
         }
     }
 }

@@ -45,17 +45,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2BucketLockRuleCondition();
-            if("R2LockRuleAgeCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("Age".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2LockRuleAgeCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleAgeCondition();
             }
-            else if("R2LockRuleDateCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2LockRuleDateCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleDateCondition();
             }
-            else if("R2LockRuleIndefiniteCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Indefinite".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2LockRuleIndefiniteCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LockRuleIndefiniteCondition();
             }

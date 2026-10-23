@@ -35,13 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cache_threshold property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheThreshold? CacheThreshold { get; set; }
         /// <summary>Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheTtl? CacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheTtl CacheTtl { get; set; }
-#endif
+        public int? CacheTtl { get; set; }
         /// <summary>The chunk property</summary>
         public bool? Chunk { get; set; }
         /// <summary>The chunk_overlap property</summary>
@@ -159,13 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SummarizationModel { get; set; }
 #endif
         /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSyncInterval? SyncInterval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSyncInterval SyncInterval { get; set; }
-#endif
+        public int? SyncInterval { get; set; }
         /// <summary>The system_prompt_ai_search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Cache = true;
+            CacheTtl = 172800;
             Chunk = true;
             ChunkOverlap = 10;
             MaxNumResults = 10;
@@ -228,7 +217,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_search_model", n => { AiSearchModel = n.GetStringValue(); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
                 { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheThreshold>(); } },
-                { "cache_ttl", n => { CacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheTtl.CreateFromDiscriminatorValue); } },
+                { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
@@ -251,7 +240,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "source_params", n => { SourceParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSourceParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSourceParams.CreateFromDiscriminatorValue); } },
                 { "summarization", n => { Summarization = n.GetBoolValue(); } },
                 { "summarization_model", n => { SummarizationModel = n.GetStringValue(); } },
-                { "sync_interval", n => { SyncInterval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSyncInterval>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSyncInterval.CreateFromDiscriminatorValue); } },
+                { "sync_interval", n => { SyncInterval = n.GetIntValue(); } },
                 { "system_prompt_ai_search", n => { SystemPromptAiSearch = n.GetStringValue(); } },
                 { "system_prompt_index_summarization", n => { SystemPromptIndexSummarization = n.GetStringValue(); } },
                 { "system_prompt_rewrite_query", n => { SystemPromptRewriteQuery = n.GetStringValue(); } },
@@ -269,7 +258,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheThreshold>("cache_threshold", CacheThreshold);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestCacheTtl>("cache_ttl", CacheTtl);
+            writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
@@ -292,7 +281,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSourceParams>("source_params", SourceParams);
             writer.WriteBoolValue("summarization", Summarization);
             writer.WriteStringValue("summarization_model", SummarizationModel);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceUpdateInstanceRequestSyncInterval>("sync_interval", SyncInterval);
+            writer.WriteIntValue("sync_interval", SyncInterval);
             writer.WriteStringValue("system_prompt_ai_search", SystemPromptAiSearch);
             writer.WriteStringValue("system_prompt_index_summarization", SystemPromptIndexSummarization);
             writer.WriteStringValue("system_prompt_rewrite_query", SystemPromptRewriteQuery);

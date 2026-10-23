@@ -8,21 +8,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadIntervalSecondsOneOf1"/>, <see cref="int"/>
+    /// Composed type wrapper for classes <see cref="int"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogpushMaxUploadIntervalSeconds : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="int"/></summary>
         public int? Integer { get; set; }
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadIntervalSecondsOneOf1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadIntervalSecondsOneOf1? LogpushMaxUploadIntervalSecondsOneOf1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadIntervalSecondsOneOf1 LogpushMaxUploadIntervalSecondsOneOf1 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,10 +37,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LogpushMaxUploadIntervalSecondsOneOf1 != null)
-            {
-                return LogpushMaxUploadIntervalSecondsOneOf1.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -58,11 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LogpushMaxUploadIntervalSecondsOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushMaxUploadIntervalSecondsOneOf1>(null, LogpushMaxUploadIntervalSecondsOneOf1);
-            }
-            else if(Integer != null)
+            if(Integer != null)
             {
                 writer.WriteIntValue(null, Integer);
             }

@@ -104,6 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public PostAccountsAccountIdLogpushJobsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
+            FilterAttackTraffic = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

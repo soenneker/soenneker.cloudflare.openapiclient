@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespaces.Item.Profiles
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\agent-memory\namespaces\{namespaceName}\profiles
+    /// Builds and executes requests for operations under \accounts\{accountId}\agent-memory\namespaces\{namespaceName}\profiles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfilesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/agent-memory/namespaces/{namespaceName}/profiles{?cursor*,per_page*}", pathParameters)
+        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/agent-memory/namespaces/{namespaceName}/profiles{?cursor*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/agent-memory/namespaces/{namespaceName}/profiles{?cursor*,per_page*}", rawUrl)
+        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/agent-memory/namespaces/{namespaceName}/profiles{?cursor*,per_page*}", rawUrl)
         {
         }
         /// <summary>

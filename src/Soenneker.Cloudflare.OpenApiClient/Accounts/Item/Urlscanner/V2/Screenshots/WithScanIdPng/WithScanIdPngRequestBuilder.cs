@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScanIdPng
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\urlscanner\v2\screenshots\{scanId}.png
+    /// Builds and executes requests for operations under \accounts\{accountId}\urlscanner\v2\screenshots\{scanId}.png
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithScanIdPngRequestBuilder : BaseRequestBuilder
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="scanId">Scan UUID.</param>
-        public WithScanIdPngRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? scanId = default) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/v2/screenshots/{scanId}.png{?resolution*}", pathParameters)
+        public WithScanIdPngRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? scanId = default) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/urlscanner/v2/screenshots/{scanId}.png{?resolution*}", pathParameters)
         {
             if (scanId != null) PathParameters.Add("scanId", scanId);
         }
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithScanIdPngRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/v2/screenshots/{scanId}.png{?resolution*}", rawUrl)
+        public WithScanIdPngRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/urlscanner/v2/screenshots/{scanId}.png{?resolution*}", rawUrl)
         {
         }
         /// <summary>

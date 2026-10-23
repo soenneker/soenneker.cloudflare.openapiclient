@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credential_sets.Item.Credentials.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\vuln_scanner\credential_sets\{credentialSetId}\credentials\{credentialId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\vuln_scanner\credential_sets\{credentialSetId}\credentials\{credentialId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithCredentialItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credenti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCredentialItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vuln_scanner/credential_sets/{credentialSetId}/credentials/{credentialId}", pathParameters)
+        public WithCredentialItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/vuln_scanner/credential_sets/{credentialSetId}/credentials/{credentialId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vuln_scanner.Credenti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCredentialItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vuln_scanner/credential_sets/{credentialSetId}/credentials/{credentialId}", rawUrl)
+        public WithCredentialItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/vuln_scanner/credential_sets/{credentialSetId}/credentials/{credentialId}", rawUrl)
         {
         }
         /// <summary>

@@ -87,35 +87,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("act")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsSubmitReportRequest();
-            if("AbuseReportsCsamReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("abuse_children".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsCsamReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsCsamReport();
             }
-            else if("AbuseReportsDmcaReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_dmca".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsDmcaReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsDmcaReport();
             }
-            else if("AbuseReportsGeneralReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_general".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsGeneralReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsGeneralReport();
             }
-            else if("AbuseReportsNcseiReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_ncsei".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsNcseiReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsNcseiReport();
             }
-            else if("AbuseReportsPhishingReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_phishing".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsPhishingReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsPhishingReport();
             }
-            else if("AbuseReportsRegistrarWhoisReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_registrar_whois".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsRegistrarWhoisReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsRegistrarWhoisReport();
             }
-            else if("AbuseReportsThreatReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_threat".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsThreatReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsThreatReport();
             }
-            else if("AbuseReportsTrademarkReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("abuse_trademark".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbuseReportsTrademarkReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsTrademarkReport();
             }

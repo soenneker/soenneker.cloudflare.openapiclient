@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.tenants.item collection</summary>
         /// <param name="position">The ID of the tenant to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.TenantItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.TenantItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenantItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tenant%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.TenantItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tenantId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -23,6 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DeviceId { get; set; }
 #endif
         /// <summary>API Resource UUID tag.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceRegistration { get; set; }

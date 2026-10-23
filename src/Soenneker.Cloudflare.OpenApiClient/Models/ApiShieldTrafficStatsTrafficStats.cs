@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last_updated property</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; private set; }
         /// <summary>The period in seconds these statistics were computed over</summary>
         public int? PeriodSeconds { get; private set; }
         /// <summary>The average number of requests seen during this period</summary>
@@ -57,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

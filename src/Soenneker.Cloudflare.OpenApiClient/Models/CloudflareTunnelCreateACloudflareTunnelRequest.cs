@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfigSrc? ConfigSrc { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc? ConfigSrc { get; set; }
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfigSrc>(); } },
+                { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tunnel_secret", n => { TunnelSecret = n.GetStringValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelConfigSrc>("config_src", ConfigSrc);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelCreateACloudflareTunnelRequestConfigSrc>("config_src", ConfigSrc);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("tunnel_secret", TunnelSecret);
             writer.WriteAdditionalData(AdditionalData);

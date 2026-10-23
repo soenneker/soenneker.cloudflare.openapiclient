@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Mfa_authenticators.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\access\users\{userId}\mfa_authenticators\{authenticatorId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\access\users\{userId}\mfa_authenticators\{authenticatorId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAuthenticatorItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Mfa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAuthenticatorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/users/{userId}/mfa_authenticators/{authenticatorId}", pathParameters)
+        public WithAuthenticatorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/users/{userId}/mfa_authenticators/{authenticatorId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Mfa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAuthenticatorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/users/{userId}/mfa_authenticators/{authenticatorId}", rawUrl)
+        public WithAuthenticatorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/users/{userId}/mfa_authenticators/{authenticatorId}", rawUrl)
         {
         }
         /// <summary>

@@ -94,6 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancerPoolsPreviewPoolRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowInsecure = false;
+            FollowRedirects = false;
+            Interval = 60;
+            Retries = 2;
+            Timeout = 5;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

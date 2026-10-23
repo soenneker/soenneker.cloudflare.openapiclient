@@ -38,16 +38,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Host { get; set; }
 #endif
-        /// <summary>UUID.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2 Id { get; set; }
 #endif
         /// <summary>The last_updated property</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; private set; }
         /// <summary>The HTTP method used to access the endpoint.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod? Method { get; set; }
         /// <summary>API discovery engine(s) that discovered this operation</summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTrafficStats>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTrafficStats.CreateFromDiscriminatorValue); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2.CreateFromDiscriminatorValue); } },
                 { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod>(); } },
                 { "origin", n => { Origin = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryOrigin>()?.AsList(); } },
@@ -104,8 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod>("method", Method);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryOrigin>("origin", Origin);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiDiscoveryState>("state", State);

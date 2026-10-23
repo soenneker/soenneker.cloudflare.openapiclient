@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Set custom headers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemCustomHeaders? CustomHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders? CustomHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemCustomHeaders CustomHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders CustomHeaders { get; set; }
 #endif
         /// <summary>The referer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agentReadiness", n => { AgentReadiness = n.GetBoolValue(); } },
-                { "customHeaders", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemCustomHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemCustomHeaders.CreateFromDiscriminatorValue); } },
+                { "customHeaders", n => { CustomHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders.CreateFromDiscriminatorValue); } },
                 { "customagent", n => { Customagent = n.GetStringValue(); } },
                 { "referer", n => { Referer = n.GetStringValue(); } },
                 { "screenshotsResolutions", n => { ScreenshotsResolutions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem>()?.AsList(); } },
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("agentReadiness", AgentReadiness);
             writer.WriteStringValue("customagent", Customagent);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemCustomHeaders>("customHeaders", CustomHeaders);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestRequestBodyItemCustomHeaders>("customHeaders", CustomHeaders);
             writer.WriteStringValue("referer", Referer);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2RequestItemScreenshotsResolutionsItem>("screenshotsResolutions", ScreenshotsResolutions);
             writer.WriteStringValue("url", Url);

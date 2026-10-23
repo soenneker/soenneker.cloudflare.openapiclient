@@ -42,6 +42,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccessServiceTokensUpdateAServiceTokenRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ClientSecretVersion = 1;
+            Duration = "8760h";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

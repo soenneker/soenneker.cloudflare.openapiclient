@@ -13,13 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The report type for submitted reports.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Act { get; set; }
-#nullable restore
-#else
-        public string Act { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseDmcaAct? Act { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
@@ -189,7 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "act", n => { Act = n.GetStringValue(); } },
+                { "act", n => { Act = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseDmcaAct>(); } },
                 { "address1", n => { Address1 = n.GetStringValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
                 { "agree", n => { Agree = n.GetIntValue(); } },
@@ -219,7 +213,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("act", Act);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseDmcaAct>("act", Act);
             writer.WriteStringValue("address1", Address1);
             writer.WriteStringValue("agent_name", AgentName);
             writer.WriteIntValue("agree", Agree);

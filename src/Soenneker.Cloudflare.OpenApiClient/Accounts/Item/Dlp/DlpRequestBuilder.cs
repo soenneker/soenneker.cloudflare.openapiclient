@@ -24,7 +24,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\dlp
+    /// Builds and executes requests for operations under \accounts\{accountId}\dlp
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpRequestBuilder : BaseRequestBuilder
@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DlpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp", pathParameters)
+        public DlpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dlp", pathParameters)
         {
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DlpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp", rawUrl)
+        public DlpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/dlp", rawUrl)
         {
         }
     }

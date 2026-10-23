@@ -15,6 +15,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Your OAuth Client ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
+        /// <summary>Your OAuth Client Secret</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSecret { get; set; }
+#nullable restore
+#else
+        public string ClientSecret { get; set; }
+#endif
+        /// <summary>Should Cloudflare try to load authentication contexts from your account</summary>
+        public bool? ConditionalAccessEnabled { get; set; }
+        /// <summary>Your Azure directory uuid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DirectoryId { get; set; }
+#nullable restore
+#else
+        public string DirectoryId { get; set; }
+#endif
+        /// <summary>Indicates the type of user interaction that is required. prompt=login forces the user to enter their credentials on that request, negating single-sign on. prompt=none is the opposite. It ensures that the user isn&apos;t presented with any interactive prompt. If the request can&apos;t be completed silently by using single-sign on, the Microsoft identity platform returns an interaction_required error. prompt=select_account interrupts single sign-on providing account selection experience listing all the accounts either in session or any remembered account or an option to choose to use a different account altogether.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAd2AllOf2ConfigPrompt? Prompt { get; set; }
+        /// <summary>Should Cloudflare try to load groups from your account</summary>
+        public bool? SupportGroups { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAd2Config"/> and sets the default values.
         /// </summary>
@@ -40,6 +70,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
+                { "conditional_access_enabled", n => { ConditionalAccessEnabled = n.GetBoolValue(); } },
+                { "directory_id", n => { DirectoryId = n.GetStringValue(); } },
+                { "prompt", n => { Prompt = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAd2AllOf2ConfigPrompt>(); } },
+                { "support_groups", n => { SupportGroups = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +85,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
+            writer.WriteBoolValue("conditional_access_enabled", ConditionalAccessEnabled);
+            writer.WriteStringValue("directory_id", DirectoryId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAd2AllOf2ConfigPrompt>("prompt", Prompt);
+            writer.WriteBoolValue("support_groups", SupportGroups);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -37,13 +37,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleStorageTransitionCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleStorageTransitionCondition();
-            if("R2LifecycleAgeCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("Age".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2LifecycleAgeCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleAgeCondition();
             }
-            else if("R2LifecycleDateCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2LifecycleDateCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2LifecycleDateCondition();
             }

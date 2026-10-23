@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The application property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultApplication? Application { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultApplication? Application { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultApplication Application { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultApplication Application { get; private set; }
 #endif
         /// <summary>The integration&apos;s authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultAuthMethod? AuthMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultAuthMethod? AuthMethod { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultAuthMethod AuthMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultAuthMethod AuthMethod { get; private set; }
 #endif
         /// <summary>Authorization link for the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,8 +139,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultApplication>("application", Application);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OneIntegrationUpdateResponseResultAuthMethod>("auth_method", AuthMethod);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

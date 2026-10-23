@@ -29,13 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Version of the policy that was used to generate this report (positive integer starting at 1)</summary>
         public int? PolicyVersion { get; set; }
         /// <summary>Optional reason enum providing additional context about the report status (e.g., cancellation reason, error details)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason? Reason { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason Reason { get; set; }
-#endif
         /// <summary>The actual report data and findings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,13 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings ReportSettings { get; set; }
 #endif
         /// <summary>The generation status of the report.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus? ReportStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus ReportStatus { get; set; }
-#endif
         /// <summary>When this report should actually run (execution timestamp)</summary>
         public DateTimeOffset? ScheduledFor { get; set; }
         /// <summary>When this report was scheduled (creation timestamp)</summary>
@@ -95,11 +83,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "generation_id", n => { GenerationId = n.GetGuidValue(); } },
                 { "policy_id", n => { PolicyId = n.GetGuidValue(); } },
                 { "policy_version", n => { PolicyVersion = n.GetIntValue(); } },
-                { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason>(); } },
                 { "report", n => { Report = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport.CreateFromDiscriminatorValue); } },
                 { "report_id", n => { ReportId = n.GetGuidValue(); } },
                 { "report_settings", n => { ReportSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings.CreateFromDiscriminatorValue); } },
-                { "report_status", n => { ReportStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus.CreateFromDiscriminatorValue); } },
+                { "report_status", n => { ReportStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus>(); } },
                 { "scheduled_for", n => { ScheduledFor = n.GetDateTimeOffsetValue(); } },
                 { "scheduled_on", n => { ScheduledOn = n.GetDateTimeOffsetValue(); } },
             };
@@ -115,11 +103,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("generation_id", GenerationId);
             writer.WriteGuidValue("policy_id", PolicyId);
             writer.WriteIntValue("policy_version", PolicyVersion);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReason>("reason", Reason);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReport>("report", Report);
             writer.WriteGuidValue("report_id", ReportId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportSettings>("report_settings", ReportSettings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus>("report_status", ReportStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsGetReportResponseReportStatus>("report_status", ReportStatus);
             writer.WriteDateTimeOffsetValue("scheduled_for", ScheduledFor);
             writer.WriteDateTimeOffsetValue("scheduled_on", ScheduledOn);
             writer.WriteAdditionalData(AdditionalData);

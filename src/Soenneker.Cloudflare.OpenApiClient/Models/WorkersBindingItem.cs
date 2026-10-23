@@ -475,7 +475,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersBindingKindWasmModule = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindWasmModule();
             }
-            else if("WorkersBindingKindWorkflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("workflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkersBindingKindWorkflow = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingKindWorkflow();
             }

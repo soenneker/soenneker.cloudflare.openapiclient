@@ -18,36 +18,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseErrors? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseErrors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>The primary error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get; set; }
-#nullable restore
-#else
-        public string MessageEscaped { get; set; }
-#endif
+        public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseMessages? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseMessages Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligence? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligence Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseResult Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -76,10 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligence>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligence.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseErrors>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseErrors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseMessages>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseMessages.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseResult.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -90,10 +81,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem>("errors", Errors);
-            writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelUrlIntelligence>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseErrors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseMessages>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlIntelligenceGetUrlIntelligence4XxResponseResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

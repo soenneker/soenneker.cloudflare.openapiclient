@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed Authorization { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The dmarc_status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus? DmarcStatus { get; set; }
         /// <summary>The domain property</summary>
@@ -58,14 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed EmailsProcessed { get; set; }
 #endif
-        /// <summary>The folder property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The mailbox folder to scan, for API-scanning domains.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder? Folder { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder Folder { get; set; }
-#endif
         /// <summary>Domain identifier.</summary>
         public Guid? Id { get; set; }
         /// <summary>The inbox_provider property</summary>
@@ -81,11 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> IpRestrictions { get; set; }
 #endif
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
-        public DateTimeOffset? LastModified { get; set; }
+        [Obsolete("")]
+        public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The lookback_hops property</summary>
         public int? LookbackHops { get; set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The o365_tenant_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>()?.AsList(); } },
                 { "emails_processed", n => { EmailsProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed.CreateFromDiscriminatorValue); } },
-                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder.CreateFromDiscriminatorValue); } },
+                { "folder", n => { Folder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "inbox_provider", n => { InboxProvider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>(); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
@@ -176,19 +171,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainAuthorizationComposed>("authorization", Authorization);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDmarcStatus>("dmarc_status", DmarcStatus);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDispositionLabel>("drop_dispositions", DropDispositions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainEmailsProcessed>("emails_processed", EmailsProcessed);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>("folder", Folder);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainFolder>("folder", Folder);
             writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityDomainInboxProvider>("inbox_provider", InboxProvider);
             writer.WriteGuidValue("integration_id", IntegrationId);
             writer.WriteCollectionOfPrimitiveValues<string>("ip_restrictions", IpRestrictions);
-            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
             writer.WriteIntValue("lookback_hops", LookbackHops);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("o365_tenant_id", O365TenantId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityRegion>("regions", Regions);
             writer.WriteBoolValue("require_tls_inbound", RequireTlsInbound);

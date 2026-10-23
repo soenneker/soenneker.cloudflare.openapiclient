@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>To be marked healthy the monitored origin must pass this healthcheck N consecutive times.</summary>
         public int? ConsecutiveUp { get; set; }
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Object description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Method { get; set; }
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The endpoint path you want to conduct a health check against. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +106,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingMonitor()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowInsecure = false;
+            FollowRedirects = false;
+            Interval = 60;
+            Retries = 2;
+            Timeout = 5;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -156,7 +161,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("allow_insecure", AllowInsecure);
             writer.WriteIntValue("consecutive_down", ConsecutiveDown);
             writer.WriteIntValue("consecutive_up", ConsecutiveUp);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("expected_body", ExpectedBody);
             writer.WriteStringValue("expected_codes", ExpectedCodes);
@@ -165,7 +169,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("interval", Interval);
             writer.WriteStringValue("method", Method);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("port", Port);
             writer.WriteStringValue("probe_zone", ProbeZone);

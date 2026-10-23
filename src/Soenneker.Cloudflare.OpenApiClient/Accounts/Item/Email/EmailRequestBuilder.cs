@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Sending;
 using System.Collections.Generic;
@@ -11,11 +12,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\email
+    /// Builds and executes requests for operations under \accounts\{accountId}\email
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmailRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The domains property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains.DomainsRequestBuilder Domains
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The routing property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.Routing.RoutingRequestBuilder Routing
         {
@@ -31,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email", pathParameters)
+        public EmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email", rawUrl)
+        public EmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email", rawUrl)
         {
         }
     }

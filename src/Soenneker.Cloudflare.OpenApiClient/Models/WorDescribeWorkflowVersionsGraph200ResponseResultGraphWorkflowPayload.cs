@@ -8,30 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Shape descriptor for JSON payloads.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload : IAdditionalDataHolder, IParsable
+    public partial class WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Nested JsonShape fields (recursive structure).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadFields? Fields { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadFields Fields { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload"/> and sets the default values.
-        /// </summary>
-        public WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2? WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2 WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayload();
+            if("unknown".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1();
+            }
+            else if("object".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1 != null)
             {
-                { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadFields>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadFields.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadType>(); } },
-            };
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1.GetFieldDeserializers();
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2 != null)
+            {
+                return WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,9 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadFields>("fields", Fields);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf1);
+            }
+            else if(WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2>(null, WorDescribeWorkflowVersionsGraph200ResponseResultGraphWorkflowPayloadAnyOf2);
+            }
         }
     }
 }

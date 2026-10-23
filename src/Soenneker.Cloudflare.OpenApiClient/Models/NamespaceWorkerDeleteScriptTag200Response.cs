@@ -7,46 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class NamespaceWorkerDeleteScriptTag200Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class NamespaceWorkerDeleteScriptTag200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf1? NamespaceWorkerDeleteScriptTag200ResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf1 NamespaceWorkerDeleteScriptTag200ResponseOneOf1 { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf2? NamespaceWorkerDeleteScriptTag200ResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf2 NamespaceWorkerDeleteScriptTag200ResponseOneOf2 { get; set; }
 #endif
-        /// <summary>Tags associated with the Worker, as a key/value object. Each complete UTF-8 encoded tag (the key plus `=` and the value when the value is non-empty) must not exceed 1024 bytes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseResult? Result { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseResult Result { get; set; }
-#endif
-        /// <summary>Whether the API call was successful.</summary>
-        public bool? Success { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200Response"/> and sets the default values.
-        /// </summary>
-        public NamespaceWorkerDeleteScriptTag200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200Response();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200Response();
+            if("NamespaceWorkerDeleteScriptTag200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.NamespaceWorkerDeleteScriptTag200ResponseOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf1();
+            }
+            else if("NamespaceWorkerDeleteScriptTag200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.NamespaceWorkerDeleteScriptTag200ResponseOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(NamespaceWorkerDeleteScriptTag200ResponseOneOf1 != null)
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseResult.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
-            };
+                return NamespaceWorkerDeleteScriptTag200ResponseOneOf1.GetFieldDeserializers();
+            }
+            else if(NamespaceWorkerDeleteScriptTag200ResponseOneOf2 != null)
+            {
+                return NamespaceWorkerDeleteScriptTag200ResponseOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseResult>("result", Result);
-            writer.WriteBoolValue("success", Success);
-            writer.WriteAdditionalData(AdditionalData);
+            if(NamespaceWorkerDeleteScriptTag200ResponseOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf1>(null, NamespaceWorkerDeleteScriptTag200ResponseOneOf1);
+            }
+            else if(NamespaceWorkerDeleteScriptTag200ResponseOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.NamespaceWorkerDeleteScriptTag200ResponseOneOf2>(null, NamespaceWorkerDeleteScriptTag200ResponseOneOf2);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Flags.Item.Changelog
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\flagship\apps\{appId}\flags\{flagKey}\changelog
+    /// Builds and executes requests for operations under \accounts\{accountId}\flagship\apps\{appId}\flags\{flagKey}\changelog
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChangelogRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Fl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangelogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/flagship/apps/{appId}/flags/{flagKey}/changelog{?cursor*,limit*}", pathParameters)
+        public ChangelogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/flagship/apps/{appId}/flags/{flagKey}/changelog{?cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Flagship.Apps.Item.Fl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChangelogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/flagship/apps/{appId}/flags/{flagKey}/changelog{?cursor*,limit*}", rawUrl)
+        public ChangelogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/flagship/apps/{appId}/flags/{flagKey}/changelog{?cursor*,limit*}", rawUrl)
         {
         }
         /// <summary>

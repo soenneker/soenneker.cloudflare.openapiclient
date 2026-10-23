@@ -14,6 +14,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Git branch name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Branch { get; set; }
+#nullable restore
+#else
+        public string Branch { get; set; }
+#endif
+        /// <summary>The created_on property</summary>
+        public DateTimeOffset? CreatedOn { get; set; }
+        /// <summary>Deploy hook name (1-58 characters).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeployHookName { get; set; }
+#nullable restore
+#else
+        public string DeployHookName { get; set; }
+#endif
+        /// <summary>Deploy hook UUID.</summary>
+        public Guid? DeployHookUuid { get; set; }
+        /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalScriptId { get; set; }
+#nullable restore
+#else
+        public string ExternalScriptId { get; set; }
+#endif
+        /// <summary>The modified_on property</summary>
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CreateDeployHook200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +69,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "deploy_hook_name", n => { DeployHookName = n.GetStringValue(); } },
+                { "deploy_hook_uuid", n => { DeployHookUuid = n.GetGuidValue(); } },
+                { "external_script_id", n => { ExternalScriptId = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +84,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("branch", Branch);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
+            writer.WriteStringValue("deploy_hook_name", DeployHookName);
+            writer.WriteGuidValue("deploy_hook_uuid", DeployHookUuid);
+            writer.WriteStringValue("external_script_id", ExternalScriptId);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

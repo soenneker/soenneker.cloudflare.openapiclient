@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Messages { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>A single Preview of a Worker, with the build settings it currently uses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerPreview200ResponseResult? Result { get; set; }

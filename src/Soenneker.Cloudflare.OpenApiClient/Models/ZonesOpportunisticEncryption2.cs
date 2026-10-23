@@ -17,18 +17,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).</summary>
         public bool? Editable { get; private set; }
-        /// <summary>Identifier of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.It&apos;s not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OpportunisticEncryptionId? Id { get; set; }
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting.Notes: Default value depends on the zone&apos;s plan level.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryptionValue? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryption2Value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryption2"/> and sets the default values.
         /// </summary>
@@ -55,9 +49,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OpportunisticEncryptionId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryptionValue>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryption2Value>(); } },
             };
         }
         /// <summary>
@@ -67,8 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryptionValue>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OpportunisticEncryptionId>("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryption2Value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

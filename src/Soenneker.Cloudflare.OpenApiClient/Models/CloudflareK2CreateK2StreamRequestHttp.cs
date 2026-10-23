@@ -7,13 +7,12 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Configures the HTTP endpoint. Disabling HTTP keeps `authentication` and `cors`, so enabling it again restores them.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CloudflareK2CreateK2StreamRequestHttp : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CloudflareK2CreateK2StreamRequestHttp : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the HTTP endpoint requires an API token with K2 produce permission. When false, the endpoint accepts unauthenticated records. Defaults to true when HTTP is enabled without a stored value.</summary>
         public bool? Authentication { get; set; }
         /// <summary>The cors property</summary>
@@ -26,13 +25,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the HTTP endpoint accepts records.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestHttp"/> and sets the default values.
-        /// </summary>
-        public CloudflareK2CreateK2StreamRequestHttp()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,7 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("authentication", Authentication);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2K2StreamCorsOptions>("cors", Cors);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

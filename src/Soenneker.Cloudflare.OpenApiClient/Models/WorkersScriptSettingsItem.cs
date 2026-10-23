@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptSettingsItemObservability Observability { get; set; }
 #endif
-        /// <summary>Tags associated with the Worker.</summary>
+        /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }
@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersScriptSettingsItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            Logpush = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

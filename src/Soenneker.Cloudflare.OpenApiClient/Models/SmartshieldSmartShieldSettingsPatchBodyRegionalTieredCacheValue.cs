@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>Specifies the enablement value of Regional Tiered Cache.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum SmartshieldSmartShieldSettingsPatchBodyRegionalTieredCacheValue
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "on")]
         #pragma warning disable CS1591

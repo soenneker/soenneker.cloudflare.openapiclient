@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityBranch1"/>
+    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PatchTagUpdateRequestPriority : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2 PatchTagUpdateRequestPriorityAnyOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityBranch1? PatchTagUpdateRequestPriorityBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityBranch1 PatchTagUpdateRequestPriorityBranch1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriority();
-            result.PatchTagUpdateRequestPriorityAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2();
-            result.PatchTagUpdateRequestPriorityBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityBranch1();
+            if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else {
+                result.PatchTagUpdateRequestPriorityAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +47,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PatchTagUpdateRequestPriorityAnyOf2 != null || PatchTagUpdateRequestPriorityBranch1 != null)
+            if(PatchTagUpdateRequestPriorityAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PatchTagUpdateRequestPriorityAnyOf2, PatchTagUpdateRequestPriorityBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PatchTagUpdateRequestPriorityAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +60,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2>(null, PatchTagUpdateRequestPriorityAnyOf2, PatchTagUpdateRequestPriorityBranch1);
+            if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PatchTagUpdateRequestPriorityAnyOf2>(null, PatchTagUpdateRequestPriorityAnyOf2);
+            }
         }
     }
 }

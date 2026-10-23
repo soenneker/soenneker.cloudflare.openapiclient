@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp of when the Page Rule was created.</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The timestamp of when the Page Rule was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The priority of the rule, used to define which Page Rule is processedover another. A higher number indicates a higher priority. For example,if you have a catch-all Page Rule (rule A: `/images/*`) but want a morespecific Page Rule to take precedence (rule B: `/images/special/*`),specify a higher priority for rule B so it overrides rule A.</summary>
         public int? Priority { get; set; }
         /// <summary>The status of the Page Rule.</summary>
@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rule targets to evaluate on each request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget>? Targets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget>? Targets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget> Targets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget> Targets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPageRule"/> and sets the default values.
@@ -52,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesPageRule()
         {
             AdditionalData = new Dictionary<string, object>();
+            Priority = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -77,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStatus>(); } },
-                { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,12 +89,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem>("actions", Actions);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteIntValue("priority", Priority);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget>("targets", Targets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

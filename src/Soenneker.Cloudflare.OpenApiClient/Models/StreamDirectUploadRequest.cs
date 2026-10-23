@@ -62,6 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public StreamDirectUploadRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            RequireSignedURLs = false;
+            ThumbnailTimestampPct = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

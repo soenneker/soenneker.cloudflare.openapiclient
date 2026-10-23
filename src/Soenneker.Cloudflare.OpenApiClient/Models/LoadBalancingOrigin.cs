@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Address { get; set; }
 #endif
         /// <summary>This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.</summary>
-        public DateTimeOffset? DisabledAt { get; set; }
+        public DateTimeOffset? DisabledAt { get; private set; }
         /// <summary>Whether to enable (the default) this origin within the pool. Disabled origins will not receive traffic and are excluded from health checks. The origin will only be disabled for the current pool.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Whether to flatten CNAME records for this origin, resolving them to A/AAAA records before returning to the client. When true (the default), the director resolves CNAME addresses to their underlying A/AAAA records. When false, the origin address is returned as a raw CNAME record without resolution. This setting mirrors the DNS API record flatten_cname setting.</summary>
@@ -62,6 +62,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingOrigin()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            FlattenCname = true;
+            Port = 0;
+            Weight = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -100,7 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
-            writer.WriteDateTimeOffsetValue("disabled_at", DisabledAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("flatten_cname", FlattenCname);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingSchemasHeader>("header", Header);

@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.</summary>
         public bool? AutoInstall { get; set; }
         /// <summary>The created property</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>A list of rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +100,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_install", AutoInstall);
-            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRule>("rules", Rules);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RumRuleset>("ruleset", Ruleset);
             writer.WriteStringValue("site_tag", SiteTag);

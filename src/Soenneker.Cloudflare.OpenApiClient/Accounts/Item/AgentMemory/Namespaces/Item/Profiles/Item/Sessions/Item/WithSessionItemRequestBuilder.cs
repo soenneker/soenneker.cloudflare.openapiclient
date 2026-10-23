@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespaces.Item.Profiles.Item.Sessions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\agent-memory\namespaces\{namespaceName}\profiles\{profileName}\sessions\{sessionId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\agent-memory\namespaces\{namespaceName}\profiles\{profileName}\sessions\{sessionId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSessionItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/sessions/{sessionId}", pathParameters)
+        public WithSessionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/sessions/{sessionId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/sessions/{sessionId}", rawUrl)
+        public WithSessionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/sessions/{sessionId}", rawUrl)
         {
         }
         /// <summary>

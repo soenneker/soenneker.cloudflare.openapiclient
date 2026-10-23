@@ -25,9 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Certificate { get; private set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The expires_on property</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>Provide the SHA256 fingerprint of the certificate (read-only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,17 +65,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicate the read-only region the certificate authority&apos;s key material is pinned to. Omitted for certificates that were created without a region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get; private set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get; private set; }
 #endif
         /// <summary>Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayType? Type { get; private set; }
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>The uploaded_on property</summary>
-        public DateTimeOffset? UploadedOn { get; set; }
+        public DateTimeOffset? UploadedOn { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayCertificates"/> and sets the default values.
         /// </summary>
@@ -123,12 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("region", Region);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

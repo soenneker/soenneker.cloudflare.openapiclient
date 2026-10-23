@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FlagKey { get; set; }
 #endif
+        /// <summary>Key-value metadata associated with the flag. Returned only when the flag has metadata.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultMetadataProperty? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultMetadataProperty Metadata { get; set; }
+#endif
         /// <summary>Reason the evaluator selected this variation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultReason? Reason { get; set; }
         /// <summary>The value property</summary>
@@ -66,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "flagKey", n => { FlagKey = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultMetadataProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultReason>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue.CreateFromDiscriminatorValue); } },
                 { "variant", n => { Variant = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("flagKey", FlagKey);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultMetadataProperty>("metadata", Metadata);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluationResultReason>("reason", Reason);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue>("value", Value);
             writer.WriteStringValue("variant", Variant);

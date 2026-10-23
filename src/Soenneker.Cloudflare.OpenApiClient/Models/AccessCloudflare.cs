@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig ScimConfig { get; set; }
 #endif
         /// <summary>The type of identity provider. To determine the value for a specific provider, refer to our [developer documentation](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflare"/> and sets the default values.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "saml_certificate_set", n => { SamlCertificateSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderSamlCertificateSet.CreateFromDiscriminatorValue); } },
                 { "saml_certificate_set_id", n => { SamlCertificateSetId = n.GetGuidValue(); } },
                 { "scim_config", n => { ScimConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType>(); } },
             };
         }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("saml_certificate_set_id", SamlCertificateSetId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>("scim_config", ScimConfig);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAzureAdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCloudflareType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

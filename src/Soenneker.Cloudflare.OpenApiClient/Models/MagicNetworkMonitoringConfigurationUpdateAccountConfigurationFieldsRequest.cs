@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            DefaultSampling = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

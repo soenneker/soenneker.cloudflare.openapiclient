@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.Item.Repos.Item.Log
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\artifacts\namespaces\{namespaceValue}\repos\{name}\log
+    /// Builds and executes requests for operations under \accounts\{accountId}\artifacts\namespaces\{namespaceValue}\repos\{name}\log
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/artifacts/namespaces/{namespaceValue}/repos/{name}/log{?limit*,offset*,ref*}", pathParameters)
+        public LogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/artifacts/namespaces/{namespaceValue}/repos/{name}/log{?limit*,offset*,ref*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Artifacts.Namespaces.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/artifacts/namespaces/{namespaceValue}/repos/{name}/log{?limit*,offset*,ref*}", rawUrl)
+        public LogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/artifacts/namespaces/{namespaceValue}/repos/{name}/log{?limit*,offset*,ref*}", rawUrl)
         {
         }
         /// <summary>

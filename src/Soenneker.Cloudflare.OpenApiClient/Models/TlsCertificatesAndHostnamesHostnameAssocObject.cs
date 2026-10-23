@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CertId { get; set; }
 #endif
         /// <summary>The time when the certificate was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The hostname on the origin for which the client certificate uploaded will be used.</summary>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Status of the certificate or the association.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9? Status { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesHostnameAssocObject"/> and sets the default values.
         /// </summary>
@@ -79,10 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cert_id", CertId);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("hostname", Hostname);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

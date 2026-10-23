@@ -39,6 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DhcpPoolStart { get; set; }
 #endif
         /// <summary>A valid IPv4 address.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DnsServer { get; set; }

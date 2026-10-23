@@ -11,23 +11,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// Complaint-rate thresholds used to evaluate reputation status.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EmailReputationPolicyComplaint : IAdditionalDataHolder, IParsable
+    public partial class EmailReputationPolicyComplaint : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The rate at or above which the metric enters the at-risk band. A fraction between 0 and 1.</summary>
         public double? AtRiskAt { get; set; }
         /// <summary>The smallest eligible event count for this metric. Below this, the metric is skipped and cannot affect the account&apos;s status.</summary>
         public long? MinimumDenominator { get; set; }
         /// <summary>The rate at or above which the metric enters the warning band. A fraction between 0 and 1.</summary>
         public double? WarningAt { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailReputationPolicyComplaint"/> and sets the default values.
-        /// </summary>
-        public EmailReputationPolicyComplaint()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("at_risk_at", AtRiskAt);
             writer.WriteLongValue("minimum_denominator", MinimumDenominator);
             writer.WriteDoubleValue("warning_at", WarningAt);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

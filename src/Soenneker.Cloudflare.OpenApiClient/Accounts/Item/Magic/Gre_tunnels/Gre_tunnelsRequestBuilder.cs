@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\magic\gre_tunnels
+    /// Builds and executes requests for operations under \accounts\{accountId}\magic\gre_tunnels
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Gre_tunnelsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Gre_tunnelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/gre_tunnels", pathParameters)
+        public Gre_tunnelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/magic/gre_tunnels", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Gre_tunnelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/gre_tunnels", rawUrl)
+        public Gre_tunnelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/magic/gre_tunnels", rawUrl)
         {
         }
         /// <summary>
@@ -104,11 +104,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicModifiedTunnelsCollectionResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicModifiedTunnelsCollectionResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicModifiedTunnelsCollectionResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicModifiedTunnelsCollectionResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicGreTunnelsUpdateMultipleGreTunnelsRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

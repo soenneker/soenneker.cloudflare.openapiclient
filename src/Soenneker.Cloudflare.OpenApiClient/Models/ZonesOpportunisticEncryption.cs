@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.It&apos;s not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.OpportunisticEncryptionId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Opportunistic Encryption.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryptionValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOpportunisticEncryption"/> and sets the default values.

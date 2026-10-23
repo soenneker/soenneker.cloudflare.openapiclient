@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedRecipients.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\shares\{shareId}\excluded-recipients\{excludedRecipientId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\shares\{shareId}\excluded-recipients\{excludedRecipientId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithExcludedRecipientItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedR
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithExcludedRecipientItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/shares/{shareId}/excluded-recipients/{excludedRecipientId}", pathParameters)
+        public WithExcludedRecipientItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares/{shareId}/excluded-recipients/{excludedRecipientId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.ExcludedR
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithExcludedRecipientItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/shares/{shareId}/excluded-recipients/{excludedRecipientId}", rawUrl)
+        public WithExcludedRecipientItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/shares/{shareId}/excluded-recipients/{excludedRecipientId}", rawUrl)
         {
         }
         /// <summary>

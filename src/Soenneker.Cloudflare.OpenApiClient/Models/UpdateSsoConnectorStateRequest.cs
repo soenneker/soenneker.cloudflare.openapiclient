@@ -24,6 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public UpdateSsoConnectorStateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            UseFedrampLanguage = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

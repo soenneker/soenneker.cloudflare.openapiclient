@@ -37,6 +37,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public StreamLiveInputRecordingSettings()
         {
             AdditionalData = new Dictionary<string, object>();
+            HideLiveViewerCount = false;
+            RequireSignedURLs = false;
+            TimeoutSeconds = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

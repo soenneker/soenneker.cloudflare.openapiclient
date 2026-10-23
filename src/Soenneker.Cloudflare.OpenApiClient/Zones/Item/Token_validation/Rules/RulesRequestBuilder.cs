@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{zoneIdentifier-id}\token_validation\rules
+    /// Builds and executes requests for operations under \zones\{zoneIdentifier}\token_validation\rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.token_validation.rules.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Token Validation Rule ID</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Item.WithRuleItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Item.WithRuleItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/token_validation/rules{?action*,enabled*,host*,hostname*,id*,page*,per_page*,rule_id*,token_configuration*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/token_validation/rules{?action*,enabled*,host*,hostname*,id*,page*,per_page*,rule_id*,token_configuration*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier%2Did}/token_validation/rules{?action*,enabled*,host*,hostname*,id*,page*,per_page*,rule_id*,token_configuration*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zoneIdentifier}/token_validation/rules{?action*,enabled*,host*,hostname*,id*,page*,per_page*,rule_id*,token_configuration*}", rawUrl)
         {
         }
         /// <summary>

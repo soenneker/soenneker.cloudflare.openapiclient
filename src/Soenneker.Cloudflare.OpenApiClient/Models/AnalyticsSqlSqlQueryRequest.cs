@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Positional array values for `$1`, `$2`, and similar placeholders, or named object values for placeholders such as `$status`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestParams? Params { get; set; }
+        public UntypedNode? Params { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestParams Params { get; set; }
+        public UntypedNode Params { get; set; }
 #endif
         /// <summary>SQL query to execute. A trailing FORMAT selects JSON, JSONEachRow, TabSeparated, or TSV output on any dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope Scope { get; set; }
 #endif
-        /// <summary>The time_range property</summary>
+        /// <summary>Time bounds applied to the dataset&apos;s timestamp column. Do not include timestamp predicates in the SQL query when this field is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange? TimeRange { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "params", n => { Params = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestParams.CreateFromDiscriminatorValue); } },
+                { "params", n => { Params = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope.CreateFromDiscriminatorValue); } },
                 { "time_range", n => { TimeRange = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange.CreateFromDiscriminatorValue); } },
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestParams>("params", Params);
+            writer.WriteObjectValue<UntypedNode>("params", Params);
             writer.WriteStringValue("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryScope>("scope", Scope);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange>("time_range", TimeRange);

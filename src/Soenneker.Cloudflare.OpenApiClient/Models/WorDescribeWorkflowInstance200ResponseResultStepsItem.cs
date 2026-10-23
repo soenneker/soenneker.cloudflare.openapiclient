@@ -7,86 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class WorDescribeWorkflowInstance200ResponseResultStepsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class WorDescribeWorkflowInstance200ResponseResultStepsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attempts property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAttemptsItem>? Attempts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1? WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAttemptsItem> Attempts { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1 WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The config property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemConfig? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2? WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemConfig Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2 WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2 { get; set; }
 #endif
-        /// <summary>The end property</summary>
-        public DateTimeOffset? End { get; set; }
-        /// <summary>The error property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemError? Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3? WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemError Error { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3 WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3 { get; set; }
 #endif
-        /// <summary>The event_type property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4? WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4 { get; set; }
 #nullable restore
 #else
-        public string EventType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4 WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4 { get; set; }
 #endif
-        /// <summary>The finished property</summary>
-        public bool? Finished { get; set; }
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The output property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Output { get; set; }
-#nullable restore
-#else
-        public string Output { get; set; }
-#endif
-        /// <summary>The start property</summary>
-        public DateTimeOffset? Start { get; set; }
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
-        /// <summary>The trigger property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemTrigger? Trigger { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemTrigger Trigger { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem"/> and sets the default values.
-        /// </summary>
-        public WorDescribeWorkflowInstance200ResponseResultStepsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -95,7 +53,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItem();
+            result.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1();
+            result.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2();
+            result.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3();
+            result.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1 != null || WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2 != null || WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3 != null || WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4 != null)
             {
-                { "attempts", n => { Attempts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAttemptsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAttemptsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemConfig.CreateFromDiscriminatorValue); } },
-                { "end", n => { End = n.GetDateTimeOffsetValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemError>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemError.CreateFromDiscriminatorValue); } },
-                { "event_type", n => { EventType = n.GetStringValue(); } },
-                { "finished", n => { Finished = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "output", n => { Output = n.GetStringValue(); } },
-                { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
-                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemTrigger>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemTrigger.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemType>(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -126,19 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAttemptsItem>("attempts", Attempts);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemConfig>("config", Config);
-            writer.WriteDateTimeOffsetValue("end", End);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemError>("error", Error);
-            writer.WriteStringValue("event_type", EventType);
-            writer.WriteBoolValue("finished", Finished);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("output", Output);
-            writer.WriteDateTimeOffsetValue("start", Start);
-            writer.WriteBoolValue("success", Success);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemTrigger>("trigger", Trigger);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1>(null, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf1, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf2, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf3, WorDescribeWorkflowInstance200ResponseResultStepsItemAnyOf4);
         }
     }
 }

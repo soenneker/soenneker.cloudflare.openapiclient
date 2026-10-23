@@ -8,35 +8,23 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueBranch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf3"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TlsCertificatesAndHostnamesValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueBranch1"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueBranch1? TlsCertificatesAndHostnamesValueBranch1 { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueBranch1 TlsCertificatesAndHostnamesValueBranch1 { get; set; }
+        public List<string> String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper? TlsCertificatesAndHostnamesValueWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper TlsCertificatesAndHostnamesValueWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper2? TlsCertificatesAndHostnamesValueWrapper2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper2 TlsCertificatesAndHostnamesValueWrapper2 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf2"/></summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf2? TlsCertificatesAndHostnamesValueOneOf2 { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf3"/></summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf3? TlsCertificatesAndHostnamesValueOneOf3 { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,17 +35,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValue();
-            if("TlsCertificatesAndHostnamesValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf2>() is global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf2 tlsCertificatesAndHostnamesValueOneOf2Value)
             {
-                result.TlsCertificatesAndHostnamesValueBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueBranch1();
+                result.TlsCertificatesAndHostnamesValueOneOf2 = tlsCertificatesAndHostnamesValueOneOf2Value;
             }
-            else if("TlsCertificatesAndHostnamesValueWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf3>() is global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf3 tlsCertificatesAndHostnamesValueOneOf3Value)
             {
-                result.TlsCertificatesAndHostnamesValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper();
+                result.TlsCertificatesAndHostnamesValueOneOf3 = tlsCertificatesAndHostnamesValueOneOf3Value;
             }
-            else if("TlsCertificatesAndHostnamesValueWrapper2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.TlsCertificatesAndHostnamesValueWrapper2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper2();
+                result.String = stringValue;
             }
             return result;
         }
@@ -67,18 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TlsCertificatesAndHostnamesValueBranch1 != null)
-            {
-                return TlsCertificatesAndHostnamesValueBranch1.GetFieldDeserializers();
-            }
-            else if(TlsCertificatesAndHostnamesValueWrapper != null)
-            {
-                return TlsCertificatesAndHostnamesValueWrapper.GetFieldDeserializers();
-            }
-            else if(TlsCertificatesAndHostnamesValueWrapper2 != null)
-            {
-                return TlsCertificatesAndHostnamesValueWrapper2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -88,17 +64,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TlsCertificatesAndHostnamesValueBranch1 != null)
+            if(TlsCertificatesAndHostnamesValueOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueBranch1>(null, TlsCertificatesAndHostnamesValueBranch1);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf2>(null, TlsCertificatesAndHostnamesValueOneOf2);
             }
-            else if(TlsCertificatesAndHostnamesValueWrapper != null)
+            else if(TlsCertificatesAndHostnamesValueOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper>(null, TlsCertificatesAndHostnamesValueWrapper);
+                writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueOneOf3>(null, TlsCertificatesAndHostnamesValueOneOf3);
             }
-            else if(TlsCertificatesAndHostnamesValueWrapper2 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesValueWrapper2>(null, TlsCertificatesAndHostnamesValueWrapper2);
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

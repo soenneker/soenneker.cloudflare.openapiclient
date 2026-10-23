@@ -7,38 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPosition"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class RulesetsRuleRequestAllOf2Position : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class RulesetsRuleRequestAllOf2Position : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ID of another rule to place the rule after. An empty value causes the rule to be placed at the bottom.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPosition"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? After { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPosition? RulesetsRuleRequestAllOf2PositionPosition { get; set; }
 #nullable restore
 #else
-        public string After { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPosition RulesetsRuleRequestAllOf2PositionPosition { get; set; }
 #endif
-        /// <summary>The ID of another rule to place the rule before. An empty value causes the rule to be placed at the top.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Before { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed? RulesetsRuleRequestAllOf2PositionPositionComposed { get; set; }
 #nullable restore
 #else
-        public string Before { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed RulesetsRuleRequestAllOf2PositionPositionComposed { get; set; }
 #endif
-        /// <summary>An index at which to place the rule, where index 1 is the first rule.</summary>
-        public int? Index { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2Position"/> and sets the default values.
-        /// </summary>
-        public RulesetsRuleRequestAllOf2Position()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed2? RulesetsRuleRequestAllOf2PositionPositionComposed2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed2 RulesetsRuleRequestAllOf2PositionPositionComposed2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2Position CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2Position();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2Position();
+            if("RulesetsRuleRequestAllOf2PositionPosition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RulesetsRuleRequestAllOf2PositionPosition = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPosition();
+            }
+            else if("RulesetsRuleRequestAllOf2PositionPositionComposed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RulesetsRuleRequestAllOf2PositionPositionComposed = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed();
+            }
+            else if("RulesetsRuleRequestAllOf2PositionPositionComposed2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RulesetsRuleRequestAllOf2PositionPositionComposed2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,12 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RulesetsRuleRequestAllOf2PositionPosition != null)
             {
-                { "after", n => { After = n.GetStringValue(); } },
-                { "before", n => { Before = n.GetStringValue(); } },
-                { "index", n => { Index = n.GetIntValue(); } },
-            };
+                return RulesetsRuleRequestAllOf2PositionPosition.GetFieldDeserializers();
+            }
+            else if(RulesetsRuleRequestAllOf2PositionPositionComposed != null)
+            {
+                return RulesetsRuleRequestAllOf2PositionPositionComposed.GetFieldDeserializers();
+            }
+            else if(RulesetsRuleRequestAllOf2PositionPositionComposed2 != null)
+            {
+                return RulesetsRuleRequestAllOf2PositionPositionComposed2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -69,10 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("after", After);
-            writer.WriteStringValue("before", Before);
-            writer.WriteIntValue("index", Index);
-            writer.WriteAdditionalData(AdditionalData);
+            if(RulesetsRuleRequestAllOf2PositionPosition != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPosition>(null, RulesetsRuleRequestAllOf2PositionPosition);
+            }
+            else if(RulesetsRuleRequestAllOf2PositionPositionComposed != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed>(null, RulesetsRuleRequestAllOf2PositionPositionComposed);
+            }
+            else if(RulesetsRuleRequestAllOf2PositionPositionComposed2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleRequestAllOf2PositionPositionComposed2>(null, RulesetsRuleRequestAllOf2PositionPositionComposed2);
+            }
         }
     }
 }

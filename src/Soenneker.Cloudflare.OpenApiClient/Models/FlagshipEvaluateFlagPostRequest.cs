@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class FlagshipEvaluateFlagPostRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Evaluation attributes keyed by name. Values may be any JSON value; the context supports up to 100 entries and 32 KB.</summary>
+        /// <summary>Evaluation attributes keyed by name. Values may be any JSON value; the context supports up to 100 entries, nesting depth of 10, 10,000 values, and 32 KB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipEvaluateFlagPostRequestContext? Context { get; set; }

@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.OriginErrorPagePassThruId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Origin Error Page Passthru.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOriginErrorPagePassThruValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesOriginErrorPagePassThru"/> and sets the default values.

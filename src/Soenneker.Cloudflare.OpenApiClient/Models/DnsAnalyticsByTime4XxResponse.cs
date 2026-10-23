@@ -42,7 +42,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsApiResponseCommonFailureResult? Result { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult Result { get; set; }
+#endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
@@ -73,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsApiResponseCommonFailureResult>(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -87,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsMessagesItem>("messages", Messages);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsApiResponseCommonFailureResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalyticsByTime4XxResponseResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

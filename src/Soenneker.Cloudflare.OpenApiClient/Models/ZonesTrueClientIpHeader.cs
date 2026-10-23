@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TrueClientIpHeaderId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of True Client IP Header.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTrueClientIpHeaderValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTrueClientIpHeader"/> and sets the default values.

@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{appId}\sessions
+    /// Builds and executes requests for operations under \accounts\{accountId}\realtime\kit\{appId}\sessions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SessionsRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/sessions{?associated_id*,end_time*,page_no*,participants*,per_page*,search*,sort_by*,sort_order*,start_time*,status*}", pathParameters)
+        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/realtime/kit/{appId}/sessions{?associated_id*,end_time*,page_no*,participants*,per_page*,search*,sort_by*,sort_order*,start_time*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{appId}/sessions{?associated_id*,end_time*,page_no*,participants*,per_page*,search*,sort_by*,sort_order*,start_time*,status*}", rawUrl)
+        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/realtime/kit/{appId}/sessions{?associated_id*,end_time*,page_no*,participants*,per_page*,search*,sort_by*,sort_order*,start_time*,status*}", rawUrl)
         {
         }
         /// <summary>

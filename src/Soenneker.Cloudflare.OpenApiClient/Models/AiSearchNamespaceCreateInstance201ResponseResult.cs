@@ -35,13 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cache_threshold property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheThreshold? CacheThreshold { get; set; }
         /// <summary>Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheTtl? CacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheTtl CacheTtl { get; set; }
-#endif
+        public int? CacheTtl { get; set; }
         /// <summary>The chunk_overlap property</summary>
         public int? ChunkOverlap { get; set; }
         /// <summary>The chunk_size property</summary>
@@ -208,13 +202,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Status { get; private set; }
 #endif
         /// <summary>Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). Defaults to 21600 (6h); instances crawling a domain outside the account may be set to 86400.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSyncInterval? SyncInterval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSyncInterval SyncInterval { get; set; }
-#endif
+        public int? SyncInterval { get; set; }
         /// <summary>The token_id property</summary>
         public Guid? TokenId { get; set; }
         /// <summary>Source type. When omitted or null with a non-blank source, HTTP(S) URLs infer web-crawler and existing R2 bucket names infer r2. A missing or blank source without a type uses managed upload-only storage.</summary>
@@ -226,6 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Cache = true;
+            CacheTtl = 172800;
             ChunkOverlap = 10;
             MaxNumResults = 10;
             Reranking = false;
@@ -253,7 +242,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_search_model", n => { AiSearchModel = n.GetStringValue(); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
                 { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheThreshold>(); } },
-                { "cache_ttl", n => { CacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheTtl.CreateFromDiscriminatorValue); } },
+                { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -285,7 +274,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "source_params", n => { SourceParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParams.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "sync_interval", n => { SyncInterval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSyncInterval>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSyncInterval.CreateFromDiscriminatorValue); } },
+                { "sync_interval", n => { SyncInterval = n.GetIntValue(); } },
                 { "token_id", n => { TokenId = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultType>(); } },
             };
@@ -301,7 +290,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheThreshold>("cache_threshold", CacheThreshold);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCacheTtl>("cache_ttl", CacheTtl);
+            writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultCustomMetadataItem>("custom_metadata", CustomMetadata);
@@ -324,7 +313,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSourceParams>("source_params", SourceParams);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultSyncInterval>("sync_interval", SyncInterval);
+            writer.WriteIntValue("sync_interval", SyncInterval);
             writer.WriteGuidValue("token_id", TokenId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceCreateInstance201ResponseResultType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

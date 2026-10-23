@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>This is a combination of pre-defined resource name and identifier (like Account ID etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateScopeKey? Key { get; set; }
+        public UntypedNode? Key { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateScopeKey Key { get; set; }
+        public UntypedNode Key { get; set; }
 #endif
         /// <summary>A list of scope objects for additional context. The number of Scope objects should not be zero.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateScopeKey>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateScopeKey.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "objects", n => { Objects = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateResourceGroupScopeScopeObject>(global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateResourceGroupScopeScopeObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateScopeKey>("key", Key);
+            writer.WriteObjectValue<UntypedNode>("key", Key);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCreateResourceGroupScopeScopeObject>("objects", Objects);
             writer.WriteAdditionalData(AdditionalData);
         }

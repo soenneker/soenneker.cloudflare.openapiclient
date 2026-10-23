@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.Item.Relationships
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\tags\{tagUuid}\relationships
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\tags\{tagUuid}\relationships
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelationshipsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/tags/{tagUuid}/relationships{?cursor*,datasets*,expand*,pageSize*,search*}", pathParameters)
+        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/tags/{tagUuid}/relationships{?cursor*,datasets*,expand*,pageSize*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/tags/{tagUuid}/relationships{?cursor*,datasets*,expand*,pageSize*,search*}", rawUrl)
+        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/tags/{tagUuid}/relationships{?cursor*,datasets*,expand*,pageSize*,search*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns sparse relationship edges. Optionally hydrate related entities via `expand`. Fans out across accessible intelligence (isAnalytics=false) indicator dataset shards; `all` and `operational` are equivalent. Analytics datasets do not expose tag associations, so the analytics scope returns an empty result.
+        /// Lists the relationships that start at a tag, across the intelligence datasets you can read. Use `datasets` to limit the datasets (`all` and `operational` are equivalent here) and `expand` to include the related entities. Analytics datasets don&apos;t store tag associations, so the `analytics` scope returns no results.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagRelationshipsList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagRelationshipsList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagRelationshipsList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new relationship with the tag as the source entity. Requires a datasetId to locate the Indicators DO.
+        /// Creates a relationship from a tag to an event or indicator (`targetType`) in the dataset given by `datasetId`. Relationships between two tags are not supported.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagRelationshipCreate200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagRelationshipCreate200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagRelationshipCreate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns sparse relationship edges. Optionally hydrate related entities via `expand`. Fans out across accessible intelligence (isAnalytics=false) indicator dataset shards; `all` and `operational` are equivalent. Analytics datasets do not expose tag associations, so the analytics scope returns an empty result.
+        /// Lists the relationships that start at a tag, across the intelligence datasets you can read. Use `datasets` to limit the datasets (`all` and `operational` are equivalent here) and `expand` to include the related entities. Analytics datasets don&apos;t store tag associations, so the `analytics` scope returns no results.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new relationship with the tag as the source entity. Requires a datasetId to locate the Indicators DO.
+        /// Creates a relationship from a tag to an event or indicator (`targetType`) in the dataset given by `datasetId`. Relationships between two tags are not supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.Item.Relationships.RelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns sparse relationship edges. Optionally hydrate related entities via `expand`. Fans out across accessible intelligence (isAnalytics=false) indicator dataset shards; `all` and `operational` are equivalent. Analytics datasets do not expose tag associations, so the analytics scope returns an empty result.
+        /// Lists the relationships that start at a tag, across the intelligence datasets you can read. Use `datasets` to limit the datasets (`all` and `operational` are equivalent here) and `expand` to include the related entities. Analytics datasets don&apos;t store tag associations, so the `analytics` scope returns no results.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelationshipsRequestBuilderGetQueryParameters 

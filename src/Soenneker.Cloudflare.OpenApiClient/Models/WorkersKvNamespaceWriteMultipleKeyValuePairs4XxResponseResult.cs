@@ -14,6 +14,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of keys successfully written or deleted by the bulk operation.</summary>
+        public double? SuccessfulKeyCount { get; set; }
+        /// <summary>Names of keys that failed to be written or deleted. Retry the operation for these keys.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UnsuccessfulKeys { get; set; }
+#nullable restore
+#else
+        public List<string> UnsuccessfulKeys { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKvNamespaceWriteMultipleKeyValuePairs4XxResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "successful_key_count", n => { SuccessfulKeyCount = n.GetDoubleValue(); } },
+                { "unsuccessful_keys", n => { UnsuccessfulKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("successful_key_count", SuccessfulKeyCount);
+            writer.WriteCollectionOfPrimitiveValues<string>("unsuccessful_keys", UnsuccessfulKeys);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

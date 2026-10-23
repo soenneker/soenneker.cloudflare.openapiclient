@@ -8,33 +8,35 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Controls the nameservers through which the zone is available.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflare"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExisting"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSet"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DnsSettingsDnsSettingsZonePatchAllOf2Nameservers : IAdditionalDataHolder, IParsable
+    public partial class DnsSettingsDnsSettingsZonePatchAllOf2Nameservers : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifier for a nameserver set.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflare"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NameserverSetId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflare? DnsSettingsZoneNameserversCloudflare { get; set; }
 #nullable restore
 #else
-        public string NameserverSetId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflare DnsSettingsZoneNameserversCloudflare { get; set; }
 #endif
-        /// <summary>Configured nameserver set number to use for this zone.</summary>
-        public int? NsSet { get; set; }
-        /// <summary>Nameserver type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflareType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsZonePatchAllOf2Nameservers"/> and sets the default values.
-        /// </summary>
-        public DnsSettingsDnsSettingsZonePatchAllOf2Nameservers()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            NsSet = 1;
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExisting"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExisting? DnsSettingsZoneNameserversCustomExisting { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExisting DnsSettingsZoneNameserversCustomExisting { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSet"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSet? DnsSettingsZoneNameserversCustomSet { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSet DnsSettingsZoneNameserversCustomSet { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsZonePatchAllOf2Nameservers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsZonePatchAllOf2Nameservers();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsZonePatchAllOf2Nameservers();
+            if("DnsSettingsZoneNameserversCloudflare".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsSettingsZoneNameserversCloudflare = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflare();
+            }
+            else if("DnsSettingsZoneNameserversCustomExisting".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsSettingsZoneNameserversCustomExisting = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExisting();
+            }
+            else if("DnsSettingsZoneNameserversCustomSet".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DnsSettingsZoneNameserversCustomSet = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSet();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,12 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DnsSettingsZoneNameserversCloudflare != null)
             {
-                { "nameserver_set_id", n => { NameserverSetId = n.GetStringValue(); } },
-                { "ns_set", n => { NsSet = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflareType>(); } },
-            };
+                return DnsSettingsZoneNameserversCloudflare.GetFieldDeserializers();
+            }
+            else if(DnsSettingsZoneNameserversCustomExisting != null)
+            {
+                return DnsSettingsZoneNameserversCustomExisting.GetFieldDeserializers();
+            }
+            else if(DnsSettingsZoneNameserversCustomSet != null)
+            {
+                return DnsSettingsZoneNameserversCustomSet.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -65,10 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("nameserver_set_id", NameserverSetId);
-            writer.WriteIntValue("ns_set", NsSet);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflareType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DnsSettingsZoneNameserversCloudflare != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCloudflare>(null, DnsSettingsZoneNameserversCloudflare);
+            }
+            else if(DnsSettingsZoneNameserversCustomExisting != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomExisting>(null, DnsSettingsZoneNameserversCustomExisting);
+            }
+            else if(DnsSettingsZoneNameserversCustomSet != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameserversCustomSet>(null, DnsSettingsZoneNameserversCustomSet);
+            }
         }
     }
 }

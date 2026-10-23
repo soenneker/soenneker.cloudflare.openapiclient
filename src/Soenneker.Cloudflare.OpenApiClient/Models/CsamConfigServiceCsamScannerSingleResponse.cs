@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceApiResponseMessage> Messages { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>CSAM Scanner configuration for a zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponseResult? Result { get; set; }

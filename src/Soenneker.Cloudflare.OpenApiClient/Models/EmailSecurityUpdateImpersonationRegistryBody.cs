@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Identifier of the directory the entry was synced from, when directory-synced.</summary>
         public int? DirectoryId { get; set; }
         /// <summary>Identifier of the directory node the entry was synced from, when directory-synced.</summary>
@@ -47,13 +47,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ExternalDirectoryNodeId { get; set; }
 #endif
         /// <summary>Impersonation registry entry identifier.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>Whether `email` is a regular expression instead of a literal address.</summary>
         public bool? IsEmailRegex { get; set; }
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
-        public DateTimeOffset? LastModified { get; set; }
+        [Obsolete("")]
+        public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>Display name of the protected identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,15 +112,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteIntValue("directory_id", DirectoryId);
             writer.WriteIntValue("directory_node_id", DirectoryNodeId);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("external_directory_node_id", ExternalDirectoryNodeId);
-            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_email_regex", IsEmailRegex);
-            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityImpersonationRegistryProvenance>("provenance", Provenance);
             writer.WriteAdditionalData(AdditionalData);

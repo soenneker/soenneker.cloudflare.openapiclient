@@ -90,6 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccessPolicies()
         {
             AdditionalData = new Dictionary<string, object>();
+            ApprovalRequired = false;
+            IsolationRequired = false;
+            PurposeJustificationRequired = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

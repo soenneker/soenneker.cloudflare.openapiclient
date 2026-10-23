@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Inspect the visitor&apos;s browser for headers commonly associated withspammers and certain bots.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BrowserCheckId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Browser Integrity Check.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesBrowserCheckValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesBrowserCheck"/> and sets the default values.

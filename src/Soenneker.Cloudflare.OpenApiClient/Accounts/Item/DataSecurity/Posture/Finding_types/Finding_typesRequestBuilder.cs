@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Finding_types
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\data-security\posture\finding_types
+    /// Builds and executes requests for operations under \accounts\{accountId}\data-security\posture\finding_types
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Finding_typesRequestBuilder : BaseRequestBuilder
@@ -25,9 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Finding_types.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dataSecurity.posture.finding_types.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A UUID string identifying the finding type.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Finding_types.Item.WithFindingTypeItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Finding_types.Item.WithFindingTypeItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Finding_types.Item.WithFindingTypeItemRequestBuilder this[Guid position]
         {
             get
             {
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Finding_typesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/data-security/posture/finding_types{?direction*,max_updated_at*,min_updated_at*,order*,origins,page*,per_page*,quarantined*,search*,severities,types,vendors}", pathParameters)
+        public Finding_typesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/data-security/posture/finding_types{?direction*,max_updated_at*,min_updated_at*,order*,origins,page*,per_page*,quarantined*,search*,severities,types,vendors}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Finding_typesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/data-security/posture/finding_types{?direction*,max_updated_at*,min_updated_at*,order*,origins,page*,per_page*,quarantined*,search*,severities,types,vendors}", rawUrl)
+        public Finding_typesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/data-security/posture/finding_types{?direction*,max_updated_at*,min_updated_at*,order*,origins,page*,per_page*,quarantined*,search*,severities,types,vendors}", rawUrl)
         {
         }
         /// <summary>
@@ -59,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingTypeList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Finding_types.Finding_typesRequestBuilder.Finding_typesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -72,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingTypeList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingTypeList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCustomFindingTypeSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiCustomFindingTypeSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

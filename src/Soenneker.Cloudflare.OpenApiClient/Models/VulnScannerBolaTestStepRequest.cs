@@ -40,13 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> HeaderNames { get; set; }
 #endif
         /// <summary>HTTP method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod? Method { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod Method { get; set; }
-#endif
         /// <summary>Exact and full URL (including host, query parameters) that was requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody.CreateFromDiscriminatorValue); } },
                 { "credential_set", n => { CredentialSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet.CreateFromDiscriminatorValue); } },
                 { "header_names", n => { HeaderNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "method", n => { Method = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod.CreateFromDiscriminatorValue); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "variable_captures", n => { VariableCaptures = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -106,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestStepRequestBody>("body", Body);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet>("credential_set", CredentialSet);
             writer.WriteCollectionOfPrimitiveValues<string>("header_names", HeaderNames);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod>("method", Method);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestMethod>("method", Method);
             writer.WriteStringValue("url", Url);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaVariableCapture>("variable_captures", VariableCaptures);
             writer.WriteAdditionalData(AdditionalData);

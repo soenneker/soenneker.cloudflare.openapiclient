@@ -28,8 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Next time this zone will be scanned by the Automatic SSL/TLS.</summary>
         public DateTimeOffset? NextScheduledScan { get; private set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResultValue? Value { get; set; }
+        /// <summary>Current setting of the automatic SSL/TLS.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResultValue? Value { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResult"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheResultValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

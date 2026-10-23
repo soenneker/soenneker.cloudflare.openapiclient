@@ -38,13 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest> Orders { get; set; }
 #endif
         /// <summary>Filter by finding&apos;s category product.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct? Product { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct Product { get; set; }
-#endif
         /// <summary>A search term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_affliction_date", n => { MaxAfflictionDate = n.GetDateTimeOffsetValue(); } },
                 { "min_affliction_date", n => { MinAfflictionDate = n.GetDateTimeOffsetValue(); } },
                 { "orders", n => { Orders = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct>(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "severities", n => { Severities = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum>()?.AsList(); } },
                 { "vendors", n => { Vendors = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum>()?.AsList(); } },
@@ -117,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("max_affliction_date", MaxAfflictionDate);
             writer.WriteDateTimeOffsetValue("min_affliction_date", MinAfflictionDate);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportOrderFilterRequest>("orders", Orders);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct>("product", Product);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiFindingExportFilterRequestProduct>("product", Product);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiSeveritiesEnum>("severities", Severities);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiVendorsEnum>("vendors", Vendors);

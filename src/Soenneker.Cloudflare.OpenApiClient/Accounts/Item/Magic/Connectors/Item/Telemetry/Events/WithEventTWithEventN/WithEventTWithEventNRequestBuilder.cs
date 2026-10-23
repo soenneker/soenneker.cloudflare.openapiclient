@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEventTWithEventN
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\magic\connectors\{connectorId}\telemetry\events\{eventT}.{eventN}
+    /// Builds and executes requests for operations under \accounts\{accountId}\magic\connectors\{connectorId}\telemetry\events\{eventT}.{eventN}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithEventTWithEventNRequestBuilder : BaseRequestBuilder
@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// <param name="eventT">The path parameter: eventT</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEventTWithEventNRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, double? eventN = default, double? eventT = default) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors/{connectorId}/telemetry/events/{eventT}.{eventN}", pathParameters)
+        public WithEventTWithEventNRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, double? eventN = default, double? eventT = default) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/magic/connectors/{connectorId}/telemetry/events/{eventT}.{eventN}", pathParameters)
         {
             if (eventN != null) PathParameters.Add("eventN", eventN);
             if (eventT != null) PathParameters.Add("eventT", eventT);
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEventTWithEventNRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors/{connectorId}/telemetry/events/{eventT}.{eventN}", rawUrl)
+        public WithEventTWithEventNRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/magic/connectors/{connectorId}/telemetry/events/{eventT}.{eventN}", rawUrl)
         {
         }
         /// <summary>

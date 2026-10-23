@@ -15,6 +15,62 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The authorization_endpoint URL of your IdP</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthUrl { get; set; }
+#nullable restore
+#else
+        public string AuthUrl { get; set; }
+#endif
+        /// <summary>The jwks_uri endpoint of your IdP to allow the IdP keys to sign the tokens</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CertsUrl { get; set; }
+#nullable restore
+#else
+        public string CertsUrl { get; set; }
+#endif
+        /// <summary>List of custom claims that will be pulled from your id_token and added to your signed Access JWT token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Claims { get; set; }
+#nullable restore
+#else
+        public List<string> Claims { get; set; }
+#endif
+        /// <summary>Your OAuth Client ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
+        /// <summary>Your OAuth Client Secret</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSecret { get; set; }
+#nullable restore
+#else
+        public string ClientSecret { get; set; }
+#endif
+        /// <summary>OAuth scopes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Scopes { get; set; }
+#nullable restore
+#else
+        public List<string> Scopes { get; set; }
+#endif
+        /// <summary>The token_endpoint URL of your IdP</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenUrl { get; set; }
+#nullable restore
+#else
+        public string TokenUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessOidc2Config"/> and sets the default values.
         /// </summary>
@@ -40,6 +96,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auth_url", n => { AuthUrl = n.GetStringValue(); } },
+                { "certs_url", n => { CertsUrl = n.GetStringValue(); } },
+                { "claims", n => { Claims = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "token_url", n => { TokenUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +112,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("auth_url", AuthUrl);
+            writer.WriteStringValue("certs_url", CertsUrl);
+            writer.WriteCollectionOfPrimitiveValues<string>("claims", Claims);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            writer.WriteStringValue("token_url", TokenUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,14 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sort direction.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDirectionEnum? Direction { get; set; }
-        /// <summary>Field name to order by.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
+        /// <summary>Content-specific field names for ordering.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentOrderName? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentOrder"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDirectionEnum>(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentOrderName>(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiDirectionEnum>("direction", Direction);
-            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiContentOrderName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

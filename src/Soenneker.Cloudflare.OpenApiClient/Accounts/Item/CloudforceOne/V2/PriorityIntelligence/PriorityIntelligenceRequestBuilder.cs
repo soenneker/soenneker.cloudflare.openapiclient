@@ -7,6 +7,8 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Priority
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Filters;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Interests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Matches;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Profile;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Quota;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -17,7 +19,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\v2\priority-intelligence
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\v2\priority-intelligence
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PriorityIntelligenceRequestBuilder : BaseRequestBuilder
@@ -36,6 +38,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Interests.InterestsRequestBuilder Interests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Interests.InterestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The matches property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Matches.MatchesRequestBuilder Matches
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Matches.MatchesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The profile property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Profile.ProfileRequestBuilder Profile
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The quota property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Quota.QuotaRequestBuilder Quota
@@ -59,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PriorityIntelligenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/priority-intelligence{?page*,per_page*}", pathParameters)
+        public PriorityIntelligenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/priority-intelligence{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -67,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PriorityIntelligenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/priority-intelligence{?page*,per_page*}", rawUrl)
+        public PriorityIntelligenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/priority-intelligence{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

@@ -31,6 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public SnippetsResultInfo()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 1;
+            PerPage = 25;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

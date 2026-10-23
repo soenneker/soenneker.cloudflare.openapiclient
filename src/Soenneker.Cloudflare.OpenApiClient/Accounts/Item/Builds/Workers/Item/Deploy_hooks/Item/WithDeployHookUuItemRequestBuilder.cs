@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.Deploy_hooks.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\builds\workers\{externalScript-id}\deploy_hooks\{deployHookUuid}
+    /// Builds and executes requests for operations under \accounts\{accountId}\builds\workers\{externalScriptId}\deploy_hooks\{deployHookUuid}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDeployHookUuItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeployHookUuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/workers/{externalScript%2Did}/deploy_hooks/{deployHookUuid}", pathParameters)
+        public WithDeployHookUuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/workers/{externalScriptId}/deploy_hooks/{deployHookUuid}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Workers.Item.D
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDeployHookUuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/workers/{externalScript%2Did}/deploy_hooks/{deployHookUuid}", rawUrl)
+        public WithDeployHookUuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/builds/workers/{externalScriptId}/deploy_hooks/{deployHookUuid}", rawUrl)
         {
         }
         /// <summary>

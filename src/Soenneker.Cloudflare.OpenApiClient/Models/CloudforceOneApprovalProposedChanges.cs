@@ -45,17 +45,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChanges();
-            if("CloudforceOneApprovalProposedChangesOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudforceOneApprovalProposedChangesOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChangesOneOf1();
             }
-            else if("CloudforceOneApprovalProposedChangesOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudforceOneApprovalProposedChangesOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChangesOneOf2();
             }
-            else if("CloudforceOneApprovalProposedChangesOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudforceOneApprovalProposedChangesOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneApprovalProposedChangesOneOf3();
             }

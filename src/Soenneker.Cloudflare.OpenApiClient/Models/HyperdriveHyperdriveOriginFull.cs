@@ -8,80 +8,35 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Combines database connection fields with exactly one supported network location.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullPublicDatabase"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class HyperdriveHyperdriveOriginFull : IAdditionalDataHolder, IParsable
+    public partial class HyperdriveHyperdriveOriginFull : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Defines the Client ID of the Access token to use when connecting to the origin database.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessClientId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel? HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel { get; set; }
 #nullable restore
 #else
-        public string AccessClientId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel { get; set; }
 #endif
-        /// <summary>Defines the Client Secret of the Access Token to use when connecting to the origin database. The API never returns this write-only value.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessClientSecret { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc? HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc { get; set; }
 #nullable restore
 #else
-        public string AccessClientSecret { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set the name of your origin database.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullPublicDatabase"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Database { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullPublicDatabase? HyperdriveHyperdriveOriginFullPublicDatabase { get; set; }
 #nullable restore
 #else
-        public string Database { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullPublicDatabase HyperdriveHyperdriveOriginFullPublicDatabase { get; set; }
 #endif
-        /// <summary>Defines the publicly reachable hostname or IP of your origin database. Private, loopback, and link-local IP addresses are not allowed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Host { get; set; }
-#nullable restore
-#else
-        public string Host { get; set; }
-#endif
-        /// <summary>Set the password needed to access your origin database. The API never returns this write-only value.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Password { get; set; }
-#nullable restore
-#else
-        public string Password { get; set; }
-#endif
-        /// <summary>Defines the port of your origin database. Defaults to 5432 for PostgreSQL or 3306 for MySQL if not specified.</summary>
-        public int? Port { get; set; }
-        /// <summary>Specifies the URL scheme used to connect to your origin database.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme? Scheme { get; set; }
-        /// <summary>The identifier of the Workers VPC Service to connect through. Hyperdrive will egress through the specified VPC Service to reach the origin database.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ServiceId { get; set; }
-#nullable restore
-#else
-        public string ServiceId { get; set; }
-#endif
-        /// <summary>Set the user of your origin database.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? User { get; set; }
-#nullable restore
-#else
-        public string User { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull"/> and sets the default values.
-        /// </summary>
-        public HyperdriveHyperdriveOriginFull()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFull();
+            if("HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel = new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel();
+            }
+            else if("HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc = new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc();
+            }
+            else if("HyperdriveHyperdriveOriginFullPublicDatabase".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.HyperdriveHyperdriveOriginFullPublicDatabase = new global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullPublicDatabase();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,18 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel != null)
             {
-                { "access_client_id", n => { AccessClientId = n.GetStringValue(); } },
-                { "access_client_secret", n => { AccessClientSecret = n.GetStringValue(); } },
-                { "database", n => { Database = n.GetStringValue(); } },
-                { "host", n => { Host = n.GetStringValue(); } },
-                { "password", n => { Password = n.GetStringValue(); } },
-                { "port", n => { Port = n.GetIntValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme>(); } },
-                { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "user", n => { User = n.GetStringValue(); } },
-            };
+                return HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel.GetFieldDeserializers();
+            }
+            else if(HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc != null)
+            {
+                return HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc.GetFieldDeserializers();
+            }
+            else if(HyperdriveHyperdriveOriginFullPublicDatabase != null)
+            {
+                return HyperdriveHyperdriveOriginFullPublicDatabase.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -118,16 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("access_client_id", AccessClientId);
-            writer.WriteStringValue("access_client_secret", AccessClientSecret);
-            writer.WriteStringValue("database", Database);
-            writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("password", Password);
-            writer.WriteIntValue("port", Port);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveScheme>("scheme", Scheme);
-            writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteStringValue("user", User);
-            writer.WriteAdditionalData(AdditionalData);
+            if(HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel>(null, HyperdriveHyperdriveOriginFullAccessProtectedDatabaseBehindCloudflareTunnel);
+            }
+            else if(HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc>(null, HyperdriveHyperdriveOriginFullDatabaseReachableThroughAWorkersVpc);
+            }
+            else if(HyperdriveHyperdriveOriginFullPublicDatabase != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.HyperdriveHyperdriveOriginFullPublicDatabase>(null, HyperdriveHyperdriveOriginFullPublicDatabase);
+            }
         }
     }
 }

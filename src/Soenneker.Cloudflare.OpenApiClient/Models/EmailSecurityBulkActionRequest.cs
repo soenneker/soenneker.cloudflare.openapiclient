@@ -24,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>Required when action is &apos;MOVE&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The mailbox folder to move messages to.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination? Destination { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination Destination { get; set; }
-#endif
         /// <summary>The verdict Email Security assigns to a message.</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition? ExpectedDisposition { get; set; }
@@ -70,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestAction>(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination.CreateFromDiscriminatorValue); } },
+                { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination>(); } },
                 { "expected_disposition", n => { ExpectedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition>(); } },
                 { "search_params", n => { SearchParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams.CreateFromDiscriminatorValue); } },
             };
@@ -84,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestAction>("action", Action);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination>("destination", Destination);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestDestination>("destination", Destination);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkActionRequestExpectedDisposition>("expected_disposition", ExpectedDisposition);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityBulkSearchParams>("search_params", SearchParams);
             writer.WriteAdditionalData(AdditionalData);

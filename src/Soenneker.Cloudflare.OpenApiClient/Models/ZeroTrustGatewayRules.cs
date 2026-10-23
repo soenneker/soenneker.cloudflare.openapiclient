@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Indicate the date of deletion, if any.</summary>
         public DateTimeOffset? DeletedAt { get; private set; }
         /// <summary>Specify the rule description.</summary>
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem?>? Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesFiltersItem?>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem?> Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesFiltersItem?> Filters { get; set; }
 #endif
         /// <summary>Identify the API resource with a UUID.</summary>
         public Guid? Id { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.</summary>
         public int? Precedence { get; set; }
         /// <summary>Indicate that this rule is shared via the Orgs API and read only.</summary>
-        public bool? ReadOnly { get; set; }
+        public bool? ReadOnly { get; private set; }
         /// <summary>Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,14 +93,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchedule Schedule { get; set; }
 #endif
         /// <summary>Indicate that this rule is sharable via the Orgs API.</summary>
-        public bool? Sharable { get; set; }
+        public bool? Sharable { get; private set; }
         /// <summary>Provide the account tag of the account that created the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceAccount { get; set; }
+        public string? SourceAccount { get; private set; }
 #nullable restore
 #else
-        public string SourceAccount { get; set; }
+        public string SourceAccount { get; private set; }
 #endif
         /// <summary>Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,9 +111,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Traffic { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>Indicate the version number of the rule(read-only).</summary>
-        public int? Version { get; set; }
+        public int? Version { get; private set; }
         /// <summary>Indicate a warning for a misconfigured rule, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGatewayRules()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -154,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration.CreateFromDiscriminatorValue); } },
-                { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem>()?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesFiltersItem>()?.AsList(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -178,24 +179,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayAction>("action", Action);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("device_posture", DevicePosture);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration>("expiration", Expiration);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem>("filters", Filters);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesFiltersItem>("filters", Filters);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("identity", Identity);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("precedence", Precedence);
-            writer.WriteBoolValue("read_only", ReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRuleSettings>("rule_settings", RuleSettings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewaySchedule>("schedule", Schedule);
-            writer.WriteBoolValue("sharable", Sharable);
-            writer.WriteStringValue("source_account", SourceAccount);
             writer.WriteStringValue("traffic", Traffic);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

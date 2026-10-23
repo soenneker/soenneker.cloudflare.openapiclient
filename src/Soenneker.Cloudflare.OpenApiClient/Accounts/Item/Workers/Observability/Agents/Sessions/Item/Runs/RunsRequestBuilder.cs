@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Agents.Sessions.Item.Runs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\workers\observability\agents\sessions\{conversationId}\runs
+    /// Builds and executes requests for operations under \accounts\{accountId}\workers\observability\agents\sessions\{conversationId}\runs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RunsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/observability/agents/sessions/{conversationId}/runs?agent={agent}&from={from}&service={service}&to={to}{&cursor*,per_page*}", pathParameters)
+        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/observability/agents/sessions/{conversationId}/runs?agent={agent}&from={from}&service={service}&to={to}{&cursor*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/observability/agents/sessions/{conversationId}/runs?agent={agent}&from={from}&service={service}&to={to}{&cursor*,per_page*}", rawUrl)
+        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/observability/agents/sessions/{conversationId}/runs?agent={agent}&from={from}&service={service}&to={to}{&cursor*,per_page*}", rawUrl)
         {
         }
         /// <summary>

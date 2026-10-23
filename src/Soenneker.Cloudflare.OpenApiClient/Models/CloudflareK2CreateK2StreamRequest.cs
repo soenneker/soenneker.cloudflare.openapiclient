@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class CloudflareK2CreateK2StreamRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The http property</summary>
+        /// <summary>Configures the HTTP endpoint. Disabling HTTP keeps `authentication` and `cors`, so enabling it again restores them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareK2CreateK2StreamRequestHttp? Http { get; set; }

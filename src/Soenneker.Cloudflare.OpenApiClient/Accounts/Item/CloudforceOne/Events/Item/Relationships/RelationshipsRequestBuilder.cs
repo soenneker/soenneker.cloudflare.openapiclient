@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Relationships
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\{dataset-id}\relationships
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\{datasetId}\relationships
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RelationshipsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/{dataset%2Did}/relationships?datasetId={datasetId}{&direction*,includeParent*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", pathParameters)
+        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/{datasetId}/relationships?datasetId={datasetId}{&direction*,includeParent*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/{dataset%2Did}/relationships?datasetId={datasetId}{&direction*,includeParent*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", rawUrl)
+        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/{datasetId}/relationships?datasetId={datasetId}{&direction*,includeParent*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", rawUrl)
         {
         }
         /// <summary>
-        /// Deprecated; use GET /events/by-id/{event_id}/relationships. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events relationships list` (`GET /events/by-id/{event_id}/relationships`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.GetLegacyEventRelationships200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Deprecated; use GET /events/by-id/{event_id}/relationships. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events relationships list` (`GET /events/by-id/{event_id}/relationships`) instead. Available through 2026-11-28.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Relationships.RelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Deprecated; use GET /events/by-id/{event_id}/relationships. Available through 2026-11-28.
+        /// Legacy. Use `threat-intel events relationships list` (`GET /events/by-id/{event_id}/relationships`) instead. Available through 2026-11-28.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RelationshipsRequestBuilderGetQueryParameters 

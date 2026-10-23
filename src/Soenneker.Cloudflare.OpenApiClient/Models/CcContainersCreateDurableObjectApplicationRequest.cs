@@ -53,14 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability Observability { get; set; }
 #endif
-        /// <summary>The scheduling_policy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Selects a Durable Object-managed application. Each Durable Object creates andmanages the lifecycle of its container instance. Configure application-wideobservability settings here. Deployment configuration, scaling, placementconstraints, versions, and rollouts do not apply.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy? SchedulingPolicy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy SchedulingPolicy { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "durable_objects", n => { DurableObjects = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability.CreateFromDiscriminatorValue); } },
-                { "scheduling_policy", n => { SchedulingPolicy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy.CreateFromDiscriminatorValue); } },
+                { "scheduling_policy", n => { SchedulingPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy>(); } },
             };
         }
         /// <summary>
@@ -99,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects>("durable_objects", DurableObjects);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcDurableObjectApplicationObservability>("observability", Observability);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy>("scheduling_policy", SchedulingPolicy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestSchedulingPolicy>("scheduling_policy", SchedulingPolicy);
         }
     }
 }

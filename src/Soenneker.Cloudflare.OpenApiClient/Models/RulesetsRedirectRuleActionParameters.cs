@@ -15,6 +15,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A redirect based on a bulk list lookup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList? FromList { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList FromList { get; set; }
+#endif
+        /// <summary>A redirect based on the request properties.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue? FromValue { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue FromValue { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectRuleActionParameters"/> and sets the default values.
         /// </summary>
@@ -40,6 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "from_list", n => { FromList = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList.CreateFromDiscriminatorValue); } },
+                { "from_value", n => { FromValue = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromList>("from_list", FromList);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRedirectFromValue>("from_value", FromValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

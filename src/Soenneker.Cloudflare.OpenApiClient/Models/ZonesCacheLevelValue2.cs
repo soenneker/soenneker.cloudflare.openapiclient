@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>* `bypass`: Cloudflare does not cache.* `basic`: Delivers resources from cache when there is no query  string.* `simplified`: Delivers the same resource to everyone independent  of the query string.* `aggressive`: Caches all static content that has a query string.* `cache_everything`: Treats all content as static and caches all  file types beyond the [Cloudflare default cached  content](https://developers.cloudflare.com/cache/concepts/default-cache-behavior/#default-cached-file-extensions).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ZonesCacheLevelValue2
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "bypass")]
         #pragma warning disable CS1591

@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier of the User Agent Blocking rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The action to apply to a matched request.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallComponentsSchemasMode? Mode { get; set; }
@@ -83,7 +83,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasConfiguration>("configuration", Configuration);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallComponentsSchemasMode>("mode", Mode);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteAdditionalData(AdditionalData);

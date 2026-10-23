@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationHeaders Headers { get; set; }
 #endif
         /// <summary>The logpushDataset property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset? LogpushDataset { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset LogpushDataset { get; set; }
-#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType? Type { get; set; }
         /// <summary>The url property</summary>
@@ -66,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationHeaders.CreateFromDiscriminatorValue); } },
-                { "logpushDataset", n => { LogpushDataset = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset>(global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset.CreateFromDiscriminatorValue); } },
+                { "logpushDataset", n => { LogpushDataset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -79,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationHeaders>("headers", Headers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset>("logpushDataset", LogpushDataset);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DestinationCreateRequestConfigurationLogpushDataset>("logpushDataset", LogpushDataset);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LogpushType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

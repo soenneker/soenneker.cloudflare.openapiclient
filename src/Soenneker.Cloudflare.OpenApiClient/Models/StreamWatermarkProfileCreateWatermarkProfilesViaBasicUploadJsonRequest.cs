@@ -50,6 +50,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public StreamWatermarkProfileCreateWatermarkProfilesViaBasicUploadJsonRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Opacity = 1;
+            Padding = 0.05;
+            Position = "upperRight";
+            Scale = 0.15;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

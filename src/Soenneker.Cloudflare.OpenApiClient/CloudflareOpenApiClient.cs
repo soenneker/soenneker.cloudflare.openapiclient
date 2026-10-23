@@ -8,7 +8,6 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Cloudflare.OpenApiClient.Accounts;
 using Soenneker.Cloudflare.OpenApiClient.Analytics;
-using Soenneker.Cloudflare.OpenApiClient.Api;
 using Soenneker.Cloudflare.OpenApiClient.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Cws;
@@ -52,11 +51,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The api property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Api.ApiRequestBuilder Api
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Api.ApiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The billing property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Billing.BillingRequestBuilder Billing

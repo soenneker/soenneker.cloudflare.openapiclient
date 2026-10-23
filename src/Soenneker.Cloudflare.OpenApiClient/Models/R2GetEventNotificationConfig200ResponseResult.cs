@@ -14,6 +14,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Queue ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QueueId { get; set; }
+#nullable restore
+#else
+        public string QueueId { get; set; }
+#endif
+        /// <summary>Name of the queue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? QueueName { get; set; }
+#nullable restore
+#else
+        public string QueueName { get; set; }
+#endif
+        /// <summary>The rules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfigRulesItem>? Rules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfigRulesItem> Rules { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetEventNotificationConfig200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "queueId", n => { QueueId = n.GetStringValue(); } },
+                { "queueName", n => { QueueName = n.GetStringValue(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfigRulesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfigRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("queueId", QueueId);
+            writer.WriteStringValue("queueName", QueueName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2QueuesConfigRulesItem>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

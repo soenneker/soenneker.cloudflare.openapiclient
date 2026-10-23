@@ -163,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersMultipartScriptMetadata()
         {
             AdditionalData = new Dictionary<string, object>();
+            Logpush = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

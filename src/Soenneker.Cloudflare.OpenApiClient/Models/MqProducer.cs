@@ -37,13 +37,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqProducer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqProducer();
-            if("MqR2Producer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("r2_bucket".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqR2Producer = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqR2Producer();
             }
-            else if("MqWorkerProducer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqWorkerProducer = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqWorkerProducer();
             }

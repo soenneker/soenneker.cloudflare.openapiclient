@@ -18,28 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureErrorsItemProperty>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureErrorsItemProperty> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => MessageEscaped ?? string.Empty; }
-        /// <summary>The primary error message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MessageEscaped { get; set; }
-#nullable restore
-#else
-        public string MessageEscaped { get; set; }
-#endif
+        public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureMessagesItemProperty>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureMessagesItemProperty> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureResult? Result { get; set; }
@@ -70,9 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureErrorsItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureErrorsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureMessagesItemProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureMessagesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureResult>(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -84,9 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>("errors", Errors);
-            writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureErrorsItemProperty>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureMessagesItemProperty>("messages", Messages);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsApiResponseCommonFailureResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

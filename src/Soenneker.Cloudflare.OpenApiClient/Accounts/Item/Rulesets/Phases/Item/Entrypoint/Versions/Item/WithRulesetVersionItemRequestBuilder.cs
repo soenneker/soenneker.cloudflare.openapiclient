@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.Entrypoint.Versions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\rulesets\phases\{rulesetPhase}\entrypoint\versions\{rulesetVersion}
+    /// Builds and executes requests for operations under \accounts\{accountId}\rulesets\phases\{rulesetPhase}\entrypoint\versions\{rulesetVersion}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRulesetVersionItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRulesetVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/phases/{rulesetPhase}/entrypoint/versions/{rulesetVersion}", pathParameters)
+        public WithRulesetVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/rulesets/phases/{rulesetPhase}/entrypoint/versions/{rulesetVersion}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRulesetVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/phases/{rulesetPhase}/entrypoint/versions/{rulesetVersion}", rawUrl)
+        public WithRulesetVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/rulesets/phases/{rulesetPhase}/entrypoint/versions/{rulesetVersion}", rawUrl)
         {
         }
         /// <summary>

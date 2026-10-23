@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>UUID of the tunnel.</summary>
-        public Guid? TunnelId { get; set; }
+        public Guid? TunnelId { get; private set; }
         /// <summary>UUID of the virtual network.</summary>
         public Guid? VirtualNetworkId { get; set; }
         /// <summary>
@@ -64,7 +64,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteGuidValue("tunnel_id", TunnelId);
             writer.WriteGuidValue("virtual_network_id", VirtualNetworkId);
             writer.WriteAdditionalData(AdditionalData);
         }

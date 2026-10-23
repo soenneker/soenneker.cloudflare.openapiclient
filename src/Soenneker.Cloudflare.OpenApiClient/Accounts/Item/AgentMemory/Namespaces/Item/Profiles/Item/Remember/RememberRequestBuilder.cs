@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespaces.Item.Profiles.Item.Remember
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\agent-memory\namespaces\{namespaceName}\profiles\{profileName}\remember
+    /// Builds and executes requests for operations under \accounts\{accountId}\agent-memory\namespaces\{namespaceName}\profiles\{profileName}\remember
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RememberRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RememberRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/remember", pathParameters)
+        public RememberRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/remember", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AgentMemory.Namespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RememberRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/remember", rawUrl)
+        public RememberRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/agent-memory/namespaces/{namespaceName}/profiles/{profileName}/remember", rawUrl)
         {
         }
         /// <summary>

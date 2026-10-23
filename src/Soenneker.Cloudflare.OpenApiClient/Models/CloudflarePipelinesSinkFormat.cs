@@ -39,11 +39,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkFormat();
-            if("CloudflarePipelinesSinkJsonFormat".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("json".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudflarePipelinesSinkJsonFormat = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkJsonFormat();
             }
-            else if("CloudflarePipelinesSinkParquetFormat".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("parquet".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudflarePipelinesSinkParquetFormat = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelinesSinkParquetFormat();
             }

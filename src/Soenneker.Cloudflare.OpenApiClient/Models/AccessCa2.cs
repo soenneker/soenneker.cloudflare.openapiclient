@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Application Audience (AUD) tag. Identifies the application associated with the CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Aud { get; set; }
+        public string? Aud { get; private set; }
 #nullable restore
 #else
-        public string Aud { get; set; }
+        public string Aud { get; private set; }
 #endif
         /// <summary>The ID of the CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The public key to add to your SSH server configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get; set; }
+        public string? PublicKey { get; private set; }
 #nullable restore
 #else
-        public string PublicKey { get; set; }
+        public string PublicKey { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCa2"/> and sets the default values.
@@ -75,9 +75,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("aud", Aud);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("public_key", PublicKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

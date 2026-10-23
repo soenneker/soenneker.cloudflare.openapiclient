@@ -46,10 +46,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for a certificate_pack.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Identifier of the primary certificate in a pack.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesCertificatePackCertificate>("certificates", Certificates);
             writer.WriteBoolValue("cloudflare_branding", CloudflareBranding);
             writer.WriteCollectionOfPrimitiveValues<string>("hosts", Hosts);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("primary_certificate", PrimaryCertificate);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus5>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesType2>("type", Type);

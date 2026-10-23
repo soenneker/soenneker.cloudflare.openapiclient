@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\indicators
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\indicators
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndicatorsRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?cache*,createdAfter*,createdBefore*,cursor*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/indicators{?cache*,createdAfter*,createdBefore*,cursor*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,11 +36,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?cache*,createdAfter*,createdBefore*,cursor*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/indicators{?cache*,createdAfter*,createdBefore*,cursor*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use one standalone datasetIds scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If no datasetIds are provided, uses the default dataset.
+        /// Lists indicators across datasets, newest first. `datasetIds` accepts dataset UUIDs or one scope value used alone: `all` (or `*`) and `operational` select the intelligence datasets you can read, and `analytics` selects the analytics datasets you can read. Without `datasetIds`, the default dataset is used.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetIndicatorList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use one standalone datasetIds scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If no datasetIds are provided, uses the default dataset.
+        /// Lists indicators across datasets, newest first. `datasetIds` accepts dataset UUIDs or one scope value used alone: `all` (or `*`) and `operational` select the intelligence datasets you can read, and `analytics` selects the analytics datasets you can read. Without `datasetIds`, the default dataset is used.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves indicators across specified datasets, ordered by createdAt descending then UUID, dataset ID, and shard ID ascending. Use one standalone datasetIds scope value: &apos;all&apos;/&apos;*&apos; or &apos;operational&apos; for readable intelligence datasets (isAnalytics=false), or &apos;analytics&apos; for readable analytics datasets (isAnalytics=true). If no datasetIds are provided, uses the default dataset.
+        /// Lists indicators across datasets, newest first. `datasetIds` accepts dataset UUIDs or one scope value used alone: `all` (or `*`) and `operational` select the intelligence datasets you can read, and `analytics` selects the analytics datasets you can read. Without `datasetIds`, the default dataset is used.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IndicatorsRequestBuilderGetQueryParameters 

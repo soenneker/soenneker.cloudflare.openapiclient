@@ -33,14 +33,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Omit this field or set it to `false`. Public Docker Hub images do not requireregistry configuration and cannot be added with this endpoint.</summary>
         public bool? IsPublic { get; set; }
-        /// <summary>Registry provider. This must match `domain`: `DockerHub` for `docker.io`,`ECR` for AWS ECR, or `GAR` for Google Artifact Registry.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The type of external registry that is being configured.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind? Kind { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind Kind { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBody"/> and sets the default values.
         /// </summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "auth", n => { Auth = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
-                { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind.CreateFromDiscriminatorValue); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind>(); } },
             };
         }
         /// <summary>
@@ -82,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersImageRegistryAuth>("auth", Auth);
             writer.WriteStringValue("domain", Domain);
             writer.WriteBoolValue("is_public", IsPublic);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateImageRegistryRequestBodyKind>("kind", Kind);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

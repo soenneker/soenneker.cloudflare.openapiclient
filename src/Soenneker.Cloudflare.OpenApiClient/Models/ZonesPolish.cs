@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Apply options from the Polish feature of the Cloudflare Speed app.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PolishId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The level of Polish you want applied to your origin.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPolishValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesPolish"/> and sets the default values.

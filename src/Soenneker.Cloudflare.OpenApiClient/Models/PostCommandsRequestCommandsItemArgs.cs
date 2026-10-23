@@ -8,40 +8,35 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Command arguments. Allowed fields depend on `type`.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsSpeedTestArgs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsWarpDiagArgs"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostCommandsRequestCommandsItemArgs : IAdditionalDataHolder, IParsable
+    public partial class PostCommandsRequestCommandsItemArgs : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of interfaces to run the speed test on</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsInterfacesItem?>? Interfaces { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs? PostCommandsRequestCommandsItemArgsPcapArgs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsInterfacesItem?> Interfaces { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs PostCommandsRequestCommandsItemArgsPcapArgs { get; set; }
 #endif
-        /// <summary>Maximum file size (in MB) for the capture file. If the capture artifact exceeds the specified max file size, it will NOT be uploaded.</summary>
-        public double? MaxFileSizeMb { get; set; }
-        /// <summary>Maximum number of bytes to save for each packet</summary>
-        public double? PacketSizeBytes { get; set; }
-        /// <summary>Test an IP address from all included or excluded ranges. Essentially the same as running &apos;route get &lt;ip&gt;&apos; and collecting the results. This option may increase the time taken to collect the warp-diag.</summary>
-        public bool? TestAllRoutes { get; set; }
-        /// <summary>Limit on capture duration (in minutes)</summary>
-        public double? TimeLimitMin { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgs"/> and sets the default values.
-        /// </summary>
-        public PostCommandsRequestCommandsItemArgs()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            MaxFileSizeMb = 5;
-            PacketSizeBytes = 160;
-            TestAllRoutes = true;
-            TimeLimitMin = 5;
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsSpeedTestArgs"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsSpeedTestArgs? PostCommandsRequestCommandsItemArgsSpeedTestArgs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsSpeedTestArgs PostCommandsRequestCommandsItemArgsSpeedTestArgs { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsWarpDiagArgs"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsWarpDiagArgs? PostCommandsRequestCommandsItemArgsWarpDiagArgs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsWarpDiagArgs PostCommandsRequestCommandsItemArgsWarpDiagArgs { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgs();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgs();
+            if("PostCommandsRequestCommandsItemArgsPcapArgs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostCommandsRequestCommandsItemArgsPcapArgs = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs();
+            }
+            else if("PostCommandsRequestCommandsItemArgsSpeedTestArgs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostCommandsRequestCommandsItemArgsSpeedTestArgs = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsSpeedTestArgs();
+            }
+            else if("PostCommandsRequestCommandsItemArgsWarpDiagArgs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostCommandsRequestCommandsItemArgsWarpDiagArgs = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsWarpDiagArgs();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,14 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostCommandsRequestCommandsItemArgsPcapArgs != null)
             {
-                { "interfaces", n => { Interfaces = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsInterfacesItem>()?.AsList(); } },
-                { "max-file-size-mb", n => { MaxFileSizeMb = n.GetDoubleValue(); } },
-                { "packet-size-bytes", n => { PacketSizeBytes = n.GetDoubleValue(); } },
-                { "test-all-routes", n => { TestAllRoutes = n.GetBoolValue(); } },
-                { "time-limit-min", n => { TimeLimitMin = n.GetDoubleValue(); } },
-            };
+                return PostCommandsRequestCommandsItemArgsPcapArgs.GetFieldDeserializers();
+            }
+            else if(PostCommandsRequestCommandsItemArgsSpeedTestArgs != null)
+            {
+                return PostCommandsRequestCommandsItemArgsSpeedTestArgs.GetFieldDeserializers();
+            }
+            else if(PostCommandsRequestCommandsItemArgsWarpDiagArgs != null)
+            {
+                return PostCommandsRequestCommandsItemArgsWarpDiagArgs.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -74,12 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsInterfacesItem>("interfaces", Interfaces);
-            writer.WriteDoubleValue("max-file-size-mb", MaxFileSizeMb);
-            writer.WriteDoubleValue("packet-size-bytes", PacketSizeBytes);
-            writer.WriteBoolValue("test-all-routes", TestAllRoutes);
-            writer.WriteDoubleValue("time-limit-min", TimeLimitMin);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PostCommandsRequestCommandsItemArgsPcapArgs != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsPcapArgs>(null, PostCommandsRequestCommandsItemArgsPcapArgs);
+            }
+            else if(PostCommandsRequestCommandsItemArgsSpeedTestArgs != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsSpeedTestArgs>(null, PostCommandsRequestCommandsItemArgsSpeedTestArgs);
+            }
+            else if(PostCommandsRequestCommandsItemArgsWarpDiagArgs != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostCommandsRequestCommandsItemArgsWarpDiagArgs>(null, PostCommandsRequestCommandsItemArgsWarpDiagArgs);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introspection
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\analytics\sql\introspection
+    /// Builds and executes requests for operations under \accounts\{accountId}\analytics\sql\introspection
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IntrospectionRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntrospectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/analytics/sql/introspection{?dataset_name*,include_attributes*,include_columns*,include_custom_attributes*,include_lex*,include_wae*}", pathParameters)
+        public IntrospectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/analytics/sql/introspection{?dataset_name*,include_attributes*,include_columns*,include_custom_attributes*,include_lex*,include_wae*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IntrospectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/analytics/sql/introspection{?dataset_name*,include_attributes*,include_columns*,include_custom_attributes*,include_lex*,include_wae*}", rawUrl)
+        public IntrospectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/analytics/sql/introspection{?dataset_name*,include_attributes*,include_columns*,include_custom_attributes*,include_lex*,include_wae*}", rawUrl)
         {
         }
         /// <summary>

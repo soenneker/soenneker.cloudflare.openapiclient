@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.MonetizationMonetizationRuleInputFixedPrice = new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputFixedPrice();
             }
-            else if("MonetizationMonetizationRuleInputOriginControlled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("origin_controlled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MonetizationMonetizationRuleInputOriginControlled = new global::Soenneker.Cloudflare.OpenApiClient.Models.MonetizationMonetizationRuleInputOriginControlled();
             }

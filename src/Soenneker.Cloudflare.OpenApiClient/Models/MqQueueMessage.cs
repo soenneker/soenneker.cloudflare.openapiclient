@@ -7,22 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageJsonVariant"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageTextVariant"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MqQueueMessage : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class MqQueueMessage : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of seconds to wait for attempting to deliver this message to consumers</summary>
-        public double? DelaySeconds { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage"/> and sets the default values.
-        /// </summary>
-        public MqQueueMessage()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageJsonVariant"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageJsonVariant? MqQueueMessageJsonVariant { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageJsonVariant MqQueueMessageJsonVariant { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageTextVariant"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageTextVariant? MqQueueMessageTextVariant { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageTextVariant MqQueueMessageTextVariant { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage();
+            var mappingValue = parseNode.GetChildNode("content_type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessage();
+            if("json".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MqQueueMessageJsonVariant = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageJsonVariant();
+            }
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MqQueueMessageTextVariant = new global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageTextVariant();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(MqQueueMessageJsonVariant != null)
             {
-                { "delay_seconds", n => { DelaySeconds = n.GetDoubleValue(); } },
-            };
+                return MqQueueMessageJsonVariant.GetFieldDeserializers();
+            }
+            else if(MqQueueMessageTextVariant != null)
+            {
+                return MqQueueMessageTextVariant.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -51,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("delay_seconds", DelaySeconds);
-            writer.WriteAdditionalData(AdditionalData);
+            if(MqQueueMessageJsonVariant != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageJsonVariant>(null, MqQueueMessageJsonVariant);
+            }
+            else if(MqQueueMessageTextVariant != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MqQueueMessageTextVariant>(null, MqQueueMessageTextVariant);
+            }
         }
     }
 }

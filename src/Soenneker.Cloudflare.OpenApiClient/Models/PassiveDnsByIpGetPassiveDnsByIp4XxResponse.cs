@@ -36,18 +36,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_messages? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_messages Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_result Result { get; set; }
+#endif
+        /// <summary>The result_info property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasResultInfo? ResultInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasResultInfo ResultInfo { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -78,8 +86,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_messages.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_result.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -92,8 +101,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelPassiveDnsByIp>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_messages>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PassiveDnsByIpGetPassiveDnsByIp4XxResponse_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSchemasResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

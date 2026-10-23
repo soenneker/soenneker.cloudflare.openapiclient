@@ -39,11 +39,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("provider_type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryInput();
-            if("BuildsCreateWorkerGitRepositoryFunfettiInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("github".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BuildsCreateWorkerGitRepositoryFunfettiInput = new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryFunfettiInput();
             }
-            else if("BuildsCreateWorkerGitRepositoryGrantInput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("gitlab_internal".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BuildsCreateWorkerGitRepositoryGrantInput = new global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsCreateWorkerGitRepositoryGrantInput();
             }

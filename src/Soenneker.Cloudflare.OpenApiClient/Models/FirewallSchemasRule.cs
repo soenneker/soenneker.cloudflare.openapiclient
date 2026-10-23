@@ -35,19 +35,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier of the IP Access rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
-        /// <summary>The mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>The action to apply to a matched request.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode? Mode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode Mode { get; set; }
-#endif
         /// <summary>The timestamp of when the rule was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>An informative summary of the rule, typically used as a reminder or explanation.</summary>
@@ -95,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration.CreateFromDiscriminatorValue); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2Scope>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasRuleAllOf2Scope.CreateFromDiscriminatorValue); } },
@@ -109,8 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallConfiguration>("configuration", Configuration);
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleMode>("mode", Mode);
             writer.WriteStringValue("notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }

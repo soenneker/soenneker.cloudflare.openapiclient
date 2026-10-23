@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Portals.Item.Servers.Item.EffectiveRedirectUri
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\access\ai-controls\mcp\portals\{-id}\servers\{serverId}\effective-redirect-uri
+    /// Builds and executes requests for operations under \accounts\{accountId}\access\ai-controls\mcp\portals\{id}\servers\{serverId}\effective-redirect-uri
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EffectiveRedirectUriRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EffectiveRedirectUriRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/ai-controls/mcp/portals/{%2Did}/servers/{serverId}/effective-redirect-uri", pathParameters)
+        public EffectiveRedirectUriRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/ai-controls/mcp/portals/{id}/servers/{serverId}/effective-redirect-uri", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EffectiveRedirectUriRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/ai-controls/mcp/portals/{%2Did}/servers/{serverId}/effective-redirect-uri", rawUrl)
+        public EffectiveRedirectUriRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/ai-controls/mcp/portals/{id}/servers/{serverId}/effective-redirect-uri", rawUrl)
         {
         }
         /// <summary>

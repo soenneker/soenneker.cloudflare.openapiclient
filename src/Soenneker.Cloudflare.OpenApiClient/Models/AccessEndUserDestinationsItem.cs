@@ -61,25 +61,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserDestinationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserDestinationsItem();
-            if("AccessEndUserAllPreviewWorkersDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("all_preview_workers".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AccessEndUserAllPreviewWorkersDestination = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserAllPreviewWorkersDestination();
             }
-            else if("AccessEndUserAllWorkersDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("all_workers".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AccessEndUserAllWorkersDestination = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserAllWorkersDestination();
             }
-            else if("AccessEndUserPreviewWorkerDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("preview_worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AccessEndUserPreviewWorkerDestination = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserPreviewWorkerDestination();
             }
-            else if("AccessEndUserPublicDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("public".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AccessEndUserPublicDestination = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserPublicDestination();
             }
-            else if("AccessEndUserWorkerDestination".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AccessEndUserWorkerDestination = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessEndUserWorkerDestination();
             }

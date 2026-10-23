@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Namespaces.Item.Tables.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\basin-catalog\{bucketName}\namespaces\{namespaceValue}\tables\{tableName}
+    /// Builds and executes requests for operations under \accounts\{accountId}\basin-catalog\{bucketName}\namespaces\{namespaceValue}\tables\{tableName}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithTableNameItemRequestBuilder : BaseRequestBuilder
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Nam
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTableNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", pathParameters)
+        public WithTableNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BasinCatalog.Item.Nam
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTableNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", rawUrl)
+        public WithTableNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/basin-catalog/{bucketName}/namespaces/{namespaceValue}/tables/{tableName}", rawUrl)
         {
         }
         /// <summary>

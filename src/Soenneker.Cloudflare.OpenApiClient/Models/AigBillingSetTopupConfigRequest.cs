@@ -7,50 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AigBillingSetTopupConfigRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AigBillingSetTopupConfigRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Auto top-up amount in cents (min 1000).</summary>
-        public int? Amount { get; set; }
-        /// <summary>Version of the off-session auto-top-up consent accepted by the user.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsentVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf1? AigBillingSetTopupConfigRequestAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string ConsentVersion { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf1 AigBillingSetTopupConfigRequestAnyOf1 { get; set; }
 #endif
-        /// <summary>Card to authenticate for future automatic top-ups.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaymentMethodId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2? AigBillingSetTopupConfigRequestAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string PaymentMethodId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2 AigBillingSetTopupConfigRequestAnyOf2 { get; set; }
 #endif
-        /// <summary>Client-generated UUID that makes payment-method setup safe to retry.</summary>
-        public Guid? SetupIdempotencyKey { get; set; }
-        /// <summary>Successfully confirmed payment-method setup identifier.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SetupIntentId { get; set; }
-#nullable restore
-#else
-        public string SetupIntentId { get; set; }
-#endif
-        /// <summary>Balance threshold in cents that triggers auto top-up (min 500).</summary>
-        public int? Threshold { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest"/> and sets the default values.
-        /// </summary>
-        public AigBillingSetTopupConfigRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequest();
+            result.AigBillingSetTopupConfigRequestAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf1();
+            result.AigBillingSetTopupConfigRequestAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,15 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AigBillingSetTopupConfigRequestAnyOf1 != null || AigBillingSetTopupConfigRequestAnyOf2 != null)
             {
-                { "amount", n => { Amount = n.GetIntValue(); } },
-                { "consent_version", n => { ConsentVersion = n.GetStringValue(); } },
-                { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
-                { "setup_idempotency_key", n => { SetupIdempotencyKey = n.GetGuidValue(); } },
-                { "setup_intent_id", n => { SetupIntentId = n.GetStringValue(); } },
-                { "threshold", n => { Threshold = n.GetIntValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AigBillingSetTopupConfigRequestAnyOf1, AigBillingSetTopupConfigRequestAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -84,13 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("amount", Amount);
-            writer.WriteStringValue("consent_version", ConsentVersion);
-            writer.WriteStringValue("payment_method_id", PaymentMethodId);
-            writer.WriteGuidValue("setup_idempotency_key", SetupIdempotencyKey);
-            writer.WriteStringValue("setup_intent_id", SetupIntentId);
-            writer.WriteIntValue("threshold", Threshold);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingSetTopupConfigRequestAnyOf1>(null, AigBillingSetTopupConfigRequestAnyOf1, AigBillingSetTopupConfigRequestAnyOf2);
         }
     }
 }

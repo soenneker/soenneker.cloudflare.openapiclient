@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class RulesetsRequestRule : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action to perform when the rule matches.</summary>
+        /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action { get; set; }
@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The categories of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories { get; set; }
+        public List<string>? Categories { get; private set; }
 #nullable restore
 #else
-        public List<string> Categories { get; set; }
+        public List<string> Categories { get; private set; }
 #endif
         /// <summary>An informative description of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -280,6 +280,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public RulesetsRequestRule()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -343,35 +344,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.RulesetsRouteRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRouteRule();
             }
-            else if("RulesetsScoreRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("score".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsScoreRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsScoreRule();
             }
-            else if("RulesetsServeErrorRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("serve_error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsServeErrorRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsServeErrorRule();
             }
-            else if("RulesetsSetCacheControlRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("set_cache_control".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsSetCacheControlRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheControlRule();
             }
-            else if("RulesetsSetCacheSettingsRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("set_cache_settings".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsSetCacheSettingsRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheSettingsRule();
             }
-            else if("RulesetsSetCacheTagsRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("set_cache_tags".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsSetCacheTagsRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetCacheTagsRule();
             }
-            else if("RulesetsSetConfigRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("set_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsSetConfigRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSetConfigRule();
             }
-            else if("RulesetsSkipRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("skip".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsSkipRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsSkipRule();
             }
-            else if("RulesetsTransformResponseHtmlRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("transform_response_html".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsTransformResponseHtmlRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsTransformResponseHtmlRule();
             }

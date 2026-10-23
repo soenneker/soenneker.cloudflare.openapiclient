@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The access_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3AccessKey? AccessKey { get; set; }
+        public UntypedNode? AccessKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3AccessKey AccessKey { get; set; }
+        public UntypedNode AccessKey { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Region? Region { get; set; }
+        public UntypedNode? Region { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Region Region { get; set; }
+        public UntypedNode Region { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SftpType? Type { get; set; }
@@ -59,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_key", n => { AccessKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3AccessKey>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3AccessKey.CreateFromDiscriminatorValue); } },
+                { "access_key", n => { AccessKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "auth_method", n => { AuthMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.KeyAuthMethod>(); } },
-                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Region>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Region.CreateFromDiscriminatorValue); } },
+                { "region", n => { Region = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SftpType>(); } },
             };
         }
@@ -72,9 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3AccessKey>("access_key", AccessKey);
+            writer.WriteObjectValue<UntypedNode>("access_key", AccessKey);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.KeyAuthMethod>("auth_method", AuthMethod);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfigOneOf3Region>("region", Region);
+            writer.WriteObjectValue<UntypedNode>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SftpType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ResourceTaggingSetTagsRequestAccountLevelBase = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelBase();
             }
-            else if("ResourceTaggingSetTagsRequestAccountLevelWorkerVersion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("worker_version".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion = new global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingSetTagsRequestAccountLevelWorkerVersion();
             }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertId { get; set; }
+        public string? CertId { get; private set; }
 #nullable restore
 #else
-        public string CertId { get; set; }
+        public string CertId { get; private set; }
 #endif
         /// <summary>The hostname certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,15 +33,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Status of the certificate or the association.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9? CertStatus { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
-        public DateTimeOffset? CertUpdatedAt { get; set; }
+        public DateTimeOffset? CertUpdatedAt { get; private set; }
         /// <summary>The time when the certificate was uploaded.</summary>
         public DateTimeOffset? CertUploadedOn { get; set; }
         /// <summary>The time when the certificate was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The date when the certificate expires.</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>The hostname on the origin for which the client certificate uploaded will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,18 +53,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The certificate authority that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; set; }
+        public string? Issuer { get; private set; }
 #nullable restore
 #else
-        public string Issuer { get; set; }
+        public string Issuer { get; private set; }
 #endif
         /// <summary>The hostname certificate&apos;s private key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,15 +85,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The type of hash used for the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get; private set; }
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get; private set; }
 #endif
         /// <summary>Status of the certificate or the association.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus9? Status { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull"/> and sets the default values.
         /// </summary>
@@ -144,20 +144,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("cert_id", CertId);
             writer.WriteStringValue("certificate", Certificate);
-            writer.WriteDateTimeOffsetValue("cert_updated_at", CertUpdatedAt);
             writer.WriteDateTimeOffsetValue("cert_uploaded_on", CertUploadedOn);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("hostname", Hostname);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("private_key", PrivateKey);
             writer.WriteStringValue("serial_number", SerialNumber);
-            writer.WriteStringValue("signature", Signature);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

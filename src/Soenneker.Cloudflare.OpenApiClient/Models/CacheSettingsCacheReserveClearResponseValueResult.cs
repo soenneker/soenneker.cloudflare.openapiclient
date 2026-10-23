@@ -16,14 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time that the latest Cache Reserve Clear operation completed.</summary>
         public DateTimeOffset? EndTs { get; set; }
-        /// <summary>Identifier of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>ID of the zone setting.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId? Id { get; set; }
         /// <summary>Last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The time that the latest Cache Reserve Clear operation started.</summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end_ts", n => { EndTs = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "start_ts", n => { StartTs = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearState>(); } },
@@ -70,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("end_ts", EndTs);
-            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheReserveClearId>("id", Id);
             writer.WriteDateTimeOffsetValue("start_ts", StartTs);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsCacheReserveClearState>("state", State);
             writer.WriteAdditionalData(AdditionalData);

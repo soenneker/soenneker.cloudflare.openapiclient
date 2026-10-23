@@ -7,52 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetFlowsGet200ResponseResultFlowsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetFlowsGet200ResponseResultFlowsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf1? GetFlowsGet200ResponseResultFlowsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf1 GetFlowsGet200ResponseResultFlowsItemOneOf1 { get; set; }
 #endif
-        /// <summary>The provider property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FastlyProvider? Provider { get; set; }
-        /// <summary>The transformations property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTransformationsItem>? Transformations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf2? GetFlowsGet200ResponseResultFlowsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTransformationsItem> Transformations { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf2 GetFlowsGet200ResponseResultFlowsItemOneOf2 { get; set; }
 #endif
-        /// <summary>The trigger property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTrigger? Trigger { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTrigger Trigger { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemType? Type { get; set; }
-        /// <summary>The version property</summary>
-        public double? Version { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem"/> and sets the default values.
-        /// </summary>
-        public GetFlowsGet200ResponseResultFlowsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItem();
+            if("provider".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetFlowsGet200ResponseResultFlowsItemOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf1();
+            }
+            else if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetFlowsGet200ResponseResultFlowsItemOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,16 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetFlowsGet200ResponseResultFlowsItemOneOf1 != null)
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FastlyProvider>(); } },
-                { "transformations", n => { Transformations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTransformationsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTransformationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "trigger", n => { Trigger = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTrigger>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTrigger.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemType>(); } },
-                { "version", n => { Version = n.GetDoubleValue(); } },
-            };
+                return GetFlowsGet200ResponseResultFlowsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetFlowsGet200ResponseResultFlowsItemOneOf2 != null)
+            {
+                return GetFlowsGet200ResponseResultFlowsItemOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -87,14 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FastlyProvider>("provider", Provider);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTransformationsItem>("transformations", Transformations);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemTrigger>("trigger", Trigger);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemType>("type", Type);
-            writer.WriteDoubleValue("version", Version);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetFlowsGet200ResponseResultFlowsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf1>(null, GetFlowsGet200ResponseResultFlowsItemOneOf1);
+            }
+            else if(GetFlowsGet200ResponseResultFlowsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetFlowsGet200ResponseResultFlowsItemOneOf2>(null, GetFlowsGet200ResponseResultFlowsItemOneOf2);
+            }
         }
     }
 }

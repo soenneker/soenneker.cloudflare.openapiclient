@@ -15,13 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
+        /// <summary>The bindings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>? Bindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemBindings? Bindings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem> Bindings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemBindings Bindings { get; set; }
 #endif
         /// <summary>Global CacheW configuration for the Worker. When caching is on,the platform provisions a `cloudflare.app` zone for the Worker.A `type: worker` entry in the `exports` map can override thisvalue for a single entrypoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2 Observability { get; set; }
 #endif
-        /// <summary>The placement property</summary>
+        /// <summary>Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode=&apos;smart&apos; for Smart Placement, or one of region/hostname/host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemPlacement? Placement { get; set; }
@@ -105,13 +105,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
-        /// <summary>List of Workers that will consume logs from the attached Worker.</summary>
+        /// <summary>The tail_consumers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>? TailConsumers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemTailConsumers? TailConsumers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript> TailConsumers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemTailConsumers TailConsumers { get; set; }
 #endif
         /// <summary>Usage model for the Worker invocations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel? UsageModel { get; set; }
@@ -121,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersNamespaceScriptAndVersionSettingsItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            Logpush = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -140,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "bindings", n => { Bindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemBindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemBindings.CreateFromDiscriminatorValue); } },
                 { "cache_options", n => { CacheOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions.CreateFromDiscriminatorValue); } },
                 { "compatibility_date", n => { CompatibilityDate = n.GetStringValue(); } },
                 { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -152,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemPlacement>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemPlacement.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tail_consumers", n => { TailConsumers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemTailConsumers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemTailConsumers.CreateFromDiscriminatorValue); } },
                 { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>(); } },
             };
         }
@@ -163,7 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersBindingItem>("bindings", Bindings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemBindings>("bindings", Bindings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions>("cache_options", CacheOptions);
             writer.WriteStringValue("compatibility_date", CompatibilityDate);
             writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
@@ -175,7 +176,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2>("observability", Observability);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemPlacement>("placement", Placement);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>("tail_consumers", TailConsumers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersNamespaceScriptAndVersionSettingsItemTailConsumers>("tail_consumers", TailConsumers);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
         }

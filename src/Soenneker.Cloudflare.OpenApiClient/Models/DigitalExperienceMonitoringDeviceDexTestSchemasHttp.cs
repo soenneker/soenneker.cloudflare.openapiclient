@@ -63,10 +63,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for the test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TestId { get; set; }
+        public string? TestId { get; private set; }
 #nullable restore
 #else
-        public string TestId { get; set; }
+        public string TestId { get; private set; }
 #endif
         /// <summary>Date the test was last updated, in RFC 3339 format.</summary>
         public DateTimeOffset? Updated { get; private set; }
@@ -121,7 +121,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("targeted", Targeted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringDexTargetPolicy>("target_policies", TargetPolicies);
-            writer.WriteStringValue("test_id", TestId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

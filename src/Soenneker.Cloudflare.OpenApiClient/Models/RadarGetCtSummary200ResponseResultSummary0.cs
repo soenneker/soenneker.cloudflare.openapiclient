@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0Member1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf8"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RadarGetCtSummary200ResponseResultSummary0 : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf1? RadarGetCtSummary200ResponseResultSummary0AnyOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf1 RadarGetCtSummary200ResponseResultSummary0AnyOf1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,14 +77,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf8 RadarGetCtSummary200ResponseResultSummary0AnyOf8 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0Member1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0Member1? RadarGetCtSummary200ResponseResultSummary0Member1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0Member1 RadarGetCtSummary200ResponseResultSummary0Member1 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0();
+            result.RadarGetCtSummary200ResponseResultSummary0AnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf1();
             result.RadarGetCtSummary200ResponseResultSummary0AnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf2();
             result.RadarGetCtSummary200ResponseResultSummary0AnyOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf3();
             result.RadarGetCtSummary200ResponseResultSummary0AnyOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf4();
@@ -93,7 +94,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             result.RadarGetCtSummary200ResponseResultSummary0AnyOf6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf6();
             result.RadarGetCtSummary200ResponseResultSummary0AnyOf7 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf7();
             result.RadarGetCtSummary200ResponseResultSummary0AnyOf8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf8();
-            result.RadarGetCtSummary200ResponseResultSummary0Member1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0Member1();
             return result;
         }
         /// <summary>
@@ -102,9 +102,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RadarGetCtSummary200ResponseResultSummary0AnyOf2 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf3 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf4 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf5 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf6 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf7 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf8 != null || RadarGetCtSummary200ResponseResultSummary0Member1 != null)
+            if(RadarGetCtSummary200ResponseResultSummary0AnyOf1 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf2 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf3 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf4 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf5 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf6 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf7 != null || RadarGetCtSummary200ResponseResultSummary0AnyOf8 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RadarGetCtSummary200ResponseResultSummary0AnyOf2, RadarGetCtSummary200ResponseResultSummary0AnyOf3, RadarGetCtSummary200ResponseResultSummary0AnyOf4, RadarGetCtSummary200ResponseResultSummary0AnyOf5, RadarGetCtSummary200ResponseResultSummary0AnyOf6, RadarGetCtSummary200ResponseResultSummary0AnyOf7, RadarGetCtSummary200ResponseResultSummary0AnyOf8, RadarGetCtSummary200ResponseResultSummary0Member1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RadarGetCtSummary200ResponseResultSummary0AnyOf1, RadarGetCtSummary200ResponseResultSummary0AnyOf2, RadarGetCtSummary200ResponseResultSummary0AnyOf3, RadarGetCtSummary200ResponseResultSummary0AnyOf4, RadarGetCtSummary200ResponseResultSummary0AnyOf5, RadarGetCtSummary200ResponseResultSummary0AnyOf6, RadarGetCtSummary200ResponseResultSummary0AnyOf7, RadarGetCtSummary200ResponseResultSummary0AnyOf8);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -115,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf2>(null, RadarGetCtSummary200ResponseResultSummary0AnyOf2, RadarGetCtSummary200ResponseResultSummary0AnyOf3, RadarGetCtSummary200ResponseResultSummary0AnyOf4, RadarGetCtSummary200ResponseResultSummary0AnyOf5, RadarGetCtSummary200ResponseResultSummary0AnyOf6, RadarGetCtSummary200ResponseResultSummary0AnyOf7, RadarGetCtSummary200ResponseResultSummary0AnyOf8, RadarGetCtSummary200ResponseResultSummary0Member1);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetCtSummary200ResponseResultSummary0AnyOf1>(null, RadarGetCtSummary200ResponseResultSummary0AnyOf1, RadarGetCtSummary200ResponseResultSummary0AnyOf2, RadarGetCtSummary200ResponseResultSummary0AnyOf3, RadarGetCtSummary200ResponseResultSummary0AnyOf4, RadarGetCtSummary200ResponseResultSummary0AnyOf5, RadarGetCtSummary200ResponseResultSummary0AnyOf6, RadarGetCtSummary200ResponseResultSummary0AnyOf7, RadarGetCtSummary200ResponseResultSummary0AnyOf8);
         }
     }
 }

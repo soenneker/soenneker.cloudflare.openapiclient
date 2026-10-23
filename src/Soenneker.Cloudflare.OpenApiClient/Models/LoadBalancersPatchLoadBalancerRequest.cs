@@ -128,6 +128,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancersPatchLoadBalancerRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            Proxied = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

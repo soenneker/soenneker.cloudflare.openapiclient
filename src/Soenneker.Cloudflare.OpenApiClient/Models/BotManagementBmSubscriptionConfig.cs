@@ -53,13 +53,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to disable tracking the highest bot score for a session in the Bot Management cookie.</summary>
         public bool? SuppressSessionScore { get; set; }
         /// <summary>A read-only field that indicates whether the zone currently is running the latest ML model.</summary>
-        public bool? UsingLatestModel { get; set; }
+        public bool? UsingLatestModel { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagementBmSubscriptionConfig"/> and sets the default values.
         /// </summary>
         public BotManagementBmSubscriptionConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            AiBotsMigrationOptOut = false;
+            BotPreferenceSyncEnabled = false;
+            IsRobotsTxtManaged = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -120,7 +123,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);
             writer.WriteBoolValue("jsd_api_results_enabled", JsdApiResultsEnabled);
             writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
-            writer.WriteBoolValue("using_latest_model", UsingLatestModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

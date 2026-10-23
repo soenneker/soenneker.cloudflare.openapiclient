@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CustomCsrId { get; set; }
 #endif
         /// <summary>When the certificate from the authority expires.</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,18 +45,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Custom certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The certificate authority that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; set; }
+        public string? Issuer { get; private set; }
 #nullable restore
 #else
-        public string Issuer { get; set; }
+        public string Issuer { get; private set; }
 #endif
         /// <summary>The keyless_server property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,29 +67,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesKeylessCertificate KeylessServer { get; set; }
 #endif
         /// <summary>When the certificate was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The policy restrictions returned by the API. This field is returned in responseswhen a policy has been set. The API accepts the &quot;policy&quot; field in requests butreturns this field as &quot;policy_restrictions&quot; in responses.Specifies the region(s) where your private key can be held locally for optimalTLS performance. Format is a boolean expression, for example:&quot;(country: US) or (region: EU)&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyRestrictions { get; set; }
+        public string? PolicyRestrictions { get; private set; }
 #nullable restore
 #else
-        public string PolicyRestrictions { get; set; }
+        public string PolicyRestrictions { get; private set; }
 #endif
         /// <summary>The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping &apos;legacy_custom&apos; certificates, but &apos;legacy_custom&apos; certificates will always supercede &apos;sni_custom&apos; certificates.</summary>
         public double? Priority { get; set; }
         /// <summary>The type of hash used for the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get; private set; }
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get; private set; }
 #endif
         /// <summary>Status of the zone&apos;s custom SSL.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesStatus? Status { get; private set; }
         /// <summary>When the certificate was uploaded to Cloudflare.</summary>
-        public DateTimeOffset? UploadedOn { get; set; }
+        public DateTimeOffset? UploadedOn { get; private set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,17 +149,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesBundleMethod>("bundle_method", BundleMethod);
             writer.WriteStringValue("custom_csr_id", CustomCsrId);
-            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesGeoRestrictions>("geo_restrictions", GeoRestrictions);
             writer.WriteCollectionOfPrimitiveValues<string>("hosts", Hosts);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("issuer", Issuer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesKeylessCertificate>("keyless_server", KeylessServer);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
-            writer.WriteStringValue("policy_restrictions", PolicyRestrictions);
             writer.WriteDoubleValue("priority", Priority);
-            writer.WriteStringValue("signature", Signature);
-            writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -8,54 +8,35 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Recursive filter supporting AND/OR nesting of conditions. Can be either a leaf condition (field/op/value) or a logical group (and/or array of nested filters).
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostItemSearchRequestFilter : IAdditionalDataHolder, IParsable
+    public partial class PostItemSearchRequestFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>All conditions must match (AND logic). Each item can recursively contain more filters.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterAndItem>? And { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf1? PostItemSearchRequestFilterOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterAndItem> And { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf1 PostItemSearchRequestFilterOneOf1 { get; set; }
 #endif
-        /// <summary>Column name to filter on</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf2? PostItemSearchRequestFilterOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Field { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf2 PostItemSearchRequestFilterOneOf2 { get; set; }
 #endif
-        /// <summary>Comparison operator</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOp? Op { get; set; }
-        /// <summary>At least one condition must match (OR logic). Each item can recursively contain more filters.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOrItem>? Or { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3? PostItemSearchRequestFilterOneOf3 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOrItem> Or { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3 PostItemSearchRequestFilterOneOf3 { get; set; }
 #endif
-        /// <summary>Value to compare against (not needed for is_empty/is_not_empty)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterValue? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterValue Value { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilter"/> and sets the default values.
-        /// </summary>
-        public PostItemSearchRequestFilter()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilter();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilter();
+            if("PostItemSearchRequestFilterOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostItemSearchRequestFilterOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf1();
+            }
+            else if("PostItemSearchRequestFilterOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostItemSearchRequestFilterOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf2();
+            }
+            else if("PostItemSearchRequestFilterOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostItemSearchRequestFilterOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,14 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostItemSearchRequestFilterOneOf1 != null)
             {
-                { "and", n => { And = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterAndItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterAndItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "field", n => { Field = n.GetStringValue(); } },
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOp>(); } },
-                { "or", n => { Or = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOrItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOrItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterValue.CreateFromDiscriminatorValue); } },
-            };
+                return PostItemSearchRequestFilterOneOf1.GetFieldDeserializers();
+            }
+            else if(PostItemSearchRequestFilterOneOf2 != null)
+            {
+                return PostItemSearchRequestFilterOneOf2.GetFieldDeserializers();
+            }
+            else if(PostItemSearchRequestFilterOneOf3 != null)
+            {
+                return PostItemSearchRequestFilterOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,12 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterAndItem>("and", And);
-            writer.WriteStringValue("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOp>("op", Op);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOrItem>("or", Or);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterValue>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PostItemSearchRequestFilterOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf1>(null, PostItemSearchRequestFilterOneOf1);
+            }
+            else if(PostItemSearchRequestFilterOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf2>(null, PostItemSearchRequestFilterOneOf2);
+            }
+            else if(PostItemSearchRequestFilterOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostItemSearchRequestFilterOneOf3>(null, PostItemSearchRequestFilterOneOf3);
+            }
         }
     }
 }

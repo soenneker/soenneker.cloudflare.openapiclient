@@ -15,9 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If set to false, then the Address Map cannot be deleted via API. This is true for Cloudflare-managed maps.</summary>
-        public bool? CanDelete { get; set; }
+        public bool? CanDelete { get; private set; }
         /// <summary>If set to false, then the IPs on the Address Map cannot be modified via the API. This is true for Cloudflare-managed maps.</summary>
-        public bool? CanModifyIps { get; set; }
+        public bool? CanModifyIps { get; private set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>If you have legacy TLS clients which do not send the TLS server name indicator, then you can specify one default SNI on the map. If Cloudflare receives a TLS handshake from a client without an SNI, it will respond with the default SNI on those IPs. The default SNI can be any valid zone or subdomain owned by the account.</summary>
@@ -109,8 +109,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("can_delete", CanDelete);
-            writer.WriteBoolValue("can_modify_ips", CanModifyIps);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("default_sni", DefaultSni);
             writer.WriteStringValue("description", Description);

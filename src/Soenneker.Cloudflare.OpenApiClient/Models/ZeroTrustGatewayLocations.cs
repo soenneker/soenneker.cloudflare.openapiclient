@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicate whether this location is the default location.</summary>
         public bool? ClientDefault { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Enable DNS64 synthesis for DNS queries matched to this location. When updating a location, omitting this field resets it to false.</summary>
         public bool? Dns64Enabled { get; set; }
         /// <summary>Indicate the identifier of the pair of IPv4 addresses assigned to this location.</summary>
@@ -39,10 +39,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the DNS over HTTPS domain that receives DNS requests. Gateway automatically generates this value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DohSubdomain { get; set; }
+        public string? DohSubdomain { get; private set; }
 #nullable restore
 #else
-        public string DohSubdomain { get; set; }
+        public string DohSubdomain { get; private set; }
 #endif
         /// <summary>Indicate whether the location must resolve EDNS queries.</summary>
         public bool? EcsSupport { get; set; }
@@ -65,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the automatically generated IPv6 destination IP assigned to this location. Gateway counts all DNS requests sent to this IP as requests under this location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get; set; }
+        public string? Ip { get; private set; }
 #nullable restore
 #else
-        public string Ip { get; set; }
+        public string Ip { get; private set; }
 #endif
         /// <summary>Show the primary destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,13 +111,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network> Networks { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayLocations"/> and sets the default values.
         /// </summary>
         public ZeroTrustGatewayLocations()
         {
             AdditionalData = new Dictionary<string, object>();
+            ClientDefault = false;
+            Dns64Enabled = false;
+            DnsDestinationIpsId = "0e4a32c6-6fb8-4858-9296-98f51631e8e6";
+            EcsSupport = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -163,19 +167,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("client_default", ClientDefault);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("dns64_enabled", Dns64Enabled);
             writer.WriteStringValue("dns_destination_ips_id", DnsDestinationIpsId);
             writer.WriteStringValue("dns_destination_ipv6_block_id", DnsDestinationIpv6BlockId);
-            writer.WriteStringValue("doh_subdomain", DohSubdomain);
             writer.WriteBoolValue("ecs_support", EcsSupport);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayEndpoints>("endpoints", Endpoints);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("ip", Ip);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayMaxTtl>("max_ttl", MaxTtl);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayIpv4Network>("networks", Networks);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

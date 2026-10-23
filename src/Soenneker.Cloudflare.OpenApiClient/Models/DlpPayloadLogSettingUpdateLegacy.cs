@@ -15,14 +15,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The masking_level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Masking level for payload logs.- `full`: The entire payload is masked.- `partial`: Only partial payload content is masked.- `clear`: No masking is applied to the payload content.- `default`: DLP uses its default masking behavior.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel? MaskingLevel { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel MaskingLevel { get; set; }
-#endif
         /// <summary>Base64-encoded public key for encrypting payload logs.- Set to null or empty string to disable payload logging.- Set to a non-empty base64 string to enable payload logging with the given key.For customers with configurable payload masking feature rolled out:- If the field is missing, the existing setting will be kept. Note that this is different from setting to null or empty string.For all other customers:- If the field is missing, the existing setting will be cleared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "masking_level", n => { MaskingLevel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel.CreateFromDiscriminatorValue); } },
+                { "masking_level", n => { MaskingLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel>(); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel>("masking_level", MaskingLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateLegacyMaskingLevel>("masking_level", MaskingLevel);
             writer.WriteStringValue("public_key", PublicKey);
             writer.WriteAdditionalData(AdditionalData);
         }

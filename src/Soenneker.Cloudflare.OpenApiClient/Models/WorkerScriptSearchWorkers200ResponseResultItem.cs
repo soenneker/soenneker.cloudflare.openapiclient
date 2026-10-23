@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the script was created.</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Whether the environment is the default environment.</summary>
         public bool? EnvironmentIsDefault { get; set; }
         /// <summary>Name of the environment.</summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>When the script was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Name of the script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,11 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteBoolValue("environment_is_default", EnvironmentIsDefault);
             writer.WriteStringValue("environment_name", EnvironmentName);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("script_name", ScriptName);
             writer.WriteStringValue("service_name", ServiceName);
             writer.WriteAdditionalData(AdditionalData);

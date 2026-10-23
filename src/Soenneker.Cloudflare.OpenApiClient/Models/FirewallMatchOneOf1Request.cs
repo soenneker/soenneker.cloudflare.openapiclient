@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP methods to match. You can specify a subset (for example, `[&apos;POST&apos;,&apos;PUT&apos;]`) or all methods (`[&apos;_ALL_&apos;]`). This field is optional when creating a rate limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMethodsItem?>? Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?>? Methods { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMethodsItem?> Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem?> Methods { get; set; }
 #endif
         /// <summary>The HTTP schemes to match. You can specify one scheme (`[&apos;HTTPS&apos;]`), both schemes (`[&apos;HTTP&apos;,&apos;HTTPS&apos;]`), or all schemes (`[&apos;_ALL_&apos;]`). This field is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "methods", n => { Methods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMethodsItem>()?.AsList(); } },
+                { "methods", n => { Methods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem>()?.AsList(); } },
                 { "schemes", n => { Schemes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMethodsItem>("methods", Methods);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallMatchOneOf1RequestMethodsItem>("methods", Methods);
             writer.WriteCollectionOfPrimitiveValues<string>("schemes", Schemes);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

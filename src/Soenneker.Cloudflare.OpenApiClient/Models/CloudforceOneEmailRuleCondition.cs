@@ -59,15 +59,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.CloudforceOneEmailRuleArrayCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleArrayCondition();
             }
-            else if("CloudforceOneEmailRuleConditionGroup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("group".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudforceOneEmailRuleConditionGroup = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleConditionGroup();
             }
-            else if("CloudforceOneEmailRuleHeaderCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("header".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudforceOneEmailRuleHeaderCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleHeaderCondition();
             }
-            else if("CloudforceOneEmailRuleScalarCondition".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("scalar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CloudforceOneEmailRuleScalarCondition = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneEmailRuleScalarCondition();
             }

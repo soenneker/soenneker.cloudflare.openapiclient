@@ -17,14 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).</summary>
         public bool? Editable { get; private set; }
-        /// <summary>Identifier of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>Control how long resources cached by client browsers remain valid.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrowserCacheTtlId? Id { get; set; }
         /// <summary>last time this setting was modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Value of the zone setting in seconds.Minimum values by plan:- Free: 1 second- Pro: 1 second- Business: 1 second- Enterprise: 1 secondSetting a TTL of 0 is equivalent to selecting `Respect Existing Headers` and is allowed for all plans.</summary>
@@ -35,6 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZonesBrowserCacheTtl2()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = 14400;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrowserCacheTtlId>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "value", n => { Value = n.GetIntValue(); } },
             };
@@ -67,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrowserCacheTtlId>("id", Id);
             writer.WriteIntValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

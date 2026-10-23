@@ -14,6 +14,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An allowlist of ciphers for TLS termination. These ciphers must be in the BoringSSL format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Ciphers { get; set; }
+#nullable restore
+#else
+        public List<string> Ciphers { get; set; }
+#endif
+        /// <summary>Domain name of the affected custom domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Domain { get; set; }
+#nullable restore
+#else
+        public string Domain { get; set; }
+#endif
+        /// <summary>Whether this bucket is publicly accessible at the specified custom domain.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>Minimum TLS Version the custom domain will accept for incoming connections. If not set, defaults to 1.0.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainResponseMinTls? MinTLS { get; set; }
+        /// <summary>Zone ID of the custom domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZoneId { get; set; }
+#nullable restore
+#else
+        public string ZoneId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomain200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ciphers", n => { Ciphers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "minTLS", n => { MinTLS = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainResponseMinTls>(); } },
+                { "zoneId", n => { ZoneId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("ciphers", Ciphers);
+            writer.WriteStringValue("domain", Domain);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2AddCustomDomainResponseMinTls>("minTLS", MinTLS);
+            writer.WriteStringValue("zoneId", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

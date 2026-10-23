@@ -66,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AccessCreateResponseAllOf2Result()
         {
             AdditionalData = new Dictionary<string, object>();
+            Duration = "8760h";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

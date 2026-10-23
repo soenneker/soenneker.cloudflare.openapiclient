@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off byte-for-byte equivalency checks between theCloudflare cache and the origin server.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RespectStrongEtagId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Respect Strong ETags</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesRespectStrongEtagValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesRespectStrongEtag"/> and sets the default values.

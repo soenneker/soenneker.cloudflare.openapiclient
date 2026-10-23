@@ -14,6 +14,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When true, indicates that Client-Side Security is enabled.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The timestamp of when Client-Side Security was last updated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
+#endif
+        /// <summary>When true, CSP reports will be sent to https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report</summary>
+        public bool? UseCloudflareReportingEndpoint { get; set; }
+        /// <summary>When true, the paths associated with connections URLs will also be analyzed.</summary>
+        public bool? UseConnectionUrlPath { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShieldUpdateSettings200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "use_cloudflare_reporting_endpoint", n => { UseCloudflareReportingEndpoint = n.GetBoolValue(); } },
+                { "use_connection_url_path", n => { UseConnectionUrlPath = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("updated_at", UpdatedAt);
+            writer.WriteBoolValue("use_cloudflare_reporting_endpoint", UseCloudflareReportingEndpoint);
+            writer.WriteBoolValue("use_connection_url_path", UseConnectionUrlPath);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

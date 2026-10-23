@@ -15,6 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not the Keyless SSL is on or off.</summary>
+        [Obsolete("")]
         public bool? Enabled { get; set; }
         /// <summary>The keyless SSL name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public KeylessSslForAZoneEditKeylessSslConfigurationRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Port = 24008;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

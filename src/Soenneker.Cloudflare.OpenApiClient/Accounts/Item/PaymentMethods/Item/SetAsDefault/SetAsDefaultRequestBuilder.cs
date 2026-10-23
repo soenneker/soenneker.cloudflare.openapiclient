@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PaymentMethods.Item.SetAsDefault
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\payment-methods\{paymentMethodId}\set-as-default
+    /// Builds and executes requests for operations under \accounts\{accountId}\payment-methods\{paymentMethodId}\set-as-default
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SetAsDefaultRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PaymentMethods.Item.S
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SetAsDefaultRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/payment-methods/{paymentMethodId}/set-as-default", pathParameters)
+        public SetAsDefaultRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/payment-methods/{paymentMethodId}/set-as-default", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PaymentMethods.Item.S
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SetAsDefaultRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/payment-methods/{paymentMethodId}/set-as-default", rawUrl)
+        public SetAsDefaultRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/payment-methods/{paymentMethodId}/set-as-default", rawUrl)
         {
         }
         /// <summary>

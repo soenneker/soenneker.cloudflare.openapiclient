@@ -11,24 +11,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// When triggered, anomaly detection WAF rules contribute to an overall threat score that will determine if a request is considered malicious. You can configure the total scoring threshold through the &apos;sensitivity&apos; property of the WAF package.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WafManagedRulesAnomalyRule : global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesSchemasBase, IParsable
+    public partial class WafManagedRulesAnomalyRule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the available modes for the current WAF rule. Applies to anomaly detection WAF rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly?>? AllowedModes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly?>? AllowedModes { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly?> AllowedModes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly?> AllowedModes { get; private set; }
+#endif
+        /// <summary>Defines the public description of the WAF rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; private set; }
+#nullable restore
+#else
+        public string Description { get; private set; }
+#endif
+        /// <summary>Defines the rule group to which the current WAF rule belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesBaseGroup? Group { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesBaseGroup Group { get; private set; }
+#endif
+        /// <summary>Defines the unique identifier of the WAF rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; private set; }
+#nullable restore
+#else
+        public string Id { get; private set; }
 #endif
         /// <summary>Defines the mode anomaly. When set to `on`, the current WAF rule will be used when evaluating the request. Applies to anomaly detection WAF rules.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly? Mode { get; set; }
+        /// <summary>Defines the unique identifier of a WAF package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PackageId { get; private set; }
+#nullable restore
+#else
+        public string PackageId { get; private set; }
+#endif
+        /// <summary>Defines the order in which the individual WAF rule is executed within its rule group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; private set; }
+#nullable restore
+#else
+        public string Priority { get; private set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesAnomalyRule"/> and sets the default values.
+        /// </summary>
+        public WafManagedRulesAnomalyRule()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesAnomalyRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesAnomalyRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesAnomalyRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesAnomalyRule();
@@ -37,24 +86,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_modes", n => { AllowedModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly>()?.AsList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesBaseGroup>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesBaseGroup.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly>(); } },
+                { "package_id", n => { PackageId = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly>("allowed_modes", AllowedModes);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRulesModeAnomaly>("mode", Mode);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

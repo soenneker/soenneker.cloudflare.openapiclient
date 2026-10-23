@@ -38,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ImagesImageVariantDefinition()
         {
             AdditionalData = new Dictionary<string, object>();
+            NeverRequireSignedURLs = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

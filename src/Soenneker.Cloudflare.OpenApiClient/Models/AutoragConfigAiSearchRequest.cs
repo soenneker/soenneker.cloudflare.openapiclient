@@ -25,13 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The max_num_results property</summary>
         public int? MaxNumResults { get; set; }
         /// <summary>The model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel? Model { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel Model { get; set; }
-#endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters>(global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters.CreateFromDiscriminatorValue); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel>(global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel>(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "ranking_options", n => { RankingOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions.CreateFromDiscriminatorValue); } },
                 { "reranking", n => { Reranking = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking>(global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking.CreateFromDiscriminatorValue); } },
@@ -116,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestFilters>("filters", Filters);
             writer.WriteIntValue("max_num_results", MaxNumResults);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel>("model", Model);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestModel>("model", Model);
             writer.WriteStringValue("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestRankingOptions>("ranking_options", RankingOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AutoragConfigAiSearchRequestReranking>("reranking", Reranking);

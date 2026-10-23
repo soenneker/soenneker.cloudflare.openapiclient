@@ -59,15 +59,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.PayPerCrawlPpuPublisherPriceAcceptDefaultRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuPublisherPriceAcceptDefaultRequest();
             }
-            else if("PayPerCrawlPpuPublisherPriceProposeRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("propose".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayPerCrawlPpuPublisherPriceProposeRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuPublisherPriceProposeRequest();
             }
-            else if("PayPerCrawlPpuPublisherPriceResumeRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("resume".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayPerCrawlPpuPublisherPriceResumeRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuPublisherPriceResumeRequest();
             }
-            else if("PayPerCrawlPpuPublisherPriceWithdrawRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("withdraw".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PayPerCrawlPpuPublisherPriceWithdrawRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawlPpuPublisherPriceWithdrawRequest();
             }

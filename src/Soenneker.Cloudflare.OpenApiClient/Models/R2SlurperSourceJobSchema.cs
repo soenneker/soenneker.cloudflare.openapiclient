@@ -45,17 +45,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperSourceJobSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("vendor")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperSourceJobSchema();
-            if("R2SlurperGcsSourceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("gcs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2SlurperGcsSourceSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperGcsSourceSchema();
             }
-            else if("R2SlurperR2SourceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("r2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2SlurperR2SourceSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperR2SourceSchema();
             }
-            else if("R2SlurperS3SourceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("s3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2SlurperS3SourceSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2SlurperS3SourceSchema();
             }

@@ -59,14 +59,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Grace period for active instances to stay alive before becoming eligible for shutdown signal due to a rollout, in seconds.Defaults to 0.</summary>
         public int? RolloutActiveGracePeriod { get; set; }
-        /// <summary>The scheduling_policy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Selects a scheduler-backed application. Use `default` when the Containersscheduler should maintain the requested number of instances and manage deploymentconfiguration, placement, scaling, versions, and rollouts.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy? SchedulingPolicy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy SchedulingPolicy { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequest"/> and sets the default values.
+        /// </summary>
+        public CcContainersCreateScheduledApplicationRequest()
+        {
+            RolloutActiveGracePeriod = 0;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -93,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestObservability>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestObservability.CreateFromDiscriminatorValue); } },
                 { "rollout_active_grace_period", n => { RolloutActiveGracePeriod = n.GetIntValue(); } },
-                { "scheduling_policy", n => { SchedulingPolicy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy.CreateFromDiscriminatorValue); } },
+                { "scheduling_policy", n => { SchedulingPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy>(); } },
             };
         }
         /// <summary>
@@ -111,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestObservability>("observability", Observability);
             writer.WriteIntValue("rollout_active_grace_period", RolloutActiveGracePeriod);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy>("scheduling_policy", SchedulingPolicy);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateScheduledApplicationRequestSchedulingPolicy>("scheduling_policy", SchedulingPolicy);
         }
     }
 }

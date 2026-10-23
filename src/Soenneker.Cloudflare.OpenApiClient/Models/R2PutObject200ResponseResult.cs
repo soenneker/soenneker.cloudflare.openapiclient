@@ -7,13 +7,50 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Result of a successful object upload.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class R2PutObject200ResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The entity tag for the uploaded object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Etag { get; set; }
+#nullable restore
+#else
+        public string Etag { get; set; }
+#endif
+        /// <summary>The key (name) of the uploaded object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
+#endif
+        /// <summary>The size of the uploaded object in bytes (as a string).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Size { get; set; }
+#nullable restore
+#else
+        public string Size { get; set; }
+#endif
+        /// <summary>Storage class for newly uploaded objects, unless specified otherwise.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass? StorageClass { get; set; }
+        /// <summary>The date and time the object was uploaded.</summary>
+        public DateTimeOffset? Uploaded { get; set; }
+        /// <summary>The version UUID of the uploaded object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2PutObject200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +76,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "etag", n => { Etag = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetStringValue(); } },
+                { "storage_class", n => { StorageClass = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass>(); } },
+                { "uploaded", n => { Uploaded = n.GetDateTimeOffsetValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +91,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("etag", Etag);
+            writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("size", Size);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2StorageClass>("storage_class", StorageClass);
+            writer.WriteDateTimeOffsetValue("uploaded", Uploaded);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

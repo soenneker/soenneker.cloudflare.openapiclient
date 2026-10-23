@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applications.Item.InstancesV2
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\containers\applications\{applicationId}\instances-v2
+    /// Builds and executes requests for operations under \accounts\{accountId}\containers\applications\{applicationId}\instances-v2
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesV2RequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesV2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/containers/applications/{applicationId}/instances-v2{?name_prefix*,page_token*,per_page*,state*}", pathParameters)
+        public InstancesV2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/containers/applications/{applicationId}/instances-v2{?name_prefix*,page_token*,per_page*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Applicatio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesV2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/containers/applications/{applicationId}/instances-v2{?name_prefix*,page_token*,per_page*,state*}", rawUrl)
+        public InstancesV2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/containers/applications/{applicationId}/instances-v2{?name_prefix*,page_token*,per_page*,state*}", rawUrl)
         {
         }
         /// <summary>

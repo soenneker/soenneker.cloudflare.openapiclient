@@ -14,14 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The masking_level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Masking level for payload logs.- `full`: The entire payload is masked.- `partial`: Only partial payload content is masked.- `clear`: No masking is applied to the payload content.- `default`: DLP uses its default masking behavior.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel? MaskingLevel { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel MaskingLevel { get; set; }
-#endif
         /// <summary>Base64-encoded public key for encrypting payload logs.- Set to a non-empty base64 string to enable payload logging with the given key.- Set to an empty string to disable payload logging.- Omit or set to null to leave unchanged (PATCH) or reset to disabled (PUT).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "masking_level", n => { MaskingLevel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel.CreateFromDiscriminatorValue); } },
+                { "masking_level", n => { MaskingLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel>(); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel>("masking_level", MaskingLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpPayloadLogSettingUpdateMaskingLevel>("masking_level", MaskingLevel);
             writer.WriteStringValue("public_key", PublicKey);
             writer.WriteAdditionalData(AdditionalData);
         }

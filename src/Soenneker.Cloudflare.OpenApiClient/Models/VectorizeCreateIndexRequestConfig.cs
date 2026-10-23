@@ -8,26 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies the type of configuration to use for the index.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VectorizeCreateIndexRequestConfig : IAdditionalDataHolder, IParsable
+    public partial class VectorizeCreateIndexRequestConfig : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specifies the number of dimensions for the index</summary>
-        public int? Dimensions { get; set; }
-        /// <summary>Specifies the type of metric to use calculating distance.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexMetric? Metric { get; set; }
-        /// <summary>Specifies the preset to use for the index.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexPreset? Preset { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfig"/> and sets the default values.
-        /// </summary>
-        public VectorizeCreateIndexRequestConfig()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1? VectorizeCreateIndexRequestConfigMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1 VectorizeCreateIndexRequestConfigMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2? VectorizeCreateIndexRequestConfigMember2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2 VectorizeCreateIndexRequestConfigMember2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +37,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfig();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfig();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,12 +47,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(VectorizeCreateIndexRequestConfigMember1 != null)
             {
-                { "dimensions", n => { Dimensions = n.GetIntValue(); } },
-                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexMetric>(); } },
-                { "preset", n => { Preset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexPreset>(); } },
-            };
+                return VectorizeCreateIndexRequestConfigMember1.GetFieldDeserializers();
+            }
+            else if(VectorizeCreateIndexRequestConfigMember2 != null)
+            {
+                return VectorizeCreateIndexRequestConfigMember2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,10 +64,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("dimensions", Dimensions);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexMetric>("metric", Metric);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeIndexPreset>("preset", Preset);
-            writer.WriteAdditionalData(AdditionalData);
+            if(VectorizeCreateIndexRequestConfigMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember1>(null, VectorizeCreateIndexRequestConfigMember1);
+            }
+            else if(VectorizeCreateIndexRequestConfigMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VectorizeCreateIndexRequestConfigMember2>(null, VectorizeCreateIndexRequestConfigMember2);
+            }
         }
     }
 }

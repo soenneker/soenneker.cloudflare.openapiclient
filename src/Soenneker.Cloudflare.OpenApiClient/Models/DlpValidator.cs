@@ -8,68 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Reusable logic that a detection entry can attach to in order to refine its matches. The `kind`field determines the rest of the body.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidator"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidator"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DlpValidator : IAdditionalDataHolder, IParsable
+    public partial class DlpValidator : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The default property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidator"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorDefault? Default { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidator? DlpValidatorProximityWordValidator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorDefault Default { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidator DlpValidatorProximityWordValidator { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
-        /// <summary>The kind property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorKindEnum? Kind { get; set; }
-        /// <summary>A name for this validator, at most 50 characters.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidator"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidator? DlpValidatorWorkerValidator { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidator DlpValidatorWorkerValidator { get; set; }
 #endif
-        /// <summary>The referenced_by property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWordValidatorReferencedBy? ReferencedBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWordValidatorReferencedBy ReferencedBy { get; set; }
-#endif
-        /// <summary>The public script tag of the customer&apos;s Worker that scores matches.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScriptTag { get; set; }
-#nullable restore
-#else
-        public string ScriptTag { get; set; }
-#endif
-        /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The words that raise confidence when found near a match.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWord>? Words { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWord> Words { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidator"/> and sets the default values.
-        /// </summary>
-        public DlpValidator()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidator();
+            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidator();
+            if("proximity_words".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpValidatorProximityWordValidator = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidator();
+            }
+            else if("worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpValidatorWorkerValidator = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidator();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,18 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DlpValidatorProximityWordValidator != null)
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorDefault>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorDefault.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorKindEnum>(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "referenced_by", n => { ReferencedBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWordValidatorReferencedBy>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWordValidatorReferencedBy.CreateFromDiscriminatorValue); } },
-                { "script_tag", n => { ScriptTag = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "words", n => { Words = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWord>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWord.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return DlpValidatorProximityWordValidator.GetFieldDeserializers();
+            }
+            else if(DlpValidatorWorkerValidator != null)
+            {
+                return DlpValidatorWorkerValidator.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -106,16 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpWorkerValidatorDefault>("default", Default);
-            writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorKindEnum>("kind", Kind);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWordValidatorReferencedBy>("referenced_by", ReferencedBy);
-            writer.WriteStringValue("script_tag", ScriptTag);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProximityWord>("words", Words);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DlpValidatorProximityWordValidator != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorProximityWordValidator>(null, DlpValidatorProximityWordValidator);
+            }
+            else if(DlpValidatorWorkerValidator != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpValidatorWorkerValidator>(null, DlpValidatorWorkerValidator);
+            }
         }
     }
 }

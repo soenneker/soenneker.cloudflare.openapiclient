@@ -26,14 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.WithAccountItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.WithAccountItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("account%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("accountId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.WithAccountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

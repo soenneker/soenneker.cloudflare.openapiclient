@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional tags to associate with the target. Keys and values areuser-defined strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestItemTags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestRequestBodyItemTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestItemTags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestRequestBodyItemTags Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestRequestBodyItem"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestItemTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestItemTags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestRequestBodyItemTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestRequestBodyItemTags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraIpInfo>("ip", Ip);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestItemTags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.InfraTargetsPutBatchRequestRequestBodyItemTags>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

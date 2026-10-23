@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off **Email Obfuscation**.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailObfuscationId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Email Obfuscation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesEmailObfuscationValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesEmailObfuscation"/> and sets the default values.

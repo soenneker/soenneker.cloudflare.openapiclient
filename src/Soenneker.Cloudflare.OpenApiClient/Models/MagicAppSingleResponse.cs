@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicMessagesItem> Messages { get; set; }
 #endif
-        /// <summary>The result property</summary>
+        /// <summary>Custom app defined for an account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicAppSingleResponseResult? Result { get; set; }

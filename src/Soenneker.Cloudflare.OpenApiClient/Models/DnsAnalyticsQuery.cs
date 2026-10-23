@@ -58,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DnsAnalyticsQuery()
         {
             AdditionalData = new Dictionary<string, object>();
+            Limit = 100000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

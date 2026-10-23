@@ -116,10 +116,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare products that support this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?>? Supported { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationListItemSupportedItem?>? Supported { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem?> Supported { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationListItemSupportedItem?> Supported { get; set; }
 #endif
         /// <summary>Returns the application update time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,7 +178,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "port_protocols", n => { PortProtocols = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "review_status", n => { ReviewStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationListItemReviewStatus>(); } },
                 { "support_domains", n => { SupportDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "supported", n => { Supported = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem>()?.AsList(); } },
+                { "supported", n => { Supported = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationListItemSupportedItem>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -206,7 +206,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("port_protocols", PortProtocols);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationListItemReviewStatus>("review_status", ReviewStatus);
             writer.WriteCollectionOfPrimitiveValues<string>("support_domains", SupportDomains);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationSupportedItem>("supported", Supported);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AlexandriaApplicationListItemSupportedItem>("supported", Supported);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

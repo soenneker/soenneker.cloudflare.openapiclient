@@ -40,6 +40,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules ConnectionRules { get; set; }
 #endif
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision? Decision { get; set; }
+        /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Exclude { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Exclude { get; set; }
+#endif
+        /// <summary>The UUID of the policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Include { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Include { get; set; }
+#endif
         /// <summary>Require this application to be served in an isolated browser for users matching this policy. &apos;Client Web Isolation&apos; must be on for the account in order to use this feature.</summary>
         public bool? IsolationRequired { get; set; }
         /// <summary>Configures multi-factor authentication (MFA) settings.</summary>
@@ -49,6 +77,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig MfaConfig { get; set; }
+#endif
+        /// <summary>The name of the Access policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
 #endif
         /// <summary>The order of execution for this policy. Must be unique for each policy within an app.</summary>
         public int? Precedence { get; set; }
@@ -62,6 +98,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Require users to enter a justification when they log in to the application.</summary>
         public bool? PurposeJustificationRequired { get; set; }
+        /// <summary>Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>? Require { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule> Require { get; set; }
+#endif
         /// <summary>The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +114,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SessionDuration { get; set; }
 #endif
+        /// <summary>The updated_at property</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAppPolicyResponse"/> and sets the default values.
         /// </summary>
@@ -99,12 +145,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
                 { "connection_rules", n => { ConnectionRules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision>(); } },
+                { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isolation_required", n => { IsolationRequired = n.GetBoolValue(); } },
                 { "mfa_config", n => { MfaConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "precedence", n => { Precedence = n.GetIntValue(); } },
                 { "purpose_justification_prompt", n => { PurposeJustificationPrompt = n.GetStringValue(); } },
                 { "purpose_justification_required", n => { PurposeJustificationRequired = n.GetBoolValue(); } },
+                { "require", n => { Require = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -118,12 +172,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApprovalGroup>("approval_groups", ApprovalGroups);
             writer.WriteBoolValue("approval_required", ApprovalRequired);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessConnectionRules>("connection_rules", ConnectionRules);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessDecision>("decision", Decision);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>("exclude", Exclude);
+            writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>("include", Include);
             writer.WriteBoolValue("isolation_required", IsolationRequired);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessMfaConfig>("mfa_config", MfaConfig);
+            writer.WriteStringValue("name", Name);
             writer.WriteIntValue("precedence", Precedence);
             writer.WriteStringValue("purpose_justification_prompt", PurposeJustificationPrompt);
             writer.WriteBoolValue("purpose_justification_required", PurposeJustificationRequired);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessRule>("require", Require);
             writer.WriteStringValue("session_duration", SessionDuration);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

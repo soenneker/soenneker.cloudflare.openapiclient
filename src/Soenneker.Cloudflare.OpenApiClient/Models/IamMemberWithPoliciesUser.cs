@@ -48,13 +48,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string LastName { get; set; }
 #endif
         /// <summary>Indicates whether two-factor authentication is enabled for the user account. Does not apply to API authentication.</summary>
-        public bool? TwoFactorAuthenticationEnabled { get; set; }
+        public bool? TwoFactorAuthenticationEnabled { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamMemberWithPoliciesUser"/> and sets the default values.
         /// </summary>
         public IamMemberWithPoliciesUser()
         {
             AdditionalData = new Dictionary<string, object>();
+            TwoFactorAuthenticationEnabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,7 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_name", LastName);
-            writer.WriteBoolValue("two_factor_authentication_enabled", TwoFactorAuthenticationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

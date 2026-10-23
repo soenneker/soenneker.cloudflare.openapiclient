@@ -30,13 +30,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The list of services that can use this secret.</summary>
+        /// <summary>The list of services that can use this secret. Omit it on create or duplicate to inherit the store&apos;s scopes. An empty list lets no service use the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?>? Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDuplicateSecretObjectScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?> Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDuplicateSecretObjectScopesItem?> Scopes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDuplicateSecretObject"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDuplicateSecretObjectScopesItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDuplicateSecretObjectScopesItem>("scopes", Scopes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Evaluation attributes keyed by name. Values may be any JSON value; the context supports up to 100 entries and 32 KB.
+    /// Evaluation attributes keyed by name. Values may be any JSON value; the context supports up to 100 entries, nesting depth of 10, 10,000 values, and 32 KB.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlagshipEvaluateFlagPostRequestContext : IAdditionalDataHolder, IParsable

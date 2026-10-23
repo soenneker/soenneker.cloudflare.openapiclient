@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The encryption mode that Cloudflare uses to connect to your origin server.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ZonesSslValue2
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "off")]
         #pragma warning disable CS1591

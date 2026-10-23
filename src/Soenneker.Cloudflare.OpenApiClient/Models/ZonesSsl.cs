@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Control options for the SSL feature of the Edge Certificates tab in the Cloudflare SSL/TLS app.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SslId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The encryption mode that Cloudflare uses to connect to your origin server.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSslValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesSsl"/> and sets the default values.

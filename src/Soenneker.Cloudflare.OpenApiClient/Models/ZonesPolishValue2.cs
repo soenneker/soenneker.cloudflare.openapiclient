@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The level of Polish you want applied to your origin.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ZonesPolishValue2
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "off")]
         #pragma warning disable CS1591

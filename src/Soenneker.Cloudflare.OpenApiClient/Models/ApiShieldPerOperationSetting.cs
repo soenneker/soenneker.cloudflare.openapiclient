@@ -16,13 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation  - `&quot;log&quot;` - log request when request does not conform to schema for this operation  - `&quot;block&quot;` - deny access to the site when request does not conform to schema for this operation  - `&quot;none&quot;` - will skip mitigation for this operation</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingMitigationAction? MitigationAction { get; set; }
-        /// <summary>UUID.</summary>
+        /// <summary>The operation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2? OperationId { get; set; }
 #nullable restore
 #else
-        public string OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2 OperationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSetting"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "mitigation_action", n => { MitigationAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingMitigationAction>(); } },
-                { "operation_id", n => { OperationId = n.GetStringValue(); } },
+                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldPerOperationSettingMitigationAction>("mitigation_action", MitigationAction);
-            writer.WriteStringValue("operation_id", OperationId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>("operation_id", OperationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

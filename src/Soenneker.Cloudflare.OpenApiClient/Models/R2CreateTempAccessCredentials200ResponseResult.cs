@@ -12,8 +12,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class R2CreateTempAccessCredentials200ResponseResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>ID for new access key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccessKeyId { get; set; }
+#nullable restore
+#else
+        public string AccessKeyId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Secret access key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecretAccessKey { get; set; }
+#nullable restore
+#else
+        public string SecretAccessKey { get; set; }
+#endif
+        /// <summary>Security token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionToken { get; set; }
+#nullable restore
+#else
+        public string SessionToken { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateTempAccessCredentials200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "accessKeyId", n => { AccessKeyId = n.GetStringValue(); } },
+                { "secretAccessKey", n => { SecretAccessKey = n.GetStringValue(); } },
+                { "sessionToken", n => { SessionToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("accessKeyId", AccessKeyId);
+            writer.WriteStringValue("secretAccessKey", SecretAccessKey);
+            writer.WriteStringValue("sessionToken", SessionToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

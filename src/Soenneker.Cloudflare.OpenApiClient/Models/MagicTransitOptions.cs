@@ -30,6 +30,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicTransitOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxTtl = 15;
+            PacketsPerTtl = 3;
+            Port = 0;
+            WaitTime = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

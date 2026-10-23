@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for an OAuth client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get; set; }
+        public string? ClientId { get; private set; }
 #nullable restore
 #else
-        public string ClientId { get; set; }
+        public string ClientId { get; private set; }
 #endif
         /// <summary>Human-readable name of the OAuth client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_cors_origins", AllowedCorsOrigins);
-            writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("client_name", ClientName);
             writer.WriteStringValue("client_uri", ClientUri);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamOAuthClientUriVerification>("client_uri_verification", ClientUriVerification);

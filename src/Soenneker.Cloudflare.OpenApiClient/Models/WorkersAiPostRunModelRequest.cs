@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageClassificationOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToText"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestMultimodalEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestObjectDetectionOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestSummarization"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextClassification"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGeneration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextToImage"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextToSpeech"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTranslation"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestAutomaticSpeechRecognitionOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageClassificationOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToTextOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestMultimodalEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestObjectDetectionOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestSummarization"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextClassification"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextEmbeddings"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextToImage"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextToSpeech"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTranslation"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersAiPostRunModelRequest : IComposedTypeWrapper, IParsable
@@ -29,13 +29,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageClassificationOneOf2 WorkersAiPostRunModelRequestImageClassificationOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToText"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToTextOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToText? WorkersAiPostRunModelRequestImageTextToText { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToTextOneOf2? WorkersAiPostRunModelRequestImageTextToTextOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToText WorkersAiPostRunModelRequestImageTextToText { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToTextOneOf2 WorkersAiPostRunModelRequestImageTextToTextOneOf2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageToTextOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,13 +85,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextEmbeddings WorkersAiPostRunModelRequestTextEmbeddings { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGeneration"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGeneration? WorkersAiPostRunModelRequestTextGeneration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages? WorkersAiPostRunModelRequestTextGenerationMessages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGeneration WorkersAiPostRunModelRequestTextGeneration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages WorkersAiPostRunModelRequestTextGenerationMessages { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextToImage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,9 +135,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersAiPostRunModelRequestImageClassificationOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageClassificationOneOf2();
             }
-            else if("WorkersAiPostRunModelRequestImageTextToText".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersAiPostRunModelRequestImageTextToTextOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModelRequestImageTextToText = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToText();
+                result.WorkersAiPostRunModelRequestImageTextToTextOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToTextOneOf2();
             }
             else if("WorkersAiPostRunModelRequestImageToTextOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -163,9 +163,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersAiPostRunModelRequestTextEmbeddings = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextEmbeddings();
             }
-            else if("WorkersAiPostRunModelRequestTextGeneration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WorkersAiPostRunModelRequestTextGenerationMessages".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersAiPostRunModelRequestTextGeneration = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGeneration();
+                result.WorkersAiPostRunModelRequestTextGenerationMessages = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages();
             }
             else if("WorkersAiPostRunModelRequestTextToImage".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -195,9 +195,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return WorkersAiPostRunModelRequestImageClassificationOneOf2.GetFieldDeserializers();
             }
-            else if(WorkersAiPostRunModelRequestImageTextToText != null)
+            else if(WorkersAiPostRunModelRequestImageTextToTextOneOf2 != null)
             {
-                return WorkersAiPostRunModelRequestImageTextToText.GetFieldDeserializers();
+                return WorkersAiPostRunModelRequestImageTextToTextOneOf2.GetFieldDeserializers();
             }
             else if(WorkersAiPostRunModelRequestImageToTextOneOf2 != null)
             {
@@ -223,9 +223,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return WorkersAiPostRunModelRequestTextEmbeddings.GetFieldDeserializers();
             }
-            else if(WorkersAiPostRunModelRequestTextGeneration != null)
+            else if(WorkersAiPostRunModelRequestTextGenerationMessages != null)
             {
-                return WorkersAiPostRunModelRequestTextGeneration.GetFieldDeserializers();
+                return WorkersAiPostRunModelRequestTextGenerationMessages.GetFieldDeserializers();
             }
             else if(WorkersAiPostRunModelRequestTextToImage != null)
             {
@@ -256,9 +256,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageClassificationOneOf2>(null, WorkersAiPostRunModelRequestImageClassificationOneOf2);
             }
-            else if(WorkersAiPostRunModelRequestImageTextToText != null)
+            else if(WorkersAiPostRunModelRequestImageTextToTextOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToText>(null, WorkersAiPostRunModelRequestImageTextToText);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestImageTextToTextOneOf2>(null, WorkersAiPostRunModelRequestImageTextToTextOneOf2);
             }
             else if(WorkersAiPostRunModelRequestImageToTextOneOf2 != null)
             {
@@ -284,9 +284,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextEmbeddings>(null, WorkersAiPostRunModelRequestTextEmbeddings);
             }
-            else if(WorkersAiPostRunModelRequestTextGeneration != null)
+            else if(WorkersAiPostRunModelRequestTextGenerationMessages != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGeneration>(null, WorkersAiPostRunModelRequestTextGeneration);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunModelRequestTextGenerationMessages>(null, WorkersAiPostRunModelRequestTextGenerationMessages);
             }
             else if(WorkersAiPostRunModelRequestTextToImage != null)
             {

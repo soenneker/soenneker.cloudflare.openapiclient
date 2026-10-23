@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.TenantStructures.Item.Nodes.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cws\tenant-structures\{structureId}\nodes\{nodeId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\cws\tenant-structures\{structureId}\nodes\{nodeId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithNodeItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.TenantStructures.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNodeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cws/tenant-structures/{structureId}/nodes/{nodeId}", pathParameters)
+        public WithNodeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cws/tenant-structures/{structureId}/nodes/{nodeId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.TenantStructures.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNodeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cws/tenant-structures/{structureId}/nodes/{nodeId}", rawUrl)
+        public WithNodeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cws/tenant-structures/{structureId}/nodes/{nodeId}", rawUrl)
         {
         }
         /// <summary>

@@ -7,13 +7,42 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// A single Preview of a Worker, with the build settings it currently uses.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetWorkerPreview200ResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether pushes to the git branch build this Preview. Deploy hooks, manual builds, and retries run regardless of this setting.</summary>
+        public bool? AutoBuild { get; set; }
+        /// <summary>Whether deleting the git branch also deletes this Preview.</summary>
+        public bool? AutoDelete { get; set; }
+        /// <summary>Git branch name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Branch { get; set; }
+#nullable restore
+#else
+        public string Branch { get; set; }
+#endif
+        /// <summary>System-generated tag of the Worker. This is not the Worker name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewId { get; set; }
+#nullable restore
+#else
+        public string PreviewId { get; set; }
+#endif
+        /// <summary>Build and deploy settings for a Worker script environment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings? Settings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings Settings { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerPreview200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_build", n => { AutoBuild = n.GetBoolValue(); } },
+                { "auto_delete", n => { AutoDelete = n.GetBoolValue(); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "preview_id", n => { PreviewId = n.GetStringValue(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +82,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_build", AutoBuild);
+            writer.WriteBoolValue("auto_delete", AutoDelete);
+            writer.WriteStringValue("branch", Branch);
+            writer.WriteStringValue("preview_id", PreviewId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsWorkerBuildSettings>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

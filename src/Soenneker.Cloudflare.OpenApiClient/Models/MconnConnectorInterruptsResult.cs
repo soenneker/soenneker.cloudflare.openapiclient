@@ -9,35 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MconnConnectorInterruptsResult : IAdditionalDataHolder, IParsable
+    public partial class MconnConnectorInterruptsResult : global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterrupt, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The reboot property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot? Reboot { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot Reboot { get; set; }
-#endif
-        /// <summary>The restart property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart? Restart { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart Restart { get; set; }
-#endif
-        /// <summary>The shutdown property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown? Shutdown { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown Shutdown { get; set; }
-#endif
         /// <summary>The submitted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnConnectorInterruptsResult"/> and sets the default values.
         /// </summary>
-        public MconnConnectorInterruptsResult()
+        public MconnConnectorInterruptsResult() : base()
         {
             AdditionalData = new Dictionary<string, object>();
         }
@@ -66,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MconnConnectorInterruptsResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.MconnConnectorInterruptsResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnConnectorInterruptsResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.MconnConnectorInterruptsResult();
@@ -75,13 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "reboot", n => { Reboot = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot.CreateFromDiscriminatorValue); } },
-                { "restart", n => { Restart = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart.CreateFromDiscriminatorValue); } },
-                { "shutdown", n => { Shutdown = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown>(global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown.CreateFromDiscriminatorValue); } },
                 { "submitted_at", n => { SubmittedAt = n.GetStringValue(); } },
                 { "triggered_at", n => { TriggeredAt = n.GetStringValue(); } },
             };
@@ -90,12 +63,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptReboot>("reboot", Reboot);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptRestart>("restart", Restart);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MconnInterruptShutdown>("shutdown", Shutdown);
+            base.Serialize(writer);
             writer.WriteStringValue("submitted_at", SubmittedAt);
             writer.WriteStringValue("triggered_at", TriggeredAt);
             writer.WriteAdditionalData(AdditionalData);

@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.R2CreatePrefixDeleteJobRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreatePrefixDeleteJobRequest();
             }
-            else if("R2CreateStorageClassMigrationJobRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("storageClassMigration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.R2CreateStorageClassMigrationJobRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2CreateStorageClassMigrationJobRequest();
             }

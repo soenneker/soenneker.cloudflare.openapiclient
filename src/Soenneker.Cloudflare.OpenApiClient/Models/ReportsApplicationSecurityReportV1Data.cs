@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The industry of the account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry? Industry { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry Industry { get; set; }
-#endif
         /// <summary>Percentile ranking of this account&apos;s security posture within their industry (0-100). Null when industry is unknown/unsupported or benchmarks are unavailable.</summary>
         public double? IndustryPercentile { get; set; }
         /// <summary>Time range specification for reports and queries. Used to define the period of data to include in analysis.</summary>
@@ -135,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "account_name", n => { AccountName = n.GetStringValue(); } },
-                { "industry", n => { Industry = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry.CreateFromDiscriminatorValue); } },
+                { "industry", n => { Industry = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry>(); } },
                 { "industry_percentile", n => { IndustryPercentile = n.GetDoubleValue(); } },
                 { "time_range", n => { TimeRange = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange.CreateFromDiscriminatorValue); } },
                 { "top_countries_by_mitigated_requests", n => { TopCountriesByMitigatedRequests = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -158,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("account_name", AccountName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry>("industry", Industry);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataIndustry>("industry", Industry);
             writer.WriteDoubleValue("industry_percentile", IndustryPercentile);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTimeRange>("time_range", TimeRange);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ReportsApplicationSecurityReportV1DataTopCountriesByMitigatedRequestsItem>("top_countries_by_mitigated_requests", TopCountriesByMitigatedRequests);

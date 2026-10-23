@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.Categories.Actors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\events\tags\categories\actors
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\events\tags\categories\actors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActorsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/tags/categories/actors{?filters*,page*,pageSize*,value*}", pathParameters)
+        public ActorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/tags/categories/actors{?filters*,page*,pageSize*,value*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/tags/categories/actors{?filters*,page*,pageSize*,value*}", rawUrl)
+        public ActorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/events/tags/categories/actors{?filters*,page*,pageSize*,value*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns all known Actors from the shared CFONE-owned catalog. Accounts other than the catalog owner receive a redacted public projection: identity (`uuid`, `value`, `categoryUuid`, `categoryName`), metadata (`description`, `dateOfDiscovery`, `tlp`, `confidence`, `properties`), origin (`originCountryISO`, `originCountryISO_annotated`), and public aliases/references (`aliasGroupNames`, `aliases`, `externalReferences`, `externalReferences_annotated`). Owner-private fields (internal aliases, attribution, motive, opsec level, etc.) are stripped from non-owner responses.
+        /// Lists threat actors from the Cloudforce One actor catalog. Use `value` to match actor names and `filters` to filter by fields such as origin country. Accounts outside Cloudforce One receive only public fields: identity, description, discovery date, TLP, confidence, custom properties, origin country, public aliases, and external references. Fields such as internal aliases, attribution, motive, and OPSEC level are omitted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetTaggedActorList200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTaggedActorList200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetTaggedActorList200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns all known Actors from the shared CFONE-owned catalog. Accounts other than the catalog owner receive a redacted public projection: identity (`uuid`, `value`, `categoryUuid`, `categoryName`), metadata (`description`, `dateOfDiscovery`, `tlp`, `confidence`, `properties`), origin (`originCountryISO`, `originCountryISO_annotated`), and public aliases/references (`aliasGroupNames`, `aliases`, `externalReferences`, `externalReferences_annotated`). Owner-private fields (internal aliases, attribution, motive, opsec level, etc.) are stripped from non-owner responses.
+        /// Lists threat actors from the Cloudforce One actor catalog. Use `value` to match actor names and `filters` to filter by fields such as origin country. Accounts outside Cloudforce One receive only public fields: identity, description, discovery date, TLP, confidence, custom properties, origin country, public aliases, and external references. Fields such as internal aliases, attribution, motive, and OPSEC level are omitted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.Categories.Actors.ActorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns all known Actors from the shared CFONE-owned catalog. Accounts other than the catalog owner receive a redacted public projection: identity (`uuid`, `value`, `categoryUuid`, `categoryName`), metadata (`description`, `dateOfDiscovery`, `tlp`, `confidence`, `properties`), origin (`originCountryISO`, `originCountryISO_annotated`), and public aliases/references (`aliasGroupNames`, `aliases`, `externalReferences`, `externalReferences_annotated`). Owner-private fields (internal aliases, attribution, motive, opsec level, etc.) are stripped from non-owner responses.
+        /// Lists threat actors from the Cloudforce One actor catalog. Use `value` to match actor names and `filters` to filter by fields such as origin country. Accounts outside Cloudforce One receive only public fields: identity, description, discovery date, TLP, confidence, custom properties, origin country, public aliases, and external references. Fields such as internal aliases, attribution, motive, and OPSEC level are omitted.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActorsRequestBuilderGetQueryParameters 

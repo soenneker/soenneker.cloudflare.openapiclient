@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the Keyless SSL was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Whether or not the Keyless SSL is on or off.</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get; private set; }
         /// <summary>The keyless SSL name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,20 +29,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Keyless certificate identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When the Keyless SSL was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The keyless SSL name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get; private set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get; private set; }
 #endif
         /// <summary>Available permissions for the Keyless SSL for the current user requesting the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public TlsCertificatesAndHostnamesKeylessCertificate()
         {
             AdditionalData = new Dictionary<string, object>();
+            Port = 24008;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -108,10 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("port", Port);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnamesKeylessTunnel>("tunnel", Tunnel);
             writer.WriteAdditionalData(AdditionalData);

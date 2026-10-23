@@ -7,52 +7,48 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueMember1"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FlagshipJsonValue : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class FlagshipJsonValue : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch1? FlagshipJsonValueBranch1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueOneOf4? FlagshipJsonValueOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch1 FlagshipJsonValueBranch1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueOneOf4 FlagshipJsonValueOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch2"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch2? FlagshipJsonValueBranch2 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue>? FlagshipJsonValueProp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch2 FlagshipJsonValueBranch2 { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue> FlagshipJsonValueProp { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch3"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch3? FlagshipJsonValueBranch3 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch3 FlagshipJsonValueBranch3 { get; set; }
+        public string String { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch5? FlagshipJsonValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch5 FlagshipJsonValueBranch5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueMember1? FlagshipJsonValueMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueMember1 FlagshipJsonValueMember1 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue"/> and sets the default values.
+        /// </summary>
+        public FlagshipJsonValue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,21 +59,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue();
-            if("FlagshipJsonValueBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("FlagshipJsonValueOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FlagshipJsonValueBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch1();
+                result.FlagshipJsonValueOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueOneOf4();
             }
-            else if("FlagshipJsonValueBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetBoolValue() is bool booleanValue)
             {
-                result.FlagshipJsonValueBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch2();
+                result.Boolean = booleanValue;
             }
-            else if("FlagshipJsonValueBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetDoubleValue() is double doubleValue)
             {
-                result.FlagshipJsonValueBranch3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch3();
+                result.Double = doubleValue;
             }
-            else if("FlagshipJsonValueBranch5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string stringValue)
             {
-                result.FlagshipJsonValueBranch5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch5();
+                result.String = stringValue;
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue> flagshipJsonValuePropValue)
+            {
+                result.FlagshipJsonValueProp = flagshipJsonValuePropValue;
             }
             return result;
         }
@@ -87,25 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FlagshipJsonValueBranch1 != null)
+            if(FlagshipJsonValueOneOf4 != null)
             {
-                return FlagshipJsonValueBranch1.GetFieldDeserializers();
-            }
-            else if(FlagshipJsonValueBranch2 != null)
-            {
-                return FlagshipJsonValueBranch2.GetFieldDeserializers();
-            }
-            else if(FlagshipJsonValueBranch3 != null)
-            {
-                return FlagshipJsonValueBranch3.GetFieldDeserializers();
-            }
-            else if(FlagshipJsonValueBranch5 != null)
-            {
-                return FlagshipJsonValueBranch5.GetFieldDeserializers();
-            }
-            else if(FlagshipJsonValueMember1 != null)
-            {
-                return FlagshipJsonValueMember1.GetFieldDeserializers();
+                return FlagshipJsonValueOneOf4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -116,26 +100,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(FlagshipJsonValueBranch1 != null)
+            if(FlagshipJsonValueOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch1>(null, FlagshipJsonValueBranch1);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueOneOf4>(null, FlagshipJsonValueOneOf4);
             }
-            else if(FlagshipJsonValueBranch2 != null)
+            else if(Boolean != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch2>(null, FlagshipJsonValueBranch2);
+                writer.WriteBoolValue(null, Boolean);
             }
-            else if(FlagshipJsonValueBranch3 != null)
+            else if(Double != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch3>(null, FlagshipJsonValueBranch3);
+                writer.WriteDoubleValue(null, Double);
             }
-            else if(FlagshipJsonValueBranch5 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueBranch5>(null, FlagshipJsonValueBranch5);
+                writer.WriteStringValue(null, String);
             }
-            else if(FlagshipJsonValueMember1 != null)
+            else if(FlagshipJsonValueProp != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValueMember1>(null, FlagshipJsonValueMember1);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.FlagshipJsonValue>(null, FlagshipJsonValueProp);
             }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

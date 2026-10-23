@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Previews
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\workers\workers\{workerId}\previews
+    /// Builds and executes requests for operations under \accounts\{accountId}\workers\workers\{workerId}\previews
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreviewsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/workers/{workerId}/previews{?ignore_base_config*,ignore_defaults*,name*,order*,order_by*,page*,per_page*,slug*}", pathParameters)
+        public PreviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews{?ignore_base_config*,ignore_defaults*,name*,order*,order_by*,page*,per_page*,slug*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/workers/{workerId}/previews{?ignore_base_config*,ignore_defaults*,name*,order*,order_by*,page*,per_page*,slug*}", rawUrl)
+        public PreviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/workers/workers/{workerId}/previews{?ignore_base_config*,ignore_defaults*,name*,order*,order_by*,page*,per_page*,slug*}", rawUrl)
         {
         }
         /// <summary>

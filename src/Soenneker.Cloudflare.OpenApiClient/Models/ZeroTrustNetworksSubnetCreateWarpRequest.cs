@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustNetworksSubnetCreateWarpRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsDefaultNetwork = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

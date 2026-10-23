@@ -31,16 +31,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Host { get; set; }
 #endif
         /// <summary>The last_updated property</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get; private set; }
         /// <summary>The HTTP method used to access the endpoint.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod? Method { get; set; }
-        /// <summary>UUID.</summary>
+        /// <summary>The operation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2? OperationId { get; set; }
 #nullable restore
 #else
-        public string OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2 OperationId { get; set; }
 #endif
         /// <summary>Details how `selector` interacted with an operation:  - `included` operations are included by `selector` and will be covered by the Token Validation Rule  - `excluded` operations are excluded by `selector` and will not be covered by the Token Validation Rule  - `ignored` operations are not included by `selector` and will not be covered by the Token Validation Rule</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelectorOperationState? State { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod>(); } },
-                { "operation_id", n => { OperationId = n.GetStringValue(); } },
+                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelectorOperationState>(); } },
             };
         }
@@ -86,9 +86,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("host", Host);
-            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldMethod>("method", Method);
-            writer.WriteStringValue("operation_id", OperationId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldUuid2>("operation_id", OperationId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldSelectorOperationState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

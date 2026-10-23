@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceRampId { get; set; }
+        public string? SourceRampId { get; private set; }
 #nullable restore
 #else
-        public string SourceRampId { get; set; }
+        public string SourceRampId { get; private set; }
 #endif
         /// <summary>The type of network connection (ramp) linking a CF1 Site to Cloudflare&apos;s network.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteRampType? Type { get; set; }
@@ -60,7 +60,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("source_ramp_id", SourceRampId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicCf1SiteRampType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

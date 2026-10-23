@@ -48,6 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IpAddressManagementPrefixesAddPrefixRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            DelegateLoaCreation = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

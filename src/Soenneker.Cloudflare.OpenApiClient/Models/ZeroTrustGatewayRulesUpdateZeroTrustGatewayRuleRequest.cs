@@ -45,10 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem?>? Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequestFiltersItem?>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem?> Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequestFiltersItem?> Filters { get; set; }
 #endif
         /// <summary>Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -122,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration.CreateFromDiscriminatorValue); } },
-                { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem>()?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequestFiltersItem>()?.AsList(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "precedence", n => { Precedence = n.GetIntValue(); } },
@@ -143,7 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("device_posture", DevicePosture);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayExpiration>("expiration", Expiration);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayFiltersItem>("filters", Filters);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayRulesUpdateZeroTrustGatewayRuleRequestFiltersItem>("filters", Filters);
             writer.WriteStringValue("identity", Identity);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("precedence", Precedence);

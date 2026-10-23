@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMultiAuthentication2Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessScimConfig2Authentication : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMultiAuthentication2Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMultiAuthentication2Wrapper? AccessScimConfigMultiAuthentication2Wrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMultiAuthentication2Wrapper AccessScimConfigMultiAuthentication2Wrapper { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2? AccessScimConfigSingleAuthentication2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2? AccessScimConfig2AuthenticationAccessScimConfigSingleAuthentication2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2 AccessScimConfigSingleAuthentication2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2 AccessScimConfig2AuthenticationAccessScimConfigSingleAuthentication2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2>? AccessScimConfigSingleAuthentication2 { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2> AccessScimConfigSingleAuthentication2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,11 +37,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("scheme")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfig2Authentication();
-            if("AccessScimConfigMultiAuthentication2Wrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2> accessScimConfigSingleAuthentication2Value)
             {
-                result.AccessScimConfigMultiAuthentication2Wrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMultiAuthentication2Wrapper();
+                result.AccessScimConfigSingleAuthentication2 = accessScimConfigSingleAuthentication2Value;
             }
             return result;
         }
@@ -51,13 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AccessScimConfigMultiAuthentication2Wrapper != null)
+            if(AccessScimConfig2AuthenticationAccessScimConfigSingleAuthentication2 != null)
             {
-                return AccessScimConfigMultiAuthentication2Wrapper.GetFieldDeserializers();
-            }
-            else if(AccessScimConfigSingleAuthentication2 != null)
-            {
-                return AccessScimConfigSingleAuthentication2.GetFieldDeserializers();
+                return AccessScimConfig2AuthenticationAccessScimConfigSingleAuthentication2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -68,13 +64,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AccessScimConfigMultiAuthentication2Wrapper != null)
+            if(AccessScimConfig2AuthenticationAccessScimConfigSingleAuthentication2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigMultiAuthentication2Wrapper>(null, AccessScimConfigMultiAuthentication2Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2>(null, AccessScimConfig2AuthenticationAccessScimConfigSingleAuthentication2);
             }
             else if(AccessScimConfigSingleAuthentication2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2>(null, AccessScimConfigSingleAuthentication2);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimConfigSingleAuthentication2>(null, AccessScimConfigSingleAuthentication2);
             }
         }
     }

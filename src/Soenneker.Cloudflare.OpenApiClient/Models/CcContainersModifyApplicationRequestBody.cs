@@ -49,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public CcContainersModifyApplicationRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            RolloutActiveGracePeriod = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

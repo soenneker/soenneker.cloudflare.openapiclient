@@ -7,32 +7,60 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostEventListRequestSearchItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostEventListRequestSearchItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The field property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemField? Field { get; set; }
-        /// <summary>The op property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemOp? Op { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1? PostEventListRequestSearchItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1 PostEventListRequestSearchItemAnyOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItem"/> and sets the default values.
-        /// </summary>
-        public PostEventListRequestSearchItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2? PostEventListRequestSearchItemAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2 PostEventListRequestSearchItemAnyOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3? PostEventListRequestSearchItemAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3 PostEventListRequestSearchItemAnyOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4? PostEventListRequestSearchItemAnyOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4 PostEventListRequestSearchItemAnyOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5? PostEventListRequestSearchItemAnyOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5 PostEventListRequestSearchItemAnyOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6? PostEventListRequestSearchItemAnyOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6 PostEventListRequestSearchItemAnyOf6 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +69,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItem();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItem();
+            result.PostEventListRequestSearchItemAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1();
+            result.PostEventListRequestSearchItemAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf2();
+            result.PostEventListRequestSearchItemAnyOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf3();
+            result.PostEventListRequestSearchItemAnyOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf4();
+            result.PostEventListRequestSearchItemAnyOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf5();
+            result.PostEventListRequestSearchItemAnyOf6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf6();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostEventListRequestSearchItemAnyOf1 != null || PostEventListRequestSearchItemAnyOf2 != null || PostEventListRequestSearchItemAnyOf3 != null || PostEventListRequestSearchItemAnyOf4 != null || PostEventListRequestSearchItemAnyOf5 != null || PostEventListRequestSearchItemAnyOf6 != null)
             {
-                { "field", n => { Field = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemField>(); } },
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemOp>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostEventListRequestSearchItemAnyOf1, PostEventListRequestSearchItemAnyOf2, PostEventListRequestSearchItemAnyOf3, PostEventListRequestSearchItemAnyOf4, PostEventListRequestSearchItemAnyOf5, PostEventListRequestSearchItemAnyOf6);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemField>("field", Field);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemOp>("op", Op);
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostEventListRequestSearchItemAnyOf1>(null, PostEventListRequestSearchItemAnyOf1, PostEventListRequestSearchItemAnyOf2, PostEventListRequestSearchItemAnyOf3, PostEventListRequestSearchItemAnyOf4, PostEventListRequestSearchItemAnyOf5, PostEventListRequestSearchItemAnyOf6);
         }
     }
 }

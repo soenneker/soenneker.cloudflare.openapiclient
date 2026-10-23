@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelBranch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostTagCreateRequestSophisticationLevel : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2 PostTagCreateRequestSophisticationLevelAnyOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelBranch1? PostTagCreateRequestSophisticationLevelBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelBranch1 PostTagCreateRequestSophisticationLevelBranch1 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevel();
-            result.PostTagCreateRequestSophisticationLevelAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2();
-            result.PostTagCreateRequestSophisticationLevelBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelBranch1();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.PostTagCreateRequestSophisticationLevelAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PostTagCreateRequestSophisticationLevelAnyOf2 != null || PostTagCreateRequestSophisticationLevelBranch1 != null)
+            if(PostTagCreateRequestSophisticationLevelAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostTagCreateRequestSophisticationLevelAnyOf2, PostTagCreateRequestSophisticationLevelBranch1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostTagCreateRequestSophisticationLevelAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2>(null, PostTagCreateRequestSophisticationLevelAnyOf2, PostTagCreateRequestSophisticationLevelBranch1);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostTagCreateRequestSophisticationLevelAnyOf2>(null, PostTagCreateRequestSophisticationLevelAnyOf2);
+            }
         }
     }
 }

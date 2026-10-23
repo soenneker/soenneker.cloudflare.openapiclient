@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\devices\registrations
+    /// Builds and executes requests for operations under \accounts\{accountId}\devices\registrations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrationsRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/registrations{?cursor,device%2Eid,include*,per_page,policy%2Eid,registration_type,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", pathParameters)
+        public RegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/devices/registrations{?cursor,device%2Eid,include*,per_page,policy%2Eid,registration_type,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices/registrations{?cursor,device%2Eid,include*,per_page,policy%2Eid,registration_type,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", rawUrl)
+        public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/devices/registrations{?cursor,device%2Eid,include*,per_page,policy%2Eid,registration_type,search,seen_after,seen_before,sort_by,sort_order,status,user%2Eid*}", rawUrl)
         {
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/accounts/{account%2Did}/devices/registrations{?id*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/accounts/{accountId}/devices/registrations{?id*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

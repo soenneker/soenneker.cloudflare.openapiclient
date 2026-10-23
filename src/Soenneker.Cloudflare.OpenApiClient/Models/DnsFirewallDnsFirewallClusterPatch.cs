@@ -58,6 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DnsFirewallDnsFirewallClusterPatch()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaximumCacheTtl = 900;
+            MinimumCacheTtl = 60;
+            Retries = 2;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

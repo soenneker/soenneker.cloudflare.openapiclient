@@ -7,13 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// CSAM Scanner configuration for a zone.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CsamConfigServiceCsamScannerSingleResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the feature state can be changed. When false, the zoneor account may be locked by Trust &amp; Safety.</summary>
+        public bool? Editable { get; set; }
+        /// <summary>The feature identifier.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CsamScannerId? Id { get; set; }
+        /// <summary>When the setting was last modified. Currently always null as theserver does not populate this field.</summary>
+        public DateTimeOffset? ModifiedOn { get; set; }
+        /// <summary>The CSAM Scanner feature configuration values. Contains thenotification email and scanning enablement settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerValue? Value { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerValue Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerSingleResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +54,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "editable", n => { Editable = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamScannerId>(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +67,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("editable", Editable);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamScannerId>("id", Id);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CsamConfigServiceCsamScannerValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

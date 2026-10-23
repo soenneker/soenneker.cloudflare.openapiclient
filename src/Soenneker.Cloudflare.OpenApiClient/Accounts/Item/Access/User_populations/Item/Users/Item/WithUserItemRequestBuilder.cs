@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populations.Item.Users.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\access\user_populations\{userPopulationId}\users\{userId}
+    /// Builds and executes requests for operations under \accounts\{accountId}\access\user_populations\{userPopulationId}\users\{userId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUserItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populatio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/user_populations/{userPopulationId}/users/{userId}{?attributes*,excludedAttributes*}", pathParameters)
+        public WithUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/user_populations/{userPopulationId}/users/{userId}{?attributes*,excludedAttributes*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.User_populatio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/user_populations/{userPopulationId}/users/{userId}{?attributes*,excludedAttributes*}", rawUrl)
+        public WithUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/access/user_populations/{userPopulationId}/users/{userId}{?attributes*,excludedAttributes*}", rawUrl)
         {
         }
         /// <summary>

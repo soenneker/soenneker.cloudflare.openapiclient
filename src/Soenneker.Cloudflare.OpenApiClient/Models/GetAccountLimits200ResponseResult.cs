@@ -14,6 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When build minutes will refresh (only for non-paid plans)</summary>
+        public DateTimeOffset? BuildMinutesRefreshOn { get; set; }
+        /// <summary>Whether build minutes limit has been reached (only for non-paid plans)</summary>
+        public bool? HasReachedBuildMinutesLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetAccountLimits200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "build_minutes_refresh_on", n => { BuildMinutesRefreshOn = n.GetDateTimeOffsetValue(); } },
+                { "has_reached_build_minutes_limit", n => { HasReachedBuildMinutesLimit = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("build_minutes_refresh_on", BuildMinutesRefreshOn);
+            writer.WriteBoolValue("has_reached_build_minutes_limit", HasReachedBuildMinutesLimit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

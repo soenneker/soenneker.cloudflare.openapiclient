@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The RFC 3339 timestamp of when the list was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedOn { get; set; }
+        public string? CreatedOn { get; private set; }
 #nullable restore
 #else
-        public string CreatedOn { get; set; }
+        public string CreatedOn { get; private set; }
 #endif
         /// <summary>Hostnames support ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the unique ID of the item in the List.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The RFC 3339 timestamp of when the list was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedOn { get; set; }
+        public string? ModifiedOn { get; private set; }
 #nullable restore
 #else
-        public string ModifiedOn { get; set; }
+        public string ModifiedOn { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListsListItemHostnameFull"/> and sets the default values.
@@ -94,10 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteStringValue("created_on", CreatedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ListsItemHostname>("hostname", Hostname);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("modified_on", ModifiedOn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

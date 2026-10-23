@@ -7,30 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
-        public double? Code { get; set; }
-        /// <summary>The message property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1? AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Message { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1 AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem"/> and sets the default values.
-        /// </summary>
-        public AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2? AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2 AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3? AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3 AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4? AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4 AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +53,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItem();
+            result.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1();
+            result.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2();
+            result.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3();
+            result.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1 != null || AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2 != null || AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3 != null || AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4 != null)
             {
-                { "code", n => { Code = n.GetDoubleValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -60,9 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("code", Code);
-            writer.WriteStringValue("message", Message);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1>(null, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf1, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf2, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf3, AiSearchNamespaceInstanceUploadItem429ResponseErrorsItemAnyOf4);
         }
     }
 }

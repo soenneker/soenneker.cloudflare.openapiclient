@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.BasicAuthCredentials
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cws\basic-auth-credentials
+    /// Builds and executes requests for operations under \accounts\{accountId}\cws\basic-auth-credentials
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BasicAuthCredentialsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.BasicAuthCredenti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BasicAuthCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cws/basic-auth-credentials{?cursor,deployment_id,direction,order,per_page,username}", pathParameters)
+        public BasicAuthCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cws/basic-auth-credentials{?cursor,deployment_id,direction,order,per_page,username}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.BasicAuthCredenti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BasicAuthCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cws/basic-auth-credentials{?cursor,deployment_id,direction,order,per_page,username}", rawUrl)
+        public BasicAuthCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cws/basic-auth-credentials{?cursor,deployment_id,direction,order,per_page,username}", rawUrl)
         {
         }
         /// <summary>

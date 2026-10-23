@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>ETag identifier for optimistic concurrency control. Formatted as &quot;v1:&lt;hash&gt;&quot; wherethe hash is the base64url-encoded SHA-256 (truncated to 128 bits) of the tags mapcanonicalized using RFC 8785 (JSON Canonicalization Scheme). Clients should treatETags as opaque strings and pass them back via the If-Match header on write operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag { get; set; }
+        public string? Etag { get; private set; }
 #nullable restore
 #else
-        public string Etag { get; set; }
+        public string Etag { get; private set; }
 #endif
         /// <summary>Identifies the unique resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,10 +48,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRulesetTags Tags { get; set; }
 #endif
         /// <summary>Monotonic version of the resource&apos;s tags: the timestamp assigned when thetags were last written. Returned by read endpoints, by 2PC prepare (theversion that will be assigned on commit, unless a concurrent write landsfirst, in which case a newer version is assigned), and by 2PC commit (theauthoritative committed version). Omitted for untagged resources anddelete commits: a deleted resource has no current version, and deletionsare ordered by event order rather than by version.</summary>
-        public DateTimeOffset? TagsUpdatedAt { get; set; }
+        public DateTimeOffset? TagsUpdatedAt { get; private set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneRulesetType? Type { get; set; }
-        /// <summary>Identifier.</summary>
+        /// <summary>Zone ID is required only for zone-level resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId { get; set; }
@@ -100,11 +100,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("etag", Etag);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceTaggingTaggedResourceObjectZoneRulesetTags>("tags", Tags);
-            writer.WriteDateTimeOffsetValue("tags_updated_at", TagsUpdatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneRulesetType>("type", Type);
             writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);

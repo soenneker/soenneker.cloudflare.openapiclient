@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Domains
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\domains
+    /// Builds and executes requests for operations under \accounts\{accountId}\email-security\settings\domains
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DomainsRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DomainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/domains{?active_delivery_mode*,allowed_delivery_mode*,direction*,domain*,integration_id*,order*,page*,per_page*,search*,status*}", pathParameters)
+        public DomainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email-security/settings/domains{?active_delivery_mode*,allowed_delivery_mode*,direction*,domain*,integration_id*,order*,page*,per_page*,search*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/domains{?active_delivery_mode*,allowed_delivery_mode*,direction*,domain*,integration_id*,order*,page*,per_page*,search*,status*}", rawUrl)
+        public DomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/email-security/settings/domains{?active_delivery_mode*,allowed_delivery_mode*,direction*,domain*,integration_id*,order*,page*,per_page*,search*,status*}", rawUrl)
         {
         }
         /// <summary>

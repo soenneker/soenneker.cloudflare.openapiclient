@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off Rocket Loader in the Cloudflare Speed app.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RocketLoaderId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of Rocket Loader</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesRocketLoaderValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesRocketLoader"/> and sets the default values.

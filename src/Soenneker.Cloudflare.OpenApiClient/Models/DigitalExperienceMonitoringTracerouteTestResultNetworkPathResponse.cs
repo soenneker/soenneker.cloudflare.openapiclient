@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DeviceName { get; set; }
 #endif
         /// <summary>Whether the test was run inside or outside of the WARP tunnel.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext? ExecutionContext { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext ExecutionContext { get; set; }
-#endif
         /// <summary>An array of the hops taken by the device to reach the end destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "colo", n => { Colo = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
-                { "execution_context", n => { ExecutionContext = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext.CreateFromDiscriminatorValue); } },
+                { "execution_context", n => { ExecutionContext = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext>(); } },
                 { "hops", n => { Hops = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resultId", n => { ResultId = n.GetStringValue(); } },
                 { "testId", n => { TestId = n.GetStringValue(); } },
@@ -131,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("colo", Colo);
             writer.WriteStringValue("deviceName", DeviceName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext>("execution_context", ExecutionContext);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseExecutionContext>("execution_context", ExecutionContext);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsItem>("hops", Hops);
             writer.WriteStringValue("resultId", ResultId);
             writer.WriteStringValue("testId", TestId);

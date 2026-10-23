@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsResultObject? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetOriginPostQuantumEncryptionSetting200ResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsResultObject Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetOriginPostQuantumEncryptionSetting200ResponseResult Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsResultObject>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsResultObject.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetOriginPostQuantumEncryptionSetting200ResponseResult>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetOriginPostQuantumEncryptionSetting200ResponseResult.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsMessagesItem>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheSettingsResultObject>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneCacheSettingsGetOriginPostQuantumEncryptionSetting200ResponseResult>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

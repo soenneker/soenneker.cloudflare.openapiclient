@@ -17,6 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.</summary>
         public bool? FlattenAllCnames { get; set; }
         /// <summary>Deprecated. Use nameservers.type to configure Advanced Nameservers.</summary>
+        [Obsolete("")]
         public bool? FoundationDns { get; set; }
         /// <summary>Settings for this internal zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether to enable multi-provider DNS, which causes Cloudflare to activate the zone even when non-Cloudflare NS records exist, and to respect NS records at the zone apex during outbound zone transfers.</summary>
         public bool? MultiProvider { get; set; }
-        /// <summary>The nameservers property</summary>
+        /// <summary>Controls the nameservers through which the zone is available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsZonePatchAllOf2Nameservers? Nameservers { get; set; }

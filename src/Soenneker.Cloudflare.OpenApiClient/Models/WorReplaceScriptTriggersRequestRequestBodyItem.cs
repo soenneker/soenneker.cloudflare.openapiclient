@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemFilter? Filter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestRequestBodyItemFilter? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemFilter Filter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestRequestBodyItemFilter Filter { get; set; }
 #endif
         /// <summary>The targets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemFilter>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestRequestBodyItemFilter>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestRequestBodyItemFilter.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemTargetsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemTargetsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemFilter>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestRequestBodyItemFilter>("filter", Filter);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorReplaceScriptTriggersRequestItemTargetsItem>("targets", Targets);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

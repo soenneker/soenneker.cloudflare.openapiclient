@@ -7,75 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithoutData"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DnsRecordsDnsRecordBatchPost : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DnsRecordsDnsRecordBatchPost : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Comments or notes about the DNS record. This field has no effect on DNS responses.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData? DnsRecordsDnsRecordWithData { get; set; }
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData DnsRecordsDnsRecordWithData { get; set; }
 #endif
-        /// <summary>Formatted CAA content. See &apos;data&apos; to set CAA properties.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithoutData"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithoutData? DnsRecordsDnsRecordWithoutData { get; set; }
 #nullable restore
 #else
-        public string Content { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithoutData DnsRecordsDnsRecordWithoutData { get; set; }
 #endif
-        /// <summary>Complete DNS record name, including the zone name, in Punycode.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>Required for MX and URI records; ignored for other record types (but may still be returned by the API). Records with lower priorities are preferred. This field is to be deprecated in favor of the priority field within the data map.</summary>
-        public double? Priority { get; set; }
-        /// <summary>Enables private network routing to the origin.</summary>
-        public bool? PrivateRouting { get; set; }
-        /// <summary>Whether the record is receiving the performance and security benefits of Cloudflare.</summary>
-        public bool? Proxied { get; set; }
-        /// <summary>Settings for the DNS record.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings? Settings { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings Settings { get; set; }
-#endif
-        /// <summary>Custom tags for the DNS record. This field has no effect on DNS responses.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Tags { get; set; }
-#nullable restore
-#else
-        public List<string> Tags { get; set; }
-#endif
-        /// <summary>Time To Live (TTL) of the DNS record in seconds. Setting to 1 means &apos;automatic&apos;. Value must be between 60 and 86400, with the minimum reduced to 30 for Enterprise zones.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl? Ttl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl Ttl { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost"/> and sets the default values.
-        /// </summary>
-        public DnsRecordsDnsRecordBatchPost()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            PrivateRouting = false;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,7 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordBatchPost();
+            result.DnsRecordsDnsRecordWithData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData();
+            result.DnsRecordsDnsRecordWithoutData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithoutData();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,18 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DnsRecordsDnsRecordWithData != null || DnsRecordsDnsRecordWithoutData != null)
             {
-                { "comment", n => { Comment = n.GetStringValue(); } },
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetDoubleValue(); } },
-                { "private_routing", n => { PrivateRouting = n.GetBoolValue(); } },
-                { "proxied", n => { Proxied = n.GetBoolValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DnsRecordsDnsRecordWithData, DnsRecordsDnsRecordWithoutData);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -112,15 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("priority", Priority);
-            writer.WriteBoolValue("private_routing", PrivateRouting);
-            writer.WriteBoolValue("proxied", Proxied);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsSettings>("settings", Settings);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsTtl>("ttl", Ttl);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecordsDnsRecordWithData>(null, DnsRecordsDnsRecordWithData, DnsRecordsDnsRecordWithoutData);
         }
     }
 }

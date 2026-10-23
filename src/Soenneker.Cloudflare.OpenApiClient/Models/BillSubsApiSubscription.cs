@@ -34,27 +34,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>The end of the current period and also when the next billing is due.</summary>
-        public DateTimeOffset? CurrentPeriodEnd { get; set; }
+        public DateTimeOffset? CurrentPeriodEnd { get; private set; }
         /// <summary>When the current billing period started. May match initial_period_start if this is the first period.</summary>
-        public DateTimeOffset? CurrentPeriodStart { get; set; }
+        public DateTimeOffset? CurrentPeriodStart { get; private set; }
         /// <summary>How often the subscription is renewed automatically.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency? Frequency { get; set; }
         /// <summary>Subscription identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The price of the subscription that will be billed, in US dollars.</summary>
-        public double? Price { get; set; }
+        public double? Price { get; private set; }
         /// <summary>The rate plan applied to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,12 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiSubscriptionV2App>("app", App);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiComponentValue>("component_values", ComponentValues);
-            writer.WriteStringValue("currency", Currency);
-            writer.WriteDateTimeOffsetValue("current_period_end", CurrentPeriodEnd);
-            writer.WriteDateTimeOffsetValue("current_period_start", CurrentPeriodStart);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiFrequency>("frequency", Frequency);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDoubleValue("price", Price);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiRatePlan>("rate_plan", RatePlan);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApiZone>("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);

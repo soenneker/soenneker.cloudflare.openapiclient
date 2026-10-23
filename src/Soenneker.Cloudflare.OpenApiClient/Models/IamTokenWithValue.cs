@@ -25,27 +25,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The email address of the user who created the token at the time ofcreation. Only present for Account Owned API Tokens when a creator emailwas available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorEmailAtCreation { get; set; }
+        public string? CreatorEmailAtCreation { get; private set; }
 #nullable restore
 #else
-        public string CreatorEmailAtCreation { get; set; }
+        public string CreatorEmailAtCreation { get; private set; }
 #endif
         /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Token identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The time on which the token was created.</summary>
-        public DateTimeOffset? IssuedOn { get; set; }
+        public DateTimeOffset? IssuedOn { get; private set; }
         /// <summary>Last time the token was used.</summary>
-        public DateTimeOffset? LastUsedOn { get; set; }
+        public DateTimeOffset? LastUsedOn { get; private set; }
         /// <summary>Last time the token was modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Token name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,20 +75,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The type of service that provisioned the token. Only present forprovisioned Account Owned API Tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisionerType { get; set; }
+        public string? ProvisionerType { get; private set; }
 #nullable restore
 #else
-        public string ProvisionerType { get; set; }
+        public string ProvisionerType { get; private set; }
 #endif
         /// <summary>Status of the token.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus? Status { get; set; }
         /// <summary>The token value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get; private set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenWithValue"/> and sets the default values.
@@ -139,18 +139,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamCondition>("condition", Condition);
-            writer.WriteStringValue("creator_email_at_creation", CreatorEmailAtCreation);
             writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("issued_on", IssuedOn);
-            writer.WriteDateTimeOffsetValue("last_used_on", LastUsedOn);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.IamPolicyWithPermissionGroupsAndResources>("policies", Policies);
-            writer.WriteStringValue("provisioner_type", ProvisionerType);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamTokenStatus>("status", Status);
-            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

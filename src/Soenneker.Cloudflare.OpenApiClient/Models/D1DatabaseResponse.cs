@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the timestamp the resource was created as an ISO8601 string.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.D1JurisdictionNullable? Jurisdiction { get; set; }
         /// <summary>D1 database name.</summary>
@@ -29,10 +29,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>D1 database identifier (UUID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uuid { get; set; }
+        public string? Uuid { get; private set; }
 #nullable restore
 #else
-        public string Uuid { get; set; }
+        public string Uuid { get; private set; }
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,10 +81,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1JurisdictionNullable>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("uuid", Uuid);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

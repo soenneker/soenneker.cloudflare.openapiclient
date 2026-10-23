@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\urlscanner\scan
+    /// Builds and executes requests for operations under \accounts\{accountId}\urlscanner\scan
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScanRequestBuilder : BaseRequestBuilder
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScanRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/scan{?account_scans*,date_end*,date_start*,hash*,hostname*,ip*,is_malicious*,limit*,next_cursor*,page_asn*,page_hostname*,page_ip*,page_path*,page_url*,path*,scan_id*,url*}", pathParameters)
+        public ScanRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/urlscanner/scan{?account_scans*,date_end*,date_start*,hash*,hostname*,ip*,is_malicious*,limit*,next_cursor*,page_asn*,page_hostname*,page_ip*,page_path*,page_url*,path*,scan_id*,url*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/scan{?account_scans*,date_end*,date_start*,hash*,hostname*,ip*,is_malicious*,limit*,next_cursor*,page_asn*,page_hostname*,page_ip*,page_path*,page_url*,path*,scan_id*,url*}", rawUrl)
+        public ScanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/urlscanner/scan{?account_scans*,date_end*,date_start*,hash*,hostname*,ip*,is_malicious*,limit*,next_cursor*,page_asn*,page_hostname*,page_ip*,page_path*,page_url*,path*,scan_id*,url*}", rawUrl)
         {
         }
         /// <summary>

@@ -40,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Zones0PatchRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Paused = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

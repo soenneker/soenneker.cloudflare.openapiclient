@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,this setting can determine the clearance level to be set</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel? ClearanceLevel { get; set; }
         /// <summary>When the widget was created.</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Origin that created this widget, recorded at creation time andimmutable afterward. Server-derived from the create request; notclient-settable. Omitted from the response for widgets createdbefore this field existed.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileDeployedVia? DeployedVia { get; private set; }
         /// <summary>The domains property</summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Widget Mode</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode? Mode { get; set; }
         /// <summary>When the widget was modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Human readable widget name. Not unique. Cloudflare suggests that youset this to a meaningful string to make it easier to identify yourwidget, and where it is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,11 +108,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("bot_fight_mode", BotFightMode);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileClearanceLevel>("clearance_level", ClearanceLevel);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
             writer.WriteBoolValue("ephemeral_id", EphemeralId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileWidgetMode>("mode", Mode);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("offlabel", Offlabel);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TurnstileRegion>("region", Region);

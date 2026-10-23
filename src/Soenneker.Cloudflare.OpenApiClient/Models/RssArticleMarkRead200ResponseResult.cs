@@ -86,6 +86,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ReadAt { get; set; }
 #endif
+        /// <summary>Intrinsic article severity from 1 (informational) to 5 (critical). Null when the account has no active Priority Intelligence Requirements, scoring has not completed, or a historic article has not entered an automatic rescore window.</summary>
+        public double? Severity { get; set; }
         /// <summary>The skill_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,6 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "published_at", n => { PublishedAt = n.GetStringValue(); } },
                 { "read", n => { Read = n.GetBoolValue(); } },
                 { "read_at", n => { ReadAt = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetDoubleValue(); } },
                 { "skill_version", n => { SkillVersion = n.GetStringValue(); } },
                 { "source_count", n => { SourceCount = n.GetDoubleValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
@@ -201,6 +204,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("published_at", PublishedAt);
             writer.WriteBoolValue("read", Read);
             writer.WriteStringValue("read_at", ReadAt);
+            writer.WriteDoubleValue("severity", Severity);
             writer.WriteStringValue("skill_version", SkillVersion);
             writer.WriteDoubleValue("source_count", SourceCount);
             writer.WriteStringValue("summary", Summary);

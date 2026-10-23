@@ -76,6 +76,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ReadAt { get; set; }
 #endif
+        /// <summary>Beta. The article&apos;s relevance to the account&apos;s active Priority Intelligence Requirements. Null when the article has not been scored against them, including when the account has no active PIRs, or has not been scored against the requested pir_id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance? Relevance { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance Relevance { get; set; }
+#endif
+        /// <summary>Intrinsic article severity from 1 (informational) to 5 (critical). Null when the account has no active Priority Intelligence Requirements, scoring has not completed, or a historic article has not entered an automatic rescore window.</summary>
+        public double? Severity { get; set; }
         /// <summary>Persisted enrichment summary. Null until enrichment produces a summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +145,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "published_at", n => { PublishedAt = n.GetStringValue(); } },
                 { "read", n => { Read = n.GetBoolValue(); } },
                 { "read_at", n => { ReadAt = n.GetStringValue(); } },
+                { "relevance", n => { Relevance = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance.CreateFromDiscriminatorValue); } },
+                { "severity", n => { Severity = n.GetDoubleValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemTagsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -157,6 +169,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("published_at", PublishedAt);
             writer.WriteBoolValue("read", Read);
             writer.WriteStringValue("read_at", ReadAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemRelevance>("relevance", Relevance);
+            writer.WriteDoubleValue("severity", Severity);
             writer.WriteStringValue("summary", Summary);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleList200ResponseResultArticlesItemTagsItem>("tags", Tags);
             writer.WriteStringValue("title", Title);

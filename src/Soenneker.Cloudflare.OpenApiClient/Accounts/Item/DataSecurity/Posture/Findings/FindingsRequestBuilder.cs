@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\data-security\posture\findings
+    /// Builds and executes requests for operations under \accounts\{accountId}\data-security\posture\findings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FindingsRequestBuilder : BaseRequestBuilder
@@ -37,15 +37,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Unignore.UnignoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dataSecurity.posture.findings.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.FindingItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.FindingItemRequestBuilder this[string position]
+        /// <param name="position">The `id` of a finding, as returned in each item of the List posture findings response.It is a base64-encoded identifier.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.WithFindingItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.WithFindingItemRequestBuilder this[byte[] position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("finding%2Did", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.FindingItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("findingId", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.WithFindingItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/data-security/posture/findings{?cursor*,direction*,finding_type_ids*,ignored*,integration_id*,max_affliction_date*,min_affliction_date*,observation*,order*,page*,per_page*,product*,search*,severity*,type*,vendor*}", pathParameters)
+        public FindingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/data-security/posture/findings{?cursor*,direction*,finding_type_ids*,ignored*,integration_id*,max_affliction_date*,min_affliction_date*,observation*,order*,page*,per_page*,product*,search*,severity*,type*,vendor*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/data-security/posture/findings{?cursor*,direction*,finding_type_ids*,ignored*,integration_id*,max_affliction_date*,min_affliction_date*,observation*,order*,page*,per_page*,product*,search*,severity*,type*,vendor*}", rawUrl)
+        public FindingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/data-security/posture/findings{?cursor*,direction*,finding_type_ids*,ignored*,integration_id*,max_affliction_date*,min_affliction_date*,observation*,order*,page*,per_page*,product*,search*,severity*,type*,vendor*}", rawUrl)
         {
         }
         /// <summary>
@@ -73,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.FindingsRequestBuilder.FindingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiErrorResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

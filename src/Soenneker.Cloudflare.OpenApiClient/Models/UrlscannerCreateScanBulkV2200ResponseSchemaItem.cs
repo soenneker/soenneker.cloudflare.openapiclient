@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseItemOptions? Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItemOptions? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseItemOptions Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItemOptions Options { get; set; }
 #endif
         /// <summary>URL to report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api", n => { Api = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseItemOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseItemOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItemOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItemOptions.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("api", Api);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseItemOptions>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerCreateScanBulkV2200ResponseSchemaItemOptions>("options", Options);
             writer.WriteStringValue("result", Result);
             writer.WriteStringValue("url", Url);
             writer.WriteGuidValue("uuid", Uuid);

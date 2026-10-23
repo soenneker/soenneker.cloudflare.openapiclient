@@ -124,6 +124,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancerPoolsCreatePoolRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            MinimumOrigins = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

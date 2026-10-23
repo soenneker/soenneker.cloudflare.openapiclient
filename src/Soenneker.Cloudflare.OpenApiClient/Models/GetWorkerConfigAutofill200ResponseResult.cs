@@ -14,6 +14,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The config_file property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConfigFile { get; set; }
+#nullable restore
+#else
+        public string ConfigFile { get; set; }
+#endif
+        /// <summary>The default_worker_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultWorkerName { get; set; }
+#nullable restore
+#else
+        public string DefaultWorkerName { get; set; }
+#endif
+        /// <summary>The env_worker_names property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty? EnvWorkerNames { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty EnvWorkerNames { get; set; }
+#endif
+        /// <summary>Package manager inferred from repository lockfiles; defaults to npm when none is detected.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager? PackageManager { get; set; }
+        /// <summary>The scripts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty? Scripts { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty Scripts { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetWorkerConfigAutofill200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "config_file", n => { ConfigFile = n.GetStringValue(); } },
+                { "default_worker_name", n => { DefaultWorkerName = n.GetStringValue(); } },
+                { "env_worker_names", n => { EnvWorkerNames = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty.CreateFromDiscriminatorValue); } },
+                { "package_manager", n => { PackageManager = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>(); } },
+                { "scripts", n => { Scripts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +87,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("config_file", ConfigFile);
+            writer.WriteStringValue("default_worker_name", DefaultWorkerName);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseEnvWorkerNamesProperty>("env_worker_names", EnvWorkerNames);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponsePackageManager>("package_manager", PackageManager);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BuildsConfigAutofillResponseScriptsProperty>("scripts", Scripts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

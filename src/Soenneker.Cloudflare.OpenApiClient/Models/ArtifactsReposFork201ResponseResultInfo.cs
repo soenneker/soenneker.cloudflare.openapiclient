@@ -7,38 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ArtifactsReposFork201ResponseResultInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ArtifactsReposFork201ResponseResultInfo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
-        public int? Count { get; set; }
-        /// <summary>The cursor property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cursor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf1? ArtifactsReposFork201ResponseResultInfoAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Cursor { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf1 ArtifactsReposFork201ResponseResultInfoAnyOf1 { get; set; }
 #endif
-        /// <summary>The page property</summary>
-        public int? Page { get; set; }
-        /// <summary>The per_page property</summary>
-        public int? PerPage { get; set; }
-        /// <summary>The total_count property</summary>
-        public int? TotalCount { get; set; }
-        /// <summary>The total_pages property</summary>
-        public int? TotalPages { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfo"/> and sets the default values.
-        /// </summary>
-        public ArtifactsReposFork201ResponseResultInfo()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf2? ArtifactsReposFork201ResponseResultInfoAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf2 ArtifactsReposFork201ResponseResultInfoAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfo();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfo();
+            result.ArtifactsReposFork201ResponseResultInfoAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf1();
+            result.ArtifactsReposFork201ResponseResultInfoAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ArtifactsReposFork201ResponseResultInfoAnyOf1 != null || ArtifactsReposFork201ResponseResultInfoAnyOf2 != null)
             {
-                { "count", n => { Count = n.GetIntValue(); } },
-                { "cursor", n => { Cursor = n.GetStringValue(); } },
-                { "page", n => { Page = n.GetIntValue(); } },
-                { "per_page", n => { PerPage = n.GetIntValue(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
-                { "total_pages", n => { TotalPages = n.GetIntValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ArtifactsReposFork201ResponseResultInfoAnyOf1, ArtifactsReposFork201ResponseResultInfoAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,13 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
-            writer.WriteStringValue("cursor", Cursor);
-            writer.WriteIntValue("page", Page);
-            writer.WriteIntValue("per_page", PerPage);
-            writer.WriteIntValue("total_count", TotalCount);
-            writer.WriteIntValue("total_pages", TotalPages);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArtifactsReposFork201ResponseResultInfoAnyOf1>(null, ArtifactsReposFork201ResponseResultInfoAnyOf1, ArtifactsReposFork201ResponseResultInfoAnyOf2);
         }
     }
 }

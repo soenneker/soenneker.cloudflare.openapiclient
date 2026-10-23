@@ -24,9 +24,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comments { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Trusted domain identifier.</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get; private set; }
         /// <summary>Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.</summary>
         public bool? IsRecent { get; set; }
         /// <summary>Whether `pattern` is a regular expression instead of a literal domain.</summary>
@@ -34,9 +34,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.</summary>
         public bool? IsSimilarity { get; set; }
         /// <summary>Deprecated, use `modified_at` instead. End of life: November 1, 2026.</summary>
-        public DateTimeOffset? LastModified { get; set; }
+        [Obsolete("")]
+        public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The domain pattern to trust, e.g. `example.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,13 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_recent", IsRecent);
             writer.WriteBoolValue("is_regex", IsRegex);
             writer.WriteBoolValue("is_similarity", IsSimilarity);
-            writer.WriteDateTimeOffsetValue("last_modified", LastModified);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the timestamp the resource was created as an ISO8601 string.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The D1 database&apos;s size, in bytes.</summary>
         public double? FileSize { get; set; }
         /// <summary>Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.</summary>
@@ -30,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The number of tables in the D1 database. This count is no longer accurate and should not be relied upon.</summary>
+        [Obsolete("")]
         public double? NumTables { get; set; }
         /// <summary>Configuration for D1 read replication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>D1 database identifier (UUID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uuid { get; set; }
+        public string? Uuid { get; private set; }
 #nullable restore
 #else
-        public string Uuid { get; set; }
+        public string Uuid { get; private set; }
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,13 +98,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDoubleValue("file_size", FileSize);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1JurisdictionNullable>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("num_tables", NumTables);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1ReadReplicationDetailsForResponse>("read_replication", ReadReplication);
-            writer.WriteStringValue("uuid", Uuid);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

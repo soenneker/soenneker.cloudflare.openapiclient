@@ -85,8 +85,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The modified_at property</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.</summary>
+        [Obsolete("")]
         public bool? OnDemandEnabled { get; set; }
         /// <summary>Whether advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
+        [Obsolete("")]
         public bool? OnDemandLocked { get; set; }
         /// <summary>State of one kind of validation for an IP prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public AddressingIpamPrefixes()
         {
             AdditionalData = new Dictionary<string, object>();
+            DelegateLoaCreation = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

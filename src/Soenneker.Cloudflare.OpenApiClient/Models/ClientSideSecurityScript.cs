@@ -60,10 +60,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The integrity score of the JavaScript content.</summary>
         public int? JsIntegrityScore { get; set; }
@@ -176,7 +176,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("first_seen_at", FirstSeenAt);
             writer.WriteStringValue("hash", Hash);
             writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("id", Id);
             writer.WriteIntValue("js_integrity_score", JsIntegrityScore);
             writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
             writer.WriteIntValue("magecart_score", MagecartScore);

@@ -37,13 +37,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuth();
-            if("DlpAddinAuthOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("Org".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DlpAddinAuthOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuthOneOf1();
             }
-            else if("DlpAddinAuthOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NoAuth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DlpAddinAuthOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpAddinAuthOneOf2();
             }

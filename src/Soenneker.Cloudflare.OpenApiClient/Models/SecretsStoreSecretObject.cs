@@ -23,17 +23,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>When the secret was created.</summary>
-        public DateTimeOffset? Created { get; set; }
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Secret identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When the secret was modified.</summary>
-        public DateTimeOffset? Modified { get; set; }
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The name of the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,23 +42,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The list of services that can use this secret.</summary>
+        /// <summary>The list of services that can use this secret, or null when the secret inherits its store&apos;s scopes. Set it to null in a patch to inherit again. An empty list lets no service use the secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?>? Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreInheritableScopesItem?>? Scopes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem?> Scopes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreInheritableScopesItem?> Scopes { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretStatus? Status { get; set; }
         /// <summary>Store Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; set; }
+        public string? StoreId { get; private set; }
 #nullable restore
 #else
-        public string StoreId { get; set; }
+        public string StoreId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretObject"/> and sets the default values.
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>()?.AsList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreInheritableScopesItem>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretStatus>(); } },
                 { "store_id", n => { StoreId = n.GetStringValue(); } },
             };
@@ -103,13 +103,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteDateTimeOffsetValue("created", Created);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreCreateSecretObjectScopesItem>("scopes", Scopes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreInheritableScopesItem>("scopes", Scopes);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSecretStatus>("status", Status);
-            writer.WriteStringValue("store_id", StoreId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

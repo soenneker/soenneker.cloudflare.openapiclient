@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem?> CheckRegions { get; set; }
 #endif
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>A human-readable description of the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at.</summary>
-        public DateTimeOffset? DisabledAt { get; set; }
+        public DateTimeOffset? DisabledAt { get; private set; }
         /// <summary>Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).</summary>
         public bool? Enabled { get; set; }
         /// <summary>A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array [&quot;regional&quot;, &quot;global&quot;]; any other combination is rejected. Null (the default) behaves like [&quot;local&quot;, &quot;global&quot;]. [&quot;regional&quot;, &quot;global&quot;] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions.</summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.</summary>
         public int? MinimumOrigins { get; set; }
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The ID of the Monitor to use for checking the health of origins within this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +138,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancingPool()
         {
             AdditionalData = new Dictionary<string, object>();
+            Enabled = true;
+            MinimumOrigins = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -187,9 +189,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingCheckRegionsItem>("check_regions", CheckRegions);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
-            writer.WriteDateTimeOffsetValue("disabled_at", DisabledAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingHealthSourcesItem>("health_sources", HealthSources);
             writer.WriteStringValue("id", Id);
@@ -197,7 +197,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancingLoadShedding>("load_shedding", LoadShedding);
             writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteIntValue("minimum_origins", MinimumOrigins);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("monitor", Monitor);
             writer.WriteStringValue("monitor_group", MonitorGroup);
             writer.WriteStringValue("name", Name);

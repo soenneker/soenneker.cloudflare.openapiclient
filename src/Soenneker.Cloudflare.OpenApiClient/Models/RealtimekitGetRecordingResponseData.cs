@@ -15,6 +15,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>If the audio_config is passed, the URL for downloading the audio recording is returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AudioDownloadUrl { get; private set; }
+#nullable restore
+#else
+        public string AudioDownloadUrl { get; private set; }
+#endif
+        /// <summary>URL where the recording can be downloaded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DownloadUrl { get; private set; }
+#nullable restore
+#else
+        public string DownloadUrl { get; private set; }
+#endif
+        /// <summary>Timestamp when the download URL expires.</summary>
+        public DateTimeOffset? DownloadUrlExpiry { get; private set; }
+        /// <summary>File size of the recording, in bytes.</summary>
+        public double? FileSize { get; private set; }
+        /// <summary>ID of the recording</summary>
+        public Guid? Id { get; private set; }
+        /// <summary>Timestamp when this recording was invoked.</summary>
+        public DateTimeOffset? InvokedTime { get; set; }
+        /// <summary>File name of the recording.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OutputFileName { get; set; }
+#nullable restore
+#else
+        public string OutputFileName { get; set; }
+#endif
+        /// <summary>Total recording time in seconds.</summary>
+        public int? RecordingDuration { get; set; }
+        /// <summary>ID of the meeting session this recording is for.</summary>
+        public Guid? SessionId { get; private set; }
+        /// <summary>Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`.</summary>
+        public DateTimeOffset? StartedTime { get; set; }
+        /// <summary>The start_reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason? StartReason { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason StartReason { get; set; }
+#endif
+        /// <summary>Current status of the recording.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus? Status { get; set; }
+        /// <summary>Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.</summary>
+        public DateTimeOffset? StoppedTime { get; set; }
+        /// <summary>The stop_reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason? StopReason { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason StopReason { get; set; }
+#endif
+        /// <summary>The storage_config property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? StorageConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig StorageConfig { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGetRecordingResponseData"/> and sets the default values.
         /// </summary>
@@ -40,6 +106,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "audio_download_url", n => { AudioDownloadUrl = n.GetStringValue(); } },
+                { "download_url", n => { DownloadUrl = n.GetStringValue(); } },
+                { "download_url_expiry", n => { DownloadUrlExpiry = n.GetDateTimeOffsetValue(); } },
+                { "file_size", n => { FileSize = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "invoked_time", n => { InvokedTime = n.GetDateTimeOffsetValue(); } },
+                { "output_file_name", n => { OutputFileName = n.GetStringValue(); } },
+                { "recording_duration", n => { RecordingDuration = n.GetIntValue(); } },
+                { "session_id", n => { SessionId = n.GetGuidValue(); } },
+                { "start_reason", n => { StartReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason.CreateFromDiscriminatorValue); } },
+                { "started_time", n => { StartedTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus>(); } },
+                { "stop_reason", n => { StopReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason.CreateFromDiscriminatorValue); } },
+                { "stopped_time", n => { StoppedTime = n.GetDateTimeOffsetValue(); } },
+                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +130,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("invoked_time", InvokedTime);
+            writer.WriteStringValue("output_file_name", OutputFileName);
+            writer.WriteIntValue("recording_duration", RecordingDuration);
+            writer.WriteDateTimeOffsetValue("started_time", StartedTime);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason>("start_reason", StartReason);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecordingStatus>("status", Status);
+            writer.WriteDateTimeOffsetValue("stopped_time", StoppedTime);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason>("stop_reason", StopReason);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>("storage_config", StorageConfig);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

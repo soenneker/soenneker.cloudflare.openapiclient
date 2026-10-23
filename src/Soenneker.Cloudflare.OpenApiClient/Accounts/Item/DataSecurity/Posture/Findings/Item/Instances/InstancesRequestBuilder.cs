@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.Instances
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\data-security\posture\findings\{finding-id}\instances
+    /// Builds and executes requests for operations under \accounts\{accountId}\data-security\posture\findings\{findingId}\instances
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesRequestBuilder : BaseRequestBuilder
@@ -37,9 +37,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.Instances.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dataSecurity.posture.findings.item.instances.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">A uuid ID identifying this Finding instance.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.Instances.Item.WithInstanceItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.Instances.Item.WithInstanceItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.Instances.Item.WithInstanceItemRequestBuilder this[Guid position]
         {
             get
             {
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/data-security/posture/findings/{finding%2Did}/instances{?archived*,asset_ids*,cursor*,direction*,finding_instance_ids*,max_affliction_date*,min_affliction_date*,order*,page*,per_page*,remediation_statuses,search*}", pathParameters)
+        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/data-security/posture/findings/{findingId}/instances{?archived*,asset_ids*,cursor*,direction*,finding_instance_ids*,max_affliction_date*,min_affliction_date*,order*,page*,per_page*,remediation_statuses,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/data-security/posture/findings/{finding%2Did}/instances{?archived*,asset_ids*,cursor*,direction*,finding_instance_ids*,max_affliction_date*,min_affliction_date*,order*,page*,per_page*,remediation_statuses,search*}", rawUrl)
+        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/data-security/posture/findings/{findingId}/instances{?archived*,asset_ids*,cursor*,direction*,finding_instance_ids*,max_affliction_date*,min_affliction_date*,order*,page*,per_page*,remediation_statuses,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -70,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingInstanceList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingInstanceList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.Findings.Item.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.DataSecurity.Posture.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingInstanceList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingInstanceList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiApiResponseCommon.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingInstanceList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostureApiPaginatedFindingInstanceList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all security finding instances for a given security finding.

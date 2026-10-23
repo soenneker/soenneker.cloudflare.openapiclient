@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The action to apply to a matched request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequestMode? Mode { get; set; }
         /// <summary>When true, indicates that the rule is currently paused.</summary>
         public bool? Paused { get; set; }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallUaConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallUaConfiguration.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequestMode>(); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallUaConfiguration>("configuration", Configuration);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallSchemasMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequestMode>("mode", Mode);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Undelete
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\d1\database\{databaseId}\undelete
+    /// Builds and executes requests for operations under \accounts\{accountId}\d1\database\{databaseId}\undelete
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UndeleteRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Unde
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UndeleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/d1/database/{databaseId}/undelete", pathParameters)
+        public UndeleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/d1/database/{databaseId}/undelete", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Unde
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UndeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/d1/database/{databaseId}/undelete", rawUrl)
+        public UndeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/d1/database/{databaseId}/undelete", rawUrl)
         {
         }
         /// <summary>
-        /// Restore a deleted D1 database. The database is restored with the name it had when it was deleted,unless `new_name` is provided. The restored database counts against the account&apos;s limits.Undeleting a database that is not deleted succeeds without changes, unless `new_name` differs from its current name which errors.Once a database is undeleted, Time Travel (point-in-time recovery) cannot restore it to a bookmark ortimestamp at or before the undeletion. Only states after the undeletion can be restored.
+        /// Restore a deleted D1 database. The database is restored with the name it had when it was deleted,unless `new_name` is provided. The restored database counts against the account&apos;s limits.Undeleting a database that is not deleted succeeds without changes, unless `new_name` differs from its current name which errors.A database can only be undeleted within 7 days (7 * 24 hours) of its deletion.Once a database is undeleted, Time Travel (point-in-time recovery) cannot restore it to a bookmark ortimestamp at or before the undeletion. Only states after the undeletion can be restored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1UndeleteDatabase200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Unde
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1UndeleteDatabase200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1UndeleteDatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a deleted D1 database. The database is restored with the name it had when it was deleted,unless `new_name` is provided. The restored database counts against the account&apos;s limits.Undeleting a database that is not deleted succeeds without changes, unless `new_name` differs from its current name which errors.Once a database is undeleted, Time Travel (point-in-time recovery) cannot restore it to a bookmark ortimestamp at or before the undeletion. Only states after the undeletion can be restored.
+        /// Restore a deleted D1 database. The database is restored with the name it had when it was deleted,unless `new_name` is provided. The restored database counts against the account&apos;s limits.Undeleting a database that is not deleted succeeds without changes, unless `new_name` differs from its current name which errors.A database can only be undeleted within 7 days (7 * 24 hours) of its deletion.Once a database is undeleted, Time Travel (point-in-time recovery) cannot restore it to a bookmark ortimestamp at or before the undeletion. Only states after the undeletion can be restored.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

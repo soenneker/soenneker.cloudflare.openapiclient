@@ -14,6 +14,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Pagination cursor for log retrieval.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cursor { get; set; }
+#nullable restore
+#else
+        public string Cursor { get; set; }
+#endif
+        /// <summary>The lines property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Lines { get; set; }
+#nullable restore
+#else
+        public UntypedNode Lines { get; set; }
+#endif
+        /// <summary>The truncated property</summary>
+        public bool? Truncated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetBuildLogs200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cursor", n => { Cursor = n.GetStringValue(); } },
+                { "lines", n => { Lines = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "truncated", n => { Truncated = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("cursor", Cursor);
+            writer.WriteObjectValue<UntypedNode>("lines", Lines);
+            writer.WriteBoolValue("truncated", Truncated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

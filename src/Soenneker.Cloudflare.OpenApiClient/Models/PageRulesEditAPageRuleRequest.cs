@@ -29,10 +29,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rule targets to evaluate on each request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget>? Targets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget>? Targets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget> Targets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget> Targets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageRulesEditAPageRuleRequest"/> and sets the default values.
@@ -40,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public PageRulesEditAPageRuleRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Priority = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStatus>(); } },
-                { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -75,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesActionsItem>("actions", Actions);
             writer.WriteIntValue("priority", Priority);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesTarget>("targets", Targets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesUrlTarget>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,115 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileCustomProfile"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileIntegrationProfile"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilePredefinedProfile"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DlpProfile : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class DlpProfile : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ai_context_enabled property</summary>
-        public bool? AiContextEnabled { get; set; }
-        /// <summary>Related DLP policies will trigger when the match count exceeds the number set.</summary>
-        public int? AllowedMatchCount { get; set; }
-        /// <summary>The confidence_threshold property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileCustomProfile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileConfidenceThreshold? ConfidenceThreshold { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileCustomProfile? DlpProfileCustomProfile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileConfidenceThreshold ConfidenceThreshold { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileCustomProfile DlpProfileCustomProfile { get; set; }
 #endif
-        /// <summary>The context_awareness property</summary>
-        [Obsolete("")]
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileIntegrationProfile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileContextAwareness? ContextAwareness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileIntegrationProfile? DlpProfileIntegrationProfile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileContextAwareness ContextAwareness { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileIntegrationProfile DlpProfileIntegrationProfile { get; set; }
 #endif
-        /// <summary>When the profile was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Data classes associated with this profile.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilePredefinedProfile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? DataClasses { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilePredefinedProfile? DlpProfilePredefinedProfile { get; set; }
 #nullable restore
 #else
-        public List<Guid?> DataClasses { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilePredefinedProfile DlpProfilePredefinedProfile { get; set; }
 #endif
-        /// <summary>Data tags associated with this profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Guid?>? DataTags { get; set; }
-#nullable restore
-#else
-        public List<Guid?> DataTags { get; set; }
-#endif
-        /// <summary>The description of the profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The entries property</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry>? Entries { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry> Entries { get; set; }
-#endif
-        /// <summary>The id of the profile (uuid).</summary>
-        public Guid? Id { get; set; }
-        /// <summary>The integration_id property</summary>
-        public Guid? IntegrationId { get; private set; }
-        /// <summary>The name of the profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The ocr_enabled property</summary>
-        public bool? OcrEnabled { get; set; }
-        /// <summary>Whether this profile can be accessed by anyone.</summary>
-        public bool? OpenAccess { get; set; }
-        /// <summary>Sensitivity levels associated with this profile.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpSensitivityLevelRef>? SensitivityLevels { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpSensitivityLevelRef> SensitivityLevels { get; set; }
-#endif
-        /// <summary>The shared_entries property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry>? SharedEntries { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry> SharedEntries { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileType? Type { get; set; }
-        /// <summary>When the profile was lasted updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfile"/> and sets the default values.
-        /// </summary>
-        public DlpProfile()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            AiContextEnabled = false;
-            AllowedMatchCount = 0;
-            OcrEnabled = false;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -124,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfile();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfile();
+            if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpProfileCustomProfile = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileCustomProfile();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpProfileIntegrationProfile = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileIntegrationProfile();
+            }
+            else if("predefined".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpProfilePredefinedProfile = new global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilePredefinedProfile();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,27 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DlpProfileCustomProfile != null)
             {
-                { "ai_context_enabled", n => { AiContextEnabled = n.GetBoolValue(); } },
-                { "allowed_match_count", n => { AllowedMatchCount = n.GetIntValue(); } },
-                { "confidence_threshold", n => { ConfidenceThreshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileConfidenceThreshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileConfidenceThreshold.CreateFromDiscriminatorValue); } },
-                { "context_awareness", n => { ContextAwareness = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileContextAwareness>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileContextAwareness.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "data_classes", n => { DataClasses = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "data_tags", n => { DataTags = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
-                { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "ocr_enabled", n => { OcrEnabled = n.GetBoolValue(); } },
-                { "open_access", n => { OpenAccess = n.GetBoolValue(); } },
-                { "sensitivity_levels", n => { SensitivityLevels = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpSensitivityLevelRef>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpSensitivityLevelRef.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "shared_entries", n => { SharedEntries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry>(global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileType>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-            };
+                return DlpProfileCustomProfile.GetFieldDeserializers();
+            }
+            else if(DlpProfileIntegrationProfile != null)
+            {
+                return DlpProfileIntegrationProfile.GetFieldDeserializers();
+            }
+            else if(DlpProfilePredefinedProfile != null)
+            {
+                return DlpProfilePredefinedProfile.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -161,24 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("ai_context_enabled", AiContextEnabled);
-            writer.WriteIntValue("allowed_match_count", AllowedMatchCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileConfidenceThreshold>("confidence_threshold", ConfidenceThreshold);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpCustomProfileContextAwareness>("context_awareness", ContextAwareness);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("data_classes", DataClasses);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("data_tags", DataTags);
-            writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry>("entries", Entries);
-            writer.WriteGuidValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteBoolValue("ocr_enabled", OcrEnabled);
-            writer.WriteBoolValue("open_access", OpenAccess);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpSensitivityLevelRef>("sensitivity_levels", SensitivityLevels);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpEntry>("shared_entries", SharedEntries);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileType>("type", Type);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DlpProfileCustomProfile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileCustomProfile>(null, DlpProfileCustomProfile);
+            }
+            else if(DlpProfileIntegrationProfile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfileIntegrationProfile>(null, DlpProfileIntegrationProfile);
+            }
+            else if(DlpProfilePredefinedProfile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DlpProfilePredefinedProfile>(null, DlpProfilePredefinedProfile);
+            }
         }
     }
 }

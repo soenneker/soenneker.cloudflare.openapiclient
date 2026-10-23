@@ -7,13 +7,12 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Time bounds applied to the dataset&apos;s timestamp column. Do not include timestamp predicates in the SQL query when this field is present.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AnalyticsSqlSqlQueryRequestTimeRange : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AnalyticsSqlSqlQueryRequestTimeRange : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Inclusive upper bound for the dataset&apos;s timestamp column.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,13 +29,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Start { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlSqlQueryRequestTimeRange"/> and sets the default values.
-        /// </summary>
-        public AnalyticsSqlSqlQueryRequestTimeRange()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +60,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("end", End);
             writer.WriteStringValue("start", Start);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

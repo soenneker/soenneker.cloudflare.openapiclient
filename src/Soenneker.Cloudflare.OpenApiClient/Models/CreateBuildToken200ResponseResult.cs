@@ -14,6 +14,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The build_token_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildTokenName { get; set; }
+#nullable restore
+#else
+        public string BuildTokenName { get; set; }
+#endif
+        /// <summary>UUID of the build token used when deploying the Worker.</summary>
+        public Guid? BuildTokenUuid { get; set; }
+        /// <summary>The cloudflare_token_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CloudflareTokenId { get; set; }
+#nullable restore
+#else
+        public string CloudflareTokenId { get; set; }
+#endif
+        /// <summary>The owner_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerType { get; set; }
+#nullable restore
+#else
+        public string OwnerType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CreateBuildToken200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "build_token_name", n => { BuildTokenName = n.GetStringValue(); } },
+                { "build_token_uuid", n => { BuildTokenUuid = n.GetGuidValue(); } },
+                { "cloudflare_token_id", n => { CloudflareTokenId = n.GetStringValue(); } },
+                { "owner_type", n => { OwnerType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("build_token_name", BuildTokenName);
+            writer.WriteGuidValue("build_token_uuid", BuildTokenUuid);
+            writer.WriteStringValue("cloudflare_token_id", CloudflareTokenId);
+            writer.WriteStringValue("owner_type", OwnerType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

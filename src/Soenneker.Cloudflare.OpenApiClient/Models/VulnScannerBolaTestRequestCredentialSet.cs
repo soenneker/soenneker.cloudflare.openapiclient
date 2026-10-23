@@ -17,14 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the credential set.</summary>
         public Guid? Id { get; set; }
-        /// <summary>Role of the credential set.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Identifies the role a request was made with. The credential set governs this role. `owner` is the resource owner, `attacker` attempts to access resources.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole? Role { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole Role { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestRequestCredentialSet"/> and sets the default values.
         /// </summary>
@@ -51,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "role", n => { Role = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole>(global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole>(); } },
             };
         }
         /// <summary>
@@ -62,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.VulnScannerBolaTestCredentialSetRole>("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

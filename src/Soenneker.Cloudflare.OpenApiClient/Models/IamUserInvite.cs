@@ -15,14 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the invite is no longer active.</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>Invite identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The email address of the user who created the invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string InvitedMemberId { get; private set; }
 #endif
         /// <summary>When the invite was sent.</summary>
-        public DateTimeOffset? InvitedOn { get; set; }
+        public DateTimeOffset? InvitedOn { get; private set; }
         /// <summary>ID of the organization the user will be added to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of role names the membership has for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Roles { get; set; }
+        public List<string>? Roles { get; private set; }
 #nullable restore
 #else
-        public List<string> Roles { get; set; }
+        public List<string> Roles { get; private set; }
 #endif
         /// <summary>Current status of the invitation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus? Status { get; set; }
@@ -123,13 +123,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("invited_by", InvitedBy);
             writer.WriteStringValue("invited_member_email", InvitedMemberEmail);
-            writer.WriteDateTimeOffsetValue("invited_on", InvitedOn);
             writer.WriteBoolValue("organization_is_enforcing_twofactor", OrganizationIsEnforcingTwofactor);
-            writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IamUserInviteStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

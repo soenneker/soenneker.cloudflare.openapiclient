@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controls whether the membership can be deleted via the API or not.</summary>
-        public bool? CanDelete { get; set; }
+        public bool? CanDelete { get; private set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The identifier for the membership (eg. a zone or account tag).</summary>
@@ -66,7 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("can_delete", CanDelete);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("identifier", Identifier);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AddressingKind>("kind", Kind);

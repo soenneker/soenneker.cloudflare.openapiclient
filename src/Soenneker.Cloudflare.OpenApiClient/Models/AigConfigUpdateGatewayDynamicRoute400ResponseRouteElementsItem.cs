@@ -7,46 +7,60 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1? AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1 AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1 { get; set; }
 #endif
-        /// <summary>The outputs property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOutputs? Outputs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2? AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOutputs Outputs { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2 AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2 { get; set; }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemProperties? Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3? AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemProperties Properties { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3 AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem"/> and sets the default values.
-        /// </summary>
-        public AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4? AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4 AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5? AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5 AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6? AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6 AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +69,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItem();
+            if("start".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1();
+            }
+            else if("conditional".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2();
+            }
+            else if("percentage".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3();
+            }
+            else if("rate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4();
+            }
+            else if("model".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5();
+            }
+            else if("end".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +103,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1 != null)
             {
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOutputs>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOutputs.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemProperties>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemType>(); } },
-            };
+                return AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2 != null)
+            {
+                return AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2.GetFieldDeserializers();
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3 != null)
+            {
+                return AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3.GetFieldDeserializers();
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4 != null)
+            {
+                return AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4.GetFieldDeserializers();
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5 != null)
+            {
+                return AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5.GetFieldDeserializers();
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6 != null)
+            {
+                return AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +136,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOutputs>("outputs", Outputs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemProperties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1>(null, AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf1);
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2>(null, AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf2);
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3>(null, AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf3);
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4>(null, AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf4);
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5>(null, AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf5);
+            }
+            else if(AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6>(null, AigConfigUpdateGatewayDynamicRoute400ResponseRouteElementsItemOneOf6);
+            }
         }
     }
 }

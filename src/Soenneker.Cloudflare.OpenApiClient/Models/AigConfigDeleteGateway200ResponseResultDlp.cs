@@ -7,40 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AigConfigDeleteGateway200ResponseResultDlp : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AigConfigDeleteGateway200ResponseResultDlp : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The action property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAction? Action { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>The policies property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpPoliciesItem>? Policies { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1? AigConfigDeleteGateway200ResponseResultDlpAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpPoliciesItem> Policies { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 AigConfigDeleteGateway200ResponseResultDlpAnyOf1 { get; set; }
 #endif
-        /// <summary>The profiles property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Profiles { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2? AigConfigDeleteGateway200ResponseResultDlpAnyOf2 { get; set; }
 #nullable restore
 #else
-        public List<string> Profiles { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 AigConfigDeleteGateway200ResponseResultDlpAnyOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlp"/> and sets the default values.
-        /// </summary>
-        public AigConfigDeleteGateway200ResponseResultDlp()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,7 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlp();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlp();
+            result.AigConfigDeleteGateway200ResponseResultDlpAnyOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1();
+            result.AigConfigDeleteGateway200ResponseResultDlpAnyOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,13 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AigConfigDeleteGateway200ResponseResultDlpAnyOf1 != null || AigConfigDeleteGateway200ResponseResultDlpAnyOf2 != null)
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAction>(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpPoliciesItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpPoliciesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "profiles", n => { Profiles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AigConfigDeleteGateway200ResponseResultDlpAnyOf1, AigConfigDeleteGateway200ResponseResultDlpAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,11 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAction>("action", Action);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpPoliciesItem>("policies", Policies);
-            writer.WriteCollectionOfPrimitiveValues<string>("profiles", Profiles);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AigConfigDeleteGateway200ResponseResultDlpAnyOf1>(null, AigConfigDeleteGateway200ResponseResultDlpAnyOf1, AigConfigDeleteGateway200ResponseResultDlpAnyOf2);
         }
     }
 }

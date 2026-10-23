@@ -17,14 +17,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to flatten all CNAME records in the zone. Note that, due to DNS limitations, a CNAME record at the zone apex will always be flattened.</summary>
         public bool? FlattenAllCnames { get; set; }
         /// <summary>Deprecated. Use nameservers.type to configure Advanced Nameservers.</summary>
+        [Obsolete("")]
         public bool? FoundationDns { get; set; }
-        /// <summary>Settings for this internal zone.</summary>
+        /// <summary>The internal_dns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsInternalDnsBase? InternalDns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns? InternalDns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsInternalDnsBase InternalDns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns InternalDns { get; set; }
 #endif
         /// <summary>Whether to enable multi-provider DNS, which causes Cloudflare to activate the zone even when non-Cloudflare NS records exist, and to respect NS records at the zone apex during outbound zone transfers.</summary>
         public bool? MultiProvider { get; set; }
@@ -40,13 +41,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? NsTtl { get; set; }
         /// <summary>Allows a Secondary DNS zone to use (proxied) override records and CNAME flattening at the zone apex.</summary>
         public bool? SecondaryOverrides { get; set; }
-        /// <summary>Components of the zone&apos;s SOA record.</summary>
+        /// <summary>The soa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsSoaBase? Soa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa? Soa { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsSoaBase Soa { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa Soa { get; set; }
 #endif
         /// <summary>Whether the zone mode is a regular or CDN/DNS only zone.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode? ZoneMode { get; set; }
@@ -77,12 +78,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "flatten_all_cnames", n => { FlattenAllCnames = n.GetBoolValue(); } },
                 { "foundation_dns", n => { FoundationDns = n.GetBoolValue(); } },
-                { "internal_dns", n => { InternalDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsInternalDnsBase>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsInternalDnsBase.CreateFromDiscriminatorValue); } },
+                { "internal_dns", n => { InternalDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns.CreateFromDiscriminatorValue); } },
                 { "multi_provider", n => { MultiProvider = n.GetBoolValue(); } },
                 { "nameservers", n => { Nameservers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers.CreateFromDiscriminatorValue); } },
                 { "ns_ttl", n => { NsTtl = n.GetDoubleValue(); } },
                 { "secondary_overrides", n => { SecondaryOverrides = n.GetBoolValue(); } },
-                { "soa", n => { Soa = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsSoaBase>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsSoaBase.CreateFromDiscriminatorValue); } },
+                { "soa", n => { Soa = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa.CreateFromDiscriminatorValue); } },
                 { "zone_mode", n => { ZoneMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode>(); } },
             };
         }
@@ -95,12 +96,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("flatten_all_cnames", FlattenAllCnames);
             writer.WriteBoolValue("foundation_dns", FoundationDns);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsInternalDnsBase>("internal_dns", InternalDns);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseInternalDns>("internal_dns", InternalDns);
             writer.WriteBoolValue("multi_provider", MultiProvider);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneNameservers>("nameservers", Nameservers);
             writer.WriteDoubleValue("ns_ttl", NsTtl);
             writer.WriteBoolValue("secondary_overrides", SecondaryOverrides);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsSoaBase>("soa", Soa);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsDnsSettingsResponseSoa>("soa", Soa);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettingsZoneMode>("zone_mode", ZoneMode);
             writer.WriteAdditionalData(AdditionalData);
         }

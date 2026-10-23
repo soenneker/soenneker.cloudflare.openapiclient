@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.Aggregate;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.Series;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +14,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\cloudforce-one\v2\priority-intelligence\{priorityId}\matches
+    /// Builds and executes requests for operations under \accounts\{accountId}\cloudforce-one\v2\priority-intelligence\{priorityId}\matches
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MatchesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The aggregate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.Aggregate.AggregateRequestBuilder Aggregate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.Aggregate.AggregateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The series property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.Series.SeriesRequestBuilder Series
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.Series.SeriesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.PriorityIntelligence.Item.Matches.MatchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/priority-intelligence/{priorityId}/matches{?cursor*,per_page*,triage_state*}", pathParameters)
+        public MatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/priority-intelligence/{priorityId}/matches{?cursor*,per_page*,triage_state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Prio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/priority-intelligence/{priorityId}/matches{?cursor*,per_page*,triage_state*}", rawUrl)
+        public MatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/priority-intelligence/{priorityId}/matches{?cursor*,per_page*,triage_state*}", rawUrl)
         {
         }
         /// <summary>

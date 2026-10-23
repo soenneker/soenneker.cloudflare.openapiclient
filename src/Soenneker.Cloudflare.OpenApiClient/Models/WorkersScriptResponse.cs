@@ -39,14 +39,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> CompatibilityFlags { get; set; }
 #endif
         /// <summary>When the script was created.</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Hashed script content, can be used in a If-None-Match header when updating.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Etag { get; set; }
+        public string? Etag { get; private set; }
 #nullable restore
 #else
-        public string Etag { get; set; }
+        public string Etag { get; private set; }
 #endif
         /// <summary>Declarative exports for the Worker&apos;s most recent version,including Durable Object classes (with their `storage`backend) and named Worker entrypoints. Tombstoned lifecycleentries are omitted, so only live exports (`created` and`expecting-transfer`) are returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string MigrationTag { get; set; }
 #endif
         /// <summary>When the script was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Named exports, such as Durable Object class implementations and named entrypoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,24 +120,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfo Placement { get; set; }
 #endif
-        /// <summary>The placement_mode property</summary>
+        /// <summary>Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode=&apos;smart&apos; for Smart Placement, or one of region/hostname/host.</summary>
         [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlacementMode { get; set; }
-#nullable restore
-#else
-        public string PlacementMode { get; set; }
-#endif
-        /// <summary>The placement_status property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponsePlacementMode? PlacementMode { get; set; }
+        /// <summary>Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
         [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlacementStatus { get; set; }
-#nullable restore
-#else
-        public string PlacementStatus { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponsePlacementStatus? PlacementStatus { get; private set; }
         /// <summary>The immutable ID of the script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public WorkersScriptResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Logpush = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -206,8 +195,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "named_handlers", n => { NamedHandlers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponseNamedHandlersItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponseNamedHandlersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfo.CreateFromDiscriminatorValue); } },
-                { "placement_mode", n => { PlacementMode = n.GetStringValue(); } },
-                { "placement_status", n => { PlacementStatus = n.GetStringValue(); } },
+                { "placement_mode", n => { PlacementMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponsePlacementMode>(); } },
+                { "placement_status", n => { PlacementStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponsePlacementStatus>(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -224,20 +213,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersCacheOptions>("cache_options", CacheOptions);
             writer.WriteStringValue("compatibility_date", CompatibilityDate);
             writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
-            writer.WriteStringValue("etag", Etag);
             writer.WriteCollectionOfPrimitiveValues<string>("handlers", Handlers);
             writer.WriteBoolValue("has_assets", HasAssets);
             writer.WriteBoolValue("has_modules", HasModules);
             writer.WriteStringValue("last_deployed_from", LastDeployedFrom);
             writer.WriteBoolValue("logpush", Logpush);
             writer.WriteStringValue("migration_tag", MigrationTag);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponseNamedHandlersItem>("named_handlers", NamedHandlers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability2>("observability", Observability);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersPlacementInfo>("placement", Placement);
-            writer.WriteStringValue("placement_mode", PlacementMode);
-            writer.WriteStringValue("placement_status", PlacementStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersScriptResponsePlacementMode>("placement_mode", PlacementMode);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersTailConsumersScript>("tail_consumers", TailConsumers);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersUsageModel>("usage_model", UsageModel);

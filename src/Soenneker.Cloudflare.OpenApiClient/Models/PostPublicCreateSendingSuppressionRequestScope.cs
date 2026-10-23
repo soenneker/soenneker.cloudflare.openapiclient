@@ -8,30 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Where the suppression applies. Omit for `{ &quot;type&quot;: &quot;account&quot; }`, which blocks the recipient for every sending domain of the account.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostPublicCreateSendingSuppressionRequestScope : IAdditionalDataHolder, IParsable
+    public partial class PostPublicCreateSendingSuppressionRequestScope : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Blocks the recipient for every sending domain of the account.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeType? Type { get; set; }
-        /// <summary>The sending domain to suppress for: the domain part of the envelope MAIL FROM. It is lowercased and trailing dots are removed. Internationalized domains must use the ASCII (punycode) form. Ownership is not checked; a domain the account does not send from never matches.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf1? PostPublicCreateSendingSuppressionRequestScopeOneOf1 { get; set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf1 PostPublicCreateSendingSuppressionRequestScopeOneOf1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScope"/> and sets the default values.
-        /// </summary>
-        public PostPublicCreateSendingSuppressionRequestScope()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf2? PostPublicCreateSendingSuppressionRequestScopeOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf2 PostPublicCreateSendingSuppressionRequestScopeOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScope();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScope();
+            if("account".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostPublicCreateSendingSuppressionRequestScopeOneOf1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf1();
+            }
+            else if("sending_domain".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostPublicCreateSendingSuppressionRequestScopeOneOf2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostPublicCreateSendingSuppressionRequestScopeOneOf1 != null)
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeType>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
-            };
+                return PostPublicCreateSendingSuppressionRequestScopeOneOf1.GetFieldDeserializers();
+            }
+            else if(PostPublicCreateSendingSuppressionRequestScopeOneOf2 != null)
+            {
+                return PostPublicCreateSendingSuppressionRequestScopeOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,9 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeType>("type", Type);
-            writer.WriteStringValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PostPublicCreateSendingSuppressionRequestScopeOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf1>(null, PostPublicCreateSendingSuppressionRequestScopeOneOf1);
+            }
+            else if(PostPublicCreateSendingSuppressionRequestScopeOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PostPublicCreateSendingSuppressionRequestScopeOneOf2>(null, PostPublicCreateSendingSuppressionRequestScopeOneOf2);
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class ResourceSharingCreateShareRecipientRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>Account identifier.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }

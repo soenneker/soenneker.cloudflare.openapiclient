@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).You cannot enable or disable individual WAF managed rules via Page Rules.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafId? Id { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The status of WAF managed rules (previous version).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesWafValue2? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesWaf"/> and sets the default values.

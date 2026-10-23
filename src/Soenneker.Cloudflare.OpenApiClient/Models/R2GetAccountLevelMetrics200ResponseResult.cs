@@ -7,13 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metrics based on the class they belong to.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class R2GetAccountLevelMetrics200ResponseResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Metrics based on what state they are in(uploaded or published).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? InfrequentAccess { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics InfrequentAccess { get; set; }
+#endif
+        /// <summary>Metrics based on what state they are in(uploaded or published).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics? Standard { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics Standard { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetAccountLevelMetrics200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "infrequentAccess", n => { InfrequentAccess = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics.CreateFromDiscriminatorValue); } },
+                { "standard", n => { Standard = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics>("infrequentAccess", InfrequentAccess);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2ClassBasedMetrics>("standard", Standard);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

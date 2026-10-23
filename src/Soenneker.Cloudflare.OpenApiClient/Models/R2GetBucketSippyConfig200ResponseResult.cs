@@ -14,6 +14,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Details about the configured destination bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippyDestination? Destination { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippyDestination Destination { get; set; }
+#endif
+        /// <summary>State of Sippy for this bucket.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>Details about the configured source bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippySource? Source { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippySource Source { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2GetBucketSippyConfig200ResponseResult"/> and sets the default values.
         /// </summary>
@@ -39,6 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippyDestination>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippyDestination.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippySource>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippySource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippyDestination>("destination", Destination);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2SippySource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

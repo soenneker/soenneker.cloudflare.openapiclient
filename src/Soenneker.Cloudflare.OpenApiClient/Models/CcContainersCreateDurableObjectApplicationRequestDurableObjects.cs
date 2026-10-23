@@ -8,44 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Set of properties to configure a Durable Object-backed application.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CcContainersCreateDurableObjectApplicationRequestDurableObjects : IAdditionalDataHolder, IParsable
+    public partial class CcContainersCreateDurableObjectApplicationRequestDurableObjects : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The class name of the durable object.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1? CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 { get; set; }
 #nullable restore
 #else
-        public string ClassName { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 { get; set; }
 #endif
-        /// <summary>The namespace ID of the durable object namespace to use for this application.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NamespaceId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2? CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 { get; set; }
 #nullable restore
 #else
-        public string NamespaceId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 { get; set; }
 #endif
-        /// <summary>The script name where the durable object class is defined.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScriptName { get; set; }
-#nullable restore
-#else
-        public string ScriptName { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects"/> and sets the default values.
-        /// </summary>
-        public CcContainersCreateDurableObjectApplicationRequestDurableObjects()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,7 +37,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjects();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,12 +47,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 != null)
             {
-                { "class_name", n => { ClassName = n.GetStringValue(); } },
-                { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
-                { "script_name", n => { ScriptName = n.GetStringValue(); } },
-            };
+                return CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1.GetFieldDeserializers();
+            }
+            else if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 != null)
+            {
+                return CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -76,10 +64,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("class_name", ClassName);
-            writer.WriteStringValue("namespace_id", NamespaceId);
-            writer.WriteStringValue("script_name", ScriptName);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1>(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember1);
+            }
+            else if(CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2>(null, CcContainersCreateDurableObjectApplicationRequestDurableObjectsMember2);
+            }
         }
     }
 }
