@@ -180951,6 +180951,9 @@
           "201": {
             "$ref": "#/components/responses/realtimekit_AddParticipant"
           },
+          "400": {
+            "$ref": "#/components/responses/realtimekit_GenericError"
+          },
           "500": {
             "$ref": "#/components/responses/realtimekit_GenericError"
           }
@@ -181211,6 +181214,86 @@
       ]
     },
     "/accounts/{accountId}/realtime/kit/{appId}/meetings/{meetingId}/participants/{participantId}/token": {
+      "delete": {
+        "tags": [
+          "Meetings"
+        ],
+        "summary": "Revoke participant\u0027s authentication token",
+        "description": "Revokes a previously issued participant authentication token without deleting the participant. Other tokens issued to the participant remain valid.",
+        "operationId": "RevokeToken",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 32,
+              "type": "string",
+              "description": "The account identifier tag.",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353",
+              "x-auditable": true
+            }
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The app identifier tag.",
+              "example": "14a396e7-ca44-4937-bf1f-050a69118543"
+            }
+          },
+          {
+            "name": "meetingId",
+            "in": "path",
+            "description": "ID of the meeting. You can fetch the meeting ID using the create a meeting API.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "participantId",
+            "in": "path",
+            "description": "ID of the participant. You can fetch the participant ID using the add a participant API.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/realtimekit_RevokeParticipantTokenBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/realtimekit_RevokeToken"
+          },
+          "400": {
+            "$ref": "#/components/responses/realtimekit_GenericError"
+          },
+          "403": {
+            "$ref": "#/components/responses/realtimekit_GenericError"
+          },
+          "500": {
+            "$ref": "#/components/responses/realtimekit_GenericError"
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          }
+        ],
+        "x-api-token-group": [
+          "Realtime Admin",
+          "Realtime"
+        ],
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "realtime.kit.meetings.participants.tokens",
+        "x-fern-sdk-method-name": "revoke"
+      },
       "post": {
         "tags": [
           "Meetings"
@@ -181261,9 +181344,15 @@
             }
           }
         ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/realtimekit_RefreshParticipantTokenBody"
+        },
         "responses": {
           "200": {
             "$ref": "#/components/responses/realtimekit_RegenToken"
+          },
+          "400": {
+            "$ref": "#/components/responses/realtimekit_GenericError"
           },
           "500": {
             "$ref": "#/components/responses/realtimekit_GenericError"
@@ -484143,6 +484232,24 @@
         },
         "description": "Represents a participant."
       },
+      "RealtimekitParticipantTokenValidity": {
+        "type": "object",
+        "properties": {
+          "expires_on": {
+            "type": "string",
+            "description": "RFC 3339 timestamp with a timezone at or after which the token cannot be used. Must be in the future. Defaults to not_before plus 100 days.",
+            "format": "date-time",
+            "example": "2026-10-01T11:00:00Z"
+          },
+          "not_before": {
+            "type": "string",
+            "description": "RFC 3339 timestamp with a timezone before which the token cannot be used. Defaults to the current time. May be in the past.",
+            "format": "date-time",
+            "example": "2026-10-01T09:00:00Z"
+          }
+        },
+        "description": "Validity window of the participant authentication token. The window is [not_before, expires_on) and cannot be longer than 100 days. Defaults to a token valid from now for 100 days."
+      },
       "RealtimekitParticipantsList": {
         "type": "object",
         "properties": {
@@ -549633,6 +549740,9 @@
             "type": "string",
             "description": "Name of the preset to apply to this participant.",
             "default": "group_call_host"
+          },
+          "token": {
+            "$ref": "#/components/schemas/RealtimekitParticipantTokenValidity"
           }
         }
       },
@@ -549846,6 +549956,19 @@
           "preset_name": {
             "type": "string",
             "description": "Name of the preset to apply to this participant."
+          }
+        }
+      },
+      "RealtimekitRevokeParticipantTokenBodyRequest": {
+        "required": [
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "The participant authentication token to revoke.",
+            "x-sensitive": true
           }
         }
       },
@@ -551719,6 +551842,23 @@
         "properties": {
           "data": {
             "$ref": "#/components/schemas/RealtimekitRegenTokenResponseData"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Success status of the operation",
+            "default": true
+          }
+        }
+      },
+      "RealtimekitRevokeTokenResponse": {
+        "required": [
+          "success",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RealtimekitRevokeTokenResponseData"
           },
           "success": {
             "type": "boolean",
@@ -584927,6 +585067,17 @@
           }
         }
       },
+      "RealtimekitRevokeTokenResponseAllOf2": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RealtimekitRevokeTokenResponseAllOf2Data"
+          }
+        }
+      },
       "RulesetsFailureResponseAllOf2": {
         "type": "object",
         "properties": {
@@ -590865,6 +591016,18 @@
             "description": "When this object was updated. The time is returned in ISO format.",
             "format": "date-time"
           },
+          "expires_on": {
+            "type": "string",
+            "description": "Time at which the token stops being valid, in UTC. Returned when adding a participant.",
+            "format": "date-time",
+            "example": "2026-10-01T11:00:00Z"
+          },
+          "not_before": {
+            "type": "string",
+            "description": "Time from which the token is valid, in UTC. Returned when adding a participant.",
+            "format": "date-time",
+            "example": "2026-10-01T09:00:00Z"
+          },
           "token": {
             "type": "string",
             "description": "The participant\u0027s auth token that can be used for joining a meeting from the client side.",
@@ -592135,6 +592298,18 @@
         ],
         "type": "object",
         "properties": {
+          "expires_on": {
+            "type": "string",
+            "description": "Time at which the token stops being valid, in UTC. Returned when adding a participant.",
+            "format": "date-time",
+            "example": "2026-10-01T11:00:00Z"
+          },
+          "not_before": {
+            "type": "string",
+            "description": "Time from which the token is valid, in UTC. Returned when adding a participant.",
+            "format": "date-time",
+            "example": "2026-10-01T09:00:00Z"
+          },
           "token": {
             "type": "string",
             "description": "The participant\u0027s auth token that can be used for joining a meeting from the client side.",
@@ -601086,9 +601261,17 @@
             "type": "number",
             "description": "HTTP status code of the error."
           },
+          "details": {
+            "description": "Additional context about the error, when available."
+          },
           "message": {
             "type": "string",
             "description": "Error message describing what went wrong."
+          },
+          "reason": {
+            "type": "string",
+            "description": "Stable machine-readable reason for the error, when available.",
+            "example": "participant_token_expired"
           }
         }
       },
@@ -613926,13 +614109,40 @@
       },
       "RealtimekitRegenTokenResponseAllOf2Data": {
         "required": [
+          "token",
+          "not_before",
+          "expires_on"
+        ],
+        "type": "object",
+        "properties": {
+          "expires_on": {
+            "type": "string",
+            "description": "Time at which the token stops being valid, in UTC.",
+            "format": "date-time",
+            "example": "2026-10-01T11:00:00Z"
+          },
+          "not_before": {
+            "type": "string",
+            "description": "Time from which the token is valid, in UTC.",
+            "format": "date-time",
+            "example": "2026-10-01T09:00:00Z"
+          },
+          "token": {
+            "type": "string",
+            "description": "Regenerated participant\u0027s authentication token.",
+            "x-sensitive": true
+          }
+        }
+      },
+      "RealtimekitRevokeTokenResponseAllOf2Data": {
+        "required": [
           "token"
         ],
         "type": "object",
         "properties": {
           "token": {
             "type": "string",
-            "description": "Regenerated participant\u0027s authentication token.",
+            "description": "The revoked participant authentication token.",
             "x-sensitive": true
           }
         }
@@ -749072,6 +749282,18 @@
             "description": "When this object was updated. The time is returned in ISO format.",
             "format": "date-time"
           },
+          "expires_on": {
+            "type": "string",
+            "description": "Time at which the token stops being valid, in UTC. Returned when adding a participant.",
+            "format": "date-time",
+            "example": "2026-10-01T11:00:00Z"
+          },
+          "not_before": {
+            "type": "string",
+            "description": "Time from which the token is valid, in UTC. Returned when adding a participant.",
+            "format": "date-time",
+            "example": "2026-10-01T09:00:00Z"
+          },
           "token": {
             "type": "string",
             "description": "The participant\u0027s auth token that can be used for joining a meeting from the client side.",
@@ -749481,13 +749703,41 @@
       },
       "RealtimekitRegenTokenResponseData": {
         "required": [
+          "token",
+          "not_before",
+          "expires_on"
+        ],
+        "type": "object",
+        "properties": {
+          "expires_on": {
+            "type": "string",
+            "description": "Time at which the token stops being valid, in UTC.",
+            "format": "date-time",
+            "example": "2026-10-01T11:00:00Z"
+          },
+          "not_before": {
+            "type": "string",
+            "description": "Time from which the token is valid, in UTC.",
+            "format": "date-time",
+            "example": "2026-10-01T09:00:00Z"
+          },
+          "token": {
+            "type": "string",
+            "description": "Regenerated participant\u0027s authentication token.",
+            "x-sensitive": true
+          }
+        },
+        "description": "Data returned by the operation"
+      },
+      "RealtimekitRevokeTokenResponseData": {
+        "required": [
           "token"
         ],
         "type": "object",
         "properties": {
           "token": {
             "type": "string",
-            "description": "Regenerated participant\u0027s authentication token.",
+            "description": "The revoked participant authentication token.",
             "x-sensitive": true
           }
         },
@@ -1183542,6 +1183792,16 @@
           }
         }
       },
+      "realtimekit_RevokeToken": {
+        "description": "Success response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RealtimekitRevokeTokenResponse"
+            }
+          }
+        }
+      },
       "rulesets_Empty": {
         "description": "An empty response."
       },
@@ -1189006,11 +1189266,30 @@
         },
         "required": true
       },
+      "realtimekit_RefreshParticipantTokenBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RealtimekitParticipantTokenValidity"
+            }
+          }
+        }
+      },
       "realtimekit_ReplaceParticipantBody": {
         "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/RealtimekitReplaceParticipantBodyRequest"
+            }
+          }
+        },
+        "required": true
+      },
+      "realtimekit_RevokeParticipantTokenBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/RealtimekitRevokeParticipantTokenBodyRequest"
             }
           }
         },

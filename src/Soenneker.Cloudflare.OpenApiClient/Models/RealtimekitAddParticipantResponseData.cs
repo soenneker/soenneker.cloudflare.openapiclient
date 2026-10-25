@@ -25,6 +25,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CustomParticipantId { get; set; }
 #endif
+        /// <summary>Time at which the token stops being valid, in UTC. Returned when adding a participant.</summary>
+        public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>ID of the participant.</summary>
         public Guid? Id { get; set; }
         /// <summary>Name of the participant.</summary>
@@ -35,6 +37,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Time from which the token is valid, in UTC. Returned when adding a participant.</summary>
+        public DateTimeOffset? NotBefore { get; set; }
         /// <summary>URL to a picture of the participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,8 +92,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_participant_id", n => { CustomParticipantId = n.GetStringValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "picture", n => { Picture = n.GetStringValue(); } },
                 { "preset_name", n => { PresetName = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
@@ -105,8 +111,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("custom_participant_id", CustomParticipantId);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteStringValue("picture", Picture);
             writer.WriteStringValue("preset_name", PresetName);
             writer.WriteStringValue("token", Token);

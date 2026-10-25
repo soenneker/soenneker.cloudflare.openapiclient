@@ -15,6 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Time at which the token stops being valid, in UTC.</summary>
+        public DateTimeOffset? ExpiresOn { get; set; }
+        /// <summary>Time from which the token is valid, in UTC.</summary>
+        public DateTimeOffset? NotBefore { get; set; }
         /// <summary>Regenerated participant&apos;s authentication token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
             };
         }
@@ -58,6 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
+            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteStringValue("token", Token);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -46,6 +46,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PresetName { get; set; }
 #endif
+        /// <summary>Validity window of the participant authentication token. The window is [not_before, expires_on) and cannot be longer than 100 days. Defaults to a token valid from now for 100 days.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantTokenValidity? Token { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantTokenValidity Token { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAddParticipantBodyRequest"/> and sets the default values.
         /// </summary>
@@ -76,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "picture", n => { Picture = n.GetStringValue(); } },
                 { "preset_name", n => { PresetName = n.GetStringValue(); } },
+                { "token", n => { Token = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantTokenValidity>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantTokenValidity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("picture", Picture);
             writer.WriteStringValue("preset_name", PresetName);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantTokenValidity>("token", Token);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
