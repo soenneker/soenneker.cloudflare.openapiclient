@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         {
         }
         /// <summary>
-        /// Synchronously re-runs every processing step for a Threat Signals article: content acquisition, summary, indicator extraction, CVE tags, IOC context, and default tags. Replaces the article&apos;s summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.
+        /// Synchronously re-runs every processing step for a Threat Signals article: pull content, clean content, extract IOCs, filter IOCs, summary, CVE tags, IOC context, article tags, and Event publication. Replaces the article&apos;s summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Synchronously re-runs every processing step for a Threat Signals article: content acquisition, summary, indicator extraction, CVE tags, IOC context, and default tags. Replaces the article&apos;s summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.
+        /// Synchronously re-runs every processing step for a Threat Signals article: pull content, clean content, extract IOCs, filter IOCs, summary, CVE tags, IOC context, article tags, and Event publication. Replaces the article&apos;s summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -22,6 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
             if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("previous_client_secret_expires_at") is { } nullNodePreviousClientSecretExpiresAt && nullNodePreviousClientSecretExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousClientSecretExpiresAt = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -55,6 +56,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise. Rotating a service token that was reported as leaked discards the previous secret entirely, so no grace period can be set.</summary>
         public DateTimeOffset? PreviousClientSecretExpiresAt { get => _explicitNullValuePreviousClientSecretExpiresAt; set { _explicitNullValuePreviousClientSecretExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_client_secret_expires_at"); else _explicitNullProperties?.Remove("previous_client_secret_expires_at"); } }
         private DateTimeOffset? _explicitNullValuePreviousClientSecretExpiresAt = default!;
+        /// <summary>Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags? _explicitNullValueTags = default!;
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags _explicitNullValueTags = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequest"/> and sets the default values.
         /// </summary>
@@ -87,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "previous_client_secret_expires_at", n => { PreviousClientSecretExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("previous_client_secret_expires_at", PreviousClientSecretExpiresAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags>("tags", Tags);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

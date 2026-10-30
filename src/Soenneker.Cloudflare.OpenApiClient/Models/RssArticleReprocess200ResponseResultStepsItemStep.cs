@@ -8,17 +8,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public enum RssArticleReprocess200ResponseResultStepsItemStep
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "content")]
+        [EnumMember(Value = "pull")]
         #pragma warning disable CS1591
-        Content,
+        Pull,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clean")]
+        #pragma warning disable CS1591
+        Clean,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "extract")]
+        #pragma warning disable CS1591
+        Extract,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "filter")]
+        #pragma warning disable CS1591
+        Filter,
         #pragma warning restore CS1591
         [EnumMember(Value = "summary")]
         #pragma warning disable CS1591
         Summary,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "indicators")]
-        #pragma warning disable CS1591
-        Indicators,
         #pragma warning restore CS1591
         [EnumMember(Value = "cves")]
         #pragma warning disable CS1591

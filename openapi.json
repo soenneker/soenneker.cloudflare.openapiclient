@@ -14071,6 +14071,61 @@
       }
     },
     "/accounts/{account_id}/access/organizations/trust_settings": {
+      "delete": {
+        "operationId": "zero-trust-organization-delete-trust-settings",
+        "summary": "Delete Zero Trust organization trust settings",
+        "description": "Resets the trust settings for your Zero Trust organization.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/access_identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reset Zero Trust organization trust settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/access_trust_settings_response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to reset Zero Trust organization trust settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/access_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust organization"
+        ],
+        "x-api-token-group": [
+          "Access: Organizations, Identity Providers, and Groups Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.organization.trust-settings",
+        "x-fern-sdk-method-name": "delete"
+      },
       "get": {
         "operationId": "zero-trust-organization-get-trust-settings",
         "summary": "Get Zero Trust organization trust settings",
@@ -15334,6 +15389,9 @@
                   },
                   "previous_client_secret_expires_at": {
                     "$ref": "#/components/schemas/access_previous_client_secret_expires_at"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/access_tags"
                   }
                 },
                 "required": [
@@ -15556,6 +15614,9 @@
                   },
                   "previous_client_secret_expires_at": {
                     "$ref": "#/components/schemas/access_previous_client_secret_expires_at"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/access_tags"
                   }
                 }
               }
@@ -126741,8 +126802,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "cloudforce-one.binary-storage",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{account_id}/cloudforce-one/binary/{hash}": {
@@ -126829,8 +126889,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "cloudforce-one.binary-storage",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{account_id}/cloudforce-one/events": {
@@ -175660,7 +175719,7 @@
       "post": {
         "operationId": "rssArticleReprocess",
         "summary": "Reprocess a Threat Signals article",
-        "description": "Synchronously re-runs every processing step for a Threat Signals article: content acquisition, summary, indicator extraction, CVE tags, IOC context, and default tags. Replaces the article's summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.",
+        "description": "Synchronously re-runs every processing step for a Threat Signals article: pull content, clean content, extract IOCs, filter IOCs, summary, CVE tags, IOC context, article tags, and Event publication. Replaces the article's summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.",
         "parameters": [
           {
             "name": "account_id",
@@ -175837,9 +175896,11 @@
                               "step": {
                                 "type": "string",
                                 "enum": [
-                                  "content",
+                                  "pull",
+                                  "clean",
+                                  "extract",
+                                  "filter",
                                   "summary",
-                                  "indicators",
                                   "cves",
                                   "ioc_context",
                                   "tags",
@@ -248571,14 +248632,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/cloudforce-one-whois_schemas-single_response"
-                    },
-                    {
-                      "$ref": "#/components/schemas/cloudforce-one-whois_api-response-common-failure"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/cloudforce-one-whois_api-response-common-failure"
                 }
               }
             }
@@ -248602,8 +248656,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "intel.whois",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{account_id}/invoices": {
@@ -267271,17 +267324,6 @@
             "description": "The scan request was rejected and no report will be produced (`report_not_produced`, code 10020).",
             "content": {
               "application/json": {
-                "example": {
-                  "errors": [
-                    {
-                      "code": 10020,
-                      "message": "No report will be produced for this scan."
-                    }
-                  ],
-                  "messages": [],
-                  "result": null,
-                  "success": false
-                },
                 "schema": {
                   "$ref": "#/components/schemas/managed-defense-vulnerability-discovery_FailureResponse"
                 }
@@ -267369,7 +267411,7 @@
           "Vulnerability Discovery"
         ],
         "x-fern-sdk-group-name": "managed-defense.vulnerability-discovery.repositories",
-        "x-fern-sdk-method-name": "createToken"
+        "x-fern-sdk-method-name": "create-token"
       }
     },
     "/accounts/{account_id}/managed-defense/vulnerability-discovery/scans": {
@@ -267591,17 +267633,6 @@
             "description": "The scan request was rejected and no report will be produced (`report_not_produced`, code 10020).",
             "content": {
               "application/json": {
-                "example": {
-                  "errors": [
-                    {
-                      "code": 10020,
-                      "message": "No report will be produced for this scan."
-                    }
-                  ],
-                  "messages": [],
-                  "result": null,
-                  "success": false
-                },
                 "schema": {
                   "$ref": "#/components/schemas/managed-defense-vulnerability-discovery_FailureResponse"
                 }
@@ -267628,7 +267659,7 @@
           "Vulnerability Discovery"
         ],
         "x-fern-sdk-group-name": "managed-defense.vulnerability-discovery.scans",
-        "x-fern-sdk-method-name": "getReport"
+        "x-fern-sdk-method-name": "get-report"
       },
       "parameters": [
         {
@@ -525645,6 +525676,9 @@
                   },
                   "previous_client_secret_expires_at": {
                     "$ref": "#/components/schemas/access_previous_client_secret_expires_at"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/access_tags"
                   }
                 },
                 "required": [
@@ -525870,6 +525904,9 @@
                   },
                   "previous_client_secret_expires_at": {
                     "$ref": "#/components/schemas/access_previous_client_secret_expires_at"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/access_tags"
                   }
                 }
               }
@@ -593103,7 +593140,7 @@
             "$ref": "#/components/schemas/access_name-8"
           },
           "tags": {
-            "$ref": "#/components/schemas/access_tags"
+            "$ref": "#/components/schemas/access_tags-2"
           },
           "type": {
             "allOf": [
@@ -593713,6 +593750,9 @@
                   "name": {
                     "$ref": "#/components/schemas/access_name-2"
                   },
+                  "tags": {
+                    "$ref": "#/components/schemas/access_tags"
+                  },
                   "updated_at": {
                     "$ref": "#/components/schemas/access_updated_at"
                   }
@@ -593755,6 +593795,9 @@
                   },
                   "name": {
                     "$ref": "#/components/schemas/access_name-17"
+                  },
+                  "tags": {
+                    "$ref": "#/components/schemas/access_tags"
                   },
                   "updated_at": {
                     "$ref": "#/components/schemas/access_timestamp"
@@ -596979,7 +597022,7 @@
             "$ref": "#/components/schemas/access_session_duration-2"
           },
           "tags": {
-            "$ref": "#/components/schemas/access_tags"
+            "$ref": "#/components/schemas/access_tags-2"
           },
           "type": {
             "allOf": [
@@ -597050,7 +597093,7 @@
             "$ref": "#/components/schemas/access_session_duration-2"
           },
           "tags": {
-            "$ref": "#/components/schemas/access_tags"
+            "$ref": "#/components/schemas/access_tags-2"
           },
           "type": {
             "allOf": [
@@ -599965,6 +600008,9 @@
             "$ref": "#/components/schemas/access_service_token_rule"
           },
           {
+            "$ref": "#/components/schemas/access_service_token_tag_rule"
+          },
+          {
             "$ref": "#/components/schemas/access_linked_app_token_rule"
           },
           {
@@ -600011,7 +600057,7 @@
             "$ref": "#/components/schemas/access_scim_config"
           },
           "tags": {
-            "$ref": "#/components/schemas/access_tags"
+            "$ref": "#/components/schemas/access_tags-2"
           },
           "type": {
             "allOf": [
@@ -601146,7 +601192,28 @@
                 "path": {
                   "type": "string"
                 },
-                "value": {}
+                "value": {
+                  "oneOf": [
+                    {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "items": {},
+                      "type": "array"
+                    },
+                    {
+                      "additionalProperties": true,
+                      "type": "object"
+                    }
+                  ]
+                }
               },
               "required": [
                 "op"
@@ -601486,7 +601553,7 @@
             "$ref": "#/components/schemas/access_skip_interstitial"
           },
           "tags": {
-            "$ref": "#/components/schemas/access_tags"
+            "$ref": "#/components/schemas/access_tags-2"
           },
           "type": {
             "allOf": [
@@ -601639,6 +601706,9 @@
           "name": {
             "$ref": "#/components/schemas/access_name-2"
           },
+          "tags": {
+            "$ref": "#/components/schemas/access_tags"
+          },
           "updated_at": {
             "$ref": "#/components/schemas/access_updated_at"
           }
@@ -601687,6 +601757,9 @@
           },
           "name": {
             "$ref": "#/components/schemas/access_name-17"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/access_tags"
           },
           "updated_at": {
             "$ref": "#/components/schemas/access_timestamp"
@@ -601753,6 +601826,39 @@
           "service_token"
         ],
         "title": "Service Token"
+      },
+      "access_service_token_tag_rule": {
+        "description": "Matches an Access service token with the specified tag key and value. Only compatible with non_identity decisions.",
+        "type": "object",
+        "properties": {
+          "service_token_tag": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "description": "The tag key to match. Keys are case-sensitive and may contain Unicode letters and digits, underscores, periods, and hyphens.",
+                "type": "string",
+                "example": "environment",
+                "maxLength": 256,
+                "minLength": 1
+              },
+              "value": {
+                "description": "The tag value to match. Values are case-sensitive, preserve whitespace, and must not contain NUL characters.",
+                "type": "string",
+                "example": "production",
+                "maxLength": 256,
+                "minLength": 1
+              }
+            },
+            "required": [
+              "key",
+              "value"
+            ]
+          }
+        },
+        "required": [
+          "service_token_tag"
+        ],
+        "title": "Service Token Tag"
       },
       "access_session_duration": {
         "description": "The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.",
@@ -602384,6 +602490,20 @@
         ]
       },
       "access_tags": {
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "type": "object",
+        "example": {
+          "environment": "production"
+        },
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "maxProperties": 5,
+        "nullable": true,
+        "x-auditable": true
+      },
+      "access_tags-2": {
         "description": "The tags you want assigned to an application. Tags are used to filter applications in the App Launcher dashboard.",
         "type": "array",
         "items": {
@@ -681381,6 +681501,11 @@
           "path": {
             "type": "string",
             "minLength": 1
+          },
+          "repo": {
+            "description": "Repository the step is in, present only when it is not the finding's repository (a library or consumer of the same report). `path` is then relative to that repository.",
+            "type": "string",
+            "format": "uuid"
           },
           "scope": {
             "type": "string"

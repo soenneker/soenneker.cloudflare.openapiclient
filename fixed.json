@@ -9219,6 +9219,65 @@
       }
     },
     "/accounts/{accountId}/access/organizations/trust_settings": {
+      "delete": {
+        "tags": [
+          "Zero Trust organization"
+        ],
+        "summary": "Delete Zero Trust organization trust settings",
+        "description": "Resets the trust settings for your Zero Trust organization.",
+        "operationId": "ZeroTrustOrganizationDeleteTrustSettings",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 32,
+              "type": "string",
+              "description": "Identifier.",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353",
+              "x-auditable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reset Zero Trust organization trust settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessTrustSettingsResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to reset Zero Trust organization trust settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccessApiResponseCommonFailure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Access: Organizations, Identity Providers, and Groups Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.organization.trust-settings",
+        "x-fern-sdk-method-name": "delete"
+      },
       "get": {
         "tags": [
           "Zero Trust organization"
@@ -55585,8 +55644,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "cloudforce-one.binary-storage",
-        "x-fern-sdk-method-name": "create",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "create"
       }
     },
     "/accounts/{accountId}/cloudforce-one/binary/{hash}": {
@@ -55645,8 +55703,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "cloudforce-one.binary-storage",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/cloudforce-one/events": {
@@ -76894,7 +76951,7 @@
           "Threat Signals"
         ],
         "summary": "Reprocess a Threat Signals article",
-        "description": "Synchronously re-runs every processing step for a Threat Signals article: content acquisition, summary, indicator extraction, CVE tags, IOC context, and default tags. Replaces the article\u0027s summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.",
+        "description": "Synchronously re-runs every processing step for a Threat Signals article: pull content, clean content, extract IOCs, filter IOCs, summary, CVE tags, IOC context, article tags, and Event publication. Replaces the article\u0027s summary, AI tags, and indicators; indicators no longer found are removed. Creates a Threat Event only when the article has none; an existing Event is never updated. Takes over the article from any queued processing. Requires a paid Threat Signals subscription and the Cloudforce One Write permission.",
         "operationId": "RssArticleReprocess",
         "parameters": [
           {
@@ -137116,7 +137173,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WhoisRecordGetWhoisRecord4XxResponse"
+                  "$ref": "#/components/schemas/CloudforceOneWhoisApiResponseCommonFailure"
                 }
               }
             }
@@ -137137,8 +137194,7 @@
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "intel.whois",
-        "x-fern-sdk-method-name": "get",
-        "x-forge-hidden": true
+        "x-fern-sdk-method-name": "get"
       }
     },
     "/accounts/{accountId}/invoices": {
@@ -156686,17 +156742,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ManagedDefenseVulnerabilityDiscoveryFailureResponse"
-                },
-                "example": {
-                  "errors": [
-                    {
-                      "code": 10020,
-                      "message": "No report will be produced for this scan."
-                    }
-                  ],
-                  "messages": [],
-                  "result": null,
-                  "success": false
                 }
               }
             }
@@ -156790,7 +156835,7 @@
           }
         ],
         "x-fern-sdk-group-name": "managed-defense.vulnerability-discovery.repositories",
-        "x-fern-sdk-method-name": "createToken"
+        "x-fern-sdk-method-name": "create-token"
       },
       "parameters": [
         {
@@ -157058,17 +157103,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ManagedDefenseVulnerabilityDiscoveryFailureResponse"
-                },
-                "example": {
-                  "errors": [
-                    {
-                      "code": 10020,
-                      "message": "No report will be produced for this scan."
-                    }
-                  ],
-                  "messages": [],
-                  "result": null,
-                  "success": false
                 }
               }
             }
@@ -157090,7 +157124,7 @@
           }
         ],
         "x-fern-sdk-group-name": "managed-defense.vulnerability-discovery.scans",
-        "x-fern-sdk-method-name": "getReport"
+        "x-fern-sdk-method-name": "get-report"
       },
       "parameters": [
         {
@@ -371174,6 +371208,9 @@
             "$ref": "#/components/schemas/AccessServiceTokenRule"
           },
           {
+            "$ref": "#/components/schemas/AccessServiceTokenTagRule"
+          },
+          {
             "$ref": "#/components/schemas/AccessLinkedAppTokenRule"
           },
           {
@@ -372892,6 +372929,9 @@
             "example": "CI/CD token",
             "x-auditable": true
           },
+          "tags": {
+            "$ref": "#/components/schemas/AccessServiceTokensTags"
+          },
           "updated_at": {
             "type": "string",
             "format": "date-time",
@@ -372970,6 +373010,9 @@
             "description": "The name of the service token.",
             "example": "CI/CD token"
           },
+          "tags": {
+            "$ref": "#/components/schemas/AccessServiceTokens2Tags"
+          },
           "updated_at": {
             "type": "string",
             "format": "date-time",
@@ -373022,6 +373065,19 @@
           }
         },
         "description": "Matches a specific Access Service Token"
+      },
+      "AccessServiceTokenTagRule": {
+        "title": "Service Token Tag",
+        "required": [
+          "service_token_tag"
+        ],
+        "type": "object",
+        "properties": {
+          "service_token_tag": {
+            "$ref": "#/components/schemas/AccessServiceTokenTagRuleServiceTokenTag"
+          }
+        },
+        "description": "Matches an Access service token with the specified tag key and value. Only compatible with non_identity decisions."
       },
       "AccessSessionDuration": {
         "type": "string",
@@ -374346,6 +374402,20 @@
         "description": "A tag"
       },
       "AccessTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
+      "AccessTags2": {
         "type": "array",
         "items": {
           "type": "string",
@@ -401408,6 +401478,10 @@
           },
           "success": {
             "$ref": "#/components/schemas/CloudforceOneWhoisApiResponseCommonFailureSuccess"
+          },
+          "message": {
+            "type": "string",
+            "description": "The primary error message."
           }
         }
       },
@@ -460416,6 +460490,11 @@
           "path": {
             "minLength": 1,
             "type": "string"
+          },
+          "repo": {
+            "type": "string",
+            "description": "Repository the step is in, present only when it is not the finding\u0027s repository (a library or consumer of the same report). \u0060path\u0060 is then relative to that repository.",
+            "format": "uuid"
           },
           "scope": {
             "type": "string"
@@ -550719,6 +550798,27 @@
           }
         }
       },
+      "AccessScimPatchRequestOperationsItemValue": {
+        "oneOf": [
+          {
+            "type": "string",
+            "nullable": true
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "array",
+            "items": {}
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
       "AccessScimUpdateLogsResponseAllOf2": {
         "type": "object",
         "properties": {
@@ -589473,7 +589573,9 @@
           "path": {
             "type": "string"
           },
-          "value": {}
+          "value": {
+            "$ref": "#/components/schemas/AccessScimPatchRequestOperationsItemValue"
+          }
         }
       },
       "AccessServiceTokenRuleServiceToken": {
@@ -589486,6 +589588,29 @@
             "type": "string",
             "description": "The ID of a Service Token.",
             "example": "aa0a4aab-672b-4bdb-bc33-a59f1130a11f"
+          }
+        }
+      },
+      "AccessServiceTokenTagRuleServiceTokenTag": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string",
+            "description": "The tag key to match. Keys are case-sensitive and may contain Unicode letters and digits, underscores, periods, and hyphens.",
+            "example": "environment"
+          },
+          "value": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string",
+            "description": "The tag value to match. Values are case-sensitive, preserve whitespace, and must not contain NUL characters.",
+            "example": "production"
           }
         }
       },
@@ -602650,6 +602775,9 @@
             "example": "CI/CD token",
             "x-auditable": true
           },
+          "tags": {
+            "$ref": "#/components/schemas/AccessCreateResponseAllOf2ResultTags"
+          },
           "updated_at": {
             "type": "string",
             "format": "date-time",
@@ -602698,6 +602826,9 @@
             "type": "string",
             "description": "The name of the service token.",
             "example": "CI/CD token"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/AccessCreateResponse2AllOf2ResultTags"
           },
           "updated_at": {
             "type": "string",
@@ -615773,6 +615904,9 @@
             "format": "date-time",
             "example": "2014-01-01T05:20:00.12345Z",
             "x-auditable": true
+          },
+          "tags": {
+            "$ref": "#/components/schemas/AccessServiceTokensCreateAServiceTokenRequestTags"
           }
         }
       },
@@ -615809,6 +615943,9 @@
             "format": "date-time",
             "example": "2014-01-01T05:20:00.12345Z",
             "x-auditable": true
+          },
+          "tags": {
+            "$ref": "#/components/schemas/AccessServiceTokensUpdateAServiceTokenRequestTags"
           }
         }
       },
@@ -669572,29 +669709,6 @@
           }
         }
       },
-      "WhoisRecordGetWhoisRecord4XxResponse": {
-        "required": [
-          "success",
-          "errors",
-          "messages",
-          "result"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "$ref": "#/components/schemas/WhoisRecordGetWhoisRecord4XxResponseErrors"
-          },
-          "messages": {
-            "$ref": "#/components/schemas/WhoisRecordGetWhoisRecord4XxResponseMessages"
-          },
-          "success": {
-            "$ref": "#/components/schemas/WhoisRecordGetWhoisRecord4XxResponseSuccess"
-          },
-          "result": {
-            "$ref": "#/components/schemas/WhoisRecordGetWhoisRecord4XxResponseResult"
-          }
-        }
-      },
       "AccountBillingTogglePdfInvoicesRequest": {
         "type": "object",
         "properties": {
@@ -711649,6 +711763,9 @@
             "format": "date-time",
             "example": "2014-01-01T05:20:00.12345Z",
             "x-auditable": true
+          },
+          "tags": {
+            "$ref": "#/components/schemas/ZoneLevelAccessServiceTokensCreateAServiceTokenRequestTags"
           }
         }
       },
@@ -711683,6 +711800,9 @@
             "format": "date-time",
             "example": "2014-01-01T05:20:00.12345Z",
             "x-auditable": true
+          },
+          "tags": {
+            "$ref": "#/components/schemas/ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags"
           }
         }
       },
@@ -747638,6 +747758,9 @@
             "example": "CI/CD token",
             "x-auditable": true
           },
+          "tags": {
+            "$ref": "#/components/schemas/AccessServiceTokensTags"
+          },
           "updated_at": {
             "type": "string",
             "format": "date-time",
@@ -747725,6 +747848,9 @@
             "description": "The name of the service token.",
             "example": "CI/CD token",
             "x-auditable": true
+          },
+          "tags": {
+            "$ref": "#/components/schemas/AccessServiceTokensTags"
           },
           "updated_at": {
             "type": "string",
@@ -765373,359 +765499,6 @@
             "description": "The path component of the URL.",
             "example": "/path",
             "x-auditable": true
-          }
-        },
-        "not": {}
-      },
-      "WhoisRecordGetWhoisRecord4XxResponseErrors": {
-        "allOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CloudforceOneWhoisSchemasMessagesItem"
-            },
-            "example": []
-          },
-          {
-            "$ref": "#/components/schemas/CloudforceOneWhoisApiResponseCommonFailureErrors"
-          }
-        ]
-      },
-      "WhoisRecordGetWhoisRecord4XxResponseMessages": {
-        "allOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CloudforceOneWhoisSchemasMessagesItem"
-            },
-            "example": []
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CloudforceOneWhoisMessagesItem"
-            },
-            "example": []
-          }
-        ]
-      },
-      "WhoisRecordGetWhoisRecord4XxResponseSuccess": {
-        "type": "boolean",
-        "description": "Returns a boolean for the success/failure of the API call.",
-        "example": true,
-        "not": {}
-      },
-      "WhoisRecordGetWhoisRecord4XxResponseResult": {
-        "required": [
-          "found",
-          "domain",
-          "dnssec",
-          "extension",
-          "nameservers",
-          "punycode",
-          "registrar",
-          "registrant"
-        ],
-        "type": "object",
-        "properties": {
-          "administrative_city": {
-            "type": "string"
-          },
-          "administrative_country": {
-            "type": "string"
-          },
-          "administrative_email": {
-            "type": "string"
-          },
-          "administrative_fax": {
-            "type": "string"
-          },
-          "administrative_fax_ext": {
-            "type": "string"
-          },
-          "administrative_id": {
-            "type": "string"
-          },
-          "administrative_name": {
-            "type": "string"
-          },
-          "administrative_org": {
-            "type": "string"
-          },
-          "administrative_phone": {
-            "type": "string"
-          },
-          "administrative_phone_ext": {
-            "type": "string"
-          },
-          "administrative_postal_code": {
-            "type": "string"
-          },
-          "administrative_province": {
-            "type": "string"
-          },
-          "administrative_referral_url": {
-            "type": "string"
-          },
-          "administrative_street": {
-            "type": "string"
-          },
-          "billing_city": {
-            "type": "string"
-          },
-          "billing_country": {
-            "type": "string"
-          },
-          "billing_email": {
-            "type": "string"
-          },
-          "billing_fax": {
-            "type": "string"
-          },
-          "billing_fax_ext": {
-            "type": "string"
-          },
-          "billing_id": {
-            "type": "string"
-          },
-          "billing_name": {
-            "type": "string"
-          },
-          "billing_org": {
-            "type": "string"
-          },
-          "billing_phone": {
-            "type": "string"
-          },
-          "billing_phone_ext": {
-            "type": "string"
-          },
-          "billing_postal_code": {
-            "type": "string"
-          },
-          "billing_province": {
-            "type": "string"
-          },
-          "billing_referral_url": {
-            "type": "string"
-          },
-          "billing_street": {
-            "type": "string"
-          },
-          "created_date": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2009-02-17T22:07:54Z"
-          },
-          "created_date_raw": {
-            "type": "string",
-            "example": "2009-02-17T22:07:54Z"
-          },
-          "dnssec": {
-            "type": "boolean",
-            "example": true
-          },
-          "domain": {
-            "type": "string",
-            "example": "cloudflare.com"
-          },
-          "expiration_date": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2033-02-17T22:07:54Z"
-          },
-          "expiration_date_raw": {
-            "type": "string",
-            "example": "2033-02-17T22:07:54Z"
-          },
-          "extension": {
-            "type": "string",
-            "example": "com"
-          },
-          "found": {
-            "type": "boolean",
-            "example": true
-          },
-          "id": {
-            "type": "string",
-            "example": "1542998887_DOMAIN_COM-VRSN"
-          },
-          "nameservers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "ns3.cloudflare.com",
-              "ns4.cloudflare.com",
-              "ns5.cloudflare.com",
-              "ns6.cloudflare.com",
-              "ns7.cloudflare.com"
-            ]
-          },
-          "punycode": {
-            "type": "string",
-            "example": "cloudflare.com"
-          },
-          "registrant": {
-            "type": "string"
-          },
-          "registrant_city": {
-            "type": "string"
-          },
-          "registrant_country": {
-            "type": "string"
-          },
-          "registrant_email": {
-            "type": "string"
-          },
-          "registrant_fax": {
-            "type": "string"
-          },
-          "registrant_fax_ext": {
-            "type": "string"
-          },
-          "registrant_id": {
-            "type": "string"
-          },
-          "registrant_name": {
-            "type": "string"
-          },
-          "registrant_org": {
-            "type": "string"
-          },
-          "registrant_phone": {
-            "type": "string"
-          },
-          "registrant_phone_ext": {
-            "type": "string"
-          },
-          "registrant_postal_code": {
-            "type": "string"
-          },
-          "registrant_province": {
-            "type": "string"
-          },
-          "registrant_referral_url": {
-            "type": "string"
-          },
-          "registrant_street": {
-            "type": "string"
-          },
-          "registrar": {
-            "type": "string",
-            "example": "Cloudflare, Inc."
-          },
-          "registrar_city": {
-            "type": "string"
-          },
-          "registrar_country": {
-            "type": "string"
-          },
-          "registrar_email": {
-            "type": "string"
-          },
-          "registrar_fax": {
-            "type": "string"
-          },
-          "registrar_fax_ext": {
-            "type": "string"
-          },
-          "registrar_id": {
-            "type": "string"
-          },
-          "registrar_name": {
-            "type": "string"
-          },
-          "registrar_org": {
-            "type": "string"
-          },
-          "registrar_phone": {
-            "type": "string"
-          },
-          "registrar_phone_ext": {
-            "type": "string"
-          },
-          "registrar_postal_code": {
-            "type": "string"
-          },
-          "registrar_province": {
-            "type": "string"
-          },
-          "registrar_referral_url": {
-            "type": "string"
-          },
-          "registrar_street": {
-            "type": "string"
-          },
-          "status": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "clientdeleteprohibited",
-              "clienttransferprohibited",
-              "clientupdateprohibited",
-              "serverdeleteprohibited",
-              "servertransferprohibited",
-              "serverupdateprohibited"
-            ]
-          },
-          "technical_city": {
-            "type": "string"
-          },
-          "technical_country": {
-            "type": "string"
-          },
-          "technical_email": {
-            "type": "string"
-          },
-          "technical_fax": {
-            "type": "string"
-          },
-          "technical_fax_ext": {
-            "type": "string"
-          },
-          "technical_id": {
-            "type": "string"
-          },
-          "technical_name": {
-            "type": "string"
-          },
-          "technical_org": {
-            "type": "string"
-          },
-          "technical_phone": {
-            "type": "string"
-          },
-          "technical_phone_ext": {
-            "type": "string"
-          },
-          "technical_postal_code": {
-            "type": "string"
-          },
-          "technical_province": {
-            "type": "string"
-          },
-          "technical_referral_url": {
-            "type": "string"
-          },
-          "technical_street": {
-            "type": "string"
-          },
-          "updated_date": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2024-01-09T16:45:28Z"
-          },
-          "updated_date_raw": {
-            "type": "string",
-            "example": "2024-01-09T16:45:28Z"
-          },
-          "whois_server": {
-            "type": "string",
-            "example": "whois.cloudflare.com"
           }
         },
         "not": {}
@@ -799188,6 +798961,34 @@
         "description": "The previous certificate (maintained during rotation period). May be null when no rotation has occurred. Mirrors the structure of \u0060saml_certificate\u0060.",
         "nullable": true
       },
+      "AccessServiceTokensTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
+      "AccessServiceTokens2Tags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
       "AccessTargetRuleTagsProperty": {
         "maxProperties": 50,
         "minProperties": 1,
@@ -804046,6 +803847,34 @@
         },
         "description": "Object where keys are purpose alpha-numeric IDs."
       },
+      "AccessCreateResponseAllOf2ResultTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
+      "AccessCreateResponse2AllOf2ResultTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
       "AccessFailedLoginResponseAllOf2ResultItemMetadataProperty": {
         "type": "object",
         "example": {
@@ -806183,6 +806012,34 @@
             "example": "Not Found"
           }
         }
+      },
+      "AccessServiceTokensCreateAServiceTokenRequestTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
+      "AccessServiceTokensUpdateAServiceTokenRequestTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
       },
       "DlsAccountRegionalHostnamesListRegions200ResponseResultItem": {
         "type": "object",
@@ -866969,6 +866826,34 @@
           }
         },
         "description": "(Deprecated) Please use the \u0060/zones/{zone_id}/subscription\u0060 API\nto update a zone\u0027s plan. Changing this value will create/cancel\nassociated subscriptions. To view available plans for this zone,\nsee Zone Plans.\n"
+      },
+      "ZoneLevelAccessServiceTokensCreateAServiceTokenRequestTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
+      },
+      "ZoneLevelAccessServiceTokensUpdateAServiceTokenRequestTags": {
+        "maxProperties": 5,
+        "type": "object",
+        "additionalProperties": {
+          "maxLength": 256,
+          "type": "string"
+        },
+        "description": "Tags associated with the service token, as key-value pairs. On update, replaces all existing tags.",
+        "nullable": true,
+        "example": {
+          "environment": "production"
+        },
+        "x-auditable": true
       },
       "PutZonesZoneIdActivationCheck200ResponseResult": {
         "type": "object",
@@ -1034221,9 +1034106,11 @@
       },
       "RssArticleReprocess200ResponseResultStepsItemStep": {
         "enum": [
-          "content",
+          "pull",
+          "clean",
+          "extract",
+          "filter",
           "summary",
-          "indicators",
           "cves",
           "ioc_context",
           "tags",
@@ -1034235,16 +1034122,24 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "content",
-              "name": "Content"
+              "value": "pull",
+              "name": "Pull"
+            },
+            {
+              "value": "clean",
+              "name": "Clean"
+            },
+            {
+              "value": "extract",
+              "name": "Extract"
+            },
+            {
+              "value": "filter",
+              "name": "Filter"
             },
             {
               "value": "summary",
               "name": "Summary"
-            },
-            {
-              "value": "indicators",
-              "name": "Indicators"
             },
             {
               "value": "cves",

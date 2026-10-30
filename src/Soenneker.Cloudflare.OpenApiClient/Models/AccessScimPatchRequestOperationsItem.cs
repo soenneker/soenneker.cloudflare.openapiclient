@@ -40,12 +40,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private UntypedNode? _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public UntypedNode Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private UntypedNode _explicitNullValueValue = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItem"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "op", n => { Op = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemOp>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemOp>("op", Op);
             writer.WriteStringValue("path", Path);
-            writer.WriteObjectValue<UntypedNode>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessScimPatchRequestOperationsItemValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
